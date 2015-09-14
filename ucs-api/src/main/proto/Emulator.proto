@@ -1,0 +1,29 @@
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "EmulatorProto";
+
+import "Domain.proto";
+
+message GetVehicleParametersRequest {
+	required int64 vehicleId = 1;
+}
+message GetVehicleParametersResponse {
+	repeated VehicleParameter parameters = 1;
+}
+
+message GetElevationRequest {
+	optional int64 vehicleId = 1;
+	repeated double latitudes = 2;
+	repeated double longitudes = 3;
+}
+
+message GetElevationResponse {
+	repeated float values = 1;
+	required bool noData = 2;
+}
+
+message ReportEmulatorRequest {
+	required int64 vehicleId = 1;
+}
+
+message ReportEmulatorResponse {
+}

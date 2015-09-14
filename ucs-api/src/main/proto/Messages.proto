@@ -1,0 +1,702 @@
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "MessagesProto";
+
+import "Domain.proto";
+
+// Types (DTOs) ///////////////////////////////////////////////////////////////
+
+message Wgs84LocationDto {
+	required double latitude = 1;
+	required double longitude = 2;
+	required double altitude = 3;
+	required AltitudeType altitudeType = 4; 
+}
+
+message MeasurePointDto {
+	required double latitude = 1;
+	required double longitude = 2;
+	required double altitude = 3;
+	required AltitudeType altitudeType = 4; 
+	optional double angle = 5;
+	optional double distance = 6; 
+}
+
+message PlaceDto {
+	required Wgs84LocationDto location = 1;
+	optional string displayName = 2;
+	optional double rank = 3;
+}
+
+message VersionsInfoDto {
+	repeated Version versions = 1;
+	optional string releaseInfo = 2;
+}
+
+message StatisticsRecordDto {
+	required string parameter = 1;
+	required string value = 2;
+}
+
+message StatisticsDto {
+	required int64 time = 1;
+	required string clientUID = 2;
+	required string clientMAC = 3;
+	required string clientOsType = 4;
+	required string clientOsVersion = 5;
+	required string unityVersion = 6; 	
+	repeated StatisticsRecordDto details = 7; 
+}
+
+message CommandSetDto {
+	repeated string commandCode = 1;
+}
+
+enum DronesharePrivacy {
+	DP_DEFAULT = 0;
+	DP_PRIVATE = 1;
+	DP_PUBLIC = 2;
+	DP_SHARED = 3;
+	DP_RESEARCHER = 4;
+}
+
+message LicensePermissionsDto {
+	required string licenseName = 1;
+	required int32 maxAuthenticatedHciSessions = 2;
+	required bool multinode = 3;
+	required bool kmlImport = 4;
+	required bool demImport = 5;
+	repeated PlatformAndDoublePairDto maxAglAltitude = 6;
+	repeated PlatformAndDoublePairDto maxDistanceToHome = 7;
+	repeated PlatformAndIntegerPairDto  maxBuildings = 8;
+	repeated PlatformAndBooleanPairDto customNfz = 9;
+	repeated PlatformAndBooleanPairDto airportNfzDisabling = 10;
+	repeated PlatformAndBooleanPairDto adsbReceiver = 11;
+	repeated PlatformAndBooleanPairDto videoRecording = 12;
+	repeated PlatformAndBooleanPairDto cameraFootprint = 13;
+}
+
+message PlatformAndBooleanPairDto {
+	required Platform platform = 1;
+	required bool value = 2;
+}
+
+message PlatformAndIntegerPairDto {
+	required Platform platform = 1;
+	required int32 value = 2;
+}
+
+message PlatformAndDoublePairDto {
+	required Platform platform = 1;
+	required double value = 2;
+}
+
+// Messages ///////////////////////////////////////////////////////////////////
+
+// Error 
+message Error {
+	optional string errorMessage = 1;
+	optional int32 errorCode = 2;
+}
+
+message AuthorizeHciRequest {
+	required int32 clientId = 1 [default = -1];
+}
+
+message AuthorizeHciResponse {
+	required int32 clientId = 1;
+}
+
+message SetHciLocaleRequest {
+	required int32 clientId = 1;
+	required string locale = 2;
+}
+
+message SetHciLocaleResponse {
+}
+
+message LoginRequest {
+	required int32 clientId = 1;
+	required string userLogin = 2;
+	required string userPassword = 3;
+}
+
+message LoginResponse {
+	required User user = 1;
+}
+
+message LogoutRequest {
+	required int32 clientId = 1;
+}
+
+message LogoutResponse {
+}
+
+message ProcessRouteRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+}
+
+message ProcessRouteResponse {
+	required Route route = 1;
+}
+
+message ConvertRouteAltitudesRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required AltitudeType altitudeType = 4;
+}
+
+message ConvertRouteAltitudesResponse {
+	required Route route = 1;
+}
+
+message ChangeRouteVehicleProfileRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required VehicleProfile newProfile = 3;
+}
+
+message ChangeRouteVehicleProfileResponse {
+	required Route route = 1;
+}
+
+message GetParametersSelectionValuesRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required TraverseAlgorithm algorithm = 3;
+}
+
+message GetParametersSelectionValuesResponse {
+	repeated Selection selections = 1;
+}
+
+message GetElevationProfileRequest {
+	required int32 clientId = 1;
+	required double samplingStep = 3;
+	repeated Wgs84LocationDto locations = 4;
+	optional int32 number = 5;
+}
+
+message GetElevationProfileResponse {
+	repeated Wgs84LocationDto locations = 1;
+	repeated double elevations = 2;
+	repeated double obstacleHeight = 3;
+}
+
+message CalculateSplineRequest {
+	required int32 clientId = 1;
+	repeated Waypoint waypounts = 2;
+	optional double accuracy = 3;
+}
+
+message CalculateSplineResponse {
+	repeated Wgs84LocationDto locations = 1;
+}
+
+
+// Transfer - Export / Import
+
+message ExportRouteToXmlRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+}
+
+message ExportRouteToXmlResponse {
+	required bytes routeXml = 1;
+}
+
+message ImportRouteFromXmlRequest {
+	required int32 clientId = 1;
+	required bytes routeXml = 2;
+}
+
+message ImportRouteFromXmlResponse {
+	required Route route = 1;
+}
+
+message ExportMissionToXmlRequest {
+	required int32 clientId = 1;
+	required Mission mission = 2;
+}
+
+message ExportMissionToXmlResponse {
+	required bytes missionXml = 1;
+}
+
+message ImportMissionFromXmlRequest {
+	required int32 clientId = 1;
+	required bytes missionXml = 2;
+}
+
+message ImportMissionFromXmlResponse {
+	required Mission mission = 1;
+}
+
+message ExportTelemetryToXmlRequest {
+	required int32 clientId = 1;
+	required TelemetryInterval telemetryInterval = 2; 
+}
+
+message ExportTelemetryToXmlResponse {
+	required bytes telemetryXml = 1;
+}
+
+message ImportTelemetryFromXmlRequest {
+	required int32 clientId = 1;
+	required bytes telemetryXml = 2;
+	required ConflictResolutionMode conflictResolutionMode = 3;
+}
+
+message ImportTelemetryFromXmlResponse {
+	required TelemetryInterval telemetryInterval = 1; 
+}
+
+
+// Measuring
+
+message GetLineOfSightRequest {
+	required int32 clientId = 1;
+	required MeasurePointDto observerPosition = 2;
+	required double maxDistance = 3;
+	required int32 approxPointsNumber = 4;
+}
+
+message GetLineOfSightResponse {
+	repeated MeasurePointDto points = 1;
+}
+
+
+// NFZ
+
+message GetNfzListRequest {
+	required int32 clientId = 1;
+	required double minLatitude = 2;
+	required double minLongitude = 3;
+	required double maxLatitude = 4;
+	required double maxLongitude = 5;
+	optional bool refreshDependencies = 6 [default = false];
+	repeated string refreshExcludes = 7;
+}
+
+message GetNfzListResponse {
+	repeated NoFlightZone zones = 1;
+}
+
+
+// Models
+
+message GetModelListRequest {
+	required int32 clientId = 1;
+	required double minLatitude = 2;
+	required double minLongitude = 3;
+	required double minAltitude = 4;
+	required double maxLatitude = 5;
+	required double maxLongitude = 6;
+	required double maxAltitude = 7;
+	optional bool refreshDependencies = 8 [default = false];
+	repeated string refreshExcludes = 9;
+}
+
+message GetModelListResponse {
+	repeated Model models = 1;
+}
+
+message GetRasterGridRequest {
+	required int32 clientId = 1;
+	required double minLatitude = 3;
+	required double minLongitude = 4;
+	required double maxLatitude = 5;
+	required double maxLongitude = 6;
+	required int32 width = 7;
+	required int32 height = 8;
+}
+
+message GetRasterGridResponse {
+	repeated float values = 1;
+	required int32 width = 2;
+	required int32 height = 3;
+	required bool noData = 4;
+}
+
+message GetRasterValuesRequest {
+	required int32 clientId = 1;
+	repeated double latitudes = 3;
+	repeated double longitudes = 4;
+}
+
+message GetRasterValuesResponse {
+	repeated float values = 1;
+	required bool noData = 2;
+}
+
+message GetTelemetryRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required int64 fromTime = 3;
+	optional int64 toTime = 4;
+	optional int32 limit = 5 [default = 7200];
+}
+
+message GetTelemetryResponse {
+	repeated TelemetryDto telemetry = 1;
+	optional int64 nextTelemetryTime = 2;
+}
+
+message DeleteTelemetryRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	optional int64 fromTime = 3;
+	optional int64 toTime = 4;
+}
+
+message DeleteTelemetryResponse {
+}
+
+message TraceTelemetryFramesRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required int64 originTime = 3;
+	required double interval = 4;
+	required int32 number = 5;
+}
+
+message TraceTelemetryFramesResponse {
+	repeated bool frames = 1;
+	repeated CommandSetDto commandFrames = 2;
+}
+
+message CountTelemetryRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	optional int64 fromTime = 3;
+	optional int64 toTime = 4;
+	optional bool estimateTLogSize = 5 [default = false];
+}
+
+message CountTelemetryResponse {
+	required int64 count = 1;
+	optional int64 tLogSize = 2;
+}
+
+message GetKmlRouteRepresentationRequest {
+	required int32 clientId = 1;
+	required string routeName = 2;
+	required VehicleProfile routeVehicleProfile = 3;
+	repeated Wgs84LocationDto waypoints = 4;
+}
+
+message GetKmlRouteRepresentationResponse {
+	required bytes kmlData = 1;
+}
+
+message GetAdsbAircraftListRequest {
+	required int32 clientId = 1;
+	required Wgs84LocationDto location = 2;
+	required double radius = 3;
+	required double height = 4;
+}
+
+message GetAdsbAircraftListResponse {
+	repeated AdsbAircraft aircrafts = 1;
+}
+
+message SearchPlacesRequest {
+	required int32 clientId = 1;
+	required string query = 2;
+	required int32 limit = 3 [default = 7];
+}
+
+message SearchPlacesResponse {
+	repeated PlaceDto places = 1;
+}
+
+message GetVehicleLogRequest {
+	required int32 clientId = 1;
+	repeated Vehicle vehicles = 2;
+	optional int32 limit = 3 [default = 15];
+	optional SeverityLevel level = 4 [default = SL_INFORMATIONAL];
+}
+
+message GetVehicleLogResponse {
+	repeated VehicleLogEntry vehicleLogEntries = 1;
+}
+
+message GetVehicleLogByTimeRangeRequest {
+	required int32 clientId = 1;
+	repeated Vehicle vehicles = 2;
+	required int64 fromTime = 3;
+	required int64 toTime = 4;
+	optional SeverityLevel level = 5 [default = SL_INFORMATIONAL];
+}
+
+message GetVehicleLogByTimeRangeResponse {
+	repeated VehicleLogEntry vehicleLogEntries = 1;
+}
+
+message SendCommandRequest {
+	required int32 clientId = 1;
+	required string commandCode = 2;
+	required Vehicle vehicle = 3;
+}
+
+message SendCommandResponse {
+}
+
+message UploadRouteRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required Vehicle vehicle = 3;
+}
+
+message UploadRouteResponse {
+}
+
+message GetAdsbBulbStatusRequest {
+	required int32 clientId = 1;
+}
+
+message GetAdsbBulbStatusResponse {
+	required bool on = 1;
+}
+
+
+// Licensing and Version control
+
+message GetLicenseRequest {
+	required int32 clientId = 1;
+}
+
+message GetLicenseResponse {
+	optional License license = 1;
+	required LicensePermissionsDto licensePermissions = 2;
+}
+
+message ActivateLicenseRequest {
+	required int32 clientId = 1;
+	required string activationCode = 2;
+}
+
+message ActivateLicenseResponse {
+	optional License license = 1;
+}
+
+message DeactivateLicenseRequest {
+	required int32 clientId = 1;
+}
+
+message DeactivateLicenseResponse {
+}
+
+message CheckForUpdatesRequest {
+	required int32 clientId = 1;
+}
+
+message CheckForUpdatesResponse {
+	optional VersionsInfoDto newVersions = 1;
+} 
+
+// Statistics
+message SendStatisticsRequest {
+	required int32 clientId = 1;
+	required StatisticsDto statistics = 2;
+}
+
+message SendStatisticsResponse {
+	required bool accepted = 1;
+}
+
+
+// Generic CRUD services
+
+// GetObject & CreateOrUpdateObject specifics:
+// If refreshDependencies field is set to false (default), object references 
+// WILL NOT be initialized, even if they exist. Should be used in cases,
+// that don't access dependencies data to reduce processing overhead.
+// If withComposites field is set to true, domain object references,
+// marked as composite references would also be affected by update operations,
+// such as CreateOrUpdate and Delete
+
+message GetObjectListRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	optional bool refreshDependencies = 3 [default = false];
+	repeated string refreshExcludes = 4;
+	optional bool translate = 5 [default = true];
+}
+
+message GetObjectListResponse {
+	required string objectType = 1;
+	repeated DomainObjectWrapper objects = 2;
+}
+
+message GetObjectRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required int32 objectId = 3;
+	optional bool refreshDependencies = 4 [default = false];
+	repeated string refreshExcludes = 5;
+	optional bool translate = 6 [default = true];
+}
+
+message GetObjectResponse {
+	required string objectType = 1;
+	required DomainObjectWrapper object = 2;
+}
+
+message CreateOrUpdateObjectRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required DomainObjectWrapper object = 3;
+	optional bool withComposites = 4 [default = true];
+	optional bool acquireLock = 5 [default = false];
+}
+
+message CreateOrUpdateObjectResponse {
+	required string objectType = 1;
+	required DomainObjectWrapper object = 2;
+}
+
+message UpdateObjectFieldsRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required DomainObjectWrapper object = 3;
+	repeated string fieldNames = 4;
+	optional bool acquireLock = 5 [default = false];
+}
+
+message UpdateObjectFieldsResponse {
+	required string objectType = 1;
+	required DomainObjectWrapper object = 2;
+}
+
+message DeleteObjectRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required int32 objectId = 3;
+}
+
+message DeleteObjectResponse {
+	required string objectType = 1;
+	required int32 objectId = 2;
+	optional int32 objectVersion = 3;
+}
+
+// Locks
+
+message AcquireLockRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required int32 objectId = 3;
+}
+
+message AcquireLockResponse {
+}
+
+message ReleaseLockRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required int32 objectId = 3;
+	optional bool ifExclusive = 4 [default = false];
+}
+
+message ReleaseLockResponse {
+}
+
+message CheckLockRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	required int32 objectId = 3;
+}
+
+message CheckLockResponse {
+	required string objectType = 1;
+	required int32 objectId = 2;
+	optional Lock lock = 3; // null if object is free
+}
+
+message CheckMultipleLocksRequest {
+	required int32 clientId = 1;
+	required string objectType = 2;
+	repeated int32 objectIds = 3;
+}
+
+message CheckMultipleLocksResponse {
+	required string objectType = 1;
+	repeated int32 objectIds = 2;
+	repeated Lock locks = 3;
+}
+
+message GetMissionPreferencesRequest {
+	required int32 clientId = 1;
+	required User user = 2;
+	required Mission mission = 3;
+}
+
+message GetMissionPreferencesResponse {
+	repeated MissionPreference preferences = 1;
+}
+
+message UpdateMissionPreferencesRequest {
+	required int32 clientId = 1;
+	repeated MissionPreference preferences = 2;
+}
+
+message UpdateMissionPreferencesResponse {
+}
+
+message DroneshareUploadRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required int64 fromTime = 3;
+	optional int64 toTime = 4;
+	required string droneshareLogin = 5;
+	required string dronesharePassword = 6;
+	optional DronesharePrivacy dronesharePrivacy = 7;
+}
+
+message DroneshareUploadResponse {
+	optional string droneshareSummaryText = 1;
+	optional string droneshareViewUrl = 2;
+}
+
+message SubmitUtmOperationRequest {
+	required int32 clientId = 1;
+	required UtmOperation utmOperation = 2;
+	required Route route = 3;
+}
+
+message SubmitUtmOperationResponse {
+	required UtmOperation utmOperation = 1;
+}
+
+message GetCapabilitiesRequest {
+	required int32 clientId = 1;
+}
+
+message GetCapabilitiesResponse {
+	required bool utm = 1 [default = false];
+}
+
+// Events
+
+message Notification {
+	required int32 subscriptionId = 1;
+	required EventWrapper event = 2;
+}
+
+message SubscribeEventRequest {
+	required int32 clientId = 1;
+	required EventSubscriptionWrapper subscription = 2;
+}
+
+message SubscribeEventResponse {
+	required int32 subscriptionId = 1;
+}
+
+message UnsubscribeEventRequest {
+	required int32 clientId = 1;
+	required int32 subscriptionId = 2;
+}
+
+message UnsubscribeEventResponse {
+}

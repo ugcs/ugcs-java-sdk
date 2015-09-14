@@ -1,0 +1,1344 @@
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "DomainProto";
+
+// Enums //////////////////////////////////////////////////////////////////////
+
+enum RouteProcessingStatus {
+	RPS_MODIFIED = 0;		// The new / modified route segment.
+	RPS_INVALID = 1;		// The route segment is incorrect.
+	RPS_MARKED = 2;			// The route segment is marked (defines all its basic points).
+	RPS_PROCESSED = 3;		// The route segment is fully processed (contains all commands).
+}
+
+enum UserRole {
+	UR_ADMINISTRATOR = 0;
+	UR_OPERATOR = 1;
+}
+
+enum ObjectOrigin {
+	OO_USER = 0;
+	OO_SYSTEM = 1;
+}
+
+enum AltitudeType {
+	AT_WGS84 = 0;
+	AT_AGL = 1;
+}
+
+enum FigureType {
+	FT_POINT = 0;
+	FT_POLYGON = 1;
+	FT_CIRCLE = 2;
+	FT_EIGHT_CURVE = 3;
+	FT_TAKEOFF_POINT = 4;
+	FT_LANDING_POINT = 5;
+}
+
+enum ParameterType {
+	PT_STRING = 0;
+	PT_INTEGER = 1;
+	PT_DOUBLE = 2;
+	PT_BOOLEAN = 3;
+	PT_SELECTION = 4;
+}
+
+enum TelemetryType {
+	TT_BATTERY_VOLTAGE = 0;
+	TT_ROLL = 1;
+	TT_PITCH = 2;
+	TT_YAW = 3;
+	TT_ROLL_SPEED = 4;
+	TT_PITCH_SPEED = 5;
+	TT_YAW_SPEED = 6;
+	TT_LATITUDE = 7;
+	TT_LONGITUDE = 8;
+	TT_MSL_ALTITUDE = 9;
+	TT_AGL_ALTITUDE = 10;
+	TT_GROUND_SPEED_X = 11;
+	TT_GROUND_SPEED_Y = 12;
+	TT_GROUND_SPEED_Z = 13;
+	TT_LATITUDE_GPS = 14;
+	TT_LONGITUDE_GPS = 15;
+	TT_ALTITUDE_GPS = 16;
+	TT_GROUND_SPEED_GPS = 17;
+	TT_ACCELERATION_X_RAW = 18;
+	TT_ACCELERATION_Y_RAW = 19;
+	TT_ACCELERATION_Z_RAW = 20;
+	TT_ANGULAR_SPEED_X_RAW = 21;
+	TT_ANGULAR_SPEED_Y_RAW = 22;
+	TT_ANGULAR_SPEED_Z_RAW = 23;
+	TT_MAGNETIC_X_RAW = 24;
+	TT_MAGNETIC_Y_RAW = 25;
+	TT_MAGNETIC_Z_RAW = 26;
+	TT_ABSOLUTE_PRESSURE = 27;
+	TT_DIFFERENTIAL_PRESSURE = 28;
+	TT_TEMPERATURE = 29;
+	TT_AIR_SPEED = 30;
+	TT_GROUND_SPEED = 31;
+	TT_HEADING = 32;
+	TT_THROTTLE = 33;
+	TT_CLIMB_RATE = 34;
+	TT_GPS_SATELLITES_VISIBLE = 35;
+	TT_ROUTE_MILAGE = 36;
+	TT_TELEMETRY_DROP_RATE = 37;
+	TT_DOWNLINK_CONNECTED = 38;
+	TT_UPLINK_CONNECTED = 39;
+	TT_CONTROL_MODE = 40;
+	TT_STATE = 41;
+	TT_COURSE = 42;
+	TT_RELATIVE_ALTITUDE = 43;
+	TT_ELEVATION = 44;
+	TT_CAMERA_ROLL = 45;
+	TT_CAMERA_PITCH = 46;
+	TT_CAMERA_YAW = 47;
+	TT_CAMERA_FOV_HORIZONTAL = 48;
+	TT_CAMERA_FOV_VERTICAL = 49;
+	TT_GPS_FIX_TYPE = 50;
+	TT_RC_LINK_QUALITY = 51;
+}
+
+enum VehicleType {
+	VT_TRICOPTER = 0;
+	VT_QUADCOPTER = 1;
+	VT_HEXACOPTER = 2;
+	VT_OCTOCOPTER = 3;
+	VT_FIXED_WING = 4;
+	VT_SINGLE_ROTOR_HELICOPTER = 5;
+	VT_COAXIAL_HELICOPTER = 6;
+	VT_TANDEM_HELICOPTER = 7;
+}
+
+enum VehicleParameterType {
+	VPT_HEIGHT = 0;
+	VPT_WIDTH = 1;
+	VPT_LENGTH = 2;
+	VPT_MAX_VERTICAL_SPEED = 3;
+	VPT_MAX_HORIZONTAL_SPEED = 4;
+	VPT_MAX_ALTITUDE = 5;
+	VPT_MAX_WAYPOINTS = 6;
+	VPT_MAX_FLIGHT_TIME = 7;
+	VPT_WIND_RESISTANCE = 8;
+	VPT_DRY_TAKEOFF_WEIGHT = 9;
+	VPT_MAX_TAKEOFF_WEIGHT = 10;
+	VPT_BATTERY_WEIGHT = 11;
+	VPT_CHARGED_BATTERY_VOLTAGE = 12;
+	VPT_DISCHARGED_BATTERY_VOLTAGE = 13;
+	VPT_NORMAL_BATTERY_VOLTAGE = 14;
+	VPT_LOW_BATTERY_VOLTAGE = 15;
+	VPT_LOW_GPS_SATELLITES = 16;
+	VPT_NORMAL_GPS_SATELLITES = 17;
+	VPT_SAFE_DISTANCE_TO_TERRAIN = 18;
+	VPT_SAFE_DISTANCE_TO_OBSTACLE = 19;
+	VPT_WAYPOINT_ACCEPTANCE_RADIUS = 20;
+	VPT_FENCE_RADIUS = 21;
+	VPT_LOW_TELEMETRY_LEVEL = 22;
+	VPT_NORMAL_TELEMETRY_LEVEL = 23;
+	VPT_DEFAULT_CLIMB_RATE = 24;
+	VPT_DEFAULT_DESCENT_RATE = 25;
+	VPT_GLIDE_SLOPE = 26;
+	VPT_DEFAULT_GROUND_SPEED = 27;
+	VPT_LANDING_GROUND_SPEED = 28;
+}
+
+enum PayloadType {
+	PT_CAMERA = 0;
+	PT_DATA_LINK = 1;
+}
+
+enum PayloadParameterType {
+	PPT_WEIGHT = 0;
+	PPT_FREQUENCY = 1;
+	PPT_POWER = 2;
+	PPT_TRUE_FOCAL_LENGTH = 3;
+	PPT_SENSOR_WIDTH = 4;
+	PPT_SENSOR_HEIGHT = 5;
+	PPT_SENSOR_HORIZONTAL_PIXELS = 6;
+	PPT_SENSOR_VERTICAL_PIXELS = 7;
+}
+
+enum SeverityLevel {
+	SL_EMERGENCY = 0;
+	SL_ALERT = 1;
+	SL_CRITICAL = 2;
+	SL_ERROR = 3;
+	SL_WARNING = 4;
+	SL_NOTICE = 5;
+	SL_INFORMATIONAL = 6;
+	SL_DEBUG = 7;
+}
+
+enum TrajectoryType {
+	TT_STRAIGHT = 0;
+	TT_STAIR = 1;
+}
+
+enum EmergencyAction {
+	EA_GO_HOME = 0;
+	EA_LAND = 1;
+	EA_WAIT = 2;
+	EA_CONTINUE = 3;
+}
+
+enum TriggerState {
+	TS_SINGLE_SHOT = 0;
+	TS_START_RECORDING = 1;
+	TS_STOP_RECORDING = 2;
+}
+
+enum HomeLocationSource {
+	HLS_EXPLICIT = 0;
+	HLS_FIRST_WAYPOINT = 1;
+}
+
+enum PoiMode {
+	PM_NONE = 0;
+	PM_LOCATION = 1;
+}
+
+enum PanoramaMode {
+	PM_PHOTO = 0;
+	PM_VIDEO = 1;
+}
+
+enum RotationDirection {
+	RD_CLOCKWISE = 0;
+	RD_COUNTERCLOCKWISE = 1;
+}
+
+enum IcaoAddressType {
+	IAT_REAL = 0;
+	IAT_ANONYMOUS = 1;
+}
+
+enum Component {
+	C_DATABASE = 0;
+	C_LICENSE = 1;
+}
+
+enum MetricUnit {
+	MU_NONE = 0;
+	MU_SECOND = 1;
+	MU_METRE = 2;
+	MU_KILOMETRE = 3;
+	MU_METREPERSECOND = 4;
+	MU_SQUAREMETRE = 5;
+	MU_KILOGRAMME = 6;
+	MU_CENTIMETRE = 7;
+}
+
+enum MessageSeverity {
+	MS_ERROR = 0;
+	MS_WARNING = 1;
+	MS_INFORMATION = 2;
+}
+
+enum ConflictResolutionMode {
+	CRM_KEEP = 0;
+	CRM_REPLACE = 1;
+	CRM_MERGE = 2;
+}
+
+enum VehicleLogEntryType {
+	VLET_GENERIC = 0;
+	VLET_COMMAND = 1;
+	VLET_UPLOAD = 2;
+	VLET_VIDEO_RECORDING = 3;
+}
+
+enum ProcessStage {
+	PS_START = 0;
+	PS_PROGRESS = 1;
+	PS_SUCCESS = 2;
+	PS_FAILURE = 3;
+}
+
+enum WaypointTurnType {
+	WTT_STOP_AND_TURN = 0;
+	WTT_STRAIGHT = 1;
+	WTT_SPLINE = 2;
+	WTT_BANK_TURN = 3;
+}
+
+enum ActionCode {
+	AC_WAYPOINT = 0;
+	AC_SPEED_CHANGE = 1;
+	AC_HOME_LOCATION = 2;
+	AC_WAIT = 3;
+	AC_POI_CHANGE = 4;
+	AC_HEADING_CHANGE = 5;
+	AC_CAMERA_CONTROL = 6;
+	AC_CAMERA_TRIGGER = 7;
+	AC_CAMERA_SERIES_BY_TIME = 8;
+	AC_CAMERA_SERIES_BY_DISTANCE = 9;
+	AC_TAKEOFF = 10;
+	AC_LANDING = 11;
+	AC_PANORAMA = 12;
+}
+
+enum NfzType {
+	NT_CUSTOM = 0;
+	NT_AERODROME = 1;
+}
+
+enum VideoEventType {
+	VET_RECORDING_STARTED = 0;
+	VET_RECORDING_STOPPED = 1;
+	VET_RECORDING_INTERRUPTED = 2;
+	VET_STREAM_REMOVED = 3;
+}
+
+enum FeatureType {
+	FT_STATIC_OBJECT = 0;
+	FT_PLACEMARK = 1;
+}
+
+enum UtmOperationStatus {
+	UOS_PROPOSING = 0;
+	UOS_ACCEPTED = 1;
+	UOS_REJECTED = 2;
+	UOS_READIED = 3;
+	UOS_ACTIVATED = 4;
+	UOS_CLOSED = 5;
+	UOS_EXPIRED = 6;
+	UOS_CANCELLED = 7;
+	UOS_NON_CONFORMING = 8;
+	UOS_ROGUE = 9;
+	UOS_MODIFYING = 10;
+	UOS_REQUESTING = 11;
+	UOS_ABORTED = 12;
+	UOS_DENIED = 13;
+	UOS_INTRUDER = 14;
+}
+
+// Types //////////////////////////////////////////////////////////////////////
+
+message MessageSet {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	repeated LocalisedMessage messages = 3;
+	optional string tag = 4;
+}
+
+message LocalisedMessage {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional MessageSet messageSet = 4;
+	optional MessageSeverity severity = 5; 
+	optional string defaultText = 6;
+	optional string localisedText = 7;
+	repeated LocalisedMessageVariant variants = 8;
+	optional string tag = 9;
+}
+
+message LocalisedMessageVariant {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional LocalisedMessage message = 4;
+	optional string localeId = 5;
+	optional string messageText = 6; 
+	optional string tag = 7;
+}
+
+message Action {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional ObjectOrigin origin = 4;
+	optional ProcessedRoute processedSegment = 5;
+	optional ProcessedRoute processedConnection = 6;
+	optional ProcessedRoute optimisedRoute = 7;
+	optional Waypoint waypoint = 8;
+	optional SpeedChange speedChange = 9;
+	optional HomeLocation homeLocation = 10;
+	optional Wait wait = 11;
+	optional PoiChange poiChange = 12;
+	optional HeadingChange headingChange = 13;
+	optional CameraControl cameraControl = 14;
+	optional CameraTrigger cameraTrigger = 15;
+	optional CameraSeriesByTime cameraSeriesByTime = 16;  
+	optional CameraSeriesByDistance cameraSeriesByDistance = 17;
+	optional Takeoff takeoff = 18;
+	optional Landing landing = 19;
+	optional Panorama panorama = 20;
+	optional string tag = 21;
+}
+
+message Waypoint {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double latitude = 3;
+	optional double longitude = 4;
+	optional double wgs84Altitude = 5;
+	optional double elevation = 6;
+	optional double heading = 7;
+	optional double acceptanceRadius = 8;
+	optional WaypointTurnType turnType = 9;
+	optional string tag = 10;
+}
+
+message CameraControl {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double tilt = 3;
+	optional double roll = 4;
+	optional double yaw = 5;
+	optional int32 zoomLevel = 6;
+	optional string tag = 7;
+}
+
+message CameraTrigger {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional TriggerState state = 3;
+	optional string tag = 5;
+}
+
+message CameraSeriesByTime {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 3;
+	optional int32 shotsNumber = 4;
+	optional double startDelay = 5;
+	optional string tag = 6;
+}
+
+message CameraSeriesByDistance {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 3;
+	optional int32 shotsNumber = 4;
+	optional double startDelay = 5;
+	optional string tag = 6;
+}
+
+message Wait {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 3;
+	optional string tag = 4;
+}
+
+message HeadingChange {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double heading = 3;
+	optional string tag = 4;
+}
+
+message HomeLocation {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double latitude = 3;
+	optional double longitude = 4;
+	optional double wgs84Altitude = 5;
+	optional double elevation = 6;
+	optional string tag = 7;
+}
+
+message PoiChange {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional PoiMode mode = 3;
+	optional double latitude = 4;
+	optional double longitude = 5;
+	optional double wgs84Altitude = 6;
+	optional string tag = 7;
+}
+
+message SpeedChange {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double speed = 3;
+	optional string tag = 4;
+}
+
+message Takeoff {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double acceptanceRadius = 3;
+	optional double rateOfClimb = 4;
+	optional double latitude = 5;
+	optional double longitude = 6;
+	optional double wgs84Altitude = 7;
+	optional double elevation = 8;
+	optional string tag = 9;
+}
+
+message Landing {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double acceptanceRadius = 3;
+	optional double rateOfDescent = 4;
+	optional double latitude = 5;
+	optional double longitude = 6;
+	optional double wgs84Altitude = 7;
+	optional double elevation = 8;
+	optional string tag = 9;
+}
+
+message Panorama {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double angle = 3;
+	optional double stepAngle = 4;
+	optional double stepDelay = 5;
+	optional RotationDirection rotationDirection = 6;
+	optional double rotationSpeed = 7;
+	optional PanoramaMode panoramaMode = 8;
+	optional string tag = 9;
+}
+
+message RouteSegment {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string uuid = 3;
+	optional int32 order = 4;
+	optional string name = 5;
+	optional Route route = 6;
+	optional RouteDefinition routeDefinition = 7;
+	optional RouteProcessingStatus routeStatus = 8;
+	optional MessageSet messageSet = 9;
+	optional int32 wrongPointNumber = 10;
+	optional ProcessedRoute processedRoute = 11;
+	optional string tag = 12;
+}
+
+message Mission {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional string description = 4;
+	optional int64 creationTime = 5;
+	repeated Route routes = 6;
+	optional User owner = 7;
+	repeated MissionVehicle vehicles = 8;
+	optional string tag = 9;
+}
+
+message MissionPreference {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional User user = 3;
+	optional Mission mission = 4;
+	optional string name = 5;
+	optional string value = 6;
+	optional string tag = 7;
+}
+
+message Telemetry {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional float value = 3;
+	optional int64 time = 4;
+	optional Vehicle vehicle = 5;
+	optional TelemetryType type = 6;
+	optional string tag = 7;
+}
+
+message TelemetryDto {
+	optional float value = 1;
+	optional int64 time = 2;
+	optional TelemetryType type = 3;
+}
+
+message Model {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional int64 creationTime = 4;
+	optional double latitude = 5;
+	optional double longitude = 6;
+	optional double wgs84Altitude = 7;
+	optional double heading = 8;
+	optional double tilt = 9;
+	optional double roll = 10;
+	optional double scaleX = 11;
+	optional double scaleY = 12;
+	optional double scaleZ = 13;
+	optional OrientedBoundingBox boundingBox = 14;
+	optional ModelData data = 16;
+	optional string tag = 17;
+}
+
+message ModelData {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string mimeType = 3;
+	optional bytes data = 4;
+	optional string tag = 5;
+}
+
+message OrientedBoundingBox {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double minLatitude = 3;
+	optional double minLongitude = 4;
+	optional double minAltitude = 5;
+	optional double maxLatitude = 6;
+	optional double maxLongitude = 7;
+	optional double maxAltitude = 8;
+	optional string tag = 9;
+}
+
+message PayloadProfile {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional PayloadType payloadType = 4;
+	optional string imageMimeType = 5;
+	optional bytes imageData = 6;
+	repeated PayloadParameter parameters = 7;
+	repeated PlatformPayloadProfile platforms = 8;
+	optional bool sealed = 9;
+	optional bool unremovable = 10;
+	optional string tag = 11;
+}
+
+message PayloadParameter {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double value = 3;
+	optional PayloadProfile payloadProfile = 4;
+	optional PayloadParameterType type = 5;
+	optional string tag = 6;
+}
+
+message ConeFrustum {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional double topRadius = 4;	/* null or equal to baseRadius in case of cylinder */
+	optional double baseRadius = 5;
+	optional double baseLatitude = 6;
+	optional double baseLongitude = 7;
+	optional AltitudeType altitudeType = 8;
+	optional double baseAltitude = 9;
+	optional double height = 10;
+}
+
+message Prism {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	repeated PolygonPoint points = 4;
+	optional AltitudeType altitudeType = 5;
+	optional double baseAltitude = 6;
+	optional double height = 7;
+}
+
+message PolygonPoint {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional int32 order = 4;
+	optional Prism prism = 5;
+	optional double latitude = 6;
+	optional double longitude = 7;
+}
+
+message ProcessedRoute {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double estimatedDistance = 3;
+	optional double estimatedTime = 4;	
+	repeated Action segmentActions = 5;
+	repeated Action connectionActions = 6;
+	repeated Action optimisedActions = 7;
+	optional string tag = 8;
+}
+
+message Route {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string uuid = 3;
+	optional string name = 4;
+	optional int64 creationTime = 5;
+	optional int64 scheduledTime = 6;
+	optional Mission mission = 7;
+	repeated RouteSegment segments = 8;
+	optional AltitudeType altitudeType = 9;
+	optional TrajectoryType trajectoryType = 10;
+	optional double safeAltitude = 11;
+	optional double maxAltitude = 12;
+	optional double initialSpeed = 13;
+	optional double maxSpeed = 14;
+	optional HomeLocationSource homeLocationSource = 15;
+	optional double homeLatitude = 16;
+	optional double homeLongitude = 17;
+	optional double homeWgs84Altitude = 18;
+	optional double homeAglAltitude = 19;
+	optional EmergencyAction rcLostAction = 20;
+	optional EmergencyAction gpsLostAction = 21;
+	optional EmergencyAction lowBatteryAction = 22;
+	optional VehicleProfile vehicleProfile = 23;
+	optional string tag = 24;
+	optional bool checkAerodromeNfz = 25;
+	optional bool checkCustomNfz = 26;
+}
+
+message User {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string login = 3;
+	optional string password = 4;
+	optional UserRole role = 5;
+	optional string tag = 6;
+	repeated MissionPreference missionPreferences = 7;
+}
+
+message Vsm {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional string host = 4;
+	optional int32 port = 5;
+	optional string protocol = 6;
+	repeated VsmPlatform platforms = 7;
+	optional string tag = 8;
+}
+
+message Vehicle {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int64 vehicleId = 3;
+	optional Vsm vsm = 4;
+	optional string name = 5;
+	optional string tailNumber = 6;
+	optional VehicleType type = 7;
+	optional bool downlinkConnected = 8;
+	optional bool uplinkConnected = 9;
+	optional int32 takeoffCount = 10;
+	optional string fcVersion = 11;
+	optional string ncVersion = 12;
+	optional double altitudeOrigin = 13;
+	repeated VehicleCommandDefinition commandDefinitions = 14;
+	optional Platform platform = 15;
+	optional VehicleProfile profile = 16;
+	optional string tag = 17;
+	optional bool emulator = 18;
+	optional string droneshareUuid = 19;
+}
+
+message Avatar {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string imageMimeType = 3;
+	optional bytes imageData = 4;
+	optional string modelMimeType = 5;
+	optional bytes modelData = 6;
+	optional string name = 7;
+	optional string tag = 8;
+}
+
+message VehicleParameter {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double value = 3;
+	optional VehicleProfile vehicleProfile = 4;
+	optional VehicleParameterType type = 5;
+	optional string tag = 6;
+}
+
+message VehicleProfile {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional VehicleType vehicleType = 4;
+	optional Avatar avatar = 5;
+	repeated VehicleParameter parameters = 6;
+	repeated VehicleProfilePayloadProfile payloadProfiles = 7;
+	optional Platform platform = 8;
+	optional bool sealed = 9;
+	optional bool unremovable = 10;
+	optional string tag = 11;
+}
+
+message Figure {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional FigureType type = 3;
+	repeated FigurePoint points = 4;
+	repeated FigureParameter parameters = 5;
+	optional string tag = 6;
+}
+
+message FigureParameter {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional double value = 4;
+	optional Figure figure = 5;
+	optional string tag = 6;
+}
+
+message FigurePoint {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional double latitude = 4;
+	optional double longitude = 5;
+	optional double wgs84Altitude = 6;
+	optional double aglAltitude = 7;
+	optional AltitudeType altitudeType = 8;
+	optional Figure figure = 9;
+	optional string tag = 10;
+}
+
+message ParameterDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional string name = 4;
+	optional string description = 5;
+	optional ParameterType type = 6;
+	optional bool mandatory = 7;
+	optional string defaultValue = 8;
+	optional string validationRegex = 9;
+	optional TraverseAlgorithm algorithm = 10;
+	optional MetricUnit unit = 11;
+	optional string tag = 12;
+}
+
+message ParameterValue {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional string value = 4;
+	optional RouteDefinition routeDefinition = 5;
+	optional string tag = 6;
+}
+
+message RouteDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional TraverseAlgorithm algorithm = 3;
+	optional Figure figure = 4;
+	optional Model model = 5;
+	repeated ParameterValue parameterValues = 6;
+	repeated ActionDefinition actionDefinitions = 7;
+	optional string tag = 8;
+}
+
+message TraverseAlgorithm {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional string name = 4;
+	optional string implementationClass = 5;
+	optional bool selectFigure = 6;
+	optional FigureType figureType = 7;
+	optional bool selectModel = 8;
+	repeated ParameterDefinition parameterDefinitions = 9;
+	optional string tag = 10;
+}
+
+message ActionDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string uuid = 3;
+	optional int32 order = 4;
+	optional RouteDefinition routeDefinition = 5;
+	optional WaitDefinition waitDefinition = 6;
+	optional PoiDefinition poiDefinition = 7;
+	optional HeadingDefinition headingDefinition = 8;
+	optional CameraControlDefinition cameraControlDefinition = 9;
+	optional CameraTriggerDefinition cameraTriggerDefinition = 10;
+	optional CameraSeriesByTimeDefinition cameraSeriesByTimeDefinition = 11; 
+	optional CameraSeriesByDistanceDefinition cameraSeriesByDistanceDefinition = 12;
+	optional PanoramaDefinition panoramaDefinition = 13;
+	optional string tag = 14;
+}
+
+message CameraControlDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double tilt = 3;
+	optional double roll = 4;
+	optional double yaw = 5;
+	optional int32 zoomLevel = 6;
+	optional string tag = 7;
+}
+
+message CameraTriggerDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional TriggerState state = 3;
+	optional string tag = 5;
+}
+
+message CameraSeriesByTimeDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 4;
+	optional int32 shotsNumber = 5;
+	optional double startDelay = 6;
+	optional string tag = 7;
+}
+
+message CameraSeriesByDistanceDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 4;
+	optional int32 shotsNumber = 5;
+	optional double startDelay = 6;
+	optional string tag = 7;
+}
+
+message HeadingDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double heading = 3;
+	optional string tag = 4;
+}
+
+message PoiDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional PoiMode mode = 3;
+	optional double latitude = 4;
+	optional double longitude = 5;
+	optional double wgs84Altitude = 6;
+	optional double aglAltitude = 7;
+	optional AltitudeType altitudeType = 8;
+	optional string tag = 9;
+}
+
+message WaitDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double interval = 3;
+	optional string tag = 4;
+}
+
+message PanoramaDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional double angle = 3;
+	optional double stepAngle = 4;
+	optional double stepDelay = 5;
+	optional RotationDirection rotationDirection = 6;
+	optional double rotationSpeed = 7;
+	optional PanoramaMode panoramaMode = 8;
+	optional string tag = 9;
+}
+
+message AdsbAircraft {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 icaoAddress = 3;
+	optional IcaoAddressType icaoAddressType = 4;
+	optional int64 updateTime = 5;
+	optional string identification = 6;
+	optional double latitude = 7;
+	optional double longitude = 8;
+	optional double mslAltitude = 9;
+	optional double heading = 10;
+	optional double groundSpeed = 11;
+	optional double verticalVelocity = 12;
+	optional string tag = 13;
+}
+
+message NoFlightZone {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	/* Common characteristics */
+	optional string name = 4;
+	optional NfzType type = 5;
+	optional bool sealed = 6;
+	/* Definition of the volume */
+	optional Prism prism = 7;
+	optional ConeFrustum coneFrustum = 8;
+}
+
+/* The R*Tree index for NoFlightZone */
+message NoFlightZoneRTreeIndex {
+	/* The id of NoFlightZone */
+	optional int32 nfzId = 1;
+	/* Minimum and maximum latitudes */
+	optional double minLat = 2;
+	optional double maxLat = 3;
+	/* Minimum and maximum longitudes */
+	optional double minLng = 4;
+	optional double maxLng = 5;
+}
+
+// Doesn't contain version field 
+// as not a part of domain
+message Version {
+	optional int32 id = 1;
+	optional int32 major = 2;
+	optional int32 minor = 3;
+	optional Component component = 4;
+}
+
+message CommandDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string code = 3;
+	optional string name = 4;
+	optional string tag = 5;
+}
+
+message VehicleCommandDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Vehicle vehicle = 3;
+	optional CommandDefinition commandDefinition = 4;
+	optional bool enabled = 5;
+	optional string tag = 6;
+}
+
+message VehicleLogEntry {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int64 time = 3;
+	optional Vehicle vehicle = 4;
+	optional string message = 5;
+	optional SeverityLevel level = 6;
+	optional ProcessStage stage = 7;
+	optional VehicleLogEntryType type = 8;
+	optional CommandLogArguments commandArguments = 9;
+	optional UploadLogArguments uploadArguments = 10;
+	optional VideoRecordingLogArguments videoRecordingArguments = 11;
+	optional string tag = 12;
+}
+
+message CommandLogArguments {
+	optional int32 id = 1;
+	optional User user = 2;
+	optional string commandCode = 3;
+	optional string tag = 4;
+}
+
+message UploadLogArguments {
+	optional int32 id = 1;
+	optional User user = 2;
+	optional Route route = 3;
+	optional string tag = 4;
+}
+
+message VideoRecordingLogArguments {
+	optional int32 id = 1;
+	optional User user = 2;
+	optional string streamId = 3;
+	optional VideoEventType videoEventType = 4;
+	optional string videoServerHost = 5;
+	optional int32 videoServerPort = 6;
+	optional string tag = 7;
+}
+
+message License {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string type = 3;
+	optional string activationCode = 4;
+	optional int64 activationTime = 5;
+	optional string tag = 6;
+}
+
+message Platform {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string code = 3;
+	optional string name = 4;
+	repeated PlatformTraverseAlgorithm algorithms = 5;
+	repeated PlatformAction actions = 6;
+	repeated PlatformTelemetryType telemetryTypes = 7;
+	repeated VehicleProfile vehicleProfiles = 8;
+	repeated PlatformPayloadProfile payloadProfiles = 9;
+	optional string tag = 10;
+}
+
+message VsmPlatform {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Vsm vsm = 3;
+	optional Platform platform = 4;
+	optional string tag = 5;
+}
+
+message PlatformAction {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Platform platform = 3;
+	optional ActionCode actionCode = 4;
+	optional string tag = 5;
+}
+
+message PlatformTraverseAlgorithm {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Platform platform = 3;
+	optional VehicleType vehicleType = 4;
+	optional TraverseAlgorithm algorithm = 5;
+	optional int32 order = 6;
+	optional string tag = 7;
+}
+
+message PlatformTelemetryType {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Platform platform = 3;
+	optional TelemetryType type = 4;
+	optional bool compactView = 5;
+	optional bool detailedView = 6;
+	optional string tag = 7;
+}
+
+message VehicleProfilePayloadProfile {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional VehicleProfile vehicleProfile = 3;
+	optional PayloadProfile payloadProfile = 4;
+	optional string tag = 5;
+}
+
+message PlatformPayloadProfile {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Platform platform = 3;
+	optional PayloadProfile payloadProfile = 4;
+	optional string tag = 5;
+}
+
+message MissionVehicle {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Mission mission = 3;
+	optional Vehicle vehicle = 4;
+	optional string tag = 5;
+}
+
+message TelemetryInterval {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional int64 beginningTime = 4;
+	optional int64 endTime = 5;
+	repeated TelemetryIntervalVehicle vehicles = 6;
+	optional string tag = 7;
+}
+
+message TelemetryIntervalVehicle {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional TelemetryInterval interval = 3;
+	optional Vehicle vehicle = 4;
+	optional string tag = 5;
+}
+
+message ElevationSource {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional GeoServer geoServer = 4;
+	optional string sourceName = 5;
+	optional string tag = 6;
+	optional bool enabled = 7;
+}
+
+message FeatureSource {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional GeoServer geoServer = 4;
+	optional string sourceName = 5;
+	optional FeatureType featureType = 6;
+	optional bool enabled = 7;
+	optional string tag = 8;
+}
+
+message GeoServer {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string name = 3;
+	optional string uri = 4;
+	repeated ElevationSource elevationSources = 6;
+	repeated FeatureSource featureSources = 7;
+	optional string tag = 8;
+}
+
+message UtmOperation {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Vehicle vehicle = 3;
+	optional UtmOperationStatus status = 4;
+	optional string gufi = 5;
+	optional string flightNumber = 6;
+	optional int64 effectiveBeginningTime = 7;
+	optional int64 effectiveEndTime = 8;
+	optional string tag = 9;
+}
+
+// Generic CRUD services //////////////////////////////////////////////////////
+
+message DomainObjectWrapper {
+	optional Action action = 1;
+	optional ActionDefinition actionDefinition = 2;
+	optional AdsbAircraft adsbAircraft = 3;
+	optional Avatar avatar = 4;
+	optional CameraControl cameraControl = 5;
+	optional CameraControlDefinition cameraControlDefinition = 6;
+	optional CameraTrigger cameraTrigger = 7;
+	optional CameraTriggerDefinition cameraTriggerDefinition = 8;
+	optional CommandDefinition commandDefinition = 9;
+	optional Figure figure = 10;
+	optional FigureParameter figureParameter = 11;
+	optional FigurePoint figurePoint = 12;
+	optional HeadingChange headingChange = 13;
+	optional HeadingDefinition headingDefinition = 14;
+	optional HomeLocation homeLocation = 15;
+	optional Landing landing = 16;
+	optional License license = 18;
+	optional Mission mission = 19;
+	optional MissionPreference missionPreference = 21;
+	optional MissionVehicle missionVehicle = 22;
+	optional Model model = 23;
+	optional ModelData modelData = 24;
+	optional NoFlightZone noFlightZone = 25;
+	optional Panorama panorama = 26;
+	optional PanoramaDefinition panoramaDefinition = 27;
+	optional ParameterDefinition parameterDefinition = 28;
+	optional ParameterValue parameterValue = 29;
+	optional PayloadParameter payloadParameter = 30;
+	optional PayloadProfile payloadProfile = 31;
+	optional Platform platform = 32;
+	optional PlatformPayloadProfile platformPayloadProfile = 33;
+	optional PlatformTelemetryType platformTelemetryType = 34;
+	optional PlatformTraverseAlgorithm platformTraverseAlgorithm = 35;
+	optional PoiChange poiChange = 36;
+	optional PoiDefinition poiDefinition = 37;
+	optional Prism prism = 38;
+	optional PolygonPoint polygonPoint = 39;
+	optional ProcessedRoute processedRoute = 40;
+	optional Route route = 41;
+	optional RouteDefinition routeDefinition = 42;
+	optional RouteSegment routeSegment = 43;
+	optional SpeedChange speedChange = 44;
+	optional Takeoff takeoff = 45;
+	optional Telemetry telemetry = 46;
+	optional TraverseAlgorithm traverseAlgorithm = 47;
+	optional User user = 48;
+	optional Vehicle vehicle = 49;
+	optional VehicleCommandDefinition vehicleCommandDefinition = 50;
+	optional VehicleLogEntry vehicleLogEntry = 51;
+	optional VehicleParameter vehicleParameter = 52;
+	optional VehicleProfile vehicleProfile = 53;
+	optional VehicleProfilePayloadProfile vehicleProfilePayloadProfile = 54;
+	optional Vsm vsm = 55;
+	optional VsmPlatform vsmPlatform = 56;
+	optional Wait wait = 57;
+	optional WaitDefinition waitDefinition = 58;
+	optional Waypoint waypoint = 59;
+	optional MessageSet messageSet = 60;
+	optional LocalisedMessage localisedMessage = 61;
+	optional LocalisedMessageVariant localisedMessageVariant = 62;
+	optional TelemetryInterval telemetryInterval = 63;
+	optional TelemetryIntervalVehicle telemetryIntervalVehicle = 64;
+	optional CommandLogArguments commandLogArguments = 65;
+	optional UploadLogArguments uploadLogArguments = 66;
+	optional ElevationSource elevationSource = 67;
+	optional GeoServer geoServer = 68;
+	optional CameraSeriesByDistance cameraSeriesByDistance = 69;
+	optional CameraSeriesByDistanceDefinition cameraSeriesByDistanceDefinition = 70;
+	optional CameraSeriesByTime cameraSeriesByTime = 71;
+	optional CameraSeriesByTimeDefinition cameraSeriesByTimeDefinition = 72;
+	optional PlatformAction platformAction = 73;
+	optional FeatureSource featureSource = 74;
+	optional VideoRecordingLogArguments videoRecordingLogArguments = 75;
+	optional UtmOperation utmOperation = 76;
+}
+
+// Non-persistent types ///////////////////////////////////////////////////////
+
+message Lock {
+	optional string objectType = 1;
+	optional int32 objectId = 2;
+	optional User owner = 3;
+}
+
+message Selection {
+	optional string selectionId = 1;
+	repeated SelectionItem items = 2;
+}
+
+message SelectionItem {
+	optional string value = 1;
+	optional string description = 2;
+	optional bool markDefault = 3;
+}
+
+// Events /////////////////////////////////////////////////////////////////////
+
+enum ModificationType {
+	MT_CREATE = 0;
+	MT_UPDATE = 1;
+	MT_DELETE = 2;
+}
+
+message ObjectModificationEvent {
+	optional ModificationType modificationType = 1;
+	optional string objectType = 2;
+	optional int32 objectId = 3;
+	optional DomainObjectWrapper object = 4;
+}
+
+message ObjectModificationSubscription {
+	optional string objectType = 1;
+	optional int32 objectId = 2;
+}
+
+message LockEvent {
+	optional string objectType = 1;
+	optional int32 objectId = 2;
+	optional Lock lock = 3;
+}
+
+message LockSubscription {
+	optional string objectType = 1;
+	optional int32 objectId = 2;
+}
+
+message TelemetryEvent {
+	optional Vehicle vehicle = 1;
+	repeated Telemetry telemetry = 2;
+}
+
+message TelemetrySubscription {
+	optional Vehicle vehicle = 1;
+}
+
+message TelemetryRemovalEvent {
+	optional Vehicle vehicle = 1;
+	optional int64 fromTime = 2;
+	optional int64 toTime = 3;
+}
+
+message TelemetryRemovalSubscription {
+	optional Vehicle vehicle = 1;
+}
+
+message AdsbIndicatorEvent {
+	optional bool on = 1;
+}
+
+message AdsbIndicatorSubscription {
+}
+
+message EventWrapper {
+	optional ObjectModificationEvent objectModificationEvent = 1;
+	optional LockEvent lockEvent = 2;
+	optional TelemetryEvent telemetryEvent = 3;
+	optional TelemetryRemovalEvent telemetryRemovalEvent = 4;
+	optional AdsbIndicatorEvent adsbIndicatorEvent = 5;
+}
+
+message EventSubscriptionWrapper {
+	optional ObjectModificationSubscription objectModificationSubscription = 1;
+	optional LockSubscription lockSubscription = 2;
+	optional TelemetrySubscription telemetrySubscription = 3;
+	optional TelemetryRemovalSubscription telemetryRemovalSubscription = 4;
+	optional AdsbIndicatorSubscription adsbIndicatorSubscription = 5;
+}

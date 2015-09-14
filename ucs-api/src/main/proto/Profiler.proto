@@ -1,0 +1,22 @@
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "ProfilerProto";
+
+message ActionSummary {
+	required string actionType = 1;
+	required int64 count = 2;
+	required int64 errorCount = 3;
+	required int64 activeCount = 4;
+	required int64 minTime = 5;
+	required int64 maxTime = 6;
+	required int64 avgTime = 7;
+	required int64 firstStartTimeMillis = 8;
+	required int64 lastStopTimeMillis = 9;
+}
+
+message ActionSummaryRequest {
+}
+
+message ActionSummaryResponse {
+	repeated ActionSummary summaries = 1;
+	optional int32 coma = 2 [default = 0];
+}
