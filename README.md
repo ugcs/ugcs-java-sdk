@@ -1,6 +1,6 @@
 # ucs-java-client
 
-To build the project you will need to install [protobuf compiler 2.4.1](https://github.com/google/protobuf/releases/tag/v2.4.1) to your system.
+To build the project you will need to install [protobuf compiler 2.4.1](https://github.com/google/protobuf/releases/tag/v2.4.1) to your system. Add `protoc` executable to the project root directory or place it somewhere listed in the path system variable.
 
 # Building and Running Samples
 
