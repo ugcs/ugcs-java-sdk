@@ -95,17 +95,18 @@ enum TelemetryType {
 	TT_CAMERA_FOV_VERTICAL = 49;
 	TT_GPS_FIX_TYPE = 50;
 	TT_RC_LINK_QUALITY = 51;
+	TT_ADSB_TRANSPONDER_MODE = 52;
+	TT_ADSB_IDENT_STATE = 53;
+	TT_ADSB_SQUAWK_CODE = 54;
+	TT_ADSB_ALTITUDE_SOURCE = 55;
+	TT_ADSB_ALTITUDE = 56;
+	TT_ADSB_ERROR_FLAGS = 57;
 }
 
 enum VehicleType {
-	VT_TRICOPTER = 0;
-	VT_QUADCOPTER = 1;
-	VT_HEXACOPTER = 2;
-	VT_OCTOCOPTER = 3;
-	VT_FIXED_WING = 4;
-	VT_SINGLE_ROTOR_HELICOPTER = 5;
-	VT_COAXIAL_HELICOPTER = 6;
-	VT_TANDEM_HELICOPTER = 7;
+	VT_FIXED_WING = 0;
+	VT_HELICOPTER = 1;
+	VT_MULTICOPTER = 2;
 }
 
 enum VehicleParameterType {
@@ -138,6 +139,19 @@ enum VehicleParameterType {
 	VPT_GLIDE_SLOPE = 26;
 	VPT_DEFAULT_GROUND_SPEED = 27;
 	VPT_LANDING_GROUND_SPEED = 28;
+	VPT_MAX_ALTITUDE_AGL = 29;
+	VPT_LANDING_FLARE_ALTITUDE = 30;
+	VPT_LANDING_FLARE_TIME = 31;
+	VPT_MIN_LANDING_PITCH = 32;
+	VPT_LANDING_FLARE_DAMP = 33;
+	VPT_LANDING_APPROACH_AIRSPEED = 34;
+	VPT_LANDING_SPEED_WEIGHTING = 35;
+	VPT_MAX_AUTO_FLIGHT_PITCH = 36;
+	VPT_MAX_PITCH = 37;
+	VPT_MIN_THROTTLE = 38;
+	VPT_LANDING_SINK_RATE = 39;
+	VPT_LANDING_RANGEFINDER_ENABLED = 40;
+	VPT_MIN_RANGEFINDER_DISTANCE = 41;
 }
 
 enum PayloadType {
@@ -694,7 +708,6 @@ message Vsm {
 	optional string host = 4;
 	optional int32 port = 5;
 	optional string protocol = 6;
-	repeated VsmPlatform platforms = 7;
 	optional string tag = 8;
 }
 
@@ -708,9 +721,6 @@ message Vehicle {
 	optional VehicleType type = 7;
 	optional bool downlinkConnected = 8;
 	optional bool uplinkConnected = 9;
-	optional int32 takeoffCount = 10;
-	optional string fcVersion = 11;
-	optional string ncVersion = 12;
 	optional double altitudeOrigin = 13;
 	repeated VehicleCommandDefinition commandDefinitions = 14;
 	optional Platform platform = 15;
@@ -718,6 +728,11 @@ message Vehicle {
 	optional string tag = 17;
 	optional bool emulator = 18;
 	optional string droneshareUuid = 19;
+	optional double homeLatitude = 20;
+	optional double homeLongitude = 21;
+	optional double homeAltitude = 22;
+	optional int32 icaoAddress = 23;
+	repeated AdsbAircraft adsbAircrafts = 24;
 }
 
 message Avatar {
@@ -752,6 +767,7 @@ message VehicleProfile {
 	optional bool sealed = 9;
 	optional bool unremovable = 10;
 	optional string tag = 11;
+	optional bool primary = 12;
 }
 
 message Figure {
@@ -873,7 +889,8 @@ message CameraSeriesByTimeDefinition {
 	optional double interval = 4;
 	optional int32 shotsNumber = 5;
 	optional double startDelay = 6;
-	optional string tag = 7;
+	optional bool autoCalc = 7;
+	optional string tag = 8;
 }
 
 message CameraSeriesByDistanceDefinition {
@@ -882,7 +899,8 @@ message CameraSeriesByDistanceDefinition {
 	optional double interval = 4;
 	optional int32 shotsNumber = 5;
 	optional double startDelay = 6;
-	optional string tag = 7;
+	optional bool autoCalc = 7;
+	optional string tag = 8;
 }
 
 message HeadingDefinition {
@@ -937,6 +955,8 @@ message AdsbAircraft {
 	optional double groundSpeed = 11;
 	optional double verticalVelocity = 12;
 	optional string tag = 13;
+	optional string registration = 14;
+	optional Vehicle vehicle = 15;
 }
 
 message NoFlightZone {
@@ -978,7 +998,23 @@ message CommandDefinition {
 	optional int32 version = 2;
 	optional string code = 3;
 	optional string name = 4;
-	optional string tag = 5;
+	repeated CommandArgumentDefinition argumentDefinitions = 5;
+	optional string tag = 6;
+}
+
+message CommandArgumentDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 order = 3;
+	optional string name = 4;
+	optional string description = 5;
+	optional ParameterType type = 6;
+	optional bool mandatory = 7;
+	optional MetricUnit unit = 8;
+	optional string defaultValue = 9;
+	optional string validationRegex = 10;
+	optional CommandDefinition command = 11;
+	optional string tag = 12;
 }
 
 message VehicleCommandDefinition {
@@ -1049,14 +1085,6 @@ message Platform {
 	repeated VehicleProfile vehicleProfiles = 8;
 	repeated PlatformPayloadProfile payloadProfiles = 9;
 	optional string tag = 10;
-}
-
-message VsmPlatform {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional Vsm vsm = 3;
-	optional Platform platform = 4;
-	optional string tag = 5;
 }
 
 message PlatformAction {
@@ -1228,7 +1256,6 @@ message DomainObjectWrapper {
 	optional VehicleProfile vehicleProfile = 53;
 	optional VehicleProfilePayloadProfile vehicleProfilePayloadProfile = 54;
 	optional Vsm vsm = 55;
-	optional VsmPlatform vsmPlatform = 56;
 	optional Wait wait = 57;
 	optional WaitDefinition waitDefinition = 58;
 	optional Waypoint waypoint = 59;
@@ -1249,6 +1276,7 @@ message DomainObjectWrapper {
 	optional FeatureSource featureSource = 74;
 	optional VideoRecordingLogArguments videoRecordingLogArguments = 75;
 	optional UtmOperation utmOperation = 76;
+	optional CommandArgumentDefinition commandArgumentDefinition = 77;
 }
 
 // Non-persistent types ///////////////////////////////////////////////////////
@@ -1268,6 +1296,16 @@ message SelectionItem {
 	optional string value = 1;
 	optional string description = 2;
 	optional bool markDefault = 3;
+}
+
+message Command {
+	optional string code = 1;
+	repeated CommandArgument arguments = 2;
+}
+
+message CommandArgument {
+	optional string name = 1;
+	optional string value = 2;
 }
 
 // Events /////////////////////////////////////////////////////////////////////
@@ -1327,12 +1365,25 @@ message AdsbIndicatorEvent {
 message AdsbIndicatorSubscription {
 }
 
+message VehicleTargetLocationEvent {
+	optional Vehicle vehicle = 1;
+	optional int64 sequenceId = 2;
+	optional double targetLocationLatitude = 3;
+	optional double targetLocationLongitude = 4;	
+	optional double targetLocationAltitude = 5;	
+	optional double acceptanceRadius = 6;
+}
+
+message VehicleTargetLocationSubscription {
+}
+
 message EventWrapper {
 	optional ObjectModificationEvent objectModificationEvent = 1;
 	optional LockEvent lockEvent = 2;
 	optional TelemetryEvent telemetryEvent = 3;
 	optional TelemetryRemovalEvent telemetryRemovalEvent = 4;
 	optional AdsbIndicatorEvent adsbIndicatorEvent = 5;
+	optional VehicleTargetLocationEvent vehicleTargetLocationEvent = 6;
 }
 
 message EventSubscriptionWrapper {
@@ -1341,4 +1392,5 @@ message EventSubscriptionWrapper {
 	optional TelemetrySubscription telemetrySubscription = 3;
 	optional TelemetryRemovalSubscription telemetryRemovalSubscription = 4;
 	optional AdsbIndicatorSubscription adsbIndicatorSubscription = 5;
+	optional VehicleTargetLocationSubscription vehicleTargetLocationSubscription = 6;
 }

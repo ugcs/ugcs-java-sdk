@@ -73,6 +73,7 @@ message LicensePermissionsDto {
 	repeated PlatformAndBooleanPairDto adsbReceiver = 11;
 	repeated PlatformAndBooleanPairDto videoRecording = 12;
 	repeated PlatformAndBooleanPairDto cameraFootprint = 13;
+	repeated PlatformAndBooleanPairDto adsbTransponder = 14;
 }
 
 message PlatformAndBooleanPairDto {
@@ -90,6 +91,13 @@ message PlatformAndDoublePairDto {
 	required double value = 2;
 }
 
+message VehicleTargetLocationDto {
+	required Vehicle vehicle = 1;
+	required int64 sequenceId = 2;
+	optional Wgs84LocationDto location = 3;
+	optional double acceptanceRadius = 4;
+}
+
 // Messages ///////////////////////////////////////////////////////////////////
 
 // Error 
@@ -100,6 +108,7 @@ message Error {
 
 message AuthorizeHciRequest {
 	required int32 clientId = 1 [default = -1];
+	optional string locale = 2;
 }
 
 message AuthorizeHciResponse {
@@ -435,7 +444,7 @@ message GetVehicleLogByTimeRangeResponse {
 
 message SendCommandRequest {
 	required int32 clientId = 1;
-	required string commandCode = 2;
+	required Command command = 2;
 	required Vehicle vehicle = 3;
 }
 
@@ -629,7 +638,7 @@ message CheckMultipleLocksResponse {
 message GetMissionPreferencesRequest {
 	required int32 clientId = 1;
 	required User user = 2;
-	required Mission mission = 3;
+	optional Mission mission = 3;
 }
 
 message GetMissionPreferencesResponse {
@@ -675,6 +684,15 @@ message GetCapabilitiesRequest {
 
 message GetCapabilitiesResponse {
 	required bool utm = 1 [default = false];
+}
+
+message GetVehicleTargetLocationsRequest {
+	required int32 clientId = 1;
+}
+
+message GetVehicleTargetLocationsResponse {
+	required int32 clientId = 1;
+	repeated VehicleTargetLocationDto targetLocations = 2;
 }
 
 // Events

@@ -2,16 +2,21 @@ package com.ugcs.messaging.mina;
 
 import java.io.IOException;
 import java.net.SocketAddress;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
+import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.future.IoFutureListener;
 import org.apache.mina.core.session.IdleStatus;
+import org.apache.mina.core.session.IoEventType;
 import org.apache.mina.core.session.IoSession;
-import org.apache.mina.filter.codec.ProtocolCodecFactory;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.executor.ExecutorFilter;
+import org.apache.mina.filter.executor.OrderedThreadPoolExecutor;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.SocketConnector;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
@@ -19,7 +24,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.ugcs.messaging.api.CodecFactory;
-import com.ugcs.messaging.api.ConnectionListener;
+import com.ugcs.messaging.api.ConnectListener;
 import com.ugcs.messaging.api.Connector;
 import com.ugcs.messaging.api.MessageSession;
 import com.ugcs.messaging.api.MessageSessionErrorEvent;
@@ -29,38 +34,63 @@ import com.ugcs.messaging.api.MessageSessionListener;
 public class MinaConnector implements Connector {
 	private static final Logger log = LoggerFactory.getLogger(MinaConnector.class);
 	
-	private static final int DEFAULT_IO_PROCESSORS = 16;
-	private static final int DEFAULT_THREAD_POOL_SIZE = 32;
+	private static final int DEFAULT_IO_PROCESSORS = 4;
+	private static final int DEFAULT_THREAD_POOL_SIZE = 16;
 	private static final int DEFAULT_SESSION_IDLE_SECONDS = 300;
 	
 	private final SocketConnector connector;
-	private final ExecutorService executorService;
 	private final MinaAdapter minaAdapter;
-	
-	public MinaConnector(CodecFactory codecFactory, int ioProcessors, int threadPoolSize) {
-		this(new MinaCodecFactory(codecFactory), ioProcessors, threadPoolSize);
-	}
+	private final List<ExecutorService> executors = new ArrayList<>();
 	
 	public MinaConnector(CodecFactory codecFactory) {
-		this(new MinaCodecFactory(codecFactory), DEFAULT_IO_PROCESSORS, DEFAULT_THREAD_POOL_SIZE);
+		this(codecFactory, DEFAULT_IO_PROCESSORS, DEFAULT_THREAD_POOL_SIZE, false, false);
+	}
+
+	public MinaConnector(CodecFactory codecFactory, int ioProcessors, int threadPoolSize) {
+		this(codecFactory, ioProcessors, threadPoolSize, false, false);
 	}
 	
-	public MinaConnector(ProtocolCodecFactory codecFactory, int ioProcessors, int threadPoolSize) {
+	public MinaConnector(CodecFactory codecFactory, int ioProcessors, int threadPoolSize, 
+			boolean orderedRead, boolean orderedWrite) {
 		if (codecFactory == null)
 			throw new IllegalArgumentException("codecFactory");
 		
-		log.debug("Initializing connector {I/O processors: {}, pool size: {}}", 
+		log.info("Initializing connector {I/O processors: {}, pool size: {}, ordered R/W: {}/{}}", 
 				Integer.toString(ioProcessors),
-				threadPoolSize > 0 ? Integer.toString(threadPoolSize) : "unbounded");
+				threadPoolSize > 0 ? Integer.toString(threadPoolSize) : "unbounded",
+				orderedRead,
+				orderedWrite);
 
 		this.connector = new NioSocketConnector(ioProcessors);
-		this.executorService = threadPoolSize > 0 ?
-					Executors.newFixedThreadPool(threadPoolSize) :
-					Executors.newCachedThreadPool();
+		DefaultIoFilterChainBuilder filters = this.connector.getFilterChain();
 		
-		this.connector.getFilterChain().addLast("codec", new ProtocolCodecFilter(codecFactory));
-		this.connector.getFilterChain().addLast("threadPool", new ExecutorFilter(executorService));
-		this.connector.getFilterChain().addLast("logger", new LoggingFilter());
+		// encoding
+		filters.addLast("codec", new ProtocolCodecFilter(new MinaCodecFactory(codecFactory)));
+		
+		// thread model
+		if (orderedRead && orderedWrite) {
+			ExecutorService executor = newOrderedExecutor(threadPoolSize);
+			executors.add(executor);
+			filters.addLast("threadPool-RW", new ExecutorFilter(executor));
+		} else if (!orderedRead && !orderedWrite) {
+			ExecutorService executor = newExecutor(threadPoolSize);
+			executors.add(executor);
+			filters.addLast("threadPool-RW", new ExecutorFilter(executor));
+		} else {
+			ExecutorService readExecutor = orderedRead
+					? newOrderedExecutor(threadPoolSize)
+					: newExecutor(threadPoolSize);
+			executors.add(readExecutor);
+			filters.addLast("threadPool-R", new ExecutorFilter(readExecutor));
+			ExecutorService writeExecutor = orderedWrite
+					? newOrderedExecutor(threadPoolSize)
+					: newExecutor(threadPoolSize);
+			executors.add(writeExecutor);
+			filters.addLast("threadPool-W", new ExecutorFilter(writeExecutor, IoEventType.WRITE));
+		}
+
+		// logging
+		filters.addLast("logger", new LoggingFilter());
 
 		// session handler
 		this.minaAdapter = new MinaAdapter();
@@ -74,8 +104,20 @@ public class MinaConnector implements Connector {
 		this.connector.getSessionConfig().setTcpNoDelay(true);
 	}
 	
-	public MinaConnector(ProtocolCodecFactory codecFactory) {
-		this(codecFactory, DEFAULT_IO_PROCESSORS, DEFAULT_THREAD_POOL_SIZE);
+	private ExecutorService newExecutor(int threadPoolSize) {
+		return threadPoolSize > 0
+				? Executors.newFixedThreadPool(threadPoolSize)
+				: Executors.newCachedThreadPool();
+	}
+	
+	private ExecutorService newOrderedExecutor(int threadPoolSize) {
+		return new OrderedThreadPoolExecutor(
+				0,
+				threadPoolSize > 0 ? threadPoolSize : DEFAULT_THREAD_POOL_SIZE,
+				30,
+				TimeUnit.SECONDS,
+				Executors.defaultThreadFactory(),
+				null);
 	}
 	
 	public void addSessionListener(MessageSessionListener sessionListener) {
@@ -106,7 +148,7 @@ public class MinaConnector implements Connector {
 		return minaAdapter.getMessageSession(minaSession);
 	}
 
-	public void connectNonBlocking(SocketAddress address, final ConnectionListener listener) {
+	public void connectNonBlocking(SocketAddress address, final ConnectListener listener) {
 		if (address == null)
 			throw new IllegalArgumentException("address");
 		
@@ -118,30 +160,30 @@ public class MinaConnector implements Connector {
 					if (future == null)
 						throw new IllegalArgumentException("future");
 					
-					// connect future status
 					if (!future.isConnected() || future.getException() != null) {
 						MessageSessionErrorEvent event = new MessageSessionErrorEvent(
 								MinaConnector.this,
 								null,
 								future.getException());
-						listener.connectionError(event);
+						listener.connectError(event);
 						return;
 					}
-					
-					// mina session
+					MessageSession messageSession = null;
 					try {
 						IoSession minaSession = future.getSession();
-						MessageSessionEvent event = new MessageSessionEvent(
-								MinaConnector.this,
-								minaAdapter.getMessageSession(minaSession));
-						listener.connected(event);
+						messageSession = minaAdapter.getMessageSession(minaSession);
 					} catch (Throwable e) {
 						MessageSessionErrorEvent event = new MessageSessionErrorEvent(
 								MinaConnector.this,
 								null,
 								e);
-						listener.connectionError(event);
+						listener.connectError(event);
+						return;
 					}
+					MessageSessionEvent event = new MessageSessionEvent(
+							MinaConnector.this,
+							messageSession);
+					listener.connected(event);
 				}});
 		}
 	}
@@ -152,7 +194,8 @@ public class MinaConnector implements Connector {
 			session.close(false);
 		// disposing selector resources
 		connector.dispose();
-		// stopping thread poll tasks
-		executorService.shutdown();
+		// stopping executor services
+		for (ExecutorService executor : executors)
+			executor.shutdown();
 	}
 }

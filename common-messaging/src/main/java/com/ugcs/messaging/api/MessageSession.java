@@ -1,5 +1,6 @@
 package com.ugcs.messaging.api;
 
+import java.io.IOException;
 import java.net.SocketAddress;
 
 /**
@@ -21,7 +22,7 @@ public interface MessageSession {
 	Object getAttribute(Object key);
 	Object getAttribute(Object key, Object defaultValue);
 	boolean isOpened();
-	void close();
-	void closeNonBlocking();
+	void close() throws IOException;
+	void closeNonBlocking(CloseListener listener);
 	void send(Object message);
 }

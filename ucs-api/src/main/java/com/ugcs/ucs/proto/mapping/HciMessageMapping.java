@@ -122,6 +122,8 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(119, SubmitUtmOperationResponse.class);
 		putMapping(120, GetCapabilitiesRequest.class);
 		putMapping(121, GetCapabilitiesResponse.class);
+		putMapping(122, MessagesProto.GetVehicleTargetLocationsRequest.class);
+		putMapping(123, MessagesProto.GetVehicleTargetLocationsResponse.class);
 		
 		putMapping(240, MessagesProto.GetModelListRequest.class);
 		putMapping(241, MessagesProto.GetModelListResponse.class);

@@ -34,7 +34,7 @@ import com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest;
 
 public class UploadSingleWaypointRoute {
 	public static void main(String[] args) {
-		String tailNumber = null;
+		String vehicleName = null;
 		double[] waypoint = null;
 		double speed = 5.0;
 		
@@ -64,14 +64,14 @@ public class UploadSingleWaypointRoute {
 				speed = Double.parseDouble(args[++i]);
 				continue;
 			}
-			tailNumber = args[i];
+			vehicleName = args[i];
 			break;
 		}
-		if (tailNumber == null)
+		if (vehicleName == null)
 			usage = true;
 		
 		if (usage) {
-			System.err.println("UploadSingleWaypointRoute -w waypoint [-s speed] tailNumber");
+			System.err.println("UploadSingleWaypointRoute -w waypoint [-s speed] vehicleName");
 			System.err.println("");
 			System.err.println("\tWaypoint is specified as \"lat,lon,alt\" string, with respective values");
 			System.err.println("\tin degrees (latitude and longitude) and AGL meters (altitude). Positive");
@@ -83,7 +83,7 @@ public class UploadSingleWaypointRoute {
 			System.exit(1);
 		} else {
 			try {
-				uploadSingleWaypointRoute(tailNumber, waypoint, speed);
+				uploadSingleWaypointRoute(vehicleName, waypoint, speed);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
 				System.exit(1);
@@ -91,7 +91,7 @@ public class UploadSingleWaypointRoute {
 		}
 	}
 	
-	public static void uploadSingleWaypointRoute(String tailNumber, double[] waypoint, double speed) throws Exception {
+	public static void uploadSingleWaypointRoute(String vehicleName, double[] waypoint, double speed) throws Exception {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		Properties properties = new Properties();
 		try (InputStream in = classLoader.getResourceAsStream("client.properties")) {
@@ -121,10 +121,10 @@ public class UploadSingleWaypointRoute {
 					properties.getProperty("user.login"),
 					properties.getProperty("user.password"));
 
-			// Find a vehicle with the specified tail number.
-			Vehicle vehicle = session.lookupVehicle(tailNumber);
+			// Find a vehicle with the specified name.
+			Vehicle vehicle = session.lookupVehicle(vehicleName);
 			if (vehicle == null)
-				throw new IllegalStateException("Vehicle not found: " + tailNumber);
+				throw new IllegalStateException("Vehicle not found: " + vehicleName);
 			
 			// Build a route, containing a single waypoint, that should be
 			// approached with the specified speed.
@@ -260,9 +260,9 @@ public class UploadSingleWaypointRoute {
 			return null;
 		}	
 		
-		public Vehicle lookupVehicle(String tailNumber) throws Exception {
-			if (tailNumber == null || tailNumber.isEmpty())
-				throw new IllegalArgumentException("tailNumber cannot be empty");
+		public Vehicle lookupVehicle(String vehicleName) throws Exception {
+			if (vehicleName == null || vehicleName.isEmpty())
+				throw new IllegalArgumentException("vehicleName cannot be empty");
 			
 			GetObjectListRequest request = GetObjectListRequest.newBuilder()
 					.setClientId(clientId)
@@ -272,7 +272,7 @@ public class UploadSingleWaypointRoute {
 			for (DomainObjectWrapper item : response.getObjectsList()) {
 				if (item == null || item.getVehicle() == null)
 					continue;
-				if (tailNumber.equals(item.getVehicle().getTailNumber()))
+				if (vehicleName.equalsIgnoreCase(item.getVehicle().getName()))
 					return item.getVehicle();
 			}
 			return null;

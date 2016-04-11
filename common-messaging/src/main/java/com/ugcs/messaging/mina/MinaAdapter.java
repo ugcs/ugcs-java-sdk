@@ -16,9 +16,6 @@ import com.ugcs.messaging.api.MessageSessionListener;
 
 class MinaAdapter extends IoHandlerAdapter {
 	private static final Logger log = LoggerFactory.getLogger(MinaAdapter.class);
-	
-	// CopyOnWriteArrayList provides synchronized iterator,
-	// so there is no need to copy or sync listeners list
 	private final List<MessageSessionListener> sessionListeners =
 			new CopyOnWriteArrayList<MessageSessionListener>();
 	

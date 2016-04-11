@@ -1,10 +1,26 @@
-# ucs-java-client
+[![Release](https://jitpack.io/v/UgCS/ugcs-java-sdk.svg)](https://jitpack.io/#UgCS/ugcs-java-sdk)
 
-To build the project you will need to install [protobuf compiler 2.4.1](https://github.com/google/protobuf/releases/tag/v2.4.1) to your system. Add `protoc` executable to the project root directory or place it somewhere listed in the path system variable.
+API and client libraries for the [UgCS Ground Control Station](https://www.ugcs.com/). Available via the [JitPack build](https://jitpack.io/#UgCS/ugcs-java-sdk):
 
-# Building and Running Samples
+```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+```
+<dependency>
+    <groupId>com.github.UgCS</groupId>
+    <artifactId>ugcs-java-sdk</artifactId>
+    <version>2.8.1</version>
+</dependency>
+```
 
-Build a client package.
+## Running Samples
+
+Build a package.
 
 ```
 mvn clean package
@@ -13,18 +29,19 @@ mvn clean package
 Go to the output directory containing jars and `client.properties` file.
 
 ```
-target/ucs-java-client-1.0-bin/ucs-client
+target/ugcs-java-sdk-{release-version}/ucs-client
 ```
+
+Modify the `client.properties` if necessary. Make sure the target UgCS server instance is running.
 
 The example below starts a telemetry listener for 10 seconds.
 
 ```
-java -cp * com.ugcs.ucs.client.samples.ListenTelemetry -t 10
+java -cp .;* com.ugcs.ucs.client.samples.ListenTelemetry -t 10
 ```
 
 And this one generates and tries to upload a single waypoint mission to the vehicle.
 
 ```
-java -cp * com.ugcs.ucs.client.samples.UploadSingleWaypointRoute -w "0.0,0.0,0.0" -s 5.0 "EmuCopter-101"
+java -cp .;* com.ugcs.ucs.client.samples.UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EmuCopter-101"
 ```
-
