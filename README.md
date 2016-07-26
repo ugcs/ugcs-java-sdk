@@ -40,8 +40,16 @@ The example below starts a telemetry listener for 10 seconds.
 java -cp .;* com.ugcs.ucs.client.samples.ListenTelemetry -t 10
 ```
 
-And this one generates and tries to upload a single waypoint mission to the vehicle.
+This one generates and tries to upload a single waypoint mission to the vehicle.
 
 ```
 java -cp .;* com.ugcs.ucs.client.samples.UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EmuCopter-101"
 ```
+
+And this one sends a specified command to the vehicle.
+
+```
+java -cp .;* com.ugcs.ucs.client.samples.SendCommand -c Takeoff "EmuCopter-101"
+java -cp .;* com.ugcs.ucs.client.samples.SendCommand -c Waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude=100.0 -a speed=5.0 "EmuCopter-101"
+```
+
