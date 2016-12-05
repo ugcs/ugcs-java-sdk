@@ -51,29 +51,23 @@ message CommandSetDto {
 	repeated string commandCode = 1;
 }
 
-enum DronesharePrivacy {
-	DP_DEFAULT = 0;
-	DP_PRIVATE = 1;
-	DP_PUBLIC = 2;
-	DP_SHARED = 3;
-	DP_RESEARCHER = 4;
-}
-
 message LicensePermissionsDto {
 	required string licenseName = 1;
 	required int32 maxAuthenticatedHciSessions = 2;
 	required bool multinode = 3;
 	required bool kmlImport = 4;
 	required bool demImport = 5;
-	repeated PlatformAndDoublePairDto maxAglAltitude = 6;
-	repeated PlatformAndDoublePairDto maxDistanceToHome = 7;
-	repeated PlatformAndIntegerPairDto  maxBuildings = 8;
-	repeated PlatformAndBooleanPairDto customNfz = 9;
-	repeated PlatformAndBooleanPairDto airportNfzDisabling = 10;
-	repeated PlatformAndBooleanPairDto adsbReceiver = 11;
-	repeated PlatformAndBooleanPairDto videoRecording = 12;
-	repeated PlatformAndBooleanPairDto cameraFootprint = 13;
-	repeated PlatformAndBooleanPairDto adsbTransponder = 14;
+	required bool groupOperations = 6;
+	repeated PlatformAndDoublePairDto maxAglAltitude = 7;
+	repeated PlatformAndDoublePairDto maxDistanceToHome = 8;
+	repeated PlatformAndIntegerPairDto  maxBuildings = 9;
+	repeated PlatformAndBooleanPairDto customNfz = 10;
+	repeated PlatformAndBooleanPairDto airportNfzDisabling = 11;
+	repeated PlatformAndBooleanPairDto adsbReceiver = 12;
+	repeated PlatformAndBooleanPairDto videoRecording = 13;
+	repeated PlatformAndBooleanPairDto cameraFootprint = 14;
+	repeated PlatformAndBooleanPairDto adsbTransponder = 15;
+	repeated string forbiddenAlgorithmCodes = 16;
 }
 
 message PlatformAndBooleanPairDto {
@@ -96,6 +90,99 @@ message VehicleTargetLocationDto {
 	required int64 sequenceId = 2;
 	optional Wgs84LocationDto location = 3;
 	optional double acceptanceRadius = 4;
+}
+
+message VehicleCommandResultDto {
+	required Vehicle vehicle = 1;
+	required CommandStatus commandStatus = 2;
+}
+
+// Mapping
+
+message AlgorithmsMappingDto {
+	repeated AlgorithmsDto algorithms = 1;
+}
+
+message FailsafeActionsMappingDto {
+	repeated FailsafeActionsDto failsafeActions = 1;
+}
+
+message TurnTypesMappingDto {
+	repeated PlatformTurnTypeDto platformTurnTypes = 1;
+}
+
+message ActionExecutionsMappingDto {
+	repeated AlgorithmActionExecutionDto algorithmActionExecutions = 1;
+}
+
+message CamerasMappingDto {
+	repeated ProfileCameraDto profileCameras = 1;
+}
+
+message AltitudeTypesMappingDto {
+	repeated AltitudeTypeDto altitudeTypes = 1;
+}
+
+// Keys and values
+
+message PlatformAndVehicleTypePairDto {
+	required Platform platform = 1;
+	required VehicleType vehicleType = 2;
+}
+
+message FailsafeReasonActionsDto {
+	required FailsafeReason reason = 1;
+	repeated FailsafeAction actions = 2;
+}
+
+message FailsafeActionsDto {
+	required PlatformAndVehicleTypePairDto platformAndVehicleType = 1;
+	repeated FailsafeReasonActionsDto failsafeReasonActions = 2;
+}
+
+message AlgorithmAndActionCodeDto {
+	required TraverseAlgorithm algorithm= 1;
+	repeated ActionCode actionCodes = 2;
+}
+
+message AlgorithmsDto {
+	required PlatformAndVehicleTypePairDto platformAndVehicleType = 1;
+	repeated AlgorithmAndActionCodeDto algorithmAndActionCodes = 2;
+}
+
+message TurnTypeDto {
+	required string turnType = 1;
+	required string description = 2;
+}
+
+message PlatformTurnTypeDto {
+	required PlatformAndVehicleTypePairDto platformAndVehicleType = 1;
+	repeated TurnTypeDto turnTypes = 2;
+}
+
+message AltitudeTypeDto {
+	required string altitudeType = 1;
+	required string description = 2;
+}
+
+message ActionExecutionDto {
+	required string actionExecution = 1;
+	required string description = 2;
+}
+
+message AlgorithmActionExecutionDto {
+	required TraverseAlgorithm algorithm = 1;
+	repeated ActionExecutionDto actionExecution = 2;
+}
+
+message CameraDto {
+	required int32 cameraId = 1;
+	required string cameraName = 2;
+}
+
+message ProfileCameraDto {
+	required int32 profileId = 1;
+	repeated CameraDto cameras = 2;
 }
 
 // Messages ///////////////////////////////////////////////////////////////////
@@ -146,7 +233,7 @@ message ProcessRouteRequest {
 }
 
 message ProcessRouteResponse {
-	required Route route = 1;
+	required ProcessedRoute processedRoute = 1;
 }
 
 message ConvertRouteAltitudesRequest {
@@ -167,6 +254,7 @@ message ChangeRouteVehicleProfileRequest {
 
 message ChangeRouteVehicleProfileResponse {
 	required Route route = 1;
+	repeated string warningMessage = 2;
 }
 
 message GetParametersSelectionValuesRequest {
@@ -201,7 +289,6 @@ message CalculateSplineRequest {
 message CalculateSplineResponse {
 	repeated Wgs84LocationDto locations = 1;
 }
-
 
 // Transfer - Export / Import
 
@@ -289,25 +376,6 @@ message GetNfzListRequest {
 
 message GetNfzListResponse {
 	repeated NoFlightZone zones = 1;
-}
-
-
-// Models
-
-message GetModelListRequest {
-	required int32 clientId = 1;
-	required double minLatitude = 2;
-	required double minLongitude = 3;
-	required double minAltitude = 4;
-	required double maxLatitude = 5;
-	required double maxLongitude = 6;
-	required double maxAltitude = 7;
-	optional bool refreshDependencies = 8 [default = false];
-	repeated string refreshExcludes = 9;
-}
-
-message GetModelListResponse {
-	repeated Model models = 1;
 }
 
 message GetRasterGridRequest {
@@ -445,29 +513,23 @@ message GetVehicleLogByTimeRangeResponse {
 message SendCommandRequest {
 	required int32 clientId = 1;
 	required Command command = 2;
-	required Vehicle vehicle = 3;
+	repeated Vehicle vehicles = 3;
+	optional int64 interDelay = 4 [default = 0];
 }
 
 message SendCommandResponse {
+	repeated VehicleCommandResultDto commandResults = 1;
 }
 
 message UploadRouteRequest {
 	required int32 clientId = 1;
-	required Route route = 2;
-	required Vehicle vehicle = 3;
+	required Vehicle vehicle = 2;
+	required ProcessedRoute processedRoute = 3;
+	optional Action startAction = 4;
 }
 
 message UploadRouteResponse {
 }
-
-message GetAdsbBulbStatusRequest {
-	required int32 clientId = 1;
-}
-
-message GetAdsbBulbStatusResponse {
-	required bool on = 1;
-}
-
 
 // Licensing and Version control
 
@@ -590,6 +652,26 @@ message DeleteObjectResponse {
 	optional int32 objectVersion = 3;
 }
 
+message GetMappingRequest {
+	required int32 clientId = 1;
+	optional bool getAlgorithms = 2;
+	optional bool getFailsafeActions = 3;
+	optional bool getWaypointTurnTypes = 4;
+	optional bool getActionExecutions = 5;
+	optional bool getCameras = 6;
+	optional bool getAltitudeTypes = 7;
+}
+
+message GetMappingResponse {
+	required int32 clientId = 1;
+	optional AlgorithmsMappingDto algorithmsMapping = 2;
+	optional FailsafeActionsMappingDto failsafeActionsMapping = 3;
+	optional TurnTypesMappingDto waypointTurnTypesMapping = 4;
+	optional ActionExecutionsMappingDto actionExecutionsMapping = 5;
+	optional CamerasMappingDto camerasMapping = 6;
+	optional AltitudeTypesMappingDto altitudeTypesMapping = 7;
+}
+
 // Locks
 
 message AcquireLockRequest {
@@ -653,25 +735,10 @@ message UpdateMissionPreferencesRequest {
 message UpdateMissionPreferencesResponse {
 }
 
-message DroneshareUploadRequest {
-	required int32 clientId = 1;
-	required Vehicle vehicle = 2;
-	required int64 fromTime = 3;
-	optional int64 toTime = 4;
-	required string droneshareLogin = 5;
-	required string dronesharePassword = 6;
-	optional DronesharePrivacy dronesharePrivacy = 7;
-}
-
-message DroneshareUploadResponse {
-	optional string droneshareSummaryText = 1;
-	optional string droneshareViewUrl = 2;
-}
-
 message SubmitUtmOperationRequest {
 	required int32 clientId = 1;
 	required UtmOperation utmOperation = 2;
-	required Route route = 3;
+	required ProcessedRoute processedRoute = 3;
 }
 
 message SubmitUtmOperationResponse {
@@ -693,6 +760,44 @@ message GetVehicleTargetLocationsRequest {
 message GetVehicleTargetLocationsResponse {
 	required int32 clientId = 1;
 	repeated VehicleTargetLocationDto targetLocations = 2;
+}
+
+// Operations
+
+message OperationStatus {
+	repeated ProgressDto progressStack = 1;
+}
+
+message OperationStream {
+	required string streamId = 1;
+	// empty chunk denotes end of stream
+	required bytes chunk = 2;
+}
+
+message OperationStreamRequest {
+	required string streamId = 1;
+	required int32 chunkLength = 2;
+}
+
+message CancelOperationRequest {
+	required int32 requestId = 1;
+}
+
+message CancelOperationResponse {
+}
+
+message StreamTestRequest {
+	required int32 clientId = 1;
+}
+
+message StreamTestResponse {
+}
+
+message ProgressTestRequest {
+	required int32 clientId = 1;
+}
+
+message ProgressTestResponse {
 }
 
 // Events

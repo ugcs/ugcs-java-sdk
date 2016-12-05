@@ -1,20 +1,18 @@
 package com.ugcs.ucs.proto.mapping;
 
 import com.ugcs.ucs.proto.MessagesProto;
-import com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileRequest;
-import com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileResponse;
-import com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesRequest;
-import com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesResponse;
-import com.ugcs.ucs.proto.MessagesProto.GetNfzListRequest;
-import com.ugcs.ucs.proto.MessagesProto.GetNfzListResponse;
-import com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationRequest;
-import com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationResponse;
+import com.ugcs.ucs.proto.MessagesProto.*;
 import com.ugcs.ucs.proto.codec.ProtoMessageMapping;
 
 public class HciMessageMapping extends ProtoMessageMapping {
 	public HciMessageMapping() {
 		putMapping(0, MessagesProto.Error.class);
 		putMapping(1, MessagesProto.Notification.class);
+		putMapping(2, MessagesProto.OperationStatus.class);
+		putMapping(3, MessagesProto.OperationStream.class);
+		putMapping(4, MessagesProto.OperationStreamRequest.class);
+		putMapping(5, MessagesProto.CancelOperationRequest.class);
+		putMapping(6, MessagesProto.CancelOperationResponse.class);
 		
 		putMapping(10, MessagesProto.GetObjectListRequest.class);
 		putMapping(11, MessagesProto.GetObjectListResponse.class);
@@ -104,12 +102,8 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(101, MessagesProto.CheckForUpdatesResponse.class);
 		putMapping(102, MessagesProto.SendStatisticsRequest.class);
 		putMapping(103, MessagesProto.SendStatisticsResponse.class);
-		putMapping(104, MessagesProto.DroneshareUploadRequest.class);
-		putMapping(105, MessagesProto.DroneshareUploadResponse.class);
 		putMapping(106, MessagesProto.GetParametersSelectionValuesRequest.class);
 		putMapping(107, MessagesProto.GetParametersSelectionValuesResponse.class);
-		putMapping(108, MessagesProto.GetAdsbBulbStatusRequest.class);
-		putMapping(109, MessagesProto.GetAdsbBulbStatusResponse.class);
 		putMapping(110, MessagesProto.CountTelemetryRequest.class);
 		putMapping(111, MessagesProto.CountTelemetryResponse.class);
 		putMapping(112, MessagesProto.CalculateSplineRequest.class);
@@ -124,8 +118,12 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(121, GetCapabilitiesResponse.class);
 		putMapping(122, MessagesProto.GetVehicleTargetLocationsRequest.class);
 		putMapping(123, MessagesProto.GetVehicleTargetLocationsResponse.class);
-		
-		putMapping(240, MessagesProto.GetModelListRequest.class);
-		putMapping(241, MessagesProto.GetModelListResponse.class);
+		putMapping(124, MessagesProto.GetMappingRequest.class);
+		putMapping(125, MessagesProto.GetMappingResponse.class);
+
+		putMapping(200, MessagesProto.StreamTestRequest.class);
+		putMapping(201, MessagesProto.StreamTestResponse.class);
+		putMapping(202, MessagesProto.ProgressTestRequest.class);
+		putMapping(203, MessagesProto.ProgressTestResponse.class);
 	}
 }

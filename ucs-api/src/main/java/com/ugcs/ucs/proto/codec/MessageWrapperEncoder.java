@@ -42,7 +42,7 @@ public class MessageWrapperEncoder implements MessageEncoder {
 			return new byte[0];
 
 		if (log.isDebugEnabled())
-			log.debug("Encoding message: {}", message);
+			log.debug("---> Encoding message:\n{}", message);
 		
 		MessageWrapper messageWrapper = (MessageWrapper) message;
 		Message protoMessage = messageWrapper.getMessage();

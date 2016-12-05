@@ -9,7 +9,5 @@ public class EmulatorMessageMapping extends ProtoMessageMapping {
 		putMapping(2, EmulatorProto.GetVehicleParametersResponse.class);
 		putMapping(3, EmulatorProto.GetElevationRequest.class);
 		putMapping(4, EmulatorProto.GetElevationResponse.class);
-		putMapping(5, EmulatorProto.ReportEmulatorRequest.class);
-		putMapping(6, EmulatorProto.ReportEmulatorResponse.class);
 	}
 }

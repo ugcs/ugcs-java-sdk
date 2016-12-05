@@ -62,13 +62,13 @@ public class CircularBuffer {
 	private int offset(int n) {
 		if (n < 0)
 			throw new IllegalArgumentException("n");
-		if (n > remaining())
+		if (n > length())
 			throw new IndexOutOfBoundsException("underflow error");
 		
 		return head > tail ? (head + n) % buffer.length : head + n;
 	}
 	
-	public int remaining() {
+	public int length() {
 		return tail - head + (head > tail ? buffer.length : 0);
 	}
 	
@@ -88,7 +88,7 @@ public class CircularBuffer {
 	}
 	
 	public void writeByte(byte b) {
-		reserve(remaining() + 1);
+		reserve(length() + 1);
 		// check: buffer is full (if now auto-growth)
 		put(tail, b);
 		++tail;
@@ -155,7 +155,7 @@ public class CircularBuffer {
 		
 		@Override
 		public int available() {
-			return remaining();
+			return length();
 		}
 		
 		@Override
@@ -213,7 +213,7 @@ public class CircularBuffer {
 			if (len == 0)
 				return;
 			
-			reserve(remaining() + len);
+			reserve(length() + len);
 			for (int i = off; i < off + len; ++i) {
 				put(tail, b[i]);
 				++tail;

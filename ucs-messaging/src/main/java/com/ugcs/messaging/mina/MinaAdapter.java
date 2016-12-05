@@ -1,6 +1,7 @@
 package com.ugcs.messaging.mina;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
@@ -16,46 +17,48 @@ import com.ugcs.messaging.api.MessageSessionListener;
 
 class MinaAdapter extends IoHandlerAdapter {
 	private static final Logger log = LoggerFactory.getLogger(MinaAdapter.class);
-	private final List<MessageSessionListener> sessionListeners =
-			new CopyOnWriteArrayList<MessageSessionListener>();
+	private final List<MessageSessionListener> sessionListeners = new CopyOnWriteArrayList<>();
 	
 	/* listeners */
 	
 	public void addSessionListener(MessageSessionListener sessionListener) {
-		if (sessionListener == null)
-			throw new IllegalArgumentException("sessionListener");
-		
+		Objects.requireNonNull(sessionListener);
+
 		sessionListeners.add(sessionListener);
 	}
 	
 	public void removeSessionListener(MessageSessionListener sessionListener) {
-		if (sessionListener == null)
-			throw new IllegalArgumentException("sessionListener");
-		
+		Objects.requireNonNull(sessionListener);
+
 		sessionListeners.remove(sessionListener);
 	}
 	
 	/* message session */
 	
 	private MinaMessageSession createMessageSession(IoSession session) {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 		
-		MinaMessageSession messageSession = new MinaMessageSession(session);
-		session.setAttribute("messageSession", messageSession);
+		MinaMessageSession messageSession = null;
+		synchronized (session) {
+			messageSession = (MinaMessageSession) session.getAttribute("messageSession");
+			if (messageSession == null) {
+				messageSession = new MinaMessageSession(session);
+				session.setAttribute("messageSession", messageSession);
+			}
+		}
 		return messageSession;
 	}
 	
 	public MinaMessageSession getMessageSession(IoSession session) {
-		if (session == null)
-			throw new IllegalArgumentException("session");
-	
-		return (MinaMessageSession) session.getAttribute("messageSession");
+		Objects.requireNonNull(session);
+
+		synchronized (session) {
+			return (MinaMessageSession) session.getAttribute("messageSession");
+		}
 	}
 
 	private void closeMessageSession(IoSession session) {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 		
 		boolean closePending = false;
 		synchronized (session) {
@@ -65,7 +68,9 @@ class MinaAdapter extends IoHandlerAdapter {
 		}
 		if (!closePending) {
 			log.info("Session {} closed {local: {}, remote: {}}",
-					new Object[] { session.getId(), session.getLocalAddress(), session.getRemoteAddress() });
+					session.getId(),
+					session.getLocalAddress(),
+					session.getRemoteAddress());
 
 			MinaMessageSession messageSession = getMessageSession(session);
 			// notify session to interrupt pending listeners
@@ -81,8 +86,7 @@ class MinaAdapter extends IoHandlerAdapter {
 	
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 		
 		MinaMessageSession messageSession = getMessageSession(session);
 		messageSession.messageReceived(message);
@@ -90,19 +94,19 @@ class MinaAdapter extends IoHandlerAdapter {
 	
 	@Override
 	public void sessionCreated(IoSession session) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 
 		createMessageSession(session);
 	}
 
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 		
 		log.info("Session {} opened {local: {}, remote: {}}",
-				new Object[] { session.getId(), session.getLocalAddress(), session.getRemoteAddress() });
+				session.getId(),
+				session.getLocalAddress(),
+				session.getRemoteAddress());
 
 		MessageSession messageSession = getMessageSession(session);
 		MessageSessionEvent sessionEvent = new MessageSessionEvent(this, messageSession);
@@ -112,8 +116,7 @@ class MinaAdapter extends IoHandlerAdapter {
 
 	@Override
 	public void sessionIdle(IoSession session, IdleStatus status) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 
 		MessageSession messageSession = getMessageSession(session);
 		MessageSessionEvent sessionEvent = new MessageSessionEvent(this, messageSession);
@@ -123,16 +126,14 @@ class MinaAdapter extends IoHandlerAdapter {
 	
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 
 		closeMessageSession(session);
 	}
 
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
-		if (session == null)
-			throw new IllegalArgumentException("session");
+		Objects.requireNonNull(session);
 
 		MessageSession messageSession = getMessageSession(session);
 		MessageSessionEvent sessionEvent = new MessageSessionErrorEvent(

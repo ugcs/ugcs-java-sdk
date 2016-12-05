@@ -3,9 +3,10 @@ package com.ugcs.messaging.mina;
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Objects;
 
 import org.apache.mina.core.future.CloseFuture;
 import org.apache.mina.core.future.IoFutureListener;
@@ -25,8 +26,7 @@ public class MinaMessageSession implements MessageSession {
 	private static final Logger log = LoggerFactory.getLogger(MinaMessageSession.class);
 	
 	private final IoSession session;
-	private final Map<MessageListener, MessageSelector> listeners = 
-			new ConcurrentHashMap<MessageListener, MessageSelector>();
+	private final Map<MessageListener, MessageSelector> listeners = new HashMap<>();
 	
 	private static final MessageSelector SELECT_ALL = new MessageSelector() {
 		public boolean select(Object message) {
@@ -56,20 +56,13 @@ public class MinaMessageSession implements MessageSession {
 	
 	@Override
 	public void addListener(MessageListener listener) {
-		if (listener == null)
-			throw new IllegalArgumentException("listener");
-		
-		synchronized (listeners) {
-			listeners.put(listener, SELECT_ALL);
-		}
+		addListener(listener, SELECT_ALL);
 	}
 	
 	@Override
 	public void addListener(MessageListener listener, MessageSelector selector) {
-		if (listener == null)
-			throw new IllegalArgumentException("listener");
-		if (selector == null)
-			throw new IllegalArgumentException("selector");
+		Objects.requireNonNull(listener);
+		Objects.requireNonNull(selector);
 
 		synchronized (listeners) {
 			listeners.put(listener, selector);
@@ -139,14 +132,13 @@ public class MinaMessageSession implements MessageSession {
 	
 	@Override
 	public void send(Object message) {
-		if (message == null)
-			throw new IllegalArgumentException("Can not send <null>");
-		
+		Objects.requireNonNull(message);
+
 		session.write(message);
 	}
 	
 	protected void messageReceived(Object message) throws Exception {
-		List<MessageListener> listenersCopy = new ArrayList<MessageListener>();
+		List<MessageListener> listenersCopy = new ArrayList<>();
 		synchronized (listeners) {
 			for (Map.Entry<MessageListener, MessageSelector> entry : listeners.entrySet()) {
 				MessageSelector selector = entry.getValue();
@@ -162,25 +154,24 @@ public class MinaMessageSession implements MessageSession {
 		for (MessageListener listener : listenersCopy) {
 			try {
 				listener.messageReceived(messageEvent);
-			} catch (Throwable e) {
+			} catch (Throwable ignore) {
 				// continue to the next listener
-				log.warn("Listener error", e);
+				log.warn("Listener error", ignore);
 			}
 		}
 	}
 	
 	protected void cancelAllListeners() {
-		List<MessageListener> listenersCopy = new ArrayList<MessageListener>();
+		List<MessageListener> listenersCopy = new ArrayList<>();
 		synchronized (listeners) {
-			for (MessageListener listener : listeners.keySet())
-				listenersCopy.add(listener);
+			listenersCopy.addAll(listeners.keySet());
 		}
 		for (MessageListener listener : listenersCopy) {
 			try {
 				listener.cancelled();
-			} catch (Throwable e) {
+			} catch (Throwable ignore) {
 				// continue to the next listener
-				log.warn("Listener cancellation error", e);
+				log.warn("Listener cancellation error", ignore);
 			}
 		}
 	}

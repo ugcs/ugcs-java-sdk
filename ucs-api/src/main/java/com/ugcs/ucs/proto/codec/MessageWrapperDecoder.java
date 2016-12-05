@@ -127,7 +127,7 @@ public class MessageWrapperDecoder implements MessageDecoder {
 			}
 			if (decodedMessage != null) {
 				if (log.isDebugEnabled())
-					log.debug("Decoded message: {}", decodedMessage);
+					log.debug("<--- Decoded message:\n{}", decodedMessage);
 				result.add(decodedMessage);
 			}
 		}

@@ -8,16 +8,17 @@ import java.util.Objects;
 import java.util.Properties;
 
 import com.ugcs.ucs.client.Client;
-import com.ugcs.ucs.client.ClientSession;
+import com.ugcs.ucs.proto.DomainProto;
 import com.ugcs.ucs.proto.DomainProto.Command;
 import com.ugcs.ucs.proto.DomainProto.CommandArgument;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
+import com.ugcs.ucs.proto.MessagesProto;
 
 public class SendCommand {
 	public static void main(String[] args) {
 		String vehicleName = null;
 		String commandCode = null;
-		Map<String, String> commandArguments = new HashMap<>();
+		Map<String, Double> commandArguments = new HashMap<>();
 
 		boolean usage = false;
 		for (int i = 0; i < args.length; ++i) {
@@ -39,7 +40,7 @@ public class SendCommand {
 					usage = true;
 					break;
 				}
-				commandArguments.put(tokens[0], tokens[1]);
+				commandArguments.put(tokens[0], Double.parseDouble(tokens[1]));
 				continue;
 			}
 			vehicleName = args[i];
@@ -85,7 +86,7 @@ public class SendCommand {
 		}
 	}
 
-	public static void sendCommand(String vehicleName, String commandCode, Map<String, String> commandArguments)
+	public static void sendCommand(String vehicleName, String commandCode, Map<String, Double> commandArguments)
 			throws Exception {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		Properties properties = new Properties();
@@ -98,7 +99,7 @@ public class SendCommand {
 
 		try (Client client = new Client(serverAddress)) {
 			client.connect();
-			ClientSession session = new ClientSession(client);
+			Session session = new Session(client);
 
 			// Authorize client & login user.
 			session.authorizeHci();
@@ -112,22 +113,86 @@ public class SendCommand {
 				throw new IllegalStateException("Vehicle not found: " + vehicleName);
 
 			// Construct command object.
-			Command command = buildCommand(commandCode, commandArguments);
+			Command command = session.buildCommand(commandCode, commandArguments);
 			session.sendCommand(vehicle, command);
 		}
 	}
 
-	private static Command buildCommand(String code, Map<String, String> arguments) {
-		Objects.requireNonNull(code);
-		Objects.requireNonNull(arguments);
+	static class Session {
+		private final Client client;
+		private int clientId = -1;
 
-		Command.Builder builder = Command.newBuilder()
-				.setCode(code);
-		for (Map.Entry<String, String> entry : arguments.entrySet()) {
-			builder.addArguments(CommandArgument.newBuilder()
-					.setName(entry.getKey())
-					.setValue(entry.getValue()));
+		public Session(Client client) {
+			if (client == null)
+				throw new IllegalArgumentException("client");
+
+			this.client = client;
 		}
-		return builder.build();
+
+		public void authorizeHci() throws Exception {
+			clientId = -1;
+			MessagesProto.AuthorizeHciRequest request = MessagesProto.AuthorizeHciRequest.newBuilder()
+					.setClientId(clientId)
+					.build();
+			MessagesProto.AuthorizeHciResponse response = client.execute(request);
+			clientId = response.getClientId();
+		}
+
+		public void login(String login, String password) throws Exception {
+			if (login == null || login.isEmpty())
+				throw new IllegalArgumentException("login");
+			if (password == null || password.isEmpty())
+				throw new IllegalArgumentException("password");
+
+			MessagesProto.LoginRequest request = MessagesProto.LoginRequest.newBuilder()
+					.setClientId(clientId)
+					.setUserLogin(login)
+					.setUserPassword(password)
+					.build();
+			client.execute(request);
+		}
+
+		public Vehicle lookupVehicle(String tailNumber) throws Exception {
+			if (tailNumber == null || tailNumber.isEmpty())
+				throw new IllegalArgumentException("tailNumber cannot be empty");
+
+			MessagesProto.GetObjectListRequest request = MessagesProto.GetObjectListRequest.newBuilder()
+					.setClientId(clientId)
+					.setObjectType("Vehicle")
+					.build();
+			MessagesProto.GetObjectListResponse response = client.execute(request);
+			for (DomainProto.DomainObjectWrapper item : response.getObjectsList()) {
+				if (item == null || item.getVehicle() == null)
+					continue;
+				if (tailNumber.equals(item.getVehicle().getTailNumber()))
+					return item.getVehicle();
+			}
+			return null;
+		}
+
+		public Command buildCommand(String code, Map<String, Double> arguments) {
+			Objects.requireNonNull(code);
+			Objects.requireNonNull(arguments);
+
+			Command.Builder builder = Command.newBuilder()
+					.setCode(code);
+			for (Map.Entry<String, Double> entry : arguments.entrySet()) {
+				builder.addArguments(CommandArgument.newBuilder()
+						.setCode(entry.getKey())
+						.setValue(DomainProto.Value.newBuilder().setDoubleValue(entry.getValue())));
+			}
+			return builder.build();
+		}
+
+		public void sendCommand(Vehicle vehicle, Command command) throws Exception {
+			Objects.requireNonNull(vehicle);
+
+			MessagesProto.SendCommandRequest request = MessagesProto.SendCommandRequest.newBuilder()
+					.setClientId(clientId)
+					.addVehicles(vehicle)
+					.setCommand(command)
+					.build();
+			client.execute(request);
+		}
 	}
 }

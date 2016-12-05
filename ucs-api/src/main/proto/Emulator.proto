@@ -20,10 +20,3 @@ message GetElevationResponse {
 	repeated float values = 1;
 	required bool noData = 2;
 }
-
-message ReportEmulatorRequest {
-	required int64 vehicleId = 1;
-}
-
-message ReportEmulatorResponse {
-}

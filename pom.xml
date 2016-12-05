@@ -3,46 +3,116 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ugcs</groupId>
 	<artifactId>ugcs-java-sdk</artifactId>
-	<version>2.9-SNAPSHOT</version>
-	<name>UgCS Java SDK</name>
+	<version>2.10</version>
+	<name>UgCS Server Java SDK</name>
 	<packaging>pom</packaging>
 	<modules>
-		<module>common-messaging</module>
+		<module>ucs-messaging</module>
+		<module>ucs-common</module>
 		<module>ucs-api</module>
 		<module>ucs-client</module>
 	</modules>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- slf4j -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.21</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.7.21</version>
+			</dependency>
+			<!-- protobuf -->
+			<dependency>
+				<groupId>com.google.protobuf</groupId>
+				<artifactId>protobuf-java</artifactId>
+				<version>2.4.1</version>
+			</dependency>
+			<dependency>
+				<groupId>com.googlecode.protobuf-java-format</groupId>
+				<artifactId>protobuf-java-format</artifactId>
+				<version>1.2</version>
+			</dependency>
+			<!-- mina -->
+			<dependency>
+				<groupId>org.apache.mina</groupId>
+				<artifactId>mina-core</artifactId>
+				<version>2.0.9</version>
+			</dependency>
+			<!-- retrofit -->
+			<dependency>
+				<groupId>com.squareup.retrofit</groupId>
+				<artifactId>retrofit</artifactId>
+				<version>1.9.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.squareup.retrofit</groupId>
+				<artifactId>converter-jackson</artifactId>
+				<version>1.9.0</version>
+			</dependency>
+			<!-- yaml -->
+			<dependency>
+				<groupId>org.yaml</groupId>
+				<artifactId>snakeyaml</artifactId>
+				<version>1.17</version>
+			</dependency>
+			<!-- junit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>utf-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<excludes>
+						<exclude>*.properties</exclude>
+						<exclude>*.md</exclude>
+						<exclude>*.txt</exclude>
+						<exclude>*.sh</exclude>
+						<exclude>*.bat</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.5.5</version>
+				<version>2.6</version>
 				<configuration>
 					<appendAssemblyId>false</appendAssemblyId>
 					<descriptors>
 						<descriptor>assembly.xml</descriptor>
 					</descriptors>
 				</configuration>
-			</plugin> 
+			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4</version>
-				<executions>
-					<execution>
-						<id>assembly-create</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						<configuration>
-							<descriptors>
-								<descriptor>assembly.xml</descriptor>
-							</descriptors>
-						</configuration>
-					</execution>
-				</executions>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.9</version>
 			</plugin>
 		</plugins>
-	</build> 
+	</build>
 </project>
