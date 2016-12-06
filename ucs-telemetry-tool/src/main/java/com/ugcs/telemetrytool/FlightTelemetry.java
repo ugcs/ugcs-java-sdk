@@ -2,10 +2,10 @@ package com.ugcs.telemetrytool;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import com.ugcs.common.util.Preconditions;
 
@@ -26,8 +26,10 @@ public class FlightTelemetry {
 		return records;
 	}
 
-	public List<TelemetryKey> getTelemetryKeys(List<String> fields) throws IOException{
-		Set<TelemetryKey> set = records.stream().map(TelemetryRecord::getKey).collect(Collectors.toSet());
+	public List<TelemetryKey> getTelemetryKeys(List<String> fields) throws IOException {
+		Set<TelemetryKey> set = new HashSet<>();
+		for (TelemetryRecord record : records)
+			set.add(record.getKey());
 		List<TelemetryKey> filterList = new LinkedList<>();
 		if (fields != null) {
 			for (String field : fields) {

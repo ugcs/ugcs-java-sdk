@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public final class Tlm2Csv extends TlmConverter{
@@ -27,15 +27,26 @@ public final class Tlm2Csv extends TlmConverter{
 	}
 
 	@Override
-	public List<String> getWritableFields(String fileName) throws IOException{
+	public List<String> getWritableFields(String fileName) throws IOException {
 		if (fileName == null) {
 			return null;
 		} else if ((new File(fileName)).exists()) {
-			List<String> fields = new LinkedList<>(Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8));
+			List<String> fields = new ArrayList<>(Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8));
 			if (fields.isEmpty()) {
 				return null;
 			}
-			fields.removeIf(p -> p.startsWith("#"));
+			List<String> filtered = new ArrayList<>();
+			for (String field : fields) {
+				String resultField = (field.contains("#")
+						? field.substring(field.indexOf("#"))
+						: field
+				).trim();
+				if (resultField.equals("")) {
+					continue;
+				}
+				filtered.add(resultField);
+			}
+			fields = filtered;
 			return fields;
 		} else {
 			return null;
