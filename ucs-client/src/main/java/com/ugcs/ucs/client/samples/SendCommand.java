@@ -8,11 +8,12 @@ import java.util.Objects;
 import java.util.Properties;
 
 import com.ugcs.ucs.client.Client;
-import com.ugcs.ucs.proto.DomainProto;
+import com.ugcs.ucs.client.ClientSession;
 import com.ugcs.ucs.proto.DomainProto.Command;
 import com.ugcs.ucs.proto.DomainProto.CommandArgument;
+import com.ugcs.ucs.proto.DomainProto.Subsystem;
+import com.ugcs.ucs.proto.DomainProto.Value;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
-import com.ugcs.ucs.proto.MessagesProto;
 
 public class SendCommand {
 	public static void main(String[] args) {
@@ -54,27 +55,33 @@ public class SendCommand {
 			System.err.println("");
 			System.err.println("\tList of supported command codes:");
 			System.err.println("");
-			System.err.println("\t  * Arm");
-			System.err.println("\t  * AutoMode");
-			System.err.println("\t  * CameraTrigger");
-			System.err.println("\t  * Continue");
-			System.err.println("\t  * Disarm");
-			System.err.println("\t  * EmergencyLand");
-			System.err.println("\t  * Hold");
-			System.err.println("\t  * Land");
-			System.err.println("\t  * ManualMode");
-			System.err.println("\t  * ReturnHome");
-			System.err.println("\t  * Takeoff");
-			System.err.println("\t  * Waypoint (args: latitude, longitude, altitude, speed, heading)");
+			System.err.println("\t  * arm");
+			System.err.println("\t  * disarm");
+			System.err.println("\t  * auto");
+			System.err.println("\t  * manual");
+			System.err.println("\t  * guided");
+			System.err.println("\t  * joystick");
+			System.err.println("\t  * takeoff_command");
+			System.err.println("\t  * land_command");
+			System.err.println("\t  * emergency_land");
+			System.err.println("\t  * return_to_home");
+			System.err.println("\t  * mission_pause");
+			System.err.println("\t  * mission_resume");
+			System.err.println("\t  * waypoint (latitude, longitude, altitude_amsl/altitude_agl, altitude_origin,");
+			System.err.println("\t              ground_speed, vertical_speed, acceptance_radius, heading)");
+			System.err.println("\t  * direct_vehicle_control (pitch, roll, yaw, trottle)");
 			System.err.println("");
 			System.err.println("\tFor more details on the supported commands and its arguments and expected");
 			System.err.println("\tvehicle behavior see UgCS User Manual (\"Direct Vehicle Control\" section).");
+			System.err.println("\tAlso note that this tool support a limited subset of the vehicles commands:");
+			System.err.println("\tcamera and ADS-B commands are not supported, but can be easily implemented");
+			System.err.println("\tby modifying a sample source.");
 			System.err.println("");
-			System.err.println("Example:");
+			System.err.println("Examples:");
 			System.err.println("");
-			System.err.println("\tSendCommand -c Takeoff \"EmuCopter-101\"");
-			System.err.println("\tSendCommand -c AutoMode \"EmuCopter-101\"");
-			System.err.println("\tSendCommand -c Waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude=100.0 -a speed=5.0 \"EmuCopter-101\"");
+			System.err.println("\tSendCommand -c arm \"EMU-COPTER-17\"");
+			System.err.println("\tSendCommand -c guided \"EMU-COPTER-17\"");
+			System.err.println("\tSendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 \"EMU-COPTER-17\"");
 			System.exit(1);
 		} else {
 			try {
@@ -99,7 +106,7 @@ public class SendCommand {
 
 		try (Client client = new Client(serverAddress)) {
 			client.connect();
-			Session session = new Session(client);
+			ClientSession session = new ClientSession(client);
 
 			// Authorize client & login user.
 			session.authorizeHci();
@@ -113,86 +120,31 @@ public class SendCommand {
 				throw new IllegalStateException("Vehicle not found: " + vehicleName);
 
 			// Construct command object.
-			Command command = session.buildCommand(commandCode, commandArguments);
-			session.sendCommand(vehicle, command);
+			Command command = buildCommand(commandCode, commandArguments);
+			// Before the actual upload we lock the vehicle.
+			session.gainVehicleControl(vehicle);
+			try {
+				session.sendCommand(vehicle, command);
+			} finally {
+				session.releaseVehicleControl(vehicle);
+			}
 		}
 	}
 
-	static class Session {
-		private final Client client;
-		private int clientId = -1;
+	private static Command buildCommand(String code, Map<String, Double> arguments) {
+		Objects.requireNonNull(code);
+		Objects.requireNonNull(arguments);
 
-		public Session(Client client) {
-			if (client == null)
-				throw new IllegalArgumentException("client");
-
-			this.client = client;
+		Command.Builder builder = Command.newBuilder()
+				.setCode(code)
+				.setSubsystem(Subsystem.S_FLIGHT_CONTROLLER)
+				.setSubsystemId(0);
+		for (Map.Entry<String, Double> entry : arguments.entrySet()) {
+			builder.addArguments(CommandArgument.newBuilder()
+					.setCode(entry.getKey())
+					.setValue(Value.newBuilder()
+							.setDoubleValue(entry.getValue())));
 		}
-
-		public void authorizeHci() throws Exception {
-			clientId = -1;
-			MessagesProto.AuthorizeHciRequest request = MessagesProto.AuthorizeHciRequest.newBuilder()
-					.setClientId(clientId)
-					.build();
-			MessagesProto.AuthorizeHciResponse response = client.execute(request);
-			clientId = response.getClientId();
-		}
-
-		public void login(String login, String password) throws Exception {
-			if (login == null || login.isEmpty())
-				throw new IllegalArgumentException("login");
-			if (password == null || password.isEmpty())
-				throw new IllegalArgumentException("password");
-
-			MessagesProto.LoginRequest request = MessagesProto.LoginRequest.newBuilder()
-					.setClientId(clientId)
-					.setUserLogin(login)
-					.setUserPassword(password)
-					.build();
-			client.execute(request);
-		}
-
-		public Vehicle lookupVehicle(String tailNumber) throws Exception {
-			if (tailNumber == null || tailNumber.isEmpty())
-				throw new IllegalArgumentException("tailNumber cannot be empty");
-
-			MessagesProto.GetObjectListRequest request = MessagesProto.GetObjectListRequest.newBuilder()
-					.setClientId(clientId)
-					.setObjectType("Vehicle")
-					.build();
-			MessagesProto.GetObjectListResponse response = client.execute(request);
-			for (DomainProto.DomainObjectWrapper item : response.getObjectsList()) {
-				if (item == null || item.getVehicle() == null)
-					continue;
-				if (tailNumber.equals(item.getVehicle().getTailNumber()))
-					return item.getVehicle();
-			}
-			return null;
-		}
-
-		public Command buildCommand(String code, Map<String, Double> arguments) {
-			Objects.requireNonNull(code);
-			Objects.requireNonNull(arguments);
-
-			Command.Builder builder = Command.newBuilder()
-					.setCode(code);
-			for (Map.Entry<String, Double> entry : arguments.entrySet()) {
-				builder.addArguments(CommandArgument.newBuilder()
-						.setCode(entry.getKey())
-						.setValue(DomainProto.Value.newBuilder().setDoubleValue(entry.getValue())));
-			}
-			return builder.build();
-		}
-
-		public void sendCommand(Vehicle vehicle, Command command) throws Exception {
-			Objects.requireNonNull(vehicle);
-
-			MessagesProto.SendCommandRequest request = MessagesProto.SendCommandRequest.newBuilder()
-					.setClientId(clientId)
-					.addVehicles(vehicle)
-					.setCommand(command)
-					.build();
-			client.execute(request);
-		}
+		return builder.build();
 	}
 }

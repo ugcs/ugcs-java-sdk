@@ -23,33 +23,94 @@ API and client libraries for the [UgCS Ground Control Station](https://www.ugcs.
 Build a package.
 
 ```
-mvn clean package
+$ mvn clean package
 ```
 
 Go to the output directory containing jars and `client.properties` file.
 
 ```
-target/ugcs-java-sdk-{release-version}/ucs-client
+$ cd target/ugcs-java-sdk
 ```
 
 Modify the `client.properties` if necessary. Make sure the target UgCS server instance is running.
 
-The example below starts a telemetry listener for 10 seconds.
+## [Telemetry example](https://github.com/ugcs/ugcs-java-sdk/blob/master/ucs-client/src/main/java/com/ugcs/ucs/client/samples/ListenTelemetry.java)
+
+Start a telemetry listener for specified amount of seconds.
 
 ```
-java -cp .;* com.ugcs.ucs.client.samples.ListenTelemetry -t 10
+$ java -cp .;* com.ugcs.ucs.client.samples.ListenTelemetry <args>
 ```
 
-This one generates and tries to upload a single waypoint mission to the vehicle.
-
 ```
-java -cp .;* com.ugcs.ucs.client.samples.UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EmuCopter-101"
-```
+ListenTelemetry -t waitSeconds
 
-And this one sends a specified command to the vehicle.
+        Listen to all telemetry, received by the UgCS server
+        for a specified amount of time in seconds.
 
-```
-java -cp .;* com.ugcs.ucs.client.samples.SendCommand -c Takeoff "EmuCopter-101"
-java -cp .;* com.ugcs.ucs.client.samples.SendCommand -c Waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude=100.0 -a speed=5.0 "EmuCopter-101"
+Example:
+
+        ListenTelemetry -t 10
 ```
 
+## [Vehicle command example](https://github.com/ugcs/ugcs-java-sdk/blob/master/ucs-client/src/main/java/com/ugcs/ucs/client/samples/SendCommand.java)
+
+Send a specified command to the vehicle.
+
+```
+$ java -cp .;* com.ugcs.ucs.client.samples.SendCommand <args>
+```
+
+```
+SendCommand -c commandCode [-a commandArgument=value]* vehicleName
+
+        List of supported command codes:
+
+          * arm
+          * disarm
+          * auto
+          * manual
+          * guided
+          * joystick
+          * takeoff_command
+          * land_command
+          * emergency_land
+          * return_to_home
+          * mission_pause
+          * mission_resume
+          * waypoint (latitude, longitude, altitude_amsl/altitude_agl, altitude_origin,
+                      ground_speed, vertical_speed, acceptance_radius, heading)
+          * direct_vehicle_control (pitch, roll, yaw, trottle)
+
+        For more details on the supported commands and its arguments and expected
+        vehicle behavior see UgCS User Manual ("Direct Vehicle Control" section).
+        Also note that this tool support a limited subset of the vehicles commands:
+        camera and ADS-B commands are not supported, but can be easily implemented
+        by modifying a sample source.
+
+Examples:
+
+        SendCommand -c arm "EMU-COPTER-17"
+        SendCommand -c guided "EMU-COPTER-17"
+        SendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 "EMU-COPTER-17"
+```
+
+## [Route upload example](https://github.com/ugcs/ugcs-java-sdk/blob/master/ucs-client/src/main/java/com/ugcs/ucs/client/samples/UploadSingleWaypointRoute.java)
+
+Generate and try to upload a single waypoint mission to the vehicle.
+
+```
+$ java -cp .;* com.ugcs.ucs.client.samples.UploadSingleWaypointRoute <args>
+```
+
+```
+UploadSingleWaypointRoute -w waypoint [-s speed] vehicleName
+
+        Waypoint is specified as "lat,lon,alt" string, with respective values
+        in degrees (latitude and longitude) and AGL meters (altitude). Positive
+        directions for latitude and longitude are North and East.
+
+Example:
+
+        UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EMU-COPTER-17"
+```

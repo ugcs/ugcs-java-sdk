@@ -21,4 +21,29 @@
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>assembly-create</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.parent.build.directory}</outputDirectory>
+							<finalName>ugcs-java-sdk</finalName>
+							<descriptors>
+								<descriptor>assembly.xml</descriptor>
+							</descriptors>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>
