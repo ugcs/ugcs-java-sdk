@@ -1,6 +1,9 @@
 ## Telemetry converter tool
 
-Telemetry tool allows to convert .tml files into .csv for detalization of telemetry, to filter out file columns by fields.
+Telemetry tool allows to convert .tlm files into .csv and .kml output format.
+.tlm - specific format of vehicle telemetry. See details about .tlm [here](https://github.com/ugcs/ugcs-java-sdk/wiki/.tlm-file-format "Telemetry format").
+
+## Convert to .csv
 
 To convert .tlm to .csv you must run the app with several arguments of command line:
 
@@ -21,7 +24,7 @@ Parameters:
 Application creates one or more files, separated by flights. Time between flights given with -t <seconds> or --tolerance <seconds> argument.
 If you want to see certain fields in .csv file, you have to run application with -l <fileName> or --fields <fileName> parameter.
 
-Fields file represents list of fields, placed on a separate line of its. Example of the fields file:
+Fields file represents list of fields, placed on a separate line of its. The order of fields determines order of columns in .csv file. Example of the fields file:
 ```
 fc:latitude
 fc:longitude
@@ -46,6 +49,35 @@ Prefix field aliases:
 
 '#' - character is a comment and is not considered in the derivation of the fields.
 
+Output file format:
+
+```
+<vehicle_name>-yyyyMMdd_hhmmss.csv
+```
+
+.csv file consists of following columns:
+        The first column: timestamp, format: `YYYY-MM-DD'T'hh:mm:Ss.sss`
+        The second and subsequent columns: value of telemetry fields, specified in fields file or all fields if fields file is empty.
+                Field value cell has a following format: `subsystem:code#subsystemId`
+
+Row is formed as follows:
+        All of rows ordered by timestamp column, each value of column contains the actual to time data.
+
+
+Run the application from command line or terminal using .bat or .sh file, placed into root project directory.
+
+1. Open command line (Win + R) (Windows) or Terminal (*nix) at .bat or .sh placed
+2. Follow --help instruction, for example: 
+``` 
+tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt
+```
+.csv files will be available in ./csv directory
+.tlm and fieldsFile.txt must be placed on same app directory for this sample
+
+Running without parameters print help.
+
+## Convert to .kml
+
 Convert .tlm to .kml produced the same way.
 ```
 tlm2kml [-h] [-t <seconds>] [-d <output dir>] -f <fileName>
@@ -60,45 +92,26 @@ Parameters:
 -h, --help      : Help, display this message.
 ```
 
-## Output
-
-Output file format:
-
-```
-<vehicle_name>-yyyyMMdd_hhmmss.csv
-<vehicle_name>-yyyyMMdd_hhmmss.kml
-```
-
-.csv file consists of following columns:
-        The first column: timestamp, format: `YYYY-MM-DD'T'hh:mm:Ss.sss`
-        The second and subsequent columns: value of telemetry fields, specified in fields file or all fields if fields file is empty.
-                Field value cell has a following format: `subsystem:code#subsystemId`
-
-Row is formed as follows:
-        All of rows ordered by timestamp column, each value of column contains the actual to time data.
-
-## Running the app
-
 Run the application from command line or terminal using .bat or .sh file, placed into root project directory.
 
 1. Open command line (Win + R) (Windows) or Terminal (*nix) at .bat or .sh placed
 2. Follow --help instruction, for example: 
 ``` 
-tlm2kml -t 60 -f telemetry.tlm -d kml -l fieldsFile.txt
+tlm2kml -t 60 -f telemetry.tlm -d kml
 ```
 .kml files will be available in ./kml directory
 .tlm and fieldsFile.txt must be placed on same app directory for this sample
 
 Running without parameters print help.
 
+Output file format:
+
+```
+<vehicle_name>-yyyyMMdd_hhmmss.kml
+```
+
+.kml file will be formed from "latitude", "longitude" and "altitude_amsl" fields. Its can be opening with Google Earth to view flight routing.
+
 ## Set the JAVA_HOME Variable
 
-Once you have the JDK installation path:
-
-1. Right-click the My Computer icon on your desktop and select Properties.
-2. Click the Advanced tab, then click the Environment Variables button.
-3. Under System Variables, click New.
-4. Enter the variable name as JAVA_HOME.
-5. Enter the variable value as the installation path for the Java Development Kit.
-6. Click OK.
-7. Click Apply Changes.
+Follow [this instruction](http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/ "Set the JAVA_HOME variable") if you have a some problems with setting JAVA_HOME variable 
