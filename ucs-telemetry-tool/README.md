@@ -40,7 +40,7 @@ fc:vertical_speed
 # gps_fix
 ```
 
-A field name is given in a form <subsystem alias:telemetry field>, where subsystem alias is one of the following:
+A field name is given in a form `<subsystem alias:telemetry field>`, where subsystem alias is one of the following:
 
  - cs: control server (ground station)
  - fc: flight controller
