@@ -8,7 +8,6 @@
 		<version>2.10</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
-
 	<artifactId>ucs-telemetry-tool</artifactId>
 	<name>UCS Telemetry Tool</name>
 	<packaging>jar</packaging>
@@ -39,7 +38,7 @@
 							<goal>single</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.parent.parent.build.directory}</outputDirectory>
+							<outputDirectory>${project.parent.build.directory}</outputDirectory>
 							<finalName>ugcs-telemetry-tool</finalName>
 							<descriptors>
 								<descriptor>assembly.xml</descriptor>
