@@ -1,56 +1,24 @@
 package com.ugcs.telemetrytool;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.ParseException;
 
 public final class Tlm2Csv extends TlmConverter{
 
-	public Tlm2Csv(String[] args) {
+	public Tlm2Csv(String[] args) throws ParseException {
 		super(args);
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		Tlm2Csv tlm2Csv = new Tlm2Csv(args);
 		CsvTelemetryWriter writer = new CsvTelemetryWriter();
-		tlm2Csv.writing(writer);
+		tlm2Csv.write(writer);
 	}
 
 	@Override
 	public void usage() {
 		System.err.println(getApplicationHelp());
 		System.exit(1);
-	}
-
-	@Override
-	public List<String> getWritableFields(String fileName) throws IOException {
-		if (fileName == null) {
-			return null;
-		} else if ((new File(fileName)).exists()) {
-			List<String> fields = new ArrayList<>(Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8));
-			if (fields.isEmpty()) {
-				return null;
-			}
-			List<String> filtered = new ArrayList<>();
-			for (String field : fields) {
-				String resultField = (field.contains("#")
-						? field.substring(field.indexOf("#"))
-						: field
-				).trim();
-				if (resultField.equals("")) {
-					continue;
-				}
-				filtered.add(resultField);
-			}
-			fields = filtered;
-			return fields;
-		} else {
-			return null;
-		}
 	}
 
 	@Override
@@ -63,6 +31,13 @@ public final class Tlm2Csv extends TlmConverter{
 				"-d              : Path to the destination directory where to put output files.\n" +
 				"                  Default is a current directory.\n" +
 				"-l, --fields    : Additional file containing list of output fields. \n" +
+				"-s, --start     : Start time interval for telemetry convert. \n" +
+				"-e, --end       : End time interval for telemetry convert. \n" +
 				"-h, --help      : Help, display this message.";
+	}
+
+	@Override
+	String getExtension() {
+		return "csv";
 	}
 }

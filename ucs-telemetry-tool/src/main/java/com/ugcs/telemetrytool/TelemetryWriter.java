@@ -1,9 +1,9 @@
 package com.ugcs.telemetrytool;
 
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 
 public interface TelemetryWriter {
-	void write(FileWriter out, FlightTelemetry telemetry, List<String> fields) throws IOException;
+	void write(OutputStream out, FlightTelemetry telemetry, List<TelemetryKey> telemetryKeys) throws IOException;
 }

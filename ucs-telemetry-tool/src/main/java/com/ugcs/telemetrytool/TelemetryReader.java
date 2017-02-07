@@ -20,7 +20,10 @@ public class TelemetryReader {
 
 	private TelemetryReader() {}
 
-	public static Map<FlightKey, FlightTelemetry> read(CodecInputStream in, int tolerance)
+	public static Map<FlightKey, FlightTelemetry> read(CodecInputStream in,
+													   int tolerance,
+													   Date intervalStartTime,
+													   Date intervalEndTime)
 			throws IOException {
 
 		Preconditions.checkNotNull(in);
@@ -79,17 +82,20 @@ public class TelemetryReader {
 				} else {
 					// telemetry value
 					Date time = new Date(in.readVarLong());
+
+					//System.out.println(time.after(intervalStartTime) && time.before(intervalEndTime));
+
 					byte[] bytes = in.readVarBytes();
 					telemetryValue = TelemetryValue.create(
 							AbstractValue.fromBytes(bytes),
 							time);
 					long flightStartTime = telemetryValue.getTime().getTime();
-					long flightDuration = Long.parseLong(attributes.get("range.to")) - flightStartTime;
-					flightKey  = new FlightKey(vehicleName, flightStartTime, flightDuration);
+					flightKey  = new FlightKey(vehicleName, flightStartTime);
 
 					if (telemetryValue.getValue().isAvailable()) {
 						if (openedKeys.isEmpty()) {
 							if (lastValueTime == null || new Date(lastValueTime.getTime() + tolerance * 1000).before(telemetryValue.getTime())) {
+
 								if (flightTelemetry != null) {
 									model.put(flightKey, flightTelemetry);
 									flightTelemetry = null;
@@ -100,7 +106,11 @@ public class TelemetryReader {
 
 						if (flightTelemetry == null)
 							flightTelemetry = new FlightTelemetry();
-						flightTelemetry.add(telemetryKey, telemetryValue);
+						if ((intervalStartTime == null || intervalEndTime == null) ||
+								(intervalStartTime != null && intervalEndTime != null &&
+								time.after(intervalStartTime) && time.before(intervalEndTime))) {
+							flightTelemetry.add(telemetryKey, telemetryValue);
+						}
 
 						openedKeys.add(telemetryKey);
 						lastValueTime = telemetryValue.getTime();

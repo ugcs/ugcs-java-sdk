@@ -1,5 +1,11 @@
 package com.ugcs.telemetrytool;
 
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.ugcs.common.util.Equals;
 import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.Strings;
@@ -7,6 +13,20 @@ import com.ugcs.common.util.Strings;
 public class TelemetryKey {
 	public static final String DEFAULT_SEMANTIC = "DEFAULT";
 	public static final int DEFAULT_SUBSYSTEM_ID = 0;
+
+	public static final Comparator<TelemetryKey> CODE_COMPARATOR = new CodeComparator();
+
+	private static Map<String, String> SUBSYSTEM_ALIASES = newSubsystemAliases();
+
+	private static Map<String, String> newSubsystemAliases() {
+		Map<String, String> aliases = new HashMap<>();
+		aliases.put("CONTROL_SERVER", "cs");
+		aliases.put("FLIGHT_CONTROLLER", "fc");
+		aliases.put("GIMBAL", "gb");
+		aliases.put("CAMERA", "cam");
+		aliases.put("ADSB_TRANSPONDER", "at");
+		return aliases;
+	}
 
 	private final String code;
 	private final String semantic;
@@ -44,21 +64,50 @@ public class TelemetryKey {
 		return subsystemId;
 	}
 
-	public static String getSubsystemAlias(String subsystem) {
-		switch (subsystem) {
-			case "CONTROL_SERVER" :
-				return "cs";
-			case "FLIGHT_CONTROLLER" :
-				return "fc";
-			case "GIMBAL" :
-				return "gb";
-			case "CAMERA" :
-				return "cam";
-			case "ADSB_TRANSPONDER" :
-				return "at";
-			default:
-				return null;
+	public String format() {
+		String alias = SUBSYSTEM_ALIASES.get(subsystem);
+		String str = (!Strings.isNullOrEmpty(alias) ? alias : subsystem)
+				+ ":"
+				+ code
+				+ (subsystemId > DEFAULT_SUBSYSTEM_ID ? "@" + subsystemId : "");
+		return str;
+	}
+
+	public static TelemetryKey parse(String str) {
+		Pattern pattern = Pattern.compile("(?:(?<a>\\w+):)?(?<c>\\w+)(?:@(?<i>\\d+))?");
+		Matcher matcher = pattern.matcher(str);
+
+		boolean matches = matcher.matches();
+		String alias = matches
+				? matcher.group("a")
+				: null;
+		String code = matches
+				? matcher.group("c")
+				: null;
+		String id = matches
+				? matcher.group("i")
+				: null;
+
+		String subsystem = null;
+
+		for (Map.Entry<String, String> entry : SUBSYSTEM_ALIASES.entrySet()) {
+			if (entry.getValue().equals(alias)) {
+				subsystem = entry.getKey();
+				break;
+			}
 		}
+		if (subsystem == null)
+			subsystem = alias;
+
+		return TelemetryKey.create(
+				code,
+				TelemetryKey.DEFAULT_SEMANTIC,
+				subsystem,
+				DEFAULT_SUBSYSTEM_ID);
+	}
+
+	public static Comparator<TelemetryKey> codeComparator() {
+		return CODE_COMPARATOR;
 	}
 
 	@Override
@@ -85,6 +134,16 @@ public class TelemetryKey {
 				&& Equals.equals(subsystemId, other.subsystemId);
 	}
 
+	public boolean equalsByCode(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof TelemetryKey))
+			return false;
+
+		TelemetryKey other = (TelemetryKey) obj;
+		return codeComparator().compare(this, other) == 0;
+	}
+
 	@Override
 	public String toString() {
 		return new StringBuilder()
@@ -95,5 +154,16 @@ public class TelemetryKey {
 				.append("#")
 				.append(subsystemId)
 				.toString();
+	}
+
+	static class CodeComparator implements Comparator<TelemetryKey> {
+
+		@Override
+		public int compare(TelemetryKey x, TelemetryKey y) {
+			int cmp = x.subsystem.compareTo(y.subsystem);
+			if (cmp == 0)
+				cmp = x.code.compareTo(y.code);
+			return cmp;
+		}
 	}
 }

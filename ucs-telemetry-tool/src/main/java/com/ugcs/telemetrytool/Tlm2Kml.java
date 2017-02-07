@@ -1,30 +1,24 @@
 package com.ugcs.telemetrytool;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.text.ParseException;
 
 public final class Tlm2Kml extends TlmConverter {
 
-	public Tlm2Kml(String[] args) {
+	public Tlm2Kml(String[] args) throws ParseException {
 		super(args);
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		Tlm2Kml tlm2Kml = new Tlm2Kml(args);
 		KmlTelemetryWriter writer = new KmlTelemetryWriter();
-		tlm2Kml.writing(writer);
+		tlm2Kml.write(writer);
 	}
 
 	@Override
 	public void usage() {
 		System.err.println(getApplicationHelp());
 		System.exit(1);
-	}
-
-	@Override
-	public List<String> getWritableFields(String fileName) throws IOException{
-		return Arrays.asList("fc:latitude", "fc:longitude", "fc:altitude_amsl");
 	}
 
 	@Override
@@ -36,6 +30,13 @@ public final class Tlm2Kml extends TlmConverter {
 				"-f              : Path to the source .tlm file.\n" +
 				"-d              : Path to the destination directory where to put output files.\n" +
 				"                  Default is a current directory.\n" +
+				"-s, --start     : Start time interval for telemetry convert. \n" +
+				"-e, --end       : End time interval for telemetry convert. \n" +
 				"-h, --help      : Help, display this message.";
+	}
+
+	@Override
+	String getExtension() {
+		return "kml";
 	}
 }

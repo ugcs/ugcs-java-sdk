@@ -9,7 +9,7 @@ You need to set the JAVA_HOME environment variable before running the tool. Foll
 To convert telemetry to CSV run the tlm2csv script. Follow the `--help` instructions.
 
 ```
-tlm2csv [-h] [-t <seconds>] [-d <output dir>] [-l <fields>] -f <fileName>
+tlm2csv [-h] [-t <seconds>] [-s yyyy-MM-dd'T'HH:mm:ssXXX] [--end yyyy-MM-dd'T'HH:mm:ssXXX] [-d <output dir>] [-l <fields>] -f <fileName>
 
 Parameters:
 
@@ -19,6 +19,8 @@ Parameters:
 -d              : Path to the destination directory where to put output files.
                   Default is a current directory.
 -l, --fields    : Additional file containing list of output fields.
+-s, --start     : Start time interval for telemetry convert
+-e, --end       : End time interval for telemetry convert
 -h, --help      : Help, display this message.
 ```
 
@@ -63,7 +65,7 @@ Every row of the file is a snapshot of the vehicle's telemetry at the given time
 Example:
 
 ```
-$ tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt
+$ tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt -s 2017-01-01T16:38:00+03:00 -e 2017-01-01T17:40:36+03:00
 ```
 
  - CSV files will be stored in the ./csv directory.
@@ -74,7 +76,7 @@ $ tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt
 To convert telemetry to KML run the tlm2kml script. Follow the `--help` instructions.
 
 ```
-tlm2kml [-h] [-t <seconds>] [-d <output dir>] -f <fileName>
+tlm2kml [-h] [-t <seconds>] [-s yyyy-MM-dd'T'HH:mm:ssXXX] [--end yyyy-MM-dd'T'HH:mm:ssXXX] [-d <output dir>] -f <fileName>
 
 Parameters:
 
@@ -83,6 +85,8 @@ Parameters:
 -f              : Path to the source .tlm file.
 -d              : Path to the destination directory where to put output files.
                   Default is a current directory.
+-s, --start     : Start time interval for telemetry convert
+-e, --end       : End time interval for telemetry convert
 -h, --help      : Help, display this message.
 ```
 
@@ -97,7 +101,7 @@ KML geometry is based on the latitude, longitude and altitude_amsl telemetry fie
 Example:
 
 ```
-$ tlm2kml -t 60 -f telemetry.tlm -d kml
+$ tlm2kml -t 60 -f telemetry.tlm -d kml -s 2017-01-01T16:38:00+03:00 -e 2017-01-01T17:40:36+03:00
 ```
 
  - KML files will be stored in the ./kml directory.
