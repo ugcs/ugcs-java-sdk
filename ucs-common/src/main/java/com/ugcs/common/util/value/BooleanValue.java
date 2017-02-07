@@ -39,4 +39,13 @@ public class BooleanValue extends AbstractValue {
 	public String stringValue() {
 		return Boolean.toString(value);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof AbstractValue))
+			return false;
+		return this.value == ((AbstractValue) obj).booleanValue();
+	}
 }

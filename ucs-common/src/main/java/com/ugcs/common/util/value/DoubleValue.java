@@ -40,4 +40,13 @@ public class DoubleValue extends AbstractValue {
 	public String stringValue() {
 		return Double.toString(value);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof AbstractValue))
+			return false;
+		return this.value == ((AbstractValue) obj).doubleValue();
+	}
 }

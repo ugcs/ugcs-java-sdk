@@ -44,4 +44,13 @@ public class StringValue extends AbstractValue {
 	public String stringValue() {
 		return value;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof AbstractValue))
+			return false;
+		return Objects.equals(this.value, ((AbstractValue) obj).stringValue());
+	}
 }
