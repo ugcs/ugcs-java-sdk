@@ -1,4 +1,8 @@
 @echo off
-set CLASSPATH=.;*;lib\*
+set CLASSPATH=%~dp0;%~dp0\*;%~dp0\lib\*
+set JAVAPATH="C:\Program Files (x86)\UgCS\java\bin\java.exe"
+if not exist %JAVAPATH% (
+   set JAVAPATH=%JAVA_HOME%
+)
 shift
-"%JAVA_HOME%\bin\java" -cp %CLASSPATH% com.ugcs.telemetrytool.Tlm2Kml %*
+"%JAVAPATH%" -cp %CLASSPATH% com.ugcs.telemetrytool.Tlm2Kml %*
