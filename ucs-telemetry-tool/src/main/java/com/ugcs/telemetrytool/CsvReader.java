@@ -16,8 +16,7 @@ public class CsvReader {
 	private int length;
 	private int offset;
 	private char[] fieldBuffer = new char[1024];
-	private int fieldLength = 0;
-	
+
 	public CsvReader(Reader reader) {
 		this (reader, 65536);
 	}
@@ -49,8 +48,8 @@ public class CsvReader {
 		if (length == -1)
 			return null;
 		
-		List<String> result = new ArrayList<String>();
-		fieldLength = 0;
+		List<String> result = new ArrayList<>();
+		int fieldLength = 0;
 		
 		boolean quoted = false;
 		while (length != -1) {

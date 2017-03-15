@@ -22,7 +22,7 @@ import com.ugcs.common.util.codec.CodecInputStream;
 
 public abstract class TlmConverter {
 	private static final SimpleDateFormat FLIGHT_INTERVAL_FORMAT =
-			new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
+			new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 	private Date intervalStartTime = null;
 	private Date intervalStopTime = null;
 	private int tolerance = 60;
@@ -36,8 +36,7 @@ public abstract class TlmConverter {
 		}
 
 		for (int i = 0; i < args.length; ++i) {
-			switch (args[i])
-			{
+			switch (args[i]) {
 				case "-t" :
 				case "--tolerance" :
 					tolerance = Integer.parseInt(args[i + 1]);
@@ -47,7 +46,12 @@ public abstract class TlmConverter {
 					break;
 				case "-d" :
 					destinationDirectory = args[i + 1];
-					new File(destinationDirectory).mkdir();
+					try {
+						boolean mkdir = new File(destinationDirectory).mkdir();
+					} catch (SecurityException e) {
+						System.err.println("Permission denied!");
+						System.exit(-2);
+					}
 					break;
 				case "-h" :
 				case "--help" :
@@ -127,19 +131,25 @@ public abstract class TlmConverter {
 
 			SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd_HHmmss");
 
-			for (FlightKey flightKey : telemetryModel.getFlightKeys()) {
+			List<FlightKey> flightKeys = telemetryModel.getFlightKeys();
+
+			if (flightKeys.isEmpty()) {
+				System.err.println("This time interval has not a records.");
+				return;
+			}
+
+			for (FlightKey flightKey : flightKeys) {
 				FlightTelemetry telemetry = telemetryModel.getFlightTelemetry(flightKey);
 
 				String fileName =
-						flightKey.getVehicleName() +
-								"-" +
-								format.format(new Date(flightKey.getFlightStartTime())) +
-								"." +
-								getExtension();
+						flightKey.getVehicleName()
+								+ "-"
+								+ format.format(new Date(flightKey.getFlightStartTime()))
+								+ "."
+								+ getExtension();
 
 				try (OutputStream out = Files.newOutputStream(Paths.get(destinationDirectory, fileName),
-						StandardOpenOption.WRITE, StandardOpenOption.CREATE)) {
-
+						StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {
 					writer.write(
 							out,
 							telemetry, getWritableFields(fieldsFile, telemetry));

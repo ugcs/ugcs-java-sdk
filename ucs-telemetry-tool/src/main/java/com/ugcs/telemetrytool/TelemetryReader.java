@@ -12,7 +12,7 @@ import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.codec.CodecInputStream;
 import com.ugcs.common.util.value.AbstractValue;
 
-public class TelemetryReader {
+public final class TelemetryReader {
 
 	private static final int FORMAT_SIGNATURE = -655442754; // "UCS TELEMETRY".hashCode()
 	private static final int FORMAT_VERSION = 1;
@@ -54,7 +54,6 @@ public class TelemetryReader {
 
 			Map<Integer, TelemetryKey> fieldKeys = new HashMap<>();
 
-
 			Set<TelemetryKey> openedKeys = new HashSet<>();
 			Date lastValueTime = null;
 
@@ -83,8 +82,6 @@ public class TelemetryReader {
 					// telemetry value
 					Date time = new Date(in.readVarLong());
 
-					//System.out.println(time.after(intervalStartTime) && time.before(intervalEndTime));
-
 					byte[] bytes = in.readVarBytes();
 					telemetryValue = TelemetryValue.create(
 							AbstractValue.fromBytes(bytes),
@@ -94,7 +91,8 @@ public class TelemetryReader {
 
 					if (telemetryValue.getValue().isAvailable()) {
 						if (openedKeys.isEmpty()) {
-							if (lastValueTime == null || new Date(lastValueTime.getTime() + tolerance * 1000).before(telemetryValue.getTime())) {
+							if (lastValueTime == null || new Date(lastValueTime.getTime() + tolerance * 1000)
+									.before(telemetryValue.getTime())) {
 
 								if (flightTelemetry != null) {
 									model.put(flightKey, flightTelemetry);
@@ -106,9 +104,8 @@ public class TelemetryReader {
 
 						if (flightTelemetry == null)
 							flightTelemetry = new FlightTelemetry();
-						if ((intervalStartTime == null || intervalEndTime == null) ||
-								(intervalStartTime != null && intervalEndTime != null &&
-								time.after(intervalStartTime) && time.before(intervalEndTime))) {
+						if ((intervalStartTime == null || intervalEndTime == null)
+								|| (time.after(intervalStartTime) && time.before(intervalEndTime))) {
 							flightTelemetry.add(telemetryKey, telemetryValue);
 						}
 

@@ -21,18 +21,18 @@ public class CsvWriter implements Closeable, Flushable{
 
 	public void writeNext(String[] nextLine) throws IOException {
 		Appendable appendable = new StringBuilder(1024);
-		if(nextLine != null) {
-			for(int i = 0; i < nextLine.length; ++i) {
-				if(i != 0) {
+		if (nextLine != null) {
+			for (int i = 0; i < nextLine.length; ++i) {
+				if (i != 0) {
 					appendable.append(SEPARATOR);
 				}
 
 				String nextElement = nextLine[i];
-				if(nextElement != null) {
+				if (nextElement != null) {
 					if (nextElement.indexOf(QUOTE_CHAR) != -1) {
 						nextElement = nextElement.replaceAll(String.valueOf(QUOTE_CHAR), "\"\"");
 					}
-					if(nextElement.indexOf(SEPARATOR) != -1 || nextElement.indexOf(LINE_END) != -1) {
+					if (nextElement.indexOf(SEPARATOR) != -1 || nextElement.indexOf(LINE_END) != -1) {
 						appendable.append(QUOTE_CHAR);
 						appendable.append(nextElement);
 						appendable.append(QUOTE_CHAR);

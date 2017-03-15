@@ -23,12 +23,13 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 	);
 
 	@Override
-	public void write(OutputStream out, FlightTelemetry telemetry, List<TelemetryKey> telemetryKeys) throws IOException{
+	public void write(OutputStream out, FlightTelemetry telemetry, List<TelemetryKey> telemetryKeys)
+			throws IOException {
 		Preconditions.checkNotNull(out);
 		Preconditions.checkNotNull(telemetry);
 		Preconditions.checkNotNull(telemetryKeys);
 
-		try(CsvWriter writer = new CsvWriter(out)) {
+		try (CsvWriter writer = new CsvWriter(out)) {
 			List<String> header = new ArrayList<>(telemetryKeys.size() + 1);
 			header.add("Time");
 			for (TelemetryKey key : telemetryKeys) {
@@ -76,8 +77,8 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 			timeRowsList = new ArrayList<>();
 			timeRows.put(telemetryRecord.getKey(), timeRowsList);
 		}
-		if (timeRowsList.isEmpty() ||
-				!timeRowsList.get(timeRowsList.size() - 1).equals(telemetryRecord.getValue().getValue())) {
+		if (timeRowsList.isEmpty()
+				|| !timeRowsList.get(timeRowsList.size() - 1).equals(telemetryRecord.getValue().getValue())) {
 			timeRowsList.add(telemetryRecord.getValue().getValue());
 		}
 	}
@@ -88,7 +89,7 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 									 CsvWriter writer,
 					   				 Date time) throws IOException {
 		int numRows = getMaxNumRows(timeRows);
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SXXX");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S");
 
 		for (int i = 0; i < numRows; ++i) {
 			List<String> row = new ArrayList<>(telemetryKeys.size() + 1);

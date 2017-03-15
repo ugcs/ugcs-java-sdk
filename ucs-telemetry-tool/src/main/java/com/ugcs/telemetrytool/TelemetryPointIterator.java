@@ -24,9 +24,9 @@ public class TelemetryPointIterator implements Iterator<TelemetryPoint> {
 
 	@Override
 	public boolean hasNext() {
-		boolean hasLongitude = false,
-				hasLatitude = false,
-				hasAltitude = false;
+		boolean hasLongitude = false;
+		boolean hasLatitude = false;
+		boolean hasAltitude = false;
 		for (int i = pos; i < records.size(); ++i) {
 			String subsystem = records.get(i).getKey().getSubsystem();
 			String code = records.get(i).getKey().getCode();

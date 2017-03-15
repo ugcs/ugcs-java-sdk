@@ -10,23 +10,13 @@ import com.ugcs.common.util.Equals;
 import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.Strings;
 
-public class TelemetryKey {
+public final class TelemetryKey {
 	public static final String DEFAULT_SEMANTIC = "DEFAULT";
 	public static final int DEFAULT_SUBSYSTEM_ID = 0;
 
 	public static final Comparator<TelemetryKey> CODE_COMPARATOR = new CodeComparator();
 
-	private static Map<String, String> SUBSYSTEM_ALIASES = newSubsystemAliases();
-
-	private static Map<String, String> newSubsystemAliases() {
-		Map<String, String> aliases = new HashMap<>();
-		aliases.put("CONTROL_SERVER", "cs");
-		aliases.put("FLIGHT_CONTROLLER", "fc");
-		aliases.put("GIMBAL", "gb");
-		aliases.put("CAMERA", "cam");
-		aliases.put("ADSB_TRANSPONDER", "at");
-		return aliases;
-	}
+	private static final Map<String, String> SUBSYSTEM_ALIASES = newSubsystemAliases();
 
 	private final String code;
 	private final String semantic;
@@ -42,6 +32,16 @@ public class TelemetryKey {
 		this.semantic = semantic;
 		this.subsystem = subsystem;
 		this.subsystemId = subsystemId;
+	}
+
+	private static Map<String, String> newSubsystemAliases() {
+		Map<String, String> aliases = new HashMap<>();
+		aliases.put("CONTROL_SERVER", "cs");
+		aliases.put("FLIGHT_CONTROLLER", "fc");
+		aliases.put("GIMBAL", "gb");
+		aliases.put("CAMERA", "cam");
+		aliases.put("ADSB_TRANSPONDER", "at");
+		return aliases;
 	}
 
 	public static TelemetryKey create(String code, String semantic, String subsystem, int subsystemId) {
@@ -66,11 +66,10 @@ public class TelemetryKey {
 
 	public String format() {
 		String alias = SUBSYSTEM_ALIASES.get(subsystem);
-		String str = (!Strings.isNullOrEmpty(alias) ? alias : subsystem)
+		return (!Strings.isNullOrEmpty(alias) ? alias : subsystem)
 				+ ":"
 				+ code
 				+ (subsystemId > DEFAULT_SUBSYSTEM_ID ? "@" + subsystemId : "");
-		return str;
 	}
 
 	public static TelemetryKey parse(String str) {
@@ -127,7 +126,7 @@ public class TelemetryKey {
 		if (!(obj instanceof TelemetryKey))
 			return false;
 
-		TelemetryKey other = (TelemetryKey) obj;
+		TelemetryKey other = (TelemetryKey)obj;
 		return Equals.equals(code, other.code)
 				&& Equals.equals(semantic, other.semantic)
 				&& Equals.equals(subsystem, other.subsystem)
@@ -140,23 +139,21 @@ public class TelemetryKey {
 		if (!(obj instanceof TelemetryKey))
 			return false;
 
-		TelemetryKey other = (TelemetryKey) obj;
+		TelemetryKey other = (TelemetryKey)obj;
 		return codeComparator().compare(this, other) == 0;
 	}
 
 	@Override
 	public String toString() {
-		return new StringBuilder()
-				.append("<tlm> ")
-				.append(Strings.nullToEmpty(code))
-				.append(" @ ")
-				.append(subsystem)
-				.append("#")
-				.append(subsystemId)
-				.toString();
+		return "<tlm> "
+				+ Strings.nullToEmpty(code)
+				+ " @ "
+				+ subsystem
+				+ "#"
+				+ subsystemId;
 	}
 
-	static class CodeComparator implements Comparator<TelemetryKey> {
+	private static class CodeComparator implements Comparator<TelemetryKey> {
 
 		@Override
 		public int compare(TelemetryKey x, TelemetryKey y) {

@@ -23,7 +23,7 @@ public class TelemetryModel {
 	public static TelemetryModel loadFromTlm(CodecInputStream in,
 											 int tolerance,
 											 Date intervalStartTime,
-											 Date intervalEndTime) throws IOException{
+											 Date intervalEndTime) throws IOException {
 		Preconditions.checkNotNull(in);
 		return new TelemetryModel(in, tolerance, intervalStartTime, intervalEndTime);
 	}
