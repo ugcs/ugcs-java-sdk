@@ -5,4 +5,4 @@ if not exist %JAVAPATH% (
    set JAVAPATH=%JAVA_HOME%
 )
 shift
-"%JAVAPATH%" -cp %CLASSPATH% com.ugcs.telemetrytool.Tlm2Kml %*
+%JAVAPATH% -cp %CLASSPATH% com.ugcs.telemetrytool.Tlm2Kml %*

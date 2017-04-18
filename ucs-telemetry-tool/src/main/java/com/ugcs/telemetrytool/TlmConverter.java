@@ -142,11 +142,13 @@ public abstract class TlmConverter {
 				FlightTelemetry telemetry = telemetryModel.getFlightTelemetry(flightKey);
 
 				String fileName =
-						flightKey.getVehicleName()
+						(flightKey.getVehicleName()
 								+ "-"
 								+ format.format(new Date(flightKey.getFlightStartTime()))
 								+ "."
-								+ getExtension();
+								+ getExtension())
+								.replaceAll("[\\*/\\\\!\\|:?<>]", "_")
+								.replaceAll("(%22)", "_");
 
 				try (OutputStream out = Files.newOutputStream(Paths.get(destinationDirectory, fileName),
 						StandardOpenOption.WRITE, StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING)) {

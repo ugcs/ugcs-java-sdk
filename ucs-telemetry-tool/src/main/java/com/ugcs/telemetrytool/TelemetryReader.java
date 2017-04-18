@@ -83,11 +83,17 @@ public final class TelemetryReader {
 					Date time = new Date(in.readVarLong());
 
 					byte[] bytes = in.readVarBytes();
-					telemetryValue = TelemetryValue.create(
-							AbstractValue.fromBytes(bytes),
-							time);
+					try {
+						telemetryValue = TelemetryValue.create(
+								AbstractValue.fromBytes(bytes),
+								time);
+					} catch (IllegalArgumentException e) {
+						System.err.println("WARNING: " + e.getMessage());
+						continue;
+					}
+
 					long flightStartTime = telemetryValue.getTime().getTime();
-					flightKey  = new FlightKey(vehicleName, flightStartTime);
+					flightKey = new FlightKey(vehicleName, flightStartTime);
 
 					if (telemetryValue.getValue().isAvailable()) {
 						if (openedKeys.isEmpty()) {
