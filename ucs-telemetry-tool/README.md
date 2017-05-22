@@ -2,7 +2,7 @@
 
 Telemetry tool allows to convert [UgCS telemetry files (.tlm)](https://github.com/ugcs/ugcs-java-sdk/wiki/.tlm-file-format "UgCS telemetry format") into the CSV and KML output formats.
 
-You need to set the JAVA_HOME environment variable before running the tool. Follow [this instruction](http://www.robertsindall.co.uk/blog/setting-java-home-variable-in-windows/ "Set the JAVA_HOME variable") for assistance.
+You need to set the JAVA_HOME environment variable before running the tool. Follow [this instruction](https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html "Set the JAVA_HOME variable") for assistance.
 
 ## Converting to CSV
 
@@ -62,7 +62,7 @@ CSV file consists of the following columns:
 
 Every row of the file is a snapshot of the vehicle's telemetry at the given timestamp.
 
-Example:
+Examples:
 
 ```
 $ tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt -s 2017-01-01T16:38:00 -e 2017-01-01T17:40:36
@@ -71,6 +71,12 @@ $ tlm2csv -t 60 -f telemetry.tlm -d csv -l fieldsFile.txt -s 2017-01-01T16:38:00
  - CSV files will be stored in the ./csv directory.
  - telemetry.tlm and fieldsFile.txt files must be placed in the application directory for this example.
 
+```
+$ tlm2csv -f telemetry.tlm
+```
+
+ - CSV files will be stored in the current directory.
+ 
 ## Converting to KML
 
 To convert telemetry to KML run the tlm2kml script. Follow the `--help` instructions.
@@ -107,3 +113,8 @@ $ tlm2kml -t 60 -f telemetry.tlm -d kml -s 2017-01-01T16:38:00 -e 2017-01-01T17:
  - KML files will be stored in the ./kml directory.
  - telemetry.tlm file must be be placed on same application directory for this example.
 
+```
+$ tlm2kml -f telemetry.tlm
+```
+
+ - KML files will be stored in the current directory.
