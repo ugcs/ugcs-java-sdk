@@ -610,6 +610,10 @@ public final class DomainProto {
     TT_ADSB_ERROR_OVER_TEMPERATURE(84, 84),
     TT_ADSB_ERROR_ES(85, 85),
     TT_ADSB_ERROR_TRANSPONDER(86, 86),
+    TT_TARGET_LATITUDE(87, 87),
+    TT_TARGET_LONGITUDE(88, 88),
+    TT_TARGET_AMSL_ALTITUDE(89, 89),
+    TT_BATTERY_POWER_LEVEL(90, 90),
     ;
     
     public static final int TT_BATTERY_VOLTAGE_VALUE = 0;
@@ -699,6 +703,10 @@ public final class DomainProto {
     public static final int TT_ADSB_ERROR_OVER_TEMPERATURE_VALUE = 84;
     public static final int TT_ADSB_ERROR_ES_VALUE = 85;
     public static final int TT_ADSB_ERROR_TRANSPONDER_VALUE = 86;
+    public static final int TT_TARGET_LATITUDE_VALUE = 87;
+    public static final int TT_TARGET_LONGITUDE_VALUE = 88;
+    public static final int TT_TARGET_AMSL_ALTITUDE_VALUE = 89;
+    public static final int TT_BATTERY_POWER_LEVEL_VALUE = 90;
     
     
     public final int getNumber() { return value; }
@@ -792,6 +800,10 @@ public final class DomainProto {
         case 84: return TT_ADSB_ERROR_OVER_TEMPERATURE;
         case 85: return TT_ADSB_ERROR_ES;
         case 86: return TT_ADSB_ERROR_TRANSPONDER;
+        case 87: return TT_TARGET_LATITUDE;
+        case 88: return TT_TARGET_LONGITUDE;
+        case 89: return TT_TARGET_AMSL_ALTITUDE;
+        case 90: return TT_BATTERY_POWER_LEVEL;
         default: return null;
       }
     }
@@ -822,7 +834,7 @@ public final class DomainProto {
     }
     
     private static final TelemetryType[] VALUES = {
-      TT_BATTERY_VOLTAGE, TT_ROLL, TT_PITCH, TT_YAW, TT_ROLL_SPEED, TT_PITCH_SPEED, TT_YAW_SPEED, TT_LATITUDE, TT_LONGITUDE, TT_MSL_ALTITUDE, TT_AGL_ALTITUDE, TT_GROUND_SPEED_X, TT_GROUND_SPEED_Y, TT_GROUND_SPEED_Z, TT_LATITUDE_GPS, TT_LONGITUDE_GPS, TT_ALTITUDE_GPS, TT_GROUND_SPEED_GPS, TT_ACCELERATION_X_RAW, TT_ACCELERATION_Y_RAW, TT_ACCELERATION_Z_RAW, TT_ANGULAR_SPEED_X_RAW, TT_ANGULAR_SPEED_Y_RAW, TT_ANGULAR_SPEED_Z_RAW, TT_MAGNETIC_X_RAW, TT_MAGNETIC_Y_RAW, TT_MAGNETIC_Z_RAW, TT_ABSOLUTE_PRESSURE, TT_DIFFERENTIAL_PRESSURE, TT_TEMPERATURE, TT_AIR_SPEED, TT_GROUND_SPEED, TT_HEADING, TT_THROTTLE, TT_CLIMB_RATE, TT_GPS_SATELLITES_VISIBLE, TT_ROUTE_MILAGE, TT_TELEMETRY_DROP_RATE, TT_DOWNLINK_CONNECTED, TT_UPLINK_CONNECTED, TT_CONTROL_MODE, TT_STATE, TT_COURSE, TT_RELATIVE_ALTITUDE, TT_ELEVATION, TT_PAYLOAD_1_ROLL, TT_PAYLOAD_1_TILT, TT_PAYLOAD_1_YAW, TT_CAMERA_1_FOV_HORIZONTAL, TT_CAMERA_1_FOV_VERTICAL, TT_GPS_FIX_TYPE, TT_RC_LINK_QUALITY, TT_ADSB_TRANSPONDER_MODE, TT_ADSB_IDENT_STATE, TT_ADSB_SQUAWK_CODE, TT_ADSB_ALTITUDE_SOURCE, TT_ADSB_ALTITUDE, TT_ADSB_ERROR_FLAGS, TT_PAYLOAD_2_ROLL, TT_PAYLOAD_2_TILT, TT_PAYLOAD_2_YAW, TT_CAMERA_2_FOV_HORIZONTAL, TT_CAMERA_2_FOV_VERTICAL, TT_PAYLOAD_1_CONTROL_MODE, TT_PAYLOAD_2_CONTROL_MODE, TT_PAYLOAD_1_AVAILABLE, TT_PAYLOAD_2_AVAILABLE, TT_PAYLOAD_1_POWERED, TT_PAYLOAD_2_POWERED, TT_CAMERA_1_ZOOM, TT_CAMERA_2_ZOOM, TT_CAMERA_1_RECORDING, TT_CAMERA_2_RECORDING, TT_CAMERA_1_IMAGE_COUNT, TT_CAMERA_2_IMAGE_COUNT, TT_CAMERA_1_IMAGE_CAPACITY, TT_CAMERA_2_IMAGE_CAPACITY, TT_CAMERA_1_VIDEO_COUNT, TT_CAMERA_2_VIDEO_COUNT, TT_HOME_LATITUDE, TT_HOME_LONGITUDE, TT_HOME_AMSL_ALTITUDE, TT_ADSB_ERROR_GPS, TT_ADSB_ERROR_ICAO, TT_ADSB_ERROR_OVER_TEMPERATURE, TT_ADSB_ERROR_ES, TT_ADSB_ERROR_TRANSPONDER, 
+      TT_BATTERY_VOLTAGE, TT_ROLL, TT_PITCH, TT_YAW, TT_ROLL_SPEED, TT_PITCH_SPEED, TT_YAW_SPEED, TT_LATITUDE, TT_LONGITUDE, TT_MSL_ALTITUDE, TT_AGL_ALTITUDE, TT_GROUND_SPEED_X, TT_GROUND_SPEED_Y, TT_GROUND_SPEED_Z, TT_LATITUDE_GPS, TT_LONGITUDE_GPS, TT_ALTITUDE_GPS, TT_GROUND_SPEED_GPS, TT_ACCELERATION_X_RAW, TT_ACCELERATION_Y_RAW, TT_ACCELERATION_Z_RAW, TT_ANGULAR_SPEED_X_RAW, TT_ANGULAR_SPEED_Y_RAW, TT_ANGULAR_SPEED_Z_RAW, TT_MAGNETIC_X_RAW, TT_MAGNETIC_Y_RAW, TT_MAGNETIC_Z_RAW, TT_ABSOLUTE_PRESSURE, TT_DIFFERENTIAL_PRESSURE, TT_TEMPERATURE, TT_AIR_SPEED, TT_GROUND_SPEED, TT_HEADING, TT_THROTTLE, TT_CLIMB_RATE, TT_GPS_SATELLITES_VISIBLE, TT_ROUTE_MILAGE, TT_TELEMETRY_DROP_RATE, TT_DOWNLINK_CONNECTED, TT_UPLINK_CONNECTED, TT_CONTROL_MODE, TT_STATE, TT_COURSE, TT_RELATIVE_ALTITUDE, TT_ELEVATION, TT_PAYLOAD_1_ROLL, TT_PAYLOAD_1_TILT, TT_PAYLOAD_1_YAW, TT_CAMERA_1_FOV_HORIZONTAL, TT_CAMERA_1_FOV_VERTICAL, TT_GPS_FIX_TYPE, TT_RC_LINK_QUALITY, TT_ADSB_TRANSPONDER_MODE, TT_ADSB_IDENT_STATE, TT_ADSB_SQUAWK_CODE, TT_ADSB_ALTITUDE_SOURCE, TT_ADSB_ALTITUDE, TT_ADSB_ERROR_FLAGS, TT_PAYLOAD_2_ROLL, TT_PAYLOAD_2_TILT, TT_PAYLOAD_2_YAW, TT_CAMERA_2_FOV_HORIZONTAL, TT_CAMERA_2_FOV_VERTICAL, TT_PAYLOAD_1_CONTROL_MODE, TT_PAYLOAD_2_CONTROL_MODE, TT_PAYLOAD_1_AVAILABLE, TT_PAYLOAD_2_AVAILABLE, TT_PAYLOAD_1_POWERED, TT_PAYLOAD_2_POWERED, TT_CAMERA_1_ZOOM, TT_CAMERA_2_ZOOM, TT_CAMERA_1_RECORDING, TT_CAMERA_2_RECORDING, TT_CAMERA_1_IMAGE_COUNT, TT_CAMERA_2_IMAGE_COUNT, TT_CAMERA_1_IMAGE_CAPACITY, TT_CAMERA_2_IMAGE_CAPACITY, TT_CAMERA_1_VIDEO_COUNT, TT_CAMERA_2_VIDEO_COUNT, TT_HOME_LATITUDE, TT_HOME_LONGITUDE, TT_HOME_AMSL_ALTITUDE, TT_ADSB_ERROR_GPS, TT_ADSB_ERROR_ICAO, TT_ADSB_ERROR_OVER_TEMPERATURE, TT_ADSB_ERROR_ES, TT_ADSB_ERROR_TRANSPONDER, TT_TARGET_LATITUDE, TT_TARGET_LONGITUDE, TT_TARGET_AMSL_ALTITUDE, TT_BATTERY_POWER_LEVEL, 
     };
     
     public static TelemetryType valueOf(
@@ -962,6 +974,8 @@ public final class DomainProto {
     VPT_LANDING_RANGEFINDER_ENABLED(40, 40),
     VPT_MIN_RANGEFINDER_DISTANCE(41, 41),
     VPT_MAX_DESCENT_RATE(42, 42),
+    VPT_LOW_BATTERY_POWER_LEVEL(43, 43),
+    VPT_NORMAL_BATTERY_POWER_LEVEL(44, 44),
     ;
     
     public static final int VPT_HEIGHT_VALUE = 0;
@@ -1007,6 +1021,8 @@ public final class DomainProto {
     public static final int VPT_LANDING_RANGEFINDER_ENABLED_VALUE = 40;
     public static final int VPT_MIN_RANGEFINDER_DISTANCE_VALUE = 41;
     public static final int VPT_MAX_DESCENT_RATE_VALUE = 42;
+    public static final int VPT_LOW_BATTERY_POWER_LEVEL_VALUE = 43;
+    public static final int VPT_NORMAL_BATTERY_POWER_LEVEL_VALUE = 44;
     
     
     public final int getNumber() { return value; }
@@ -1056,6 +1072,8 @@ public final class DomainProto {
         case 40: return VPT_LANDING_RANGEFINDER_ENABLED;
         case 41: return VPT_MIN_RANGEFINDER_DISTANCE;
         case 42: return VPT_MAX_DESCENT_RATE;
+        case 43: return VPT_LOW_BATTERY_POWER_LEVEL;
+        case 44: return VPT_NORMAL_BATTERY_POWER_LEVEL;
         default: return null;
       }
     }
@@ -1086,7 +1104,7 @@ public final class DomainProto {
     }
     
     private static final VehicleParameterType[] VALUES = {
-      VPT_HEIGHT, VPT_WIDTH, VPT_LENGTH, VPT_MAX_CLIMB_RATE, VPT_MAX_HORIZONTAL_SPEED, VPT_MAX_ALTITUDE, VPT_MAX_WAYPOINTS, VPT_MAX_FLIGHT_TIME, VPT_WIND_RESISTANCE, VPT_DRY_TAKEOFF_WEIGHT, VPT_MAX_TAKEOFF_WEIGHT, VPT_BATTERY_WEIGHT, VPT_CHARGED_BATTERY_VOLTAGE, VPT_DISCHARGED_BATTERY_VOLTAGE, VPT_NORMAL_BATTERY_VOLTAGE, VPT_LOW_BATTERY_VOLTAGE, VPT_LOW_GPS_SATELLITES, VPT_NORMAL_GPS_SATELLITES, VPT_SAFE_DISTANCE_TO_TERRAIN, VPT_SAFE_DISTANCE_TO_OBSTACLE, VPT_WAYPOINT_ACCEPTANCE_RADIUS, VPT_FENCE_RADIUS, VPT_LOW_TELEMETRY_LEVEL, VPT_NORMAL_TELEMETRY_LEVEL, VPT_DEFAULT_CLIMB_RATE, VPT_DEFAULT_DESCENT_RATE, VPT_GLIDE_SLOPE, VPT_DEFAULT_HORIZONTAL_SPEED, VPT_LANDING_GROUND_SPEED, VPT_MAX_ALTITUDE_AGL, VPT_LANDING_FLARE_ALTITUDE, VPT_LANDING_FLARE_TIME, VPT_MIN_LANDING_PITCH, VPT_LANDING_FLARE_DAMP, VPT_LANDING_APPROACH_AIRSPEED, VPT_LANDING_SPEED_WEIGHTING, VPT_MAX_AUTO_FLIGHT_PITCH, VPT_MAX_PITCH, VPT_MIN_THROTTLE, VPT_LANDING_SINK_RATE, VPT_LANDING_RANGEFINDER_ENABLED, VPT_MIN_RANGEFINDER_DISTANCE, VPT_MAX_DESCENT_RATE, 
+      VPT_HEIGHT, VPT_WIDTH, VPT_LENGTH, VPT_MAX_CLIMB_RATE, VPT_MAX_HORIZONTAL_SPEED, VPT_MAX_ALTITUDE, VPT_MAX_WAYPOINTS, VPT_MAX_FLIGHT_TIME, VPT_WIND_RESISTANCE, VPT_DRY_TAKEOFF_WEIGHT, VPT_MAX_TAKEOFF_WEIGHT, VPT_BATTERY_WEIGHT, VPT_CHARGED_BATTERY_VOLTAGE, VPT_DISCHARGED_BATTERY_VOLTAGE, VPT_NORMAL_BATTERY_VOLTAGE, VPT_LOW_BATTERY_VOLTAGE, VPT_LOW_GPS_SATELLITES, VPT_NORMAL_GPS_SATELLITES, VPT_SAFE_DISTANCE_TO_TERRAIN, VPT_SAFE_DISTANCE_TO_OBSTACLE, VPT_WAYPOINT_ACCEPTANCE_RADIUS, VPT_FENCE_RADIUS, VPT_LOW_TELEMETRY_LEVEL, VPT_NORMAL_TELEMETRY_LEVEL, VPT_DEFAULT_CLIMB_RATE, VPT_DEFAULT_DESCENT_RATE, VPT_GLIDE_SLOPE, VPT_DEFAULT_HORIZONTAL_SPEED, VPT_LANDING_GROUND_SPEED, VPT_MAX_ALTITUDE_AGL, VPT_LANDING_FLARE_ALTITUDE, VPT_LANDING_FLARE_TIME, VPT_MIN_LANDING_PITCH, VPT_LANDING_FLARE_DAMP, VPT_LANDING_APPROACH_AIRSPEED, VPT_LANDING_SPEED_WEIGHTING, VPT_MAX_AUTO_FLIGHT_PITCH, VPT_MAX_PITCH, VPT_MIN_THROTTLE, VPT_LANDING_SINK_RATE, VPT_LANDING_RANGEFINDER_ENABLED, VPT_MIN_RANGEFINDER_DISTANCE, VPT_MAX_DESCENT_RATE, VPT_LOW_BATTERY_POWER_LEVEL, VPT_NORMAL_BATTERY_POWER_LEVEL, 
     };
     
     public static VehicleParameterType valueOf(
@@ -1188,6 +1206,7 @@ public final class DomainProto {
     PPT_SENSOR_HEIGHT(5, 5),
     PPT_SENSOR_HORIZONTAL_PIXELS(6, 6),
     PPT_SENSOR_VERTICAL_PIXELS(7, 7),
+    PPT_MIN_TRIGGERING_INTERVAL(8, 8),
     ;
     
     public static final int PPT_WEIGHT_VALUE = 0;
@@ -1198,6 +1217,7 @@ public final class DomainProto {
     public static final int PPT_SENSOR_HEIGHT_VALUE = 5;
     public static final int PPT_SENSOR_HORIZONTAL_PIXELS_VALUE = 6;
     public static final int PPT_SENSOR_VERTICAL_PIXELS_VALUE = 7;
+    public static final int PPT_MIN_TRIGGERING_INTERVAL_VALUE = 8;
     
     
     public final int getNumber() { return value; }
@@ -1212,6 +1232,7 @@ public final class DomainProto {
         case 5: return PPT_SENSOR_HEIGHT;
         case 6: return PPT_SENSOR_HORIZONTAL_PIXELS;
         case 7: return PPT_SENSOR_VERTICAL_PIXELS;
+        case 8: return PPT_MIN_TRIGGERING_INTERVAL;
         default: return null;
       }
     }
@@ -1242,7 +1263,7 @@ public final class DomainProto {
     }
     
     private static final PayloadParameterType[] VALUES = {
-      PPT_WEIGHT, PPT_FREQUENCY, PPT_POWER, PPT_TRUE_FOCAL_LENGTH, PPT_SENSOR_WIDTH, PPT_SENSOR_HEIGHT, PPT_SENSOR_HORIZONTAL_PIXELS, PPT_SENSOR_VERTICAL_PIXELS, 
+      PPT_WEIGHT, PPT_FREQUENCY, PPT_POWER, PPT_TRUE_FOCAL_LENGTH, PPT_SENSOR_WIDTH, PPT_SENSOR_HEIGHT, PPT_SENSOR_HORIZONTAL_PIXELS, PPT_SENSOR_VERTICAL_PIXELS, PPT_MIN_TRIGGERING_INTERVAL, 
     };
     
     public static PayloadParameterType valueOf(
@@ -3199,6 +3220,7 @@ public final class DomainProto {
     S_BOOL(30, 31),
     S_STRING(31, 32),
     S_ENUM(32, 33),
+    S_CAPACITY_LEVEL(33, 34),
     ;
     
     public static final int S_DEFAULT_VALUE = 1;
@@ -3234,6 +3256,7 @@ public final class DomainProto {
     public static final int S_BOOL_VALUE = 31;
     public static final int S_STRING_VALUE = 32;
     public static final int S_ENUM_VALUE = 33;
+    public static final int S_CAPACITY_LEVEL_VALUE = 34;
     
     
     public final int getNumber() { return value; }
@@ -3273,6 +3296,7 @@ public final class DomainProto {
         case 31: return S_BOOL;
         case 32: return S_STRING;
         case 33: return S_ENUM;
+        case 34: return S_CAPACITY_LEVEL;
         default: return null;
       }
     }
@@ -3303,7 +3327,7 @@ public final class DomainProto {
     }
     
     private static final Semantic[] VALUES = {
-      S_DEFAULT, S_LATITUDE, S_LONGITUDE, S_ALTITUDE_AMSL, S_ALTITUDE_AGL, S_ALTITUDE_RAW, S_HEADING, S_VOLTAGE, S_AIR_SPEED, S_GROUND_SPEED, S_VERTICAL_SPEED, S_SATELLITE_COUNT, S_GPS_FIX_TYPE, S_ROLL, S_PITCH, S_YAW, S_RC_LINK_QUALITY, S_CURRENT, S_GCS_LINK_QUALITY, S_FOV_H, S_FOV_V, S_CONTROL_MODE, S_GROUND_ELEVATION, S_ACCEPTANCE_RADIUS, S_LOITER_RADIUS, S_ICAO, S_ADSB_MODE, S_SQUAWK, S_MILLISECONDS, S_NUMERIC, S_BOOL, S_STRING, S_ENUM, 
+      S_DEFAULT, S_LATITUDE, S_LONGITUDE, S_ALTITUDE_AMSL, S_ALTITUDE_AGL, S_ALTITUDE_RAW, S_HEADING, S_VOLTAGE, S_AIR_SPEED, S_GROUND_SPEED, S_VERTICAL_SPEED, S_SATELLITE_COUNT, S_GPS_FIX_TYPE, S_ROLL, S_PITCH, S_YAW, S_RC_LINK_QUALITY, S_CURRENT, S_GCS_LINK_QUALITY, S_FOV_H, S_FOV_V, S_CONTROL_MODE, S_GROUND_ELEVATION, S_ACCEPTANCE_RADIUS, S_LOITER_RADIUS, S_ICAO, S_ADSB_MODE, S_SQUAWK, S_MILLISECONDS, S_NUMERIC, S_BOOL, S_STRING, S_ENUM, S_CAPACITY_LEVEL, 
     };
     
     public static Semantic valueOf(
@@ -58663,6 +58687,10 @@ public final class DomainProto {
     boolean hasStartDelay();
     double getStartDelay();
     
+    // optional bool autoCalc = 7;
+    boolean hasAutoCalc();
+    boolean getAutoCalc();
+    
     // optional string tag = 6;
     boolean hasTag();
     String getTag();
@@ -58746,11 +58774,21 @@ public final class DomainProto {
       return startDelay_;
     }
     
+    // optional bool autoCalc = 7;
+    public static final int AUTOCALC_FIELD_NUMBER = 7;
+    private boolean autoCalc_;
+    public boolean hasAutoCalc() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public boolean getAutoCalc() {
+      return autoCalc_;
+    }
+    
     // optional string tag = 6;
     public static final int TAG_FIELD_NUMBER = 6;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -58784,6 +58822,7 @@ public final class DomainProto {
       interval_ = 0D;
       shotsNumber_ = 0;
       startDelay_ = 0D;
+      autoCalc_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -58813,8 +58852,11 @@ public final class DomainProto {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeDouble(5, startDelay_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(6, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(7, autoCalc_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -58845,9 +58887,13 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(5, startDelay_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, autoCalc_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -58983,8 +59029,10 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000008);
         startDelay_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000010);
-        tag_ = "";
+        autoCalc_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       
@@ -59046,6 +59094,10 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
+        result.autoCalc_ = autoCalc_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -59077,6 +59129,9 @@ public final class DomainProto {
         }
         if (other.hasStartDelay()) {
           setStartDelay(other.getStartDelay());
+        }
+        if (other.hasAutoCalc()) {
+          setAutoCalc(other.getAutoCalc());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -59138,8 +59193,13 @@ public final class DomainProto {
               break;
             }
             case 50: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               tag_ = input.readBytes();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000020;
+              autoCalc_ = input.readBool();
               break;
             }
           }
@@ -59253,10 +59313,31 @@ public final class DomainProto {
         return this;
       }
       
+      // optional bool autoCalc = 7;
+      private boolean autoCalc_ ;
+      public boolean hasAutoCalc() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public boolean getAutoCalc() {
+        return autoCalc_;
+      }
+      public Builder setAutoCalc(boolean value) {
+        bitField0_ |= 0x00000020;
+        autoCalc_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearAutoCalc() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        autoCalc_ = false;
+        onChanged();
+        return this;
+      }
+      
       // optional string tag = 6;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -59272,19 +59353,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000040;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         tag_ = value;
         onChanged();
       }
@@ -59322,6 +59403,10 @@ public final class DomainProto {
     // optional double startDelay = 5;
     boolean hasStartDelay();
     double getStartDelay();
+    
+    // optional bool autoCalc = 7;
+    boolean hasAutoCalc();
+    boolean getAutoCalc();
     
     // optional string tag = 6;
     boolean hasTag();
@@ -59406,11 +59491,21 @@ public final class DomainProto {
       return startDelay_;
     }
     
+    // optional bool autoCalc = 7;
+    public static final int AUTOCALC_FIELD_NUMBER = 7;
+    private boolean autoCalc_;
+    public boolean hasAutoCalc() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public boolean getAutoCalc() {
+      return autoCalc_;
+    }
+    
     // optional string tag = 6;
     public static final int TAG_FIELD_NUMBER = 6;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -59444,6 +59539,7 @@ public final class DomainProto {
       interval_ = 0D;
       shotsNumber_ = 0;
       startDelay_ = 0D;
+      autoCalc_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -59473,8 +59569,11 @@ public final class DomainProto {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeDouble(5, startDelay_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBytes(6, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBool(7, autoCalc_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -59505,9 +59604,13 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(5, startDelay_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getTagBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, autoCalc_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -59643,8 +59746,10 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000008);
         startDelay_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000010);
-        tag_ = "";
+        autoCalc_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       
@@ -59706,6 +59811,10 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
+        result.autoCalc_ = autoCalc_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -59737,6 +59846,9 @@ public final class DomainProto {
         }
         if (other.hasStartDelay()) {
           setStartDelay(other.getStartDelay());
+        }
+        if (other.hasAutoCalc()) {
+          setAutoCalc(other.getAutoCalc());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -59798,8 +59910,13 @@ public final class DomainProto {
               break;
             }
             case 50: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               tag_ = input.readBytes();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000020;
+              autoCalc_ = input.readBool();
               break;
             }
           }
@@ -59913,10 +60030,31 @@ public final class DomainProto {
         return this;
       }
       
+      // optional bool autoCalc = 7;
+      private boolean autoCalc_ ;
+      public boolean hasAutoCalc() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public boolean getAutoCalc() {
+        return autoCalc_;
+      }
+      public Builder setAutoCalc(boolean value) {
+        bitField0_ |= 0x00000020;
+        autoCalc_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearAutoCalc() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        autoCalc_ = false;
+        onChanged();
+        return this;
+      }
+      
       // optional string tag = 6;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -59932,19 +60070,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000040;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         tag_ = value;
         onChanged();
       }
@@ -60521,7 +60659,15 @@ public final class DomainProto {
     boolean hasHeading();
     double getHeading();
     
-    // optional string tag = 4;
+    // optional bool relativeToNextWaypoint = 4;
+    boolean hasRelativeToNextWaypoint();
+    boolean getRelativeToNextWaypoint();
+    
+    // optional bool relativeToNorth = 5;
+    boolean hasRelativeToNorth();
+    boolean getRelativeToNorth();
+    
+    // optional string tag = 6;
     boolean hasTag();
     String getTag();
   }
@@ -60584,11 +60730,31 @@ public final class DomainProto {
       return heading_;
     }
     
-    // optional string tag = 4;
-    public static final int TAG_FIELD_NUMBER = 4;
+    // optional bool relativeToNextWaypoint = 4;
+    public static final int RELATIVETONEXTWAYPOINT_FIELD_NUMBER = 4;
+    private boolean relativeToNextWaypoint_;
+    public boolean hasRelativeToNextWaypoint() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public boolean getRelativeToNextWaypoint() {
+      return relativeToNextWaypoint_;
+    }
+    
+    // optional bool relativeToNorth = 5;
+    public static final int RELATIVETONORTH_FIELD_NUMBER = 5;
+    private boolean relativeToNorth_;
+    public boolean hasRelativeToNorth() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public boolean getRelativeToNorth() {
+      return relativeToNorth_;
+    }
+    
+    // optional string tag = 6;
+    public static final int TAG_FIELD_NUMBER = 6;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -60620,6 +60786,8 @@ public final class DomainProto {
       id_ = 0;
       version_ = 0;
       heading_ = 0D;
+      relativeToNextWaypoint_ = false;
+      relativeToNorth_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -60644,7 +60812,13 @@ public final class DomainProto {
         output.writeDouble(3, heading_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getTagBytes());
+        output.writeBool(4, relativeToNextWaypoint_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBool(5, relativeToNorth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getTagBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -60669,7 +60843,15 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getTagBytes());
+          .computeBoolSize(4, relativeToNextWaypoint_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, relativeToNorth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getTagBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -60801,8 +60983,12 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         heading_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
-        tag_ = "";
+        relativeToNextWaypoint_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
+        relativeToNorth_ = false;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       
@@ -60856,6 +61042,14 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
+        result.relativeToNextWaypoint_ = relativeToNextWaypoint_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.relativeToNorth_ = relativeToNorth_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -60881,6 +61075,12 @@ public final class DomainProto {
         }
         if (other.hasHeading()) {
           setHeading(other.getHeading());
+        }
+        if (other.hasRelativeToNextWaypoint()) {
+          setRelativeToNextWaypoint(other.getRelativeToNextWaypoint());
+        }
+        if (other.hasRelativeToNorth()) {
+          setRelativeToNorth(other.getRelativeToNorth());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -60931,8 +61131,18 @@ public final class DomainProto {
               heading_ = input.readDouble();
               break;
             }
-            case 34: {
+            case 32: {
               bitField0_ |= 0x00000008;
+              relativeToNextWaypoint_ = input.readBool();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              relativeToNorth_ = input.readBool();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
               tag_ = input.readBytes();
               break;
             }
@@ -61005,10 +61215,52 @@ public final class DomainProto {
         return this;
       }
       
-      // optional string tag = 4;
+      // optional bool relativeToNextWaypoint = 4;
+      private boolean relativeToNextWaypoint_ ;
+      public boolean hasRelativeToNextWaypoint() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public boolean getRelativeToNextWaypoint() {
+        return relativeToNextWaypoint_;
+      }
+      public Builder setRelativeToNextWaypoint(boolean value) {
+        bitField0_ |= 0x00000008;
+        relativeToNextWaypoint_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRelativeToNextWaypoint() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        relativeToNextWaypoint_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional bool relativeToNorth = 5;
+      private boolean relativeToNorth_ ;
+      public boolean hasRelativeToNorth() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public boolean getRelativeToNorth() {
+        return relativeToNorth_;
+      }
+      public Builder setRelativeToNorth(boolean value) {
+        bitField0_ |= 0x00000010;
+        relativeToNorth_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRelativeToNorth() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        relativeToNorth_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 6;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -61024,19 +61276,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000020;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         tag_ = value;
         onChanged();
       }
@@ -71067,7 +71319,15 @@ public final class DomainProto {
     boolean hasHeading();
     double getHeading();
     
-    // optional string tag = 4;
+    // optional bool relativeToNextWaypoint = 4;
+    boolean hasRelativeToNextWaypoint();
+    boolean getRelativeToNextWaypoint();
+    
+    // optional bool relativeToNorth = 5;
+    boolean hasRelativeToNorth();
+    boolean getRelativeToNorth();
+    
+    // optional string tag = 6;
     boolean hasTag();
     String getTag();
   }
@@ -71130,11 +71390,31 @@ public final class DomainProto {
       return heading_;
     }
     
-    // optional string tag = 4;
-    public static final int TAG_FIELD_NUMBER = 4;
+    // optional bool relativeToNextWaypoint = 4;
+    public static final int RELATIVETONEXTWAYPOINT_FIELD_NUMBER = 4;
+    private boolean relativeToNextWaypoint_;
+    public boolean hasRelativeToNextWaypoint() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public boolean getRelativeToNextWaypoint() {
+      return relativeToNextWaypoint_;
+    }
+    
+    // optional bool relativeToNorth = 5;
+    public static final int RELATIVETONORTH_FIELD_NUMBER = 5;
+    private boolean relativeToNorth_;
+    public boolean hasRelativeToNorth() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public boolean getRelativeToNorth() {
+      return relativeToNorth_;
+    }
+    
+    // optional string tag = 6;
+    public static final int TAG_FIELD_NUMBER = 6;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -71166,6 +71446,8 @@ public final class DomainProto {
       id_ = 0;
       version_ = 0;
       heading_ = 0D;
+      relativeToNextWaypoint_ = false;
+      relativeToNorth_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -71190,7 +71472,13 @@ public final class DomainProto {
         output.writeDouble(3, heading_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getTagBytes());
+        output.writeBool(4, relativeToNextWaypoint_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBool(5, relativeToNorth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getTagBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -71215,7 +71503,15 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getTagBytes());
+          .computeBoolSize(4, relativeToNextWaypoint_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, relativeToNorth_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getTagBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -71347,8 +71643,12 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         heading_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
-        tag_ = "";
+        relativeToNextWaypoint_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
+        relativeToNorth_ = false;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       
@@ -71402,6 +71702,14 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
+        result.relativeToNextWaypoint_ = relativeToNextWaypoint_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.relativeToNorth_ = relativeToNorth_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -71427,6 +71735,12 @@ public final class DomainProto {
         }
         if (other.hasHeading()) {
           setHeading(other.getHeading());
+        }
+        if (other.hasRelativeToNextWaypoint()) {
+          setRelativeToNextWaypoint(other.getRelativeToNextWaypoint());
+        }
+        if (other.hasRelativeToNorth()) {
+          setRelativeToNorth(other.getRelativeToNorth());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -71477,8 +71791,18 @@ public final class DomainProto {
               heading_ = input.readDouble();
               break;
             }
-            case 34: {
+            case 32: {
               bitField0_ |= 0x00000008;
+              relativeToNextWaypoint_ = input.readBool();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              relativeToNorth_ = input.readBool();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
               tag_ = input.readBytes();
               break;
             }
@@ -71551,10 +71875,52 @@ public final class DomainProto {
         return this;
       }
       
-      // optional string tag = 4;
+      // optional bool relativeToNextWaypoint = 4;
+      private boolean relativeToNextWaypoint_ ;
+      public boolean hasRelativeToNextWaypoint() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public boolean getRelativeToNextWaypoint() {
+        return relativeToNextWaypoint_;
+      }
+      public Builder setRelativeToNextWaypoint(boolean value) {
+        bitField0_ |= 0x00000008;
+        relativeToNextWaypoint_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRelativeToNextWaypoint() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        relativeToNextWaypoint_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional bool relativeToNorth = 5;
+      private boolean relativeToNorth_ ;
+      public boolean hasRelativeToNorth() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public boolean getRelativeToNorth() {
+        return relativeToNorth_;
+      }
+      public Builder setRelativeToNorth(boolean value) {
+        bitField0_ |= 0x00000010;
+        relativeToNorth_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRelativeToNorth() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        relativeToNorth_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 6;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -71570,19 +71936,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000020;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000020);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         tag_ = value;
         onChanged();
       }
@@ -98947,991 +99313,6 @@ public final class DomainProto {
     // @@protoc_insertion_point(class_scope:AdsbIndicatorSubscription)
   }
   
-  public interface VehicleTargetLocationEventOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional .Vehicle vehicle = 1;
-    boolean hasVehicle();
-    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
-    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
-    
-    // optional int64 sequenceId = 2;
-    boolean hasSequenceId();
-    long getSequenceId();
-    
-    // optional double targetLocationLatitude = 3;
-    boolean hasTargetLocationLatitude();
-    double getTargetLocationLatitude();
-    
-    // optional double targetLocationLongitude = 4;
-    boolean hasTargetLocationLongitude();
-    double getTargetLocationLongitude();
-    
-    // optional double targetLocationAltitude = 5;
-    boolean hasTargetLocationAltitude();
-    double getTargetLocationAltitude();
-    
-    // optional double acceptanceRadius = 6;
-    boolean hasAcceptanceRadius();
-    double getAcceptanceRadius();
-  }
-  public static final class VehicleTargetLocationEvent extends
-      com.google.protobuf.GeneratedMessage
-      implements VehicleTargetLocationEventOrBuilder {
-    // Use VehicleTargetLocationEvent.newBuilder() to construct.
-    private VehicleTargetLocationEvent(Builder builder) {
-      super(builder);
-    }
-    private VehicleTargetLocationEvent(boolean noInit) {}
-    
-    private static final VehicleTargetLocationEvent defaultInstance;
-    public static VehicleTargetLocationEvent getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public VehicleTargetLocationEvent getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationEvent_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationEvent_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional .Vehicle vehicle = 1;
-    public static final int VEHICLE_FIELD_NUMBER = 1;
-    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
-    public boolean hasVehicle() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
-      return vehicle_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
-      return vehicle_;
-    }
-    
-    // optional int64 sequenceId = 2;
-    public static final int SEQUENCEID_FIELD_NUMBER = 2;
-    private long sequenceId_;
-    public boolean hasSequenceId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public long getSequenceId() {
-      return sequenceId_;
-    }
-    
-    // optional double targetLocationLatitude = 3;
-    public static final int TARGETLOCATIONLATITUDE_FIELD_NUMBER = 3;
-    private double targetLocationLatitude_;
-    public boolean hasTargetLocationLatitude() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public double getTargetLocationLatitude() {
-      return targetLocationLatitude_;
-    }
-    
-    // optional double targetLocationLongitude = 4;
-    public static final int TARGETLOCATIONLONGITUDE_FIELD_NUMBER = 4;
-    private double targetLocationLongitude_;
-    public boolean hasTargetLocationLongitude() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public double getTargetLocationLongitude() {
-      return targetLocationLongitude_;
-    }
-    
-    // optional double targetLocationAltitude = 5;
-    public static final int TARGETLOCATIONALTITUDE_FIELD_NUMBER = 5;
-    private double targetLocationAltitude_;
-    public boolean hasTargetLocationAltitude() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public double getTargetLocationAltitude() {
-      return targetLocationAltitude_;
-    }
-    
-    // optional double acceptanceRadius = 6;
-    public static final int ACCEPTANCERADIUS_FIELD_NUMBER = 6;
-    private double acceptanceRadius_;
-    public boolean hasAcceptanceRadius() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public double getAcceptanceRadius() {
-      return acceptanceRadius_;
-    }
-    
-    private void initFields() {
-      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-      sequenceId_ = 0L;
-      targetLocationLatitude_ = 0D;
-      targetLocationLongitude_ = 0D;
-      targetLocationAltitude_ = 0D;
-      acceptanceRadius_ = 0D;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, vehicle_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, sequenceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeDouble(3, targetLocationLatitude_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, targetLocationLongitude_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeDouble(5, targetLocationAltitude_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeDouble(6, acceptanceRadius_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, vehicle_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, sequenceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, targetLocationLatitude_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, targetLocationLongitude_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, targetLocationAltitude_);
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(6, acceptanceRadius_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationEvent_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationEvent_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getVehicleFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        if (vehicleBuilder_ == null) {
-          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-        } else {
-          vehicleBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        sequenceId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        targetLocationLatitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        targetLocationLongitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        targetLocationAltitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        acceptanceRadius_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent build() {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent buildPartial() {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent result = new com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        if (vehicleBuilder_ == null) {
-          result.vehicle_ = vehicle_;
-        } else {
-          result.vehicle_ = vehicleBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.sequenceId_ = sequenceId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.targetLocationLatitude_ = targetLocationLatitude_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.targetLocationLongitude_ = targetLocationLongitude_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.targetLocationAltitude_ = targetLocationAltitude_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.acceptanceRadius_ = acceptanceRadius_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent) {
-          return mergeFrom((com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent other) {
-        if (other == com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance()) return this;
-        if (other.hasVehicle()) {
-          mergeVehicle(other.getVehicle());
-        }
-        if (other.hasSequenceId()) {
-          setSequenceId(other.getSequenceId());
-        }
-        if (other.hasTargetLocationLatitude()) {
-          setTargetLocationLatitude(other.getTargetLocationLatitude());
-        }
-        if (other.hasTargetLocationLongitude()) {
-          setTargetLocationLongitude(other.getTargetLocationLongitude());
-        }
-        if (other.hasTargetLocationAltitude()) {
-          setTargetLocationAltitude(other.getTargetLocationAltitude());
-        }
-        if (other.hasAcceptanceRadius()) {
-          setAcceptanceRadius(other.getAcceptanceRadius());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
-              if (hasVehicle()) {
-                subBuilder.mergeFrom(getVehicle());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVehicle(subBuilder.buildPartial());
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              sequenceId_ = input.readInt64();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              targetLocationLatitude_ = input.readDouble();
-              break;
-            }
-            case 33: {
-              bitField0_ |= 0x00000008;
-              targetLocationLongitude_ = input.readDouble();
-              break;
-            }
-            case 41: {
-              bitField0_ |= 0x00000010;
-              targetLocationAltitude_ = input.readDouble();
-              break;
-            }
-            case 49: {
-              bitField0_ |= 0x00000020;
-              acceptanceRadius_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // optional .Vehicle vehicle = 1;
-      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
-      public boolean hasVehicle() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
-        if (vehicleBuilder_ == null) {
-          return vehicle_;
-        } else {
-          return vehicleBuilder_.getMessage();
-        }
-      }
-      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
-        if (vehicleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vehicle_ = value;
-          onChanged();
-        } else {
-          vehicleBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder setVehicle(
-          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
-        if (vehicleBuilder_ == null) {
-          vehicle_ = builderForValue.build();
-          onChanged();
-        } else {
-          vehicleBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
-        if (vehicleBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
-            vehicle_ =
-              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
-          } else {
-            vehicle_ = value;
-          }
-          onChanged();
-        } else {
-          vehicleBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder clearVehicle() {
-        if (vehicleBuilder_ == null) {
-          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-          onChanged();
-        } else {
-          vehicleBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getVehicleFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
-        if (vehicleBuilder_ != null) {
-          return vehicleBuilder_.getMessageOrBuilder();
-        } else {
-          return vehicle_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
-          getVehicleFieldBuilder() {
-        if (vehicleBuilder_ == null) {
-          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
-                  vehicle_,
-                  getParentForChildren(),
-                  isClean());
-          vehicle_ = null;
-        }
-        return vehicleBuilder_;
-      }
-      
-      // optional int64 sequenceId = 2;
-      private long sequenceId_ ;
-      public boolean hasSequenceId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public long getSequenceId() {
-        return sequenceId_;
-      }
-      public Builder setSequenceId(long value) {
-        bitField0_ |= 0x00000002;
-        sequenceId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearSequenceId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        sequenceId_ = 0L;
-        onChanged();
-        return this;
-      }
-      
-      // optional double targetLocationLatitude = 3;
-      private double targetLocationLatitude_ ;
-      public boolean hasTargetLocationLatitude() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public double getTargetLocationLatitude() {
-        return targetLocationLatitude_;
-      }
-      public Builder setTargetLocationLatitude(double value) {
-        bitField0_ |= 0x00000004;
-        targetLocationLatitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearTargetLocationLatitude() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        targetLocationLatitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double targetLocationLongitude = 4;
-      private double targetLocationLongitude_ ;
-      public boolean hasTargetLocationLongitude() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public double getTargetLocationLongitude() {
-        return targetLocationLongitude_;
-      }
-      public Builder setTargetLocationLongitude(double value) {
-        bitField0_ |= 0x00000008;
-        targetLocationLongitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearTargetLocationLongitude() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        targetLocationLongitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double targetLocationAltitude = 5;
-      private double targetLocationAltitude_ ;
-      public boolean hasTargetLocationAltitude() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public double getTargetLocationAltitude() {
-        return targetLocationAltitude_;
-      }
-      public Builder setTargetLocationAltitude(double value) {
-        bitField0_ |= 0x00000010;
-        targetLocationAltitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearTargetLocationAltitude() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        targetLocationAltitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double acceptanceRadius = 6;
-      private double acceptanceRadius_ ;
-      public boolean hasAcceptanceRadius() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public double getAcceptanceRadius() {
-        return acceptanceRadius_;
-      }
-      public Builder setAcceptanceRadius(double value) {
-        bitField0_ |= 0x00000020;
-        acceptanceRadius_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearAcceptanceRadius() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        acceptanceRadius_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:VehicleTargetLocationEvent)
-    }
-    
-    static {
-      defaultInstance = new VehicleTargetLocationEvent(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:VehicleTargetLocationEvent)
-  }
-  
-  public interface VehicleTargetLocationSubscriptionOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-  }
-  public static final class VehicleTargetLocationSubscription extends
-      com.google.protobuf.GeneratedMessage
-      implements VehicleTargetLocationSubscriptionOrBuilder {
-    // Use VehicleTargetLocationSubscription.newBuilder() to construct.
-    private VehicleTargetLocationSubscription(Builder builder) {
-      super(builder);
-    }
-    private VehicleTargetLocationSubscription(boolean noInit) {}
-    
-    private static final VehicleTargetLocationSubscription defaultInstance;
-    public static VehicleTargetLocationSubscription getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public VehicleTargetLocationSubscription getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationSubscription_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationSubscription_fieldAccessorTable;
-    }
-    
-    private void initFields() {
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationSubscription_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_VehicleTargetLocationSubscription_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription build() {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription buildPartial() {
-        com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription result = new com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription(this);
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription) {
-          return mergeFrom((com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription other) {
-        if (other == com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance()) return this;
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-          }
-        }
-      }
-      
-      
-      // @@protoc_insertion_point(builder_scope:VehicleTargetLocationSubscription)
-    }
-    
-    static {
-      defaultInstance = new VehicleTargetLocationSubscription(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:VehicleTargetLocationSubscription)
-  }
-  
   public interface ProgressDtoOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -101827,11 +101208,6 @@ public final class DomainProto {
     com.ugcs.ucs.proto.DomainProto.AdsbIndicatorEvent getAdsbIndicatorEvent();
     com.ugcs.ucs.proto.DomainProto.AdsbIndicatorEventOrBuilder getAdsbIndicatorEventOrBuilder();
     
-    // optional .VehicleTargetLocationEvent vehicleTargetLocationEvent = 6;
-    boolean hasVehicleTargetLocationEvent();
-    com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent getVehicleTargetLocationEvent();
-    com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder getVehicleTargetLocationEventOrBuilder();
-    
     // optional .ServerProgressEvent serverProgressEvent = 7;
     boolean hasServerProgressEvent();
     com.ugcs.ucs.proto.DomainProto.ServerProgressEvent getServerProgressEvent();
@@ -101931,24 +101307,11 @@ public final class DomainProto {
       return adsbIndicatorEvent_;
     }
     
-    // optional .VehicleTargetLocationEvent vehicleTargetLocationEvent = 6;
-    public static final int VEHICLETARGETLOCATIONEVENT_FIELD_NUMBER = 6;
-    private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent vehicleTargetLocationEvent_;
-    public boolean hasVehicleTargetLocationEvent() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent getVehicleTargetLocationEvent() {
-      return vehicleTargetLocationEvent_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder getVehicleTargetLocationEventOrBuilder() {
-      return vehicleTargetLocationEvent_;
-    }
-    
     // optional .ServerProgressEvent serverProgressEvent = 7;
     public static final int SERVERPROGRESSEVENT_FIELD_NUMBER = 7;
     private com.ugcs.ucs.proto.DomainProto.ServerProgressEvent serverProgressEvent_;
     public boolean hasServerProgressEvent() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.ServerProgressEvent getServerProgressEvent() {
       return serverProgressEvent_;
@@ -101963,7 +101326,6 @@ public final class DomainProto {
       telemetryEvent_ = com.ugcs.ucs.proto.DomainProto.TelemetryEvent.getDefaultInstance();
       telemetryRemovalEvent_ = com.ugcs.ucs.proto.DomainProto.TelemetryRemovalEvent.getDefaultInstance();
       adsbIndicatorEvent_ = com.ugcs.ucs.proto.DomainProto.AdsbIndicatorEvent.getDefaultInstance();
-      vehicleTargetLocationEvent_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance();
       serverProgressEvent_ = com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
@@ -101994,9 +101356,6 @@ public final class DomainProto {
         output.writeMessage(5, adsbIndicatorEvent_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, vehicleTargetLocationEvent_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(7, serverProgressEvent_);
       }
       getUnknownFields().writeTo(output);
@@ -102029,10 +101388,6 @@ public final class DomainProto {
           .computeMessageSize(5, adsbIndicatorEvent_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, vehicleTargetLocationEvent_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, serverProgressEvent_);
       }
@@ -102157,7 +101512,6 @@ public final class DomainProto {
           getTelemetryEventFieldBuilder();
           getTelemetryRemovalEventFieldBuilder();
           getAdsbIndicatorEventFieldBuilder();
-          getVehicleTargetLocationEventFieldBuilder();
           getServerProgressEventFieldBuilder();
         }
       }
@@ -102197,18 +101551,12 @@ public final class DomainProto {
           adsbIndicatorEventBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          vehicleTargetLocationEvent_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance();
-        } else {
-          vehicleTargetLocationEventBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (serverProgressEventBuilder_ == null) {
           serverProgressEvent_ = com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.getDefaultInstance();
         } else {
           serverProgressEventBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       
@@ -102290,14 +101638,6 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          result.vehicleTargetLocationEvent_ = vehicleTargetLocationEvent_;
-        } else {
-          result.vehicleTargetLocationEvent_ = vehicleTargetLocationEventBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
         if (serverProgressEventBuilder_ == null) {
           result.serverProgressEvent_ = serverProgressEvent_;
         } else {
@@ -102333,9 +101673,6 @@ public final class DomainProto {
         }
         if (other.hasAdsbIndicatorEvent()) {
           mergeAdsbIndicatorEvent(other.getAdsbIndicatorEvent());
-        }
-        if (other.hasVehicleTargetLocationEvent()) {
-          mergeVehicleTargetLocationEvent(other.getVehicleTargetLocationEvent());
         }
         if (other.hasServerProgressEvent()) {
           mergeServerProgressEvent(other.getServerProgressEvent());
@@ -102414,15 +101751,6 @@ public final class DomainProto {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setAdsbIndicatorEvent(subBuilder.buildPartial());
-              break;
-            }
-            case 50: {
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.newBuilder();
-              if (hasVehicleTargetLocationEvent()) {
-                subBuilder.mergeFrom(getVehicleTargetLocationEvent());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVehicleTargetLocationEvent(subBuilder.buildPartial());
               break;
             }
             case 58: {
@@ -102890,102 +102218,12 @@ public final class DomainProto {
         return adsbIndicatorEventBuilder_;
       }
       
-      // optional .VehicleTargetLocationEvent vehicleTargetLocationEvent = 6;
-      private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent vehicleTargetLocationEvent_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder> vehicleTargetLocationEventBuilder_;
-      public boolean hasVehicleTargetLocationEvent() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent getVehicleTargetLocationEvent() {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          return vehicleTargetLocationEvent_;
-        } else {
-          return vehicleTargetLocationEventBuilder_.getMessage();
-        }
-      }
-      public Builder setVehicleTargetLocationEvent(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent value) {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vehicleTargetLocationEvent_ = value;
-          onChanged();
-        } else {
-          vehicleTargetLocationEventBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder setVehicleTargetLocationEvent(
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder builderForValue) {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          vehicleTargetLocationEvent_ = builderForValue.build();
-          onChanged();
-        } else {
-          vehicleTargetLocationEventBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder mergeVehicleTargetLocationEvent(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent value) {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              vehicleTargetLocationEvent_ != com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance()) {
-            vehicleTargetLocationEvent_ =
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.newBuilder(vehicleTargetLocationEvent_).mergeFrom(value).buildPartial();
-          } else {
-            vehicleTargetLocationEvent_ = value;
-          }
-          onChanged();
-        } else {
-          vehicleTargetLocationEventBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder clearVehicleTargetLocationEvent() {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          vehicleTargetLocationEvent_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.getDefaultInstance();
-          onChanged();
-        } else {
-          vehicleTargetLocationEventBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder getVehicleTargetLocationEventBuilder() {
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return getVehicleTargetLocationEventFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder getVehicleTargetLocationEventOrBuilder() {
-        if (vehicleTargetLocationEventBuilder_ != null) {
-          return vehicleTargetLocationEventBuilder_.getMessageOrBuilder();
-        } else {
-          return vehicleTargetLocationEvent_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder> 
-          getVehicleTargetLocationEventFieldBuilder() {
-        if (vehicleTargetLocationEventBuilder_ == null) {
-          vehicleTargetLocationEventBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEventOrBuilder>(
-                  vehicleTargetLocationEvent_,
-                  getParentForChildren(),
-                  isClean());
-          vehicleTargetLocationEvent_ = null;
-        }
-        return vehicleTargetLocationEventBuilder_;
-      }
-      
       // optional .ServerProgressEvent serverProgressEvent = 7;
       private com.ugcs.ucs.proto.DomainProto.ServerProgressEvent serverProgressEvent_ = com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ServerProgressEvent, com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.Builder, com.ugcs.ucs.proto.DomainProto.ServerProgressEventOrBuilder> serverProgressEventBuilder_;
       public boolean hasServerProgressEvent() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.ServerProgressEvent getServerProgressEvent() {
         if (serverProgressEventBuilder_ == null) {
@@ -103004,7 +102242,7 @@ public final class DomainProto {
         } else {
           serverProgressEventBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder setServerProgressEvent(
@@ -103015,12 +102253,12 @@ public final class DomainProto {
         } else {
           serverProgressEventBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder mergeServerProgressEvent(com.ugcs.ucs.proto.DomainProto.ServerProgressEvent value) {
         if (serverProgressEventBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
               serverProgressEvent_ != com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.getDefaultInstance()) {
             serverProgressEvent_ =
               com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.newBuilder(serverProgressEvent_).mergeFrom(value).buildPartial();
@@ -103031,7 +102269,7 @@ public final class DomainProto {
         } else {
           serverProgressEventBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder clearServerProgressEvent() {
@@ -103041,11 +102279,11 @@ public final class DomainProto {
         } else {
           serverProgressEventBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.Builder getServerProgressEventBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getServerProgressEventFieldBuilder().getBuilder();
       }
@@ -103108,11 +102346,6 @@ public final class DomainProto {
     boolean hasAdsbIndicatorSubscription();
     com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription getAdsbIndicatorSubscription();
     com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscriptionOrBuilder getAdsbIndicatorSubscriptionOrBuilder();
-    
-    // optional .VehicleTargetLocationSubscription vehicleTargetLocationSubscription = 6;
-    boolean hasVehicleTargetLocationSubscription();
-    com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription getVehicleTargetLocationSubscription();
-    com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder getVehicleTargetLocationSubscriptionOrBuilder();
     
     // optional .ServerProgressSubscription serverProgressSubscription = 7;
     boolean hasServerProgressSubscription();
@@ -103213,24 +102446,11 @@ public final class DomainProto {
       return adsbIndicatorSubscription_;
     }
     
-    // optional .VehicleTargetLocationSubscription vehicleTargetLocationSubscription = 6;
-    public static final int VEHICLETARGETLOCATIONSUBSCRIPTION_FIELD_NUMBER = 6;
-    private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription vehicleTargetLocationSubscription_;
-    public boolean hasVehicleTargetLocationSubscription() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription getVehicleTargetLocationSubscription() {
-      return vehicleTargetLocationSubscription_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder getVehicleTargetLocationSubscriptionOrBuilder() {
-      return vehicleTargetLocationSubscription_;
-    }
-    
     // optional .ServerProgressSubscription serverProgressSubscription = 7;
     public static final int SERVERPROGRESSSUBSCRIPTION_FIELD_NUMBER = 7;
     private com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription serverProgressSubscription_;
     public boolean hasServerProgressSubscription() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription getServerProgressSubscription() {
       return serverProgressSubscription_;
@@ -103245,7 +102465,6 @@ public final class DomainProto {
       telemetrySubscription_ = com.ugcs.ucs.proto.DomainProto.TelemetrySubscription.getDefaultInstance();
       telemetryRemovalSubscription_ = com.ugcs.ucs.proto.DomainProto.TelemetryRemovalSubscription.getDefaultInstance();
       adsbIndicatorSubscription_ = com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription.getDefaultInstance();
-      vehicleTargetLocationSubscription_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance();
       serverProgressSubscription_ = com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
@@ -103276,9 +102495,6 @@ public final class DomainProto {
         output.writeMessage(5, adsbIndicatorSubscription_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, vehicleTargetLocationSubscription_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(7, serverProgressSubscription_);
       }
       getUnknownFields().writeTo(output);
@@ -103311,10 +102527,6 @@ public final class DomainProto {
           .computeMessageSize(5, adsbIndicatorSubscription_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, vehicleTargetLocationSubscription_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, serverProgressSubscription_);
       }
@@ -103439,7 +102651,6 @@ public final class DomainProto {
           getTelemetrySubscriptionFieldBuilder();
           getTelemetryRemovalSubscriptionFieldBuilder();
           getAdsbIndicatorSubscriptionFieldBuilder();
-          getVehicleTargetLocationSubscriptionFieldBuilder();
           getServerProgressSubscriptionFieldBuilder();
         }
       }
@@ -103479,18 +102690,12 @@ public final class DomainProto {
           adsbIndicatorSubscriptionBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000010);
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          vehicleTargetLocationSubscription_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance();
-        } else {
-          vehicleTargetLocationSubscriptionBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (serverProgressSubscriptionBuilder_ == null) {
           serverProgressSubscription_ = com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.getDefaultInstance();
         } else {
           serverProgressSubscriptionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       
@@ -103572,14 +102777,6 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          result.vehicleTargetLocationSubscription_ = vehicleTargetLocationSubscription_;
-        } else {
-          result.vehicleTargetLocationSubscription_ = vehicleTargetLocationSubscriptionBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
         if (serverProgressSubscriptionBuilder_ == null) {
           result.serverProgressSubscription_ = serverProgressSubscription_;
         } else {
@@ -103615,9 +102812,6 @@ public final class DomainProto {
         }
         if (other.hasAdsbIndicatorSubscription()) {
           mergeAdsbIndicatorSubscription(other.getAdsbIndicatorSubscription());
-        }
-        if (other.hasVehicleTargetLocationSubscription()) {
-          mergeVehicleTargetLocationSubscription(other.getVehicleTargetLocationSubscription());
         }
         if (other.hasServerProgressSubscription()) {
           mergeServerProgressSubscription(other.getServerProgressSubscription());
@@ -103696,15 +102890,6 @@ public final class DomainProto {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setAdsbIndicatorSubscription(subBuilder.buildPartial());
-              break;
-            }
-            case 50: {
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.newBuilder();
-              if (hasVehicleTargetLocationSubscription()) {
-                subBuilder.mergeFrom(getVehicleTargetLocationSubscription());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVehicleTargetLocationSubscription(subBuilder.buildPartial());
               break;
             }
             case 58: {
@@ -104172,102 +103357,12 @@ public final class DomainProto {
         return adsbIndicatorSubscriptionBuilder_;
       }
       
-      // optional .VehicleTargetLocationSubscription vehicleTargetLocationSubscription = 6;
-      private com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription vehicleTargetLocationSubscription_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder> vehicleTargetLocationSubscriptionBuilder_;
-      public boolean hasVehicleTargetLocationSubscription() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription getVehicleTargetLocationSubscription() {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          return vehicleTargetLocationSubscription_;
-        } else {
-          return vehicleTargetLocationSubscriptionBuilder_.getMessage();
-        }
-      }
-      public Builder setVehicleTargetLocationSubscription(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription value) {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vehicleTargetLocationSubscription_ = value;
-          onChanged();
-        } else {
-          vehicleTargetLocationSubscriptionBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder setVehicleTargetLocationSubscription(
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder builderForValue) {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          vehicleTargetLocationSubscription_ = builderForValue.build();
-          onChanged();
-        } else {
-          vehicleTargetLocationSubscriptionBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder mergeVehicleTargetLocationSubscription(com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription value) {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              vehicleTargetLocationSubscription_ != com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance()) {
-            vehicleTargetLocationSubscription_ =
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.newBuilder(vehicleTargetLocationSubscription_).mergeFrom(value).buildPartial();
-          } else {
-            vehicleTargetLocationSubscription_ = value;
-          }
-          onChanged();
-        } else {
-          vehicleTargetLocationSubscriptionBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      public Builder clearVehicleTargetLocationSubscription() {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          vehicleTargetLocationSubscription_ = com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.getDefaultInstance();
-          onChanged();
-        } else {
-          vehicleTargetLocationSubscriptionBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder getVehicleTargetLocationSubscriptionBuilder() {
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return getVehicleTargetLocationSubscriptionFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder getVehicleTargetLocationSubscriptionOrBuilder() {
-        if (vehicleTargetLocationSubscriptionBuilder_ != null) {
-          return vehicleTargetLocationSubscriptionBuilder_.getMessageOrBuilder();
-        } else {
-          return vehicleTargetLocationSubscription_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder> 
-          getVehicleTargetLocationSubscriptionFieldBuilder() {
-        if (vehicleTargetLocationSubscriptionBuilder_ == null) {
-          vehicleTargetLocationSubscriptionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder, com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscriptionOrBuilder>(
-                  vehicleTargetLocationSubscription_,
-                  getParentForChildren(),
-                  isClean());
-          vehicleTargetLocationSubscription_ = null;
-        }
-        return vehicleTargetLocationSubscriptionBuilder_;
-      }
-      
       // optional .ServerProgressSubscription serverProgressSubscription = 7;
       private com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription serverProgressSubscription_ = com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription, com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.Builder, com.ugcs.ucs.proto.DomainProto.ServerProgressSubscriptionOrBuilder> serverProgressSubscriptionBuilder_;
       public boolean hasServerProgressSubscription() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription getServerProgressSubscription() {
         if (serverProgressSubscriptionBuilder_ == null) {
@@ -104286,7 +103381,7 @@ public final class DomainProto {
         } else {
           serverProgressSubscriptionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder setServerProgressSubscription(
@@ -104297,12 +103392,12 @@ public final class DomainProto {
         } else {
           serverProgressSubscriptionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder mergeServerProgressSubscription(com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription value) {
         if (serverProgressSubscriptionBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
               serverProgressSubscription_ != com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.getDefaultInstance()) {
             serverProgressSubscription_ =
               com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.newBuilder(serverProgressSubscription_).mergeFrom(value).buildPartial();
@@ -104313,7 +103408,7 @@ public final class DomainProto {
         } else {
           serverProgressSubscriptionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder clearServerProgressSubscription() {
@@ -104323,11 +103418,11 @@ public final class DomainProto {
         } else {
           serverProgressSubscriptionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.Builder getServerProgressSubscriptionBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getServerProgressSubscriptionFieldBuilder().getBuilder();
       }
@@ -104834,16 +103929,6 @@ public final class DomainProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_AdsbIndicatorSubscription_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_VehicleTargetLocationEvent_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_VehicleTargetLocationEvent_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_VehicleTargetLocationSubscription_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_VehicleTargetLocationSubscription_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_ProgressDto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -105168,414 +104253,414 @@ public final class DomainProto {
       "\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n\tzoomLevel\030\006" +
       " \001(\005\022\013\n\003tag\030\007 \001(\t\"W\n\rCameraTrigger\022\n\n\002id" +
       "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\034\n\005state\030\003 \001(\0162\r" +
-      ".TriggerState\022\013\n\003tag\030\005 \001(\t\"y\n\022CameraSeri" +
-      "esByTime\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n" +
-      "\010interval\030\003 \001(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022\n\n" +
-      "startDelay\030\005 \001(\001\022\013\n\003tag\030\006 \001(\t\"}\n\026CameraS",
-      "eriesByDistance\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002" +
-      " \001(\005\022\020\n\010interval\030\003 \001(\001\022\023\n\013shotsNumber\030\004 " +
-      "\001(\005\022\022\n\nstartDelay\030\005 \001(\001\022\013\n\003tag\030\006 \001(\t\"B\n\004" +
-      "Wait\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010int" +
-      "erval\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"J\n\rHeadingChang" +
-      "e\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n\007headin" +
-      "g\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"\207\001\n\014HomeLocation\022\n\n" +
-      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010latitude\030\003" +
-      " \001(\001\022\021\n\tlongitude\030\004 \001(\001\022\025\n\rwgs84Altitude" +
-      "\030\005 \001(\001\022\021\n\televation\030\006 \001(\001\022\013\n\003tag\030\007 \001(\t\"\211",
-      "\001\n\tPoiChange\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(" +
-      "\005\022\026\n\004mode\030\003 \001(\0162\010.PoiMode\022\020\n\010latitude\030\004 " +
-      "\001(\001\022\021\n\tlongitude\030\005 \001(\001\022\025\n\rwgs84Altitude\030" +
-      "\006 \001(\001\022\013\n\003tag\030\007 \001(\t\"a\n\013SpeedChange\022\n\n\002id\030" +
-      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\023\n\013groundSpeed\030\003 " +
-      "\001(\001\022\023\n\013rateOfClimb\030\004 \001(\001\022\013\n\003tag\030\005 \001(\t\"\261\001" +
-      "\n\007Takeoff\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\030" +
-      "\n\020acceptanceRadius\030\003 \001(\001\022\023\n\013rateOfClimb\030" +
-      "\004 \001(\001\022\020\n\010latitude\030\005 \001(\001\022\021\n\tlongitude\030\006 \001" +
-      "(\001\022\025\n\rwgs84Altitude\030\007 \001(\001\022\021\n\televation\030\010",
-      " \001(\001\022\013\n\003tag\030\t \001(\t\"\263\001\n\007Landing\022\n\n\002id\030\001 \001(" +
-      "\005\022\017\n\007version\030\002 \001(\005\022\030\n\020acceptanceRadius\030\003" +
-      " \001(\001\022\025\n\rrateOfDescent\030\004 \001(\001\022\020\n\010latitude\030" +
-      "\005 \001(\001\022\021\n\tlongitude\030\006 \001(\001\022\025\n\rwgs84Altitud" +
-      "e\030\007 \001(\001\022\021\n\televation\030\010 \001(\001\022\013\n\003tag\030\t \001(\t\"" +
-      "\324\001\n\010Panorama\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(" +
-      "\005\022\r\n\005angle\030\003 \001(\001\022\021\n\tstepAngle\030\004 \001(\001\022\021\n\ts" +
-      "tepDelay\030\005 \001(\001\022-\n\021rotationDirection\030\006 \001(" +
-      "\0162\022.RotationDirection\022\025\n\rrotationSpeed\030\007" +
-      " \001(\001\022#\n\014panoramaMode\030\010 \001(\0162\r.PanoramaMod",
-      "e\022\013\n\003tag\030\t \001(\t\"\370\001\n\017RouteAttributes\022\n\n\002id" +
-      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\024\n\014safeAltitude\030" +
-      "\003 \001(\001\022%\n\014rcLostAction\030\004 \001(\0162\017.FailsafeAc" +
-      "tion\022&\n\rgpsLostAction\030\005 \001(\0162\017.FailsafeAc" +
-      "tion\022)\n\020lowBatteryAction\030\006 \001(\0162\017.Failsaf" +
-      "eAction\022+\n\022datalinkLostAction\030\007 \001(\0162\017.Fa" +
-      "ilsafeAction\022\013\n\003tag\030\010 \001(\t\"\300\004\n\020ActionDefi" +
-      "nition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004u" +
-      "uid\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\022-\n\021segmentDefin" +
-      "ition\030\005 \001(\0132\022.SegmentDefinition\022\'\n\016waitD",
-      "efinition\030\006 \001(\0132\017.WaitDefinition\022%\n\rpoiD" +
-      "efinition\030\007 \001(\0132\016.PoiDefinition\022-\n\021headi" +
-      "ngDefinition\030\010 \001(\0132\022.HeadingDefinition\0229" +
-      "\n\027cameraControlDefinition\030\t \001(\0132\030.Camera" +
-      "ControlDefinition\0229\n\027cameraTriggerDefini" +
-      "tion\030\n \001(\0132\030.CameraTriggerDefinition\022C\n\034" +
-      "cameraSeriesByTimeDefinition\030\013 \001(\0132\035.Cam" +
-      "eraSeriesByTimeDefinition\022K\n cameraSerie" +
-      "sByDistanceDefinition\030\014 \001(\0132!.CameraSeri" +
-      "esByDistanceDefinition\022/\n\022panoramaDefini",
-      "tion\030\r \001(\0132\023.PanoramaDefinition\022\013\n\003tag\030\016" +
-      " \001(\t\"\177\n\027CameraControlDefinition\022\n\n\002id\030\001 " +
-      "\001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004tilt\030\003 \001(\001\022\014\n\004ro" +
-      "ll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n\tzoomLevel\030\006 \001(\005" +
-      "\022\013\n\003tag\030\007 \001(\t\"a\n\027CameraTriggerDefinition" +
-      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\034\n\005state\030\003" +
-      " \001(\0162\r.TriggerState\022\013\n\003tag\030\005 \001(\t\"\225\001\n\034Cam" +
-      "eraSeriesByTimeDefinition\022\n\n\002id\030\001 \001(\005\022\017\n" +
-      "\007version\030\002 \001(\005\022\020\n\010interval\030\004 \001(\001\022\023\n\013shot" +
-      "sNumber\030\005 \001(\005\022\022\n\nstartDelay\030\006 \001(\001\022\020\n\010aut",
-      "oCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\231\001\n CameraSerie" +
-      "sByDistanceDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007ver" +
-      "sion\030\002 \001(\005\022\020\n\010interval\030\004 \001(\001\022\023\n\013shotsNum" +
-      "ber\030\005 \001(\005\022\022\n\nstartDelay\030\006 \001(\001\022\020\n\010autoCal" +
-      "c\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"N\n\021HeadingDefinitio" +
-      "n\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n\007headin" +
-      "g\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"\307\001\n\rPoiDefinition\022\n" +
-      "\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(" +
-      "\0162\010.PoiMode\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongitu" +
-      "de\030\005 \001(\001\022\025\n\rwgs84Altitude\030\006 \001(\001\022\023\n\013aglAl",
-      "titude\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162\r.Alt" +
-      "itudeType\022\013\n\003tag\030\t \001(\t\"L\n\016WaitDefinition" +
-      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interva" +
-      "l\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"\336\001\n\022PanoramaDefinit" +
-      "ion\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005angl" +
-      "e\030\003 \001(\001\022\021\n\tstepAngle\030\004 \001(\001\022\021\n\tstepDelay\030" +
-      "\005 \001(\001\022-\n\021rotationDirection\030\006 \001(\0162\022.Rotat" +
-      "ionDirection\022\025\n\rrotationSpeed\030\007 \001(\001\022#\n\014p" +
-      "anoramaMode\030\010 \001(\0162\r.PanoramaMode\022\013\n\003tag\030" +
-      "\t \001(\t\"\250\001\n\014NoFlightZone\022\n\n\002id\030\001 \001(\005\022\017\n\007ve",
-      "rsion\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\026" +
-      "\n\004type\030\005 \001(\0162\010.NfzType\022\016\n\006sealed\030\006 \001(\010\022\025" +
-      "\n\005prism\030\007 \001(\0132\006.Prism\022!\n\013coneFrustum\030\010 \001" +
-      "(\0132\014.ConeFrustum\"g\n\026NoFlightZoneRTreeInd" +
-      "ex\022\r\n\005nfzId\030\001 \001(\005\022\016\n\006minLat\030\002 \001(\001\022\016\n\006max" +
-      "Lat\030\003 \001(\001\022\016\n\006minLng\030\004 \001(\001\022\016\n\006maxLng\030\005 \001(" +
-      "\001\"\326\001\n\013ConeFrustum\022\n\n\002id\030\001 \001(\005\022\017\n\007version" +
-      "\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\021\n\ttopRadius\030\004 \001(\001\022\022" +
-      "\n\nbaseRadius\030\005 \001(\001\022\024\n\014baseLatitude\030\006 \001(\001" +
-      "\022\025\n\rbaseLongitude\030\007 \001(\001\022#\n\014altitudeType\030",
-      "\010 \001(\0162\r.AltitudeType\022\024\n\014baseAltitude\030\t \001" +
-      "(\001\022\016\n\006height\030\n \001(\001\"\274\001\n\021CommandDefinition" +
-      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004code\030\003 " +
-      "\001(\t\022\035\n\tsubsystem\030\007 \001(\0162\n.Subsystem\022\023\n\013su" +
-      "bsystemId\030\010 \001(\005\022-\n\targuments\030\005 \003(\0132\032.Com" +
-      "mandArgumentDefinition\022\014\n\004name\030\004 \001(\t\022\013\n\003" +
-      "tag\030\006 \001(\t\"\347\001\n\031CommandArgumentDefinition\022" +
-      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022#\n\007command\030" +
-      "\013 \001(\0132\022.CommandDefinition\022\014\n\004code\030\r \001(\t\022" +
-      "\033\n\010semantic\030\016 \001(\0162\t.Semantic\022\034\n\014defaultV",
-      "alue\030\017 \001(\0132\006.Value\022\030\n\010minValue\030\020 \001(\0132\006.V" +
-      "alue\022\030\n\010maxValue\030\021 \001(\0132\006.Value\022\013\n\003tag\030\014 " +
-      "\001(\t\"\237\001\n\030VehicleCommandDefinition\022\n\n\002id\030\001" +
-      " \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\007vehicle\030\003 \001(\0132\010" +
-      ".Vehicle\022-\n\021commandDefinition\030\004 \001(\0132\022.Co" +
-      "mmandDefinition\022\017\n\007enabled\030\005 \001(\010\022\013\n\003tag\030" +
-      "\006 \001(\t\"\253\001\n\007Command\022\014\n\004code\030\001 \001(\t\022\035\n\tsubsy" +
-      "stem\030\006 \001(\0162\n.Subsystem\022\023\n\013subsystemId\030\007 " +
-      "\001(\005\022#\n\targuments\030\002 \003(\0132\020.CommandArgument" +
-      "\022\016\n\006silent\030\003 \001(\010\022\031\n\021resultIndifferent\030\004 ",
-      "\001(\010\022\016\n\006forced\030\005 \001(\010\"6\n\017CommandArgument\022\014" +
-      "\n\004code\030\001 \001(\t\022\025\n\005value\030\002 \001(\0132\006.Value\"\247\001\n\005" +
-      "Value\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\021\n\tbo" +
-      "olValue\030\003 \001(\010\022\020\n\010intValue\030\004 \001(\005\022\021\n\tlongV" +
-      "alue\030\005 \001(\003\022\022\n\nfloatValue\030\006 \001(\002\022\023\n\013double" +
-      "Value\030\007 \001(\001\022\023\n\013stringValue\030\010 \001(\t\022\013\n\003tag\030" +
-      "\t \001(\t\"\362\002\n\017VehicleLogEntry\022\n\n\002id\030\001 \001(\005\022\017\n" +
-      "\007version\030\002 \001(\005\022\014\n\004time\030\003 \001(\003\022\031\n\007vehicle\030" +
-      "\004 \001(\0132\010.Vehicle\022\017\n\007message\030\005 \001(\t\022\035\n\005leve" +
-      "l\030\006 \001(\0162\016.SeverityLevel\022\034\n\005stage\030\007 \001(\0162\r",
-      ".ProcessStage\022\"\n\004type\030\010 \001(\0162\024.VehicleLog" +
-      "EntryType\022.\n\020commandArguments\030\t \001(\0132\024.Co" +
-      "mmandLogArguments\022,\n\017uploadArguments\030\n \001" +
-      "(\0132\023.UploadLogArguments\022<\n\027videoRecordin" +
-      "gArguments\030\013 \001(\0132\033.VideoRecordingLogArgu" +
-      "ments\022\013\n\003tag\030\014 \001(\t\"X\n\023CommandLogArgument" +
-      "s\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\023\n\013co" +
-      "mmandCode\030\003 \001(\t\022\013\n\003tag\030\004 \001(\t\"Y\n\022UploadLo" +
-      "gArguments\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.U" +
-      "ser\022\025\n\005route\030\003 \001(\0132\006.Route\022\013\n\003tag\030\004 \001(\t\"",
-      "\267\001\n\032VideoRecordingLogArguments\022\n\n\002id\030\001 \001" +
-      "(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\020\n\010streamId\030\003 \001(" +
-      "\t\022\'\n\016videoEventType\030\004 \001(\0162\017.VideoEventTy" +
-      "pe\022\027\n\017videoServerHost\030\005 \001(\t\022\027\n\017videoServ" +
-      "erPort\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"\213\001\n\tTelemetry\022" +
-      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003 " +
-      "\001(\002\022\014\n\004time\030\004 \001(\003\022\031\n\007vehicle\030\005 \001(\0132\010.Veh" +
-      "icle\022\034\n\004type\030\006 \001(\0162\016.TelemetryType\022\013\n\003ta" +
-      "g\030\007 \001(\t\"I\n\014TelemetryDto\022\r\n\005value\030\001 \001(\002\022\014" +
-      "\n\004time\030\002 \001(\003\022\034\n\004type\030\003 \001(\0162\016.TelemetryTy",
-      "pe\"\240\001\n\021TelemetryInterval\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
-      "version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\025\n\rbeginning" +
-      "Time\030\004 \001(\003\022\017\n\007endTime\030\005 \001(\003\022+\n\010vehicles\030" +
-      "\006 \003(\0132\031.TelemetryIntervalVehicle\022\013\n\003tag\030" +
-      "\007 \001(\t\"\205\001\n\030TelemetryIntervalVehicle\022\n\n\002id" +
-      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022$\n\010interval\030\003 \001(" +
-      "\0132\022.TelemetryInterval\022\031\n\007vehicle\030\004 \001(\0132\010" +
-      ".Vehicle\022\013\n\003tag\030\005 \001(\t\"\216\001\n\017ElevationSourc" +
-      "e\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030" +
-      "\003 \001(\005\022\035\n\tgeoServer\030\004 \001(\0132\n.GeoServer\022\022\n\n",
-      "sourceName\030\005 \001(\t\022\013\n\003tag\030\006 \001(\t\022\017\n\007enabled" +
-      "\030\007 \001(\010\"\257\001\n\rFeatureSource\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
-      "version\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\035\n\tgeoServe" +
-      "r\030\004 \001(\0132\n.GeoServer\022\022\n\nsourceName\030\005 \001(\t\022" +
-      "!\n\013featureType\030\006 \001(\0162\014.FeatureType\022\017\n\007en" +
-      "abled\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\244\001\n\tGeoServer\022\n" +
-      "\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(" +
-      "\t\022\013\n\003uri\030\004 \001(\t\022*\n\020elevationSources\030\006 \003(\013" +
-      "2\020.ElevationSource\022&\n\016featureSources\030\007 \003" +
-      "(\0132\016.FeatureSource\022\013\n\003tag\030\010 \001(\t\"\326\001\n\014UtmO",
-      "peration\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n" +
-      "\007vehicle\030\003 \001(\0132\010.Vehicle\022#\n\006status\030\004 \001(\016" +
-      "2\023.UtmOperationStatus\022\014\n\004gufi\030\005 \001(\t\022\024\n\014f" +
-      "lightNumber\030\006 \001(\t\022\036\n\026effectiveBeginningT" +
-      "ime\030\007 \001(\003\022\030\n\020effectiveEndTime\030\010 \001(\003\022\013\n\003t" +
-      "ag\030\t \001(\t\"B\n\004Lock\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010" +
-      "objectId\030\002 \001(\005\022\024\n\005owner\030\003 \001(\0132\005.User\"?\n\t" +
-      "Selection\022\023\n\013selectionId\030\001 \001(\t\022\035\n\005items\030" +
-      "\002 \003(\0132\016.SelectionItem\"H\n\rSelectionItem\022\r" +
-      "\n\005value\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\023\n\013ma",
-      "rkDefault\030\003 \001(\010\"\222\001\n\027ObjectModificationEv" +
-      "ent\022+\n\020modificationType\030\001 \001(\0162\021.Modifica" +
-      "tionType\022\022\n\nobjectType\030\002 \001(\t\022\020\n\010objectId" +
-      "\030\003 \001(\005\022$\n\006object\030\004 \001(\0132\024.DomainObjectWra" +
-      "pper\"F\n\036ObjectModificationSubscription\022\022" +
-      "\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005\"F\n\t" +
-      "LockEvent\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectI" +
-      "d\030\002 \001(\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"8\n\020LockSubs" +
-      "cription\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId" +
-      "\030\002 \001(\005\"J\n\016TelemetryEvent\022\031\n\007vehicle\030\001 \001(",
-      "\0132\010.Vehicle\022\035\n\ttelemetry\030\002 \003(\0132\n.Telemet" +
-      "ry\"2\n\025TelemetrySubscription\022\031\n\007vehicle\030\001" +
-      " \001(\0132\010.Vehicle\"T\n\025TelemetryRemovalEvent\022" +
-      "\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\022\020\n\010fromTime\030\002" +
-      " \001(\003\022\016\n\006toTime\030\003 \001(\003\"9\n\034TelemetryRemoval" +
-      "Subscription\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\"" +
-      " \n\022AdsbIndicatorEvent\022\n\n\002on\030\001 \001(\010\"\033\n\031Ads" +
-      "bIndicatorSubscription\"\306\001\n\032VehicleTarget" +
-      "LocationEvent\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle" +
-      "\022\022\n\nsequenceId\030\002 \001(\003\022\036\n\026targetLocationLa",
-      "titude\030\003 \001(\001\022\037\n\027targetLocationLongitude\030" +
-      "\004 \001(\001\022\036\n\026targetLocationAltitude\030\005 \001(\001\022\030\n" +
-      "\020acceptanceRadius\030\006 \001(\001\"#\n!VehicleTarget" +
-      "LocationSubscription\"C\n\013ProgressDto\022\r\n\005t" +
-      "itle\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\022\023\n\013maxProgr" +
-      "ess\030\003 \001(\005\"4\n\020ProgressStackDto\022 \n\nprogres" +
-      "ses\030\001 \003(\0132\014.ProgressDto\"@\n\023ServerProgres" +
-      "sEvent\022)\n\016progressStacks\030\001 \003(\0132\021.Progres" +
-      "sStackDto\"\034\n\032ServerProgressSubscription\"" +
-      "\355\002\n\014EventWrapper\0229\n\027objectModificationEv",
-      "ent\030\001 \001(\0132\030.ObjectModificationEvent\022\035\n\tl" +
-      "ockEvent\030\002 \001(\0132\n.LockEvent\022\'\n\016telemetryE" +
-      "vent\030\003 \001(\0132\017.TelemetryEvent\0225\n\025telemetry" +
-      "RemovalEvent\030\004 \001(\0132\026.TelemetryRemovalEve" +
-      "nt\022/\n\022adsbIndicatorEvent\030\005 \001(\0132\023.AdsbInd" +
-      "icatorEvent\022?\n\032vehicleTargetLocationEven" +
-      "t\030\006 \001(\0132\033.VehicleTargetLocationEvent\0221\n\023" +
-      "serverProgressEvent\030\007 \001(\0132\024.ServerProgre" +
-      "ssEvent\"\333\003\n\030EventSubscriptionWrapper\022G\n\036" +
-      "objectModificationSubscription\030\001 \001(\0132\037.O",
-      "bjectModificationSubscription\022+\n\020lockSub" +
-      "scription\030\002 \001(\0132\021.LockSubscription\0225\n\025te" +
-      "lemetrySubscription\030\003 \001(\0132\026.TelemetrySub" +
-      "scription\022C\n\034telemetryRemovalSubscriptio" +
-      "n\030\004 \001(\0132\035.TelemetryRemovalSubscription\022=" +
-      "\n\031adsbIndicatorSubscription\030\005 \001(\0132\032.Adsb" +
-      "IndicatorSubscription\022M\n!vehicleTargetLo" +
-      "cationSubscription\030\006 \001(\0132\".VehicleTarget" +
-      "LocationSubscription\022?\n\032serverProgressSu" +
-      "bscription\030\007 \001(\0132\033.ServerProgressSubscri",
-      "ption*]\n\025RouteProcessingStatus\022\020\n\014RPS_MO" +
-      "DIFIED\020\000\022\017\n\013RPS_INVALID\020\001\022\016\n\nRPS_MARKED\020" +
-      "\002\022\021\n\rRPS_PROCESSED\020\003*1\n\010UserRole\022\024\n\020UR_A" +
-      "DMINISTRATOR\020\000\022\017\n\013UR_OPERATOR\020\001**\n\014Objec" +
-      "tOrigin\022\013\n\007OO_USER\020\000\022\r\n\tOO_SYSTEM\020\001*(\n\014A" +
-      "ltitudeType\022\014\n\010AT_WGS84\020\000\022\n\n\006AT_AGL\020\001*e\n" +
-      "\017ActionExecution\022\024\n\020AE_ONLY_AT_START\020\000\022\032" +
-      "\n\026AE_ACTIONS_EVERY_POINT\020\001\022 \n\034AE_ACTIONS" +
-      "_ON_FORWARD_PASSES\020\002*y\n\nFigureType\022\014\n\010FT" +
-      "_POINT\020\000\022\016\n\nFT_POLYGON\020\001\022\r\n\tFT_CIRCLE\020\002\022",
-      "\022\n\016FT_EIGHT_CURVE\020\003\022\024\n\020FT_TAKEOFF_POINT\020" +
-      "\004\022\024\n\020FT_LANDING_POINT\020\005*_\n\rParameterType" +
-      "\022\r\n\tPT_STRING\020\000\022\016\n\nPT_INTEGER\020\001\022\r\n\tPT_DO" +
-      "UBLE\020\002\022\016\n\nPT_BOOLEAN\020\003\022\020\n\014PT_SELECTION\020\004" +
-      "*\302\020\n\rTelemetryType\022\026\n\022TT_BATTERY_VOLTAGE" +
-      "\020\000\022\013\n\007TT_ROLL\020\001\022\014\n\010TT_PITCH\020\002\022\n\n\006TT_YAW\020" +
-      "\003\022\021\n\rTT_ROLL_SPEED\020\004\022\022\n\016TT_PITCH_SPEED\020\005" +
-      "\022\020\n\014TT_YAW_SPEED\020\006\022\017\n\013TT_LATITUDE\020\007\022\020\n\014T" +
-      "T_LONGITUDE\020\010\022\023\n\017TT_MSL_ALTITUDE\020\t\022\023\n\017TT" +
-      "_AGL_ALTITUDE\020\n\022\025\n\021TT_GROUND_SPEED_X\020\013\022\025",
-      "\n\021TT_GROUND_SPEED_Y\020\014\022\025\n\021TT_GROUND_SPEED" +
-      "_Z\020\r\022\023\n\017TT_LATITUDE_GPS\020\016\022\024\n\020TT_LONGITUD" +
-      "E_GPS\020\017\022\023\n\017TT_ALTITUDE_GPS\020\020\022\027\n\023TT_GROUN" +
-      "D_SPEED_GPS\020\021\022\031\n\025TT_ACCELERATION_X_RAW\020\022" +
-      "\022\031\n\025TT_ACCELERATION_Y_RAW\020\023\022\031\n\025TT_ACCELE" +
-      "RATION_Z_RAW\020\024\022\032\n\026TT_ANGULAR_SPEED_X_RAW" +
-      "\020\025\022\032\n\026TT_ANGULAR_SPEED_Y_RAW\020\026\022\032\n\026TT_ANG" +
-      "ULAR_SPEED_Z_RAW\020\027\022\025\n\021TT_MAGNETIC_X_RAW\020" +
-      "\030\022\025\n\021TT_MAGNETIC_Y_RAW\020\031\022\025\n\021TT_MAGNETIC_" +
-      "Z_RAW\020\032\022\030\n\024TT_ABSOLUTE_PRESSURE\020\033\022\034\n\030TT_",
-      "DIFFERENTIAL_PRESSURE\020\034\022\022\n\016TT_TEMPERATUR" +
-      "E\020\035\022\020\n\014TT_AIR_SPEED\020\036\022\023\n\017TT_GROUND_SPEED" +
-      "\020\037\022\016\n\nTT_HEADING\020 \022\017\n\013TT_THROTTLE\020!\022\021\n\rT" +
-      "T_CLIMB_RATE\020\"\022\035\n\031TT_GPS_SATELLITES_VISI" +
-      "BLE\020#\022\023\n\017TT_ROUTE_MILAGE\020$\022\032\n\026TT_TELEMET" +
-      "RY_DROP_RATE\020%\022\031\n\025TT_DOWNLINK_CONNECTED\020" +
-      "&\022\027\n\023TT_UPLINK_CONNECTED\020\'\022\023\n\017TT_CONTROL" +
-      "_MODE\020(\022\014\n\010TT_STATE\020)\022\r\n\tTT_COURSE\020*\022\030\n\024" +
-      "TT_RELATIVE_ALTITUDE\020+\022\020\n\014TT_ELEVATION\020," +
-      "\022\025\n\021TT_PAYLOAD_1_ROLL\020-\022\025\n\021TT_PAYLOAD_1_",
-      "TILT\020.\022\024\n\020TT_PAYLOAD_1_YAW\020/\022\036\n\032TT_CAMER" +
-      "A_1_FOV_HORIZONTAL\0200\022\034\n\030TT_CAMERA_1_FOV_" +
-      "VERTICAL\0201\022\023\n\017TT_GPS_FIX_TYPE\0202\022\026\n\022TT_RC" +
-      "_LINK_QUALITY\0203\022\034\n\030TT_ADSB_TRANSPONDER_M" +
-      "ODE\0204\022\027\n\023TT_ADSB_IDENT_STATE\0205\022\027\n\023TT_ADS" +
-      "B_SQUAWK_CODE\0206\022\033\n\027TT_ADSB_ALTITUDE_SOUR" +
-      "CE\0207\022\024\n\020TT_ADSB_ALTITUDE\0208\022\027\n\023TT_ADSB_ER" +
-      "ROR_FLAGS\0209\022\025\n\021TT_PAYLOAD_2_ROLL\020:\022\025\n\021TT" +
-      "_PAYLOAD_2_TILT\020;\022\024\n\020TT_PAYLOAD_2_YAW\020<\022" +
-      "\036\n\032TT_CAMERA_2_FOV_HORIZONTAL\020=\022\034\n\030TT_CA",
-      "MERA_2_FOV_VERTICAL\020>\022\035\n\031TT_PAYLOAD_1_CO" +
-      "NTROL_MODE\020?\022\035\n\031TT_PAYLOAD_2_CONTROL_MOD" +
-      "E\020@\022\032\n\026TT_PAYLOAD_1_AVAILABLE\020A\022\032\n\026TT_PA" +
-      "YLOAD_2_AVAILABLE\020B\022\030\n\024TT_PAYLOAD_1_POWE" +
-      "RED\020C\022\030\n\024TT_PAYLOAD_2_POWERED\020D\022\024\n\020TT_CA" +
-      "MERA_1_ZOOM\020E\022\024\n\020TT_CAMERA_2_ZOOM\020F\022\031\n\025T" +
-      "T_CAMERA_1_RECORDING\020G\022\031\n\025TT_CAMERA_2_RE" +
-      "CORDING\020H\022\033\n\027TT_CAMERA_1_IMAGE_COUNT\020I\022\033" +
-      "\n\027TT_CAMERA_2_IMAGE_COUNT\020J\022\036\n\032TT_CAMERA" +
-      "_1_IMAGE_CAPACITY\020K\022\036\n\032TT_CAMERA_2_IMAGE",
-      "_CAPACITY\020L\022\033\n\027TT_CAMERA_1_VIDEO_COUNT\020M" +
-      "\022\033\n\027TT_CAMERA_2_VIDEO_COUNT\020N\022\024\n\020TT_HOME" +
-      "_LATITUDE\020O\022\025\n\021TT_HOME_LONGITUDE\020P\022\031\n\025TT" +
-      "_HOME_AMSL_ALTITUDE\020Q\022\025\n\021TT_ADSB_ERROR_G" +
-      "PS\020R\022\026\n\022TT_ADSB_ERROR_ICAO\020S\022\"\n\036TT_ADSB_" +
-      "ERROR_OVER_TEMPERATURE\020T\022\024\n\020TT_ADSB_ERRO" +
-      "R_ES\020U\022\035\n\031TT_ADSB_ERROR_TRANSPONDER\020V*G\n" +
-      "\013VehicleType\022\021\n\rVT_FIXED_WING\020\000\022\021\n\rVT_HE" +
-      "LICOPTER\020\001\022\022\n\016VT_MULTICOPTER\020\002*\307\t\n\024Vehic" +
-      "leParameterType\022\016\n\nVPT_HEIGHT\020\000\022\r\n\tVPT_W",
-      "IDTH\020\001\022\016\n\nVPT_LENGTH\020\002\022\026\n\022VPT_MAX_CLIMB_" +
-      "RATE\020\003\022\034\n\030VPT_MAX_HORIZONTAL_SPEED\020\004\022\024\n\020" +
-      "VPT_MAX_ALTITUDE\020\005\022\025\n\021VPT_MAX_WAYPOINTS\020" +
-      "\006\022\027\n\023VPT_MAX_FLIGHT_TIME\020\007\022\027\n\023VPT_WIND_R" +
-      "ESISTANCE\020\010\022\032\n\026VPT_DRY_TAKEOFF_WEIGHT\020\t\022" +
-      "\032\n\026VPT_MAX_TAKEOFF_WEIGHT\020\n\022\026\n\022VPT_BATTE" +
-      "RY_WEIGHT\020\013\022\037\n\033VPT_CHARGED_BATTERY_VOLTA" +
-      "GE\020\014\022\"\n\036VPT_DISCHARGED_BATTERY_VOLTAGE\020\r" +
-      "\022\036\n\032VPT_NORMAL_BATTERY_VOLTAGE\020\016\022\033\n\027VPT_" +
-      "LOW_BATTERY_VOLTAGE\020\017\022\032\n\026VPT_LOW_GPS_SAT",
-      "ELLITES\020\020\022\035\n\031VPT_NORMAL_GPS_SATELLITES\020\021" +
-      "\022 \n\034VPT_SAFE_DISTANCE_TO_TERRAIN\020\022\022!\n\035VP" +
-      "T_SAFE_DISTANCE_TO_OBSTACLE\020\023\022\"\n\036VPT_WAY" +
-      "POINT_ACCEPTANCE_RADIUS\020\024\022\024\n\020VPT_FENCE_R" +
-      "ADIUS\020\025\022\033\n\027VPT_LOW_TELEMETRY_LEVEL\020\026\022\036\n\032" +
-      "VPT_NORMAL_TELEMETRY_LEVEL\020\027\022\032\n\026VPT_DEFA" +
-      "ULT_CLIMB_RATE\020\030\022\034\n\030VPT_DEFAULT_DESCENT_" +
-      "RATE\020\031\022\023\n\017VPT_GLIDE_SLOPE\020\032\022 \n\034VPT_DEFAU" +
-      "LT_HORIZONTAL_SPEED\020\033\022\034\n\030VPT_LANDING_GRO" +
-      "UND_SPEED\020\034\022\030\n\024VPT_MAX_ALTITUDE_AGL\020\035\022\036\n",
-      "\032VPT_LANDING_FLARE_ALTITUDE\020\036\022\032\n\026VPT_LAN" +
-      "DING_FLARE_TIME\020\037\022\031\n\025VPT_MIN_LANDING_PIT" +
-      "CH\020 \022\032\n\026VPT_LANDING_FLARE_DAMP\020!\022!\n\035VPT_" +
-      "LANDING_APPROACH_AIRSPEED\020\"\022\037\n\033VPT_LANDI" +
-      "NG_SPEED_WEIGHTING\020#\022\035\n\031VPT_MAX_AUTO_FLI" +
-      "GHT_PITCH\020$\022\021\n\rVPT_MAX_PITCH\020%\022\024\n\020VPT_MI" +
-      "N_THROTTLE\020&\022\031\n\025VPT_LANDING_SINK_RATE\020\'\022" +
-      "#\n\037VPT_LANDING_RANGEFINDER_ENABLED\020(\022 \n\034" +
-      "VPT_MIN_RANGEFINDER_DISTANCE\020)\022\030\n\024VPT_MA" +
-      "X_DESCENT_RATE\020**.\n\013PayloadType\022\r\n\tPT_CA",
-      "MERA\020\000\022\020\n\014PT_DATA_LINK\020\001*\322\001\n\024PayloadPara" +
-      "meterType\022\016\n\nPPT_WEIGHT\020\000\022\021\n\rPPT_FREQUEN" +
-      "CY\020\001\022\r\n\tPPT_POWER\020\002\022\031\n\025PPT_TRUE_FOCAL_LE" +
-      "NGTH\020\003\022\024\n\020PPT_SENSOR_WIDTH\020\004\022\025\n\021PPT_SENS" +
-      "OR_HEIGHT\020\005\022 \n\034PPT_SENSOR_HORIZONTAL_PIX" +
-      "ELS\020\006\022\036\n\032PPT_SENSOR_VERTICAL_PIXELS\020\007*\221\001" +
-      "\n\rSeverityLevel\022\020\n\014SL_EMERGENCY\020\000\022\014\n\010SL_" +
-      "ALERT\020\001\022\017\n\013SL_CRITICAL\020\002\022\014\n\010SL_ERROR\020\003\022\016" +
-      "\n\nSL_WARNING\020\004\022\r\n\tSL_NOTICE\020\005\022\024\n\020SL_INFO" +
-      "RMATIONAL\020\006\022\014\n\010SL_DEBUG\020\007*/\n\016TrajectoryT",
-      "ype\022\017\n\013TT_STRAIGHT\020\000\022\014\n\010TT_STAIR\020\001*[\n\016Fa" +
-      "ilsafeReason\022\016\n\nFR_RC_LOST\020\000\022\017\n\013FR_GPS_L" +
-      "OST\020\001\022\022\n\016FR_LOW_BATTERY\020\002\022\024\n\020FR_DATALINK" +
-      "_LOST\020\003*K\n\016FailsafeAction\022\016\n\nFA_GO_HOME\020" +
-      "\000\022\013\n\007FA_LAND\020\001\022\013\n\007FA_WAIT\020\002\022\017\n\013FA_CONTIN" +
-      "UE\020\003*j\n\014TriggerState\022\022\n\016TS_SINGLE_SHOT\020\000" +
-      "\022\026\n\022TS_START_RECORDING\020\001\022\025\n\021TS_STOP_RECO" +
-      "RDING\020\002\022\027\n\023TS_TOGGLE_RECORDING\020\003*2\n\nPowe" +
-      "rState\022\n\n\006PS_OFF\020\000\022\t\n\005PS_ON\020\001\022\r\n\tPS_TOGG" +
-      "LE\020\002*>\n\022HomeLocationSource\022\020\n\014HLS_EXPLIC",
-      "IT\020\000\022\026\n\022HLS_FIRST_WAYPOINT\020\001*\'\n\007PoiMode\022" +
-      "\013\n\007PM_NONE\020\000\022\017\n\013PM_LOCATION\020\001**\n\014Panoram" +
-      "aMode\022\014\n\010PM_PHOTO\020\000\022\014\n\010PM_VIDEO\020\001*>\n\021Rot" +
-      "ationDirection\022\020\n\014RD_CLOCKWISE\020\000\022\027\n\023RD_C" +
-      "OUNTERCLOCKWISE\020\001*2\n\017IcaoAddressType\022\014\n\010" +
-      "IAT_REAL\020\000\022\021\n\rIAT_ANONYMOUS\020\001**\n\tCompone" +
-      "nt\022\016\n\nC_DATABASE\020\000\022\r\n\tC_LICENSE\020\001*\231\001\n\nMe" +
-      "tricUnit\022\013\n\007MU_NONE\020\000\022\r\n\tMU_SECOND\020\001\022\014\n\010" +
-      "MU_METRE\020\002\022\020\n\014MU_KILOMETRE\020\003\022\025\n\021MU_METRE" +
-      "PERSECOND\020\004\022\022\n\016MU_SQUAREMETRE\020\005\022\021\n\rMU_KI",
-      "LOGRAMME\020\006\022\021\n\rMU_CENTIMETRE\020\007*C\n\017Message" +
-      "Severity\022\014\n\010MS_ERROR\020\000\022\016\n\nMS_WARNING\020\001\022\022" +
-      "\n\016MS_INFORMATION\020\002*F\n\026ConflictResolution" +
-      "Mode\022\014\n\010CRM_KEEP\020\000\022\017\n\013CRM_REPLACE\020\001\022\r\n\tC" +
-      "RM_MERGE\020\002*d\n\023VehicleLogEntryType\022\020\n\014VLE" +
-      "T_GENERIC\020\000\022\020\n\014VLET_COMMAND\020\001\022\017\n\013VLET_UP" +
-      "LOAD\020\002\022\030\n\024VLET_VIDEO_RECORDING\020\003*M\n\014Proc" +
-      "essStage\022\014\n\010PS_START\020\000\022\017\n\013PS_PROGRESS\020\001\022" +
-      "\016\n\nPS_SUCCESS\020\002\022\016\n\nPS_FAILURE\020\003*^\n\020Waypo" +
-      "intTurnType\022\025\n\021WTT_STOP_AND_TURN\020\000\022\020\n\014WT",
-      "T_STRAIGHT\020\001\022\016\n\nWTT_SPLINE\020\002\022\021\n\rWTT_BANK" +
-      "_TURN\020\003*\236\002\n\nActionCode\022\017\n\013AC_WAYPOINT\020\000\022" +
-      "\023\n\017AC_SPEED_CHANGE\020\001\022\024\n\020AC_HOME_LOCATION" +
-      "\020\002\022\013\n\007AC_WAIT\020\003\022\021\n\rAC_POI_CHANGE\020\004\022\025\n\021AC" +
-      "_HEADING_CHANGE\020\005\022\025\n\021AC_CAMERA_CONTROL\020\006" +
-      "\022\025\n\021AC_CAMERA_TRIGGER\020\007\022\034\n\030AC_CAMERA_SER" +
-      "IES_BY_TIME\020\010\022 \n\034AC_CAMERA_SERIES_BY_DIS" +
-      "TANCE\020\t\022\016\n\nAC_TAKEOFF\020\n\022\016\n\nAC_LANDING\020\013\022" +
-      "\017\n\013AC_PANORAMA\020\014**\n\007NfzType\022\r\n\tNT_CUSTOM" +
-      "\020\000\022\020\n\014NT_AERODROME\020\001*}\n\016VideoEventType\022\031",
-      "\n\025VET_RECORDING_STARTED\020\000\022\031\n\025VET_RECORDI" +
-      "NG_STOPPED\020\001\022\035\n\031VET_RECORDING_INTERRUPTE" +
-      "D\020\002\022\026\n\022VET_STREAM_REMOVED\020\003*5\n\013FeatureTy" +
-      "pe\022\024\n\020FT_STATIC_OBJECT\020\000\022\020\n\014FT_PLACEMARK" +
-      "\020\001*\246\002\n\022UtmOperationStatus\022\021\n\rUOS_PROPOSI" +
-      "NG\020\000\022\020\n\014UOS_ACCEPTED\020\001\022\020\n\014UOS_REJECTED\020\002" +
-      "\022\017\n\013UOS_READIED\020\003\022\021\n\rUOS_ACTIVATED\020\004\022\016\n\n" +
-      "UOS_CLOSED\020\005\022\017\n\013UOS_EXPIRED\020\006\022\021\n\rUOS_CAN" +
-      "CELLED\020\007\022\026\n\022UOS_NON_CONFORMING\020\010\022\r\n\tUOS_" +
-      "ROGUE\020\t\022\021\n\rUOS_MODIFYING\020\n\022\022\n\016UOS_REQUES",
-      "TING\020\013\022\020\n\014UOS_ABORTING\020\014\022\017\n\013UOS_ABORTED\020" +
-      "\r\022\020\n\014UOS_INTRUDER\020\016*N\n\rCommandStatus\022\017\n\013" +
-      "CS_REJECTED\020\000\022\013\n\007CS_SENT\020\001\022\020\n\014CS_SUCCEED" +
-      "ED\020\002\022\r\n\tCS_FAILED\020\003*n\n\tSubsystem\022\024\n\020S_CO" +
-      "NTROL_SERVER\020\000\022\027\n\023S_FLIGHT_CONTROLLER\020\001\022" +
-      "\014\n\010S_GIMBAL\020\002\022\014\n\010S_CAMERA\020\003\022\026\n\022S_ADSB_TR" +
-      "ANSPONDER\020\004*\305\004\n\010Semantic\022\r\n\tS_DEFAULT\020\001\022" +
-      "\016\n\nS_LATITUDE\020\002\022\017\n\013S_LONGITUDE\020\003\022\023\n\017S_AL" +
-      "TITUDE_AMSL\020\004\022\022\n\016S_ALTITUDE_AGL\020\005\022\022\n\016S_A" +
-      "LTITUDE_RAW\020\006\022\r\n\tS_HEADING\020\007\022\r\n\tS_VOLTAG",
-      "E\020\010\022\017\n\013S_AIR_SPEED\020\t\022\022\n\016S_GROUND_SPEED\020\n" +
-      "\022\024\n\020S_VERTICAL_SPEED\020\013\022\025\n\021S_SATELLITE_CO" +
-      "UNT\020\014\022\022\n\016S_GPS_FIX_TYPE\020\r\022\n\n\006S_ROLL\020\016\022\013\n" +
-      "\007S_PITCH\020\017\022\t\n\005S_YAW\020\020\022\025\n\021S_RC_LINK_QUALI" +
-      "TY\020\021\022\r\n\tS_CURRENT\020\022\022\026\n\022S_GCS_LINK_QUALIT" +
-      "Y\020\023\022\013\n\007S_FOV_H\020\024\022\013\n\007S_FOV_V\020\025\022\022\n\016S_CONTR" +
-      "OL_MODE\020\026\022\026\n\022S_GROUND_ELEVATION\020\027\022\027\n\023S_A" +
-      "CCEPTANCE_RADIUS\020\030\022\023\n\017S_LOITER_RADIUS\020\031\022" +
-      "\n\n\006S_ICAO\020\032\022\017\n\013S_ADSB_MODE\020\033\022\014\n\010S_SQUAWK" +
-      "\020\034\022\022\n\016S_MILLISECONDS\020\035\022\r\n\tS_NUMERIC\020\036\022\n\n",
-      "\006S_BOOL\020\037\022\014\n\010S_STRING\020 \022\n\n\006S_ENUM\020!*?\n\020M" +
-      "odificationType\022\r\n\tMT_CREATE\020\000\022\r\n\tMT_UPD" +
-      "ATE\020\001\022\r\n\tMT_DELETE\020\002B!\n\022com.ugcs.ucs.pro" +
-      "toB\013DomainProto"
+      ".TriggerState\022\013\n\003tag\030\005 \001(\t\"\213\001\n\022CameraSer" +
+      "iesByTime\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020" +
+      "\n\010interval\030\003 \001(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022\n" +
+      "\nstartDelay\030\005 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003t",
+      "ag\030\006 \001(\t\"\217\001\n\026CameraSeriesByDistance\022\n\n\002i" +
+      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\003 \001" +
+      "(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022\n\nstartDelay\030\005 " +
+      "\001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\006 \001(\t\"B\n\004Wa" +
+      "it\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010inter" +
+      "val\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"\203\001\n\rHeadingChange" +
+      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n\007heading" +
+      "\030\003 \001(\001\022\036\n\026relativeToNextWaypoint\030\004 \001(\010\022\027" +
+      "\n\017relativeToNorth\030\005 \001(\010\022\013\n\003tag\030\006 \001(\t\"\207\001\n" +
+      "\014HomeLocation\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001",
+      "(\005\022\020\n\010latitude\030\003 \001(\001\022\021\n\tlongitude\030\004 \001(\001\022" +
+      "\025\n\rwgs84Altitude\030\005 \001(\001\022\021\n\televation\030\006 \001(" +
+      "\001\022\013\n\003tag\030\007 \001(\t\"\211\001\n\tPoiChange\022\n\n\002id\030\001 \001(\005" +
+      "\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.PoiMod" +
+      "e\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001(\001\022\025" +
+      "\n\rwgs84Altitude\030\006 \001(\001\022\013\n\003tag\030\007 \001(\t\"a\n\013Sp" +
+      "eedChange\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\023" +
+      "\n\013groundSpeed\030\003 \001(\001\022\023\n\013rateOfClimb\030\004 \001(\001" +
+      "\022\013\n\003tag\030\005 \001(\t\"\261\001\n\007Takeoff\022\n\n\002id\030\001 \001(\005\022\017\n" +
+      "\007version\030\002 \001(\005\022\030\n\020acceptanceRadius\030\003 \001(\001",
+      "\022\023\n\013rateOfClimb\030\004 \001(\001\022\020\n\010latitude\030\005 \001(\001\022" +
+      "\021\n\tlongitude\030\006 \001(\001\022\025\n\rwgs84Altitude\030\007 \001(" +
+      "\001\022\021\n\televation\030\010 \001(\001\022\013\n\003tag\030\t \001(\t\"\263\001\n\007La" +
+      "nding\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\030\n\020ac" +
+      "ceptanceRadius\030\003 \001(\001\022\025\n\rrateOfDescent\030\004 " +
+      "\001(\001\022\020\n\010latitude\030\005 \001(\001\022\021\n\tlongitude\030\006 \001(\001" +
+      "\022\025\n\rwgs84Altitude\030\007 \001(\001\022\021\n\televation\030\010 \001" +
+      "(\001\022\013\n\003tag\030\t \001(\t\"\324\001\n\010Panorama\022\n\n\002id\030\001 \001(\005" +
+      "\022\017\n\007version\030\002 \001(\005\022\r\n\005angle\030\003 \001(\001\022\021\n\tstep" +
+      "Angle\030\004 \001(\001\022\021\n\tstepDelay\030\005 \001(\001\022-\n\021rotati",
+      "onDirection\030\006 \001(\0162\022.RotationDirection\022\025\n" +
+      "\rrotationSpeed\030\007 \001(\001\022#\n\014panoramaMode\030\010 \001" +
+      "(\0162\r.PanoramaMode\022\013\n\003tag\030\t \001(\t\"\370\001\n\017Route" +
+      "Attributes\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022" +
+      "\024\n\014safeAltitude\030\003 \001(\001\022%\n\014rcLostAction\030\004 " +
+      "\001(\0162\017.FailsafeAction\022&\n\rgpsLostAction\030\005 " +
+      "\001(\0162\017.FailsafeAction\022)\n\020lowBatteryAction" +
+      "\030\006 \001(\0162\017.FailsafeAction\022+\n\022datalinkLostA" +
+      "ction\030\007 \001(\0162\017.FailsafeAction\022\013\n\003tag\030\010 \001(" +
+      "\t\"\300\004\n\020ActionDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007ve",
+      "rsion\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\r\n\005order\030\004 \001(\005" +
+      "\022-\n\021segmentDefinition\030\005 \001(\0132\022.SegmentDef" +
+      "inition\022\'\n\016waitDefinition\030\006 \001(\0132\017.WaitDe" +
+      "finition\022%\n\rpoiDefinition\030\007 \001(\0132\016.PoiDef" +
+      "inition\022-\n\021headingDefinition\030\010 \001(\0132\022.Hea" +
+      "dingDefinition\0229\n\027cameraControlDefinitio" +
+      "n\030\t \001(\0132\030.CameraControlDefinition\0229\n\027cam" +
+      "eraTriggerDefinition\030\n \001(\0132\030.CameraTrigg" +
+      "erDefinition\022C\n\034cameraSeriesByTimeDefini" +
+      "tion\030\013 \001(\0132\035.CameraSeriesByTimeDefinitio",
+      "n\022K\n cameraSeriesByDistanceDefinition\030\014 " +
+      "\001(\0132!.CameraSeriesByDistanceDefinition\022/" +
+      "\n\022panoramaDefinition\030\r \001(\0132\023.PanoramaDef" +
+      "inition\022\013\n\003tag\030\016 \001(\t\"\177\n\027CameraControlDef" +
+      "inition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004" +
+      "tilt\030\003 \001(\001\022\014\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n" +
+      "\tzoomLevel\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"a\n\027CameraT" +
+      "riggerDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030" +
+      "\002 \001(\005\022\034\n\005state\030\003 \001(\0162\r.TriggerState\022\013\n\003t" +
+      "ag\030\005 \001(\t\"\225\001\n\034CameraSeriesByTimeDefinitio",
+      "n\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interv" +
+      "al\030\004 \001(\001\022\023\n\013shotsNumber\030\005 \001(\005\022\022\n\nstartDe" +
+      "lay\030\006 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t" +
+      "\"\231\001\n CameraSeriesByDistanceDefinition\022\n\n" +
+      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\004" +
+      " \001(\001\022\023\n\013shotsNumber\030\005 \001(\005\022\022\n\nstartDelay\030" +
+      "\006 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\207\001\n" +
+      "\021HeadingDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
+      "n\030\002 \001(\005\022\017\n\007heading\030\003 \001(\001\022\036\n\026relativeToNe" +
+      "xtWaypoint\030\004 \001(\010\022\027\n\017relativeToNorth\030\005 \001(",
+      "\010\022\013\n\003tag\030\006 \001(\t\"\307\001\n\rPoiDefinition\022\n\n\002id\030\001" +
+      " \001(\005\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.Po" +
+      "iMode\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001" +
+      "(\001\022\025\n\rwgs84Altitude\030\006 \001(\001\022\023\n\013aglAltitude" +
+      "\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162\r.AltitudeT" +
+      "ype\022\013\n\003tag\030\t \001(\t\"L\n\016WaitDefinition\022\n\n\002id" +
+      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\003 \001(" +
+      "\001\022\013\n\003tag\030\004 \001(\t\"\336\001\n\022PanoramaDefinition\022\n\n" +
+      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005angle\030\003 \001(" +
+      "\001\022\021\n\tstepAngle\030\004 \001(\001\022\021\n\tstepDelay\030\005 \001(\001\022",
+      "-\n\021rotationDirection\030\006 \001(\0162\022.RotationDir" +
+      "ection\022\025\n\rrotationSpeed\030\007 \001(\001\022#\n\014panoram" +
+      "aMode\030\010 \001(\0162\r.PanoramaMode\022\013\n\003tag\030\t \001(\t\"" +
+      "\250\001\n\014NoFlightZone\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030" +
+      "\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\026\n\004type" +
+      "\030\005 \001(\0162\010.NfzType\022\016\n\006sealed\030\006 \001(\010\022\025\n\005pris" +
+      "m\030\007 \001(\0132\006.Prism\022!\n\013coneFrustum\030\010 \001(\0132\014.C" +
+      "oneFrustum\"g\n\026NoFlightZoneRTreeIndex\022\r\n\005" +
+      "nfzId\030\001 \001(\005\022\016\n\006minLat\030\002 \001(\001\022\016\n\006maxLat\030\003 " +
+      "\001(\001\022\016\n\006minLng\030\004 \001(\001\022\016\n\006maxLng\030\005 \001(\001\"\326\001\n\013",
+      "ConeFrustum\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005" +
+      "\022\013\n\003tag\030\003 \001(\t\022\021\n\ttopRadius\030\004 \001(\001\022\022\n\nbase" +
+      "Radius\030\005 \001(\001\022\024\n\014baseLatitude\030\006 \001(\001\022\025\n\rba" +
+      "seLongitude\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162" +
+      "\r.AltitudeType\022\024\n\014baseAltitude\030\t \001(\001\022\016\n\006" +
+      "height\030\n \001(\001\"\274\001\n\021CommandDefinition\022\n\n\002id" +
+      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004code\030\003 \001(\t\022\035\n" +
+      "\tsubsystem\030\007 \001(\0162\n.Subsystem\022\023\n\013subsyste" +
+      "mId\030\010 \001(\005\022-\n\targuments\030\005 \003(\0132\032.CommandAr" +
+      "gumentDefinition\022\014\n\004name\030\004 \001(\t\022\013\n\003tag\030\006 ",
+      "\001(\t\"\347\001\n\031CommandArgumentDefinition\022\n\n\002id\030" +
+      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022#\n\007command\030\013 \001(\0132" +
+      "\022.CommandDefinition\022\014\n\004code\030\r \001(\t\022\033\n\010sem" +
+      "antic\030\016 \001(\0162\t.Semantic\022\034\n\014defaultValue\030\017" +
+      " \001(\0132\006.Value\022\030\n\010minValue\030\020 \001(\0132\006.Value\022\030" +
+      "\n\010maxValue\030\021 \001(\0132\006.Value\022\013\n\003tag\030\014 \001(\t\"\237\001" +
+      "\n\030VehicleCommandDefinition\022\n\n\002id\030\001 \001(\005\022\017" +
+      "\n\007version\030\002 \001(\005\022\031\n\007vehicle\030\003 \001(\0132\010.Vehic" +
+      "le\022-\n\021commandDefinition\030\004 \001(\0132\022.CommandD" +
+      "efinition\022\017\n\007enabled\030\005 \001(\010\022\013\n\003tag\030\006 \001(\t\"",
+      "\253\001\n\007Command\022\014\n\004code\030\001 \001(\t\022\035\n\tsubsystem\030\006" +
+      " \001(\0162\n.Subsystem\022\023\n\013subsystemId\030\007 \001(\005\022#\n" +
+      "\targuments\030\002 \003(\0132\020.CommandArgument\022\016\n\006si" +
+      "lent\030\003 \001(\010\022\031\n\021resultIndifferent\030\004 \001(\010\022\016\n" +
+      "\006forced\030\005 \001(\010\"6\n\017CommandArgument\022\014\n\004code" +
+      "\030\001 \001(\t\022\025\n\005value\030\002 \001(\0132\006.Value\"\247\001\n\005Value\022" +
+      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\021\n\tboolValu" +
+      "e\030\003 \001(\010\022\020\n\010intValue\030\004 \001(\005\022\021\n\tlongValue\030\005" +
+      " \001(\003\022\022\n\nfloatValue\030\006 \001(\002\022\023\n\013doubleValue\030" +
+      "\007 \001(\001\022\023\n\013stringValue\030\010 \001(\t\022\013\n\003tag\030\t \001(\t\"",
+      "\362\002\n\017VehicleLogEntry\022\n\n\002id\030\001 \001(\005\022\017\n\007versi" +
+      "on\030\002 \001(\005\022\014\n\004time\030\003 \001(\003\022\031\n\007vehicle\030\004 \001(\0132" +
+      "\010.Vehicle\022\017\n\007message\030\005 \001(\t\022\035\n\005level\030\006 \001(" +
+      "\0162\016.SeverityLevel\022\034\n\005stage\030\007 \001(\0162\r.Proce" +
+      "ssStage\022\"\n\004type\030\010 \001(\0162\024.VehicleLogEntryT" +
+      "ype\022.\n\020commandArguments\030\t \001(\0132\024.CommandL" +
+      "ogArguments\022,\n\017uploadArguments\030\n \001(\0132\023.U" +
+      "ploadLogArguments\022<\n\027videoRecordingArgum" +
+      "ents\030\013 \001(\0132\033.VideoRecordingLogArguments\022" +
+      "\013\n\003tag\030\014 \001(\t\"X\n\023CommandLogArguments\022\n\n\002i",
+      "d\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\023\n\013commandC" +
+      "ode\030\003 \001(\t\022\013\n\003tag\030\004 \001(\t\"Y\n\022UploadLogArgum" +
+      "ents\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\025\n" +
+      "\005route\030\003 \001(\0132\006.Route\022\013\n\003tag\030\004 \001(\t\"\267\001\n\032Vi" +
+      "deoRecordingLogArguments\022\n\n\002id\030\001 \001(\005\022\023\n\004" +
+      "user\030\002 \001(\0132\005.User\022\020\n\010streamId\030\003 \001(\t\022\'\n\016v" +
+      "ideoEventType\030\004 \001(\0162\017.VideoEventType\022\027\n\017" +
+      "videoServerHost\030\005 \001(\t\022\027\n\017videoServerPort" +
+      "\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"\213\001\n\tTelemetry\022\n\n\002id\030" +
+      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003 \001(\002\022\014\n",
+      "\004time\030\004 \001(\003\022\031\n\007vehicle\030\005 \001(\0132\010.Vehicle\022\034" +
+      "\n\004type\030\006 \001(\0162\016.TelemetryType\022\013\n\003tag\030\007 \001(" +
+      "\t\"I\n\014TelemetryDto\022\r\n\005value\030\001 \001(\002\022\014\n\004time" +
+      "\030\002 \001(\003\022\034\n\004type\030\003 \001(\0162\016.TelemetryType\"\240\001\n" +
+      "\021TelemetryInterval\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
+      "n\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\025\n\rbeginningTime\030\004" +
+      " \001(\003\022\017\n\007endTime\030\005 \001(\003\022+\n\010vehicles\030\006 \003(\0132" +
+      "\031.TelemetryIntervalVehicle\022\013\n\003tag\030\007 \001(\t\"" +
+      "\205\001\n\030TelemetryIntervalVehicle\022\n\n\002id\030\001 \001(\005" +
+      "\022\017\n\007version\030\002 \001(\005\022$\n\010interval\030\003 \001(\0132\022.Te",
+      "lemetryInterval\022\031\n\007vehicle\030\004 \001(\0132\010.Vehic" +
+      "le\022\013\n\003tag\030\005 \001(\t\"\216\001\n\017ElevationSource\022\n\n\002i" +
+      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022" +
+      "\035\n\tgeoServer\030\004 \001(\0132\n.GeoServer\022\022\n\nsource" +
+      "Name\030\005 \001(\t\022\013\n\003tag\030\006 \001(\t\022\017\n\007enabled\030\007 \001(\010" +
+      "\"\257\001\n\rFeatureSource\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
+      "n\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\035\n\tgeoServer\030\004 \001(" +
+      "\0132\n.GeoServer\022\022\n\nsourceName\030\005 \001(\t\022!\n\013fea" +
+      "tureType\030\006 \001(\0162\014.FeatureType\022\017\n\007enabled\030" +
+      "\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\244\001\n\tGeoServer\022\n\n\002id\030\001",
+      " \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\013\n\003u" +
+      "ri\030\004 \001(\t\022*\n\020elevationSources\030\006 \003(\0132\020.Ele" +
+      "vationSource\022&\n\016featureSources\030\007 \003(\0132\016.F" +
+      "eatureSource\022\013\n\003tag\030\010 \001(\t\"\326\001\n\014UtmOperati" +
+      "on\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\007vehic" +
+      "le\030\003 \001(\0132\010.Vehicle\022#\n\006status\030\004 \001(\0162\023.Utm" +
+      "OperationStatus\022\014\n\004gufi\030\005 \001(\t\022\024\n\014flightN" +
+      "umber\030\006 \001(\t\022\036\n\026effectiveBeginningTime\030\007 " +
+      "\001(\003\022\030\n\020effectiveEndTime\030\010 \001(\003\022\013\n\003tag\030\t \001" +
+      "(\t\"B\n\004Lock\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010object",
+      "Id\030\002 \001(\005\022\024\n\005owner\030\003 \001(\0132\005.User\"?\n\tSelect" +
+      "ion\022\023\n\013selectionId\030\001 \001(\t\022\035\n\005items\030\002 \003(\0132" +
+      "\016.SelectionItem\"H\n\rSelectionItem\022\r\n\005valu" +
+      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\023\n\013markDefa" +
+      "ult\030\003 \001(\010\"\222\001\n\027ObjectModificationEvent\022+\n" +
+      "\020modificationType\030\001 \001(\0162\021.ModificationTy" +
+      "pe\022\022\n\nobjectType\030\002 \001(\t\022\020\n\010objectId\030\003 \001(\005" +
+      "\022$\n\006object\030\004 \001(\0132\024.DomainObjectWrapper\"F" +
+      "\n\036ObjectModificationSubscription\022\022\n\nobje" +
+      "ctType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005\"F\n\tLockEv",
+      "ent\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(" +
+      "\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"8\n\020LockSubscripti" +
+      "on\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005" +
+      "\"J\n\016TelemetryEvent\022\031\n\007vehicle\030\001 \001(\0132\010.Ve" +
+      "hicle\022\035\n\ttelemetry\030\002 \003(\0132\n.Telemetry\"2\n\025" +
+      "TelemetrySubscription\022\031\n\007vehicle\030\001 \001(\0132\010" +
+      ".Vehicle\"T\n\025TelemetryRemovalEvent\022\031\n\007veh" +
+      "icle\030\001 \001(\0132\010.Vehicle\022\020\n\010fromTime\030\002 \001(\003\022\016" +
+      "\n\006toTime\030\003 \001(\003\"9\n\034TelemetryRemovalSubscr" +
+      "iption\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\" \n\022Ads",
+      "bIndicatorEvent\022\n\n\002on\030\001 \001(\010\"\033\n\031AdsbIndic" +
+      "atorSubscription\"C\n\013ProgressDto\022\r\n\005title" +
+      "\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\022\023\n\013maxProgress\030" +
+      "\003 \001(\005\"4\n\020ProgressStackDto\022 \n\nprogresses\030" +
+      "\001 \003(\0132\014.ProgressDto\"@\n\023ServerProgressEve" +
+      "nt\022)\n\016progressStacks\030\001 \003(\0132\021.ProgressSta" +
+      "ckDto\"\034\n\032ServerProgressSubscription\"\254\002\n\014" +
+      "EventWrapper\0229\n\027objectModificationEvent\030" +
+      "\001 \001(\0132\030.ObjectModificationEvent\022\035\n\tlockE" +
+      "vent\030\002 \001(\0132\n.LockEvent\022\'\n\016telemetryEvent",
+      "\030\003 \001(\0132\017.TelemetryEvent\0225\n\025telemetryRemo" +
+      "valEvent\030\004 \001(\0132\026.TelemetryRemovalEvent\022/" +
+      "\n\022adsbIndicatorEvent\030\005 \001(\0132\023.AdsbIndicat" +
+      "orEvent\0221\n\023serverProgressEvent\030\007 \001(\0132\024.S" +
+      "erverProgressEvent\"\214\003\n\030EventSubscription" +
+      "Wrapper\022G\n\036objectModificationSubscriptio" +
+      "n\030\001 \001(\0132\037.ObjectModificationSubscription" +
+      "\022+\n\020lockSubscription\030\002 \001(\0132\021.LockSubscri" +
+      "ption\0225\n\025telemetrySubscription\030\003 \001(\0132\026.T" +
+      "elemetrySubscription\022C\n\034telemetryRemoval",
+      "Subscription\030\004 \001(\0132\035.TelemetryRemovalSub" +
+      "scription\022=\n\031adsbIndicatorSubscription\030\005" +
+      " \001(\0132\032.AdsbIndicatorSubscription\022?\n\032serv" +
+      "erProgressSubscription\030\007 \001(\0132\033.ServerPro" +
+      "gressSubscription*]\n\025RouteProcessingStat" +
+      "us\022\020\n\014RPS_MODIFIED\020\000\022\017\n\013RPS_INVALID\020\001\022\016\n" +
+      "\nRPS_MARKED\020\002\022\021\n\rRPS_PROCESSED\020\003*1\n\010User" +
+      "Role\022\024\n\020UR_ADMINISTRATOR\020\000\022\017\n\013UR_OPERATO" +
+      "R\020\001**\n\014ObjectOrigin\022\013\n\007OO_USER\020\000\022\r\n\tOO_S" +
+      "YSTEM\020\001*(\n\014AltitudeType\022\014\n\010AT_WGS84\020\000\022\n\n",
+      "\006AT_AGL\020\001*e\n\017ActionExecution\022\024\n\020AE_ONLY_" +
+      "AT_START\020\000\022\032\n\026AE_ACTIONS_EVERY_POINT\020\001\022 " +
+      "\n\034AE_ACTIONS_ON_FORWARD_PASSES\020\002*y\n\nFigu" +
+      "reType\022\014\n\010FT_POINT\020\000\022\016\n\nFT_POLYGON\020\001\022\r\n\t" +
+      "FT_CIRCLE\020\002\022\022\n\016FT_EIGHT_CURVE\020\003\022\024\n\020FT_TA" +
+      "KEOFF_POINT\020\004\022\024\n\020FT_LANDING_POINT\020\005*_\n\rP" +
+      "arameterType\022\r\n\tPT_STRING\020\000\022\016\n\nPT_INTEGE" +
+      "R\020\001\022\r\n\tPT_DOUBLE\020\002\022\016\n\nPT_BOOLEAN\020\003\022\020\n\014PT" +
+      "_SELECTION\020\004*\254\021\n\rTelemetryType\022\026\n\022TT_BAT" +
+      "TERY_VOLTAGE\020\000\022\013\n\007TT_ROLL\020\001\022\014\n\010TT_PITCH\020",
+      "\002\022\n\n\006TT_YAW\020\003\022\021\n\rTT_ROLL_SPEED\020\004\022\022\n\016TT_P" +
+      "ITCH_SPEED\020\005\022\020\n\014TT_YAW_SPEED\020\006\022\017\n\013TT_LAT" +
+      "ITUDE\020\007\022\020\n\014TT_LONGITUDE\020\010\022\023\n\017TT_MSL_ALTI" +
+      "TUDE\020\t\022\023\n\017TT_AGL_ALTITUDE\020\n\022\025\n\021TT_GROUND" +
+      "_SPEED_X\020\013\022\025\n\021TT_GROUND_SPEED_Y\020\014\022\025\n\021TT_" +
+      "GROUND_SPEED_Z\020\r\022\023\n\017TT_LATITUDE_GPS\020\016\022\024\n" +
+      "\020TT_LONGITUDE_GPS\020\017\022\023\n\017TT_ALTITUDE_GPS\020\020" +
+      "\022\027\n\023TT_GROUND_SPEED_GPS\020\021\022\031\n\025TT_ACCELERA" +
+      "TION_X_RAW\020\022\022\031\n\025TT_ACCELERATION_Y_RAW\020\023\022" +
+      "\031\n\025TT_ACCELERATION_Z_RAW\020\024\022\032\n\026TT_ANGULAR",
+      "_SPEED_X_RAW\020\025\022\032\n\026TT_ANGULAR_SPEED_Y_RAW" +
+      "\020\026\022\032\n\026TT_ANGULAR_SPEED_Z_RAW\020\027\022\025\n\021TT_MAG" +
+      "NETIC_X_RAW\020\030\022\025\n\021TT_MAGNETIC_Y_RAW\020\031\022\025\n\021" +
+      "TT_MAGNETIC_Z_RAW\020\032\022\030\n\024TT_ABSOLUTE_PRESS" +
+      "URE\020\033\022\034\n\030TT_DIFFERENTIAL_PRESSURE\020\034\022\022\n\016T" +
+      "T_TEMPERATURE\020\035\022\020\n\014TT_AIR_SPEED\020\036\022\023\n\017TT_" +
+      "GROUND_SPEED\020\037\022\016\n\nTT_HEADING\020 \022\017\n\013TT_THR" +
+      "OTTLE\020!\022\021\n\rTT_CLIMB_RATE\020\"\022\035\n\031TT_GPS_SAT" +
+      "ELLITES_VISIBLE\020#\022\023\n\017TT_ROUTE_MILAGE\020$\022\032" +
+      "\n\026TT_TELEMETRY_DROP_RATE\020%\022\031\n\025TT_DOWNLIN",
+      "K_CONNECTED\020&\022\027\n\023TT_UPLINK_CONNECTED\020\'\022\023" +
+      "\n\017TT_CONTROL_MODE\020(\022\014\n\010TT_STATE\020)\022\r\n\tTT_" +
+      "COURSE\020*\022\030\n\024TT_RELATIVE_ALTITUDE\020+\022\020\n\014TT" +
+      "_ELEVATION\020,\022\025\n\021TT_PAYLOAD_1_ROLL\020-\022\025\n\021T" +
+      "T_PAYLOAD_1_TILT\020.\022\024\n\020TT_PAYLOAD_1_YAW\020/" +
+      "\022\036\n\032TT_CAMERA_1_FOV_HORIZONTAL\0200\022\034\n\030TT_C" +
+      "AMERA_1_FOV_VERTICAL\0201\022\023\n\017TT_GPS_FIX_TYP" +
+      "E\0202\022\026\n\022TT_RC_LINK_QUALITY\0203\022\034\n\030TT_ADSB_T" +
+      "RANSPONDER_MODE\0204\022\027\n\023TT_ADSB_IDENT_STATE" +
+      "\0205\022\027\n\023TT_ADSB_SQUAWK_CODE\0206\022\033\n\027TT_ADSB_A",
+      "LTITUDE_SOURCE\0207\022\024\n\020TT_ADSB_ALTITUDE\0208\022\027" +
+      "\n\023TT_ADSB_ERROR_FLAGS\0209\022\025\n\021TT_PAYLOAD_2_" +
+      "ROLL\020:\022\025\n\021TT_PAYLOAD_2_TILT\020;\022\024\n\020TT_PAYL" +
+      "OAD_2_YAW\020<\022\036\n\032TT_CAMERA_2_FOV_HORIZONTA" +
+      "L\020=\022\034\n\030TT_CAMERA_2_FOV_VERTICAL\020>\022\035\n\031TT_" +
+      "PAYLOAD_1_CONTROL_MODE\020?\022\035\n\031TT_PAYLOAD_2" +
+      "_CONTROL_MODE\020@\022\032\n\026TT_PAYLOAD_1_AVAILABL" +
+      "E\020A\022\032\n\026TT_PAYLOAD_2_AVAILABLE\020B\022\030\n\024TT_PA" +
+      "YLOAD_1_POWERED\020C\022\030\n\024TT_PAYLOAD_2_POWERE" +
+      "D\020D\022\024\n\020TT_CAMERA_1_ZOOM\020E\022\024\n\020TT_CAMERA_2",
+      "_ZOOM\020F\022\031\n\025TT_CAMERA_1_RECORDING\020G\022\031\n\025TT" +
+      "_CAMERA_2_RECORDING\020H\022\033\n\027TT_CAMERA_1_IMA" +
+      "GE_COUNT\020I\022\033\n\027TT_CAMERA_2_IMAGE_COUNT\020J\022" +
+      "\036\n\032TT_CAMERA_1_IMAGE_CAPACITY\020K\022\036\n\032TT_CA" +
+      "MERA_2_IMAGE_CAPACITY\020L\022\033\n\027TT_CAMERA_1_V" +
+      "IDEO_COUNT\020M\022\033\n\027TT_CAMERA_2_VIDEO_COUNT\020" +
+      "N\022\024\n\020TT_HOME_LATITUDE\020O\022\025\n\021TT_HOME_LONGI" +
+      "TUDE\020P\022\031\n\025TT_HOME_AMSL_ALTITUDE\020Q\022\025\n\021TT_" +
+      "ADSB_ERROR_GPS\020R\022\026\n\022TT_ADSB_ERROR_ICAO\020S" +
+      "\022\"\n\036TT_ADSB_ERROR_OVER_TEMPERATURE\020T\022\024\n\020",
+      "TT_ADSB_ERROR_ES\020U\022\035\n\031TT_ADSB_ERROR_TRAN" +
+      "SPONDER\020V\022\026\n\022TT_TARGET_LATITUDE\020W\022\027\n\023TT_" +
+      "TARGET_LONGITUDE\020X\022\033\n\027TT_TARGET_AMSL_ALT" +
+      "ITUDE\020Y\022\032\n\026TT_BATTERY_POWER_LEVEL\020Z*G\n\013V" +
+      "ehicleType\022\021\n\rVT_FIXED_WING\020\000\022\021\n\rVT_HELI" +
+      "COPTER\020\001\022\022\n\016VT_MULTICOPTER\020\002*\214\n\n\024Vehicle" +
+      "ParameterType\022\016\n\nVPT_HEIGHT\020\000\022\r\n\tVPT_WID" +
+      "TH\020\001\022\016\n\nVPT_LENGTH\020\002\022\026\n\022VPT_MAX_CLIMB_RA" +
+      "TE\020\003\022\034\n\030VPT_MAX_HORIZONTAL_SPEED\020\004\022\024\n\020VP" +
+      "T_MAX_ALTITUDE\020\005\022\025\n\021VPT_MAX_WAYPOINTS\020\006\022",
+      "\027\n\023VPT_MAX_FLIGHT_TIME\020\007\022\027\n\023VPT_WIND_RES" +
+      "ISTANCE\020\010\022\032\n\026VPT_DRY_TAKEOFF_WEIGHT\020\t\022\032\n" +
+      "\026VPT_MAX_TAKEOFF_WEIGHT\020\n\022\026\n\022VPT_BATTERY" +
+      "_WEIGHT\020\013\022\037\n\033VPT_CHARGED_BATTERY_VOLTAGE" +
+      "\020\014\022\"\n\036VPT_DISCHARGED_BATTERY_VOLTAGE\020\r\022\036" +
+      "\n\032VPT_NORMAL_BATTERY_VOLTAGE\020\016\022\033\n\027VPT_LO" +
+      "W_BATTERY_VOLTAGE\020\017\022\032\n\026VPT_LOW_GPS_SATEL" +
+      "LITES\020\020\022\035\n\031VPT_NORMAL_GPS_SATELLITES\020\021\022 " +
+      "\n\034VPT_SAFE_DISTANCE_TO_TERRAIN\020\022\022!\n\035VPT_" +
+      "SAFE_DISTANCE_TO_OBSTACLE\020\023\022\"\n\036VPT_WAYPO",
+      "INT_ACCEPTANCE_RADIUS\020\024\022\024\n\020VPT_FENCE_RAD" +
+      "IUS\020\025\022\033\n\027VPT_LOW_TELEMETRY_LEVEL\020\026\022\036\n\032VP" +
+      "T_NORMAL_TELEMETRY_LEVEL\020\027\022\032\n\026VPT_DEFAUL" +
+      "T_CLIMB_RATE\020\030\022\034\n\030VPT_DEFAULT_DESCENT_RA" +
+      "TE\020\031\022\023\n\017VPT_GLIDE_SLOPE\020\032\022 \n\034VPT_DEFAULT" +
+      "_HORIZONTAL_SPEED\020\033\022\034\n\030VPT_LANDING_GROUN" +
+      "D_SPEED\020\034\022\030\n\024VPT_MAX_ALTITUDE_AGL\020\035\022\036\n\032V" +
+      "PT_LANDING_FLARE_ALTITUDE\020\036\022\032\n\026VPT_LANDI" +
+      "NG_FLARE_TIME\020\037\022\031\n\025VPT_MIN_LANDING_PITCH" +
+      "\020 \022\032\n\026VPT_LANDING_FLARE_DAMP\020!\022!\n\035VPT_LA",
+      "NDING_APPROACH_AIRSPEED\020\"\022\037\n\033VPT_LANDING" +
+      "_SPEED_WEIGHTING\020#\022\035\n\031VPT_MAX_AUTO_FLIGH" +
+      "T_PITCH\020$\022\021\n\rVPT_MAX_PITCH\020%\022\024\n\020VPT_MIN_" +
+      "THROTTLE\020&\022\031\n\025VPT_LANDING_SINK_RATE\020\'\022#\n" +
+      "\037VPT_LANDING_RANGEFINDER_ENABLED\020(\022 \n\034VP" +
+      "T_MIN_RANGEFINDER_DISTANCE\020)\022\030\n\024VPT_MAX_" +
+      "DESCENT_RATE\020*\022\037\n\033VPT_LOW_BATTERY_POWER_" +
+      "LEVEL\020+\022\"\n\036VPT_NORMAL_BATTERY_POWER_LEVE" +
+      "L\020,*.\n\013PayloadType\022\r\n\tPT_CAMERA\020\000\022\020\n\014PT_" +
+      "DATA_LINK\020\001*\363\001\n\024PayloadParameterType\022\016\n\n",
+      "PPT_WEIGHT\020\000\022\021\n\rPPT_FREQUENCY\020\001\022\r\n\tPPT_P" +
+      "OWER\020\002\022\031\n\025PPT_TRUE_FOCAL_LENGTH\020\003\022\024\n\020PPT" +
+      "_SENSOR_WIDTH\020\004\022\025\n\021PPT_SENSOR_HEIGHT\020\005\022 " +
+      "\n\034PPT_SENSOR_HORIZONTAL_PIXELS\020\006\022\036\n\032PPT_" +
+      "SENSOR_VERTICAL_PIXELS\020\007\022\037\n\033PPT_MIN_TRIG" +
+      "GERING_INTERVAL\020\010*\221\001\n\rSeverityLevel\022\020\n\014S" +
+      "L_EMERGENCY\020\000\022\014\n\010SL_ALERT\020\001\022\017\n\013SL_CRITIC" +
+      "AL\020\002\022\014\n\010SL_ERROR\020\003\022\016\n\nSL_WARNING\020\004\022\r\n\tSL" +
+      "_NOTICE\020\005\022\024\n\020SL_INFORMATIONAL\020\006\022\014\n\010SL_DE" +
+      "BUG\020\007*/\n\016TrajectoryType\022\017\n\013TT_STRAIGHT\020\000",
+      "\022\014\n\010TT_STAIR\020\001*[\n\016FailsafeReason\022\016\n\nFR_R" +
+      "C_LOST\020\000\022\017\n\013FR_GPS_LOST\020\001\022\022\n\016FR_LOW_BATT" +
+      "ERY\020\002\022\024\n\020FR_DATALINK_LOST\020\003*K\n\016FailsafeA" +
+      "ction\022\016\n\nFA_GO_HOME\020\000\022\013\n\007FA_LAND\020\001\022\013\n\007FA" +
+      "_WAIT\020\002\022\017\n\013FA_CONTINUE\020\003*j\n\014TriggerState" +
+      "\022\022\n\016TS_SINGLE_SHOT\020\000\022\026\n\022TS_START_RECORDI" +
+      "NG\020\001\022\025\n\021TS_STOP_RECORDING\020\002\022\027\n\023TS_TOGGLE" +
+      "_RECORDING\020\003*2\n\nPowerState\022\n\n\006PS_OFF\020\000\022\t" +
+      "\n\005PS_ON\020\001\022\r\n\tPS_TOGGLE\020\002*>\n\022HomeLocation" +
+      "Source\022\020\n\014HLS_EXPLICIT\020\000\022\026\n\022HLS_FIRST_WA",
+      "YPOINT\020\001*\'\n\007PoiMode\022\013\n\007PM_NONE\020\000\022\017\n\013PM_L" +
+      "OCATION\020\001**\n\014PanoramaMode\022\014\n\010PM_PHOTO\020\000\022" +
+      "\014\n\010PM_VIDEO\020\001*>\n\021RotationDirection\022\020\n\014RD" +
+      "_CLOCKWISE\020\000\022\027\n\023RD_COUNTERCLOCKWISE\020\001*2\n" +
+      "\017IcaoAddressType\022\014\n\010IAT_REAL\020\000\022\021\n\rIAT_AN" +
+      "ONYMOUS\020\001**\n\tComponent\022\016\n\nC_DATABASE\020\000\022\r" +
+      "\n\tC_LICENSE\020\001*\231\001\n\nMetricUnit\022\013\n\007MU_NONE\020" +
+      "\000\022\r\n\tMU_SECOND\020\001\022\014\n\010MU_METRE\020\002\022\020\n\014MU_KIL" +
+      "OMETRE\020\003\022\025\n\021MU_METREPERSECOND\020\004\022\022\n\016MU_SQ" +
+      "UAREMETRE\020\005\022\021\n\rMU_KILOGRAMME\020\006\022\021\n\rMU_CEN",
+      "TIMETRE\020\007*C\n\017MessageSeverity\022\014\n\010MS_ERROR" +
+      "\020\000\022\016\n\nMS_WARNING\020\001\022\022\n\016MS_INFORMATION\020\002*F" +
+      "\n\026ConflictResolutionMode\022\014\n\010CRM_KEEP\020\000\022\017" +
+      "\n\013CRM_REPLACE\020\001\022\r\n\tCRM_MERGE\020\002*d\n\023Vehicl" +
+      "eLogEntryType\022\020\n\014VLET_GENERIC\020\000\022\020\n\014VLET_" +
+      "COMMAND\020\001\022\017\n\013VLET_UPLOAD\020\002\022\030\n\024VLET_VIDEO" +
+      "_RECORDING\020\003*M\n\014ProcessStage\022\014\n\010PS_START" +
+      "\020\000\022\017\n\013PS_PROGRESS\020\001\022\016\n\nPS_SUCCESS\020\002\022\016\n\nP" +
+      "S_FAILURE\020\003*^\n\020WaypointTurnType\022\025\n\021WTT_S" +
+      "TOP_AND_TURN\020\000\022\020\n\014WTT_STRAIGHT\020\001\022\016\n\nWTT_",
+      "SPLINE\020\002\022\021\n\rWTT_BANK_TURN\020\003*\236\002\n\nActionCo" +
+      "de\022\017\n\013AC_WAYPOINT\020\000\022\023\n\017AC_SPEED_CHANGE\020\001" +
+      "\022\024\n\020AC_HOME_LOCATION\020\002\022\013\n\007AC_WAIT\020\003\022\021\n\rA" +
+      "C_POI_CHANGE\020\004\022\025\n\021AC_HEADING_CHANGE\020\005\022\025\n" +
+      "\021AC_CAMERA_CONTROL\020\006\022\025\n\021AC_CAMERA_TRIGGE" +
+      "R\020\007\022\034\n\030AC_CAMERA_SERIES_BY_TIME\020\010\022 \n\034AC_" +
+      "CAMERA_SERIES_BY_DISTANCE\020\t\022\016\n\nAC_TAKEOF" +
+      "F\020\n\022\016\n\nAC_LANDING\020\013\022\017\n\013AC_PANORAMA\020\014**\n\007" +
+      "NfzType\022\r\n\tNT_CUSTOM\020\000\022\020\n\014NT_AERODROME\020\001" +
+      "*}\n\016VideoEventType\022\031\n\025VET_RECORDING_STAR",
+      "TED\020\000\022\031\n\025VET_RECORDING_STOPPED\020\001\022\035\n\031VET_" +
+      "RECORDING_INTERRUPTED\020\002\022\026\n\022VET_STREAM_RE" +
+      "MOVED\020\003*5\n\013FeatureType\022\024\n\020FT_STATIC_OBJE" +
+      "CT\020\000\022\020\n\014FT_PLACEMARK\020\001*\246\002\n\022UtmOperationS" +
+      "tatus\022\021\n\rUOS_PROPOSING\020\000\022\020\n\014UOS_ACCEPTED" +
+      "\020\001\022\020\n\014UOS_REJECTED\020\002\022\017\n\013UOS_READIED\020\003\022\021\n" +
+      "\rUOS_ACTIVATED\020\004\022\016\n\nUOS_CLOSED\020\005\022\017\n\013UOS_" +
+      "EXPIRED\020\006\022\021\n\rUOS_CANCELLED\020\007\022\026\n\022UOS_NON_" +
+      "CONFORMING\020\010\022\r\n\tUOS_ROGUE\020\t\022\021\n\rUOS_MODIF" +
+      "YING\020\n\022\022\n\016UOS_REQUESTING\020\013\022\020\n\014UOS_ABORTI",
+      "NG\020\014\022\017\n\013UOS_ABORTED\020\r\022\020\n\014UOS_INTRUDER\020\016*" +
+      "N\n\rCommandStatus\022\017\n\013CS_REJECTED\020\000\022\013\n\007CS_" +
+      "SENT\020\001\022\020\n\014CS_SUCCEEDED\020\002\022\r\n\tCS_FAILED\020\003*" +
+      "n\n\tSubsystem\022\024\n\020S_CONTROL_SERVER\020\000\022\027\n\023S_" +
+      "FLIGHT_CONTROLLER\020\001\022\014\n\010S_GIMBAL\020\002\022\014\n\010S_C" +
+      "AMERA\020\003\022\026\n\022S_ADSB_TRANSPONDER\020\004*\333\004\n\010Sema" +
+      "ntic\022\r\n\tS_DEFAULT\020\001\022\016\n\nS_LATITUDE\020\002\022\017\n\013S" +
+      "_LONGITUDE\020\003\022\023\n\017S_ALTITUDE_AMSL\020\004\022\022\n\016S_A" +
+      "LTITUDE_AGL\020\005\022\022\n\016S_ALTITUDE_RAW\020\006\022\r\n\tS_H" +
+      "EADING\020\007\022\r\n\tS_VOLTAGE\020\010\022\017\n\013S_AIR_SPEED\020\t",
+      "\022\022\n\016S_GROUND_SPEED\020\n\022\024\n\020S_VERTICAL_SPEED" +
+      "\020\013\022\025\n\021S_SATELLITE_COUNT\020\014\022\022\n\016S_GPS_FIX_T" +
+      "YPE\020\r\022\n\n\006S_ROLL\020\016\022\013\n\007S_PITCH\020\017\022\t\n\005S_YAW\020" +
+      "\020\022\025\n\021S_RC_LINK_QUALITY\020\021\022\r\n\tS_CURRENT\020\022\022" +
+      "\026\n\022S_GCS_LINK_QUALITY\020\023\022\013\n\007S_FOV_H\020\024\022\013\n\007" +
+      "S_FOV_V\020\025\022\022\n\016S_CONTROL_MODE\020\026\022\026\n\022S_GROUN" +
+      "D_ELEVATION\020\027\022\027\n\023S_ACCEPTANCE_RADIUS\020\030\022\023" +
+      "\n\017S_LOITER_RADIUS\020\031\022\n\n\006S_ICAO\020\032\022\017\n\013S_ADS" +
+      "B_MODE\020\033\022\014\n\010S_SQUAWK\020\034\022\022\n\016S_MILLISECONDS" +
+      "\020\035\022\r\n\tS_NUMERIC\020\036\022\n\n\006S_BOOL\020\037\022\014\n\010S_STRIN",
+      "G\020 \022\n\n\006S_ENUM\020!\022\024\n\020S_CAPACITY_LEVEL\020\"*?\n" +
+      "\020ModificationType\022\r\n\tMT_CREATE\020\000\022\r\n\tMT_U" +
+      "PDATE\020\001\022\r\n\tMT_DELETE\020\002B!\n\022com.ugcs.ucs.p" +
+      "rotoB\013DomainProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -105907,7 +104992,7 @@ public final class DomainProto {
           internal_static_CameraSeriesByTime_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraSeriesByTime_descriptor,
-              new java.lang.String[] { "Id", "Version", "Interval", "ShotsNumber", "StartDelay", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Interval", "ShotsNumber", "StartDelay", "AutoCalc", "Tag", },
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.class,
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.Builder.class);
           internal_static_CameraSeriesByDistance_descriptor =
@@ -105915,7 +105000,7 @@ public final class DomainProto {
           internal_static_CameraSeriesByDistance_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraSeriesByDistance_descriptor,
-              new java.lang.String[] { "Id", "Version", "Interval", "ShotsNumber", "StartDelay", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Interval", "ShotsNumber", "StartDelay", "AutoCalc", "Tag", },
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.class,
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.Builder.class);
           internal_static_Wait_descriptor =
@@ -105931,7 +105016,7 @@ public final class DomainProto {
           internal_static_HeadingChange_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_HeadingChange_descriptor,
-              new java.lang.String[] { "Id", "Version", "Heading", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Heading", "RelativeToNextWaypoint", "RelativeToNorth", "Tag", },
               com.ugcs.ucs.proto.DomainProto.HeadingChange.class,
               com.ugcs.ucs.proto.DomainProto.HeadingChange.Builder.class);
           internal_static_HomeLocation_descriptor =
@@ -106035,7 +105120,7 @@ public final class DomainProto {
           internal_static_HeadingDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_HeadingDefinition_descriptor,
-              new java.lang.String[] { "Id", "Version", "Heading", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Heading", "RelativeToNextWaypoint", "RelativeToNorth", "Tag", },
               com.ugcs.ucs.proto.DomainProto.HeadingDefinition.class,
               com.ugcs.ucs.proto.DomainProto.HeadingDefinition.Builder.class);
           internal_static_PoiDefinition_descriptor =
@@ -106334,24 +105419,8 @@ public final class DomainProto {
               new java.lang.String[] { },
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription.class,
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription.Builder.class);
-          internal_static_VehicleTargetLocationEvent_descriptor =
-            getDescriptor().getMessageTypes().get(94);
-          internal_static_VehicleTargetLocationEvent_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_VehicleTargetLocationEvent_descriptor,
-              new java.lang.String[] { "Vehicle", "SequenceId", "TargetLocationLatitude", "TargetLocationLongitude", "TargetLocationAltitude", "AcceptanceRadius", },
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.class,
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationEvent.Builder.class);
-          internal_static_VehicleTargetLocationSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(95);
-          internal_static_VehicleTargetLocationSubscription_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_VehicleTargetLocationSubscription_descriptor,
-              new java.lang.String[] { },
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.class,
-              com.ugcs.ucs.proto.DomainProto.VehicleTargetLocationSubscription.Builder.class);
           internal_static_ProgressDto_descriptor =
-            getDescriptor().getMessageTypes().get(96);
+            getDescriptor().getMessageTypes().get(94);
           internal_static_ProgressDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressDto_descriptor,
@@ -106359,7 +105428,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ProgressDto.class,
               com.ugcs.ucs.proto.DomainProto.ProgressDto.Builder.class);
           internal_static_ProgressStackDto_descriptor =
-            getDescriptor().getMessageTypes().get(97);
+            getDescriptor().getMessageTypes().get(95);
           internal_static_ProgressStackDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressStackDto_descriptor,
@@ -106367,7 +105436,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ProgressStackDto.class,
               com.ugcs.ucs.proto.DomainProto.ProgressStackDto.Builder.class);
           internal_static_ServerProgressEvent_descriptor =
-            getDescriptor().getMessageTypes().get(98);
+            getDescriptor().getMessageTypes().get(96);
           internal_static_ServerProgressEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ServerProgressEvent_descriptor,
@@ -106375,7 +105444,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.class,
               com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.Builder.class);
           internal_static_ServerProgressSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(99);
+            getDescriptor().getMessageTypes().get(97);
           internal_static_ServerProgressSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ServerProgressSubscription_descriptor,
@@ -106383,19 +105452,19 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.class,
               com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.Builder.class);
           internal_static_EventWrapper_descriptor =
-            getDescriptor().getMessageTypes().get(100);
+            getDescriptor().getMessageTypes().get(98);
           internal_static_EventWrapper_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_EventWrapper_descriptor,
-              new java.lang.String[] { "ObjectModificationEvent", "LockEvent", "TelemetryEvent", "TelemetryRemovalEvent", "AdsbIndicatorEvent", "VehicleTargetLocationEvent", "ServerProgressEvent", },
+              new java.lang.String[] { "ObjectModificationEvent", "LockEvent", "TelemetryEvent", "TelemetryRemovalEvent", "AdsbIndicatorEvent", "ServerProgressEvent", },
               com.ugcs.ucs.proto.DomainProto.EventWrapper.class,
               com.ugcs.ucs.proto.DomainProto.EventWrapper.Builder.class);
           internal_static_EventSubscriptionWrapper_descriptor =
-            getDescriptor().getMessageTypes().get(101);
+            getDescriptor().getMessageTypes().get(99);
           internal_static_EventSubscriptionWrapper_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_EventSubscriptionWrapper_descriptor,
-              new java.lang.String[] { "ObjectModificationSubscription", "LockSubscription", "TelemetrySubscription", "TelemetryRemovalSubscription", "AdsbIndicatorSubscription", "VehicleTargetLocationSubscription", "ServerProgressSubscription", },
+              new java.lang.String[] { "ObjectModificationSubscription", "LockSubscription", "TelemetrySubscription", "TelemetryRemovalSubscription", "AdsbIndicatorSubscription", "ServerProgressSubscription", },
               com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper.class,
               com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper.Builder.class);
           return null;

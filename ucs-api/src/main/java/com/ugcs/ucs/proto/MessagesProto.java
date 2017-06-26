@@ -4597,6 +4597,10 @@ public final class MessagesProto {
     java.util.List<String> getForbiddenAlgorithmCodesList();
     int getForbiddenAlgorithmCodesCount();
     String getForbiddenAlgorithmCodes(int index);
+    
+    // required int32 maxImagesToProcess = 17;
+    boolean hasMaxImagesToProcess();
+    int getMaxImagesToProcess();
   }
   public static final class LicensePermissionsDto extends
       com.google.protobuf.GeneratedMessage
@@ -4912,6 +4916,16 @@ public final class MessagesProto {
       return forbiddenAlgorithmCodes_.get(index);
     }
     
+    // required int32 maxImagesToProcess = 17;
+    public static final int MAXIMAGESTOPROCESS_FIELD_NUMBER = 17;
+    private int maxImagesToProcess_;
+    public boolean hasMaxImagesToProcess() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public int getMaxImagesToProcess() {
+      return maxImagesToProcess_;
+    }
+    
     private void initFields() {
       licenseName_ = "";
       maxAuthenticatedHciSessions_ = 0;
@@ -4929,6 +4943,7 @@ public final class MessagesProto {
       cameraFootprint_ = java.util.Collections.emptyList();
       adsbTransponder_ = java.util.Collections.emptyList();
       forbiddenAlgorithmCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      maxImagesToProcess_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4956,6 +4971,10 @@ public final class MessagesProto {
         return false;
       }
       if (!hasGroupOperations()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMaxImagesToProcess()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -5068,6 +5087,9 @@ public final class MessagesProto {
       for (int i = 0; i < forbiddenAlgorithmCodes_.size(); i++) {
         output.writeBytes(16, forbiddenAlgorithmCodes_.getByteString(i));
       }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeInt32(17, maxImagesToProcess_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -5145,6 +5167,10 @@ public final class MessagesProto {
         }
         size += dataSize;
         size += 2 * getForbiddenAlgorithmCodesList().size();
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(17, maxImagesToProcess_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5347,6 +5373,8 @@ public final class MessagesProto {
         }
         forbiddenAlgorithmCodes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00008000);
+        maxImagesToProcess_ = 0;
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
       
@@ -5496,6 +5524,10 @@ public final class MessagesProto {
           bitField0_ = (bitField0_ & ~0x00008000);
         }
         result.forbiddenAlgorithmCodes_ = forbiddenAlgorithmCodes_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.maxImagesToProcess_ = maxImagesToProcess_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -5774,6 +5806,9 @@ public final class MessagesProto {
           }
           onChanged();
         }
+        if (other.hasMaxImagesToProcess()) {
+          setMaxImagesToProcess(other.getMaxImagesToProcess());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -5800,6 +5835,10 @@ public final class MessagesProto {
           return false;
         }
         if (!hasGroupOperations()) {
+          
+          return false;
+        }
+        if (!hasMaxImagesToProcess()) {
           
           return false;
         }
@@ -5970,6 +6009,11 @@ public final class MessagesProto {
             case 130: {
               ensureForbiddenAlgorithmCodesIsMutable();
               forbiddenAlgorithmCodes_.add(input.readBytes());
+              break;
+            }
+            case 136: {
+              bitField0_ |= 0x00010000;
+              maxImagesToProcess_ = input.readInt32();
               break;
             }
           }
@@ -7849,6 +7893,27 @@ public final class MessagesProto {
         onChanged();
       }
       
+      // required int32 maxImagesToProcess = 17;
+      private int maxImagesToProcess_ ;
+      public boolean hasMaxImagesToProcess() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      public int getMaxImagesToProcess() {
+        return maxImagesToProcess_;
+      }
+      public Builder setMaxImagesToProcess(int value) {
+        bitField0_ |= 0x00010000;
+        maxImagesToProcess_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearMaxImagesToProcess() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        maxImagesToProcess_ = 0;
+        onChanged();
+        return this;
+      }
+      
       // @@protoc_insertion_point(builder_scope:LicensePermissionsDto)
     }
     
@@ -9351,715 +9416,6 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:PlatformAndDoublePairDto)
   }
   
-  public interface VehicleTargetLocationDtoOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required .Vehicle vehicle = 1;
-    boolean hasVehicle();
-    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
-    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
-    
-    // required int64 sequenceId = 2;
-    boolean hasSequenceId();
-    long getSequenceId();
-    
-    // optional .Wgs84LocationDto location = 3;
-    boolean hasLocation();
-    com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation();
-    com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder();
-    
-    // optional double acceptanceRadius = 4;
-    boolean hasAcceptanceRadius();
-    double getAcceptanceRadius();
-  }
-  public static final class VehicleTargetLocationDto extends
-      com.google.protobuf.GeneratedMessage
-      implements VehicleTargetLocationDtoOrBuilder {
-    // Use VehicleTargetLocationDto.newBuilder() to construct.
-    private VehicleTargetLocationDto(Builder builder) {
-      super(builder);
-    }
-    private VehicleTargetLocationDto(boolean noInit) {}
-    
-    private static final VehicleTargetLocationDto defaultInstance;
-    public static VehicleTargetLocationDto getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public VehicleTargetLocationDto getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTargetLocationDto_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTargetLocationDto_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required .Vehicle vehicle = 1;
-    public static final int VEHICLE_FIELD_NUMBER = 1;
-    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
-    public boolean hasVehicle() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
-      return vehicle_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
-      return vehicle_;
-    }
-    
-    // required int64 sequenceId = 2;
-    public static final int SEQUENCEID_FIELD_NUMBER = 2;
-    private long sequenceId_;
-    public boolean hasSequenceId() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public long getSequenceId() {
-      return sequenceId_;
-    }
-    
-    // optional .Wgs84LocationDto location = 3;
-    public static final int LOCATION_FIELD_NUMBER = 3;
-    private com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto location_;
-    public boolean hasLocation() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation() {
-      return location_;
-    }
-    public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder() {
-      return location_;
-    }
-    
-    // optional double acceptanceRadius = 4;
-    public static final int ACCEPTANCERADIUS_FIELD_NUMBER = 4;
-    private double acceptanceRadius_;
-    public boolean hasAcceptanceRadius() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public double getAcceptanceRadius() {
-      return acceptanceRadius_;
-    }
-    
-    private void initFields() {
-      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-      sequenceId_ = 0L;
-      location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
-      acceptanceRadius_ = 0D;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasVehicle()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSequenceId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (hasLocation()) {
-        if (!getLocation().isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, vehicle_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt64(2, sequenceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, location_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, acceptanceRadius_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, vehicle_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, sequenceId_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, location_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, acceptanceRadius_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTargetLocationDto_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTargetLocationDto_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getVehicleFieldBuilder();
-          getLocationFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        if (vehicleBuilder_ == null) {
-          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-        } else {
-          vehicleBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        sequenceId_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (locationBuilder_ == null) {
-          location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
-        } else {
-          locationBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        acceptanceRadius_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto build() {
-        com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto buildPartial() {
-        com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto result = new com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        if (vehicleBuilder_ == null) {
-          result.vehicle_ = vehicle_;
-        } else {
-          result.vehicle_ = vehicleBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.sequenceId_ = sequenceId_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        if (locationBuilder_ == null) {
-          result.location_ = location_;
-        } else {
-          result.location_ = locationBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.acceptanceRadius_ = acceptanceRadius_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto) {
-          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto other) {
-        if (other == com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.getDefaultInstance()) return this;
-        if (other.hasVehicle()) {
-          mergeVehicle(other.getVehicle());
-        }
-        if (other.hasSequenceId()) {
-          setSequenceId(other.getSequenceId());
-        }
-        if (other.hasLocation()) {
-          mergeLocation(other.getLocation());
-        }
-        if (other.hasAcceptanceRadius()) {
-          setAcceptanceRadius(other.getAcceptanceRadius());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasVehicle()) {
-          
-          return false;
-        }
-        if (!hasSequenceId()) {
-          
-          return false;
-        }
-        if (hasLocation()) {
-          if (!getLocation().isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
-              if (hasVehicle()) {
-                subBuilder.mergeFrom(getVehicle());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVehicle(subBuilder.buildPartial());
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              sequenceId_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.newBuilder();
-              if (hasLocation()) {
-                subBuilder.mergeFrom(getLocation());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setLocation(subBuilder.buildPartial());
-              break;
-            }
-            case 33: {
-              bitField0_ |= 0x00000008;
-              acceptanceRadius_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required .Vehicle vehicle = 1;
-      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
-      public boolean hasVehicle() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
-        if (vehicleBuilder_ == null) {
-          return vehicle_;
-        } else {
-          return vehicleBuilder_.getMessage();
-        }
-      }
-      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
-        if (vehicleBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vehicle_ = value;
-          onChanged();
-        } else {
-          vehicleBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder setVehicle(
-          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
-        if (vehicleBuilder_ == null) {
-          vehicle_ = builderForValue.build();
-          onChanged();
-        } else {
-          vehicleBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
-        if (vehicleBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
-            vehicle_ =
-              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
-          } else {
-            vehicle_ = value;
-          }
-          onChanged();
-        } else {
-          vehicleBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000001;
-        return this;
-      }
-      public Builder clearVehicle() {
-        if (vehicleBuilder_ == null) {
-          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
-          onChanged();
-        } else {
-          vehicleBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getVehicleFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
-        if (vehicleBuilder_ != null) {
-          return vehicleBuilder_.getMessageOrBuilder();
-        } else {
-          return vehicle_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
-          getVehicleFieldBuilder() {
-        if (vehicleBuilder_ == null) {
-          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
-                  vehicle_,
-                  getParentForChildren(),
-                  isClean());
-          vehicle_ = null;
-        }
-        return vehicleBuilder_;
-      }
-      
-      // required int64 sequenceId = 2;
-      private long sequenceId_ ;
-      public boolean hasSequenceId() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public long getSequenceId() {
-        return sequenceId_;
-      }
-      public Builder setSequenceId(long value) {
-        bitField0_ |= 0x00000002;
-        sequenceId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearSequenceId() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        sequenceId_ = 0L;
-        onChanged();
-        return this;
-      }
-      
-      // optional .Wgs84LocationDto location = 3;
-      private com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder> locationBuilder_;
-      public boolean hasLocation() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation() {
-        if (locationBuilder_ == null) {
-          return location_;
-        } else {
-          return locationBuilder_.getMessage();
-        }
-      }
-      public Builder setLocation(com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto value) {
-        if (locationBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          location_ = value;
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder setLocation(
-          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder builderForValue) {
-        if (locationBuilder_ == null) {
-          location_ = builderForValue.build();
-          onChanged();
-        } else {
-          locationBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder mergeLocation(com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto value) {
-        if (locationBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              location_ != com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance()) {
-            location_ =
-              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.newBuilder(location_).mergeFrom(value).buildPartial();
-          } else {
-            location_ = value;
-          }
-          onChanged();
-        } else {
-          locationBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000004;
-        return this;
-      }
-      public Builder clearLocation() {
-        if (locationBuilder_ == null) {
-          location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
-          onChanged();
-        } else {
-          locationBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000004);
-        return this;
-      }
-      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder getLocationBuilder() {
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return getLocationFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder() {
-        if (locationBuilder_ != null) {
-          return locationBuilder_.getMessageOrBuilder();
-        } else {
-          return location_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder> 
-          getLocationFieldBuilder() {
-        if (locationBuilder_ == null) {
-          locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder>(
-                  location_,
-                  getParentForChildren(),
-                  isClean());
-          location_ = null;
-        }
-        return locationBuilder_;
-      }
-      
-      // optional double acceptanceRadius = 4;
-      private double acceptanceRadius_ ;
-      public boolean hasAcceptanceRadius() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public double getAcceptanceRadius() {
-        return acceptanceRadius_;
-      }
-      public Builder setAcceptanceRadius(double value) {
-        bitField0_ |= 0x00000008;
-        acceptanceRadius_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearAcceptanceRadius() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        acceptanceRadius_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:VehicleTargetLocationDto)
-    }
-    
-    static {
-      defaultInstance = new VehicleTargetLocationDto(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:VehicleTargetLocationDto)
-  }
-  
   public interface VehicleCommandResultDtoOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -10564,6 +9920,1815 @@ public final class MessagesProto {
     }
     
     // @@protoc_insertion_point(class_scope:VehicleCommandResultDto)
+  }
+  
+  public interface TrackPointDtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int64 time = 1;
+    boolean hasTime();
+    long getTime();
+    
+    // required .Wgs84LocationDto location = 2;
+    boolean hasLocation();
+    com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation();
+    com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder();
+  }
+  public static final class TrackPointDto extends
+      com.google.protobuf.GeneratedMessage
+      implements TrackPointDtoOrBuilder {
+    // Use TrackPointDto.newBuilder() to construct.
+    private TrackPointDto(Builder builder) {
+      super(builder);
+    }
+    private TrackPointDto(boolean noInit) {}
+    
+    private static final TrackPointDto defaultInstance;
+    public static TrackPointDto getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public TrackPointDto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_TrackPointDto_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_TrackPointDto_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int64 time = 1;
+    public static final int TIME_FIELD_NUMBER = 1;
+    private long time_;
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public long getTime() {
+      return time_;
+    }
+    
+    // required .Wgs84LocationDto location = 2;
+    public static final int LOCATION_FIELD_NUMBER = 2;
+    private com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto location_;
+    public boolean hasLocation() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation() {
+      return location_;
+    }
+    public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder() {
+      return location_;
+    }
+    
+    private void initFields() {
+      time_ = 0L;
+      location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasLocation()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!getLocation().isInitialized()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt64(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, location_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, time_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, location_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.TrackPointDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.TrackPointDto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_TrackPointDto_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_TrackPointDto_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.TrackPointDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getLocationFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        time_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (locationBuilder_ == null) {
+          location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.TrackPointDto.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.TrackPointDto.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto build() {
+        com.ugcs.ucs.proto.MessagesProto.TrackPointDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.TrackPointDto buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.TrackPointDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.TrackPointDto result = new com.ugcs.ucs.proto.MessagesProto.TrackPointDto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.time_ = time_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (locationBuilder_ == null) {
+          result.location_ = location_;
+        } else {
+          result.location_ = locationBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.TrackPointDto) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.TrackPointDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.TrackPointDto other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.TrackPointDto.getDefaultInstance()) return this;
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasLocation()) {
+          mergeLocation(other.getLocation());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasTime()) {
+          
+          return false;
+        }
+        if (!hasLocation()) {
+          
+          return false;
+        }
+        if (!getLocation().isInitialized()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              time_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.newBuilder();
+              if (hasLocation()) {
+                subBuilder.mergeFrom(getLocation());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setLocation(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int64 time = 1;
+      private long time_ ;
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public long getTime() {
+        return time_;
+      }
+      public Builder setTime(long value) {
+        bitField0_ |= 0x00000001;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // required .Wgs84LocationDto location = 2;
+      private com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder> locationBuilder_;
+      public boolean hasLocation() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto getLocation() {
+        if (locationBuilder_ == null) {
+          return location_;
+        } else {
+          return locationBuilder_.getMessage();
+        }
+      }
+      public Builder setLocation(com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto value) {
+        if (locationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder setLocation(
+          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder builderForValue) {
+        if (locationBuilder_ == null) {
+          location_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder mergeLocation(com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto value) {
+        if (locationBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              location_ != com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance()) {
+            location_ =
+              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.newBuilder(location_).mergeFrom(value).buildPartial();
+          } else {
+            location_ = value;
+          }
+          onChanged();
+        } else {
+          locationBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder clearLocation() {
+        if (locationBuilder_ == null) {
+          location_ = com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.getDefaultInstance();
+          onChanged();
+        } else {
+          locationBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder getLocationBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getLocationFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder getLocationOrBuilder() {
+        if (locationBuilder_ != null) {
+          return locationBuilder_.getMessageOrBuilder();
+        } else {
+          return location_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder> 
+          getLocationFieldBuilder() {
+        if (locationBuilder_ == null) {
+          locationBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.Wgs84LocationDtoOrBuilder>(
+                  location_,
+                  getParentForChildren(),
+                  isClean());
+          location_ = null;
+        }
+        return locationBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:TrackPointDto)
+    }
+    
+    static {
+      defaultInstance = new TrackPointDto(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:TrackPointDto)
+  }
+  
+  public interface VehicleTrackDtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required .Vehicle vehicle = 1;
+    boolean hasVehicle();
+    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
+    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
+    
+    // repeated .TrackPointDto points = 2;
+    java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto> 
+        getPointsList();
+    com.ugcs.ucs.proto.MessagesProto.TrackPointDto getPoints(int index);
+    int getPointsCount();
+    java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder> 
+        getPointsOrBuilderList();
+    com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder getPointsOrBuilder(
+        int index);
+  }
+  public static final class VehicleTrackDto extends
+      com.google.protobuf.GeneratedMessage
+      implements VehicleTrackDtoOrBuilder {
+    // Use VehicleTrackDto.newBuilder() to construct.
+    private VehicleTrackDto(Builder builder) {
+      super(builder);
+    }
+    private VehicleTrackDto(boolean noInit) {}
+    
+    private static final VehicleTrackDto defaultInstance;
+    public static VehicleTrackDto getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public VehicleTrackDto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTrackDto_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTrackDto_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required .Vehicle vehicle = 1;
+    public static final int VEHICLE_FIELD_NUMBER = 1;
+    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
+    public boolean hasVehicle() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+      return vehicle_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+      return vehicle_;
+    }
+    
+    // repeated .TrackPointDto points = 2;
+    public static final int POINTS_FIELD_NUMBER = 2;
+    private java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto> points_;
+    public java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto> getPointsList() {
+      return points_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder> 
+        getPointsOrBuilderList() {
+      return points_;
+    }
+    public int getPointsCount() {
+      return points_.size();
+    }
+    public com.ugcs.ucs.proto.MessagesProto.TrackPointDto getPoints(int index) {
+      return points_.get(index);
+    }
+    public com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder getPointsOrBuilder(
+        int index) {
+      return points_.get(index);
+    }
+    
+    private void initFields() {
+      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      points_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasVehicle()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getPointsCount(); i++) {
+        if (!getPoints(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, vehicle_);
+      }
+      for (int i = 0; i < points_.size(); i++) {
+        output.writeMessage(2, points_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, vehicle_);
+      }
+      for (int i = 0; i < points_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, points_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTrackDto_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleTrackDto_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getVehicleFieldBuilder();
+          getPointsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (pointsBuilder_ == null) {
+          points_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          pointsBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto build() {
+        com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto result = new com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (vehicleBuilder_ == null) {
+          result.vehicle_ = vehicle_;
+        } else {
+          result.vehicle_ = vehicleBuilder_.build();
+        }
+        if (pointsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            points_ = java.util.Collections.unmodifiableList(points_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.points_ = points_;
+        } else {
+          result.points_ = pointsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.getDefaultInstance()) return this;
+        if (other.hasVehicle()) {
+          mergeVehicle(other.getVehicle());
+        }
+        if (pointsBuilder_ == null) {
+          if (!other.points_.isEmpty()) {
+            if (points_.isEmpty()) {
+              points_ = other.points_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensurePointsIsMutable();
+              points_.addAll(other.points_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.points_.isEmpty()) {
+            if (pointsBuilder_.isEmpty()) {
+              pointsBuilder_.dispose();
+              pointsBuilder_ = null;
+              points_ = other.points_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              pointsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPointsFieldBuilder() : null;
+            } else {
+              pointsBuilder_.addAllMessages(other.points_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasVehicle()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getPointsCount(); i++) {
+          if (!getPoints(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
+              if (hasVehicle()) {
+                subBuilder.mergeFrom(getVehicle());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVehicle(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.TrackPointDto.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addPoints(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required .Vehicle vehicle = 1;
+      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
+      public boolean hasVehicle() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+        if (vehicleBuilder_ == null) {
+          return vehicle_;
+        } else {
+          return vehicleBuilder_.getMessage();
+        }
+      }
+      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vehicle_ = value;
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder setVehicle(
+          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
+            vehicle_ =
+              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+          } else {
+            vehicle_ = value;
+          }
+          onChanged();
+        } else {
+          vehicleBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder clearVehicle() {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+          onChanged();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getVehicleFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+        if (vehicleBuilder_ != null) {
+          return vehicleBuilder_.getMessageOrBuilder();
+        } else {
+          return vehicle_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
+          getVehicleFieldBuilder() {
+        if (vehicleBuilder_ == null) {
+          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
+                  vehicle_,
+                  getParentForChildren(),
+                  isClean());
+          vehicle_ = null;
+        }
+        return vehicleBuilder_;
+      }
+      
+      // repeated .TrackPointDto points = 2;
+      private java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto> points_ =
+        java.util.Collections.emptyList();
+      private void ensurePointsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          points_ = new java.util.ArrayList<com.ugcs.ucs.proto.MessagesProto.TrackPointDto>(points_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.TrackPointDto, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder, com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder> pointsBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto> getPointsList() {
+        if (pointsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(points_);
+        } else {
+          return pointsBuilder_.getMessageList();
+        }
+      }
+      public int getPointsCount() {
+        if (pointsBuilder_ == null) {
+          return points_.size();
+        } else {
+          return pointsBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto getPoints(int index) {
+        if (pointsBuilder_ == null) {
+          return points_.get(index);
+        } else {
+          return pointsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setPoints(
+          int index, com.ugcs.ucs.proto.MessagesProto.TrackPointDto value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.set(index, value);
+          onChanged();
+        } else {
+          pointsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setPoints(
+          int index, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addPoints(com.ugcs.ucs.proto.MessagesProto.TrackPointDto value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.add(value);
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addPoints(
+          int index, com.ugcs.ucs.proto.MessagesProto.TrackPointDto value) {
+        if (pointsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePointsIsMutable();
+          points_.add(index, value);
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addPoints(
+          com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addPoints(
+          int index, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder builderForValue) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pointsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllPoints(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.MessagesProto.TrackPointDto> values) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          super.addAll(values, points_);
+          onChanged();
+        } else {
+          pointsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearPoints() {
+        if (pointsBuilder_ == null) {
+          points_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          pointsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removePoints(int index) {
+        if (pointsBuilder_ == null) {
+          ensurePointsIsMutable();
+          points_.remove(index);
+          onChanged();
+        } else {
+          pointsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder getPointsBuilder(
+          int index) {
+        return getPointsFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder getPointsOrBuilder(
+          int index) {
+        if (pointsBuilder_ == null) {
+          return points_.get(index);  } else {
+          return pointsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder> 
+           getPointsOrBuilderList() {
+        if (pointsBuilder_ != null) {
+          return pointsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(points_);
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder addPointsBuilder() {
+        return getPointsFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.MessagesProto.TrackPointDto.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder addPointsBuilder(
+          int index) {
+        return getPointsFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder> 
+           getPointsBuilderList() {
+        return getPointsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.TrackPointDto, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder, com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder> 
+          getPointsFieldBuilder() {
+        if (pointsBuilder_ == null) {
+          pointsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.MessagesProto.TrackPointDto, com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder, com.ugcs.ucs.proto.MessagesProto.TrackPointDtoOrBuilder>(
+                  points_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          points_ = null;
+        }
+        return pointsBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:VehicleTrackDto)
+    }
+    
+    static {
+      defaultInstance = new VehicleTrackDto(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:VehicleTrackDto)
+  }
+  
+  public interface ImportRouteParameterDtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string algorithmClass = 1;
+    boolean hasAlgorithmClass();
+    String getAlgorithmClass();
+    
+    // required string parameterName = 2;
+    boolean hasParameterName();
+    String getParameterName();
+    
+    // required string parameterValue = 3;
+    boolean hasParameterValue();
+    String getParameterValue();
+  }
+  public static final class ImportRouteParameterDto extends
+      com.google.protobuf.GeneratedMessage
+      implements ImportRouteParameterDtoOrBuilder {
+    // Use ImportRouteParameterDto.newBuilder() to construct.
+    private ImportRouteParameterDto(Builder builder) {
+      super(builder);
+    }
+    private ImportRouteParameterDto(boolean noInit) {}
+    
+    private static final ImportRouteParameterDto defaultInstance;
+    public static ImportRouteParameterDto getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public ImportRouteParameterDto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteParameterDto_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteParameterDto_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string algorithmClass = 1;
+    public static final int ALGORITHMCLASS_FIELD_NUMBER = 1;
+    private java.lang.Object algorithmClass_;
+    public boolean hasAlgorithmClass() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getAlgorithmClass() {
+      java.lang.Object ref = algorithmClass_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          algorithmClass_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getAlgorithmClassBytes() {
+      java.lang.Object ref = algorithmClass_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        algorithmClass_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string parameterName = 2;
+    public static final int PARAMETERNAME_FIELD_NUMBER = 2;
+    private java.lang.Object parameterName_;
+    public boolean hasParameterName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getParameterName() {
+      java.lang.Object ref = parameterName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          parameterName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getParameterNameBytes() {
+      java.lang.Object ref = parameterName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        parameterName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string parameterValue = 3;
+    public static final int PARAMETERVALUE_FIELD_NUMBER = 3;
+    private java.lang.Object parameterValue_;
+    public boolean hasParameterValue() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getParameterValue() {
+      java.lang.Object ref = parameterValue_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          parameterValue_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getParameterValueBytes() {
+      java.lang.Object ref = parameterValue_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        parameterValue_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      algorithmClass_ = "";
+      parameterName_ = "";
+      parameterValue_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasAlgorithmClass()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasParameterName()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasParameterValue()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getAlgorithmClassBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getParameterNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getParameterValueBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getAlgorithmClassBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getParameterNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getParameterValueBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteParameterDto_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteParameterDto_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        algorithmClass_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        parameterName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        parameterValue_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto build() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto result = new com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.algorithmClass_ = algorithmClass_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.parameterName_ = parameterName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.parameterValue_ = parameterValue_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.getDefaultInstance()) return this;
+        if (other.hasAlgorithmClass()) {
+          setAlgorithmClass(other.getAlgorithmClass());
+        }
+        if (other.hasParameterName()) {
+          setParameterName(other.getParameterName());
+        }
+        if (other.hasParameterValue()) {
+          setParameterValue(other.getParameterValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasAlgorithmClass()) {
+          
+          return false;
+        }
+        if (!hasParameterName()) {
+          
+          return false;
+        }
+        if (!hasParameterValue()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              algorithmClass_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              parameterName_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              parameterValue_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string algorithmClass = 1;
+      private java.lang.Object algorithmClass_ = "";
+      public boolean hasAlgorithmClass() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getAlgorithmClass() {
+        java.lang.Object ref = algorithmClass_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          algorithmClass_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setAlgorithmClass(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        algorithmClass_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearAlgorithmClass() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        algorithmClass_ = getDefaultInstance().getAlgorithmClass();
+        onChanged();
+        return this;
+      }
+      void setAlgorithmClass(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        algorithmClass_ = value;
+        onChanged();
+      }
+      
+      // required string parameterName = 2;
+      private java.lang.Object parameterName_ = "";
+      public boolean hasParameterName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getParameterName() {
+        java.lang.Object ref = parameterName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          parameterName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setParameterName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        parameterName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearParameterName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        parameterName_ = getDefaultInstance().getParameterName();
+        onChanged();
+        return this;
+      }
+      void setParameterName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        parameterName_ = value;
+        onChanged();
+      }
+      
+      // required string parameterValue = 3;
+      private java.lang.Object parameterValue_ = "";
+      public boolean hasParameterValue() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getParameterValue() {
+        java.lang.Object ref = parameterValue_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          parameterValue_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setParameterValue(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        parameterValue_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearParameterValue() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        parameterValue_ = getDefaultInstance().getParameterValue();
+        onChanged();
+        return this;
+      }
+      void setParameterValue(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        parameterValue_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:ImportRouteParameterDto)
+    }
+    
+    static {
+      defaultInstance = new ImportRouteParameterDto(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:ImportRouteParameterDto)
   }
   
   public interface AlgorithmsMappingDtoOrBuilder
@@ -32390,43 +33555,62 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:ExportRouteToXmlResponse)
   }
   
-  public interface ImportRouteFromXmlRequestOrBuilder
+  public interface ImportRouteRequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
     // required int32 clientId = 1;
     boolean hasClientId();
     int getClientId();
     
-    // required bytes routeXml = 2;
-    boolean hasRouteXml();
-    com.google.protobuf.ByteString getRouteXml();
+    // required bytes routeData = 2;
+    boolean hasRouteData();
+    com.google.protobuf.ByteString getRouteData();
+    
+    // required string filename = 3;
+    boolean hasFilename();
+    String getFilename();
+    
+    // optional .TraverseAlgorithm algorithm = 4;
+    boolean hasAlgorithm();
+    com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm getAlgorithm();
+    com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder getAlgorithmOrBuilder();
+    
+    // repeated .ImportRouteParameterDto parameters = 5;
+    java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> 
+        getParametersList();
+    com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto getParameters(int index);
+    int getParametersCount();
+    java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder> 
+        getParametersOrBuilderList();
+    com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder getParametersOrBuilder(
+        int index);
   }
-  public static final class ImportRouteFromXmlRequest extends
+  public static final class ImportRouteRequest extends
       com.google.protobuf.GeneratedMessage
-      implements ImportRouteFromXmlRequestOrBuilder {
-    // Use ImportRouteFromXmlRequest.newBuilder() to construct.
-    private ImportRouteFromXmlRequest(Builder builder) {
+      implements ImportRouteRequestOrBuilder {
+    // Use ImportRouteRequest.newBuilder() to construct.
+    private ImportRouteRequest(Builder builder) {
       super(builder);
     }
-    private ImportRouteFromXmlRequest(boolean noInit) {}
+    private ImportRouteRequest(boolean noInit) {}
     
-    private static final ImportRouteFromXmlRequest defaultInstance;
-    public static ImportRouteFromXmlRequest getDefaultInstance() {
+    private static final ImportRouteRequest defaultInstance;
+    public static ImportRouteRequest getDefaultInstance() {
       return defaultInstance;
     }
     
-    public ImportRouteFromXmlRequest getDefaultInstanceForType() {
+    public ImportRouteRequest getDefaultInstanceForType() {
       return defaultInstance;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlRequest_descriptor;
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteRequest_descriptor;
     }
     
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlRequest_fieldAccessorTable;
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteRequest_fieldAccessorTable;
     }
     
     private int bitField0_;
@@ -32440,19 +33624,88 @@ public final class MessagesProto {
       return clientId_;
     }
     
-    // required bytes routeXml = 2;
-    public static final int ROUTEXML_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString routeXml_;
-    public boolean hasRouteXml() {
+    // required bytes routeData = 2;
+    public static final int ROUTEDATA_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString routeData_;
+    public boolean hasRouteData() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
-    public com.google.protobuf.ByteString getRouteXml() {
-      return routeXml_;
+    public com.google.protobuf.ByteString getRouteData() {
+      return routeData_;
+    }
+    
+    // required string filename = 3;
+    public static final int FILENAME_FIELD_NUMBER = 3;
+    private java.lang.Object filename_;
+    public boolean hasFilename() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getFilename() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          filename_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getFilenameBytes() {
+      java.lang.Object ref = filename_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        filename_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional .TraverseAlgorithm algorithm = 4;
+    public static final int ALGORITHM_FIELD_NUMBER = 4;
+    private com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm algorithm_;
+    public boolean hasAlgorithm() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm getAlgorithm() {
+      return algorithm_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder getAlgorithmOrBuilder() {
+      return algorithm_;
+    }
+    
+    // repeated .ImportRouteParameterDto parameters = 5;
+    public static final int PARAMETERS_FIELD_NUMBER = 5;
+    private java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> parameters_;
+    public java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> getParametersList() {
+      return parameters_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder> 
+        getParametersOrBuilderList() {
+      return parameters_;
+    }
+    public int getParametersCount() {
+      return parameters_.size();
+    }
+    public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto getParameters(int index) {
+      return parameters_.get(index);
+    }
+    public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder getParametersOrBuilder(
+        int index) {
+      return parameters_.get(index);
     }
     
     private void initFields() {
       clientId_ = 0;
-      routeXml_ = com.google.protobuf.ByteString.EMPTY;
+      routeData_ = com.google.protobuf.ByteString.EMPTY;
+      filename_ = "";
+      algorithm_ = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance();
+      parameters_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -32463,9 +33716,19 @@ public final class MessagesProto {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasRouteXml()) {
+      if (!hasRouteData()) {
         memoizedIsInitialized = 0;
         return false;
+      }
+      if (!hasFilename()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getParametersCount(); i++) {
+        if (!getParameters(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -32478,7 +33741,16 @@ public final class MessagesProto {
         output.writeInt32(1, clientId_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, routeXml_);
+        output.writeBytes(2, routeData_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getFilenameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(4, algorithm_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        output.writeMessage(5, parameters_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -32495,7 +33767,19 @@ public final class MessagesProto {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, routeXml_);
+          .computeBytesSize(2, routeData_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getFilenameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, algorithm_);
+      }
+      for (int i = 0; i < parameters_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, parameters_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -32509,41 +33793,41 @@ public final class MessagesProto {
       return super.writeReplace();
     }
     
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(byte[] data)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(java.io.InputStream input)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
@@ -32552,7 +33836,7 @@ public final class MessagesProto {
         return null;
       }
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseDelimitedFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32563,12 +33847,12 @@ public final class MessagesProto {
         return null;
       }
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32578,7 +33862,7 @@ public final class MessagesProto {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest prototype) {
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -32591,18 +33875,18 @@ public final class MessagesProto {
     }
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequestOrBuilder {
+       implements com.ugcs.ucs.proto.MessagesProto.ImportRouteRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlRequest_descriptor;
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteRequest_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlRequest_fieldAccessorTable;
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteRequest_fieldAccessorTable;
       }
       
-      // Construct using com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.newBuilder()
+      // Construct using com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -32613,6 +33897,8 @@ public final class MessagesProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getAlgorithmFieldBuilder();
+          getParametersFieldBuilder();
         }
       }
       private static Builder create() {
@@ -32623,8 +33909,22 @@ public final class MessagesProto {
         super.clear();
         clientId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        routeXml_ = com.google.protobuf.ByteString.EMPTY;
+        routeData_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
+        filename_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        if (algorithmBuilder_ == null) {
+          algorithm_ = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance();
+        } else {
+          algorithmBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          parametersBuilder_.clear();
+        }
         return this;
       }
       
@@ -32634,24 +33934,24 @@ public final class MessagesProto {
       
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.getDescriptor();
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.getDescriptor();
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.getDefaultInstance();
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.getDefaultInstance();
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest build() {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest result = buildPartial();
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
       
-      private com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest buildParsed()
+      private com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest result = buildPartial();
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(
             result).asInvalidProtocolBufferException();
@@ -32659,8 +33959,8 @@ public final class MessagesProto {
         return result;
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest buildPartial() {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest result = new com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest(this);
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest result = new com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -32670,28 +33970,81 @@ public final class MessagesProto {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.routeXml_ = routeXml_;
+        result.routeData_ = routeData_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.filename_ = filename_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        if (algorithmBuilder_ == null) {
+          result.algorithm_ = algorithm_;
+        } else {
+          result.algorithm_ = algorithmBuilder_.build();
+        }
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            parameters_ = java.util.Collections.unmodifiableList(parameters_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.parameters_ = parameters_;
+        } else {
+          result.parameters_ = parametersBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest) {
-          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest)other);
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
       
-      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest other) {
-        if (other == com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.getDefaultInstance()) return this;
         if (other.hasClientId()) {
           setClientId(other.getClientId());
         }
-        if (other.hasRouteXml()) {
-          setRouteXml(other.getRouteXml());
+        if (other.hasRouteData()) {
+          setRouteData(other.getRouteData());
+        }
+        if (other.hasFilename()) {
+          setFilename(other.getFilename());
+        }
+        if (other.hasAlgorithm()) {
+          mergeAlgorithm(other.getAlgorithm());
+        }
+        if (parametersBuilder_ == null) {
+          if (!other.parameters_.isEmpty()) {
+            if (parameters_.isEmpty()) {
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureParametersIsMutable();
+              parameters_.addAll(other.parameters_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.parameters_.isEmpty()) {
+            if (parametersBuilder_.isEmpty()) {
+              parametersBuilder_.dispose();
+              parametersBuilder_ = null;
+              parameters_ = other.parameters_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              parametersBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getParametersFieldBuilder() : null;
+            } else {
+              parametersBuilder_.addAllMessages(other.parameters_);
+            }
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -32702,9 +34055,19 @@ public final class MessagesProto {
           
           return false;
         }
-        if (!hasRouteXml()) {
+        if (!hasRouteData()) {
           
           return false;
+        }
+        if (!hasFilename()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getParametersCount(); i++) {
+          if (!getParameters(i).isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -32739,7 +34102,27 @@ public final class MessagesProto {
             }
             case 18: {
               bitField0_ |= 0x00000002;
-              routeXml_ = input.readBytes();
+              routeData_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              filename_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.newBuilder();
+              if (hasAlgorithm()) {
+                subBuilder.mergeFrom(getAlgorithm());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setAlgorithm(subBuilder.buildPartial());
+              break;
+            }
+            case 42: {
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addParameters(subBuilder.buildPartial());
               break;
             }
           }
@@ -32769,42 +34152,354 @@ public final class MessagesProto {
         return this;
       }
       
-      // required bytes routeXml = 2;
-      private com.google.protobuf.ByteString routeXml_ = com.google.protobuf.ByteString.EMPTY;
-      public boolean hasRouteXml() {
+      // required bytes routeData = 2;
+      private com.google.protobuf.ByteString routeData_ = com.google.protobuf.ByteString.EMPTY;
+      public boolean hasRouteData() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public com.google.protobuf.ByteString getRouteXml() {
-        return routeXml_;
+      public com.google.protobuf.ByteString getRouteData() {
+        return routeData_;
       }
-      public Builder setRouteXml(com.google.protobuf.ByteString value) {
+      public Builder setRouteData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        routeXml_ = value;
+        routeData_ = value;
         onChanged();
         return this;
       }
-      public Builder clearRouteXml() {
+      public Builder clearRouteData() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        routeXml_ = getDefaultInstance().getRouteXml();
+        routeData_ = getDefaultInstance().getRouteData();
         onChanged();
         return this;
       }
       
-      // @@protoc_insertion_point(builder_scope:ImportRouteFromXmlRequest)
+      // required string filename = 3;
+      private java.lang.Object filename_ = "";
+      public boolean hasFilename() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getFilename() {
+        java.lang.Object ref = filename_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          filename_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setFilename(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        filename_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearFilename() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        filename_ = getDefaultInstance().getFilename();
+        onChanged();
+        return this;
+      }
+      void setFilename(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        filename_ = value;
+        onChanged();
+      }
+      
+      // optional .TraverseAlgorithm algorithm = 4;
+      private com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm algorithm_ = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder> algorithmBuilder_;
+      public boolean hasAlgorithm() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm getAlgorithm() {
+        if (algorithmBuilder_ == null) {
+          return algorithm_;
+        } else {
+          return algorithmBuilder_.getMessage();
+        }
+      }
+      public Builder setAlgorithm(com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm value) {
+        if (algorithmBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          algorithm_ = value;
+          onChanged();
+        } else {
+          algorithmBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      public Builder setAlgorithm(
+          com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder builderForValue) {
+        if (algorithmBuilder_ == null) {
+          algorithm_ = builderForValue.build();
+          onChanged();
+        } else {
+          algorithmBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      public Builder mergeAlgorithm(com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm value) {
+        if (algorithmBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              algorithm_ != com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance()) {
+            algorithm_ =
+              com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.newBuilder(algorithm_).mergeFrom(value).buildPartial();
+          } else {
+            algorithm_ = value;
+          }
+          onChanged();
+        } else {
+          algorithmBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000008;
+        return this;
+      }
+      public Builder clearAlgorithm() {
+        if (algorithmBuilder_ == null) {
+          algorithm_ = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance();
+          onChanged();
+        } else {
+          algorithmBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder getAlgorithmBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getAlgorithmFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder getAlgorithmOrBuilder() {
+        if (algorithmBuilder_ != null) {
+          return algorithmBuilder_.getMessageOrBuilder();
+        } else {
+          return algorithm_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder> 
+          getAlgorithmFieldBuilder() {
+        if (algorithmBuilder_ == null) {
+          algorithmBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder>(
+                  algorithm_,
+                  getParentForChildren(),
+                  isClean());
+          algorithm_ = null;
+        }
+        return algorithmBuilder_;
+      }
+      
+      // repeated .ImportRouteParameterDto parameters = 5;
+      private java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> parameters_ =
+        java.util.Collections.emptyList();
+      private void ensureParametersIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          parameters_ = new java.util.ArrayList<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto>(parameters_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder> parametersBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> getParametersList() {
+        if (parametersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(parameters_);
+        } else {
+          return parametersBuilder_.getMessageList();
+        }
+      }
+      public int getParametersCount() {
+        if (parametersBuilder_ == null) {
+          return parameters_.size();
+        } else {
+          return parametersBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto getParameters(int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);
+        } else {
+          return parametersBuilder_.getMessage(index);
+        }
+      }
+      public Builder setParameters(
+          int index, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.set(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setParameters(
+          int index, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addParameters(com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addParameters(
+          int index, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureParametersIsMutable();
+          parameters_.add(index, value);
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addParameters(
+          com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addParameters(
+          int index, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          parametersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllParameters(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto> values) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          super.addAll(values, parameters_);
+          onChanged();
+        } else {
+          parametersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearParameters() {
+        if (parametersBuilder_ == null) {
+          parameters_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          parametersBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeParameters(int index) {
+        if (parametersBuilder_ == null) {
+          ensureParametersIsMutable();
+          parameters_.remove(index);
+          onChanged();
+        } else {
+          parametersBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder getParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder getParametersOrBuilder(
+          int index) {
+        if (parametersBuilder_ == null) {
+          return parameters_.get(index);  } else {
+          return parametersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder> 
+           getParametersOrBuilderList() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(parameters_);
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder addParametersBuilder() {
+        return getParametersFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder addParametersBuilder(
+          int index) {
+        return getParametersFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder> 
+           getParametersBuilderList() {
+        return getParametersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder> 
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder, com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDtoOrBuilder>(
+                  parameters_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:ImportRouteRequest)
     }
     
     static {
-      defaultInstance = new ImportRouteFromXmlRequest(true);
+      defaultInstance = new ImportRouteRequest(true);
       defaultInstance.initFields();
     }
     
-    // @@protoc_insertion_point(class_scope:ImportRouteFromXmlRequest)
+    // @@protoc_insertion_point(class_scope:ImportRouteRequest)
   }
   
-  public interface ImportRouteFromXmlResponseOrBuilder
+  public interface ImportRouteResponseOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
     // required .Route route = 1;
@@ -32812,32 +34507,32 @@ public final class MessagesProto {
     com.ugcs.ucs.proto.DomainProto.Route getRoute();
     com.ugcs.ucs.proto.DomainProto.RouteOrBuilder getRouteOrBuilder();
   }
-  public static final class ImportRouteFromXmlResponse extends
+  public static final class ImportRouteResponse extends
       com.google.protobuf.GeneratedMessage
-      implements ImportRouteFromXmlResponseOrBuilder {
-    // Use ImportRouteFromXmlResponse.newBuilder() to construct.
-    private ImportRouteFromXmlResponse(Builder builder) {
+      implements ImportRouteResponseOrBuilder {
+    // Use ImportRouteResponse.newBuilder() to construct.
+    private ImportRouteResponse(Builder builder) {
       super(builder);
     }
-    private ImportRouteFromXmlResponse(boolean noInit) {}
+    private ImportRouteResponse(boolean noInit) {}
     
-    private static final ImportRouteFromXmlResponse defaultInstance;
-    public static ImportRouteFromXmlResponse getDefaultInstance() {
+    private static final ImportRouteResponse defaultInstance;
+    public static ImportRouteResponse getDefaultInstance() {
       return defaultInstance;
     }
     
-    public ImportRouteFromXmlResponse getDefaultInstanceForType() {
+    public ImportRouteResponse getDefaultInstanceForType() {
       return defaultInstance;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlResponse_descriptor;
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteResponse_descriptor;
     }
     
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlResponse_fieldAccessorTable;
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteResponse_fieldAccessorTable;
     }
     
     private int bitField0_;
@@ -32901,41 +34596,41 @@ public final class MessagesProto {
       return super.writeReplace();
     }
     
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(byte[] data)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(java.io.InputStream input)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseDelimitedFrom(java.io.InputStream input)
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
@@ -32944,7 +34639,7 @@ public final class MessagesProto {
         return null;
       }
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseDelimitedFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32955,12 +34650,12 @@ public final class MessagesProto {
         return null;
       }
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse parseFrom(
+    public static com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -32970,7 +34665,7 @@ public final class MessagesProto {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse prototype) {
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -32983,18 +34678,18 @@ public final class MessagesProto {
     }
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponseOrBuilder {
+       implements com.ugcs.ucs.proto.MessagesProto.ImportRouteResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlResponse_descriptor;
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteResponse_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteFromXmlResponse_fieldAccessorTable;
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_ImportRouteResponse_fieldAccessorTable;
       }
       
-      // Construct using com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.newBuilder()
+      // Construct using com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -33029,24 +34724,24 @@ public final class MessagesProto {
       
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.getDescriptor();
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.getDescriptor();
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.getDefaultInstance();
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.getDefaultInstance();
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse build() {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse result = buildPartial();
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
       
-      private com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse buildParsed()
+      private com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse result = buildPartial();
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(
             result).asInvalidProtocolBufferException();
@@ -33054,8 +34749,8 @@ public final class MessagesProto {
         return result;
       }
       
-      public com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse buildPartial() {
-        com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse result = new com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse(this);
+      public com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse result = new com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -33072,16 +34767,16 @@ public final class MessagesProto {
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse) {
-          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse)other);
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
       
-      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse other) {
-        if (other == com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.getDefaultInstance()) return this;
         if (other.hasRoute()) {
           mergeRoute(other.getRoute());
         }
@@ -33225,15 +34920,15 @@ public final class MessagesProto {
         return routeBuilder_;
       }
       
-      // @@protoc_insertion_point(builder_scope:ImportRouteFromXmlResponse)
+      // @@protoc_insertion_point(builder_scope:ImportRouteResponse)
     }
     
     static {
-      defaultInstance = new ImportRouteFromXmlResponse(true);
+      defaultInstance = new ImportRouteResponse(true);
       defaultInstance.initFields();
     }
     
-    // @@protoc_insertion_point(class_scope:ImportRouteFromXmlResponse)
+    // @@protoc_insertion_point(class_scope:ImportRouteResponse)
   }
   
   public interface ExportMissionToXmlRequestOrBuilder
@@ -35788,6 +37483,10 @@ public final class MessagesProto {
     // required .ConflictResolutionMode conflictResolutionMode = 3;
     boolean hasConflictResolutionMode();
     com.ugcs.ucs.proto.DomainProto.ConflictResolutionMode getConflictResolutionMode();
+    
+    // optional string name = 4;
+    boolean hasName();
+    String getName();
   }
   public static final class ImportTelemetryFromXmlRequest extends
       com.google.protobuf.GeneratedMessage
@@ -35848,10 +37547,43 @@ public final class MessagesProto {
       return conflictResolutionMode_;
     }
     
+    // optional string name = 4;
+    public static final int NAME_FIELD_NUMBER = 4;
+    private java.lang.Object name_;
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
       clientId_ = 0;
       telemetryXml_ = com.google.protobuf.ByteString.EMPTY;
       conflictResolutionMode_ = com.ugcs.ucs.proto.DomainProto.ConflictResolutionMode.CRM_KEEP;
+      name_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -35886,6 +37618,9 @@ public final class MessagesProto {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeEnum(3, conflictResolutionMode_.getNumber());
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getNameBytes());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -35906,6 +37641,10 @@ public final class MessagesProto {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, conflictResolutionMode_.getNumber());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getNameBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -36037,6 +37776,8 @@ public final class MessagesProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         conflictResolutionMode_ = com.ugcs.ucs.proto.DomainProto.ConflictResolutionMode.CRM_KEEP;
         bitField0_ = (bitField0_ & ~0x00000004);
+        name_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       
@@ -36087,6 +37828,10 @@ public final class MessagesProto {
           to_bitField0_ |= 0x00000004;
         }
         result.conflictResolutionMode_ = conflictResolutionMode_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.name_ = name_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -36111,6 +37856,9 @@ public final class MessagesProto {
         }
         if (other.hasConflictResolutionMode()) {
           setConflictResolutionMode(other.getConflictResolutionMode());
+        }
+        if (other.hasName()) {
+          setName(other.getName());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -36174,6 +37922,11 @@ public final class MessagesProto {
                 bitField0_ |= 0x00000004;
                 conflictResolutionMode_ = value;
               }
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              name_ = input.readBytes();
               break;
             }
           }
@@ -36249,6 +38002,42 @@ public final class MessagesProto {
         conflictResolutionMode_ = com.ugcs.ucs.proto.DomainProto.ConflictResolutionMode.CRM_KEEP;
         onChanged();
         return this;
+      }
+      
+      // optional string name = 4;
+      private java.lang.Object name_ = "";
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearName() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      void setName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
+        name_ = value;
+        onChanged();
       }
       
       // @@protoc_insertion_point(builder_scope:ImportTelemetryFromXmlRequest)
@@ -46134,6 +47923,1245 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:CountTelemetryResponse)
   }
   
+  public interface GetVehicleTracksRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int32 clientId = 1;
+    boolean hasClientId();
+    int getClientId();
+    
+    // required .Vehicle vehicle = 2;
+    boolean hasVehicle();
+    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
+    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
+    
+    // required int64 fromTime = 3;
+    boolean hasFromTime();
+    long getFromTime();
+    
+    // optional int64 toTime = 4;
+    boolean hasToTime();
+    long getToTime();
+    
+    // optional int32 maxPoints = 5 [default = 200];
+    boolean hasMaxPoints();
+    int getMaxPoints();
+  }
+  public static final class GetVehicleTracksRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements GetVehicleTracksRequestOrBuilder {
+    // Use GetVehicleTracksRequest.newBuilder() to construct.
+    private GetVehicleTracksRequest(Builder builder) {
+      super(builder);
+    }
+    private GetVehicleTracksRequest(boolean noInit) {}
+    
+    private static final GetVehicleTracksRequest defaultInstance;
+    public static GetVehicleTracksRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetVehicleTracksRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksRequest_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int32 clientId = 1;
+    public static final int CLIENTID_FIELD_NUMBER = 1;
+    private int clientId_;
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getClientId() {
+      return clientId_;
+    }
+    
+    // required .Vehicle vehicle = 2;
+    public static final int VEHICLE_FIELD_NUMBER = 2;
+    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
+    public boolean hasVehicle() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+      return vehicle_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+      return vehicle_;
+    }
+    
+    // required int64 fromTime = 3;
+    public static final int FROMTIME_FIELD_NUMBER = 3;
+    private long fromTime_;
+    public boolean hasFromTime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public long getFromTime() {
+      return fromTime_;
+    }
+    
+    // optional int64 toTime = 4;
+    public static final int TOTIME_FIELD_NUMBER = 4;
+    private long toTime_;
+    public boolean hasToTime() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public long getToTime() {
+      return toTime_;
+    }
+    
+    // optional int32 maxPoints = 5 [default = 200];
+    public static final int MAXPOINTS_FIELD_NUMBER = 5;
+    private int maxPoints_;
+    public boolean hasMaxPoints() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public int getMaxPoints() {
+      return maxPoints_;
+    }
+    
+    private void initFields() {
+      clientId_ = 0;
+      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      fromTime_ = 0L;
+      toTime_ = 0L;
+      maxPoints_ = 200;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVehicle()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFromTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, vehicle_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, fromTime_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt64(4, toTime_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, maxPoints_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, vehicle_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, fromTime_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, toTime_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, maxPoints_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getVehicleFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        clientId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fromTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        toTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        maxPoints_ = 200;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest result = new com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (vehicleBuilder_ == null) {
+          result.vehicle_ = vehicle_;
+        } else {
+          result.vehicle_ = vehicleBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.fromTime_ = fromTime_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.toTime_ = toTime_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.maxPoints_ = maxPoints_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.getDefaultInstance()) return this;
+        if (other.hasClientId()) {
+          setClientId(other.getClientId());
+        }
+        if (other.hasVehicle()) {
+          mergeVehicle(other.getVehicle());
+        }
+        if (other.hasFromTime()) {
+          setFromTime(other.getFromTime());
+        }
+        if (other.hasToTime()) {
+          setToTime(other.getToTime());
+        }
+        if (other.hasMaxPoints()) {
+          setMaxPoints(other.getMaxPoints());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasClientId()) {
+          
+          return false;
+        }
+        if (!hasVehicle()) {
+          
+          return false;
+        }
+        if (!hasFromTime()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              clientId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
+              if (hasVehicle()) {
+                subBuilder.mergeFrom(getVehicle());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVehicle(subBuilder.buildPartial());
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              fromTime_ = input.readInt64();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              toTime_ = input.readInt64();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              maxPoints_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 clientId = 1;
+      private int clientId_ ;
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getClientId() {
+        return clientId_;
+      }
+      public Builder setClientId(int value) {
+        bitField0_ |= 0x00000001;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // required .Vehicle vehicle = 2;
+      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
+      public boolean hasVehicle() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+        if (vehicleBuilder_ == null) {
+          return vehicle_;
+        } else {
+          return vehicleBuilder_.getMessage();
+        }
+      }
+      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vehicle_ = value;
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder setVehicle(
+          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
+            vehicle_ =
+              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+          } else {
+            vehicle_ = value;
+          }
+          onChanged();
+        } else {
+          vehicleBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder clearVehicle() {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+          onChanged();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getVehicleFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+        if (vehicleBuilder_ != null) {
+          return vehicleBuilder_.getMessageOrBuilder();
+        } else {
+          return vehicle_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
+          getVehicleFieldBuilder() {
+        if (vehicleBuilder_ == null) {
+          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
+                  vehicle_,
+                  getParentForChildren(),
+                  isClean());
+          vehicle_ = null;
+        }
+        return vehicleBuilder_;
+      }
+      
+      // required int64 fromTime = 3;
+      private long fromTime_ ;
+      public boolean hasFromTime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public long getFromTime() {
+        return fromTime_;
+      }
+      public Builder setFromTime(long value) {
+        bitField0_ |= 0x00000004;
+        fromTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearFromTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional int64 toTime = 4;
+      private long toTime_ ;
+      public boolean hasToTime() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public long getToTime() {
+        return toTime_;
+      }
+      public Builder setToTime(long value) {
+        bitField0_ |= 0x00000008;
+        toTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearToTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        toTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 maxPoints = 5 [default = 200];
+      private int maxPoints_ = 200;
+      public boolean hasMaxPoints() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public int getMaxPoints() {
+        return maxPoints_;
+      }
+      public Builder setMaxPoints(int value) {
+        bitField0_ |= 0x00000010;
+        maxPoints_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearMaxPoints() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        maxPoints_ = 200;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetVehicleTracksRequest)
+    }
+    
+    static {
+      defaultInstance = new GetVehicleTracksRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetVehicleTracksRequest)
+  }
+  
+  public interface GetVehicleTracksResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated .VehicleTrackDto vehicleTracks = 1;
+    java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> 
+        getVehicleTracksList();
+    com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto getVehicleTracks(int index);
+    int getVehicleTracksCount();
+    java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder> 
+        getVehicleTracksOrBuilderList();
+    com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder getVehicleTracksOrBuilder(
+        int index);
+  }
+  public static final class GetVehicleTracksResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements GetVehicleTracksResponseOrBuilder {
+    // Use GetVehicleTracksResponse.newBuilder() to construct.
+    private GetVehicleTracksResponse(Builder builder) {
+      super(builder);
+    }
+    private GetVehicleTracksResponse(boolean noInit) {}
+    
+    private static final GetVehicleTracksResponse defaultInstance;
+    public static GetVehicleTracksResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetVehicleTracksResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksResponse_fieldAccessorTable;
+    }
+    
+    // repeated .VehicleTrackDto vehicleTracks = 1;
+    public static final int VEHICLETRACKS_FIELD_NUMBER = 1;
+    private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> vehicleTracks_;
+    public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> getVehicleTracksList() {
+      return vehicleTracks_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder> 
+        getVehicleTracksOrBuilderList() {
+      return vehicleTracks_;
+    }
+    public int getVehicleTracksCount() {
+      return vehicleTracks_.size();
+    }
+    public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto getVehicleTracks(int index) {
+      return vehicleTracks_.get(index);
+    }
+    public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder getVehicleTracksOrBuilder(
+        int index) {
+      return vehicleTracks_.get(index);
+    }
+    
+    private void initFields() {
+      vehicleTracks_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      for (int i = 0; i < getVehicleTracksCount(); i++) {
+        if (!getVehicleTracks(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < vehicleTracks_.size(); i++) {
+        output.writeMessage(1, vehicleTracks_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i < vehicleTracks_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, vehicleTracks_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTracksResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getVehicleTracksFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (vehicleTracksBuilder_ == null) {
+          vehicleTracks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          vehicleTracksBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse result = new com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (vehicleTracksBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            vehicleTracks_ = java.util.Collections.unmodifiableList(vehicleTracks_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.vehicleTracks_ = vehicleTracks_;
+        } else {
+          result.vehicleTracks_ = vehicleTracksBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.getDefaultInstance()) return this;
+        if (vehicleTracksBuilder_ == null) {
+          if (!other.vehicleTracks_.isEmpty()) {
+            if (vehicleTracks_.isEmpty()) {
+              vehicleTracks_ = other.vehicleTracks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureVehicleTracksIsMutable();
+              vehicleTracks_.addAll(other.vehicleTracks_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.vehicleTracks_.isEmpty()) {
+            if (vehicleTracksBuilder_.isEmpty()) {
+              vehicleTracksBuilder_.dispose();
+              vehicleTracksBuilder_ = null;
+              vehicleTracks_ = other.vehicleTracks_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              vehicleTracksBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getVehicleTracksFieldBuilder() : null;
+            } else {
+              vehicleTracksBuilder_.addAllMessages(other.vehicleTracks_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        for (int i = 0; i < getVehicleTracksCount(); i++) {
+          if (!getVehicleTracks(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addVehicleTracks(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .VehicleTrackDto vehicleTracks = 1;
+      private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> vehicleTracks_ =
+        java.util.Collections.emptyList();
+      private void ensureVehicleTracksIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          vehicleTracks_ = new java.util.ArrayList<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto>(vehicleTracks_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder> vehicleTracksBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> getVehicleTracksList() {
+        if (vehicleTracksBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vehicleTracks_);
+        } else {
+          return vehicleTracksBuilder_.getMessageList();
+        }
+      }
+      public int getVehicleTracksCount() {
+        if (vehicleTracksBuilder_ == null) {
+          return vehicleTracks_.size();
+        } else {
+          return vehicleTracksBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto getVehicleTracks(int index) {
+        if (vehicleTracksBuilder_ == null) {
+          return vehicleTracks_.get(index);
+        } else {
+          return vehicleTracksBuilder_.getMessage(index);
+        }
+      }
+      public Builder setVehicleTracks(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto value) {
+        if (vehicleTracksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.set(index, value);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setVehicleTracks(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder builderForValue) {
+        if (vehicleTracksBuilder_ == null) {
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addVehicleTracks(com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto value) {
+        if (vehicleTracksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.add(value);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addVehicleTracks(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto value) {
+        if (vehicleTracksBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.add(index, value);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addVehicleTracks(
+          com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder builderForValue) {
+        if (vehicleTracksBuilder_ == null) {
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.add(builderForValue.build());
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addVehicleTracks(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder builderForValue) {
+        if (vehicleTracksBuilder_ == null) {
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllVehicleTracks(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto> values) {
+        if (vehicleTracksBuilder_ == null) {
+          ensureVehicleTracksIsMutable();
+          super.addAll(values, vehicleTracks_);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearVehicleTracks() {
+        if (vehicleTracksBuilder_ == null) {
+          vehicleTracks_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeVehicleTracks(int index) {
+        if (vehicleTracksBuilder_ == null) {
+          ensureVehicleTracksIsMutable();
+          vehicleTracks_.remove(index);
+          onChanged();
+        } else {
+          vehicleTracksBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder getVehicleTracksBuilder(
+          int index) {
+        return getVehicleTracksFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder getVehicleTracksOrBuilder(
+          int index) {
+        if (vehicleTracksBuilder_ == null) {
+          return vehicleTracks_.get(index);  } else {
+          return vehicleTracksBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder> 
+           getVehicleTracksOrBuilderList() {
+        if (vehicleTracksBuilder_ != null) {
+          return vehicleTracksBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(vehicleTracks_);
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder addVehicleTracksBuilder() {
+        return getVehicleTracksFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder addVehicleTracksBuilder(
+          int index) {
+        return getVehicleTracksFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder> 
+           getVehicleTracksBuilderList() {
+        return getVehicleTracksFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder> 
+          getVehicleTracksFieldBuilder() {
+        if (vehicleTracksBuilder_ == null) {
+          vehicleTracksBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTrackDtoOrBuilder>(
+                  vehicleTracks_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          vehicleTracks_ = null;
+        }
+        return vehicleTracksBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetVehicleTracksResponse)
+    }
+    
+    static {
+      defaultInstance = new GetVehicleTracksResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetVehicleTracksResponse)
+  }
+  
   public interface GetKmlRouteRepresentationRequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -54743,6 +57771,698 @@ public final class MessagesProto {
     }
     
     // @@protoc_insertion_point(class_scope:UploadRouteResponse)
+  }
+  
+  public interface GetAdsbBulbStatusRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int32 clientId = 1;
+    boolean hasClientId();
+    int getClientId();
+  }
+  public static final class GetAdsbBulbStatusRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements GetAdsbBulbStatusRequestOrBuilder {
+    // Use GetAdsbBulbStatusRequest.newBuilder() to construct.
+    private GetAdsbBulbStatusRequest(Builder builder) {
+      super(builder);
+    }
+    private GetAdsbBulbStatusRequest(boolean noInit) {}
+    
+    private static final GetAdsbBulbStatusRequest defaultInstance;
+    public static GetAdsbBulbStatusRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetAdsbBulbStatusRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusRequest_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int32 clientId = 1;
+    public static final int CLIENTID_FIELD_NUMBER = 1;
+    private int clientId_;
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getClientId() {
+      return clientId_;
+    }
+    
+    private void initFields() {
+      clientId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, clientId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, clientId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        clientId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest result = new com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.clientId_ = clientId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.getDefaultInstance()) return this;
+        if (other.hasClientId()) {
+          setClientId(other.getClientId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasClientId()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              clientId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 clientId = 1;
+      private int clientId_ ;
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getClientId() {
+        return clientId_;
+      }
+      public Builder setClientId(int value) {
+        bitField0_ |= 0x00000001;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetAdsbBulbStatusRequest)
+    }
+    
+    static {
+      defaultInstance = new GetAdsbBulbStatusRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetAdsbBulbStatusRequest)
+  }
+  
+  public interface GetAdsbBulbStatusResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required bool on = 1;
+    boolean hasOn();
+    boolean getOn();
+  }
+  public static final class GetAdsbBulbStatusResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements GetAdsbBulbStatusResponseOrBuilder {
+    // Use GetAdsbBulbStatusResponse.newBuilder() to construct.
+    private GetAdsbBulbStatusResponse(Builder builder) {
+      super(builder);
+    }
+    private GetAdsbBulbStatusResponse(boolean noInit) {}
+    
+    private static final GetAdsbBulbStatusResponse defaultInstance;
+    public static GetAdsbBulbStatusResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetAdsbBulbStatusResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusResponse_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required bool on = 1;
+    public static final int ON_FIELD_NUMBER = 1;
+    private boolean on_;
+    public boolean hasOn() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public boolean getOn() {
+      return on_;
+    }
+    
+    private void initFields() {
+      on_ = false;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasOn()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBool(1, on_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, on_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetAdsbBulbStatusResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        on_ = false;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse result = new com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.on_ = on_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.getDefaultInstance()) return this;
+        if (other.hasOn()) {
+          setOn(other.getOn());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasOn()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              on_ = input.readBool();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required bool on = 1;
+      private boolean on_ ;
+      public boolean hasOn() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public boolean getOn() {
+        return on_;
+      }
+      public Builder setOn(boolean value) {
+        bitField0_ |= 0x00000001;
+        on_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearOn() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        on_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetAdsbBulbStatusResponse)
+    }
+    
+    static {
+      defaultInstance = new GetAdsbBulbStatusResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetAdsbBulbStatusResponse)
   }
   
   public interface GetLicenseRequestOrBuilder
@@ -74837,983 +78557,6 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:GetCapabilitiesResponse)
   }
   
-  public interface GetVehicleTargetLocationsRequestOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required int32 clientId = 1;
-    boolean hasClientId();
-    int getClientId();
-  }
-  public static final class GetVehicleTargetLocationsRequest extends
-      com.google.protobuf.GeneratedMessage
-      implements GetVehicleTargetLocationsRequestOrBuilder {
-    // Use GetVehicleTargetLocationsRequest.newBuilder() to construct.
-    private GetVehicleTargetLocationsRequest(Builder builder) {
-      super(builder);
-    }
-    private GetVehicleTargetLocationsRequest(boolean noInit) {}
-    
-    private static final GetVehicleTargetLocationsRequest defaultInstance;
-    public static GetVehicleTargetLocationsRequest getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public GetVehicleTargetLocationsRequest getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsRequest_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsRequest_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required int32 clientId = 1;
-    public static final int CLIENTID_FIELD_NUMBER = 1;
-    private int clientId_;
-    public boolean hasClientId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getClientId() {
-      return clientId_;
-    }
-    
-    private void initFields() {
-      clientId_ = 0;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasClientId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, clientId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, clientId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequestOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsRequest_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsRequest_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        clientId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest build() {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest buildPartial() {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest result = new com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.clientId_ = clientId_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest) {
-          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest other) {
-        if (other == com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.getDefaultInstance()) return this;
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasClientId()) {
-          
-          return false;
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              clientId_ = input.readInt32();
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required int32 clientId = 1;
-      private int clientId_ ;
-      public boolean hasClientId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public int getClientId() {
-        return clientId_;
-      }
-      public Builder setClientId(int value) {
-        bitField0_ |= 0x00000001;
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearClientId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        clientId_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:GetVehicleTargetLocationsRequest)
-    }
-    
-    static {
-      defaultInstance = new GetVehicleTargetLocationsRequest(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:GetVehicleTargetLocationsRequest)
-  }
-  
-  public interface GetVehicleTargetLocationsResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // required int32 clientId = 1;
-    boolean hasClientId();
-    int getClientId();
-    
-    // repeated .VehicleTargetLocationDto targetLocations = 2;
-    java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> 
-        getTargetLocationsList();
-    com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto getTargetLocations(int index);
-    int getTargetLocationsCount();
-    java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder> 
-        getTargetLocationsOrBuilderList();
-    com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder getTargetLocationsOrBuilder(
-        int index);
-  }
-  public static final class GetVehicleTargetLocationsResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements GetVehicleTargetLocationsResponseOrBuilder {
-    // Use GetVehicleTargetLocationsResponse.newBuilder() to construct.
-    private GetVehicleTargetLocationsResponse(Builder builder) {
-      super(builder);
-    }
-    private GetVehicleTargetLocationsResponse(boolean noInit) {}
-    
-    private static final GetVehicleTargetLocationsResponse defaultInstance;
-    public static GetVehicleTargetLocationsResponse getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public GetVehicleTargetLocationsResponse getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsResponse_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsResponse_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // required int32 clientId = 1;
-    public static final int CLIENTID_FIELD_NUMBER = 1;
-    private int clientId_;
-    public boolean hasClientId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getClientId() {
-      return clientId_;
-    }
-    
-    // repeated .VehicleTargetLocationDto targetLocations = 2;
-    public static final int TARGETLOCATIONS_FIELD_NUMBER = 2;
-    private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> targetLocations_;
-    public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> getTargetLocationsList() {
-      return targetLocations_;
-    }
-    public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder> 
-        getTargetLocationsOrBuilderList() {
-      return targetLocations_;
-    }
-    public int getTargetLocationsCount() {
-      return targetLocations_.size();
-    }
-    public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto getTargetLocations(int index) {
-      return targetLocations_.get(index);
-    }
-    public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder getTargetLocationsOrBuilder(
-        int index) {
-      return targetLocations_.get(index);
-    }
-    
-    private void initFields() {
-      clientId_ = 0;
-      targetLocations_ = java.util.Collections.emptyList();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      if (!hasClientId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      for (int i = 0; i < getTargetLocationsCount(); i++) {
-        if (!getTargetLocations(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, clientId_);
-      }
-      for (int i = 0; i < targetLocations_.size(); i++) {
-        output.writeMessage(2, targetLocations_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, clientId_);
-      }
-      for (int i = 0; i < targetLocations_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, targetLocations_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsResponse_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetVehicleTargetLocationsResponse_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getTargetLocationsFieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        clientId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (targetLocationsBuilder_ == null) {
-          targetLocations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        } else {
-          targetLocationsBuilder_.clear();
-        }
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse build() {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse buildPartial() {
-        com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse result = new com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.clientId_ = clientId_;
-        if (targetLocationsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
-            targetLocations_ = java.util.Collections.unmodifiableList(targetLocations_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.targetLocations_ = targetLocations_;
-        } else {
-          result.targetLocations_ = targetLocationsBuilder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse) {
-          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse other) {
-        if (other == com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.getDefaultInstance()) return this;
-        if (other.hasClientId()) {
-          setClientId(other.getClientId());
-        }
-        if (targetLocationsBuilder_ == null) {
-          if (!other.targetLocations_.isEmpty()) {
-            if (targetLocations_.isEmpty()) {
-              targetLocations_ = other.targetLocations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-            } else {
-              ensureTargetLocationsIsMutable();
-              targetLocations_.addAll(other.targetLocations_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.targetLocations_.isEmpty()) {
-            if (targetLocationsBuilder_.isEmpty()) {
-              targetLocationsBuilder_.dispose();
-              targetLocationsBuilder_ = null;
-              targetLocations_ = other.targetLocations_;
-              bitField0_ = (bitField0_ & ~0x00000002);
-              targetLocationsBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   getTargetLocationsFieldBuilder() : null;
-            } else {
-              targetLocationsBuilder_.addAllMessages(other.targetLocations_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        if (!hasClientId()) {
-          
-          return false;
-        }
-        for (int i = 0; i < getTargetLocationsCount(); i++) {
-          if (!getTargetLocations(i).isInitialized()) {
-            
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              clientId_ = input.readInt32();
-              break;
-            }
-            case 18: {
-              com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addTargetLocations(subBuilder.buildPartial());
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // required int32 clientId = 1;
-      private int clientId_ ;
-      public boolean hasClientId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public int getClientId() {
-        return clientId_;
-      }
-      public Builder setClientId(int value) {
-        bitField0_ |= 0x00000001;
-        clientId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearClientId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        clientId_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // repeated .VehicleTargetLocationDto targetLocations = 2;
-      private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> targetLocations_ =
-        java.util.Collections.emptyList();
-      private void ensureTargetLocationsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-          targetLocations_ = new java.util.ArrayList<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto>(targetLocations_);
-          bitField0_ |= 0x00000002;
-         }
-      }
-      
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder> targetLocationsBuilder_;
-      
-      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> getTargetLocationsList() {
-        if (targetLocationsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(targetLocations_);
-        } else {
-          return targetLocationsBuilder_.getMessageList();
-        }
-      }
-      public int getTargetLocationsCount() {
-        if (targetLocationsBuilder_ == null) {
-          return targetLocations_.size();
-        } else {
-          return targetLocationsBuilder_.getCount();
-        }
-      }
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto getTargetLocations(int index) {
-        if (targetLocationsBuilder_ == null) {
-          return targetLocations_.get(index);
-        } else {
-          return targetLocationsBuilder_.getMessage(index);
-        }
-      }
-      public Builder setTargetLocations(
-          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto value) {
-        if (targetLocationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTargetLocationsIsMutable();
-          targetLocations_.set(index, value);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      public Builder setTargetLocations(
-          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder builderForValue) {
-        if (targetLocationsBuilder_ == null) {
-          ensureTargetLocationsIsMutable();
-          targetLocations_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          targetLocationsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addTargetLocations(com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto value) {
-        if (targetLocationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTargetLocationsIsMutable();
-          targetLocations_.add(value);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      public Builder addTargetLocations(
-          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto value) {
-        if (targetLocationsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureTargetLocationsIsMutable();
-          targetLocations_.add(index, value);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      public Builder addTargetLocations(
-          com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder builderForValue) {
-        if (targetLocationsBuilder_ == null) {
-          ensureTargetLocationsIsMutable();
-          targetLocations_.add(builderForValue.build());
-          onChanged();
-        } else {
-          targetLocationsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addTargetLocations(
-          int index, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder builderForValue) {
-        if (targetLocationsBuilder_ == null) {
-          ensureTargetLocationsIsMutable();
-          targetLocations_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          targetLocationsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      public Builder addAllTargetLocations(
-          java.lang.Iterable<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto> values) {
-        if (targetLocationsBuilder_ == null) {
-          ensureTargetLocationsIsMutable();
-          super.addAll(values, targetLocations_);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      public Builder clearTargetLocations() {
-        if (targetLocationsBuilder_ == null) {
-          targetLocations_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.clear();
-        }
-        return this;
-      }
-      public Builder removeTargetLocations(int index) {
-        if (targetLocationsBuilder_ == null) {
-          ensureTargetLocationsIsMutable();
-          targetLocations_.remove(index);
-          onChanged();
-        } else {
-          targetLocationsBuilder_.remove(index);
-        }
-        return this;
-      }
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder getTargetLocationsBuilder(
-          int index) {
-        return getTargetLocationsFieldBuilder().getBuilder(index);
-      }
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder getTargetLocationsOrBuilder(
-          int index) {
-        if (targetLocationsBuilder_ == null) {
-          return targetLocations_.get(index);  } else {
-          return targetLocationsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder> 
-           getTargetLocationsOrBuilderList() {
-        if (targetLocationsBuilder_ != null) {
-          return targetLocationsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(targetLocations_);
-        }
-      }
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder addTargetLocationsBuilder() {
-        return getTargetLocationsFieldBuilder().addBuilder(
-            com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.getDefaultInstance());
-      }
-      public com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder addTargetLocationsBuilder(
-          int index) {
-        return getTargetLocationsFieldBuilder().addBuilder(
-            index, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.getDefaultInstance());
-      }
-      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder> 
-           getTargetLocationsBuilderList() {
-        return getTargetLocationsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder> 
-          getTargetLocationsFieldBuilder() {
-        if (targetLocationsBuilder_ == null) {
-          targetLocationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDtoOrBuilder>(
-                  targetLocations_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
-                  getParentForChildren(),
-                  isClean());
-          targetLocations_ = null;
-        }
-        return targetLocationsBuilder_;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:GetVehicleTargetLocationsResponse)
-    }
-    
-    static {
-      defaultInstance = new GetVehicleTargetLocationsResponse(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:GetVehicleTargetLocationsResponse)
-  }
-  
   public interface OperationStatusOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -81213,15 +83956,25 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_PlatformAndDoublePairDto_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_VehicleTargetLocationDto_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_VehicleTargetLocationDto_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_VehicleCommandResultDto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_VehicleCommandResultDto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_TrackPointDto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_TrackPointDto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_VehicleTrackDto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_VehicleTrackDto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImportRouteParameterDto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_ImportRouteParameterDto_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_AlgorithmsMappingDto_descriptor;
   private static
@@ -81428,15 +84181,15 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_ExportRouteToXmlResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_ImportRouteFromXmlRequest_descriptor;
+    internal_static_ImportRouteRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_ImportRouteFromXmlRequest_fieldAccessorTable;
+      internal_static_ImportRouteRequest_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_ImportRouteFromXmlResponse_descriptor;
+    internal_static_ImportRouteResponse_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_ImportRouteFromXmlResponse_fieldAccessorTable;
+      internal_static_ImportRouteResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_ExportMissionToXmlRequest_descriptor;
   private static
@@ -81558,6 +84311,16 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_CountTelemetryResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetVehicleTracksRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetVehicleTracksRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetVehicleTracksResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetVehicleTracksResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_GetKmlRouteRepresentationRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -81627,6 +84390,16 @@ public final class MessagesProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_UploadRouteResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAdsbBulbStatusRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetAdsbBulbStatusRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetAdsbBulbStatusResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetAdsbBulbStatusResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_GetLicenseRequest_descriptor;
   private static
@@ -81818,16 +84591,6 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_GetCapabilitiesResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetVehicleTargetLocationsRequest_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_GetVehicleTargetLocationsRequest_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_GetVehicleTargetLocationsResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_GetVehicleTargetLocationsResponse_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_OperationStatus_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -81923,7 +84686,7 @@ public final class MessagesProto {
       "\030\003 \002(\t\022\024\n\014clientOsType\030\004 \002(\t\022\027\n\017clientOs" +
       "Version\030\005 \002(\t\022\024\n\014unityVersion\030\006 \002(\t\022%\n\007d" +
       "etails\030\007 \003(\0132\024.StatisticsRecordDto\"$\n\rCo" +
-      "mmandSetDto\022\023\n\013commandCode\030\001 \003(\t\"\227\005\n\025Lic" +
+      "mmandSetDto\022\023\n\013commandCode\030\001 \003(\t\"\263\005\n\025Lic" +
       "ensePermissionsDto\022\023\n\013licenseName\030\001 \002(\t\022" +
       "#\n\033maxAuthenticatedHciSessions\030\002 \002(\005\022\021\n\t",
       "multinode\030\003 \002(\010\022\021\n\tkmlImport\030\004 \002(\010\022\021\n\tde" +
@@ -81940,295 +84703,304 @@ public final class MessagesProto {
       "3\n\017cameraFootprint\030\016 \003(\0132\032.PlatformAndBo" +
       "oleanPairDto\0223\n\017adsbTransponder\030\017 \003(\0132\032." +
       "PlatformAndBooleanPairDto\022\037\n\027forbiddenAl" +
-      "gorithmCodes\030\020 \003(\t\"G\n\031PlatformAndBoolean" +
-      "PairDto\022\033\n\010platform\030\001 \002(\0132\t.Platform\022\r\n\005" +
-      "value\030\002 \002(\010\"G\n\031PlatformAndIntegerPairDto" +
-      "\022\033\n\010platform\030\001 \002(\0132\t.Platform\022\r\n\005value\030\002" +
-      " \002(\005\"F\n\030PlatformAndDoublePairDto\022\033\n\010plat" +
-      "form\030\001 \002(\0132\t.Platform\022\r\n\005value\030\002 \002(\001\"\210\001\n",
-      "\030VehicleTargetLocationDto\022\031\n\007vehicle\030\001 \002" +
-      "(\0132\010.Vehicle\022\022\n\nsequenceId\030\002 \002(\003\022#\n\010loca" +
-      "tion\030\003 \001(\0132\021.Wgs84LocationDto\022\030\n\020accepta" +
-      "nceRadius\030\004 \001(\001\"[\n\027VehicleCommandResultD" +
-      "to\022\031\n\007vehicle\030\001 \002(\0132\010.Vehicle\022%\n\rcommand" +
-      "Status\030\002 \002(\0162\016.CommandStatus\":\n\024Algorith" +
-      "msMappingDto\022\"\n\nalgorithms\030\001 \003(\0132\016.Algor" +
-      "ithmsDto\"I\n\031FailsafeActionsMappingDto\022,\n" +
-      "\017failsafeActions\030\001 \003(\0132\023.FailsafeActions" +
-      "Dto\"F\n\023TurnTypesMappingDto\022/\n\021platformTu",
-      "rnTypes\030\001 \003(\0132\024.PlatformTurnTypeDto\"]\n\032A" +
-      "ctionExecutionsMappingDto\022?\n\031algorithmAc" +
-      "tionExecutions\030\001 \003(\0132\034.AlgorithmActionEx" +
-      "ecutionDto\">\n\021CamerasMappingDto\022)\n\016profi" +
-      "leCameras\030\001 \003(\0132\021.ProfileCameraDto\"B\n\027Al" +
-      "titudeTypesMappingDto\022\'\n\raltitudeTypes\030\001" +
-      " \003(\0132\020.AltitudeTypeDto\"_\n\035PlatformAndVeh" +
-      "icleTypePairDto\022\033\n\010platform\030\001 \002(\0132\t.Plat" +
-      "form\022!\n\013vehicleType\030\002 \002(\0162\014.VehicleType\"" +
-      "]\n\030FailsafeReasonActionsDto\022\037\n\006reason\030\001 ",
-      "\002(\0162\017.FailsafeReason\022 \n\007actions\030\002 \003(\0162\017." +
-      "FailsafeAction\"\216\001\n\022FailsafeActionsDto\022>\n" +
-      "\026platformAndVehicleType\030\001 \002(\0132\036.Platform" +
-      "AndVehicleTypePairDto\0228\n\025failsafeReasonA" +
-      "ctions\030\002 \003(\0132\031.FailsafeReasonActionsDto\"" +
-      "d\n\031AlgorithmAndActionCodeDto\022%\n\talgorith" +
-      "m\030\001 \002(\0132\022.TraverseAlgorithm\022 \n\013actionCod" +
-      "es\030\002 \003(\0162\013.ActionCode\"\214\001\n\rAlgorithmsDto\022" +
-      ">\n\026platformAndVehicleType\030\001 \002(\0132\036.Platfo" +
-      "rmAndVehicleTypePairDto\022;\n\027algorithmAndA",
-      "ctionCodes\030\002 \003(\0132\032.AlgorithmAndActionCod" +
-      "eDto\"4\n\013TurnTypeDto\022\020\n\010turnType\030\001 \002(\t\022\023\n" +
-      "\013description\030\002 \002(\t\"v\n\023PlatformTurnTypeDt" +
-      "o\022>\n\026platformAndVehicleType\030\001 \002(\0132\036.Plat" +
-      "formAndVehicleTypePairDto\022\037\n\tturnTypes\030\002" +
-      " \003(\0132\014.TurnTypeDto\"<\n\017AltitudeTypeDto\022\024\n" +
-      "\014altitudeType\030\001 \002(\t\022\023\n\013description\030\002 \002(\t" +
-      "\"B\n\022ActionExecutionDto\022\027\n\017actionExecutio" +
-      "n\030\001 \002(\t\022\023\n\013description\030\002 \002(\t\"r\n\033Algorith" +
-      "mActionExecutionDto\022%\n\talgorithm\030\001 \002(\0132\022",
-      ".TraverseAlgorithm\022,\n\017actionExecution\030\002 " +
-      "\003(\0132\023.ActionExecutionDto\"1\n\tCameraDto\022\020\n" +
-      "\010cameraId\030\001 \002(\005\022\022\n\ncameraName\030\002 \002(\t\"B\n\020P" +
-      "rofileCameraDto\022\021\n\tprofileId\030\001 \002(\005\022\033\n\007ca" +
-      "meras\030\002 \003(\0132\n.CameraDto\"0\n\005Error\022\024\n\014erro" +
-      "rMessage\030\001 \001(\t\022\021\n\terrorCode\030\002 \001(\005\";\n\023Aut" +
-      "horizeHciRequest\022\024\n\010clientId\030\001 \002(\005:\002-1\022\016" +
-      "\n\006locale\030\002 \001(\t\"(\n\024AuthorizeHciResponse\022\020" +
-      "\n\010clientId\030\001 \002(\005\"7\n\023SetHciLocaleRequest\022" +
-      "\020\n\010clientId\030\001 \002(\005\022\016\n\006locale\030\002 \002(\t\"\026\n\024Set",
-      "HciLocaleResponse\"I\n\014LoginRequest\022\020\n\010cli" +
-      "entId\030\001 \002(\005\022\021\n\tuserLogin\030\002 \002(\t\022\024\n\014userPa" +
-      "ssword\030\003 \002(\t\"$\n\rLoginResponse\022\023\n\004user\030\001 " +
-      "\002(\0132\005.User\"!\n\rLogoutRequest\022\020\n\010clientId\030" +
-      "\001 \002(\005\"\020\n\016LogoutResponse\">\n\023ProcessRouteR" +
-      "equest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132" +
-      "\006.Route\"?\n\024ProcessRouteResponse\022\'\n\016proce" +
-      "ssedRoute\030\001 \002(\0132\017.ProcessedRoute\"l\n\034Conv" +
-      "ertRouteAltitudesRequest\022\020\n\010clientId\030\001 \002" +
-      "(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n\014altitudeTyp",
-      "e\030\004 \002(\0162\r.AltitudeType\"6\n\035ConvertRouteAl" +
-      "titudesResponse\022\025\n\005route\030\001 \002(\0132\006.Route\"p" +
-      "\n ChangeRouteVehicleProfileRequest\022\020\n\010cl" +
-      "ientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n\nn" +
-      "ewProfile\030\003 \002(\0132\017.VehicleProfile\"R\n!Chan" +
-      "geRouteVehicleProfileResponse\022\025\n\005route\030\001" +
-      " \002(\0132\006.Route\022\026\n\016warningMessage\030\002 \003(\t\"u\n#" +
-      "GetParametersSelectionValuesRequest\022\020\n\010c" +
-      "lientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022%\n\t" +
-      "algorithm\030\003 \002(\0132\022.TraverseAlgorithm\"F\n$G",
-      "etParametersSelectionValuesResponse\022\036\n\ns" +
-      "elections\030\001 \003(\0132\n.Selection\"z\n\032GetElevat" +
-      "ionProfileRequest\022\020\n\010clientId\030\001 \002(\005\022\024\n\014s" +
-      "amplingStep\030\003 \002(\001\022$\n\tlocations\030\004 \003(\0132\021.W" +
-      "gs84LocationDto\022\016\n\006number\030\005 \001(\005\"o\n\033GetEl" +
-      "evationProfileResponse\022$\n\tlocations\030\001 \003(" +
-      "\0132\021.Wgs84LocationDto\022\022\n\nelevations\030\002 \003(\001" +
-      "\022\026\n\016obstacleHeight\030\003 \003(\001\"Z\n\026CalculateSpl" +
-      "ineRequest\022\020\n\010clientId\030\001 \002(\005\022\034\n\twaypount" +
-      "s\030\002 \003(\0132\t.Waypoint\022\020\n\010accuracy\030\003 \001(\001\"?\n\027",
-      "CalculateSplineResponse\022$\n\tlocations\030\001 \003" +
-      "(\0132\021.Wgs84LocationDto\"B\n\027ExportRouteToXm" +
-      "lRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(" +
-      "\0132\006.Route\",\n\030ExportRouteToXmlResponse\022\020\n" +
-      "\010routeXml\030\001 \002(\014\"?\n\031ImportRouteFromXmlReq" +
-      "uest\022\020\n\010clientId\030\001 \002(\005\022\020\n\010routeXml\030\002 \002(\014" +
-      "\"3\n\032ImportRouteFromXmlResponse\022\025\n\005route\030" +
-      "\001 \002(\0132\006.Route\"H\n\031ExportMissionToXmlReque" +
-      "st\022\020\n\010clientId\030\001 \002(\005\022\031\n\007mission\030\002 \002(\0132\010." +
-      "Mission\"0\n\032ExportMissionToXmlResponse\022\022\n",
-      "\nmissionXml\030\001 \002(\014\"C\n\033ImportMissionFromXm" +
-      "lRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nmissionXml" +
-      "\030\002 \002(\014\"9\n\034ImportMissionFromXmlResponse\022\031" +
-      "\n\007mission\030\001 \002(\0132\010.Mission\"^\n\033ExportTelem" +
-      "etryToXmlRequest\022\020\n\010clientId\030\001 \002(\005\022-\n\021te" +
-      "lemetryInterval\030\002 \002(\0132\022.TelemetryInterva" +
-      "l\"4\n\034ExportTelemetryToXmlResponse\022\024\n\014tel" +
-      "emetryXml\030\001 \002(\014\"\200\001\n\035ImportTelemetryFromX" +
-      "mlRequest\022\020\n\010clientId\030\001 \002(\005\022\024\n\014telemetry" +
-      "Xml\030\002 \002(\014\0227\n\026conflictResolutionMode\030\003 \002(",
-      "\0162\027.ConflictResolutionMode\"O\n\036ImportTele" +
-      "metryFromXmlResponse\022-\n\021telemetryInterva" +
-      "l\030\001 \002(\0132\022.TelemetryInterval\"\206\001\n\025GetLineO" +
-      "fSightRequest\022\020\n\010clientId\030\001 \002(\005\022*\n\020obser" +
-      "verPosition\030\002 \002(\0132\020.MeasurePointDto\022\023\n\013m" +
-      "axDistance\030\003 \002(\001\022\032\n\022approxPointsNumber\030\004" +
-      " \002(\005\":\n\026GetLineOfSightResponse\022 \n\006points" +
-      "\030\001 \003(\0132\020.MeasurePointDto\"\270\001\n\021GetNfzListR" +
+      "gorithmCodes\030\020 \003(\t\022\032\n\022maxImagesToProcess" +
+      "\030\021 \002(\005\"G\n\031PlatformAndBooleanPairDto\022\033\n\010p" +
+      "latform\030\001 \002(\0132\t.Platform\022\r\n\005value\030\002 \002(\010\"" +
+      "G\n\031PlatformAndIntegerPairDto\022\033\n\010platform" +
+      "\030\001 \002(\0132\t.Platform\022\r\n\005value\030\002 \002(\005\"F\n\030Plat" +
+      "formAndDoublePairDto\022\033\n\010platform\030\001 \002(\0132\t",
+      ".Platform\022\r\n\005value\030\002 \002(\001\"[\n\027VehicleComma" +
+      "ndResultDto\022\031\n\007vehicle\030\001 \002(\0132\010.Vehicle\022%" +
+      "\n\rcommandStatus\030\002 \002(\0162\016.CommandStatus\"B\n" +
+      "\rTrackPointDto\022\014\n\004time\030\001 \002(\003\022#\n\010location" +
+      "\030\002 \002(\0132\021.Wgs84LocationDto\"L\n\017VehicleTrac" +
+      "kDto\022\031\n\007vehicle\030\001 \002(\0132\010.Vehicle\022\036\n\006point" +
+      "s\030\002 \003(\0132\016.TrackPointDto\"`\n\027ImportRoutePa" +
+      "rameterDto\022\026\n\016algorithmClass\030\001 \002(\t\022\025\n\rpa" +
+      "rameterName\030\002 \002(\t\022\026\n\016parameterValue\030\003 \002(" +
+      "\t\":\n\024AlgorithmsMappingDto\022\"\n\nalgorithms\030",
+      "\001 \003(\0132\016.AlgorithmsDto\"I\n\031FailsafeActions" +
+      "MappingDto\022,\n\017failsafeActions\030\001 \003(\0132\023.Fa" +
+      "ilsafeActionsDto\"F\n\023TurnTypesMappingDto\022" +
+      "/\n\021platformTurnTypes\030\001 \003(\0132\024.PlatformTur" +
+      "nTypeDto\"]\n\032ActionExecutionsMappingDto\022?" +
+      "\n\031algorithmActionExecutions\030\001 \003(\0132\034.Algo" +
+      "rithmActionExecutionDto\">\n\021CamerasMappin" +
+      "gDto\022)\n\016profileCameras\030\001 \003(\0132\021.ProfileCa" +
+      "meraDto\"B\n\027AltitudeTypesMappingDto\022\'\n\ral" +
+      "titudeTypes\030\001 \003(\0132\020.AltitudeTypeDto\"_\n\035P",
+      "latformAndVehicleTypePairDto\022\033\n\010platform" +
+      "\030\001 \002(\0132\t.Platform\022!\n\013vehicleType\030\002 \002(\0162\014" +
+      ".VehicleType\"]\n\030FailsafeReasonActionsDto" +
+      "\022\037\n\006reason\030\001 \002(\0162\017.FailsafeReason\022 \n\007act" +
+      "ions\030\002 \003(\0162\017.FailsafeAction\"\216\001\n\022Failsafe" +
+      "ActionsDto\022>\n\026platformAndVehicleType\030\001 \002" +
+      "(\0132\036.PlatformAndVehicleTypePairDto\0228\n\025fa" +
+      "ilsafeReasonActions\030\002 \003(\0132\031.FailsafeReas" +
+      "onActionsDto\"d\n\031AlgorithmAndActionCodeDt" +
+      "o\022%\n\talgorithm\030\001 \002(\0132\022.TraverseAlgorithm",
+      "\022 \n\013actionCodes\030\002 \003(\0162\013.ActionCode\"\214\001\n\rA" +
+      "lgorithmsDto\022>\n\026platformAndVehicleType\030\001" +
+      " \002(\0132\036.PlatformAndVehicleTypePairDto\022;\n\027" +
+      "algorithmAndActionCodes\030\002 \003(\0132\032.Algorith" +
+      "mAndActionCodeDto\"4\n\013TurnTypeDto\022\020\n\010turn" +
+      "Type\030\001 \002(\t\022\023\n\013description\030\002 \002(\t\"v\n\023Platf" +
+      "ormTurnTypeDto\022>\n\026platformAndVehicleType" +
+      "\030\001 \002(\0132\036.PlatformAndVehicleTypePairDto\022\037" +
+      "\n\tturnTypes\030\002 \003(\0132\014.TurnTypeDto\"<\n\017Altit" +
+      "udeTypeDto\022\024\n\014altitudeType\030\001 \002(\t\022\023\n\013desc",
+      "ription\030\002 \002(\t\"B\n\022ActionExecutionDto\022\027\n\017a" +
+      "ctionExecution\030\001 \002(\t\022\023\n\013description\030\002 \002(" +
+      "\t\"r\n\033AlgorithmActionExecutionDto\022%\n\talgo" +
+      "rithm\030\001 \002(\0132\022.TraverseAlgorithm\022,\n\017actio" +
+      "nExecution\030\002 \003(\0132\023.ActionExecutionDto\"1\n" +
+      "\tCameraDto\022\020\n\010cameraId\030\001 \002(\005\022\022\n\ncameraNa" +
+      "me\030\002 \002(\t\"B\n\020ProfileCameraDto\022\021\n\tprofileI" +
+      "d\030\001 \002(\005\022\033\n\007cameras\030\002 \003(\0132\n.CameraDto\"0\n\005" +
+      "Error\022\024\n\014errorMessage\030\001 \001(\t\022\021\n\terrorCode" +
+      "\030\002 \001(\005\";\n\023AuthorizeHciRequest\022\024\n\010clientI",
+      "d\030\001 \002(\005:\002-1\022\016\n\006locale\030\002 \001(\t\"(\n\024Authorize" +
+      "HciResponse\022\020\n\010clientId\030\001 \002(\005\"7\n\023SetHciL" +
+      "ocaleRequest\022\020\n\010clientId\030\001 \002(\005\022\016\n\006locale" +
+      "\030\002 \002(\t\"\026\n\024SetHciLocaleResponse\"I\n\014LoginR" +
+      "equest\022\020\n\010clientId\030\001 \002(\005\022\021\n\tuserLogin\030\002 " +
+      "\002(\t\022\024\n\014userPassword\030\003 \002(\t\"$\n\rLoginRespon" +
+      "se\022\023\n\004user\030\001 \002(\0132\005.User\"!\n\rLogoutRequest" +
+      "\022\020\n\010clientId\030\001 \002(\005\"\020\n\016LogoutResponse\">\n\023" +
+      "ProcessRouteRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n" +
+      "\005route\030\002 \002(\0132\006.Route\"?\n\024ProcessRouteResp",
+      "onse\022\'\n\016processedRoute\030\001 \002(\0132\017.Processed" +
+      "Route\"l\n\034ConvertRouteAltitudesRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#" +
+      "\n\014altitudeType\030\004 \002(\0162\r.AltitudeType\"6\n\035C" +
+      "onvertRouteAltitudesResponse\022\025\n\005route\030\001 " +
+      "\002(\0132\006.Route\"p\n ChangeRouteVehicleProfile" +
+      "Request\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\013" +
+      "2\006.Route\022#\n\nnewProfile\030\003 \002(\0132\017.VehiclePr" +
+      "ofile\"R\n!ChangeRouteVehicleProfileRespon" +
+      "se\022\025\n\005route\030\001 \002(\0132\006.Route\022\026\n\016warningMess",
+      "age\030\002 \003(\t\"u\n#GetParametersSelectionValue" +
+      "sRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(" +
+      "\0132\006.Route\022%\n\talgorithm\030\003 \002(\0132\022.TraverseA" +
+      "lgorithm\"F\n$GetParametersSelectionValues" +
+      "Response\022\036\n\nselections\030\001 \003(\0132\n.Selection" +
+      "\"z\n\032GetElevationProfileRequest\022\020\n\010client" +
+      "Id\030\001 \002(\005\022\024\n\014samplingStep\030\003 \002(\001\022$\n\tlocati" +
+      "ons\030\004 \003(\0132\021.Wgs84LocationDto\022\016\n\006number\030\005" +
+      " \001(\005\"o\n\033GetElevationProfileResponse\022$\n\tl" +
+      "ocations\030\001 \003(\0132\021.Wgs84LocationDto\022\022\n\nele",
+      "vations\030\002 \003(\001\022\026\n\016obstacleHeight\030\003 \003(\001\"Z\n" +
+      "\026CalculateSplineRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\022\034\n\twaypounts\030\002 \003(\0132\t.Waypoint\022\020\n\010accur" +
+      "acy\030\003 \001(\001\"?\n\027CalculateSplineResponse\022$\n\t" +
+      "locations\030\001 \003(\0132\021.Wgs84LocationDto\"B\n\027Ex" +
+      "portRouteToXmlRequest\022\020\n\010clientId\030\001 \002(\005\022" +
+      "\025\n\005route\030\002 \002(\0132\006.Route\",\n\030ExportRouteToX" +
+      "mlResponse\022\020\n\010routeXml\030\001 \002(\014\"\240\001\n\022ImportR" +
+      "outeRequest\022\020\n\010clientId\030\001 \002(\005\022\021\n\trouteDa" +
+      "ta\030\002 \002(\014\022\020\n\010filename\030\003 \002(\t\022%\n\talgorithm\030",
+      "\004 \001(\0132\022.TraverseAlgorithm\022,\n\nparameters\030" +
+      "\005 \003(\0132\030.ImportRouteParameterDto\",\n\023Impor" +
+      "tRouteResponse\022\025\n\005route\030\001 \002(\0132\006.Route\"H\n" +
+      "\031ExportMissionToXmlRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022\031\n\007mission\030\002 \002(\0132\010.Mission\"0\n\032Expor" +
+      "tMissionToXmlResponse\022\022\n\nmissionXml\030\001 \002(" +
+      "\014\"C\n\033ImportMissionFromXmlRequest\022\020\n\010clie" +
+      "ntId\030\001 \002(\005\022\022\n\nmissionXml\030\002 \002(\014\"9\n\034Import" +
+      "MissionFromXmlResponse\022\031\n\007mission\030\001 \002(\0132" +
+      "\010.Mission\"^\n\033ExportTelemetryToXmlRequest",
+      "\022\020\n\010clientId\030\001 \002(\005\022-\n\021telemetryInterval\030" +
+      "\002 \002(\0132\022.TelemetryInterval\"4\n\034ExportTelem" +
+      "etryToXmlResponse\022\024\n\014telemetryXml\030\001 \002(\014\"" +
+      "\216\001\n\035ImportTelemetryFromXmlRequest\022\020\n\010cli" +
+      "entId\030\001 \002(\005\022\024\n\014telemetryXml\030\002 \002(\014\0227\n\026con" +
+      "flictResolutionMode\030\003 \002(\0162\027.ConflictReso" +
+      "lutionMode\022\014\n\004name\030\004 \001(\t\"O\n\036ImportTeleme" +
+      "tryFromXmlResponse\022-\n\021telemetryInterval\030" +
+      "\001 \002(\0132\022.TelemetryInterval\"\206\001\n\025GetLineOfS" +
+      "ightRequest\022\020\n\010clientId\030\001 \002(\005\022*\n\020observe",
+      "rPosition\030\002 \002(\0132\020.MeasurePointDto\022\023\n\013max" +
+      "Distance\030\003 \002(\001\022\032\n\022approxPointsNumber\030\004 \002" +
+      "(\005\":\n\026GetLineOfSightResponse\022 \n\006points\030\001" +
+      " \003(\0132\020.MeasurePointDto\"\270\001\n\021GetNfzListReq" +
+      "uest\022\020\n\010clientId\030\001 \002(\005\022\023\n\013minLatitude\030\002 " +
+      "\002(\001\022\024\n\014minLongitude\030\003 \002(\001\022\023\n\013maxLatitude" +
+      "\030\004 \002(\001\022\024\n\014maxLongitude\030\005 \002(\001\022\"\n\023refreshD" +
+      "ependencies\030\006 \001(\010:\005false\022\027\n\017refreshExclu" +
+      "des\030\007 \003(\t\"2\n\022GetNfzListResponse\022\034\n\005zones" +
+      "\030\001 \003(\0132\r.NoFlightZone\"\235\001\n\024GetRasterGridR",
       "equest\022\020\n\010clientId\030\001 \002(\005\022\023\n\013minLatitude\030" +
-      "\002 \002(\001\022\024\n\014minLongitude\030\003 \002(\001\022\023\n\013maxLatitu",
-      "de\030\004 \002(\001\022\024\n\014maxLongitude\030\005 \002(\001\022\"\n\023refres" +
-      "hDependencies\030\006 \001(\010:\005false\022\027\n\017refreshExc" +
-      "ludes\030\007 \003(\t\"2\n\022GetNfzListResponse\022\034\n\005zon" +
-      "es\030\001 \003(\0132\r.NoFlightZone\"\235\001\n\024GetRasterGri" +
-      "dRequest\022\020\n\010clientId\030\001 \002(\005\022\023\n\013minLatitud" +
-      "e\030\003 \002(\001\022\024\n\014minLongitude\030\004 \002(\001\022\023\n\013maxLati" +
-      "tude\030\005 \002(\001\022\024\n\014maxLongitude\030\006 \002(\001\022\r\n\005widt" +
-      "h\030\007 \002(\005\022\016\n\006height\030\010 \002(\005\"V\n\025GetRasterGrid" +
-      "Response\022\016\n\006values\030\001 \003(\002\022\r\n\005width\030\002 \002(\005\022" +
-      "\016\n\006height\030\003 \002(\005\022\016\n\006noData\030\004 \002(\010\"Q\n\026GetRa",
-      "sterValuesRequest\022\020\n\010clientId\030\001 \002(\005\022\021\n\tl" +
-      "atitudes\030\003 \003(\001\022\022\n\nlongitudes\030\004 \003(\001\"9\n\027Ge" +
-      "tRasterValuesResponse\022\016\n\006values\030\001 \003(\002\022\016\n" +
-      "\006noData\030\002 \002(\010\"y\n\023GetTelemetryRequest\022\020\n\010" +
-      "clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicl" +
-      "e\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\023\n\005l" +
-      "imit\030\005 \001(\005:\0047200\"S\n\024GetTelemetryResponse" +
-      "\022 \n\ttelemetry\030\001 \003(\0132\r.TelemetryDto\022\031\n\021ne" +
-      "xtTelemetryTime\030\002 \001(\003\"g\n\026DeleteTelemetry" +
-      "Request\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002",
-      "(\0132\010.Vehicle\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime" +
-      "\030\004 \001(\003\"\031\n\027DeleteTelemetryResponse\"\200\001\n\033Tr" +
-      "aceTelemetryFramesRequest\022\020\n\010clientId\030\001 " +
-      "\002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\022\n\norigin" +
-      "Time\030\003 \002(\003\022\020\n\010interval\030\004 \002(\001\022\016\n\006number\030\005" +
-      " \002(\005\"U\n\034TraceTelemetryFramesResponse\022\016\n\006" +
-      "frames\030\001 \003(\010\022%\n\rcommandFrames\030\002 \003(\0132\016.Co" +
-      "mmandSetDto\"\207\001\n\025CountTelemetryRequest\022\020\n" +
-      "\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehic" +
-      "le\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime\030\004 \001(\003\022\037\n\020",
-      "estimateTLogSize\030\005 \001(\010:\005false\"9\n\026CountTe" +
-      "lemetryResponse\022\r\n\005count\030\001 \002(\003\022\020\n\010tLogSi" +
-      "ze\030\002 \001(\003\"\233\001\n GetKmlRouteRepresentationRe" +
-      "quest\022\020\n\010clientId\030\001 \002(\005\022\021\n\trouteName\030\002 \002" +
-      "(\t\022,\n\023routeVehicleProfile\030\003 \002(\0132\017.Vehicl" +
-      "eProfile\022$\n\twaypoints\030\004 \003(\0132\021.Wgs84Locat" +
-      "ionDto\"4\n!GetKmlRouteRepresentationRespo" +
-      "nse\022\017\n\007kmlData\030\001 \002(\014\"s\n\032GetAdsbAircraftL" +
-      "istRequest\022\020\n\010clientId\030\001 \002(\005\022#\n\010location" +
-      "\030\002 \002(\0132\021.Wgs84LocationDto\022\016\n\006radius\030\003 \002(",
-      "\001\022\016\n\006height\030\004 \002(\001\"?\n\033GetAdsbAircraftList" +
-      "Response\022 \n\taircrafts\030\001 \003(\0132\r.AdsbAircra" +
-      "ft\"H\n\023SearchPlacesRequest\022\020\n\010clientId\030\001 " +
-      "\002(\005\022\r\n\005query\030\002 \002(\t\022\020\n\005limit\030\003 \002(\005:\0017\"1\n\024" +
-      "SearchPlacesResponse\022\031\n\006places\030\001 \003(\0132\t.P" +
-      "laceDto\"\210\001\n\024GetVehicleLogRequest\022\020\n\010clie" +
-      "ntId\030\001 \002(\005\022\032\n\010vehicles\030\002 \003(\0132\010.Vehicle\022\021" +
-      "\n\005limit\030\003 \001(\005:\00215\022/\n\005level\030\004 \001(\0162\016.Sever" +
-      "ityLevel:\020SL_INFORMATIONAL\"D\n\025GetVehicle" +
-      "LogResponse\022+\n\021vehicleLogEntries\030\001 \003(\0132\020",
-      ".VehicleLogEntry\"\242\001\n\037GetVehicleLogByTime" +
-      "RangeRequest\022\020\n\010clientId\030\001 \002(\005\022\032\n\010vehicl" +
-      "es\030\002 \003(\0132\010.Vehicle\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006" +
-      "toTime\030\004 \002(\003\022/\n\005level\030\005 \001(\0162\016.SeverityLe" +
-      "vel:\020SL_INFORMATIONAL\"O\n GetVehicleLogBy" +
-      "TimeRangeResponse\022+\n\021vehicleLogEntries\030\001" +
-      " \003(\0132\020.VehicleLogEntry\"t\n\022SendCommandReq" +
-      "uest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007command\030\002 \002(\0132" +
-      "\010.Command\022\032\n\010vehicles\030\003 \003(\0132\010.Vehicle\022\025\n" +
-      "\ninterDelay\030\004 \001(\003:\0010\"G\n\023SendCommandRespo",
-      "nse\0220\n\016commandResults\030\001 \003(\0132\030.VehicleCom" +
-      "mandResultDto\"\210\001\n\022UploadRouteRequest\022\020\n\010" +
-      "clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicl" +
-      "e\022\'\n\016processedRoute\030\003 \002(\0132\017.ProcessedRou" +
-      "te\022\034\n\013startAction\030\004 \001(\0132\007.Action\"\025\n\023Uplo" +
-      "adRouteResponse\"%\n\021GetLicenseRequest\022\020\n\010" +
-      "clientId\030\001 \002(\005\"c\n\022GetLicenseResponse\022\031\n\007" +
-      "license\030\001 \001(\0132\010.License\0222\n\022licensePermis" +
-      "sions\030\002 \002(\0132\026.LicensePermissionsDto\"B\n\026A" +
-      "ctivateLicenseRequest\022\020\n\010clientId\030\001 \002(\005\022",
-      "\026\n\016activationCode\030\002 \002(\t\"4\n\027ActivateLicen" +
-      "seResponse\022\031\n\007license\030\001 \001(\0132\010.License\",\n" +
-      "\030DeactivateLicenseRequest\022\020\n\010clientId\030\001 " +
-      "\002(\005\"\033\n\031DeactivateLicenseResponse\"*\n\026Chec" +
-      "kForUpdatesRequest\022\020\n\010clientId\030\001 \002(\005\"@\n\027" +
-      "CheckForUpdatesResponse\022%\n\013newVersions\030\001" +
-      " \001(\0132\020.VersionsInfoDto\"M\n\025SendStatistics" +
-      "Request\022\020\n\010clientId\030\001 \002(\005\022\"\n\nstatistics\030" +
-      "\002 \002(\0132\016.StatisticsDto\"*\n\026SendStatisticsR" +
-      "esponse\022\020\n\010accepted\030\001 \002(\010\"\222\001\n\024GetObjectL",
-      "istRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectTy" +
-      "pe\030\002 \002(\t\022\"\n\023refreshDependencies\030\003 \001(\010:\005f" +
-      "alse\022\027\n\017refreshExcludes\030\004 \003(\t\022\027\n\ttransla" +
-      "te\030\005 \001(\010:\004true\"R\n\025GetObjectListResponse\022" +
-      "\022\n\nobjectType\030\001 \002(\t\022%\n\007objects\030\002 \003(\0132\024.D" +
-      "omainObjectWrapper\"\240\001\n\020GetObjectRequest\022" +
-      "\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n" +
-      "\010objectId\030\003 \002(\005\022\"\n\023refreshDependencies\030\004" +
-      " \001(\010:\005false\022\027\n\017refreshExcludes\030\005 \003(\t\022\027\n\t" +
-      "translate\030\006 \001(\010:\004true\"M\n\021GetObjectRespon",
-      "se\022\022\n\nobjectType\030\001 \002(\t\022$\n\006object\030\002 \002(\0132\024" +
-      ".DomainObjectWrapper\"\243\001\n\033CreateOrUpdateO" +
-      "bjectRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobject" +
-      "Type\030\002 \002(\t\022$\n\006object\030\003 \002(\0132\024.DomainObjec" +
-      "tWrapper\022\034\n\016withComposites\030\004 \001(\010:\004true\022\032" +
-      "\n\013acquireLock\030\005 \001(\010:\005false\"X\n\034CreateOrUp" +
-      "dateObjectResponse\022\022\n\nobjectType\030\001 \002(\t\022$" +
-      "\n\006object\030\002 \002(\0132\024.DomainObjectWrapper\"\227\001\n" +
-      "\031UpdateObjectFieldsRequest\022\020\n\010clientId\030\001" +
-      " \002(\005\022\022\n\nobjectType\030\002 \002(\t\022$\n\006object\030\003 \002(\013",
-      "2\024.DomainObjectWrapper\022\022\n\nfieldNames\030\004 \003" +
-      "(\t\022\032\n\013acquireLock\030\005 \001(\010:\005false\"V\n\032Update" +
-      "ObjectFieldsResponse\022\022\n\nobjectType\030\001 \002(\t" +
-      "\022$\n\006object\030\002 \002(\0132\024.DomainObjectWrapper\"M" +
-      "\n\023DeleteObjectRequest\022\020\n\010clientId\030\001 \002(\005\022" +
-      "\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"S\n" +
-      "\024DeleteObjectResponse\022\022\n\nobjectType\030\001 \002(" +
-      "\t\022\020\n\010objectId\030\002 \002(\005\022\025\n\robjectVersion\030\003 \001" +
-      "(\005\"\301\001\n\021GetMappingRequest\022\020\n\010clientId\030\001 \002" +
-      "(\005\022\025\n\rgetAlgorithms\030\002 \001(\010\022\032\n\022getFailsafe",
-      "Actions\030\003 \001(\010\022\034\n\024getWaypointTurnTypes\030\004 " +
-      "\001(\010\022\033\n\023getActionExecutions\030\005 \001(\010\022\022\n\ngetC" +
-      "ameras\030\006 \001(\010\022\030\n\020getAltitudeTypes\030\007 \001(\010\"\356" +
-      "\002\n\022GetMappingResponse\022\020\n\010clientId\030\001 \002(\005\022" +
-      "0\n\021algorithmsMapping\030\002 \001(\0132\025.AlgorithmsM" +
-      "appingDto\022:\n\026failsafeActionsMapping\030\003 \001(" +
-      "\0132\032.FailsafeActionsMappingDto\0226\n\030waypoin" +
-      "tTurnTypesMapping\030\004 \001(\0132\024.TurnTypesMappi" +
-      "ngDto\022<\n\027actionExecutionsMapping\030\005 \001(\0132\033" +
-      ".ActionExecutionsMappingDto\022*\n\016camerasMa",
-      "pping\030\006 \001(\0132\022.CamerasMappingDto\0226\n\024altit" +
-      "udeTypesMapping\030\007 \001(\0132\030.AltitudeTypesMap" +
-      "pingDto\"L\n\022AcquireLockRequest\022\020\n\010clientI" +
-      "d\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030" +
-      "\003 \002(\005\"\025\n\023AcquireLockResponse\"h\n\022ReleaseL" +
-      "ockRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectTy" +
-      "pe\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\022\032\n\013ifExclusiv" +
-      "e\030\004 \001(\010:\005false\"\025\n\023ReleaseLockResponse\"J\n" +
-      "\020CheckLockRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\no" +
-      "bjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"N\n\021Che",
-      "ckLockResponse\022\022\n\nobjectType\030\001 \002(\t\022\020\n\010ob" +
-      "jectId\030\002 \002(\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"T\n\031Che" +
-      "ckMultipleLocksRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\022\022\n\nobjectType\030\002 \002(\t\022\021\n\tobjectIds\030\003 \003(\005\"" +
-      "Y\n\032CheckMultipleLocksResponse\022\022\n\nobjectT" +
-      "ype\030\001 \002(\t\022\021\n\tobjectIds\030\002 \003(\005\022\024\n\005locks\030\003 " +
-      "\003(\0132\005.Lock\"`\n\034GetMissionPreferencesReque" +
-      "st\022\020\n\010clientId\030\001 \002(\005\022\023\n\004user\030\002 \002(\0132\005.Use" +
-      "r\022\031\n\007mission\030\003 \001(\0132\010.Mission\"H\n\035GetMissi" +
-      "onPreferencesResponse\022\'\n\013preferences\030\001 \003",
-      "(\0132\022.MissionPreference\"\\\n\037UpdateMissionP" +
-      "referencesRequest\022\020\n\010clientId\030\001 \002(\005\022\'\n\013p" +
-      "references\030\002 \003(\0132\022.MissionPreference\"\"\n " +
-      "UpdateMissionPreferencesResponse\"{\n\031Subm" +
-      "itUtmOperationRequest\022\020\n\010clientId\030\001 \002(\005\022" +
-      "#\n\014utmOperation\030\002 \002(\0132\r.UtmOperation\022\'\n\016" +
-      "processedRoute\030\003 \002(\0132\017.ProcessedRoute\"A\n" +
-      "\032SubmitUtmOperationResponse\022#\n\014utmOperat" +
-      "ion\030\001 \002(\0132\r.UtmOperation\"*\n\026GetCapabilit" +
-      "iesRequest\022\020\n\010clientId\030\001 \002(\005\"-\n\027GetCapab",
-      "ilitiesResponse\022\022\n\003utm\030\001 \002(\010:\005false\"4\n G" +
-      "etVehicleTargetLocationsRequest\022\020\n\010clien" +
-      "tId\030\001 \002(\005\"i\n!GetVehicleTargetLocationsRe" +
-      "sponse\022\020\n\010clientId\030\001 \002(\005\0222\n\017targetLocati" +
-      "ons\030\002 \003(\0132\031.VehicleTargetLocationDto\"6\n\017" +
-      "OperationStatus\022#\n\rprogressStack\030\001 \003(\0132\014" +
-      ".ProgressDto\"2\n\017OperationStream\022\020\n\010strea" +
-      "mId\030\001 \002(\t\022\r\n\005chunk\030\002 \002(\014\"?\n\026OperationStr" +
-      "eamRequest\022\020\n\010streamId\030\001 \002(\t\022\023\n\013chunkLen" +
-      "gth\030\002 \002(\005\"+\n\026CancelOperationRequest\022\021\n\tr",
-      "equestId\030\001 \002(\005\"\031\n\027CancelOperationRespons" +
-      "e\"%\n\021StreamTestRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\"\024\n\022StreamTestResponse\"\'\n\023ProgressTestRe" +
-      "quest\022\020\n\010clientId\030\001 \002(\005\"\026\n\024ProgressTestR" +
-      "esponse\"D\n\014Notification\022\026\n\016subscriptionI" +
-      "d\030\001 \002(\005\022\034\n\005event\030\002 \002(\0132\r.EventWrapper\"Z\n" +
-      "\025SubscribeEventRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\022/\n\014subscription\030\002 \002(\0132\031.EventSubscripti" +
-      "onWrapper\"0\n\026SubscribeEventResponse\022\026\n\016s" +
-      "ubscriptionId\030\001 \002(\005\"C\n\027UnsubscribeEventR",
-      "equest\022\020\n\010clientId\030\001 \002(\005\022\026\n\016subscription" +
-      "Id\030\002 \002(\005\"\032\n\030UnsubscribeEventResponseB#\n\022" +
-      "com.ugcs.ucs.protoB\rMessagesProto"
+      "\003 \002(\001\022\024\n\014minLongitude\030\004 \002(\001\022\023\n\013maxLatitu" +
+      "de\030\005 \002(\001\022\024\n\014maxLongitude\030\006 \002(\001\022\r\n\005width\030" +
+      "\007 \002(\005\022\016\n\006height\030\010 \002(\005\"V\n\025GetRasterGridRe" +
+      "sponse\022\016\n\006values\030\001 \003(\002\022\r\n\005width\030\002 \002(\005\022\016\n" +
+      "\006height\030\003 \002(\005\022\016\n\006noData\030\004 \002(\010\"Q\n\026GetRast" +
+      "erValuesRequest\022\020\n\010clientId\030\001 \002(\005\022\021\n\tlat" +
+      "itudes\030\003 \003(\001\022\022\n\nlongitudes\030\004 \003(\001\"9\n\027GetR" +
+      "asterValuesResponse\022\016\n\006values\030\001 \003(\002\022\016\n\006n" +
+      "oData\030\002 \002(\010\"y\n\023GetTelemetryRequest\022\020\n\010cl",
+      "ientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022" +
+      "\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\023\n\005lim" +
+      "it\030\005 \001(\005:\0047200\"S\n\024GetTelemetryResponse\022 " +
+      "\n\ttelemetry\030\001 \003(\0132\r.TelemetryDto\022\031\n\021next" +
+      "TelemetryTime\030\002 \001(\003\"g\n\026DeleteTelemetryRe" +
+      "quest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\013" +
+      "2\010.Vehicle\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime\030\004" +
+      " \001(\003\"\031\n\027DeleteTelemetryResponse\"\200\001\n\033Trac" +
+      "eTelemetryFramesRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\022\n\noriginTi",
+      "me\030\003 \002(\003\022\020\n\010interval\030\004 \002(\001\022\016\n\006number\030\005 \002" +
+      "(\005\"U\n\034TraceTelemetryFramesResponse\022\016\n\006fr" +
+      "ames\030\001 \003(\010\022%\n\rcommandFrames\030\002 \003(\0132\016.Comm" +
+      "andSetDto\"\207\001\n\025CountTelemetryRequest\022\020\n\010c" +
+      "lientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle" +
+      "\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime\030\004 \001(\003\022\037\n\020es" +
+      "timateTLogSize\030\005 \001(\010:\005false\"9\n\026CountTele" +
+      "metryResponse\022\r\n\005count\030\001 \002(\003\022\020\n\010tLogSize" +
+      "\030\002 \001(\003\"\200\001\n\027GetVehicleTracksRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022",
+      "\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\026\n\tmax" +
+      "Points\030\005 \001(\005:\003200\"C\n\030GetVehicleTracksRes" +
+      "ponse\022\'\n\rvehicleTracks\030\001 \003(\0132\020.VehicleTr" +
+      "ackDto\"\233\001\n GetKmlRouteRepresentationRequ" +
+      "est\022\020\n\010clientId\030\001 \002(\005\022\021\n\trouteName\030\002 \002(\t" +
+      "\022,\n\023routeVehicleProfile\030\003 \002(\0132\017.VehicleP" +
+      "rofile\022$\n\twaypoints\030\004 \003(\0132\021.Wgs84Locatio" +
+      "nDto\"4\n!GetKmlRouteRepresentationRespons" +
+      "e\022\017\n\007kmlData\030\001 \002(\014\"s\n\032GetAdsbAircraftLis" +
+      "tRequest\022\020\n\010clientId\030\001 \002(\005\022#\n\010location\030\002",
+      " \002(\0132\021.Wgs84LocationDto\022\016\n\006radius\030\003 \002(\001\022" +
+      "\016\n\006height\030\004 \002(\001\"?\n\033GetAdsbAircraftListRe" +
+      "sponse\022 \n\taircrafts\030\001 \003(\0132\r.AdsbAircraft" +
+      "\"H\n\023SearchPlacesRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\022\r\n\005query\030\002 \002(\t\022\020\n\005limit\030\003 \002(\005:\0017\"1\n\024Se" +
+      "archPlacesResponse\022\031\n\006places\030\001 \003(\0132\t.Pla" +
+      "ceDto\"\210\001\n\024GetVehicleLogRequest\022\020\n\010client" +
+      "Id\030\001 \002(\005\022\032\n\010vehicles\030\002 \003(\0132\010.Vehicle\022\021\n\005" +
+      "limit\030\003 \001(\005:\00215\022/\n\005level\030\004 \001(\0162\016.Severit" +
+      "yLevel:\020SL_INFORMATIONAL\"D\n\025GetVehicleLo",
+      "gResponse\022+\n\021vehicleLogEntries\030\001 \003(\0132\020.V" +
+      "ehicleLogEntry\"\242\001\n\037GetVehicleLogByTimeRa" +
+      "ngeRequest\022\020\n\010clientId\030\001 \002(\005\022\032\n\010vehicles" +
+      "\030\002 \003(\0132\010.Vehicle\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006to" +
+      "Time\030\004 \002(\003\022/\n\005level\030\005 \001(\0162\016.SeverityLeve" +
+      "l:\020SL_INFORMATIONAL\"O\n GetVehicleLogByTi" +
+      "meRangeResponse\022+\n\021vehicleLogEntries\030\001 \003" +
+      "(\0132\020.VehicleLogEntry\"t\n\022SendCommandReque" +
+      "st\022\020\n\010clientId\030\001 \002(\005\022\031\n\007command\030\002 \002(\0132\010." +
+      "Command\022\032\n\010vehicles\030\003 \003(\0132\010.Vehicle\022\025\n\ni",
+      "nterDelay\030\004 \001(\003:\0010\"G\n\023SendCommandRespons" +
+      "e\0220\n\016commandResults\030\001 \003(\0132\030.VehicleComma" +
+      "ndResultDto\"\210\001\n\022UploadRouteRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022" +
+      "\'\n\016processedRoute\030\003 \002(\0132\017.ProcessedRoute" +
+      "\022\034\n\013startAction\030\004 \001(\0132\007.Action\"\025\n\023Upload" +
+      "RouteResponse\",\n\030GetAdsbBulbStatusReques" +
+      "t\022\020\n\010clientId\030\001 \002(\005\"\'\n\031GetAdsbBulbStatus" +
+      "Response\022\n\n\002on\030\001 \002(\010\"%\n\021GetLicenseReques" +
+      "t\022\020\n\010clientId\030\001 \002(\005\"c\n\022GetLicenseRespons",
+      "e\022\031\n\007license\030\001 \001(\0132\010.License\0222\n\022licenseP" +
+      "ermissions\030\002 \002(\0132\026.LicensePermissionsDto" +
+      "\"B\n\026ActivateLicenseRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022\026\n\016activationCode\030\002 \002(\t\"4\n\027Activate" +
+      "LicenseResponse\022\031\n\007license\030\001 \001(\0132\010.Licen" +
+      "se\",\n\030DeactivateLicenseRequest\022\020\n\010client" +
+      "Id\030\001 \002(\005\"\033\n\031DeactivateLicenseResponse\"*\n" +
+      "\026CheckForUpdatesRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\"@\n\027CheckForUpdatesResponse\022%\n\013newVersi" +
+      "ons\030\001 \001(\0132\020.VersionsInfoDto\"M\n\025SendStati",
+      "sticsRequest\022\020\n\010clientId\030\001 \002(\005\022\"\n\nstatis" +
+      "tics\030\002 \002(\0132\016.StatisticsDto\"*\n\026SendStatis" +
+      "ticsResponse\022\020\n\010accepted\030\001 \002(\010\"\222\001\n\024GetOb" +
+      "jectListRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobj" +
+      "ectType\030\002 \002(\t\022\"\n\023refreshDependencies\030\003 \001" +
+      "(\010:\005false\022\027\n\017refreshExcludes\030\004 \003(\t\022\027\n\ttr" +
+      "anslate\030\005 \001(\010:\004true\"R\n\025GetObjectListResp" +
+      "onse\022\022\n\nobjectType\030\001 \002(\t\022%\n\007objects\030\002 \003(" +
+      "\0132\024.DomainObjectWrapper\"\240\001\n\020GetObjectReq" +
+      "uest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002",
+      "(\t\022\020\n\010objectId\030\003 \002(\005\022\"\n\023refreshDependenc" +
+      "ies\030\004 \001(\010:\005false\022\027\n\017refreshExcludes\030\005 \003(" +
+      "\t\022\027\n\ttranslate\030\006 \001(\010:\004true\"M\n\021GetObjectR" +
+      "esponse\022\022\n\nobjectType\030\001 \002(\t\022$\n\006object\030\002 " +
+      "\002(\0132\024.DomainObjectWrapper\"\243\001\n\033CreateOrUp" +
+      "dateObjectRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\no" +
+      "bjectType\030\002 \002(\t\022$\n\006object\030\003 \002(\0132\024.Domain" +
+      "ObjectWrapper\022\034\n\016withComposites\030\004 \001(\010:\004t" +
+      "rue\022\032\n\013acquireLock\030\005 \001(\010:\005false\"X\n\034Creat" +
+      "eOrUpdateObjectResponse\022\022\n\nobjectType\030\001 ",
+      "\002(\t\022$\n\006object\030\002 \002(\0132\024.DomainObjectWrappe" +
+      "r\"\227\001\n\031UpdateObjectFieldsRequest\022\020\n\010clien" +
+      "tId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022$\n\006object\030" +
+      "\003 \002(\0132\024.DomainObjectWrapper\022\022\n\nfieldName" +
+      "s\030\004 \003(\t\022\032\n\013acquireLock\030\005 \001(\010:\005false\"V\n\032U" +
+      "pdateObjectFieldsResponse\022\022\n\nobjectType\030" +
+      "\001 \002(\t\022$\n\006object\030\002 \002(\0132\024.DomainObjectWrap" +
+      "per\"M\n\023DeleteObjectRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002" +
+      "(\005\"S\n\024DeleteObjectResponse\022\022\n\nobjectType",
+      "\030\001 \002(\t\022\020\n\010objectId\030\002 \002(\005\022\025\n\robjectVersio" +
+      "n\030\003 \001(\005\"\301\001\n\021GetMappingRequest\022\020\n\010clientI" +
+      "d\030\001 \002(\005\022\025\n\rgetAlgorithms\030\002 \001(\010\022\032\n\022getFai" +
+      "lsafeActions\030\003 \001(\010\022\034\n\024getWaypointTurnTyp" +
+      "es\030\004 \001(\010\022\033\n\023getActionExecutions\030\005 \001(\010\022\022\n" +
+      "\ngetCameras\030\006 \001(\010\022\030\n\020getAltitudeTypes\030\007 " +
+      "\001(\010\"\356\002\n\022GetMappingResponse\022\020\n\010clientId\030\001" +
+      " \002(\005\0220\n\021algorithmsMapping\030\002 \001(\0132\025.Algori" +
+      "thmsMappingDto\022:\n\026failsafeActionsMapping" +
+      "\030\003 \001(\0132\032.FailsafeActionsMappingDto\0226\n\030wa",
+      "ypointTurnTypesMapping\030\004 \001(\0132\024.TurnTypes" +
+      "MappingDto\022<\n\027actionExecutionsMapping\030\005 " +
+      "\001(\0132\033.ActionExecutionsMappingDto\022*\n\016came" +
+      "rasMapping\030\006 \001(\0132\022.CamerasMappingDto\0226\n\024" +
+      "altitudeTypesMapping\030\007 \001(\0132\030.AltitudeTyp" +
+      "esMappingDto\"L\n\022AcquireLockRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010obje" +
+      "ctId\030\003 \002(\005\"\025\n\023AcquireLockResponse\"h\n\022Rel" +
+      "easeLockRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobj" +
+      "ectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\022\032\n\013ifExc",
+      "lusive\030\004 \001(\010:\005false\"\025\n\023ReleaseLockRespon" +
+      "se\"J\n\020CheckLockRequest\022\020\n\010clientId\030\001 \002(\005" +
+      "\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"N" +
+      "\n\021CheckLockResponse\022\022\n\nobjectType\030\001 \002(\t\022" +
+      "\020\n\010objectId\030\002 \002(\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"T" +
+      "\n\031CheckMultipleLocksRequest\022\020\n\010clientId\030" +
+      "\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\021\n\tobjectIds\030\003" +
+      " \003(\005\"Y\n\032CheckMultipleLocksResponse\022\022\n\nob" +
+      "jectType\030\001 \002(\t\022\021\n\tobjectIds\030\002 \003(\005\022\024\n\005loc" +
+      "ks\030\003 \003(\0132\005.Lock\"`\n\034GetMissionPreferences",
+      "Request\022\020\n\010clientId\030\001 \002(\005\022\023\n\004user\030\002 \002(\0132" +
+      "\005.User\022\031\n\007mission\030\003 \001(\0132\010.Mission\"H\n\035Get" +
+      "MissionPreferencesResponse\022\'\n\013preference" +
+      "s\030\001 \003(\0132\022.MissionPreference\"\\\n\037UpdateMis" +
+      "sionPreferencesRequest\022\020\n\010clientId\030\001 \002(\005" +
+      "\022\'\n\013preferences\030\002 \003(\0132\022.MissionPreferenc" +
+      "e\"\"\n UpdateMissionPreferencesResponse\"{\n" +
+      "\031SubmitUtmOperationRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022#\n\014utmOperation\030\002 \002(\0132\r.UtmOperatio" +
+      "n\022\'\n\016processedRoute\030\003 \002(\0132\017.ProcessedRou",
+      "te\"A\n\032SubmitUtmOperationResponse\022#\n\014utmO" +
+      "peration\030\001 \002(\0132\r.UtmOperation\"*\n\026GetCapa" +
+      "bilitiesRequest\022\020\n\010clientId\030\001 \002(\005\"-\n\027Get" +
+      "CapabilitiesResponse\022\022\n\003utm\030\001 \002(\010:\005false" +
+      "\"6\n\017OperationStatus\022#\n\rprogressStack\030\001 \003" +
+      "(\0132\014.ProgressDto\"2\n\017OperationStream\022\020\n\010s" +
+      "treamId\030\001 \002(\t\022\r\n\005chunk\030\002 \002(\014\"?\n\026Operatio" +
+      "nStreamRequest\022\020\n\010streamId\030\001 \002(\t\022\023\n\013chun" +
+      "kLength\030\002 \002(\005\"+\n\026CancelOperationRequest\022" +
+      "\021\n\trequestId\030\001 \002(\005\"\031\n\027CancelOperationRes",
+      "ponse\"%\n\021StreamTestRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\"\024\n\022StreamTestResponse\"\'\n\023ProgressTe" +
+      "stRequest\022\020\n\010clientId\030\001 \002(\005\"\026\n\024ProgressT" +
+      "estResponse\"D\n\014Notification\022\026\n\016subscript" +
+      "ionId\030\001 \002(\005\022\034\n\005event\030\002 \002(\0132\r.EventWrappe" +
+      "r\"Z\n\025SubscribeEventRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022/\n\014subscription\030\002 \002(\0132\031.EventSubscr" +
+      "iptionWrapper\"0\n\026SubscribeEventResponse\022" +
+      "\026\n\016subscriptionId\030\001 \002(\005\"C\n\027UnsubscribeEv" +
+      "entRequest\022\020\n\010clientId\030\001 \002(\005\022\026\n\016subscrip",
+      "tionId\030\002 \002(\005\"\032\n\030UnsubscribeEventResponse" +
+      "B#\n\022com.ugcs.ucs.protoB\rMessagesProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -82296,7 +85068,7 @@ public final class MessagesProto {
           internal_static_LicensePermissionsDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LicensePermissionsDto_descriptor,
-              new java.lang.String[] { "LicenseName", "MaxAuthenticatedHciSessions", "Multinode", "KmlImport", "DemImport", "GroupOperations", "MaxAglAltitude", "MaxDistanceToHome", "MaxBuildings", "CustomNfz", "AirportNfzDisabling", "AdsbReceiver", "VideoRecording", "CameraFootprint", "AdsbTransponder", "ForbiddenAlgorithmCodes", },
+              new java.lang.String[] { "LicenseName", "MaxAuthenticatedHciSessions", "Multinode", "KmlImport", "DemImport", "GroupOperations", "MaxAglAltitude", "MaxDistanceToHome", "MaxBuildings", "CustomNfz", "AirportNfzDisabling", "AdsbReceiver", "VideoRecording", "CameraFootprint", "AdsbTransponder", "ForbiddenAlgorithmCodes", "MaxImagesToProcess", },
               com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto.class,
               com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto.Builder.class);
           internal_static_PlatformAndBooleanPairDto_descriptor =
@@ -82323,24 +85095,40 @@ public final class MessagesProto {
               new java.lang.String[] { "Platform", "Value", },
               com.ugcs.ucs.proto.MessagesProto.PlatformAndDoublePairDto.class,
               com.ugcs.ucs.proto.MessagesProto.PlatformAndDoublePairDto.Builder.class);
-          internal_static_VehicleTargetLocationDto_descriptor =
-            getDescriptor().getMessageTypes().get(11);
-          internal_static_VehicleTargetLocationDto_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_VehicleTargetLocationDto_descriptor,
-              new java.lang.String[] { "Vehicle", "SequenceId", "Location", "AcceptanceRadius", },
-              com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.class,
-              com.ugcs.ucs.proto.MessagesProto.VehicleTargetLocationDto.Builder.class);
           internal_static_VehicleCommandResultDto_descriptor =
-            getDescriptor().getMessageTypes().get(12);
+            getDescriptor().getMessageTypes().get(11);
           internal_static_VehicleCommandResultDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VehicleCommandResultDto_descriptor,
               new java.lang.String[] { "Vehicle", "CommandStatus", },
               com.ugcs.ucs.proto.MessagesProto.VehicleCommandResultDto.class,
               com.ugcs.ucs.proto.MessagesProto.VehicleCommandResultDto.Builder.class);
-          internal_static_AlgorithmsMappingDto_descriptor =
+          internal_static_TrackPointDto_descriptor =
+            getDescriptor().getMessageTypes().get(12);
+          internal_static_TrackPointDto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_TrackPointDto_descriptor,
+              new java.lang.String[] { "Time", "Location", },
+              com.ugcs.ucs.proto.MessagesProto.TrackPointDto.class,
+              com.ugcs.ucs.proto.MessagesProto.TrackPointDto.Builder.class);
+          internal_static_VehicleTrackDto_descriptor =
             getDescriptor().getMessageTypes().get(13);
+          internal_static_VehicleTrackDto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_VehicleTrackDto_descriptor,
+              new java.lang.String[] { "Vehicle", "Points", },
+              com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.class,
+              com.ugcs.ucs.proto.MessagesProto.VehicleTrackDto.Builder.class);
+          internal_static_ImportRouteParameterDto_descriptor =
+            getDescriptor().getMessageTypes().get(14);
+          internal_static_ImportRouteParameterDto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ImportRouteParameterDto_descriptor,
+              new java.lang.String[] { "AlgorithmClass", "ParameterName", "ParameterValue", },
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.class,
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteParameterDto.Builder.class);
+          internal_static_AlgorithmsMappingDto_descriptor =
+            getDescriptor().getMessageTypes().get(15);
           internal_static_AlgorithmsMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AlgorithmsMappingDto_descriptor,
@@ -82348,7 +85136,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AlgorithmsMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.AlgorithmsMappingDto.Builder.class);
           internal_static_FailsafeActionsMappingDto_descriptor =
-            getDescriptor().getMessageTypes().get(14);
+            getDescriptor().getMessageTypes().get(16);
           internal_static_FailsafeActionsMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FailsafeActionsMappingDto_descriptor,
@@ -82356,7 +85144,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.FailsafeActionsMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.FailsafeActionsMappingDto.Builder.class);
           internal_static_TurnTypesMappingDto_descriptor =
-            getDescriptor().getMessageTypes().get(15);
+            getDescriptor().getMessageTypes().get(17);
           internal_static_TurnTypesMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TurnTypesMappingDto_descriptor,
@@ -82364,7 +85152,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TurnTypesMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.TurnTypesMappingDto.Builder.class);
           internal_static_ActionExecutionsMappingDto_descriptor =
-            getDescriptor().getMessageTypes().get(16);
+            getDescriptor().getMessageTypes().get(18);
           internal_static_ActionExecutionsMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActionExecutionsMappingDto_descriptor,
@@ -82372,7 +85160,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActionExecutionsMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.ActionExecutionsMappingDto.Builder.class);
           internal_static_CamerasMappingDto_descriptor =
-            getDescriptor().getMessageTypes().get(17);
+            getDescriptor().getMessageTypes().get(19);
           internal_static_CamerasMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CamerasMappingDto_descriptor,
@@ -82380,7 +85168,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CamerasMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.CamerasMappingDto.Builder.class);
           internal_static_AltitudeTypesMappingDto_descriptor =
-            getDescriptor().getMessageTypes().get(18);
+            getDescriptor().getMessageTypes().get(20);
           internal_static_AltitudeTypesMappingDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AltitudeTypesMappingDto_descriptor,
@@ -82388,7 +85176,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AltitudeTypesMappingDto.class,
               com.ugcs.ucs.proto.MessagesProto.AltitudeTypesMappingDto.Builder.class);
           internal_static_PlatformAndVehicleTypePairDto_descriptor =
-            getDescriptor().getMessageTypes().get(19);
+            getDescriptor().getMessageTypes().get(21);
           internal_static_PlatformAndVehicleTypePairDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PlatformAndVehicleTypePairDto_descriptor,
@@ -82396,7 +85184,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.PlatformAndVehicleTypePairDto.class,
               com.ugcs.ucs.proto.MessagesProto.PlatformAndVehicleTypePairDto.Builder.class);
           internal_static_FailsafeReasonActionsDto_descriptor =
-            getDescriptor().getMessageTypes().get(20);
+            getDescriptor().getMessageTypes().get(22);
           internal_static_FailsafeReasonActionsDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FailsafeReasonActionsDto_descriptor,
@@ -82404,7 +85192,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.FailsafeReasonActionsDto.class,
               com.ugcs.ucs.proto.MessagesProto.FailsafeReasonActionsDto.Builder.class);
           internal_static_FailsafeActionsDto_descriptor =
-            getDescriptor().getMessageTypes().get(21);
+            getDescriptor().getMessageTypes().get(23);
           internal_static_FailsafeActionsDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FailsafeActionsDto_descriptor,
@@ -82412,7 +85200,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.FailsafeActionsDto.class,
               com.ugcs.ucs.proto.MessagesProto.FailsafeActionsDto.Builder.class);
           internal_static_AlgorithmAndActionCodeDto_descriptor =
-            getDescriptor().getMessageTypes().get(22);
+            getDescriptor().getMessageTypes().get(24);
           internal_static_AlgorithmAndActionCodeDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AlgorithmAndActionCodeDto_descriptor,
@@ -82420,7 +85208,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AlgorithmAndActionCodeDto.class,
               com.ugcs.ucs.proto.MessagesProto.AlgorithmAndActionCodeDto.Builder.class);
           internal_static_AlgorithmsDto_descriptor =
-            getDescriptor().getMessageTypes().get(23);
+            getDescriptor().getMessageTypes().get(25);
           internal_static_AlgorithmsDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AlgorithmsDto_descriptor,
@@ -82428,7 +85216,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AlgorithmsDto.class,
               com.ugcs.ucs.proto.MessagesProto.AlgorithmsDto.Builder.class);
           internal_static_TurnTypeDto_descriptor =
-            getDescriptor().getMessageTypes().get(24);
+            getDescriptor().getMessageTypes().get(26);
           internal_static_TurnTypeDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TurnTypeDto_descriptor,
@@ -82436,7 +85224,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TurnTypeDto.class,
               com.ugcs.ucs.proto.MessagesProto.TurnTypeDto.Builder.class);
           internal_static_PlatformTurnTypeDto_descriptor =
-            getDescriptor().getMessageTypes().get(25);
+            getDescriptor().getMessageTypes().get(27);
           internal_static_PlatformTurnTypeDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PlatformTurnTypeDto_descriptor,
@@ -82444,7 +85232,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.PlatformTurnTypeDto.class,
               com.ugcs.ucs.proto.MessagesProto.PlatformTurnTypeDto.Builder.class);
           internal_static_AltitudeTypeDto_descriptor =
-            getDescriptor().getMessageTypes().get(26);
+            getDescriptor().getMessageTypes().get(28);
           internal_static_AltitudeTypeDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AltitudeTypeDto_descriptor,
@@ -82452,7 +85240,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AltitudeTypeDto.class,
               com.ugcs.ucs.proto.MessagesProto.AltitudeTypeDto.Builder.class);
           internal_static_ActionExecutionDto_descriptor =
-            getDescriptor().getMessageTypes().get(27);
+            getDescriptor().getMessageTypes().get(29);
           internal_static_ActionExecutionDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActionExecutionDto_descriptor,
@@ -82460,7 +85248,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActionExecutionDto.class,
               com.ugcs.ucs.proto.MessagesProto.ActionExecutionDto.Builder.class);
           internal_static_AlgorithmActionExecutionDto_descriptor =
-            getDescriptor().getMessageTypes().get(28);
+            getDescriptor().getMessageTypes().get(30);
           internal_static_AlgorithmActionExecutionDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AlgorithmActionExecutionDto_descriptor,
@@ -82468,7 +85256,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AlgorithmActionExecutionDto.class,
               com.ugcs.ucs.proto.MessagesProto.AlgorithmActionExecutionDto.Builder.class);
           internal_static_CameraDto_descriptor =
-            getDescriptor().getMessageTypes().get(29);
+            getDescriptor().getMessageTypes().get(31);
           internal_static_CameraDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraDto_descriptor,
@@ -82476,7 +85264,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CameraDto.class,
               com.ugcs.ucs.proto.MessagesProto.CameraDto.Builder.class);
           internal_static_ProfileCameraDto_descriptor =
-            getDescriptor().getMessageTypes().get(30);
+            getDescriptor().getMessageTypes().get(32);
           internal_static_ProfileCameraDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProfileCameraDto_descriptor,
@@ -82484,7 +85272,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProfileCameraDto.class,
               com.ugcs.ucs.proto.MessagesProto.ProfileCameraDto.Builder.class);
           internal_static_Error_descriptor =
-            getDescriptor().getMessageTypes().get(31);
+            getDescriptor().getMessageTypes().get(33);
           internal_static_Error_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Error_descriptor,
@@ -82492,7 +85280,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.Error.class,
               com.ugcs.ucs.proto.MessagesProto.Error.Builder.class);
           internal_static_AuthorizeHciRequest_descriptor =
-            getDescriptor().getMessageTypes().get(32);
+            getDescriptor().getMessageTypes().get(34);
           internal_static_AuthorizeHciRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AuthorizeHciRequest_descriptor,
@@ -82500,7 +85288,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest.class,
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest.Builder.class);
           internal_static_AuthorizeHciResponse_descriptor =
-            getDescriptor().getMessageTypes().get(33);
+            getDescriptor().getMessageTypes().get(35);
           internal_static_AuthorizeHciResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AuthorizeHciResponse_descriptor,
@@ -82508,7 +85296,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse.class,
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse.Builder.class);
           internal_static_SetHciLocaleRequest_descriptor =
-            getDescriptor().getMessageTypes().get(34);
+            getDescriptor().getMessageTypes().get(36);
           internal_static_SetHciLocaleRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SetHciLocaleRequest_descriptor,
@@ -82516,7 +85304,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleRequest.Builder.class);
           internal_static_SetHciLocaleResponse_descriptor =
-            getDescriptor().getMessageTypes().get(35);
+            getDescriptor().getMessageTypes().get(37);
           internal_static_SetHciLocaleResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SetHciLocaleResponse_descriptor,
@@ -82524,7 +85312,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleResponse.Builder.class);
           internal_static_LoginRequest_descriptor =
-            getDescriptor().getMessageTypes().get(36);
+            getDescriptor().getMessageTypes().get(38);
           internal_static_LoginRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LoginRequest_descriptor,
@@ -82532,7 +85320,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LoginRequest.class,
               com.ugcs.ucs.proto.MessagesProto.LoginRequest.Builder.class);
           internal_static_LoginResponse_descriptor =
-            getDescriptor().getMessageTypes().get(37);
+            getDescriptor().getMessageTypes().get(39);
           internal_static_LoginResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LoginResponse_descriptor,
@@ -82540,7 +85328,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LoginResponse.class,
               com.ugcs.ucs.proto.MessagesProto.LoginResponse.Builder.class);
           internal_static_LogoutRequest_descriptor =
-            getDescriptor().getMessageTypes().get(38);
+            getDescriptor().getMessageTypes().get(40);
           internal_static_LogoutRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LogoutRequest_descriptor,
@@ -82548,7 +85336,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LogoutRequest.class,
               com.ugcs.ucs.proto.MessagesProto.LogoutRequest.Builder.class);
           internal_static_LogoutResponse_descriptor =
-            getDescriptor().getMessageTypes().get(39);
+            getDescriptor().getMessageTypes().get(41);
           internal_static_LogoutResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LogoutResponse_descriptor,
@@ -82556,7 +85344,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LogoutResponse.class,
               com.ugcs.ucs.proto.MessagesProto.LogoutResponse.Builder.class);
           internal_static_ProcessRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(40);
+            getDescriptor().getMessageTypes().get(42);
           internal_static_ProcessRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProcessRouteRequest_descriptor,
@@ -82564,7 +85352,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest.Builder.class);
           internal_static_ProcessRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(41);
+            getDescriptor().getMessageTypes().get(43);
           internal_static_ProcessRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProcessRouteResponse_descriptor,
@@ -82572,7 +85360,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse.Builder.class);
           internal_static_ConvertRouteAltitudesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(42);
+            getDescriptor().getMessageTypes().get(44);
           internal_static_ConvertRouteAltitudesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ConvertRouteAltitudesRequest_descriptor,
@@ -82580,7 +85368,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesRequest.Builder.class);
           internal_static_ConvertRouteAltitudesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(43);
+            getDescriptor().getMessageTypes().get(45);
           internal_static_ConvertRouteAltitudesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ConvertRouteAltitudesResponse_descriptor,
@@ -82588,7 +85376,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesResponse.Builder.class);
           internal_static_ChangeRouteVehicleProfileRequest_descriptor =
-            getDescriptor().getMessageTypes().get(44);
+            getDescriptor().getMessageTypes().get(46);
           internal_static_ChangeRouteVehicleProfileRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ChangeRouteVehicleProfileRequest_descriptor,
@@ -82596,7 +85384,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileRequest.Builder.class);
           internal_static_ChangeRouteVehicleProfileResponse_descriptor =
-            getDescriptor().getMessageTypes().get(45);
+            getDescriptor().getMessageTypes().get(47);
           internal_static_ChangeRouteVehicleProfileResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ChangeRouteVehicleProfileResponse_descriptor,
@@ -82604,7 +85392,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileResponse.Builder.class);
           internal_static_GetParametersSelectionValuesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(46);
+            getDescriptor().getMessageTypes().get(48);
           internal_static_GetParametersSelectionValuesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetParametersSelectionValuesRequest_descriptor,
@@ -82612,7 +85400,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesRequest.Builder.class);
           internal_static_GetParametersSelectionValuesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(47);
+            getDescriptor().getMessageTypes().get(49);
           internal_static_GetParametersSelectionValuesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetParametersSelectionValuesResponse_descriptor,
@@ -82620,7 +85408,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesResponse.Builder.class);
           internal_static_GetElevationProfileRequest_descriptor =
-            getDescriptor().getMessageTypes().get(48);
+            getDescriptor().getMessageTypes().get(50);
           internal_static_GetElevationProfileRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetElevationProfileRequest_descriptor,
@@ -82628,7 +85416,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileRequest.Builder.class);
           internal_static_GetElevationProfileResponse_descriptor =
-            getDescriptor().getMessageTypes().get(49);
+            getDescriptor().getMessageTypes().get(51);
           internal_static_GetElevationProfileResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetElevationProfileResponse_descriptor,
@@ -82636,7 +85424,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileResponse.Builder.class);
           internal_static_CalculateSplineRequest_descriptor =
-            getDescriptor().getMessageTypes().get(50);
+            getDescriptor().getMessageTypes().get(52);
           internal_static_CalculateSplineRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CalculateSplineRequest_descriptor,
@@ -82644,7 +85432,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineRequest.Builder.class);
           internal_static_CalculateSplineResponse_descriptor =
-            getDescriptor().getMessageTypes().get(51);
+            getDescriptor().getMessageTypes().get(53);
           internal_static_CalculateSplineResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CalculateSplineResponse_descriptor,
@@ -82652,7 +85440,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineResponse.Builder.class);
           internal_static_ExportRouteToXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(52);
+            getDescriptor().getMessageTypes().get(54);
           internal_static_ExportRouteToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportRouteToXmlRequest_descriptor,
@@ -82660,31 +85448,31 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlRequest.Builder.class);
           internal_static_ExportRouteToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(53);
+            getDescriptor().getMessageTypes().get(55);
           internal_static_ExportRouteToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportRouteToXmlResponse_descriptor,
               new java.lang.String[] { "RouteXml", },
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlResponse.Builder.class);
-          internal_static_ImportRouteFromXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(54);
-          internal_static_ImportRouteFromXmlRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_ImportRouteFromXmlRequest_descriptor,
-              new java.lang.String[] { "ClientId", "RouteXml", },
-              com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.class,
-              com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlRequest.Builder.class);
-          internal_static_ImportRouteFromXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(55);
-          internal_static_ImportRouteFromXmlResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_ImportRouteFromXmlResponse_descriptor,
-              new java.lang.String[] { "Route", },
-              com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.class,
-              com.ugcs.ucs.proto.MessagesProto.ImportRouteFromXmlResponse.Builder.class);
-          internal_static_ExportMissionToXmlRequest_descriptor =
+          internal_static_ImportRouteRequest_descriptor =
             getDescriptor().getMessageTypes().get(56);
+          internal_static_ImportRouteRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ImportRouteRequest_descriptor,
+              new java.lang.String[] { "ClientId", "RouteData", "Filename", "Algorithm", "Parameters", },
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.Builder.class);
+          internal_static_ImportRouteResponse_descriptor =
+            getDescriptor().getMessageTypes().get(57);
+          internal_static_ImportRouteResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ImportRouteResponse_descriptor,
+              new java.lang.String[] { "Route", },
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.Builder.class);
+          internal_static_ExportMissionToXmlRequest_descriptor =
+            getDescriptor().getMessageTypes().get(58);
           internal_static_ExportMissionToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportMissionToXmlRequest_descriptor,
@@ -82692,7 +85480,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlRequest.Builder.class);
           internal_static_ExportMissionToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(57);
+            getDescriptor().getMessageTypes().get(59);
           internal_static_ExportMissionToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportMissionToXmlResponse_descriptor,
@@ -82700,7 +85488,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlResponse.Builder.class);
           internal_static_ImportMissionFromXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(58);
+            getDescriptor().getMessageTypes().get(60);
           internal_static_ImportMissionFromXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportMissionFromXmlRequest_descriptor,
@@ -82708,7 +85496,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlRequest.Builder.class);
           internal_static_ImportMissionFromXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(59);
+            getDescriptor().getMessageTypes().get(61);
           internal_static_ImportMissionFromXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportMissionFromXmlResponse_descriptor,
@@ -82716,7 +85504,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlResponse.Builder.class);
           internal_static_ExportTelemetryToXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(60);
+            getDescriptor().getMessageTypes().get(62);
           internal_static_ExportTelemetryToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportTelemetryToXmlRequest_descriptor,
@@ -82724,7 +85512,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlRequest.Builder.class);
           internal_static_ExportTelemetryToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(61);
+            getDescriptor().getMessageTypes().get(63);
           internal_static_ExportTelemetryToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportTelemetryToXmlResponse_descriptor,
@@ -82732,15 +85520,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlResponse.Builder.class);
           internal_static_ImportTelemetryFromXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(62);
+            getDescriptor().getMessageTypes().get(64);
           internal_static_ImportTelemetryFromXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportTelemetryFromXmlRequest_descriptor,
-              new java.lang.String[] { "ClientId", "TelemetryXml", "ConflictResolutionMode", },
+              new java.lang.String[] { "ClientId", "TelemetryXml", "ConflictResolutionMode", "Name", },
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlRequest.Builder.class);
           internal_static_ImportTelemetryFromXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(63);
+            getDescriptor().getMessageTypes().get(65);
           internal_static_ImportTelemetryFromXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportTelemetryFromXmlResponse_descriptor,
@@ -82748,7 +85536,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlResponse.Builder.class);
           internal_static_GetLineOfSightRequest_descriptor =
-            getDescriptor().getMessageTypes().get(64);
+            getDescriptor().getMessageTypes().get(66);
           internal_static_GetLineOfSightRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLineOfSightRequest_descriptor,
@@ -82756,7 +85544,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightRequest.Builder.class);
           internal_static_GetLineOfSightResponse_descriptor =
-            getDescriptor().getMessageTypes().get(65);
+            getDescriptor().getMessageTypes().get(67);
           internal_static_GetLineOfSightResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLineOfSightResponse_descriptor,
@@ -82764,7 +85552,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightResponse.Builder.class);
           internal_static_GetNfzListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(66);
+            getDescriptor().getMessageTypes().get(68);
           internal_static_GetNfzListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNfzListRequest_descriptor,
@@ -82772,7 +85560,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetNfzListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetNfzListRequest.Builder.class);
           internal_static_GetNfzListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(67);
+            getDescriptor().getMessageTypes().get(69);
           internal_static_GetNfzListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNfzListResponse_descriptor,
@@ -82780,7 +85568,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetNfzListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetNfzListResponse.Builder.class);
           internal_static_GetRasterGridRequest_descriptor =
-            getDescriptor().getMessageTypes().get(68);
+            getDescriptor().getMessageTypes().get(70);
           internal_static_GetRasterGridRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterGridRequest_descriptor,
@@ -82788,7 +85576,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridRequest.Builder.class);
           internal_static_GetRasterGridResponse_descriptor =
-            getDescriptor().getMessageTypes().get(69);
+            getDescriptor().getMessageTypes().get(71);
           internal_static_GetRasterGridResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterGridResponse_descriptor,
@@ -82796,7 +85584,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridResponse.Builder.class);
           internal_static_GetRasterValuesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(70);
+            getDescriptor().getMessageTypes().get(72);
           internal_static_GetRasterValuesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterValuesRequest_descriptor,
@@ -82804,7 +85592,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesRequest.Builder.class);
           internal_static_GetRasterValuesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(71);
+            getDescriptor().getMessageTypes().get(73);
           internal_static_GetRasterValuesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterValuesResponse_descriptor,
@@ -82812,7 +85600,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesResponse.Builder.class);
           internal_static_GetTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(72);
+            getDescriptor().getMessageTypes().get(74);
           internal_static_GetTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetTelemetryRequest_descriptor,
@@ -82820,7 +85608,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryRequest.Builder.class);
           internal_static_GetTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(73);
+            getDescriptor().getMessageTypes().get(75);
           internal_static_GetTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetTelemetryResponse_descriptor,
@@ -82828,7 +85616,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse.Builder.class);
           internal_static_DeleteTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(74);
+            getDescriptor().getMessageTypes().get(76);
           internal_static_DeleteTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteTelemetryRequest_descriptor,
@@ -82836,7 +85624,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryRequest.Builder.class);
           internal_static_DeleteTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(75);
+            getDescriptor().getMessageTypes().get(77);
           internal_static_DeleteTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteTelemetryResponse_descriptor,
@@ -82844,7 +85632,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryResponse.Builder.class);
           internal_static_TraceTelemetryFramesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(76);
+            getDescriptor().getMessageTypes().get(78);
           internal_static_TraceTelemetryFramesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TraceTelemetryFramesRequest_descriptor,
@@ -82852,7 +85640,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesRequest.Builder.class);
           internal_static_TraceTelemetryFramesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(77);
+            getDescriptor().getMessageTypes().get(79);
           internal_static_TraceTelemetryFramesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TraceTelemetryFramesResponse_descriptor,
@@ -82860,7 +85648,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesResponse.Builder.class);
           internal_static_CountTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(78);
+            getDescriptor().getMessageTypes().get(80);
           internal_static_CountTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CountTelemetryRequest_descriptor,
@@ -82868,15 +85656,31 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryRequest.Builder.class);
           internal_static_CountTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(79);
+            getDescriptor().getMessageTypes().get(81);
           internal_static_CountTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CountTelemetryResponse_descriptor,
               new java.lang.String[] { "Count", "TLogSize", },
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryResponse.Builder.class);
+          internal_static_GetVehicleTracksRequest_descriptor =
+            getDescriptor().getMessageTypes().get(82);
+          internal_static_GetVehicleTracksRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetVehicleTracksRequest_descriptor,
+              new java.lang.String[] { "ClientId", "Vehicle", "FromTime", "ToTime", "MaxPoints", },
+              com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.Builder.class);
+          internal_static_GetVehicleTracksResponse_descriptor =
+            getDescriptor().getMessageTypes().get(83);
+          internal_static_GetVehicleTracksResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetVehicleTracksResponse_descriptor,
+              new java.lang.String[] { "VehicleTracks", },
+              com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.Builder.class);
           internal_static_GetKmlRouteRepresentationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(80);
+            getDescriptor().getMessageTypes().get(84);
           internal_static_GetKmlRouteRepresentationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetKmlRouteRepresentationRequest_descriptor,
@@ -82884,7 +85688,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationRequest.Builder.class);
           internal_static_GetKmlRouteRepresentationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(81);
+            getDescriptor().getMessageTypes().get(85);
           internal_static_GetKmlRouteRepresentationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetKmlRouteRepresentationResponse_descriptor,
@@ -82892,7 +85696,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationResponse.Builder.class);
           internal_static_GetAdsbAircraftListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(82);
+            getDescriptor().getMessageTypes().get(86);
           internal_static_GetAdsbAircraftListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbAircraftListRequest_descriptor,
@@ -82900,7 +85704,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListRequest.Builder.class);
           internal_static_GetAdsbAircraftListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(83);
+            getDescriptor().getMessageTypes().get(87);
           internal_static_GetAdsbAircraftListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbAircraftListResponse_descriptor,
@@ -82908,7 +85712,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListResponse.Builder.class);
           internal_static_SearchPlacesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(84);
+            getDescriptor().getMessageTypes().get(88);
           internal_static_SearchPlacesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SearchPlacesRequest_descriptor,
@@ -82916,7 +85720,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesRequest.Builder.class);
           internal_static_SearchPlacesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(85);
+            getDescriptor().getMessageTypes().get(89);
           internal_static_SearchPlacesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SearchPlacesResponse_descriptor,
@@ -82924,7 +85728,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesResponse.Builder.class);
           internal_static_GetVehicleLogRequest_descriptor =
-            getDescriptor().getMessageTypes().get(86);
+            getDescriptor().getMessageTypes().get(90);
           internal_static_GetVehicleLogRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogRequest_descriptor,
@@ -82932,7 +85736,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogRequest.Builder.class);
           internal_static_GetVehicleLogResponse_descriptor =
-            getDescriptor().getMessageTypes().get(87);
+            getDescriptor().getMessageTypes().get(91);
           internal_static_GetVehicleLogResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogResponse_descriptor,
@@ -82940,7 +85744,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogResponse.Builder.class);
           internal_static_GetVehicleLogByTimeRangeRequest_descriptor =
-            getDescriptor().getMessageTypes().get(88);
+            getDescriptor().getMessageTypes().get(92);
           internal_static_GetVehicleLogByTimeRangeRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogByTimeRangeRequest_descriptor,
@@ -82948,7 +85752,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeRequest.Builder.class);
           internal_static_GetVehicleLogByTimeRangeResponse_descriptor =
-            getDescriptor().getMessageTypes().get(89);
+            getDescriptor().getMessageTypes().get(93);
           internal_static_GetVehicleLogByTimeRangeResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogByTimeRangeResponse_descriptor,
@@ -82956,7 +85760,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeResponse.Builder.class);
           internal_static_SendCommandRequest_descriptor =
-            getDescriptor().getMessageTypes().get(90);
+            getDescriptor().getMessageTypes().get(94);
           internal_static_SendCommandRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendCommandRequest_descriptor,
@@ -82964,7 +85768,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendCommandRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SendCommandRequest.Builder.class);
           internal_static_SendCommandResponse_descriptor =
-            getDescriptor().getMessageTypes().get(91);
+            getDescriptor().getMessageTypes().get(95);
           internal_static_SendCommandResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendCommandResponse_descriptor,
@@ -82972,7 +85776,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendCommandResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SendCommandResponse.Builder.class);
           internal_static_UploadRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(92);
+            getDescriptor().getMessageTypes().get(96);
           internal_static_UploadRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UploadRouteRequest_descriptor,
@@ -82980,15 +85784,31 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest.Builder.class);
           internal_static_UploadRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(93);
+            getDescriptor().getMessageTypes().get(97);
           internal_static_UploadRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UploadRouteResponse_descriptor,
               new java.lang.String[] { },
               com.ugcs.ucs.proto.MessagesProto.UploadRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UploadRouteResponse.Builder.class);
+          internal_static_GetAdsbBulbStatusRequest_descriptor =
+            getDescriptor().getMessageTypes().get(98);
+          internal_static_GetAdsbBulbStatusRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetAdsbBulbStatusRequest_descriptor,
+              new java.lang.String[] { "ClientId", },
+              com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.Builder.class);
+          internal_static_GetAdsbBulbStatusResponse_descriptor =
+            getDescriptor().getMessageTypes().get(99);
+          internal_static_GetAdsbBulbStatusResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetAdsbBulbStatusResponse_descriptor,
+              new java.lang.String[] { "On", },
+              com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.Builder.class);
           internal_static_GetLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(94);
+            getDescriptor().getMessageTypes().get(100);
           internal_static_GetLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLicenseRequest_descriptor,
@@ -82996,7 +85816,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetLicenseRequest.Builder.class);
           internal_static_GetLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(95);
+            getDescriptor().getMessageTypes().get(101);
           internal_static_GetLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLicenseResponse_descriptor,
@@ -83004,7 +85824,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse.Builder.class);
           internal_static_ActivateLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(96);
+            getDescriptor().getMessageTypes().get(102);
           internal_static_ActivateLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActivateLicenseRequest_descriptor,
@@ -83012,7 +85832,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseRequest.Builder.class);
           internal_static_ActivateLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(97);
+            getDescriptor().getMessageTypes().get(103);
           internal_static_ActivateLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActivateLicenseResponse_descriptor,
@@ -83020,7 +85840,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseResponse.Builder.class);
           internal_static_DeactivateLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(98);
+            getDescriptor().getMessageTypes().get(104);
           internal_static_DeactivateLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeactivateLicenseRequest_descriptor,
@@ -83028,7 +85848,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseRequest.Builder.class);
           internal_static_DeactivateLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(99);
+            getDescriptor().getMessageTypes().get(105);
           internal_static_DeactivateLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeactivateLicenseResponse_descriptor,
@@ -83036,7 +85856,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseResponse.Builder.class);
           internal_static_CheckForUpdatesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(100);
+            getDescriptor().getMessageTypes().get(106);
           internal_static_CheckForUpdatesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckForUpdatesRequest_descriptor,
@@ -83044,7 +85864,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesRequest.Builder.class);
           internal_static_CheckForUpdatesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(101);
+            getDescriptor().getMessageTypes().get(107);
           internal_static_CheckForUpdatesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckForUpdatesResponse_descriptor,
@@ -83052,7 +85872,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesResponse.Builder.class);
           internal_static_SendStatisticsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(102);
+            getDescriptor().getMessageTypes().get(108);
           internal_static_SendStatisticsRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendStatisticsRequest_descriptor,
@@ -83060,7 +85880,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsRequest.Builder.class);
           internal_static_SendStatisticsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(103);
+            getDescriptor().getMessageTypes().get(109);
           internal_static_SendStatisticsResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendStatisticsResponse_descriptor,
@@ -83068,7 +85888,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsResponse.Builder.class);
           internal_static_GetObjectListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(104);
+            getDescriptor().getMessageTypes().get(110);
           internal_static_GetObjectListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectListRequest_descriptor,
@@ -83076,7 +85896,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest.Builder.class);
           internal_static_GetObjectListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(105);
+            getDescriptor().getMessageTypes().get(111);
           internal_static_GetObjectListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectListResponse_descriptor,
@@ -83084,7 +85904,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse.Builder.class);
           internal_static_GetObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(106);
+            getDescriptor().getMessageTypes().get(112);
           internal_static_GetObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectRequest_descriptor,
@@ -83092,7 +85912,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectRequest.Builder.class);
           internal_static_GetObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(107);
+            getDescriptor().getMessageTypes().get(113);
           internal_static_GetObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectResponse_descriptor,
@@ -83100,7 +85920,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectResponse.Builder.class);
           internal_static_CreateOrUpdateObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(108);
+            getDescriptor().getMessageTypes().get(114);
           internal_static_CreateOrUpdateObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CreateOrUpdateObjectRequest_descriptor,
@@ -83108,7 +85928,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest.Builder.class);
           internal_static_CreateOrUpdateObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(109);
+            getDescriptor().getMessageTypes().get(115);
           internal_static_CreateOrUpdateObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CreateOrUpdateObjectResponse_descriptor,
@@ -83116,7 +85936,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse.Builder.class);
           internal_static_UpdateObjectFieldsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(110);
+            getDescriptor().getMessageTypes().get(116);
           internal_static_UpdateObjectFieldsRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateObjectFieldsRequest_descriptor,
@@ -83124,7 +85944,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsRequest.Builder.class);
           internal_static_UpdateObjectFieldsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(111);
+            getDescriptor().getMessageTypes().get(117);
           internal_static_UpdateObjectFieldsResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateObjectFieldsResponse_descriptor,
@@ -83132,7 +85952,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsResponse.Builder.class);
           internal_static_DeleteObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(112);
+            getDescriptor().getMessageTypes().get(118);
           internal_static_DeleteObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteObjectRequest_descriptor,
@@ -83140,7 +85960,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectRequest.Builder.class);
           internal_static_DeleteObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(113);
+            getDescriptor().getMessageTypes().get(119);
           internal_static_DeleteObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteObjectResponse_descriptor,
@@ -83148,7 +85968,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectResponse.Builder.class);
           internal_static_GetMappingRequest_descriptor =
-            getDescriptor().getMessageTypes().get(114);
+            getDescriptor().getMessageTypes().get(120);
           internal_static_GetMappingRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMappingRequest_descriptor,
@@ -83156,7 +85976,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMappingRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetMappingRequest.Builder.class);
           internal_static_GetMappingResponse_descriptor =
-            getDescriptor().getMessageTypes().get(115);
+            getDescriptor().getMessageTypes().get(121);
           internal_static_GetMappingResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMappingResponse_descriptor,
@@ -83164,7 +85984,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMappingResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetMappingResponse.Builder.class);
           internal_static_AcquireLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(116);
+            getDescriptor().getMessageTypes().get(122);
           internal_static_AcquireLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AcquireLockRequest_descriptor,
@@ -83172,7 +85992,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest.Builder.class);
           internal_static_AcquireLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(117);
+            getDescriptor().getMessageTypes().get(123);
           internal_static_AcquireLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AcquireLockResponse_descriptor,
@@ -83180,7 +86000,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AcquireLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.AcquireLockResponse.Builder.class);
           internal_static_ReleaseLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(118);
+            getDescriptor().getMessageTypes().get(124);
           internal_static_ReleaseLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReleaseLockRequest_descriptor,
@@ -83188,7 +86008,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest.Builder.class);
           internal_static_ReleaseLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(119);
+            getDescriptor().getMessageTypes().get(125);
           internal_static_ReleaseLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReleaseLockResponse_descriptor,
@@ -83196,7 +86016,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockResponse.Builder.class);
           internal_static_CheckLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(120);
+            getDescriptor().getMessageTypes().get(126);
           internal_static_CheckLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckLockRequest_descriptor,
@@ -83204,7 +86024,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckLockRequest.Builder.class);
           internal_static_CheckLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(121);
+            getDescriptor().getMessageTypes().get(127);
           internal_static_CheckLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckLockResponse_descriptor,
@@ -83212,7 +86032,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckLockResponse.Builder.class);
           internal_static_CheckMultipleLocksRequest_descriptor =
-            getDescriptor().getMessageTypes().get(122);
+            getDescriptor().getMessageTypes().get(128);
           internal_static_CheckMultipleLocksRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckMultipleLocksRequest_descriptor,
@@ -83220,7 +86040,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksRequest.Builder.class);
           internal_static_CheckMultipleLocksResponse_descriptor =
-            getDescriptor().getMessageTypes().get(123);
+            getDescriptor().getMessageTypes().get(129);
           internal_static_CheckMultipleLocksResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckMultipleLocksResponse_descriptor,
@@ -83228,7 +86048,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksResponse.Builder.class);
           internal_static_GetMissionPreferencesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(124);
+            getDescriptor().getMessageTypes().get(130);
           internal_static_GetMissionPreferencesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMissionPreferencesRequest_descriptor,
@@ -83236,7 +86056,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesRequest.Builder.class);
           internal_static_GetMissionPreferencesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(125);
+            getDescriptor().getMessageTypes().get(131);
           internal_static_GetMissionPreferencesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMissionPreferencesResponse_descriptor,
@@ -83244,7 +86064,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesResponse.Builder.class);
           internal_static_UpdateMissionPreferencesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(126);
+            getDescriptor().getMessageTypes().get(132);
           internal_static_UpdateMissionPreferencesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateMissionPreferencesRequest_descriptor,
@@ -83252,7 +86072,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesRequest.Builder.class);
           internal_static_UpdateMissionPreferencesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(127);
+            getDescriptor().getMessageTypes().get(133);
           internal_static_UpdateMissionPreferencesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateMissionPreferencesResponse_descriptor,
@@ -83260,7 +86080,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesResponse.Builder.class);
           internal_static_SubmitUtmOperationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(128);
+            getDescriptor().getMessageTypes().get(134);
           internal_static_SubmitUtmOperationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubmitUtmOperationRequest_descriptor,
@@ -83268,7 +86088,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationRequest.Builder.class);
           internal_static_SubmitUtmOperationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(129);
+            getDescriptor().getMessageTypes().get(135);
           internal_static_SubmitUtmOperationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubmitUtmOperationResponse_descriptor,
@@ -83276,7 +86096,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationResponse.Builder.class);
           internal_static_GetCapabilitiesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(130);
+            getDescriptor().getMessageTypes().get(136);
           internal_static_GetCapabilitiesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetCapabilitiesRequest_descriptor,
@@ -83284,31 +86104,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesRequest.Builder.class);
           internal_static_GetCapabilitiesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(131);
+            getDescriptor().getMessageTypes().get(137);
           internal_static_GetCapabilitiesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetCapabilitiesResponse_descriptor,
               new java.lang.String[] { "Utm", },
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesResponse.Builder.class);
-          internal_static_GetVehicleTargetLocationsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(132);
-          internal_static_GetVehicleTargetLocationsRequest_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_GetVehicleTargetLocationsRequest_descriptor,
-              new java.lang.String[] { "ClientId", },
-              com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.class,
-              com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsRequest.Builder.class);
-          internal_static_GetVehicleTargetLocationsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(133);
-          internal_static_GetVehicleTargetLocationsResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_GetVehicleTargetLocationsResponse_descriptor,
-              new java.lang.String[] { "ClientId", "TargetLocations", },
-              com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.class,
-              com.ugcs.ucs.proto.MessagesProto.GetVehicleTargetLocationsResponse.Builder.class);
           internal_static_OperationStatus_descriptor =
-            getDescriptor().getMessageTypes().get(134);
+            getDescriptor().getMessageTypes().get(138);
           internal_static_OperationStatus_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStatus_descriptor,
@@ -83316,7 +86120,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStatus.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStatus.Builder.class);
           internal_static_OperationStream_descriptor =
-            getDescriptor().getMessageTypes().get(135);
+            getDescriptor().getMessageTypes().get(139);
           internal_static_OperationStream_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStream_descriptor,
@@ -83324,7 +86128,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStream.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStream.Builder.class);
           internal_static_OperationStreamRequest_descriptor =
-            getDescriptor().getMessageTypes().get(136);
+            getDescriptor().getMessageTypes().get(140);
           internal_static_OperationStreamRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStreamRequest_descriptor,
@@ -83332,7 +86136,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStreamRequest.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStreamRequest.Builder.class);
           internal_static_CancelOperationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(137);
+            getDescriptor().getMessageTypes().get(141);
           internal_static_CancelOperationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CancelOperationRequest_descriptor,
@@ -83340,7 +86144,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CancelOperationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CancelOperationRequest.Builder.class);
           internal_static_CancelOperationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(138);
+            getDescriptor().getMessageTypes().get(142);
           internal_static_CancelOperationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CancelOperationResponse_descriptor,
@@ -83348,7 +86152,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CancelOperationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CancelOperationResponse.Builder.class);
           internal_static_StreamTestRequest_descriptor =
-            getDescriptor().getMessageTypes().get(139);
+            getDescriptor().getMessageTypes().get(143);
           internal_static_StreamTestRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_StreamTestRequest_descriptor,
@@ -83356,7 +86160,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.StreamTestRequest.class,
               com.ugcs.ucs.proto.MessagesProto.StreamTestRequest.Builder.class);
           internal_static_StreamTestResponse_descriptor =
-            getDescriptor().getMessageTypes().get(140);
+            getDescriptor().getMessageTypes().get(144);
           internal_static_StreamTestResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_StreamTestResponse_descriptor,
@@ -83364,7 +86168,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.StreamTestResponse.class,
               com.ugcs.ucs.proto.MessagesProto.StreamTestResponse.Builder.class);
           internal_static_ProgressTestRequest_descriptor =
-            getDescriptor().getMessageTypes().get(141);
+            getDescriptor().getMessageTypes().get(145);
           internal_static_ProgressTestRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressTestRequest_descriptor,
@@ -83372,7 +86176,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProgressTestRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ProgressTestRequest.Builder.class);
           internal_static_ProgressTestResponse_descriptor =
-            getDescriptor().getMessageTypes().get(142);
+            getDescriptor().getMessageTypes().get(146);
           internal_static_ProgressTestResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressTestResponse_descriptor,
@@ -83380,7 +86184,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProgressTestResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ProgressTestResponse.Builder.class);
           internal_static_Notification_descriptor =
-            getDescriptor().getMessageTypes().get(143);
+            getDescriptor().getMessageTypes().get(147);
           internal_static_Notification_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Notification_descriptor,
@@ -83388,7 +86192,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.Notification.class,
               com.ugcs.ucs.proto.MessagesProto.Notification.Builder.class);
           internal_static_SubscribeEventRequest_descriptor =
-            getDescriptor().getMessageTypes().get(144);
+            getDescriptor().getMessageTypes().get(148);
           internal_static_SubscribeEventRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubscribeEventRequest_descriptor,
@@ -83396,7 +86200,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest.Builder.class);
           internal_static_SubscribeEventResponse_descriptor =
-            getDescriptor().getMessageTypes().get(145);
+            getDescriptor().getMessageTypes().get(149);
           internal_static_SubscribeEventResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubscribeEventResponse_descriptor,
@@ -83404,7 +86208,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse.Builder.class);
           internal_static_UnsubscribeEventRequest_descriptor =
-            getDescriptor().getMessageTypes().get(146);
+            getDescriptor().getMessageTypes().get(150);
           internal_static_UnsubscribeEventRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UnsubscribeEventRequest_descriptor,
@@ -83412,7 +86216,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest.Builder.class);
           internal_static_UnsubscribeEventResponse_descriptor =
-            getDescriptor().getMessageTypes().get(147);
+            getDescriptor().getMessageTypes().get(151);
           internal_static_UnsubscribeEventResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UnsubscribeEventResponse_descriptor,

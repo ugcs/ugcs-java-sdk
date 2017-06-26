@@ -138,6 +138,10 @@ enum TelemetryType {
 	TT_ADSB_ERROR_OVER_TEMPERATURE = 84;
 	TT_ADSB_ERROR_ES = 85;
 	TT_ADSB_ERROR_TRANSPONDER = 86;
+	TT_TARGET_LATITUDE = 87;
+	TT_TARGET_LONGITUDE = 88;
+	TT_TARGET_AMSL_ALTITUDE = 89;
+	TT_BATTERY_POWER_LEVEL = 90;
 }
 
 enum VehicleType {
@@ -190,6 +194,8 @@ enum VehicleParameterType {
 	VPT_LANDING_RANGEFINDER_ENABLED = 40;
 	VPT_MIN_RANGEFINDER_DISTANCE = 41;
 	VPT_MAX_DESCENT_RATE = 42;
+	VPT_LOW_BATTERY_POWER_LEVEL = 43;
+    VPT_NORMAL_BATTERY_POWER_LEVEL = 44;
 }
 
 enum PayloadType {
@@ -206,6 +212,7 @@ enum PayloadParameterType {
 	PPT_SENSOR_HEIGHT = 5;
 	PPT_SENSOR_HORIZONTAL_PIXELS = 6;
 	PPT_SENSOR_VERTICAL_PIXELS = 7;
+	PPT_MIN_TRIGGERING_INTERVAL = 8;
 }
 
 enum SeverityLevel {
@@ -425,6 +432,7 @@ enum Semantic {
 	S_BOOL = 31;
 	S_STRING = 32;
 	S_ENUM = 33;
+	S_CAPACITY_LEVEL = 34;
 }
 
 //*****************************************************************************
@@ -1016,6 +1024,7 @@ message CameraSeriesByTime {
 	optional double interval = 3;
 	optional int32 shotsNumber = 4;
 	optional double startDelay = 5;
+	optional bool autoCalc = 7;
 	optional string tag = 6;
 }
 
@@ -1025,6 +1034,7 @@ message CameraSeriesByDistance {
 	optional double interval = 3;
 	optional int32 shotsNumber = 4;
 	optional double startDelay = 5;
+	optional bool autoCalc = 7;
 	optional string tag = 6;
 }
 
@@ -1039,7 +1049,9 @@ message HeadingChange {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double heading = 3;
-	optional string tag = 4;
+	optional bool relativeToNextWaypoint = 4;
+	optional bool relativeToNorth = 5;
+	optional string tag = 6;
 }
 
 message HomeLocation {
@@ -1177,7 +1189,9 @@ message HeadingDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double heading = 3;
-	optional string tag = 4;
+	optional bool relativeToNextWaypoint = 4;
+	optional bool relativeToNorth = 5;
+	optional string tag = 6;
 }
 
 message PoiDefinition {
@@ -1519,18 +1533,6 @@ message AdsbIndicatorEvent {
 message AdsbIndicatorSubscription {
 }
 
-message VehicleTargetLocationEvent {
-	optional Vehicle vehicle = 1;
-	optional int64 sequenceId = 2;
-	optional double targetLocationLatitude = 3;
-	optional double targetLocationLongitude = 4;
-	optional double targetLocationAltitude = 5;
-	optional double acceptanceRadius = 6;
-}
-
-message VehicleTargetLocationSubscription {
-}
-
 message ProgressDto {
 	optional string title = 1;
 	optional int32 progress = 2;
@@ -1554,7 +1556,6 @@ message EventWrapper {
 	optional TelemetryEvent telemetryEvent = 3;
 	optional TelemetryRemovalEvent telemetryRemovalEvent = 4;
 	optional AdsbIndicatorEvent adsbIndicatorEvent = 5;
-	optional VehicleTargetLocationEvent vehicleTargetLocationEvent = 6;
 	optional ServerProgressEvent serverProgressEvent = 7;
 }
 
@@ -1564,6 +1565,5 @@ message EventSubscriptionWrapper {
 	optional TelemetrySubscription telemetrySubscription = 3;
 	optional TelemetryRemovalSubscription telemetryRemovalSubscription = 4;
 	optional AdsbIndicatorSubscription adsbIndicatorSubscription = 5;
-	optional VehicleTargetLocationSubscription vehicleTargetLocationSubscription = 6;
 	optional ServerProgressSubscription serverProgressSubscription = 7;
 }

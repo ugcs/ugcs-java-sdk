@@ -6,10 +6,19 @@ import java.util.Date;
 import java.util.Properties;
 
 import com.ugcs.ucs.client.Client;
-import com.ugcs.ucs.client.ClientSession;
 import com.ugcs.ucs.client.ServerNotification;
 import com.ugcs.ucs.client.ServerNotificationListener;
-import com.ugcs.ucs.proto.DomainProto.*;
+import com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper;
+import com.ugcs.ucs.proto.DomainProto.EventWrapper;
+import com.ugcs.ucs.proto.DomainProto.Telemetry;
+import com.ugcs.ucs.proto.DomainProto.TelemetryEvent;
+import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
+import com.ugcs.ucs.proto.MessagesProto.LoginRequest;
+import com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest;
+import com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse;
+import com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest;
 
 public class ListenTelemetry {
 	public static void main(String[] args) {
@@ -32,7 +41,7 @@ public class ListenTelemetry {
 		if (usage) {
 			System.err.println("ListenTelemetry -t waitSeconds");
 			System.err.println("");
-			System.err.println("\tListen to all telemetry, received by the UgCS server");
+			System.err.println("\tListen to all telemetry, received by the UCS server");
 			System.err.println("\tfor a specified amount of time in seconds.");
 			System.err.println("");
 			System.err.println("Example:");
@@ -71,7 +80,7 @@ public class ListenTelemetry {
 			client.addNotificationListener(new TelemetryListener());
 			client.connect();
 
-			ClientSession session = new ClientSession(client);
+			Session session = new Session(client);
 			
 			// To create a new client session application should send 
 			// an AuthorizeHciRequest message and set the clientId field 
@@ -124,14 +133,68 @@ public class ListenTelemetry {
 			// (lat, lon) position is not necessary present 
 			// in every batch.
 			
-			System.out.println("Telemetry received: " + (telemetryEvent.getVehicle() == null
+			System.out.println("Telemetry received: " +
+					telemetryEvent.getVehicle() == null
 							? "Unknown vehicle"
-							: telemetryEvent.getVehicle().getTailNumber()));
+							: telemetryEvent.getVehicle().getTailNumber());
 			for (Telemetry telemtry : telemetryEvent.getTelemetryList()) {
 				System.out.println("\t" + new Date(telemtry.getTime()) + 
 						"\t" + telemtry.getType() + 
 						" = " + telemtry.getValue());
 			}
+		}
+	}
+	
+	static class Session {
+		private final Client client;
+		private int clientId = -1;
+		
+		public Session(Client client) {
+			if (client == null)
+				throw new IllegalArgumentException("client");
+			
+			this.client = client;
+		}
+		
+		public void authorizeHci() throws Exception {
+			clientId = -1;
+			AuthorizeHciRequest request = AuthorizeHciRequest.newBuilder()
+				.setClientId(clientId)
+				.build();
+			AuthorizeHciResponse response = client.execute(request);
+			clientId = response.getClientId();
+		} 
+	
+		public void login(String login, String password) throws Exception {
+			if (login == null || login.isEmpty())
+				throw new IllegalArgumentException("login");
+			if (password == null || password.isEmpty())
+				throw new IllegalArgumentException("password");
+
+			LoginRequest request = LoginRequest.newBuilder()
+					.setClientId(clientId)
+					.setUserLogin(login)
+					.setUserPassword(password)
+					.build();
+			client.execute(request);
+		}
+		
+		public int subscribeTelemetryEvent() throws Exception {
+			SubscribeEventRequest request = SubscribeEventRequest.newBuilder()
+					.setClientId(clientId)
+					.setSubscription(EventSubscriptionWrapper.newBuilder()
+							.setTelemetrySubscription(TelemetrySubscription.newBuilder()))
+					.build();
+			SubscribeEventResponse response = client.execute(request);
+			return response.getSubscriptionId();
+		}
+		
+		public void unsubscribe(int subscriptionId) throws Exception {
+			UnsubscribeEventRequest request = UnsubscribeEventRequest.newBuilder()
+					.setClientId(clientId)
+					.setSubscriptionId(subscriptionId)
+					.build();
+			client.execute(request);
 		}
 	}
 }

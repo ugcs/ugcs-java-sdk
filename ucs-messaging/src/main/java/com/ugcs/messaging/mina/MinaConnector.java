@@ -34,7 +34,7 @@ public class MinaConnector implements Connector {
 	
 	private static final int DEFAULT_MAX_IO_THREADS = 4;
 	private static final int DEFAULT_MAX_TASK_THREADS = 16;
-	private static final int DEFAULT_SESSION_IDLE_SECONDS = 300;
+	private static final int DEFAULT_SESSION_IDLE_SECONDS = 3;
 	
 	private final SocketConnector connector;
 	private final MinaAdapter minaAdapter;

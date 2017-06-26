@@ -5,14 +5,35 @@ import java.net.InetSocketAddress;
 import java.util.Properties;
 
 import com.ugcs.ucs.client.Client;
-import com.ugcs.ucs.client.ClientSession;
-import com.ugcs.ucs.proto.DomainProto.*;
+import com.ugcs.ucs.proto.DomainProto;
+import com.ugcs.ucs.proto.DomainProto.AltitudeType;
+import com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper;
+import com.ugcs.ucs.proto.DomainProto.Figure;
+import com.ugcs.ucs.proto.DomainProto.FigurePoint;
+import com.ugcs.ucs.proto.DomainProto.FigureType;
+import com.ugcs.ucs.proto.DomainProto.HomeLocationSource;
+import com.ugcs.ucs.proto.DomainProto.ParameterValue;
+import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
+import com.ugcs.ucs.proto.DomainProto.Route;
+import com.ugcs.ucs.proto.DomainProto.SegmentDefinition;
+import com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm;
+import com.ugcs.ucs.proto.DomainProto.Vehicle;
+import com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
+import com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest;
+import com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse;
+import com.ugcs.ucs.proto.MessagesProto.LoginRequest;
+import com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest;
+import com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse;
+import com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest;
+import com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest;
 
 public class UploadSingleWaypointRoute {
 	public static void main(String[] args) {
-		String vehicleName = null;
+		String tailNumber = null;
 		double[] waypoint = null;
-		double speed = 5.0; // init with a default value
+		double speed = 5.0;
 
 		boolean usage = false;
 		for (int i = 0; i < args.length; ++i) {
@@ -40,14 +61,14 @@ public class UploadSingleWaypointRoute {
 				speed = Double.parseDouble(args[++i]);
 				continue;
 			}
-			vehicleName = args[i];
+			tailNumber = args[i];
 			break;
 		}
-		if (vehicleName == null)
+		if (tailNumber == null)
 			usage = true;
 
 		if (usage) {
-			System.err.println("UploadSingleWaypointRoute -w waypoint [-s speed] vehicleName");
+			System.err.println("UploadSingleWaypointRoute -w waypoint [-s speed] tailNumber");
 			System.err.println("");
 			System.err.println("\tWaypoint is specified as \"lat,lon,alt\" string, with respective values");
 			System.err.println("\tin degrees (latitude and longitude) and AGL meters (altitude). Positive");
@@ -55,11 +76,11 @@ public class UploadSingleWaypointRoute {
 			System.err.println("");
 			System.err.println("Example:");
 			System.err.println("");
-			System.err.println("\tUploadSingleWaypointRoute -w \"56.9761591,24.0730345,100.0\" -s 5.0 \"EMU-COPTER-17\"");
+			System.err.println("\tUploadSingleWaypointRoute -w \"56.9761591,24.0730345,100.0\" -s 5.0 \"EmuCopter-101\"");
 			System.exit(1);
 		} else {
 			try {
-				uploadSingleWaypointRoute(vehicleName, waypoint, speed);
+				uploadSingleWaypointRoute(tailNumber, waypoint, speed);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
 				System.exit(1);
@@ -67,7 +88,7 @@ public class UploadSingleWaypointRoute {
 		}
 	}
 
-	public static void uploadSingleWaypointRoute(String vehicleName, double[] waypoint, double speed) throws Exception {
+	public static void uploadSingleWaypointRoute(String tailNumber, double[] waypoint, double speed) throws Exception {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		Properties properties = new Properties();
 		try (InputStream in = classLoader.getResourceAsStream("client.properties")) {
@@ -82,7 +103,7 @@ public class UploadSingleWaypointRoute {
 
 			client.connect();
 
-			ClientSession session = new ClientSession(client);
+			Session session = new Session(client);
 
 			// To create a new client session application should send
 			// an AuthorizeHciRequest message and set the clientId field
@@ -98,13 +119,13 @@ public class UploadSingleWaypointRoute {
 					properties.getProperty("user.password"));
 
 			// Find a vehicle with the specified tail number.
-			Vehicle vehicle = session.lookupVehicle(vehicleName);
+			Vehicle vehicle = session.lookupVehicle(tailNumber);
 			if (vehicle == null)
-				throw new IllegalStateException("Vehicle not found: " + vehicleName);
+				throw new IllegalStateException("Vehicle not found: " + tailNumber);
 
 			// Build a route, containing a single waypoint, that should be
 			// approached with the specified speed.
-			Route route = buildRoute(vehicle, waypoint, speed);
+			Route route = session.buildRoute(vehicle, waypoint, speed);
 
 			// Constructed route is just a definition (a plan) of the target
 			// mission. Direct path between a vehicle and a target point
@@ -113,47 +134,87 @@ public class UploadSingleWaypointRoute {
 			// for the route.
 			ProcessedRoute processedRoute = session.processRoute(route);
 
-			// Before the actual upload we lock the vehicle.
-			session.gainVehicleControl(vehicle);
 			try {
-				session.uploadRoute(vehicle, processedRoute);
+				// Before the actual upload we lock the vehicle.
+				session.gainVehicleControl(vehicle);
+				// TODO!
+				//session.uploadRoute(processedRoute, vehicle);
 			} finally {
 				session.releaseVehicleControl(vehicle);
 			}
 		}
 	}
 
-	private static Route buildRoute(Vehicle vehicle, double[] waypoint, double speed) throws Exception {
-		if (waypoint == null || waypoint.length < 3)
-			throw new IllegalArgumentException("Waypoint array cannot be null and should contain 3 components");
+	static class Session {
+		private final Client client;
+		private int clientId = -1;
 
-		Figure.Builder figure = Figure.newBuilder()
-				.setType(FigureType.FT_POINT)
-				.addPoints(FigurePoint.newBuilder()
-						.setLatitude(waypoint[0])
-						.setLongitude(waypoint[1])
-						.setAglAltitude(waypoint[2])
-						.setAltitudeType(AltitudeType.AT_AGL));
+		public Session(Client client) {
+			if (client == null)
+				throw new IllegalArgumentException("client");
 
-		SegmentDefinition.Builder routeSegment = SegmentDefinition
-				.newBuilder()
-				.setOrder(0)
-				.setAlgorithmClassName("com.ugcs.ucs.service.routing.impl.WaypointAlgorithm")
-				.setFigure(figure)
-				.addParameterValues( ParameterValue.newBuilder()
-						.setName("speed")
-						.setValue(Double.toString(speed)))
-				.addParameterValues( ParameterValue.newBuilder()
-						.setName("wpTurnType")
-						.setValue("STOP_AND_TURN"))
-				.addParameterValues( ParameterValue.newBuilder()
-						.setName("avoidObstacles")
-						.setValue("true"))
-				.addParameterValues( ParameterValue.newBuilder()
-						.setName("avoidTerrain")
-						.setValue("true"));
+			this.client = client;
+		}
 
-		Route.Builder route = Route.newBuilder()
+		public void authorizeHci() throws Exception {
+			clientId = -1;
+			AuthorizeHciRequest request = AuthorizeHciRequest.newBuilder()
+				.setClientId(clientId)
+				.build();
+			AuthorizeHciResponse response = client.execute(request);
+			clientId = response.getClientId();
+		}
+
+		public void login(String login, String password) throws Exception {
+			if (login == null || login.isEmpty())
+				throw new IllegalArgumentException("login");
+			if (password == null || password.isEmpty())
+				throw new IllegalArgumentException("password");
+
+			LoginRequest request = LoginRequest.newBuilder()
+					.setClientId(clientId)
+					.setUserLogin(login)
+					.setUserPassword(password)
+					.build();
+			client.execute(request);
+		}
+
+		public Route buildRoute(Vehicle vehicle, double[] waypoint, double speed) throws Exception {
+			if (waypoint == null || waypoint.length < 3)
+				throw new IllegalArgumentException("Waypoint array cannot be null and should contain 3 components");
+
+			TraverseAlgorithm waypointAlgorithm = lookupTraverseAlgorithm(
+					"com.ugcs.ucs.service.routing.impl.WaypointAlgorithm");
+			if (waypointAlgorithm == null)
+				throw new IllegalStateException("Waypoint algorithm not supported");
+
+			Figure.Builder figure = Figure.newBuilder()
+					.setType(FigureType.FT_POINT)
+					.addPoints(FigurePoint.newBuilder()
+							.setLatitude(waypoint[0])
+							.setLongitude(waypoint[1])
+							.setAglAltitude(waypoint[2])
+							.setAltitudeType(AltitudeType.AT_AGL));
+
+			SegmentDefinition.Builder routeSegment = SegmentDefinition
+					.newBuilder()
+					.setOrder(0)
+					.setAlgorithmClassName(waypointAlgorithm.getImplementationClass())
+					.setFigure(figure)
+					.addParameterValues( ParameterValue.newBuilder()
+							.setName("speed")
+							.setValue(Double.toString(speed)))
+					.addParameterValues( ParameterValue.newBuilder()
+							.setName("wpTurnType")
+							.setValue("STOP_AND_TURN"))
+					.addParameterValues( ParameterValue.newBuilder()
+							.setName("avoidObstacles")
+							.setValue("true"))
+					.addParameterValues( ParameterValue.newBuilder()
+							.setName("avoidTerrain")
+							.setValue("true"));
+
+			Route.Builder route = Route.newBuilder()
 				.setName("WP-Direct " + System.currentTimeMillis())
 				.setHomeLocationSource(HomeLocationSource.HLS_FIRST_WAYPOINT)
 				.setCheckAerodromeNfz(true)
@@ -163,14 +224,116 @@ public class UploadSingleWaypointRoute {
 				.setMaxAltitude(10000.0)
 				.setSafeAltitude(50.0)
 				.setAltitudeType(AltitudeType.AT_AGL)
-				.setTrajectoryType(TrajectoryType.TT_STRAIGHT)
-				.addFailsafes(Failsafe.newBuilder()
-						.setReason(FailsafeReason.FR_GPS_LOST)
-						.setAction(FailsafeAction.FA_WAIT))
+				.setTrajectoryType(DomainProto.TrajectoryType.TT_STRAIGHT)
+				.addFailsafes(DomainProto.Failsafe.newBuilder()
+						.setReason(DomainProto.FailsafeReason.FR_GPS_LOST)
+						.setAction(DomainProto.FailsafeAction.FA_WAIT))
 				.addSegments(routeSegment);
-		if (vehicle != null)
-			route.setVehicleProfile(vehicle.getProfile());
+			if (vehicle != null)
+				route.setVehicleProfile(vehicle.getProfile());
 
-		return route.build();
+			return route.build();
+		}
+
+		private TraverseAlgorithm lookupTraverseAlgorithm(String implementationClass) throws Exception {
+			if (implementationClass == null)
+				throw new IllegalArgumentException("implementationClass cannot be null");
+
+			GetObjectListRequest request = GetObjectListRequest.newBuilder()
+					.setClientId(clientId)
+					.setObjectType("TraverseAlgorithm")
+					.build();
+			GetObjectListResponse response = client.execute(request);
+			for (DomainObjectWrapper item : response.getObjectsList()) {
+				if (item == null || item.getTraverseAlgorithm() == null)
+					continue;
+				if (implementationClass.equals(
+						item.getTraverseAlgorithm().getImplementationClass()))
+					return item.getTraverseAlgorithm();
+			}
+			return null;
+		}
+
+		public Vehicle lookupVehicle(String tailNumber) throws Exception {
+			if (tailNumber == null || tailNumber.isEmpty())
+				throw new IllegalArgumentException("tailNumber cannot be empty");
+
+			GetObjectListRequest request = GetObjectListRequest.newBuilder()
+					.setClientId(clientId)
+					.setObjectType("Vehicle")
+					.build();
+			GetObjectListResponse response = client.execute(request);
+			for (DomainObjectWrapper item : response.getObjectsList()) {
+				if (item == null || item.getVehicle() == null)
+					continue;
+				if (tailNumber.equals(item.getVehicle().getTailNumber()))
+					return item.getVehicle();
+			}
+			return null;
+		}
+
+		public void gainVehicleControl(Vehicle vehicle) throws Exception {
+			if (vehicle == null)
+				throw new IllegalArgumentException("vehicle cannot be null");
+
+			AcquireLockRequest request = AcquireLockRequest.newBuilder()
+					.setClientId(clientId)
+					.setObjectType("Vehicle")
+					.setObjectId(vehicle.getId())
+					.build();
+			client.execute(request);
+		}
+
+		public void releaseVehicleControl(Vehicle vehicle) throws Exception {
+			if (vehicle == null)
+				throw new IllegalArgumentException("vehicle cannot be null");
+
+			ReleaseLockRequest request = ReleaseLockRequest.newBuilder()
+					.setClientId(clientId)
+					.setObjectType("Vehicle")
+					.setObjectId(vehicle.getId())
+					.setIfExclusive(true)
+					.build();
+			client.execute(request);
+		}
+
+		private DomainProto.ProcessedRoute processRoute(Route route) throws Exception {
+			if (route == null)
+				throw new IllegalArgumentException("route cannot be null");
+
+			ProcessRouteRequest request = ProcessRouteRequest.newBuilder()
+					.setClientId(clientId)
+					.setRoute(route)
+					.build();
+			ProcessRouteResponse response = client.execute(request);
+			DomainProto.ProcessedRoute processedRoute = response.getProcessedRoute();
+
+			boolean processed = true;
+			for (DomainProto.ProcessedSegment segment : processedRoute.getSegmentsList()) {
+				if (segment.getStatus() != DomainProto.RouteProcessingStatus.RPS_PROCESSED) {
+					processed = false;
+					for (DomainProto.LocalizedMessage message : segment.getMessageSet().getMessagesList()) {
+						System.err.println(message.getSeverity() + ": " + message.getDefaultText());
+					}
+				}
+			}
+			if (!processed)
+				throw new IllegalStateException("Route processing error");
+			return processedRoute;
+		}
+
+		private void uploadRoute(Vehicle vehicle, ProcessedRoute processedRoute) throws Exception {
+			if (processedRoute == null)
+				throw new IllegalArgumentException("route cannot be null");
+			if (vehicle == null)
+				throw new IllegalArgumentException("vehicle cannot be null");
+
+			UploadRouteRequest request = UploadRouteRequest.newBuilder()
+					.setClientId(clientId)
+					.setProcessedRoute(processedRoute)
+					.setVehicle(vehicle)
+					.build();
+			client.execute(request);
+		}
 	}
 }

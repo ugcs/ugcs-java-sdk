@@ -45,7 +45,14 @@ class MinaAdapter extends IoHandlerAdapter {
 				messageSession = new MinaMessageSession(session);
 				session.setAttribute("messageSession", messageSession);
 			}
+			MessageSessionEvent sessionEvent = new MessageSessionEvent(this, messageSession);
+			for (MessageSessionListener listener : sessionListeners)
+				listener.sessionOpened(sessionEvent);
 		}
+		log.info("Session {} opened {local: {}, remote: {}}",
+				session.getId(),
+				session.getLocalAddress(),
+				session.getRemoteAddress());
 		return messageSession;
 	}
 	
@@ -101,17 +108,6 @@ class MinaAdapter extends IoHandlerAdapter {
 
 	@Override
 	public void sessionOpened(IoSession session) throws Exception {
-		Objects.requireNonNull(session);
-		
-		log.info("Session {} opened {local: {}, remote: {}}",
-				session.getId(),
-				session.getLocalAddress(),
-				session.getRemoteAddress());
-
-		MessageSession messageSession = getMessageSession(session);
-		MessageSessionEvent sessionEvent = new MessageSessionEvent(this, messageSession);
-		for (MessageSessionListener listener : sessionListeners)
-			listener.sessionOpened(sessionEvent);
 	}
 
 	@Override
@@ -134,6 +130,8 @@ class MinaAdapter extends IoHandlerAdapter {
 	@Override
 	public void exceptionCaught(IoSession session, Throwable cause) throws Exception {
 		Objects.requireNonNull(session);
+
+		log.error("Session {} error: {}", session, cause);
 
 		MessageSession messageSession = getMessageSession(session);
 		MessageSessionEvent sessionEvent = new MessageSessionErrorEvent(

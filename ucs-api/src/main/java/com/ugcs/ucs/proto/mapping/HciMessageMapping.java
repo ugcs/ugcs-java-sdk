@@ -54,8 +54,8 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(53, MessagesProto.SearchPlacesResponse.class);
 		putMapping(54, MessagesProto.ExportRouteToXmlRequest.class);
 		putMapping(55, MessagesProto.ExportRouteToXmlResponse.class);
-		putMapping(56, MessagesProto.ImportRouteFromXmlRequest.class);
-		putMapping(57, MessagesProto.ImportRouteFromXmlResponse.class);
+		putMapping(56, MessagesProto.ImportRouteRequest.class);
+		putMapping(57, MessagesProto.ImportRouteResponse.class);
 		putMapping(58, MessagesProto.SubscribeEventRequest.class);
 		putMapping(59, MessagesProto.SubscribeEventResponse.class);
 		putMapping(60, MessagesProto.UnsubscribeEventRequest.class);
@@ -104,6 +104,8 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(103, MessagesProto.SendStatisticsResponse.class);
 		putMapping(106, MessagesProto.GetParametersSelectionValuesRequest.class);
 		putMapping(107, MessagesProto.GetParametersSelectionValuesResponse.class);
+		putMapping(108, MessagesProto.GetAdsbBulbStatusRequest.class);
+		putMapping(109, MessagesProto.GetAdsbBulbStatusResponse.class);
 		putMapping(110, MessagesProto.CountTelemetryRequest.class);
 		putMapping(111, MessagesProto.CountTelemetryResponse.class);
 		putMapping(112, MessagesProto.CalculateSplineRequest.class);
@@ -116,10 +118,10 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(119, SubmitUtmOperationResponse.class);
 		putMapping(120, GetCapabilitiesRequest.class);
 		putMapping(121, GetCapabilitiesResponse.class);
-		putMapping(122, MessagesProto.GetVehicleTargetLocationsRequest.class);
-		putMapping(123, MessagesProto.GetVehicleTargetLocationsResponse.class);
 		putMapping(124, MessagesProto.GetMappingRequest.class);
 		putMapping(125, MessagesProto.GetMappingResponse.class);
+		putMapping(126, MessagesProto.GetVehicleTracksRequest.class);
+		putMapping(127, MessagesProto.GetVehicleTracksResponse.class);
 
 		putMapping(200, MessagesProto.StreamTestRequest.class);
 		putMapping(201, MessagesProto.StreamTestResponse.class);

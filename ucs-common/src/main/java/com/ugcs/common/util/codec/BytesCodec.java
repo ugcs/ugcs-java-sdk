@@ -16,7 +16,7 @@ public class BytesCodec {
 	 * @param objectCodec - an instance of {@link ObjectCodec}, that implements logic to encode this object.
 	 * @return <tt>null</tt>, if <tt>obj</tt> is <tt>null</tt>, encoded <tt>obj</tt> otherwise
 	 */
-	public static byte[] encodeObject(Object obj, ObjectCodec objectCodec) {
+	public static <T> byte[] encodeObject(T obj, ObjectCodec<T> objectCodec) {
 		if (obj == null) {
 			return null;
 		}

@@ -68,6 +68,7 @@ message LicensePermissionsDto {
 	repeated PlatformAndBooleanPairDto cameraFootprint = 14;
 	repeated PlatformAndBooleanPairDto adsbTransponder = 15;
 	repeated string forbiddenAlgorithmCodes = 16;
+	required int32 maxImagesToProcess = 17;
 }
 
 message PlatformAndBooleanPairDto {
@@ -85,16 +86,25 @@ message PlatformAndDoublePairDto {
 	required double value = 2;
 }
 
-message VehicleTargetLocationDto {
-	required Vehicle vehicle = 1;
-	required int64 sequenceId = 2;
-	optional Wgs84LocationDto location = 3;
-	optional double acceptanceRadius = 4;
-}
-
 message VehicleCommandResultDto {
 	required Vehicle vehicle = 1;
 	required CommandStatus commandStatus = 2;
+}
+
+message TrackPointDto {
+	required int64 time = 1;
+	required Wgs84LocationDto location = 2;
+}
+
+message VehicleTrackDto {
+	required Vehicle vehicle = 1;
+	repeated TrackPointDto points = 2;
+}
+
+message ImportRouteParameterDto {
+	required string algorithmClass = 1;
+	required string parameterName = 2;
+	required string parameterValue = 3;
 }
 
 // Mapping
@@ -301,12 +311,15 @@ message ExportRouteToXmlResponse {
 	required bytes routeXml = 1;
 }
 
-message ImportRouteFromXmlRequest {
+message ImportRouteRequest {
 	required int32 clientId = 1;
-	required bytes routeXml = 2;
+	required bytes routeData = 2;
+	required string filename = 3;
+	optional TraverseAlgorithm algorithm = 4;
+	repeated ImportRouteParameterDto parameters = 5;
 }
 
-message ImportRouteFromXmlResponse {
+message ImportRouteResponse {
 	required Route route = 1;
 }
 
@@ -341,6 +354,7 @@ message ImportTelemetryFromXmlRequest {
 	required int32 clientId = 1;
 	required bytes telemetryXml = 2;
 	required ConflictResolutionMode conflictResolutionMode = 3;
+	optional string name = 4;
 }
 
 message ImportTelemetryFromXmlResponse {
@@ -455,6 +469,18 @@ message CountTelemetryResponse {
 	optional int64 tLogSize = 2;
 }
 
+message GetVehicleTracksRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required int64 fromTime = 3;
+	optional int64 toTime = 4;
+	optional int32 maxPoints = 5 [default = 200];
+}
+
+message GetVehicleTracksResponse {
+	repeated VehicleTrackDto vehicleTracks = 1;
+}
+
 message GetKmlRouteRepresentationRequest {
 	required int32 clientId = 1;
 	required string routeName = 2;
@@ -529,6 +555,14 @@ message UploadRouteRequest {
 }
 
 message UploadRouteResponse {
+}
+
+message GetAdsbBulbStatusRequest {
+	required int32 clientId = 1;
+}
+
+message GetAdsbBulbStatusResponse {
+	required bool on = 1;
 }
 
 // Licensing and Version control
@@ -751,15 +785,6 @@ message GetCapabilitiesRequest {
 
 message GetCapabilitiesResponse {
 	required bool utm = 1 [default = false];
-}
-
-message GetVehicleTargetLocationsRequest {
-	required int32 clientId = 1;
-}
-
-message GetVehicleTargetLocationsResponse {
-	required int32 clientId = 1;
-	repeated VehicleTargetLocationDto targetLocations = 2;
 }
 
 // Operations
