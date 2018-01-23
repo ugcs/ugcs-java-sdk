@@ -614,6 +614,35 @@ public final class DomainProto {
     TT_TARGET_LONGITUDE(88, 88),
     TT_TARGET_AMSL_ALTITUDE(89, 89),
     TT_BATTERY_POWER_LEVEL(90, 90),
+    TT_FENCE_ENABLED(91, 91),
+    TT_CURRENT(92, 92),
+    TT_VIBRATION_X(93, 93),
+    TT_VIBRATION_Y(94, 94),
+    TT_VIBRATION_Z(95, 95),
+    TT_MOTORS_OK(96, 96),
+    TT_MOTOR_PWM_1(97, 97),
+    TT_MOTOR_PWM_2(98, 98),
+    TT_MOTOR_PWM_3(99, 99),
+    TT_MOTOR_PWM_4(100, 100),
+    TT_MOTOR_PWM_5(101, 101),
+    TT_MOTOR_PWM_6(102, 102),
+    TT_MOTOR_PWM_7(103, 103),
+    TT_MOTOR_PWM_8(104, 104),
+    TT_WINCH_SAFETY_BATTERY_ACTIVE(105, 105),
+    TT_WINCH_SAFETY_BATTERY_VOLTAGE(106, 106),
+    TT_WINCH_CONNECTED(107, 107),
+    TT_STANDBY(108, 108),
+    TT_WAYPOINT_NUMBER(109, 109),
+    TT_FLIGHT_MODE(110, 110),
+    TT_SERVO_PWM_1(111, 111),
+    TT_SERVO_PWM_2(112, 112),
+    TT_SERVO_PWM_3(113, 113),
+    TT_SERVO_PWM_4(114, 114),
+    TT_SERVO_PWM_5(115, 115),
+    TT_SERVO_PWM_6(116, 116),
+    TT_SERVO_PWM_7(117, 117),
+    TT_SERVO_PWM_8(118, 118),
+    TT_AUTOPILOT_STATUS(119, 119),
     ;
     
     public static final int TT_BATTERY_VOLTAGE_VALUE = 0;
@@ -707,6 +736,35 @@ public final class DomainProto {
     public static final int TT_TARGET_LONGITUDE_VALUE = 88;
     public static final int TT_TARGET_AMSL_ALTITUDE_VALUE = 89;
     public static final int TT_BATTERY_POWER_LEVEL_VALUE = 90;
+    public static final int TT_FENCE_ENABLED_VALUE = 91;
+    public static final int TT_CURRENT_VALUE = 92;
+    public static final int TT_VIBRATION_X_VALUE = 93;
+    public static final int TT_VIBRATION_Y_VALUE = 94;
+    public static final int TT_VIBRATION_Z_VALUE = 95;
+    public static final int TT_MOTORS_OK_VALUE = 96;
+    public static final int TT_MOTOR_PWM_1_VALUE = 97;
+    public static final int TT_MOTOR_PWM_2_VALUE = 98;
+    public static final int TT_MOTOR_PWM_3_VALUE = 99;
+    public static final int TT_MOTOR_PWM_4_VALUE = 100;
+    public static final int TT_MOTOR_PWM_5_VALUE = 101;
+    public static final int TT_MOTOR_PWM_6_VALUE = 102;
+    public static final int TT_MOTOR_PWM_7_VALUE = 103;
+    public static final int TT_MOTOR_PWM_8_VALUE = 104;
+    public static final int TT_WINCH_SAFETY_BATTERY_ACTIVE_VALUE = 105;
+    public static final int TT_WINCH_SAFETY_BATTERY_VOLTAGE_VALUE = 106;
+    public static final int TT_WINCH_CONNECTED_VALUE = 107;
+    public static final int TT_STANDBY_VALUE = 108;
+    public static final int TT_WAYPOINT_NUMBER_VALUE = 109;
+    public static final int TT_FLIGHT_MODE_VALUE = 110;
+    public static final int TT_SERVO_PWM_1_VALUE = 111;
+    public static final int TT_SERVO_PWM_2_VALUE = 112;
+    public static final int TT_SERVO_PWM_3_VALUE = 113;
+    public static final int TT_SERVO_PWM_4_VALUE = 114;
+    public static final int TT_SERVO_PWM_5_VALUE = 115;
+    public static final int TT_SERVO_PWM_6_VALUE = 116;
+    public static final int TT_SERVO_PWM_7_VALUE = 117;
+    public static final int TT_SERVO_PWM_8_VALUE = 118;
+    public static final int TT_AUTOPILOT_STATUS_VALUE = 119;
     
     
     public final int getNumber() { return value; }
@@ -804,6 +862,35 @@ public final class DomainProto {
         case 88: return TT_TARGET_LONGITUDE;
         case 89: return TT_TARGET_AMSL_ALTITUDE;
         case 90: return TT_BATTERY_POWER_LEVEL;
+        case 91: return TT_FENCE_ENABLED;
+        case 92: return TT_CURRENT;
+        case 93: return TT_VIBRATION_X;
+        case 94: return TT_VIBRATION_Y;
+        case 95: return TT_VIBRATION_Z;
+        case 96: return TT_MOTORS_OK;
+        case 97: return TT_MOTOR_PWM_1;
+        case 98: return TT_MOTOR_PWM_2;
+        case 99: return TT_MOTOR_PWM_3;
+        case 100: return TT_MOTOR_PWM_4;
+        case 101: return TT_MOTOR_PWM_5;
+        case 102: return TT_MOTOR_PWM_6;
+        case 103: return TT_MOTOR_PWM_7;
+        case 104: return TT_MOTOR_PWM_8;
+        case 105: return TT_WINCH_SAFETY_BATTERY_ACTIVE;
+        case 106: return TT_WINCH_SAFETY_BATTERY_VOLTAGE;
+        case 107: return TT_WINCH_CONNECTED;
+        case 108: return TT_STANDBY;
+        case 109: return TT_WAYPOINT_NUMBER;
+        case 110: return TT_FLIGHT_MODE;
+        case 111: return TT_SERVO_PWM_1;
+        case 112: return TT_SERVO_PWM_2;
+        case 113: return TT_SERVO_PWM_3;
+        case 114: return TT_SERVO_PWM_4;
+        case 115: return TT_SERVO_PWM_5;
+        case 116: return TT_SERVO_PWM_6;
+        case 117: return TT_SERVO_PWM_7;
+        case 118: return TT_SERVO_PWM_8;
+        case 119: return TT_AUTOPILOT_STATUS;
         default: return null;
       }
     }
@@ -834,7 +921,7 @@ public final class DomainProto {
     }
     
     private static final TelemetryType[] VALUES = {
-      TT_BATTERY_VOLTAGE, TT_ROLL, TT_PITCH, TT_YAW, TT_ROLL_SPEED, TT_PITCH_SPEED, TT_YAW_SPEED, TT_LATITUDE, TT_LONGITUDE, TT_MSL_ALTITUDE, TT_AGL_ALTITUDE, TT_GROUND_SPEED_X, TT_GROUND_SPEED_Y, TT_GROUND_SPEED_Z, TT_LATITUDE_GPS, TT_LONGITUDE_GPS, TT_ALTITUDE_GPS, TT_GROUND_SPEED_GPS, TT_ACCELERATION_X_RAW, TT_ACCELERATION_Y_RAW, TT_ACCELERATION_Z_RAW, TT_ANGULAR_SPEED_X_RAW, TT_ANGULAR_SPEED_Y_RAW, TT_ANGULAR_SPEED_Z_RAW, TT_MAGNETIC_X_RAW, TT_MAGNETIC_Y_RAW, TT_MAGNETIC_Z_RAW, TT_ABSOLUTE_PRESSURE, TT_DIFFERENTIAL_PRESSURE, TT_TEMPERATURE, TT_AIR_SPEED, TT_GROUND_SPEED, TT_HEADING, TT_THROTTLE, TT_CLIMB_RATE, TT_GPS_SATELLITES_VISIBLE, TT_ROUTE_MILAGE, TT_TELEMETRY_DROP_RATE, TT_DOWNLINK_CONNECTED, TT_UPLINK_CONNECTED, TT_CONTROL_MODE, TT_STATE, TT_COURSE, TT_RELATIVE_ALTITUDE, TT_ELEVATION, TT_PAYLOAD_1_ROLL, TT_PAYLOAD_1_TILT, TT_PAYLOAD_1_YAW, TT_CAMERA_1_FOV_HORIZONTAL, TT_CAMERA_1_FOV_VERTICAL, TT_GPS_FIX_TYPE, TT_RC_LINK_QUALITY, TT_ADSB_TRANSPONDER_MODE, TT_ADSB_IDENT_STATE, TT_ADSB_SQUAWK_CODE, TT_ADSB_ALTITUDE_SOURCE, TT_ADSB_ALTITUDE, TT_ADSB_ERROR_FLAGS, TT_PAYLOAD_2_ROLL, TT_PAYLOAD_2_TILT, TT_PAYLOAD_2_YAW, TT_CAMERA_2_FOV_HORIZONTAL, TT_CAMERA_2_FOV_VERTICAL, TT_PAYLOAD_1_CONTROL_MODE, TT_PAYLOAD_2_CONTROL_MODE, TT_PAYLOAD_1_AVAILABLE, TT_PAYLOAD_2_AVAILABLE, TT_PAYLOAD_1_POWERED, TT_PAYLOAD_2_POWERED, TT_CAMERA_1_ZOOM, TT_CAMERA_2_ZOOM, TT_CAMERA_1_RECORDING, TT_CAMERA_2_RECORDING, TT_CAMERA_1_IMAGE_COUNT, TT_CAMERA_2_IMAGE_COUNT, TT_CAMERA_1_IMAGE_CAPACITY, TT_CAMERA_2_IMAGE_CAPACITY, TT_CAMERA_1_VIDEO_COUNT, TT_CAMERA_2_VIDEO_COUNT, TT_HOME_LATITUDE, TT_HOME_LONGITUDE, TT_HOME_AMSL_ALTITUDE, TT_ADSB_ERROR_GPS, TT_ADSB_ERROR_ICAO, TT_ADSB_ERROR_OVER_TEMPERATURE, TT_ADSB_ERROR_ES, TT_ADSB_ERROR_TRANSPONDER, TT_TARGET_LATITUDE, TT_TARGET_LONGITUDE, TT_TARGET_AMSL_ALTITUDE, TT_BATTERY_POWER_LEVEL, 
+      TT_BATTERY_VOLTAGE, TT_ROLL, TT_PITCH, TT_YAW, TT_ROLL_SPEED, TT_PITCH_SPEED, TT_YAW_SPEED, TT_LATITUDE, TT_LONGITUDE, TT_MSL_ALTITUDE, TT_AGL_ALTITUDE, TT_GROUND_SPEED_X, TT_GROUND_SPEED_Y, TT_GROUND_SPEED_Z, TT_LATITUDE_GPS, TT_LONGITUDE_GPS, TT_ALTITUDE_GPS, TT_GROUND_SPEED_GPS, TT_ACCELERATION_X_RAW, TT_ACCELERATION_Y_RAW, TT_ACCELERATION_Z_RAW, TT_ANGULAR_SPEED_X_RAW, TT_ANGULAR_SPEED_Y_RAW, TT_ANGULAR_SPEED_Z_RAW, TT_MAGNETIC_X_RAW, TT_MAGNETIC_Y_RAW, TT_MAGNETIC_Z_RAW, TT_ABSOLUTE_PRESSURE, TT_DIFFERENTIAL_PRESSURE, TT_TEMPERATURE, TT_AIR_SPEED, TT_GROUND_SPEED, TT_HEADING, TT_THROTTLE, TT_CLIMB_RATE, TT_GPS_SATELLITES_VISIBLE, TT_ROUTE_MILAGE, TT_TELEMETRY_DROP_RATE, TT_DOWNLINK_CONNECTED, TT_UPLINK_CONNECTED, TT_CONTROL_MODE, TT_STATE, TT_COURSE, TT_RELATIVE_ALTITUDE, TT_ELEVATION, TT_PAYLOAD_1_ROLL, TT_PAYLOAD_1_TILT, TT_PAYLOAD_1_YAW, TT_CAMERA_1_FOV_HORIZONTAL, TT_CAMERA_1_FOV_VERTICAL, TT_GPS_FIX_TYPE, TT_RC_LINK_QUALITY, TT_ADSB_TRANSPONDER_MODE, TT_ADSB_IDENT_STATE, TT_ADSB_SQUAWK_CODE, TT_ADSB_ALTITUDE_SOURCE, TT_ADSB_ALTITUDE, TT_ADSB_ERROR_FLAGS, TT_PAYLOAD_2_ROLL, TT_PAYLOAD_2_TILT, TT_PAYLOAD_2_YAW, TT_CAMERA_2_FOV_HORIZONTAL, TT_CAMERA_2_FOV_VERTICAL, TT_PAYLOAD_1_CONTROL_MODE, TT_PAYLOAD_2_CONTROL_MODE, TT_PAYLOAD_1_AVAILABLE, TT_PAYLOAD_2_AVAILABLE, TT_PAYLOAD_1_POWERED, TT_PAYLOAD_2_POWERED, TT_CAMERA_1_ZOOM, TT_CAMERA_2_ZOOM, TT_CAMERA_1_RECORDING, TT_CAMERA_2_RECORDING, TT_CAMERA_1_IMAGE_COUNT, TT_CAMERA_2_IMAGE_COUNT, TT_CAMERA_1_IMAGE_CAPACITY, TT_CAMERA_2_IMAGE_CAPACITY, TT_CAMERA_1_VIDEO_COUNT, TT_CAMERA_2_VIDEO_COUNT, TT_HOME_LATITUDE, TT_HOME_LONGITUDE, TT_HOME_AMSL_ALTITUDE, TT_ADSB_ERROR_GPS, TT_ADSB_ERROR_ICAO, TT_ADSB_ERROR_OVER_TEMPERATURE, TT_ADSB_ERROR_ES, TT_ADSB_ERROR_TRANSPONDER, TT_TARGET_LATITUDE, TT_TARGET_LONGITUDE, TT_TARGET_AMSL_ALTITUDE, TT_BATTERY_POWER_LEVEL, TT_FENCE_ENABLED, TT_CURRENT, TT_VIBRATION_X, TT_VIBRATION_Y, TT_VIBRATION_Z, TT_MOTORS_OK, TT_MOTOR_PWM_1, TT_MOTOR_PWM_2, TT_MOTOR_PWM_3, TT_MOTOR_PWM_4, TT_MOTOR_PWM_5, TT_MOTOR_PWM_6, TT_MOTOR_PWM_7, TT_MOTOR_PWM_8, TT_WINCH_SAFETY_BATTERY_ACTIVE, TT_WINCH_SAFETY_BATTERY_VOLTAGE, TT_WINCH_CONNECTED, TT_STANDBY, TT_WAYPOINT_NUMBER, TT_FLIGHT_MODE, TT_SERVO_PWM_1, TT_SERVO_PWM_2, TT_SERVO_PWM_3, TT_SERVO_PWM_4, TT_SERVO_PWM_5, TT_SERVO_PWM_6, TT_SERVO_PWM_7, TT_SERVO_PWM_8, TT_AUTOPILOT_STATUS, 
     };
     
     public static TelemetryType valueOf(
@@ -862,11 +949,13 @@ public final class DomainProto {
     VT_FIXED_WING(0, 0),
     VT_HELICOPTER(1, 1),
     VT_MULTICOPTER(2, 2),
+    VT_VTOL(3, 3),
     ;
     
     public static final int VT_FIXED_WING_VALUE = 0;
     public static final int VT_HELICOPTER_VALUE = 1;
     public static final int VT_MULTICOPTER_VALUE = 2;
+    public static final int VT_VTOL_VALUE = 3;
     
     
     public final int getNumber() { return value; }
@@ -876,6 +965,7 @@ public final class DomainProto {
         case 0: return VT_FIXED_WING;
         case 1: return VT_HELICOPTER;
         case 2: return VT_MULTICOPTER;
+        case 3: return VT_VTOL;
         default: return null;
       }
     }
@@ -906,7 +996,7 @@ public final class DomainProto {
     }
     
     private static final VehicleType[] VALUES = {
-      VT_FIXED_WING, VT_HELICOPTER, VT_MULTICOPTER, 
+      VT_FIXED_WING, VT_HELICOPTER, VT_MULTICOPTER, VT_VTOL, 
     };
     
     public static VehicleType valueOf(
@@ -927,6 +1017,75 @@ public final class DomainProto {
     }
     
     // @@protoc_insertion_point(enum_scope:VehicleType)
+  }
+  
+  public enum VehicleSource
+      implements com.google.protobuf.ProtocolMessageEnum {
+    VS_VSM(0, 0),
+    VS_IMPORT(1, 1),
+    ;
+    
+    public static final int VS_VSM_VALUE = 0;
+    public static final int VS_IMPORT_VALUE = 1;
+    
+    
+    public final int getNumber() { return value; }
+    
+    public static VehicleSource valueOf(int value) {
+      switch (value) {
+        case 0: return VS_VSM;
+        case 1: return VS_IMPORT;
+        default: return null;
+      }
+    }
+    
+    public static com.google.protobuf.Internal.EnumLiteMap<VehicleSource>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<VehicleSource>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<VehicleSource>() {
+            public VehicleSource findValueByNumber(int number) {
+              return VehicleSource.valueOf(number);
+            }
+          };
+    
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(9);
+    }
+    
+    private static final VehicleSource[] VALUES = {
+      VS_VSM, VS_IMPORT, 
+    };
+    
+    public static VehicleSource valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+    
+    private final int index;
+    private final int value;
+    
+    private VehicleSource(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+    
+    // @@protoc_insertion_point(enum_scope:VehicleSource)
   }
   
   public enum VehicleParameterType
@@ -1100,7 +1259,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(9);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(10);
     }
     
     private static final VehicleParameterType[] VALUES = {
@@ -1169,7 +1328,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(10);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(11);
     }
     
     private static final PayloadType[] VALUES = {
@@ -1259,7 +1418,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(11);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(12);
     }
     
     private static final PayloadParameterType[] VALUES = {
@@ -1346,7 +1505,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(12);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(13);
     }
     
     private static final SeverityLevel[] VALUES = {
@@ -1415,7 +1574,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(13);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(14);
     }
     
     private static final TrajectoryType[] VALUES = {
@@ -1490,7 +1649,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(14);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(15);
     }
     
     private static final FailsafeReason[] VALUES = {
@@ -1523,12 +1682,14 @@ public final class DomainProto {
     FA_LAND(1, 1),
     FA_WAIT(2, 2),
     FA_CONTINUE(3, 3),
+    FA_NA(4, 4),
     ;
     
     public static final int FA_GO_HOME_VALUE = 0;
     public static final int FA_LAND_VALUE = 1;
     public static final int FA_WAIT_VALUE = 2;
     public static final int FA_CONTINUE_VALUE = 3;
+    public static final int FA_NA_VALUE = 4;
     
     
     public final int getNumber() { return value; }
@@ -1539,6 +1700,7 @@ public final class DomainProto {
         case 1: return FA_LAND;
         case 2: return FA_WAIT;
         case 3: return FA_CONTINUE;
+        case 4: return FA_NA;
         default: return null;
       }
     }
@@ -1565,11 +1727,11 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(15);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(16);
     }
     
     private static final FailsafeAction[] VALUES = {
-      FA_GO_HOME, FA_LAND, FA_WAIT, FA_CONTINUE, 
+      FA_GO_HOME, FA_LAND, FA_WAIT, FA_CONTINUE, FA_NA, 
     };
     
     public static FailsafeAction valueOf(
@@ -1640,7 +1802,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(16);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(17);
     }
     
     private static final TriggerState[] VALUES = {
@@ -1712,7 +1874,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(17);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(18);
     }
     
     private static final PowerState[] VALUES = {
@@ -1781,7 +1943,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(18);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(19);
     }
     
     private static final HomeLocationSource[] VALUES = {
@@ -1850,7 +2012,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(19);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(20);
     }
     
     private static final PoiMode[] VALUES = {
@@ -1919,7 +2081,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(20);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(21);
     }
     
     private static final PanoramaMode[] VALUES = {
@@ -1988,7 +2150,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(21);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(22);
     }
     
     private static final RotationDirection[] VALUES = {
@@ -2057,7 +2219,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(22);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(23);
     }
     
     private static final IcaoAddressType[] VALUES = {
@@ -2126,7 +2288,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(23);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(24);
     }
     
     private static final Component[] VALUES = {
@@ -2163,6 +2325,8 @@ public final class DomainProto {
     MU_SQUAREMETRE(5, 5),
     MU_KILOGRAMME(6, 6),
     MU_CENTIMETRE(7, 7),
+    MU_HECTARE(8, 8),
+    MU_SQUAREKILOMETRE(9, 9),
     ;
     
     public static final int MU_NONE_VALUE = 0;
@@ -2173,6 +2337,8 @@ public final class DomainProto {
     public static final int MU_SQUAREMETRE_VALUE = 5;
     public static final int MU_KILOGRAMME_VALUE = 6;
     public static final int MU_CENTIMETRE_VALUE = 7;
+    public static final int MU_HECTARE_VALUE = 8;
+    public static final int MU_SQUAREKILOMETRE_VALUE = 9;
     
     
     public final int getNumber() { return value; }
@@ -2187,6 +2353,8 @@ public final class DomainProto {
         case 5: return MU_SQUAREMETRE;
         case 6: return MU_KILOGRAMME;
         case 7: return MU_CENTIMETRE;
+        case 8: return MU_HECTARE;
+        case 9: return MU_SQUAREKILOMETRE;
         default: return null;
       }
     }
@@ -2213,11 +2381,11 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(24);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(25);
     }
     
     private static final MetricUnit[] VALUES = {
-      MU_NONE, MU_SECOND, MU_METRE, MU_KILOMETRE, MU_METREPERSECOND, MU_SQUAREMETRE, MU_KILOGRAMME, MU_CENTIMETRE, 
+      MU_NONE, MU_SECOND, MU_METRE, MU_KILOMETRE, MU_METREPERSECOND, MU_SQUAREMETRE, MU_KILOGRAMME, MU_CENTIMETRE, MU_HECTARE, MU_SQUAREKILOMETRE, 
     };
     
     public static MetricUnit valueOf(
@@ -2285,7 +2453,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(25);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(26);
     }
     
     private static final MessageSeverity[] VALUES = {
@@ -2357,7 +2525,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(26);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(27);
     }
     
     private static final ConflictResolutionMode[] VALUES = {
@@ -2432,7 +2600,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(27);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(28);
     }
     
     private static final VehicleLogEntryType[] VALUES = {
@@ -2507,7 +2675,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(28);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(29);
     }
     
     private static final ProcessStage[] VALUES = {
@@ -2582,7 +2750,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(29);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(30);
     }
     
     private static final WaypointTurnType[] VALUES = {
@@ -2624,6 +2792,11 @@ public final class DomainProto {
     AC_TAKEOFF(10, 10),
     AC_LANDING(11, 11),
     AC_PANORAMA(12, 12),
+    AC_ROUTE_ATTRIBUTES(13, 13),
+    AC_SET_SERVO(14, 14),
+    AC_REPEAT_SERVO(15, 15),
+    AC_TRANSITION_FIXED(16, 16),
+    AC_TRANSITION_VTOL(17, 17),
     ;
     
     public static final int AC_WAYPOINT_VALUE = 0;
@@ -2639,6 +2812,11 @@ public final class DomainProto {
     public static final int AC_TAKEOFF_VALUE = 10;
     public static final int AC_LANDING_VALUE = 11;
     public static final int AC_PANORAMA_VALUE = 12;
+    public static final int AC_ROUTE_ATTRIBUTES_VALUE = 13;
+    public static final int AC_SET_SERVO_VALUE = 14;
+    public static final int AC_REPEAT_SERVO_VALUE = 15;
+    public static final int AC_TRANSITION_FIXED_VALUE = 16;
+    public static final int AC_TRANSITION_VTOL_VALUE = 17;
     
     
     public final int getNumber() { return value; }
@@ -2658,6 +2836,11 @@ public final class DomainProto {
         case 10: return AC_TAKEOFF;
         case 11: return AC_LANDING;
         case 12: return AC_PANORAMA;
+        case 13: return AC_ROUTE_ATTRIBUTES;
+        case 14: return AC_SET_SERVO;
+        case 15: return AC_REPEAT_SERVO;
+        case 16: return AC_TRANSITION_FIXED;
+        case 17: return AC_TRANSITION_VTOL;
         default: return null;
       }
     }
@@ -2684,11 +2867,11 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(30);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(31);
     }
     
     private static final ActionCode[] VALUES = {
-      AC_WAYPOINT, AC_SPEED_CHANGE, AC_HOME_LOCATION, AC_WAIT, AC_POI_CHANGE, AC_HEADING_CHANGE, AC_CAMERA_CONTROL, AC_CAMERA_TRIGGER, AC_CAMERA_SERIES_BY_TIME, AC_CAMERA_SERIES_BY_DISTANCE, AC_TAKEOFF, AC_LANDING, AC_PANORAMA, 
+      AC_WAYPOINT, AC_SPEED_CHANGE, AC_HOME_LOCATION, AC_WAIT, AC_POI_CHANGE, AC_HEADING_CHANGE, AC_CAMERA_CONTROL, AC_CAMERA_TRIGGER, AC_CAMERA_SERIES_BY_TIME, AC_CAMERA_SERIES_BY_DISTANCE, AC_TAKEOFF, AC_LANDING, AC_PANORAMA, AC_ROUTE_ATTRIBUTES, AC_SET_SERVO, AC_REPEAT_SERVO, AC_TRANSITION_FIXED, AC_TRANSITION_VTOL, 
     };
     
     public static ActionCode valueOf(
@@ -2753,7 +2936,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(31);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(32);
     }
     
     private static final NfzType[] VALUES = {
@@ -2828,7 +3011,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(32);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(33);
     }
     
     private static final VideoEventType[] VALUES = {
@@ -2897,7 +3080,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(33);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(34);
     }
     
     private static final FeatureType[] VALUES = {
@@ -3005,7 +3188,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(34);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(35);
     }
     
     private static final UtmOperationStatus[] VALUES = {
@@ -3080,7 +3263,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(35);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(36);
     }
     
     private static final CommandStatus[] VALUES = {
@@ -3114,6 +3297,7 @@ public final class DomainProto {
     S_GIMBAL(2, 2),
     S_CAMERA(3, 3),
     S_ADSB_TRANSPONDER(4, 4),
+    S_WINCH(5, 5),
     ;
     
     public static final int S_CONTROL_SERVER_VALUE = 0;
@@ -3121,6 +3305,7 @@ public final class DomainProto {
     public static final int S_GIMBAL_VALUE = 2;
     public static final int S_CAMERA_VALUE = 3;
     public static final int S_ADSB_TRANSPONDER_VALUE = 4;
+    public static final int S_WINCH_VALUE = 5;
     
     
     public final int getNumber() { return value; }
@@ -3132,6 +3317,7 @@ public final class DomainProto {
         case 2: return S_GIMBAL;
         case 3: return S_CAMERA;
         case 4: return S_ADSB_TRANSPONDER;
+        case 5: return S_WINCH;
         default: return null;
       }
     }
@@ -3158,11 +3344,11 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(36);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(37);
     }
     
     private static final Subsystem[] VALUES = {
-      S_CONTROL_SERVER, S_FLIGHT_CONTROLLER, S_GIMBAL, S_CAMERA, S_ADSB_TRANSPONDER, 
+      S_CONTROL_SERVER, S_FLIGHT_CONTROLLER, S_GIMBAL, S_CAMERA, S_ADSB_TRANSPONDER, S_WINCH, 
     };
     
     public static Subsystem valueOf(
@@ -3221,6 +3407,9 @@ public final class DomainProto {
     S_STRING(31, 32),
     S_ENUM(32, 33),
     S_CAPACITY_LEVEL(33, 34),
+    S_FLIGHT_MODE(34, 35),
+    S_LIST(35, 36),
+    S_AUTOPILOT_STATUS(36, 37),
     ;
     
     public static final int S_DEFAULT_VALUE = 1;
@@ -3257,6 +3446,9 @@ public final class DomainProto {
     public static final int S_STRING_VALUE = 32;
     public static final int S_ENUM_VALUE = 33;
     public static final int S_CAPACITY_LEVEL_VALUE = 34;
+    public static final int S_FLIGHT_MODE_VALUE = 35;
+    public static final int S_LIST_VALUE = 36;
+    public static final int S_AUTOPILOT_STATUS_VALUE = 37;
     
     
     public final int getNumber() { return value; }
@@ -3297,6 +3489,9 @@ public final class DomainProto {
         case 32: return S_STRING;
         case 33: return S_ENUM;
         case 34: return S_CAPACITY_LEVEL;
+        case 35: return S_FLIGHT_MODE;
+        case 36: return S_LIST;
+        case 37: return S_AUTOPILOT_STATUS;
         default: return null;
       }
     }
@@ -3323,11 +3518,11 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(37);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(38);
     }
     
     private static final Semantic[] VALUES = {
-      S_DEFAULT, S_LATITUDE, S_LONGITUDE, S_ALTITUDE_AMSL, S_ALTITUDE_AGL, S_ALTITUDE_RAW, S_HEADING, S_VOLTAGE, S_AIR_SPEED, S_GROUND_SPEED, S_VERTICAL_SPEED, S_SATELLITE_COUNT, S_GPS_FIX_TYPE, S_ROLL, S_PITCH, S_YAW, S_RC_LINK_QUALITY, S_CURRENT, S_GCS_LINK_QUALITY, S_FOV_H, S_FOV_V, S_CONTROL_MODE, S_GROUND_ELEVATION, S_ACCEPTANCE_RADIUS, S_LOITER_RADIUS, S_ICAO, S_ADSB_MODE, S_SQUAWK, S_MILLISECONDS, S_NUMERIC, S_BOOL, S_STRING, S_ENUM, S_CAPACITY_LEVEL, 
+      S_DEFAULT, S_LATITUDE, S_LONGITUDE, S_ALTITUDE_AMSL, S_ALTITUDE_AGL, S_ALTITUDE_RAW, S_HEADING, S_VOLTAGE, S_AIR_SPEED, S_GROUND_SPEED, S_VERTICAL_SPEED, S_SATELLITE_COUNT, S_GPS_FIX_TYPE, S_ROLL, S_PITCH, S_YAW, S_RC_LINK_QUALITY, S_CURRENT, S_GCS_LINK_QUALITY, S_FOV_H, S_FOV_V, S_CONTROL_MODE, S_GROUND_ELEVATION, S_ACCEPTANCE_RADIUS, S_LOITER_RADIUS, S_ICAO, S_ADSB_MODE, S_SQUAWK, S_MILLISECONDS, S_NUMERIC, S_BOOL, S_STRING, S_ENUM, S_CAPACITY_LEVEL, S_FLIGHT_MODE, S_LIST, S_AUTOPILOT_STATUS, 
     };
     
     public static Semantic valueOf(
@@ -3395,7 +3590,7 @@ public final class DomainProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(38);
+      return com.ugcs.ucs.proto.DomainProto.getDescriptor().getEnumTypes().get(39);
     }
     
     private static final ModificationType[] VALUES = {
@@ -3439,11 +3634,6 @@ public final class DomainProto {
     boolean hasAdsbAircraft();
     com.ugcs.ucs.proto.DomainProto.AdsbAircraft getAdsbAircraft();
     com.ugcs.ucs.proto.DomainProto.AdsbAircraftOrBuilder getAdsbAircraftOrBuilder();
-    
-    // optional .Avatar avatar = 4;
-    boolean hasAvatar();
-    com.ugcs.ucs.proto.DomainProto.Avatar getAvatar();
-    com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder();
     
     // optional .CameraControl cameraControl = 5;
     boolean hasCameraControl();
@@ -3794,6 +3984,31 @@ public final class DomainProto {
     boolean hasValue();
     com.ugcs.ucs.proto.DomainProto.Value getValue();
     com.ugcs.ucs.proto.DomainProto.ValueOrBuilder getValueOrBuilder();
+    
+    // optional .SetServo setServo = 82;
+    boolean hasSetServo();
+    com.ugcs.ucs.proto.DomainProto.SetServo getSetServo();
+    com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder();
+    
+    // optional .RepeatServo repeatServo = 83;
+    boolean hasRepeatServo();
+    com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo();
+    com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder();
+    
+    // optional .TransitionFixed transitionFixed = 84;
+    boolean hasTransitionFixed();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder();
+    
+    // optional .TransitionVtol transitionVtol = 85;
+    boolean hasTransitionVtol();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder();
+    
+    // optional .RouteUpload routeUpload = 86;
+    boolean hasRouteUpload();
+    com.ugcs.ucs.proto.DomainProto.RouteUpload getRouteUpload();
+    com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder getRouteUploadOrBuilder();
   }
   public static final class DomainObjectWrapper extends
       com.google.protobuf.GeneratedMessage
@@ -3865,24 +4080,11 @@ public final class DomainProto {
       return adsbAircraft_;
     }
     
-    // optional .Avatar avatar = 4;
-    public static final int AVATAR_FIELD_NUMBER = 4;
-    private com.ugcs.ucs.proto.DomainProto.Avatar avatar_;
-    public boolean hasAvatar() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public com.ugcs.ucs.proto.DomainProto.Avatar getAvatar() {
-      return avatar_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder() {
-      return avatar_;
-    }
-    
     // optional .CameraControl cameraControl = 5;
     public static final int CAMERACONTROL_FIELD_NUMBER = 5;
     private com.ugcs.ucs.proto.DomainProto.CameraControl cameraControl_;
     public boolean hasCameraControl() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraControl getCameraControl() {
       return cameraControl_;
@@ -3895,7 +4097,7 @@ public final class DomainProto {
     public static final int CAMERACONTROLDEFINITION_FIELD_NUMBER = 6;
     private com.ugcs.ucs.proto.DomainProto.CameraControlDefinition cameraControlDefinition_;
     public boolean hasCameraControlDefinition() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraControlDefinition getCameraControlDefinition() {
       return cameraControlDefinition_;
@@ -3908,7 +4110,7 @@ public final class DomainProto {
     public static final int CAMERATRIGGER_FIELD_NUMBER = 7;
     private com.ugcs.ucs.proto.DomainProto.CameraTrigger cameraTrigger_;
     public boolean hasCameraTrigger() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraTrigger getCameraTrigger() {
       return cameraTrigger_;
@@ -3921,7 +4123,7 @@ public final class DomainProto {
     public static final int CAMERATRIGGERDEFINITION_FIELD_NUMBER = 8;
     private com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition cameraTriggerDefinition_;
     public boolean hasCameraTriggerDefinition() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition getCameraTriggerDefinition() {
       return cameraTriggerDefinition_;
@@ -3934,7 +4136,7 @@ public final class DomainProto {
     public static final int COMMANDDEFINITION_FIELD_NUMBER = 9;
     private com.ugcs.ucs.proto.DomainProto.CommandDefinition commandDefinition_;
     public boolean hasCommandDefinition() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public com.ugcs.ucs.proto.DomainProto.CommandDefinition getCommandDefinition() {
       return commandDefinition_;
@@ -3947,7 +4149,7 @@ public final class DomainProto {
     public static final int FIGURE_FIELD_NUMBER = 10;
     private com.ugcs.ucs.proto.DomainProto.Figure figure_;
     public boolean hasFigure() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public com.ugcs.ucs.proto.DomainProto.Figure getFigure() {
       return figure_;
@@ -3960,7 +4162,7 @@ public final class DomainProto {
     public static final int FIGUREPARAMETER_FIELD_NUMBER = 11;
     private com.ugcs.ucs.proto.DomainProto.FigureParameter figureParameter_;
     public boolean hasFigureParameter() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public com.ugcs.ucs.proto.DomainProto.FigureParameter getFigureParameter() {
       return figureParameter_;
@@ -3973,7 +4175,7 @@ public final class DomainProto {
     public static final int FIGUREPOINT_FIELD_NUMBER = 12;
     private com.ugcs.ucs.proto.DomainProto.FigurePoint figurePoint_;
     public boolean hasFigurePoint() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     public com.ugcs.ucs.proto.DomainProto.FigurePoint getFigurePoint() {
       return figurePoint_;
@@ -3986,7 +4188,7 @@ public final class DomainProto {
     public static final int HEADINGCHANGE_FIELD_NUMBER = 13;
     private com.ugcs.ucs.proto.DomainProto.HeadingChange headingChange_;
     public boolean hasHeadingChange() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     public com.ugcs.ucs.proto.DomainProto.HeadingChange getHeadingChange() {
       return headingChange_;
@@ -3999,7 +4201,7 @@ public final class DomainProto {
     public static final int HEADINGDEFINITION_FIELD_NUMBER = 14;
     private com.ugcs.ucs.proto.DomainProto.HeadingDefinition headingDefinition_;
     public boolean hasHeadingDefinition() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     public com.ugcs.ucs.proto.DomainProto.HeadingDefinition getHeadingDefinition() {
       return headingDefinition_;
@@ -4012,7 +4214,7 @@ public final class DomainProto {
     public static final int HOMELOCATION_FIELD_NUMBER = 15;
     private com.ugcs.ucs.proto.DomainProto.HomeLocation homeLocation_;
     public boolean hasHomeLocation() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     public com.ugcs.ucs.proto.DomainProto.HomeLocation getHomeLocation() {
       return homeLocation_;
@@ -4025,7 +4227,7 @@ public final class DomainProto {
     public static final int LANDING_FIELD_NUMBER = 16;
     private com.ugcs.ucs.proto.DomainProto.Landing landing_;
     public boolean hasLanding() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
+      return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     public com.ugcs.ucs.proto.DomainProto.Landing getLanding() {
       return landing_;
@@ -4038,7 +4240,7 @@ public final class DomainProto {
     public static final int LICENSE_FIELD_NUMBER = 18;
     private com.ugcs.ucs.proto.DomainProto.License license_;
     public boolean hasLicense() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     public com.ugcs.ucs.proto.DomainProto.License getLicense() {
       return license_;
@@ -4051,7 +4253,7 @@ public final class DomainProto {
     public static final int MISSION_FIELD_NUMBER = 19;
     private com.ugcs.ucs.proto.DomainProto.Mission mission_;
     public boolean hasMission() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
+      return ((bitField0_ & 0x00010000) == 0x00010000);
     }
     public com.ugcs.ucs.proto.DomainProto.Mission getMission() {
       return mission_;
@@ -4064,7 +4266,7 @@ public final class DomainProto {
     public static final int MISSIONPREFERENCE_FIELD_NUMBER = 21;
     private com.ugcs.ucs.proto.DomainProto.MissionPreference missionPreference_;
     public boolean hasMissionPreference() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     public com.ugcs.ucs.proto.DomainProto.MissionPreference getMissionPreference() {
       return missionPreference_;
@@ -4077,7 +4279,7 @@ public final class DomainProto {
     public static final int MISSIONVEHICLE_FIELD_NUMBER = 22;
     private com.ugcs.ucs.proto.DomainProto.MissionVehicle missionVehicle_;
     public boolean hasMissionVehicle() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x00040000) == 0x00040000);
     }
     public com.ugcs.ucs.proto.DomainProto.MissionVehicle getMissionVehicle() {
       return missionVehicle_;
@@ -4090,7 +4292,7 @@ public final class DomainProto {
     public static final int NOFLIGHTZONE_FIELD_NUMBER = 25;
     private com.ugcs.ucs.proto.DomainProto.NoFlightZone noFlightZone_;
     public boolean hasNoFlightZone() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00080000) == 0x00080000);
     }
     public com.ugcs.ucs.proto.DomainProto.NoFlightZone getNoFlightZone() {
       return noFlightZone_;
@@ -4103,7 +4305,7 @@ public final class DomainProto {
     public static final int PANORAMA_FIELD_NUMBER = 26;
     private com.ugcs.ucs.proto.DomainProto.Panorama panorama_;
     public boolean hasPanorama() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x00100000) == 0x00100000);
     }
     public com.ugcs.ucs.proto.DomainProto.Panorama getPanorama() {
       return panorama_;
@@ -4116,7 +4318,7 @@ public final class DomainProto {
     public static final int PANORAMADEFINITION_FIELD_NUMBER = 27;
     private com.ugcs.ucs.proto.DomainProto.PanoramaDefinition panoramaDefinition_;
     public boolean hasPanoramaDefinition() {
-      return ((bitField0_ & 0x00400000) == 0x00400000);
+      return ((bitField0_ & 0x00200000) == 0x00200000);
     }
     public com.ugcs.ucs.proto.DomainProto.PanoramaDefinition getPanoramaDefinition() {
       return panoramaDefinition_;
@@ -4129,7 +4331,7 @@ public final class DomainProto {
     public static final int PARAMETERDEFINITION_FIELD_NUMBER = 28;
     private com.ugcs.ucs.proto.DomainProto.ParameterDefinition parameterDefinition_;
     public boolean hasParameterDefinition() {
-      return ((bitField0_ & 0x00800000) == 0x00800000);
+      return ((bitField0_ & 0x00400000) == 0x00400000);
     }
     public com.ugcs.ucs.proto.DomainProto.ParameterDefinition getParameterDefinition() {
       return parameterDefinition_;
@@ -4142,7 +4344,7 @@ public final class DomainProto {
     public static final int PARAMETERVALUE_FIELD_NUMBER = 29;
     private com.ugcs.ucs.proto.DomainProto.ParameterValue parameterValue_;
     public boolean hasParameterValue() {
-      return ((bitField0_ & 0x01000000) == 0x01000000);
+      return ((bitField0_ & 0x00800000) == 0x00800000);
     }
     public com.ugcs.ucs.proto.DomainProto.ParameterValue getParameterValue() {
       return parameterValue_;
@@ -4155,7 +4357,7 @@ public final class DomainProto {
     public static final int PAYLOADPARAMETER_FIELD_NUMBER = 30;
     private com.ugcs.ucs.proto.DomainProto.PayloadParameter payloadParameter_;
     public boolean hasPayloadParameter() {
-      return ((bitField0_ & 0x02000000) == 0x02000000);
+      return ((bitField0_ & 0x01000000) == 0x01000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PayloadParameter getPayloadParameter() {
       return payloadParameter_;
@@ -4168,7 +4370,7 @@ public final class DomainProto {
     public static final int PAYLOADPROFILE_FIELD_NUMBER = 31;
     private com.ugcs.ucs.proto.DomainProto.PayloadProfile payloadProfile_;
     public boolean hasPayloadProfile() {
-      return ((bitField0_ & 0x04000000) == 0x04000000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PayloadProfile getPayloadProfile() {
       return payloadProfile_;
@@ -4181,7 +4383,7 @@ public final class DomainProto {
     public static final int PLATFORM_FIELD_NUMBER = 32;
     private com.ugcs.ucs.proto.DomainProto.Platform platform_;
     public boolean hasPlatform() {
-      return ((bitField0_ & 0x08000000) == 0x08000000);
+      return ((bitField0_ & 0x04000000) == 0x04000000);
     }
     public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
       return platform_;
@@ -4194,7 +4396,7 @@ public final class DomainProto {
     public static final int PLATFORMPAYLOADPROFILE_FIELD_NUMBER = 33;
     private com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile platformPayloadProfile_;
     public boolean hasPlatformPayloadProfile() {
-      return ((bitField0_ & 0x10000000) == 0x10000000);
+      return ((bitField0_ & 0x08000000) == 0x08000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile getPlatformPayloadProfile() {
       return platformPayloadProfile_;
@@ -4207,7 +4409,7 @@ public final class DomainProto {
     public static final int PLATFORMTELEMETRYTYPE_FIELD_NUMBER = 34;
     private com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType platformTelemetryType_;
     public boolean hasPlatformTelemetryType() {
-      return ((bitField0_ & 0x20000000) == 0x20000000);
+      return ((bitField0_ & 0x10000000) == 0x10000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType getPlatformTelemetryType() {
       return platformTelemetryType_;
@@ -4220,7 +4422,7 @@ public final class DomainProto {
     public static final int POICHANGE_FIELD_NUMBER = 36;
     private com.ugcs.ucs.proto.DomainProto.PoiChange poiChange_;
     public boolean hasPoiChange() {
-      return ((bitField0_ & 0x40000000) == 0x40000000);
+      return ((bitField0_ & 0x20000000) == 0x20000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PoiChange getPoiChange() {
       return poiChange_;
@@ -4233,7 +4435,7 @@ public final class DomainProto {
     public static final int POIDEFINITION_FIELD_NUMBER = 37;
     private com.ugcs.ucs.proto.DomainProto.PoiDefinition poiDefinition_;
     public boolean hasPoiDefinition() {
-      return ((bitField0_ & 0x80000000) == 0x80000000);
+      return ((bitField0_ & 0x40000000) == 0x40000000);
     }
     public com.ugcs.ucs.proto.DomainProto.PoiDefinition getPoiDefinition() {
       return poiDefinition_;
@@ -4246,7 +4448,7 @@ public final class DomainProto {
     public static final int PRISM_FIELD_NUMBER = 38;
     private com.ugcs.ucs.proto.DomainProto.Prism prism_;
     public boolean hasPrism() {
-      return ((bitField1_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x80000000) == 0x80000000);
     }
     public com.ugcs.ucs.proto.DomainProto.Prism getPrism() {
       return prism_;
@@ -4259,7 +4461,7 @@ public final class DomainProto {
     public static final int POLYGONPOINT_FIELD_NUMBER = 39;
     private com.ugcs.ucs.proto.DomainProto.PolygonPoint polygonPoint_;
     public boolean hasPolygonPoint() {
-      return ((bitField1_ & 0x00000002) == 0x00000002);
+      return ((bitField1_ & 0x00000001) == 0x00000001);
     }
     public com.ugcs.ucs.proto.DomainProto.PolygonPoint getPolygonPoint() {
       return polygonPoint_;
@@ -4272,7 +4474,7 @@ public final class DomainProto {
     public static final int PROCESSEDROUTE_FIELD_NUMBER = 40;
     private com.ugcs.ucs.proto.DomainProto.ProcessedRoute processedRoute_;
     public boolean hasProcessedRoute() {
-      return ((bitField1_ & 0x00000004) == 0x00000004);
+      return ((bitField1_ & 0x00000002) == 0x00000002);
     }
     public com.ugcs.ucs.proto.DomainProto.ProcessedRoute getProcessedRoute() {
       return processedRoute_;
@@ -4285,7 +4487,7 @@ public final class DomainProto {
     public static final int ROUTE_FIELD_NUMBER = 41;
     private com.ugcs.ucs.proto.DomainProto.Route route_;
     public boolean hasRoute() {
-      return ((bitField1_ & 0x00000008) == 0x00000008);
+      return ((bitField1_ & 0x00000004) == 0x00000004);
     }
     public com.ugcs.ucs.proto.DomainProto.Route getRoute() {
       return route_;
@@ -4298,7 +4500,7 @@ public final class DomainProto {
     public static final int SEGMENTDEFINITION_FIELD_NUMBER = 42;
     private com.ugcs.ucs.proto.DomainProto.SegmentDefinition segmentDefinition_;
     public boolean hasSegmentDefinition() {
-      return ((bitField1_ & 0x00000010) == 0x00000010);
+      return ((bitField1_ & 0x00000008) == 0x00000008);
     }
     public com.ugcs.ucs.proto.DomainProto.SegmentDefinition getSegmentDefinition() {
       return segmentDefinition_;
@@ -4311,7 +4513,7 @@ public final class DomainProto {
     public static final int SPEEDCHANGE_FIELD_NUMBER = 44;
     private com.ugcs.ucs.proto.DomainProto.SpeedChange speedChange_;
     public boolean hasSpeedChange() {
-      return ((bitField1_ & 0x00000020) == 0x00000020);
+      return ((bitField1_ & 0x00000010) == 0x00000010);
     }
     public com.ugcs.ucs.proto.DomainProto.SpeedChange getSpeedChange() {
       return speedChange_;
@@ -4324,7 +4526,7 @@ public final class DomainProto {
     public static final int TAKEOFF_FIELD_NUMBER = 45;
     private com.ugcs.ucs.proto.DomainProto.Takeoff takeoff_;
     public boolean hasTakeoff() {
-      return ((bitField1_ & 0x00000040) == 0x00000040);
+      return ((bitField1_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.Takeoff getTakeoff() {
       return takeoff_;
@@ -4337,7 +4539,7 @@ public final class DomainProto {
     public static final int TELEMETRY_FIELD_NUMBER = 46;
     private com.ugcs.ucs.proto.DomainProto.Telemetry telemetry_;
     public boolean hasTelemetry() {
-      return ((bitField1_ & 0x00000080) == 0x00000080);
+      return ((bitField1_ & 0x00000040) == 0x00000040);
     }
     public com.ugcs.ucs.proto.DomainProto.Telemetry getTelemetry() {
       return telemetry_;
@@ -4350,7 +4552,7 @@ public final class DomainProto {
     public static final int TRAVERSEALGORITHM_FIELD_NUMBER = 47;
     private com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm traverseAlgorithm_;
     public boolean hasTraverseAlgorithm() {
-      return ((bitField1_ & 0x00000100) == 0x00000100);
+      return ((bitField1_ & 0x00000080) == 0x00000080);
     }
     public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm getTraverseAlgorithm() {
       return traverseAlgorithm_;
@@ -4363,7 +4565,7 @@ public final class DomainProto {
     public static final int USER_FIELD_NUMBER = 48;
     private com.ugcs.ucs.proto.DomainProto.User user_;
     public boolean hasUser() {
-      return ((bitField1_ & 0x00000200) == 0x00000200);
+      return ((bitField1_ & 0x00000100) == 0x00000100);
     }
     public com.ugcs.ucs.proto.DomainProto.User getUser() {
       return user_;
@@ -4376,7 +4578,7 @@ public final class DomainProto {
     public static final int VEHICLE_FIELD_NUMBER = 49;
     private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
     public boolean hasVehicle() {
-      return ((bitField1_ & 0x00000400) == 0x00000400);
+      return ((bitField1_ & 0x00000200) == 0x00000200);
     }
     public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
       return vehicle_;
@@ -4389,7 +4591,7 @@ public final class DomainProto {
     public static final int VEHICLECOMMANDDEFINITION_FIELD_NUMBER = 50;
     private com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition vehicleCommandDefinition_;
     public boolean hasVehicleCommandDefinition() {
-      return ((bitField1_ & 0x00000800) == 0x00000800);
+      return ((bitField1_ & 0x00000400) == 0x00000400);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition getVehicleCommandDefinition() {
       return vehicleCommandDefinition_;
@@ -4402,7 +4604,7 @@ public final class DomainProto {
     public static final int VEHICLELOGENTRY_FIELD_NUMBER = 51;
     private com.ugcs.ucs.proto.DomainProto.VehicleLogEntry vehicleLogEntry_;
     public boolean hasVehicleLogEntry() {
-      return ((bitField1_ & 0x00001000) == 0x00001000);
+      return ((bitField1_ & 0x00000800) == 0x00000800);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleLogEntry getVehicleLogEntry() {
       return vehicleLogEntry_;
@@ -4415,7 +4617,7 @@ public final class DomainProto {
     public static final int VEHICLEPARAMETER_FIELD_NUMBER = 52;
     private com.ugcs.ucs.proto.DomainProto.VehicleParameter vehicleParameter_;
     public boolean hasVehicleParameter() {
-      return ((bitField1_ & 0x00002000) == 0x00002000);
+      return ((bitField1_ & 0x00001000) == 0x00001000);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleParameter getVehicleParameter() {
       return vehicleParameter_;
@@ -4428,7 +4630,7 @@ public final class DomainProto {
     public static final int VEHICLEPROFILE_FIELD_NUMBER = 53;
     private com.ugcs.ucs.proto.DomainProto.VehicleProfile vehicleProfile_;
     public boolean hasVehicleProfile() {
-      return ((bitField1_ & 0x00004000) == 0x00004000);
+      return ((bitField1_ & 0x00002000) == 0x00002000);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleProfile getVehicleProfile() {
       return vehicleProfile_;
@@ -4441,7 +4643,7 @@ public final class DomainProto {
     public static final int VEHICLEPROFILEPAYLOADPROFILE_FIELD_NUMBER = 54;
     private com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile vehicleProfilePayloadProfile_;
     public boolean hasVehicleProfilePayloadProfile() {
-      return ((bitField1_ & 0x00008000) == 0x00008000);
+      return ((bitField1_ & 0x00004000) == 0x00004000);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile getVehicleProfilePayloadProfile() {
       return vehicleProfilePayloadProfile_;
@@ -4454,7 +4656,7 @@ public final class DomainProto {
     public static final int VSM_FIELD_NUMBER = 55;
     private com.ugcs.ucs.proto.DomainProto.Vsm vsm_;
     public boolean hasVsm() {
-      return ((bitField1_ & 0x00010000) == 0x00010000);
+      return ((bitField1_ & 0x00008000) == 0x00008000);
     }
     public com.ugcs.ucs.proto.DomainProto.Vsm getVsm() {
       return vsm_;
@@ -4467,7 +4669,7 @@ public final class DomainProto {
     public static final int WAIT_FIELD_NUMBER = 57;
     private com.ugcs.ucs.proto.DomainProto.Wait wait_;
     public boolean hasWait() {
-      return ((bitField1_ & 0x00020000) == 0x00020000);
+      return ((bitField1_ & 0x00010000) == 0x00010000);
     }
     public com.ugcs.ucs.proto.DomainProto.Wait getWait() {
       return wait_;
@@ -4480,7 +4682,7 @@ public final class DomainProto {
     public static final int WAITDEFINITION_FIELD_NUMBER = 58;
     private com.ugcs.ucs.proto.DomainProto.WaitDefinition waitDefinition_;
     public boolean hasWaitDefinition() {
-      return ((bitField1_ & 0x00040000) == 0x00040000);
+      return ((bitField1_ & 0x00020000) == 0x00020000);
     }
     public com.ugcs.ucs.proto.DomainProto.WaitDefinition getWaitDefinition() {
       return waitDefinition_;
@@ -4493,7 +4695,7 @@ public final class DomainProto {
     public static final int WAYPOINT_FIELD_NUMBER = 59;
     private com.ugcs.ucs.proto.DomainProto.Waypoint waypoint_;
     public boolean hasWaypoint() {
-      return ((bitField1_ & 0x00080000) == 0x00080000);
+      return ((bitField1_ & 0x00040000) == 0x00040000);
     }
     public com.ugcs.ucs.proto.DomainProto.Waypoint getWaypoint() {
       return waypoint_;
@@ -4506,7 +4708,7 @@ public final class DomainProto {
     public static final int MESSAGESET_FIELD_NUMBER = 60;
     private com.ugcs.ucs.proto.DomainProto.MessageSet messageSet_;
     public boolean hasMessageSet() {
-      return ((bitField1_ & 0x00100000) == 0x00100000);
+      return ((bitField1_ & 0x00080000) == 0x00080000);
     }
     public com.ugcs.ucs.proto.DomainProto.MessageSet getMessageSet() {
       return messageSet_;
@@ -4519,7 +4721,7 @@ public final class DomainProto {
     public static final int LOCALIZEDMESSAGE_FIELD_NUMBER = 61;
     private com.ugcs.ucs.proto.DomainProto.LocalizedMessage localizedMessage_;
     public boolean hasLocalizedMessage() {
-      return ((bitField1_ & 0x00200000) == 0x00200000);
+      return ((bitField1_ & 0x00100000) == 0x00100000);
     }
     public com.ugcs.ucs.proto.DomainProto.LocalizedMessage getLocalizedMessage() {
       return localizedMessage_;
@@ -4532,7 +4734,7 @@ public final class DomainProto {
     public static final int LOCALIZEDMESSAGEVARIANT_FIELD_NUMBER = 62;
     private com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant localizedMessageVariant_;
     public boolean hasLocalizedMessageVariant() {
-      return ((bitField1_ & 0x00400000) == 0x00400000);
+      return ((bitField1_ & 0x00200000) == 0x00200000);
     }
     public com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant getLocalizedMessageVariant() {
       return localizedMessageVariant_;
@@ -4545,7 +4747,7 @@ public final class DomainProto {
     public static final int TELEMETRYINTERVAL_FIELD_NUMBER = 63;
     private com.ugcs.ucs.proto.DomainProto.TelemetryInterval telemetryInterval_;
     public boolean hasTelemetryInterval() {
-      return ((bitField1_ & 0x00800000) == 0x00800000);
+      return ((bitField1_ & 0x00400000) == 0x00400000);
     }
     public com.ugcs.ucs.proto.DomainProto.TelemetryInterval getTelemetryInterval() {
       return telemetryInterval_;
@@ -4558,7 +4760,7 @@ public final class DomainProto {
     public static final int TELEMETRYINTERVALVEHICLE_FIELD_NUMBER = 64;
     private com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle telemetryIntervalVehicle_;
     public boolean hasTelemetryIntervalVehicle() {
-      return ((bitField1_ & 0x01000000) == 0x01000000);
+      return ((bitField1_ & 0x00800000) == 0x00800000);
     }
     public com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle getTelemetryIntervalVehicle() {
       return telemetryIntervalVehicle_;
@@ -4571,7 +4773,7 @@ public final class DomainProto {
     public static final int COMMANDLOGARGUMENTS_FIELD_NUMBER = 65;
     private com.ugcs.ucs.proto.DomainProto.CommandLogArguments commandLogArguments_;
     public boolean hasCommandLogArguments() {
-      return ((bitField1_ & 0x02000000) == 0x02000000);
+      return ((bitField1_ & 0x01000000) == 0x01000000);
     }
     public com.ugcs.ucs.proto.DomainProto.CommandLogArguments getCommandLogArguments() {
       return commandLogArguments_;
@@ -4584,7 +4786,7 @@ public final class DomainProto {
     public static final int UPLOADLOGARGUMENTS_FIELD_NUMBER = 66;
     private com.ugcs.ucs.proto.DomainProto.UploadLogArguments uploadLogArguments_;
     public boolean hasUploadLogArguments() {
-      return ((bitField1_ & 0x04000000) == 0x04000000);
+      return ((bitField1_ & 0x02000000) == 0x02000000);
     }
     public com.ugcs.ucs.proto.DomainProto.UploadLogArguments getUploadLogArguments() {
       return uploadLogArguments_;
@@ -4597,7 +4799,7 @@ public final class DomainProto {
     public static final int ELEVATIONSOURCE_FIELD_NUMBER = 67;
     private com.ugcs.ucs.proto.DomainProto.ElevationSource elevationSource_;
     public boolean hasElevationSource() {
-      return ((bitField1_ & 0x08000000) == 0x08000000);
+      return ((bitField1_ & 0x04000000) == 0x04000000);
     }
     public com.ugcs.ucs.proto.DomainProto.ElevationSource getElevationSource() {
       return elevationSource_;
@@ -4610,7 +4812,7 @@ public final class DomainProto {
     public static final int GEOSERVER_FIELD_NUMBER = 68;
     private com.ugcs.ucs.proto.DomainProto.GeoServer geoServer_;
     public boolean hasGeoServer() {
-      return ((bitField1_ & 0x10000000) == 0x10000000);
+      return ((bitField1_ & 0x08000000) == 0x08000000);
     }
     public com.ugcs.ucs.proto.DomainProto.GeoServer getGeoServer() {
       return geoServer_;
@@ -4623,7 +4825,7 @@ public final class DomainProto {
     public static final int CAMERASERIESBYDISTANCE_FIELD_NUMBER = 69;
     private com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance cameraSeriesByDistance_;
     public boolean hasCameraSeriesByDistance() {
-      return ((bitField1_ & 0x20000000) == 0x20000000);
+      return ((bitField1_ & 0x10000000) == 0x10000000);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance getCameraSeriesByDistance() {
       return cameraSeriesByDistance_;
@@ -4636,7 +4838,7 @@ public final class DomainProto {
     public static final int CAMERASERIESBYDISTANCEDEFINITION_FIELD_NUMBER = 70;
     private com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition cameraSeriesByDistanceDefinition_;
     public boolean hasCameraSeriesByDistanceDefinition() {
-      return ((bitField1_ & 0x40000000) == 0x40000000);
+      return ((bitField1_ & 0x20000000) == 0x20000000);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition getCameraSeriesByDistanceDefinition() {
       return cameraSeriesByDistanceDefinition_;
@@ -4649,7 +4851,7 @@ public final class DomainProto {
     public static final int CAMERASERIESBYTIME_FIELD_NUMBER = 71;
     private com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime cameraSeriesByTime_;
     public boolean hasCameraSeriesByTime() {
-      return ((bitField1_ & 0x80000000) == 0x80000000);
+      return ((bitField1_ & 0x40000000) == 0x40000000);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime getCameraSeriesByTime() {
       return cameraSeriesByTime_;
@@ -4662,7 +4864,7 @@ public final class DomainProto {
     public static final int CAMERASERIESBYTIMEDEFINITION_FIELD_NUMBER = 72;
     private com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition cameraSeriesByTimeDefinition_;
     public boolean hasCameraSeriesByTimeDefinition() {
-      return ((bitField2_ & 0x00000001) == 0x00000001);
+      return ((bitField1_ & 0x80000000) == 0x80000000);
     }
     public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition getCameraSeriesByTimeDefinition() {
       return cameraSeriesByTimeDefinition_;
@@ -4675,7 +4877,7 @@ public final class DomainProto {
     public static final int PLATFORMACTION_FIELD_NUMBER = 73;
     private com.ugcs.ucs.proto.DomainProto.PlatformAction platformAction_;
     public boolean hasPlatformAction() {
-      return ((bitField2_ & 0x00000002) == 0x00000002);
+      return ((bitField2_ & 0x00000001) == 0x00000001);
     }
     public com.ugcs.ucs.proto.DomainProto.PlatformAction getPlatformAction() {
       return platformAction_;
@@ -4688,7 +4890,7 @@ public final class DomainProto {
     public static final int FEATURESOURCE_FIELD_NUMBER = 74;
     private com.ugcs.ucs.proto.DomainProto.FeatureSource featureSource_;
     public boolean hasFeatureSource() {
-      return ((bitField2_ & 0x00000004) == 0x00000004);
+      return ((bitField2_ & 0x00000002) == 0x00000002);
     }
     public com.ugcs.ucs.proto.DomainProto.FeatureSource getFeatureSource() {
       return featureSource_;
@@ -4701,7 +4903,7 @@ public final class DomainProto {
     public static final int VIDEORECORDINGLOGARGUMENTS_FIELD_NUMBER = 75;
     private com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments videoRecordingLogArguments_;
     public boolean hasVideoRecordingLogArguments() {
-      return ((bitField2_ & 0x00000008) == 0x00000008);
+      return ((bitField2_ & 0x00000004) == 0x00000004);
     }
     public com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments getVideoRecordingLogArguments() {
       return videoRecordingLogArguments_;
@@ -4714,7 +4916,7 @@ public final class DomainProto {
     public static final int UTMOPERATION_FIELD_NUMBER = 76;
     private com.ugcs.ucs.proto.DomainProto.UtmOperation utmOperation_;
     public boolean hasUtmOperation() {
-      return ((bitField2_ & 0x00000010) == 0x00000010);
+      return ((bitField2_ & 0x00000008) == 0x00000008);
     }
     public com.ugcs.ucs.proto.DomainProto.UtmOperation getUtmOperation() {
       return utmOperation_;
@@ -4727,7 +4929,7 @@ public final class DomainProto {
     public static final int COMMANDARGUMENTDEFINITION_FIELD_NUMBER = 77;
     private com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition commandArgumentDefinition_;
     public boolean hasCommandArgumentDefinition() {
-      return ((bitField2_ & 0x00000020) == 0x00000020);
+      return ((bitField2_ & 0x00000010) == 0x00000010);
     }
     public com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition getCommandArgumentDefinition() {
       return commandArgumentDefinition_;
@@ -4740,7 +4942,7 @@ public final class DomainProto {
     public static final int FAILSAFE_FIELD_NUMBER = 78;
     private com.ugcs.ucs.proto.DomainProto.Failsafe failsafe_;
     public boolean hasFailsafe() {
-      return ((bitField2_ & 0x00000040) == 0x00000040);
+      return ((bitField2_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.Failsafe getFailsafe() {
       return failsafe_;
@@ -4753,7 +4955,7 @@ public final class DomainProto {
     public static final int PROCESSEDSEGMENT_FIELD_NUMBER = 79;
     private com.ugcs.ucs.proto.DomainProto.ProcessedSegment processedSegment_;
     public boolean hasProcessedSegment() {
-      return ((bitField2_ & 0x00000080) == 0x00000080);
+      return ((bitField2_ & 0x00000040) == 0x00000040);
     }
     public com.ugcs.ucs.proto.DomainProto.ProcessedSegment getProcessedSegment() {
       return processedSegment_;
@@ -4766,7 +4968,7 @@ public final class DomainProto {
     public static final int ROUTEATTRIBUTES_FIELD_NUMBER = 80;
     private com.ugcs.ucs.proto.DomainProto.RouteAttributes routeAttributes_;
     public boolean hasRouteAttributes() {
-      return ((bitField2_ & 0x00000100) == 0x00000100);
+      return ((bitField2_ & 0x00000080) == 0x00000080);
     }
     public com.ugcs.ucs.proto.DomainProto.RouteAttributes getRouteAttributes() {
       return routeAttributes_;
@@ -4779,7 +4981,7 @@ public final class DomainProto {
     public static final int VALUE_FIELD_NUMBER = 81;
     private com.ugcs.ucs.proto.DomainProto.Value value_;
     public boolean hasValue() {
-      return ((bitField2_ & 0x00000200) == 0x00000200);
+      return ((bitField2_ & 0x00000100) == 0x00000100);
     }
     public com.ugcs.ucs.proto.DomainProto.Value getValue() {
       return value_;
@@ -4788,11 +4990,75 @@ public final class DomainProto {
       return value_;
     }
     
+    // optional .SetServo setServo = 82;
+    public static final int SETSERVO_FIELD_NUMBER = 82;
+    private com.ugcs.ucs.proto.DomainProto.SetServo setServo_;
+    public boolean hasSetServo() {
+      return ((bitField2_ & 0x00000200) == 0x00000200);
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServo getSetServo() {
+      return setServo_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder() {
+      return setServo_;
+    }
+    
+    // optional .RepeatServo repeatServo = 83;
+    public static final int REPEATSERVO_FIELD_NUMBER = 83;
+    private com.ugcs.ucs.proto.DomainProto.RepeatServo repeatServo_;
+    public boolean hasRepeatServo() {
+      return ((bitField2_ & 0x00000400) == 0x00000400);
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo() {
+      return repeatServo_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder() {
+      return repeatServo_;
+    }
+    
+    // optional .TransitionFixed transitionFixed = 84;
+    public static final int TRANSITIONFIXED_FIELD_NUMBER = 84;
+    private com.ugcs.ucs.proto.DomainProto.TransitionFixed transitionFixed_;
+    public boolean hasTransitionFixed() {
+      return ((bitField2_ & 0x00000800) == 0x00000800);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed() {
+      return transitionFixed_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder() {
+      return transitionFixed_;
+    }
+    
+    // optional .TransitionVtol transitionVtol = 85;
+    public static final int TRANSITIONVTOL_FIELD_NUMBER = 85;
+    private com.ugcs.ucs.proto.DomainProto.TransitionVtol transitionVtol_;
+    public boolean hasTransitionVtol() {
+      return ((bitField2_ & 0x00001000) == 0x00001000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol() {
+      return transitionVtol_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder() {
+      return transitionVtol_;
+    }
+    
+    // optional .RouteUpload routeUpload = 86;
+    public static final int ROUTEUPLOAD_FIELD_NUMBER = 86;
+    private com.ugcs.ucs.proto.DomainProto.RouteUpload routeUpload_;
+    public boolean hasRouteUpload() {
+      return ((bitField2_ & 0x00002000) == 0x00002000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.RouteUpload getRouteUpload() {
+      return routeUpload_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder getRouteUploadOrBuilder() {
+      return routeUpload_;
+    }
+    
     private void initFields() {
       action_ = com.ugcs.ucs.proto.DomainProto.Action.getDefaultInstance();
       actionDefinition_ = com.ugcs.ucs.proto.DomainProto.ActionDefinition.getDefaultInstance();
       adsbAircraft_ = com.ugcs.ucs.proto.DomainProto.AdsbAircraft.getDefaultInstance();
-      avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
       cameraControl_ = com.ugcs.ucs.proto.DomainProto.CameraControl.getDefaultInstance();
       cameraControlDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.getDefaultInstance();
       cameraTrigger_ = com.ugcs.ucs.proto.DomainProto.CameraTrigger.getDefaultInstance();
@@ -4863,6 +5129,11 @@ public final class DomainProto {
       processedSegment_ = com.ugcs.ucs.proto.DomainProto.ProcessedSegment.getDefaultInstance();
       routeAttributes_ = com.ugcs.ucs.proto.DomainProto.RouteAttributes.getDefaultInstance();
       value_ = com.ugcs.ucs.proto.DomainProto.Value.getDefaultInstance();
+      setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+      repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+      transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+      transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+      routeUpload_ = com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -4886,217 +5157,229 @@ public final class DomainProto {
         output.writeMessage(3, adsbAircraft_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, avatar_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(5, cameraControl_);
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(6, cameraControlDefinition_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeMessage(7, cameraTrigger_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(8, cameraTriggerDefinition_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(9, commandDefinition_);
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(10, figure_);
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeMessage(11, figureParameter_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeMessage(12, figurePoint_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeMessage(13, headingChange_);
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(14, headingDefinition_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeMessage(15, homeLocation_);
       }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
         output.writeMessage(16, landing_);
       }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
         output.writeMessage(18, license_);
       }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
         output.writeMessage(19, mission_);
       }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
         output.writeMessage(21, missionPreference_);
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00040000) == 0x00040000)) {
         output.writeMessage(22, missionVehicle_);
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeMessage(25, noFlightZone_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x00100000) == 0x00100000)) {
         output.writeMessage(26, panorama_);
       }
-      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
         output.writeMessage(27, panoramaDefinition_);
       }
-      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
         output.writeMessage(28, parameterDefinition_);
       }
-      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
         output.writeMessage(29, parameterValue_);
       }
-      if (((bitField0_ & 0x02000000) == 0x02000000)) {
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
         output.writeMessage(30, payloadParameter_);
       }
-      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeMessage(31, payloadProfile_);
       }
-      if (((bitField0_ & 0x08000000) == 0x08000000)) {
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
         output.writeMessage(32, platform_);
       }
-      if (((bitField0_ & 0x10000000) == 0x10000000)) {
+      if (((bitField0_ & 0x08000000) == 0x08000000)) {
         output.writeMessage(33, platformPayloadProfile_);
       }
-      if (((bitField0_ & 0x20000000) == 0x20000000)) {
+      if (((bitField0_ & 0x10000000) == 0x10000000)) {
         output.writeMessage(34, platformTelemetryType_);
       }
-      if (((bitField0_ & 0x40000000) == 0x40000000)) {
+      if (((bitField0_ & 0x20000000) == 0x20000000)) {
         output.writeMessage(36, poiChange_);
       }
-      if (((bitField0_ & 0x80000000) == 0x80000000)) {
+      if (((bitField0_ & 0x40000000) == 0x40000000)) {
         output.writeMessage(37, poiDefinition_);
       }
-      if (((bitField1_ & 0x00000001) == 0x00000001)) {
+      if (((bitField0_ & 0x80000000) == 0x80000000)) {
         output.writeMessage(38, prism_);
       }
-      if (((bitField1_ & 0x00000002) == 0x00000002)) {
+      if (((bitField1_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(39, polygonPoint_);
       }
-      if (((bitField1_ & 0x00000004) == 0x00000004)) {
+      if (((bitField1_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(40, processedRoute_);
       }
-      if (((bitField1_ & 0x00000008) == 0x00000008)) {
+      if (((bitField1_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(41, route_);
       }
-      if (((bitField1_ & 0x00000010) == 0x00000010)) {
+      if (((bitField1_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(42, segmentDefinition_);
       }
-      if (((bitField1_ & 0x00000020) == 0x00000020)) {
+      if (((bitField1_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(44, speedChange_);
       }
-      if (((bitField1_ & 0x00000040) == 0x00000040)) {
+      if (((bitField1_ & 0x00000020) == 0x00000020)) {
         output.writeMessage(45, takeoff_);
       }
-      if (((bitField1_ & 0x00000080) == 0x00000080)) {
+      if (((bitField1_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(46, telemetry_);
       }
-      if (((bitField1_ & 0x00000100) == 0x00000100)) {
+      if (((bitField1_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(47, traverseAlgorithm_);
       }
-      if (((bitField1_ & 0x00000200) == 0x00000200)) {
+      if (((bitField1_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(48, user_);
       }
-      if (((bitField1_ & 0x00000400) == 0x00000400)) {
+      if (((bitField1_ & 0x00000200) == 0x00000200)) {
         output.writeMessage(49, vehicle_);
       }
-      if (((bitField1_ & 0x00000800) == 0x00000800)) {
+      if (((bitField1_ & 0x00000400) == 0x00000400)) {
         output.writeMessage(50, vehicleCommandDefinition_);
       }
-      if (((bitField1_ & 0x00001000) == 0x00001000)) {
+      if (((bitField1_ & 0x00000800) == 0x00000800)) {
         output.writeMessage(51, vehicleLogEntry_);
       }
-      if (((bitField1_ & 0x00002000) == 0x00002000)) {
+      if (((bitField1_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(52, vehicleParameter_);
       }
-      if (((bitField1_ & 0x00004000) == 0x00004000)) {
+      if (((bitField1_ & 0x00002000) == 0x00002000)) {
         output.writeMessage(53, vehicleProfile_);
       }
-      if (((bitField1_ & 0x00008000) == 0x00008000)) {
+      if (((bitField1_ & 0x00004000) == 0x00004000)) {
         output.writeMessage(54, vehicleProfilePayloadProfile_);
       }
-      if (((bitField1_ & 0x00010000) == 0x00010000)) {
+      if (((bitField1_ & 0x00008000) == 0x00008000)) {
         output.writeMessage(55, vsm_);
       }
-      if (((bitField1_ & 0x00020000) == 0x00020000)) {
+      if (((bitField1_ & 0x00010000) == 0x00010000)) {
         output.writeMessage(57, wait_);
       }
-      if (((bitField1_ & 0x00040000) == 0x00040000)) {
+      if (((bitField1_ & 0x00020000) == 0x00020000)) {
         output.writeMessage(58, waitDefinition_);
       }
-      if (((bitField1_ & 0x00080000) == 0x00080000)) {
+      if (((bitField1_ & 0x00040000) == 0x00040000)) {
         output.writeMessage(59, waypoint_);
       }
-      if (((bitField1_ & 0x00100000) == 0x00100000)) {
+      if (((bitField1_ & 0x00080000) == 0x00080000)) {
         output.writeMessage(60, messageSet_);
       }
-      if (((bitField1_ & 0x00200000) == 0x00200000)) {
+      if (((bitField1_ & 0x00100000) == 0x00100000)) {
         output.writeMessage(61, localizedMessage_);
       }
-      if (((bitField1_ & 0x00400000) == 0x00400000)) {
+      if (((bitField1_ & 0x00200000) == 0x00200000)) {
         output.writeMessage(62, localizedMessageVariant_);
       }
-      if (((bitField1_ & 0x00800000) == 0x00800000)) {
+      if (((bitField1_ & 0x00400000) == 0x00400000)) {
         output.writeMessage(63, telemetryInterval_);
       }
-      if (((bitField1_ & 0x01000000) == 0x01000000)) {
+      if (((bitField1_ & 0x00800000) == 0x00800000)) {
         output.writeMessage(64, telemetryIntervalVehicle_);
       }
-      if (((bitField1_ & 0x02000000) == 0x02000000)) {
+      if (((bitField1_ & 0x01000000) == 0x01000000)) {
         output.writeMessage(65, commandLogArguments_);
       }
-      if (((bitField1_ & 0x04000000) == 0x04000000)) {
+      if (((bitField1_ & 0x02000000) == 0x02000000)) {
         output.writeMessage(66, uploadLogArguments_);
       }
-      if (((bitField1_ & 0x08000000) == 0x08000000)) {
+      if (((bitField1_ & 0x04000000) == 0x04000000)) {
         output.writeMessage(67, elevationSource_);
       }
-      if (((bitField1_ & 0x10000000) == 0x10000000)) {
+      if (((bitField1_ & 0x08000000) == 0x08000000)) {
         output.writeMessage(68, geoServer_);
       }
-      if (((bitField1_ & 0x20000000) == 0x20000000)) {
+      if (((bitField1_ & 0x10000000) == 0x10000000)) {
         output.writeMessage(69, cameraSeriesByDistance_);
       }
-      if (((bitField1_ & 0x40000000) == 0x40000000)) {
+      if (((bitField1_ & 0x20000000) == 0x20000000)) {
         output.writeMessage(70, cameraSeriesByDistanceDefinition_);
       }
-      if (((bitField1_ & 0x80000000) == 0x80000000)) {
+      if (((bitField1_ & 0x40000000) == 0x40000000)) {
         output.writeMessage(71, cameraSeriesByTime_);
       }
-      if (((bitField2_ & 0x00000001) == 0x00000001)) {
+      if (((bitField1_ & 0x80000000) == 0x80000000)) {
         output.writeMessage(72, cameraSeriesByTimeDefinition_);
       }
-      if (((bitField2_ & 0x00000002) == 0x00000002)) {
+      if (((bitField2_ & 0x00000001) == 0x00000001)) {
         output.writeMessage(73, platformAction_);
       }
-      if (((bitField2_ & 0x00000004) == 0x00000004)) {
+      if (((bitField2_ & 0x00000002) == 0x00000002)) {
         output.writeMessage(74, featureSource_);
       }
-      if (((bitField2_ & 0x00000008) == 0x00000008)) {
+      if (((bitField2_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(75, videoRecordingLogArguments_);
       }
-      if (((bitField2_ & 0x00000010) == 0x00000010)) {
+      if (((bitField2_ & 0x00000008) == 0x00000008)) {
         output.writeMessage(76, utmOperation_);
       }
-      if (((bitField2_ & 0x00000020) == 0x00000020)) {
+      if (((bitField2_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(77, commandArgumentDefinition_);
       }
-      if (((bitField2_ & 0x00000040) == 0x00000040)) {
+      if (((bitField2_ & 0x00000020) == 0x00000020)) {
         output.writeMessage(78, failsafe_);
       }
-      if (((bitField2_ & 0x00000080) == 0x00000080)) {
+      if (((bitField2_ & 0x00000040) == 0x00000040)) {
         output.writeMessage(79, processedSegment_);
       }
-      if (((bitField2_ & 0x00000100) == 0x00000100)) {
+      if (((bitField2_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(80, routeAttributes_);
       }
-      if (((bitField2_ & 0x00000200) == 0x00000200)) {
+      if (((bitField2_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(81, value_);
+      }
+      if (((bitField2_ & 0x00000200) == 0x00000200)) {
+        output.writeMessage(82, setServo_);
+      }
+      if (((bitField2_ & 0x00000400) == 0x00000400)) {
+        output.writeMessage(83, repeatServo_);
+      }
+      if (((bitField2_ & 0x00000800) == 0x00000800)) {
+        output.writeMessage(84, transitionFixed_);
+      }
+      if (((bitField2_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(85, transitionVtol_);
+      }
+      if (((bitField2_ & 0x00002000) == 0x00002000)) {
+        output.writeMessage(86, routeUpload_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5121,287 +5404,303 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, avatar_);
+          .computeMessageSize(5, cameraControl_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, cameraControl_);
+          .computeMessageSize(6, cameraControlDefinition_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, cameraControlDefinition_);
+          .computeMessageSize(7, cameraTrigger_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, cameraTrigger_);
+          .computeMessageSize(8, cameraTriggerDefinition_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, cameraTriggerDefinition_);
+          .computeMessageSize(9, commandDefinition_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, commandDefinition_);
+          .computeMessageSize(10, figure_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, figure_);
+          .computeMessageSize(11, figureParameter_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, figureParameter_);
+          .computeMessageSize(12, figurePoint_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, figurePoint_);
+          .computeMessageSize(13, headingChange_);
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, headingChange_);
+          .computeMessageSize(14, headingDefinition_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(14, headingDefinition_);
+          .computeMessageSize(15, homeLocation_);
       }
       if (((bitField0_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, homeLocation_);
+          .computeMessageSize(16, landing_);
       }
       if (((bitField0_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, landing_);
+          .computeMessageSize(18, license_);
       }
       if (((bitField0_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, license_);
+          .computeMessageSize(19, mission_);
       }
       if (((bitField0_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(19, mission_);
+          .computeMessageSize(21, missionPreference_);
       }
       if (((bitField0_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(21, missionPreference_);
+          .computeMessageSize(22, missionVehicle_);
       }
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(22, missionVehicle_);
+          .computeMessageSize(25, noFlightZone_);
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(25, noFlightZone_);
+          .computeMessageSize(26, panorama_);
       }
       if (((bitField0_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(26, panorama_);
+          .computeMessageSize(27, panoramaDefinition_);
       }
       if (((bitField0_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27, panoramaDefinition_);
+          .computeMessageSize(28, parameterDefinition_);
       }
       if (((bitField0_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(28, parameterDefinition_);
+          .computeMessageSize(29, parameterValue_);
       }
       if (((bitField0_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(29, parameterValue_);
+          .computeMessageSize(30, payloadParameter_);
       }
       if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(30, payloadParameter_);
+          .computeMessageSize(31, payloadProfile_);
       }
       if (((bitField0_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(31, payloadProfile_);
+          .computeMessageSize(32, platform_);
       }
       if (((bitField0_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(32, platform_);
+          .computeMessageSize(33, platformPayloadProfile_);
       }
       if (((bitField0_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(33, platformPayloadProfile_);
+          .computeMessageSize(34, platformTelemetryType_);
       }
       if (((bitField0_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(34, platformTelemetryType_);
+          .computeMessageSize(36, poiChange_);
       }
       if (((bitField0_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(36, poiChange_);
+          .computeMessageSize(37, poiDefinition_);
       }
       if (((bitField0_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(37, poiDefinition_);
+          .computeMessageSize(38, prism_);
       }
       if (((bitField1_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(38, prism_);
+          .computeMessageSize(39, polygonPoint_);
       }
       if (((bitField1_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(39, polygonPoint_);
+          .computeMessageSize(40, processedRoute_);
       }
       if (((bitField1_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(40, processedRoute_);
+          .computeMessageSize(41, route_);
       }
       if (((bitField1_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(41, route_);
+          .computeMessageSize(42, segmentDefinition_);
       }
       if (((bitField1_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(42, segmentDefinition_);
+          .computeMessageSize(44, speedChange_);
       }
       if (((bitField1_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(44, speedChange_);
+          .computeMessageSize(45, takeoff_);
       }
       if (((bitField1_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(45, takeoff_);
+          .computeMessageSize(46, telemetry_);
       }
       if (((bitField1_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(46, telemetry_);
+          .computeMessageSize(47, traverseAlgorithm_);
       }
       if (((bitField1_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(47, traverseAlgorithm_);
+          .computeMessageSize(48, user_);
       }
       if (((bitField1_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(48, user_);
+          .computeMessageSize(49, vehicle_);
       }
       if (((bitField1_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(49, vehicle_);
+          .computeMessageSize(50, vehicleCommandDefinition_);
       }
       if (((bitField1_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(50, vehicleCommandDefinition_);
+          .computeMessageSize(51, vehicleLogEntry_);
       }
       if (((bitField1_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(51, vehicleLogEntry_);
+          .computeMessageSize(52, vehicleParameter_);
       }
       if (((bitField1_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(52, vehicleParameter_);
+          .computeMessageSize(53, vehicleProfile_);
       }
       if (((bitField1_ & 0x00004000) == 0x00004000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(53, vehicleProfile_);
+          .computeMessageSize(54, vehicleProfilePayloadProfile_);
       }
       if (((bitField1_ & 0x00008000) == 0x00008000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(54, vehicleProfilePayloadProfile_);
+          .computeMessageSize(55, vsm_);
       }
       if (((bitField1_ & 0x00010000) == 0x00010000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(55, vsm_);
+          .computeMessageSize(57, wait_);
       }
       if (((bitField1_ & 0x00020000) == 0x00020000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(57, wait_);
+          .computeMessageSize(58, waitDefinition_);
       }
       if (((bitField1_ & 0x00040000) == 0x00040000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(58, waitDefinition_);
+          .computeMessageSize(59, waypoint_);
       }
       if (((bitField1_ & 0x00080000) == 0x00080000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(59, waypoint_);
+          .computeMessageSize(60, messageSet_);
       }
       if (((bitField1_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(60, messageSet_);
+          .computeMessageSize(61, localizedMessage_);
       }
       if (((bitField1_ & 0x00200000) == 0x00200000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(61, localizedMessage_);
+          .computeMessageSize(62, localizedMessageVariant_);
       }
       if (((bitField1_ & 0x00400000) == 0x00400000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(62, localizedMessageVariant_);
+          .computeMessageSize(63, telemetryInterval_);
       }
       if (((bitField1_ & 0x00800000) == 0x00800000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(63, telemetryInterval_);
+          .computeMessageSize(64, telemetryIntervalVehicle_);
       }
       if (((bitField1_ & 0x01000000) == 0x01000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(64, telemetryIntervalVehicle_);
+          .computeMessageSize(65, commandLogArguments_);
       }
       if (((bitField1_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(65, commandLogArguments_);
+          .computeMessageSize(66, uploadLogArguments_);
       }
       if (((bitField1_ & 0x04000000) == 0x04000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(66, uploadLogArguments_);
+          .computeMessageSize(67, elevationSource_);
       }
       if (((bitField1_ & 0x08000000) == 0x08000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(67, elevationSource_);
+          .computeMessageSize(68, geoServer_);
       }
       if (((bitField1_ & 0x10000000) == 0x10000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(68, geoServer_);
+          .computeMessageSize(69, cameraSeriesByDistance_);
       }
       if (((bitField1_ & 0x20000000) == 0x20000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(69, cameraSeriesByDistance_);
+          .computeMessageSize(70, cameraSeriesByDistanceDefinition_);
       }
       if (((bitField1_ & 0x40000000) == 0x40000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(70, cameraSeriesByDistanceDefinition_);
+          .computeMessageSize(71, cameraSeriesByTime_);
       }
       if (((bitField1_ & 0x80000000) == 0x80000000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(71, cameraSeriesByTime_);
+          .computeMessageSize(72, cameraSeriesByTimeDefinition_);
       }
       if (((bitField2_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(72, cameraSeriesByTimeDefinition_);
+          .computeMessageSize(73, platformAction_);
       }
       if (((bitField2_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(73, platformAction_);
+          .computeMessageSize(74, featureSource_);
       }
       if (((bitField2_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(74, featureSource_);
+          .computeMessageSize(75, videoRecordingLogArguments_);
       }
       if (((bitField2_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(75, videoRecordingLogArguments_);
+          .computeMessageSize(76, utmOperation_);
       }
       if (((bitField2_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(76, utmOperation_);
+          .computeMessageSize(77, commandArgumentDefinition_);
       }
       if (((bitField2_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(77, commandArgumentDefinition_);
+          .computeMessageSize(78, failsafe_);
       }
       if (((bitField2_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(78, failsafe_);
+          .computeMessageSize(79, processedSegment_);
       }
       if (((bitField2_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(79, processedSegment_);
+          .computeMessageSize(80, routeAttributes_);
       }
       if (((bitField2_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(80, routeAttributes_);
+          .computeMessageSize(81, value_);
       }
       if (((bitField2_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(81, value_);
+          .computeMessageSize(82, setServo_);
+      }
+      if (((bitField2_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(83, repeatServo_);
+      }
+      if (((bitField2_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(84, transitionFixed_);
+      }
+      if (((bitField2_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(85, transitionVtol_);
+      }
+      if (((bitField2_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(86, routeUpload_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5522,7 +5821,6 @@ public final class DomainProto {
           getActionFieldBuilder();
           getActionDefinitionFieldBuilder();
           getAdsbAircraftFieldBuilder();
-          getAvatarFieldBuilder();
           getCameraControlFieldBuilder();
           getCameraControlDefinitionFieldBuilder();
           getCameraTriggerFieldBuilder();
@@ -5593,6 +5891,11 @@ public final class DomainProto {
           getProcessedSegmentFieldBuilder();
           getRouteAttributesFieldBuilder();
           getValueFieldBuilder();
+          getSetServoFieldBuilder();
+          getRepeatServoFieldBuilder();
+          getTransitionFixedFieldBuilder();
+          getTransitionVtolFieldBuilder();
+          getRouteUploadFieldBuilder();
         }
       }
       private static Builder create() {
@@ -5619,432 +5922,456 @@ public final class DomainProto {
           adsbAircraftBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (avatarBuilder_ == null) {
-          avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-        } else {
-          avatarBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (cameraControlBuilder_ == null) {
           cameraControl_ = com.ugcs.ucs.proto.DomainProto.CameraControl.getDefaultInstance();
         } else {
           cameraControlBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (cameraControlDefinitionBuilder_ == null) {
           cameraControlDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.getDefaultInstance();
         } else {
           cameraControlDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (cameraTriggerBuilder_ == null) {
           cameraTrigger_ = com.ugcs.ucs.proto.DomainProto.CameraTrigger.getDefaultInstance();
         } else {
           cameraTriggerBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (cameraTriggerDefinitionBuilder_ == null) {
           cameraTriggerDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.getDefaultInstance();
         } else {
           cameraTriggerDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (commandDefinitionBuilder_ == null) {
           commandDefinition_ = com.ugcs.ucs.proto.DomainProto.CommandDefinition.getDefaultInstance();
         } else {
           commandDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         if (figureBuilder_ == null) {
           figure_ = com.ugcs.ucs.proto.DomainProto.Figure.getDefaultInstance();
         } else {
           figureBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (figureParameterBuilder_ == null) {
           figureParameter_ = com.ugcs.ucs.proto.DomainProto.FigureParameter.getDefaultInstance();
         } else {
           figureParameterBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         if (figurePointBuilder_ == null) {
           figurePoint_ = com.ugcs.ucs.proto.DomainProto.FigurePoint.getDefaultInstance();
         } else {
           figurePointBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         if (headingChangeBuilder_ == null) {
           headingChange_ = com.ugcs.ucs.proto.DomainProto.HeadingChange.getDefaultInstance();
         } else {
           headingChangeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         if (headingDefinitionBuilder_ == null) {
           headingDefinition_ = com.ugcs.ucs.proto.DomainProto.HeadingDefinition.getDefaultInstance();
         } else {
           headingDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (homeLocationBuilder_ == null) {
           homeLocation_ = com.ugcs.ucs.proto.DomainProto.HomeLocation.getDefaultInstance();
         } else {
           homeLocationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         if (landingBuilder_ == null) {
           landing_ = com.ugcs.ucs.proto.DomainProto.Landing.getDefaultInstance();
         } else {
           landingBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         if (licenseBuilder_ == null) {
           license_ = com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance();
         } else {
           licenseBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         if (missionBuilder_ == null) {
           mission_ = com.ugcs.ucs.proto.DomainProto.Mission.getDefaultInstance();
         } else {
           missionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         if (missionPreferenceBuilder_ == null) {
           missionPreference_ = com.ugcs.ucs.proto.DomainProto.MissionPreference.getDefaultInstance();
         } else {
           missionPreferenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         if (missionVehicleBuilder_ == null) {
           missionVehicle_ = com.ugcs.ucs.proto.DomainProto.MissionVehicle.getDefaultInstance();
         } else {
           missionVehicleBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         if (noFlightZoneBuilder_ == null) {
           noFlightZone_ = com.ugcs.ucs.proto.DomainProto.NoFlightZone.getDefaultInstance();
         } else {
           noFlightZoneBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         if (panoramaBuilder_ == null) {
           panorama_ = com.ugcs.ucs.proto.DomainProto.Panorama.getDefaultInstance();
         } else {
           panoramaBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         if (panoramaDefinitionBuilder_ == null) {
           panoramaDefinition_ = com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.getDefaultInstance();
         } else {
           panoramaDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         if (parameterDefinitionBuilder_ == null) {
           parameterDefinition_ = com.ugcs.ucs.proto.DomainProto.ParameterDefinition.getDefaultInstance();
         } else {
           parameterDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         if (parameterValueBuilder_ == null) {
           parameterValue_ = com.ugcs.ucs.proto.DomainProto.ParameterValue.getDefaultInstance();
         } else {
           parameterValueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         if (payloadParameterBuilder_ == null) {
           payloadParameter_ = com.ugcs.ucs.proto.DomainProto.PayloadParameter.getDefaultInstance();
         } else {
           payloadParameterBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         if (payloadProfileBuilder_ == null) {
           payloadProfile_ = com.ugcs.ucs.proto.DomainProto.PayloadProfile.getDefaultInstance();
         } else {
           payloadProfileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         if (platformBuilder_ == null) {
           platform_ = com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance();
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         if (platformPayloadProfileBuilder_ == null) {
           platformPayloadProfile_ = com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.getDefaultInstance();
         } else {
           platformPayloadProfileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         if (platformTelemetryTypeBuilder_ == null) {
           platformTelemetryType_ = com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType.getDefaultInstance();
         } else {
           platformTelemetryTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         if (poiChangeBuilder_ == null) {
           poiChange_ = com.ugcs.ucs.proto.DomainProto.PoiChange.getDefaultInstance();
         } else {
           poiChangeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         if (poiDefinitionBuilder_ == null) {
           poiDefinition_ = com.ugcs.ucs.proto.DomainProto.PoiDefinition.getDefaultInstance();
         } else {
           poiDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         if (prismBuilder_ == null) {
           prism_ = com.ugcs.ucs.proto.DomainProto.Prism.getDefaultInstance();
         } else {
           prismBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x80000000);
         if (polygonPointBuilder_ == null) {
           polygonPoint_ = com.ugcs.ucs.proto.DomainProto.PolygonPoint.getDefaultInstance();
         } else {
           polygonPointBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000001);
         if (processedRouteBuilder_ == null) {
           processedRoute_ = com.ugcs.ucs.proto.DomainProto.ProcessedRoute.getDefaultInstance();
         } else {
           processedRouteBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000004);
+        bitField1_ = (bitField1_ & ~0x00000002);
         if (routeBuilder_ == null) {
           route_ = com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance();
         } else {
           routeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000008);
+        bitField1_ = (bitField1_ & ~0x00000004);
         if (segmentDefinitionBuilder_ == null) {
           segmentDefinition_ = com.ugcs.ucs.proto.DomainProto.SegmentDefinition.getDefaultInstance();
         } else {
           segmentDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000010);
+        bitField1_ = (bitField1_ & ~0x00000008);
         if (speedChangeBuilder_ == null) {
           speedChange_ = com.ugcs.ucs.proto.DomainProto.SpeedChange.getDefaultInstance();
         } else {
           speedChangeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000020);
+        bitField1_ = (bitField1_ & ~0x00000010);
         if (takeoffBuilder_ == null) {
           takeoff_ = com.ugcs.ucs.proto.DomainProto.Takeoff.getDefaultInstance();
         } else {
           takeoffBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000040);
+        bitField1_ = (bitField1_ & ~0x00000020);
         if (telemetryBuilder_ == null) {
           telemetry_ = com.ugcs.ucs.proto.DomainProto.Telemetry.getDefaultInstance();
         } else {
           telemetryBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000080);
+        bitField1_ = (bitField1_ & ~0x00000040);
         if (traverseAlgorithmBuilder_ == null) {
           traverseAlgorithm_ = com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance();
         } else {
           traverseAlgorithmBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000100);
+        bitField1_ = (bitField1_ & ~0x00000080);
         if (userBuilder_ == null) {
           user_ = com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance();
         } else {
           userBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000200);
+        bitField1_ = (bitField1_ & ~0x00000100);
         if (vehicleBuilder_ == null) {
           vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
         } else {
           vehicleBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000400);
+        bitField1_ = (bitField1_ & ~0x00000200);
         if (vehicleCommandDefinitionBuilder_ == null) {
           vehicleCommandDefinition_ = com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.getDefaultInstance();
         } else {
           vehicleCommandDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000800);
+        bitField1_ = (bitField1_ & ~0x00000400);
         if (vehicleLogEntryBuilder_ == null) {
           vehicleLogEntry_ = com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.getDefaultInstance();
         } else {
           vehicleLogEntryBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00001000);
+        bitField1_ = (bitField1_ & ~0x00000800);
         if (vehicleParameterBuilder_ == null) {
           vehicleParameter_ = com.ugcs.ucs.proto.DomainProto.VehicleParameter.getDefaultInstance();
         } else {
           vehicleParameterBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00002000);
+        bitField1_ = (bitField1_ & ~0x00001000);
         if (vehicleProfileBuilder_ == null) {
           vehicleProfile_ = com.ugcs.ucs.proto.DomainProto.VehicleProfile.getDefaultInstance();
         } else {
           vehicleProfileBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00004000);
+        bitField1_ = (bitField1_ & ~0x00002000);
         if (vehicleProfilePayloadProfileBuilder_ == null) {
           vehicleProfilePayloadProfile_ = com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.getDefaultInstance();
         } else {
           vehicleProfilePayloadProfileBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00008000);
+        bitField1_ = (bitField1_ & ~0x00004000);
         if (vsmBuilder_ == null) {
           vsm_ = com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance();
         } else {
           vsmBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00010000);
+        bitField1_ = (bitField1_ & ~0x00008000);
         if (waitBuilder_ == null) {
           wait_ = com.ugcs.ucs.proto.DomainProto.Wait.getDefaultInstance();
         } else {
           waitBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00020000);
+        bitField1_ = (bitField1_ & ~0x00010000);
         if (waitDefinitionBuilder_ == null) {
           waitDefinition_ = com.ugcs.ucs.proto.DomainProto.WaitDefinition.getDefaultInstance();
         } else {
           waitDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00040000);
+        bitField1_ = (bitField1_ & ~0x00020000);
         if (waypointBuilder_ == null) {
           waypoint_ = com.ugcs.ucs.proto.DomainProto.Waypoint.getDefaultInstance();
         } else {
           waypointBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00080000);
+        bitField1_ = (bitField1_ & ~0x00040000);
         if (messageSetBuilder_ == null) {
           messageSet_ = com.ugcs.ucs.proto.DomainProto.MessageSet.getDefaultInstance();
         } else {
           messageSetBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00100000);
+        bitField1_ = (bitField1_ & ~0x00080000);
         if (localizedMessageBuilder_ == null) {
           localizedMessage_ = com.ugcs.ucs.proto.DomainProto.LocalizedMessage.getDefaultInstance();
         } else {
           localizedMessageBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00200000);
+        bitField1_ = (bitField1_ & ~0x00100000);
         if (localizedMessageVariantBuilder_ == null) {
           localizedMessageVariant_ = com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant.getDefaultInstance();
         } else {
           localizedMessageVariantBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00400000);
+        bitField1_ = (bitField1_ & ~0x00200000);
         if (telemetryIntervalBuilder_ == null) {
           telemetryInterval_ = com.ugcs.ucs.proto.DomainProto.TelemetryInterval.getDefaultInstance();
         } else {
           telemetryIntervalBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00800000);
+        bitField1_ = (bitField1_ & ~0x00400000);
         if (telemetryIntervalVehicleBuilder_ == null) {
           telemetryIntervalVehicle_ = com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.getDefaultInstance();
         } else {
           telemetryIntervalVehicleBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x01000000);
+        bitField1_ = (bitField1_ & ~0x00800000);
         if (commandLogArgumentsBuilder_ == null) {
           commandLogArguments_ = com.ugcs.ucs.proto.DomainProto.CommandLogArguments.getDefaultInstance();
         } else {
           commandLogArgumentsBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x02000000);
+        bitField1_ = (bitField1_ & ~0x01000000);
         if (uploadLogArgumentsBuilder_ == null) {
           uploadLogArguments_ = com.ugcs.ucs.proto.DomainProto.UploadLogArguments.getDefaultInstance();
         } else {
           uploadLogArgumentsBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x04000000);
+        bitField1_ = (bitField1_ & ~0x02000000);
         if (elevationSourceBuilder_ == null) {
           elevationSource_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
         } else {
           elevationSourceBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x08000000);
+        bitField1_ = (bitField1_ & ~0x04000000);
         if (geoServerBuilder_ == null) {
           geoServer_ = com.ugcs.ucs.proto.DomainProto.GeoServer.getDefaultInstance();
         } else {
           geoServerBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x10000000);
+        bitField1_ = (bitField1_ & ~0x08000000);
         if (cameraSeriesByDistanceBuilder_ == null) {
           cameraSeriesByDistance_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.getDefaultInstance();
         } else {
           cameraSeriesByDistanceBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x20000000);
+        bitField1_ = (bitField1_ & ~0x10000000);
         if (cameraSeriesByDistanceDefinitionBuilder_ == null) {
           cameraSeriesByDistanceDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.getDefaultInstance();
         } else {
           cameraSeriesByDistanceDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x40000000);
+        bitField1_ = (bitField1_ & ~0x20000000);
         if (cameraSeriesByTimeBuilder_ == null) {
           cameraSeriesByTime_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.getDefaultInstance();
         } else {
           cameraSeriesByTimeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x40000000);
         if (cameraSeriesByTimeDefinitionBuilder_ == null) {
           cameraSeriesByTimeDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.getDefaultInstance();
         } else {
           cameraSeriesByTimeDefinitionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x80000000);
         if (platformActionBuilder_ == null) {
           platformAction_ = com.ugcs.ucs.proto.DomainProto.PlatformAction.getDefaultInstance();
         } else {
           platformActionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000002);
+        bitField2_ = (bitField2_ & ~0x00000001);
         if (featureSourceBuilder_ == null) {
           featureSource_ = com.ugcs.ucs.proto.DomainProto.FeatureSource.getDefaultInstance();
         } else {
           featureSourceBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000004);
+        bitField2_ = (bitField2_ & ~0x00000002);
         if (videoRecordingLogArgumentsBuilder_ == null) {
           videoRecordingLogArguments_ = com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.getDefaultInstance();
         } else {
           videoRecordingLogArgumentsBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000008);
+        bitField2_ = (bitField2_ & ~0x00000004);
         if (utmOperationBuilder_ == null) {
           utmOperation_ = com.ugcs.ucs.proto.DomainProto.UtmOperation.getDefaultInstance();
         } else {
           utmOperationBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000010);
+        bitField2_ = (bitField2_ & ~0x00000008);
         if (commandArgumentDefinitionBuilder_ == null) {
           commandArgumentDefinition_ = com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.getDefaultInstance();
         } else {
           commandArgumentDefinitionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000020);
+        bitField2_ = (bitField2_ & ~0x00000010);
         if (failsafeBuilder_ == null) {
           failsafe_ = com.ugcs.ucs.proto.DomainProto.Failsafe.getDefaultInstance();
         } else {
           failsafeBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000040);
+        bitField2_ = (bitField2_ & ~0x00000020);
         if (processedSegmentBuilder_ == null) {
           processedSegment_ = com.ugcs.ucs.proto.DomainProto.ProcessedSegment.getDefaultInstance();
         } else {
           processedSegmentBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000080);
+        bitField2_ = (bitField2_ & ~0x00000040);
         if (routeAttributesBuilder_ == null) {
           routeAttributes_ = com.ugcs.ucs.proto.DomainProto.RouteAttributes.getDefaultInstance();
         } else {
           routeAttributesBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000100);
+        bitField2_ = (bitField2_ & ~0x00000080);
         if (valueBuilder_ == null) {
           value_ = com.ugcs.ucs.proto.DomainProto.Value.getDefaultInstance();
         } else {
           valueBuilder_.clear();
         }
+        bitField2_ = (bitField2_ & ~0x00000100);
+        if (setServoBuilder_ == null) {
+          setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+        } else {
+          setServoBuilder_.clear();
+        }
         bitField2_ = (bitField2_ & ~0x00000200);
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+        } else {
+          repeatServoBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00000400);
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+        } else {
+          transitionFixedBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00000800);
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+        } else {
+          transitionVtolBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00001000);
+        if (routeUploadBuilder_ == null) {
+          routeUpload_ = com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance();
+        } else {
+          routeUploadBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00002000);
         return this;
       }
       
@@ -6114,570 +6441,602 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (avatarBuilder_ == null) {
-          result.avatar_ = avatar_;
-        } else {
-          result.avatar_ = avatarBuilder_.build();
-        }
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
         if (cameraControlBuilder_ == null) {
           result.cameraControl_ = cameraControl_;
         } else {
           result.cameraControl_ = cameraControlBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
         }
         if (cameraControlDefinitionBuilder_ == null) {
           result.cameraControlDefinition_ = cameraControlDefinition_;
         } else {
           result.cameraControlDefinition_ = cameraControlDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
         }
         if (cameraTriggerBuilder_ == null) {
           result.cameraTrigger_ = cameraTrigger_;
         } else {
           result.cameraTrigger_ = cameraTriggerBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
         }
         if (cameraTriggerDefinitionBuilder_ == null) {
           result.cameraTriggerDefinition_ = cameraTriggerDefinition_;
         } else {
           result.cameraTriggerDefinition_ = cameraTriggerDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
         }
         if (commandDefinitionBuilder_ == null) {
           result.commandDefinition_ = commandDefinition_;
         } else {
           result.commandDefinition_ = commandDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000100;
         }
         if (figureBuilder_ == null) {
           result.figure_ = figure_;
         } else {
           result.figure_ = figureBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000400;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
         }
         if (figureParameterBuilder_ == null) {
           result.figureParameter_ = figureParameter_;
         } else {
           result.figureParameter_ = figureParameterBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000800;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
         }
         if (figurePointBuilder_ == null) {
           result.figurePoint_ = figurePoint_;
         } else {
           result.figurePoint_ = figurePointBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
         }
         if (headingChangeBuilder_ == null) {
           result.headingChange_ = headingChange_;
         } else {
           result.headingChange_ = headingChangeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00002000;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
         }
         if (headingDefinitionBuilder_ == null) {
           result.headingDefinition_ = headingDefinition_;
         } else {
           result.headingDefinition_ = headingDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00004000;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00002000;
         }
         if (homeLocationBuilder_ == null) {
           result.homeLocation_ = homeLocation_;
         } else {
           result.homeLocation_ = homeLocationBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00008000;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
         }
         if (landingBuilder_ == null) {
           result.landing_ = landing_;
         } else {
           result.landing_ = landingBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00010000;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
         }
         if (licenseBuilder_ == null) {
           result.license_ = license_;
         } else {
           result.license_ = licenseBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00020000;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
         }
         if (missionBuilder_ == null) {
           result.mission_ = mission_;
         } else {
           result.mission_ = missionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00040000;
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
         }
         if (missionPreferenceBuilder_ == null) {
           result.missionPreference_ = missionPreference_;
         } else {
           result.missionPreference_ = missionPreferenceBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00080000;
+        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
+          to_bitField0_ |= 0x00040000;
         }
         if (missionVehicleBuilder_ == null) {
           result.missionVehicle_ = missionVehicle_;
         } else {
           result.missionVehicle_ = missionVehicleBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
-          to_bitField0_ |= 0x00100000;
+        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
+          to_bitField0_ |= 0x00080000;
         }
         if (noFlightZoneBuilder_ == null) {
           result.noFlightZone_ = noFlightZone_;
         } else {
           result.noFlightZone_ = noFlightZoneBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-          to_bitField0_ |= 0x00200000;
+        if (((from_bitField0_ & 0x00100000) == 0x00100000)) {
+          to_bitField0_ |= 0x00100000;
         }
         if (panoramaBuilder_ == null) {
           result.panorama_ = panorama_;
         } else {
           result.panorama_ = panoramaBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
-          to_bitField0_ |= 0x00400000;
+        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
+          to_bitField0_ |= 0x00200000;
         }
         if (panoramaDefinitionBuilder_ == null) {
           result.panoramaDefinition_ = panoramaDefinition_;
         } else {
           result.panoramaDefinition_ = panoramaDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
-          to_bitField0_ |= 0x00800000;
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00400000;
         }
         if (parameterDefinitionBuilder_ == null) {
           result.parameterDefinition_ = parameterDefinition_;
         } else {
           result.parameterDefinition_ = parameterDefinitionBuilder_.build();
         }
-        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
-          to_bitField0_ |= 0x01000000;
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00800000;
         }
         if (parameterValueBuilder_ == null) {
           result.parameterValue_ = parameterValue_;
         } else {
           result.parameterValue_ = parameterValueBuilder_.build();
         }
-        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
-          to_bitField0_ |= 0x02000000;
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x01000000;
         }
         if (payloadParameterBuilder_ == null) {
           result.payloadParameter_ = payloadParameter_;
         } else {
           result.payloadParameter_ = payloadParameterBuilder_.build();
         }
-        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
-          to_bitField0_ |= 0x04000000;
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+          to_bitField0_ |= 0x02000000;
         }
         if (payloadProfileBuilder_ == null) {
           result.payloadProfile_ = payloadProfile_;
         } else {
           result.payloadProfile_ = payloadProfileBuilder_.build();
         }
-        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
-          to_bitField0_ |= 0x08000000;
+        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
+          to_bitField0_ |= 0x04000000;
         }
         if (platformBuilder_ == null) {
           result.platform_ = platform_;
         } else {
           result.platform_ = platformBuilder_.build();
         }
-        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
-          to_bitField0_ |= 0x10000000;
+        if (((from_bitField0_ & 0x08000000) == 0x08000000)) {
+          to_bitField0_ |= 0x08000000;
         }
         if (platformPayloadProfileBuilder_ == null) {
           result.platformPayloadProfile_ = platformPayloadProfile_;
         } else {
           result.platformPayloadProfile_ = platformPayloadProfileBuilder_.build();
         }
-        if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
-          to_bitField0_ |= 0x20000000;
+        if (((from_bitField0_ & 0x10000000) == 0x10000000)) {
+          to_bitField0_ |= 0x10000000;
         }
         if (platformTelemetryTypeBuilder_ == null) {
           result.platformTelemetryType_ = platformTelemetryType_;
         } else {
           result.platformTelemetryType_ = platformTelemetryTypeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
-          to_bitField0_ |= 0x40000000;
+        if (((from_bitField0_ & 0x20000000) == 0x20000000)) {
+          to_bitField0_ |= 0x20000000;
         }
         if (poiChangeBuilder_ == null) {
           result.poiChange_ = poiChange_;
         } else {
           result.poiChange_ = poiChangeBuilder_.build();
         }
-        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
-          to_bitField0_ |= 0x80000000;
+        if (((from_bitField0_ & 0x40000000) == 0x40000000)) {
+          to_bitField0_ |= 0x40000000;
         }
         if (poiDefinitionBuilder_ == null) {
           result.poiDefinition_ = poiDefinition_;
         } else {
           result.poiDefinition_ = poiDefinitionBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
-          to_bitField1_ |= 0x00000001;
+        if (((from_bitField0_ & 0x80000000) == 0x80000000)) {
+          to_bitField0_ |= 0x80000000;
         }
         if (prismBuilder_ == null) {
           result.prism_ = prism_;
         } else {
           result.prism_ = prismBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
-          to_bitField1_ |= 0x00000002;
+        if (((from_bitField1_ & 0x00000001) == 0x00000001)) {
+          to_bitField1_ |= 0x00000001;
         }
         if (polygonPointBuilder_ == null) {
           result.polygonPoint_ = polygonPoint_;
         } else {
           result.polygonPoint_ = polygonPointBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000004) == 0x00000004)) {
-          to_bitField1_ |= 0x00000004;
+        if (((from_bitField1_ & 0x00000002) == 0x00000002)) {
+          to_bitField1_ |= 0x00000002;
         }
         if (processedRouteBuilder_ == null) {
           result.processedRoute_ = processedRoute_;
         } else {
           result.processedRoute_ = processedRouteBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000008) == 0x00000008)) {
-          to_bitField1_ |= 0x00000008;
+        if (((from_bitField1_ & 0x00000004) == 0x00000004)) {
+          to_bitField1_ |= 0x00000004;
         }
         if (routeBuilder_ == null) {
           result.route_ = route_;
         } else {
           result.route_ = routeBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000010) == 0x00000010)) {
-          to_bitField1_ |= 0x00000010;
+        if (((from_bitField1_ & 0x00000008) == 0x00000008)) {
+          to_bitField1_ |= 0x00000008;
         }
         if (segmentDefinitionBuilder_ == null) {
           result.segmentDefinition_ = segmentDefinition_;
         } else {
           result.segmentDefinition_ = segmentDefinitionBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000020) == 0x00000020)) {
-          to_bitField1_ |= 0x00000020;
+        if (((from_bitField1_ & 0x00000010) == 0x00000010)) {
+          to_bitField1_ |= 0x00000010;
         }
         if (speedChangeBuilder_ == null) {
           result.speedChange_ = speedChange_;
         } else {
           result.speedChange_ = speedChangeBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000040) == 0x00000040)) {
-          to_bitField1_ |= 0x00000040;
+        if (((from_bitField1_ & 0x00000020) == 0x00000020)) {
+          to_bitField1_ |= 0x00000020;
         }
         if (takeoffBuilder_ == null) {
           result.takeoff_ = takeoff_;
         } else {
           result.takeoff_ = takeoffBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000080) == 0x00000080)) {
-          to_bitField1_ |= 0x00000080;
+        if (((from_bitField1_ & 0x00000040) == 0x00000040)) {
+          to_bitField1_ |= 0x00000040;
         }
         if (telemetryBuilder_ == null) {
           result.telemetry_ = telemetry_;
         } else {
           result.telemetry_ = telemetryBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000100) == 0x00000100)) {
-          to_bitField1_ |= 0x00000100;
+        if (((from_bitField1_ & 0x00000080) == 0x00000080)) {
+          to_bitField1_ |= 0x00000080;
         }
         if (traverseAlgorithmBuilder_ == null) {
           result.traverseAlgorithm_ = traverseAlgorithm_;
         } else {
           result.traverseAlgorithm_ = traverseAlgorithmBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000200) == 0x00000200)) {
-          to_bitField1_ |= 0x00000200;
+        if (((from_bitField1_ & 0x00000100) == 0x00000100)) {
+          to_bitField1_ |= 0x00000100;
         }
         if (userBuilder_ == null) {
           result.user_ = user_;
         } else {
           result.user_ = userBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000400) == 0x00000400)) {
-          to_bitField1_ |= 0x00000400;
+        if (((from_bitField1_ & 0x00000200) == 0x00000200)) {
+          to_bitField1_ |= 0x00000200;
         }
         if (vehicleBuilder_ == null) {
           result.vehicle_ = vehicle_;
         } else {
           result.vehicle_ = vehicleBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00000800) == 0x00000800)) {
-          to_bitField1_ |= 0x00000800;
+        if (((from_bitField1_ & 0x00000400) == 0x00000400)) {
+          to_bitField1_ |= 0x00000400;
         }
         if (vehicleCommandDefinitionBuilder_ == null) {
           result.vehicleCommandDefinition_ = vehicleCommandDefinition_;
         } else {
           result.vehicleCommandDefinition_ = vehicleCommandDefinitionBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00001000) == 0x00001000)) {
-          to_bitField1_ |= 0x00001000;
+        if (((from_bitField1_ & 0x00000800) == 0x00000800)) {
+          to_bitField1_ |= 0x00000800;
         }
         if (vehicleLogEntryBuilder_ == null) {
           result.vehicleLogEntry_ = vehicleLogEntry_;
         } else {
           result.vehicleLogEntry_ = vehicleLogEntryBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00002000) == 0x00002000)) {
-          to_bitField1_ |= 0x00002000;
+        if (((from_bitField1_ & 0x00001000) == 0x00001000)) {
+          to_bitField1_ |= 0x00001000;
         }
         if (vehicleParameterBuilder_ == null) {
           result.vehicleParameter_ = vehicleParameter_;
         } else {
           result.vehicleParameter_ = vehicleParameterBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00004000) == 0x00004000)) {
-          to_bitField1_ |= 0x00004000;
+        if (((from_bitField1_ & 0x00002000) == 0x00002000)) {
+          to_bitField1_ |= 0x00002000;
         }
         if (vehicleProfileBuilder_ == null) {
           result.vehicleProfile_ = vehicleProfile_;
         } else {
           result.vehicleProfile_ = vehicleProfileBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00008000) == 0x00008000)) {
-          to_bitField1_ |= 0x00008000;
+        if (((from_bitField1_ & 0x00004000) == 0x00004000)) {
+          to_bitField1_ |= 0x00004000;
         }
         if (vehicleProfilePayloadProfileBuilder_ == null) {
           result.vehicleProfilePayloadProfile_ = vehicleProfilePayloadProfile_;
         } else {
           result.vehicleProfilePayloadProfile_ = vehicleProfilePayloadProfileBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00010000) == 0x00010000)) {
-          to_bitField1_ |= 0x00010000;
+        if (((from_bitField1_ & 0x00008000) == 0x00008000)) {
+          to_bitField1_ |= 0x00008000;
         }
         if (vsmBuilder_ == null) {
           result.vsm_ = vsm_;
         } else {
           result.vsm_ = vsmBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00020000) == 0x00020000)) {
-          to_bitField1_ |= 0x00020000;
+        if (((from_bitField1_ & 0x00010000) == 0x00010000)) {
+          to_bitField1_ |= 0x00010000;
         }
         if (waitBuilder_ == null) {
           result.wait_ = wait_;
         } else {
           result.wait_ = waitBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00040000) == 0x00040000)) {
-          to_bitField1_ |= 0x00040000;
+        if (((from_bitField1_ & 0x00020000) == 0x00020000)) {
+          to_bitField1_ |= 0x00020000;
         }
         if (waitDefinitionBuilder_ == null) {
           result.waitDefinition_ = waitDefinition_;
         } else {
           result.waitDefinition_ = waitDefinitionBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00080000) == 0x00080000)) {
-          to_bitField1_ |= 0x00080000;
+        if (((from_bitField1_ & 0x00040000) == 0x00040000)) {
+          to_bitField1_ |= 0x00040000;
         }
         if (waypointBuilder_ == null) {
           result.waypoint_ = waypoint_;
         } else {
           result.waypoint_ = waypointBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00100000) == 0x00100000)) {
-          to_bitField1_ |= 0x00100000;
+        if (((from_bitField1_ & 0x00080000) == 0x00080000)) {
+          to_bitField1_ |= 0x00080000;
         }
         if (messageSetBuilder_ == null) {
           result.messageSet_ = messageSet_;
         } else {
           result.messageSet_ = messageSetBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00200000) == 0x00200000)) {
-          to_bitField1_ |= 0x00200000;
+        if (((from_bitField1_ & 0x00100000) == 0x00100000)) {
+          to_bitField1_ |= 0x00100000;
         }
         if (localizedMessageBuilder_ == null) {
           result.localizedMessage_ = localizedMessage_;
         } else {
           result.localizedMessage_ = localizedMessageBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00400000) == 0x00400000)) {
-          to_bitField1_ |= 0x00400000;
+        if (((from_bitField1_ & 0x00200000) == 0x00200000)) {
+          to_bitField1_ |= 0x00200000;
         }
         if (localizedMessageVariantBuilder_ == null) {
           result.localizedMessageVariant_ = localizedMessageVariant_;
         } else {
           result.localizedMessageVariant_ = localizedMessageVariantBuilder_.build();
         }
-        if (((from_bitField1_ & 0x00800000) == 0x00800000)) {
-          to_bitField1_ |= 0x00800000;
+        if (((from_bitField1_ & 0x00400000) == 0x00400000)) {
+          to_bitField1_ |= 0x00400000;
         }
         if (telemetryIntervalBuilder_ == null) {
           result.telemetryInterval_ = telemetryInterval_;
         } else {
           result.telemetryInterval_ = telemetryIntervalBuilder_.build();
         }
-        if (((from_bitField1_ & 0x01000000) == 0x01000000)) {
-          to_bitField1_ |= 0x01000000;
+        if (((from_bitField1_ & 0x00800000) == 0x00800000)) {
+          to_bitField1_ |= 0x00800000;
         }
         if (telemetryIntervalVehicleBuilder_ == null) {
           result.telemetryIntervalVehicle_ = telemetryIntervalVehicle_;
         } else {
           result.telemetryIntervalVehicle_ = telemetryIntervalVehicleBuilder_.build();
         }
-        if (((from_bitField1_ & 0x02000000) == 0x02000000)) {
-          to_bitField1_ |= 0x02000000;
+        if (((from_bitField1_ & 0x01000000) == 0x01000000)) {
+          to_bitField1_ |= 0x01000000;
         }
         if (commandLogArgumentsBuilder_ == null) {
           result.commandLogArguments_ = commandLogArguments_;
         } else {
           result.commandLogArguments_ = commandLogArgumentsBuilder_.build();
         }
-        if (((from_bitField1_ & 0x04000000) == 0x04000000)) {
-          to_bitField1_ |= 0x04000000;
+        if (((from_bitField1_ & 0x02000000) == 0x02000000)) {
+          to_bitField1_ |= 0x02000000;
         }
         if (uploadLogArgumentsBuilder_ == null) {
           result.uploadLogArguments_ = uploadLogArguments_;
         } else {
           result.uploadLogArguments_ = uploadLogArgumentsBuilder_.build();
         }
-        if (((from_bitField1_ & 0x08000000) == 0x08000000)) {
-          to_bitField1_ |= 0x08000000;
+        if (((from_bitField1_ & 0x04000000) == 0x04000000)) {
+          to_bitField1_ |= 0x04000000;
         }
         if (elevationSourceBuilder_ == null) {
           result.elevationSource_ = elevationSource_;
         } else {
           result.elevationSource_ = elevationSourceBuilder_.build();
         }
-        if (((from_bitField1_ & 0x10000000) == 0x10000000)) {
-          to_bitField1_ |= 0x10000000;
+        if (((from_bitField1_ & 0x08000000) == 0x08000000)) {
+          to_bitField1_ |= 0x08000000;
         }
         if (geoServerBuilder_ == null) {
           result.geoServer_ = geoServer_;
         } else {
           result.geoServer_ = geoServerBuilder_.build();
         }
-        if (((from_bitField1_ & 0x20000000) == 0x20000000)) {
-          to_bitField1_ |= 0x20000000;
+        if (((from_bitField1_ & 0x10000000) == 0x10000000)) {
+          to_bitField1_ |= 0x10000000;
         }
         if (cameraSeriesByDistanceBuilder_ == null) {
           result.cameraSeriesByDistance_ = cameraSeriesByDistance_;
         } else {
           result.cameraSeriesByDistance_ = cameraSeriesByDistanceBuilder_.build();
         }
-        if (((from_bitField1_ & 0x40000000) == 0x40000000)) {
-          to_bitField1_ |= 0x40000000;
+        if (((from_bitField1_ & 0x20000000) == 0x20000000)) {
+          to_bitField1_ |= 0x20000000;
         }
         if (cameraSeriesByDistanceDefinitionBuilder_ == null) {
           result.cameraSeriesByDistanceDefinition_ = cameraSeriesByDistanceDefinition_;
         } else {
           result.cameraSeriesByDistanceDefinition_ = cameraSeriesByDistanceDefinitionBuilder_.build();
         }
-        if (((from_bitField1_ & 0x80000000) == 0x80000000)) {
-          to_bitField1_ |= 0x80000000;
+        if (((from_bitField1_ & 0x40000000) == 0x40000000)) {
+          to_bitField1_ |= 0x40000000;
         }
         if (cameraSeriesByTimeBuilder_ == null) {
           result.cameraSeriesByTime_ = cameraSeriesByTime_;
         } else {
           result.cameraSeriesByTime_ = cameraSeriesByTimeBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000001) == 0x00000001)) {
-          to_bitField2_ |= 0x00000001;
+        if (((from_bitField1_ & 0x80000000) == 0x80000000)) {
+          to_bitField1_ |= 0x80000000;
         }
         if (cameraSeriesByTimeDefinitionBuilder_ == null) {
           result.cameraSeriesByTimeDefinition_ = cameraSeriesByTimeDefinition_;
         } else {
           result.cameraSeriesByTimeDefinition_ = cameraSeriesByTimeDefinitionBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000002) == 0x00000002)) {
-          to_bitField2_ |= 0x00000002;
+        if (((from_bitField2_ & 0x00000001) == 0x00000001)) {
+          to_bitField2_ |= 0x00000001;
         }
         if (platformActionBuilder_ == null) {
           result.platformAction_ = platformAction_;
         } else {
           result.platformAction_ = platformActionBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000004) == 0x00000004)) {
-          to_bitField2_ |= 0x00000004;
+        if (((from_bitField2_ & 0x00000002) == 0x00000002)) {
+          to_bitField2_ |= 0x00000002;
         }
         if (featureSourceBuilder_ == null) {
           result.featureSource_ = featureSource_;
         } else {
           result.featureSource_ = featureSourceBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000008) == 0x00000008)) {
-          to_bitField2_ |= 0x00000008;
+        if (((from_bitField2_ & 0x00000004) == 0x00000004)) {
+          to_bitField2_ |= 0x00000004;
         }
         if (videoRecordingLogArgumentsBuilder_ == null) {
           result.videoRecordingLogArguments_ = videoRecordingLogArguments_;
         } else {
           result.videoRecordingLogArguments_ = videoRecordingLogArgumentsBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000010) == 0x00000010)) {
-          to_bitField2_ |= 0x00000010;
+        if (((from_bitField2_ & 0x00000008) == 0x00000008)) {
+          to_bitField2_ |= 0x00000008;
         }
         if (utmOperationBuilder_ == null) {
           result.utmOperation_ = utmOperation_;
         } else {
           result.utmOperation_ = utmOperationBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000020) == 0x00000020)) {
-          to_bitField2_ |= 0x00000020;
+        if (((from_bitField2_ & 0x00000010) == 0x00000010)) {
+          to_bitField2_ |= 0x00000010;
         }
         if (commandArgumentDefinitionBuilder_ == null) {
           result.commandArgumentDefinition_ = commandArgumentDefinition_;
         } else {
           result.commandArgumentDefinition_ = commandArgumentDefinitionBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000040) == 0x00000040)) {
-          to_bitField2_ |= 0x00000040;
+        if (((from_bitField2_ & 0x00000020) == 0x00000020)) {
+          to_bitField2_ |= 0x00000020;
         }
         if (failsafeBuilder_ == null) {
           result.failsafe_ = failsafe_;
         } else {
           result.failsafe_ = failsafeBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000080) == 0x00000080)) {
-          to_bitField2_ |= 0x00000080;
+        if (((from_bitField2_ & 0x00000040) == 0x00000040)) {
+          to_bitField2_ |= 0x00000040;
         }
         if (processedSegmentBuilder_ == null) {
           result.processedSegment_ = processedSegment_;
         } else {
           result.processedSegment_ = processedSegmentBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000100) == 0x00000100)) {
-          to_bitField2_ |= 0x00000100;
+        if (((from_bitField2_ & 0x00000080) == 0x00000080)) {
+          to_bitField2_ |= 0x00000080;
         }
         if (routeAttributesBuilder_ == null) {
           result.routeAttributes_ = routeAttributes_;
         } else {
           result.routeAttributes_ = routeAttributesBuilder_.build();
         }
-        if (((from_bitField2_ & 0x00000200) == 0x00000200)) {
-          to_bitField2_ |= 0x00000200;
+        if (((from_bitField2_ & 0x00000100) == 0x00000100)) {
+          to_bitField2_ |= 0x00000100;
         }
         if (valueBuilder_ == null) {
           result.value_ = value_;
         } else {
           result.value_ = valueBuilder_.build();
+        }
+        if (((from_bitField2_ & 0x00000200) == 0x00000200)) {
+          to_bitField2_ |= 0x00000200;
+        }
+        if (setServoBuilder_ == null) {
+          result.setServo_ = setServo_;
+        } else {
+          result.setServo_ = setServoBuilder_.build();
+        }
+        if (((from_bitField2_ & 0x00000400) == 0x00000400)) {
+          to_bitField2_ |= 0x00000400;
+        }
+        if (repeatServoBuilder_ == null) {
+          result.repeatServo_ = repeatServo_;
+        } else {
+          result.repeatServo_ = repeatServoBuilder_.build();
+        }
+        if (((from_bitField2_ & 0x00000800) == 0x00000800)) {
+          to_bitField2_ |= 0x00000800;
+        }
+        if (transitionFixedBuilder_ == null) {
+          result.transitionFixed_ = transitionFixed_;
+        } else {
+          result.transitionFixed_ = transitionFixedBuilder_.build();
+        }
+        if (((from_bitField2_ & 0x00001000) == 0x00001000)) {
+          to_bitField2_ |= 0x00001000;
+        }
+        if (transitionVtolBuilder_ == null) {
+          result.transitionVtol_ = transitionVtol_;
+        } else {
+          result.transitionVtol_ = transitionVtolBuilder_.build();
+        }
+        if (((from_bitField2_ & 0x00002000) == 0x00002000)) {
+          to_bitField2_ |= 0x00002000;
+        }
+        if (routeUploadBuilder_ == null) {
+          result.routeUpload_ = routeUpload_;
+        } else {
+          result.routeUpload_ = routeUploadBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
@@ -6705,9 +7064,6 @@ public final class DomainProto {
         }
         if (other.hasAdsbAircraft()) {
           mergeAdsbAircraft(other.getAdsbAircraft());
-        }
-        if (other.hasAvatar()) {
-          mergeAvatar(other.getAvatar());
         }
         if (other.hasCameraControl()) {
           mergeCameraControl(other.getCameraControl());
@@ -6919,6 +7275,21 @@ public final class DomainProto {
         if (other.hasValue()) {
           mergeValue(other.getValue());
         }
+        if (other.hasSetServo()) {
+          mergeSetServo(other.getSetServo());
+        }
+        if (other.hasRepeatServo()) {
+          mergeRepeatServo(other.getRepeatServo());
+        }
+        if (other.hasTransitionFixed()) {
+          mergeTransitionFixed(other.getTransitionFixed());
+        }
+        if (other.hasTransitionVtol()) {
+          mergeTransitionVtol(other.getTransitionVtol());
+        }
+        if (other.hasRouteUpload()) {
+          mergeRouteUpload(other.getRouteUpload());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -6975,15 +7346,6 @@ public final class DomainProto {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setAdsbAircraft(subBuilder.buildPartial());
-              break;
-            }
-            case 34: {
-              com.ugcs.ucs.proto.DomainProto.Avatar.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Avatar.newBuilder();
-              if (hasAvatar()) {
-                subBuilder.mergeFrom(getAvatar());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setAvatar(subBuilder.buildPartial());
               break;
             }
             case 42: {
@@ -7616,6 +7978,51 @@ public final class DomainProto {
               setValue(subBuilder.buildPartial());
               break;
             }
+            case 658: {
+              com.ugcs.ucs.proto.DomainProto.SetServo.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.SetServo.newBuilder();
+              if (hasSetServo()) {
+                subBuilder.mergeFrom(getSetServo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSetServo(subBuilder.buildPartial());
+              break;
+            }
+            case 666: {
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.RepeatServo.newBuilder();
+              if (hasRepeatServo()) {
+                subBuilder.mergeFrom(getRepeatServo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setRepeatServo(subBuilder.buildPartial());
+              break;
+            }
+            case 674: {
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionFixed.newBuilder();
+              if (hasTransitionFixed()) {
+                subBuilder.mergeFrom(getTransitionFixed());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionFixed(subBuilder.buildPartial());
+              break;
+            }
+            case 682: {
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionVtol.newBuilder();
+              if (hasTransitionVtol()) {
+                subBuilder.mergeFrom(getTransitionVtol());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionVtol(subBuilder.buildPartial());
+              break;
+            }
+            case 690: {
+              com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.RouteUpload.newBuilder();
+              if (hasRouteUpload()) {
+                subBuilder.mergeFrom(getRouteUpload());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setRouteUpload(subBuilder.buildPartial());
+              break;
+            }
           }
         }
       }
@@ -7894,102 +8301,12 @@ public final class DomainProto {
         return adsbAircraftBuilder_;
       }
       
-      // optional .Avatar avatar = 4;
-      private com.ugcs.ucs.proto.DomainProto.Avatar avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder> avatarBuilder_;
-      public boolean hasAvatar() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public com.ugcs.ucs.proto.DomainProto.Avatar getAvatar() {
-        if (avatarBuilder_ == null) {
-          return avatar_;
-        } else {
-          return avatarBuilder_.getMessage();
-        }
-      }
-      public Builder setAvatar(com.ugcs.ucs.proto.DomainProto.Avatar value) {
-        if (avatarBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          avatar_ = value;
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder setAvatar(
-          com.ugcs.ucs.proto.DomainProto.Avatar.Builder builderForValue) {
-        if (avatarBuilder_ == null) {
-          avatar_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder mergeAvatar(com.ugcs.ucs.proto.DomainProto.Avatar value) {
-        if (avatarBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              avatar_ != com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance()) {
-            avatar_ =
-              com.ugcs.ucs.proto.DomainProto.Avatar.newBuilder(avatar_).mergeFrom(value).buildPartial();
-          } else {
-            avatar_ = value;
-          }
-          onChanged();
-        } else {
-          avatarBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-          onChanged();
-        } else {
-          avatarBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.Avatar.Builder getAvatarBuilder() {
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return getAvatarFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder() {
-        if (avatarBuilder_ != null) {
-          return avatarBuilder_.getMessageOrBuilder();
-        } else {
-          return avatar_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder> 
-          getAvatarFieldBuilder() {
-        if (avatarBuilder_ == null) {
-          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder>(
-                  avatar_,
-                  getParentForChildren(),
-                  isClean());
-          avatar_ = null;
-        }
-        return avatarBuilder_;
-      }
-      
       // optional .CameraControl cameraControl = 5;
       private com.ugcs.ucs.proto.DomainProto.CameraControl cameraControl_ = com.ugcs.ucs.proto.DomainProto.CameraControl.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraControl, com.ugcs.ucs.proto.DomainProto.CameraControl.Builder, com.ugcs.ucs.proto.DomainProto.CameraControlOrBuilder> cameraControlBuilder_;
       public boolean hasCameraControl() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraControl getCameraControl() {
         if (cameraControlBuilder_ == null) {
@@ -8008,7 +8325,7 @@ public final class DomainProto {
         } else {
           cameraControlBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         return this;
       }
       public Builder setCameraControl(
@@ -8019,12 +8336,12 @@ public final class DomainProto {
         } else {
           cameraControlBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         return this;
       }
       public Builder mergeCameraControl(com.ugcs.ucs.proto.DomainProto.CameraControl value) {
         if (cameraControlBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
               cameraControl_ != com.ugcs.ucs.proto.DomainProto.CameraControl.getDefaultInstance()) {
             cameraControl_ =
               com.ugcs.ucs.proto.DomainProto.CameraControl.newBuilder(cameraControl_).mergeFrom(value).buildPartial();
@@ -8035,7 +8352,7 @@ public final class DomainProto {
         } else {
           cameraControlBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         return this;
       }
       public Builder clearCameraControl() {
@@ -8045,11 +8362,11 @@ public final class DomainProto {
         } else {
           cameraControlBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraControl.Builder getCameraControlBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCameraControlFieldBuilder().getBuilder();
       }
@@ -8079,7 +8396,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraControlDefinition, com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CameraControlDefinitionOrBuilder> cameraControlDefinitionBuilder_;
       public boolean hasCameraControlDefinition() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraControlDefinition getCameraControlDefinition() {
         if (cameraControlDefinitionBuilder_ == null) {
@@ -8098,7 +8415,7 @@ public final class DomainProto {
         } else {
           cameraControlDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder setCameraControlDefinition(
@@ -8109,12 +8426,12 @@ public final class DomainProto {
         } else {
           cameraControlDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder mergeCameraControlDefinition(com.ugcs.ucs.proto.DomainProto.CameraControlDefinition value) {
         if (cameraControlDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
               cameraControlDefinition_ != com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.getDefaultInstance()) {
             cameraControlDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.newBuilder(cameraControlDefinition_).mergeFrom(value).buildPartial();
@@ -8125,7 +8442,7 @@ public final class DomainProto {
         } else {
           cameraControlDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         return this;
       }
       public Builder clearCameraControlDefinition() {
@@ -8135,11 +8452,11 @@ public final class DomainProto {
         } else {
           cameraControlDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.Builder getCameraControlDefinitionBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getCameraControlDefinitionFieldBuilder().getBuilder();
       }
@@ -8169,7 +8486,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraTrigger, com.ugcs.ucs.proto.DomainProto.CameraTrigger.Builder, com.ugcs.ucs.proto.DomainProto.CameraTriggerOrBuilder> cameraTriggerBuilder_;
       public boolean hasCameraTrigger() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraTrigger getCameraTrigger() {
         if (cameraTriggerBuilder_ == null) {
@@ -8188,7 +8505,7 @@ public final class DomainProto {
         } else {
           cameraTriggerBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder setCameraTrigger(
@@ -8199,12 +8516,12 @@ public final class DomainProto {
         } else {
           cameraTriggerBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder mergeCameraTrigger(com.ugcs.ucs.proto.DomainProto.CameraTrigger value) {
         if (cameraTriggerBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040) &&
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
               cameraTrigger_ != com.ugcs.ucs.proto.DomainProto.CameraTrigger.getDefaultInstance()) {
             cameraTrigger_ =
               com.ugcs.ucs.proto.DomainProto.CameraTrigger.newBuilder(cameraTrigger_).mergeFrom(value).buildPartial();
@@ -8215,7 +8532,7 @@ public final class DomainProto {
         } else {
           cameraTriggerBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         return this;
       }
       public Builder clearCameraTrigger() {
@@ -8225,11 +8542,11 @@ public final class DomainProto {
         } else {
           cameraTriggerBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraTrigger.Builder getCameraTriggerBuilder() {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getCameraTriggerFieldBuilder().getBuilder();
       }
@@ -8259,7 +8576,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition, com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinitionOrBuilder> cameraTriggerDefinitionBuilder_;
       public boolean hasCameraTriggerDefinition() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition getCameraTriggerDefinition() {
         if (cameraTriggerDefinitionBuilder_ == null) {
@@ -8278,7 +8595,7 @@ public final class DomainProto {
         } else {
           cameraTriggerDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder setCameraTriggerDefinition(
@@ -8289,12 +8606,12 @@ public final class DomainProto {
         } else {
           cameraTriggerDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder mergeCameraTriggerDefinition(com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition value) {
         if (cameraTriggerDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
               cameraTriggerDefinition_ != com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.getDefaultInstance()) {
             cameraTriggerDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.newBuilder(cameraTriggerDefinition_).mergeFrom(value).buildPartial();
@@ -8305,7 +8622,7 @@ public final class DomainProto {
         } else {
           cameraTriggerDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder clearCameraTriggerDefinition() {
@@ -8315,11 +8632,11 @@ public final class DomainProto {
         } else {
           cameraTriggerDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.Builder getCameraTriggerDefinitionBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getCameraTriggerDefinitionFieldBuilder().getBuilder();
       }
@@ -8349,7 +8666,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CommandDefinition, com.ugcs.ucs.proto.DomainProto.CommandDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CommandDefinitionOrBuilder> commandDefinitionBuilder_;
       public boolean hasCommandDefinition() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public com.ugcs.ucs.proto.DomainProto.CommandDefinition getCommandDefinition() {
         if (commandDefinitionBuilder_ == null) {
@@ -8368,7 +8685,7 @@ public final class DomainProto {
         } else {
           commandDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         return this;
       }
       public Builder setCommandDefinition(
@@ -8379,12 +8696,12 @@ public final class DomainProto {
         } else {
           commandDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         return this;
       }
       public Builder mergeCommandDefinition(com.ugcs.ucs.proto.DomainProto.CommandDefinition value) {
         if (commandDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
               commandDefinition_ != com.ugcs.ucs.proto.DomainProto.CommandDefinition.getDefaultInstance()) {
             commandDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CommandDefinition.newBuilder(commandDefinition_).mergeFrom(value).buildPartial();
@@ -8395,7 +8712,7 @@ public final class DomainProto {
         } else {
           commandDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         return this;
       }
       public Builder clearCommandDefinition() {
@@ -8405,11 +8722,11 @@ public final class DomainProto {
         } else {
           commandDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CommandDefinition.Builder getCommandDefinitionBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         onChanged();
         return getCommandDefinitionFieldBuilder().getBuilder();
       }
@@ -8439,7 +8756,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Figure, com.ugcs.ucs.proto.DomainProto.Figure.Builder, com.ugcs.ucs.proto.DomainProto.FigureOrBuilder> figureBuilder_;
       public boolean hasFigure() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public com.ugcs.ucs.proto.DomainProto.Figure getFigure() {
         if (figureBuilder_ == null) {
@@ -8458,7 +8775,7 @@ public final class DomainProto {
         } else {
           figureBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder setFigure(
@@ -8469,12 +8786,12 @@ public final class DomainProto {
         } else {
           figureBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder mergeFigure(com.ugcs.ucs.proto.DomainProto.Figure value) {
         if (figureBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200) &&
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
               figure_ != com.ugcs.ucs.proto.DomainProto.Figure.getDefaultInstance()) {
             figure_ =
               com.ugcs.ucs.proto.DomainProto.Figure.newBuilder(figure_).mergeFrom(value).buildPartial();
@@ -8485,7 +8802,7 @@ public final class DomainProto {
         } else {
           figureBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder clearFigure() {
@@ -8495,11 +8812,11 @@ public final class DomainProto {
         } else {
           figureBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Figure.Builder getFigureBuilder() {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getFigureFieldBuilder().getBuilder();
       }
@@ -8529,7 +8846,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.FigureParameter, com.ugcs.ucs.proto.DomainProto.FigureParameter.Builder, com.ugcs.ucs.proto.DomainProto.FigureParameterOrBuilder> figureParameterBuilder_;
       public boolean hasFigureParameter() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public com.ugcs.ucs.proto.DomainProto.FigureParameter getFigureParameter() {
         if (figureParameterBuilder_ == null) {
@@ -8548,7 +8865,7 @@ public final class DomainProto {
         } else {
           figureParameterBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder setFigureParameter(
@@ -8559,12 +8876,12 @@ public final class DomainProto {
         } else {
           figureParameterBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder mergeFigureParameter(com.ugcs.ucs.proto.DomainProto.FigureParameter value) {
         if (figureParameterBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400) &&
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
               figureParameter_ != com.ugcs.ucs.proto.DomainProto.FigureParameter.getDefaultInstance()) {
             figureParameter_ =
               com.ugcs.ucs.proto.DomainProto.FigureParameter.newBuilder(figureParameter_).mergeFrom(value).buildPartial();
@@ -8575,7 +8892,7 @@ public final class DomainProto {
         } else {
           figureParameterBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder clearFigureParameter() {
@@ -8585,11 +8902,11 @@ public final class DomainProto {
         } else {
           figureParameterBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.FigureParameter.Builder getFigureParameterBuilder() {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getFigureParameterFieldBuilder().getBuilder();
       }
@@ -8619,7 +8936,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.FigurePoint, com.ugcs.ucs.proto.DomainProto.FigurePoint.Builder, com.ugcs.ucs.proto.DomainProto.FigurePointOrBuilder> figurePointBuilder_;
       public boolean hasFigurePoint() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       public com.ugcs.ucs.proto.DomainProto.FigurePoint getFigurePoint() {
         if (figurePointBuilder_ == null) {
@@ -8638,7 +8955,7 @@ public final class DomainProto {
         } else {
           figurePointBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         return this;
       }
       public Builder setFigurePoint(
@@ -8649,12 +8966,12 @@ public final class DomainProto {
         } else {
           figurePointBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         return this;
       }
       public Builder mergeFigurePoint(com.ugcs.ucs.proto.DomainProto.FigurePoint value) {
         if (figurePointBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800) &&
+          if (((bitField0_ & 0x00000400) == 0x00000400) &&
               figurePoint_ != com.ugcs.ucs.proto.DomainProto.FigurePoint.getDefaultInstance()) {
             figurePoint_ =
               com.ugcs.ucs.proto.DomainProto.FigurePoint.newBuilder(figurePoint_).mergeFrom(value).buildPartial();
@@ -8665,7 +8982,7 @@ public final class DomainProto {
         } else {
           figurePointBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         return this;
       }
       public Builder clearFigurePoint() {
@@ -8675,11 +8992,11 @@ public final class DomainProto {
         } else {
           figurePointBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.FigurePoint.Builder getFigurePointBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         onChanged();
         return getFigurePointFieldBuilder().getBuilder();
       }
@@ -8709,7 +9026,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.HeadingChange, com.ugcs.ucs.proto.DomainProto.HeadingChange.Builder, com.ugcs.ucs.proto.DomainProto.HeadingChangeOrBuilder> headingChangeBuilder_;
       public boolean hasHeadingChange() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       public com.ugcs.ucs.proto.DomainProto.HeadingChange getHeadingChange() {
         if (headingChangeBuilder_ == null) {
@@ -8728,7 +9045,7 @@ public final class DomainProto {
         } else {
           headingChangeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       public Builder setHeadingChange(
@@ -8739,12 +9056,12 @@ public final class DomainProto {
         } else {
           headingChangeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       public Builder mergeHeadingChange(com.ugcs.ucs.proto.DomainProto.HeadingChange value) {
         if (headingChangeBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+          if (((bitField0_ & 0x00000800) == 0x00000800) &&
               headingChange_ != com.ugcs.ucs.proto.DomainProto.HeadingChange.getDefaultInstance()) {
             headingChange_ =
               com.ugcs.ucs.proto.DomainProto.HeadingChange.newBuilder(headingChange_).mergeFrom(value).buildPartial();
@@ -8755,7 +9072,7 @@ public final class DomainProto {
         } else {
           headingChangeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         return this;
       }
       public Builder clearHeadingChange() {
@@ -8765,11 +9082,11 @@ public final class DomainProto {
         } else {
           headingChangeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.HeadingChange.Builder getHeadingChangeBuilder() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         onChanged();
         return getHeadingChangeFieldBuilder().getBuilder();
       }
@@ -8799,7 +9116,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.HeadingDefinition, com.ugcs.ucs.proto.DomainProto.HeadingDefinition.Builder, com.ugcs.ucs.proto.DomainProto.HeadingDefinitionOrBuilder> headingDefinitionBuilder_;
       public boolean hasHeadingDefinition() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       public com.ugcs.ucs.proto.DomainProto.HeadingDefinition getHeadingDefinition() {
         if (headingDefinitionBuilder_ == null) {
@@ -8818,7 +9135,7 @@ public final class DomainProto {
         } else {
           headingDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       public Builder setHeadingDefinition(
@@ -8829,12 +9146,12 @@ public final class DomainProto {
         } else {
           headingDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       public Builder mergeHeadingDefinition(com.ugcs.ucs.proto.DomainProto.HeadingDefinition value) {
         if (headingDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
               headingDefinition_ != com.ugcs.ucs.proto.DomainProto.HeadingDefinition.getDefaultInstance()) {
             headingDefinition_ =
               com.ugcs.ucs.proto.DomainProto.HeadingDefinition.newBuilder(headingDefinition_).mergeFrom(value).buildPartial();
@@ -8845,7 +9162,7 @@ public final class DomainProto {
         } else {
           headingDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         return this;
       }
       public Builder clearHeadingDefinition() {
@@ -8855,11 +9172,11 @@ public final class DomainProto {
         } else {
           headingDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.HeadingDefinition.Builder getHeadingDefinitionBuilder() {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00001000;
         onChanged();
         return getHeadingDefinitionFieldBuilder().getBuilder();
       }
@@ -8889,7 +9206,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.HomeLocation, com.ugcs.ucs.proto.DomainProto.HomeLocation.Builder, com.ugcs.ucs.proto.DomainProto.HomeLocationOrBuilder> homeLocationBuilder_;
       public boolean hasHomeLocation() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       public com.ugcs.ucs.proto.DomainProto.HomeLocation getHomeLocation() {
         if (homeLocationBuilder_ == null) {
@@ -8908,7 +9225,7 @@ public final class DomainProto {
         } else {
           homeLocationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       public Builder setHomeLocation(
@@ -8919,12 +9236,12 @@ public final class DomainProto {
         } else {
           homeLocationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       public Builder mergeHomeLocation(com.ugcs.ucs.proto.DomainProto.HomeLocation value) {
         if (homeLocationBuilder_ == null) {
-          if (((bitField0_ & 0x00004000) == 0x00004000) &&
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
               homeLocation_ != com.ugcs.ucs.proto.DomainProto.HomeLocation.getDefaultInstance()) {
             homeLocation_ =
               com.ugcs.ucs.proto.DomainProto.HomeLocation.newBuilder(homeLocation_).mergeFrom(value).buildPartial();
@@ -8935,7 +9252,7 @@ public final class DomainProto {
         } else {
           homeLocationBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       public Builder clearHomeLocation() {
@@ -8945,11 +9262,11 @@ public final class DomainProto {
         } else {
           homeLocationBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.HomeLocation.Builder getHomeLocationBuilder() {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return getHomeLocationFieldBuilder().getBuilder();
       }
@@ -8979,7 +9296,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Landing, com.ugcs.ucs.proto.DomainProto.Landing.Builder, com.ugcs.ucs.proto.DomainProto.LandingOrBuilder> landingBuilder_;
       public boolean hasLanding() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       public com.ugcs.ucs.proto.DomainProto.Landing getLanding() {
         if (landingBuilder_ == null) {
@@ -8998,7 +9315,7 @@ public final class DomainProto {
         } else {
           landingBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       public Builder setLanding(
@@ -9009,12 +9326,12 @@ public final class DomainProto {
         } else {
           landingBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       public Builder mergeLanding(com.ugcs.ucs.proto.DomainProto.Landing value) {
         if (landingBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+          if (((bitField0_ & 0x00004000) == 0x00004000) &&
               landing_ != com.ugcs.ucs.proto.DomainProto.Landing.getDefaultInstance()) {
             landing_ =
               com.ugcs.ucs.proto.DomainProto.Landing.newBuilder(landing_).mergeFrom(value).buildPartial();
@@ -9025,7 +9342,7 @@ public final class DomainProto {
         } else {
           landingBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       public Builder clearLanding() {
@@ -9035,11 +9352,11 @@ public final class DomainProto {
         } else {
           landingBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Landing.Builder getLandingBuilder() {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return getLandingFieldBuilder().getBuilder();
       }
@@ -9069,7 +9386,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.License, com.ugcs.ucs.proto.DomainProto.License.Builder, com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> licenseBuilder_;
       public boolean hasLicense() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       public com.ugcs.ucs.proto.DomainProto.License getLicense() {
         if (licenseBuilder_ == null) {
@@ -9088,7 +9405,7 @@ public final class DomainProto {
         } else {
           licenseBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       public Builder setLicense(
@@ -9099,12 +9416,12 @@ public final class DomainProto {
         } else {
           licenseBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       public Builder mergeLicense(com.ugcs.ucs.proto.DomainProto.License value) {
         if (licenseBuilder_ == null) {
-          if (((bitField0_ & 0x00010000) == 0x00010000) &&
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
               license_ != com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance()) {
             license_ =
               com.ugcs.ucs.proto.DomainProto.License.newBuilder(license_).mergeFrom(value).buildPartial();
@@ -9115,7 +9432,7 @@ public final class DomainProto {
         } else {
           licenseBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       public Builder clearLicense() {
@@ -9125,11 +9442,11 @@ public final class DomainProto {
         } else {
           licenseBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.License.Builder getLicenseBuilder() {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return getLicenseFieldBuilder().getBuilder();
       }
@@ -9159,7 +9476,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Mission, com.ugcs.ucs.proto.DomainProto.Mission.Builder, com.ugcs.ucs.proto.DomainProto.MissionOrBuilder> missionBuilder_;
       public boolean hasMission() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
+        return ((bitField0_ & 0x00010000) == 0x00010000);
       }
       public com.ugcs.ucs.proto.DomainProto.Mission getMission() {
         if (missionBuilder_ == null) {
@@ -9178,7 +9495,7 @@ public final class DomainProto {
         } else {
           missionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       public Builder setMission(
@@ -9189,12 +9506,12 @@ public final class DomainProto {
         } else {
           missionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       public Builder mergeMission(com.ugcs.ucs.proto.DomainProto.Mission value) {
         if (missionBuilder_ == null) {
-          if (((bitField0_ & 0x00020000) == 0x00020000) &&
+          if (((bitField0_ & 0x00010000) == 0x00010000) &&
               mission_ != com.ugcs.ucs.proto.DomainProto.Mission.getDefaultInstance()) {
             mission_ =
               com.ugcs.ucs.proto.DomainProto.Mission.newBuilder(mission_).mergeFrom(value).buildPartial();
@@ -9205,7 +9522,7 @@ public final class DomainProto {
         } else {
           missionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         return this;
       }
       public Builder clearMission() {
@@ -9215,11 +9532,11 @@ public final class DomainProto {
         } else {
           missionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Mission.Builder getMissionBuilder() {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return getMissionFieldBuilder().getBuilder();
       }
@@ -9249,7 +9566,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.MissionPreference, com.ugcs.ucs.proto.DomainProto.MissionPreference.Builder, com.ugcs.ucs.proto.DomainProto.MissionPreferenceOrBuilder> missionPreferenceBuilder_;
       public boolean hasMissionPreference() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       public com.ugcs.ucs.proto.DomainProto.MissionPreference getMissionPreference() {
         if (missionPreferenceBuilder_ == null) {
@@ -9268,7 +9585,7 @@ public final class DomainProto {
         } else {
           missionPreferenceBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       public Builder setMissionPreference(
@@ -9279,12 +9596,12 @@ public final class DomainProto {
         } else {
           missionPreferenceBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       public Builder mergeMissionPreference(com.ugcs.ucs.proto.DomainProto.MissionPreference value) {
         if (missionPreferenceBuilder_ == null) {
-          if (((bitField0_ & 0x00040000) == 0x00040000) &&
+          if (((bitField0_ & 0x00020000) == 0x00020000) &&
               missionPreference_ != com.ugcs.ucs.proto.DomainProto.MissionPreference.getDefaultInstance()) {
             missionPreference_ =
               com.ugcs.ucs.proto.DomainProto.MissionPreference.newBuilder(missionPreference_).mergeFrom(value).buildPartial();
@@ -9295,7 +9612,7 @@ public final class DomainProto {
         } else {
           missionPreferenceBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         return this;
       }
       public Builder clearMissionPreference() {
@@ -9305,11 +9622,11 @@ public final class DomainProto {
         } else {
           missionPreferenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.MissionPreference.Builder getMissionPreferenceBuilder() {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return getMissionPreferenceFieldBuilder().getBuilder();
       }
@@ -9339,7 +9656,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.MissionVehicle, com.ugcs.ucs.proto.DomainProto.MissionVehicle.Builder, com.ugcs.ucs.proto.DomainProto.MissionVehicleOrBuilder> missionVehicleBuilder_;
       public boolean hasMissionVehicle() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00040000) == 0x00040000);
       }
       public com.ugcs.ucs.proto.DomainProto.MissionVehicle getMissionVehicle() {
         if (missionVehicleBuilder_ == null) {
@@ -9358,7 +9675,7 @@ public final class DomainProto {
         } else {
           missionVehicleBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       public Builder setMissionVehicle(
@@ -9369,12 +9686,12 @@ public final class DomainProto {
         } else {
           missionVehicleBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       public Builder mergeMissionVehicle(com.ugcs.ucs.proto.DomainProto.MissionVehicle value) {
         if (missionVehicleBuilder_ == null) {
-          if (((bitField0_ & 0x00080000) == 0x00080000) &&
+          if (((bitField0_ & 0x00040000) == 0x00040000) &&
               missionVehicle_ != com.ugcs.ucs.proto.DomainProto.MissionVehicle.getDefaultInstance()) {
             missionVehicle_ =
               com.ugcs.ucs.proto.DomainProto.MissionVehicle.newBuilder(missionVehicle_).mergeFrom(value).buildPartial();
@@ -9385,7 +9702,7 @@ public final class DomainProto {
         } else {
           missionVehicleBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         return this;
       }
       public Builder clearMissionVehicle() {
@@ -9395,11 +9712,11 @@ public final class DomainProto {
         } else {
           missionVehicleBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.MissionVehicle.Builder getMissionVehicleBuilder() {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return getMissionVehicleFieldBuilder().getBuilder();
       }
@@ -9429,7 +9746,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.NoFlightZone, com.ugcs.ucs.proto.DomainProto.NoFlightZone.Builder, com.ugcs.ucs.proto.DomainProto.NoFlightZoneOrBuilder> noFlightZoneBuilder_;
       public boolean hasNoFlightZone() {
-        return ((bitField0_ & 0x00100000) == 0x00100000);
+        return ((bitField0_ & 0x00080000) == 0x00080000);
       }
       public com.ugcs.ucs.proto.DomainProto.NoFlightZone getNoFlightZone() {
         if (noFlightZoneBuilder_ == null) {
@@ -9448,7 +9765,7 @@ public final class DomainProto {
         } else {
           noFlightZoneBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       public Builder setNoFlightZone(
@@ -9459,12 +9776,12 @@ public final class DomainProto {
         } else {
           noFlightZoneBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       public Builder mergeNoFlightZone(com.ugcs.ucs.proto.DomainProto.NoFlightZone value) {
         if (noFlightZoneBuilder_ == null) {
-          if (((bitField0_ & 0x00100000) == 0x00100000) &&
+          if (((bitField0_ & 0x00080000) == 0x00080000) &&
               noFlightZone_ != com.ugcs.ucs.proto.DomainProto.NoFlightZone.getDefaultInstance()) {
             noFlightZone_ =
               com.ugcs.ucs.proto.DomainProto.NoFlightZone.newBuilder(noFlightZone_).mergeFrom(value).buildPartial();
@@ -9475,7 +9792,7 @@ public final class DomainProto {
         } else {
           noFlightZoneBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         return this;
       }
       public Builder clearNoFlightZone() {
@@ -9485,11 +9802,11 @@ public final class DomainProto {
         } else {
           noFlightZoneBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.NoFlightZone.Builder getNoFlightZoneBuilder() {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return getNoFlightZoneFieldBuilder().getBuilder();
       }
@@ -9519,7 +9836,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Panorama, com.ugcs.ucs.proto.DomainProto.Panorama.Builder, com.ugcs.ucs.proto.DomainProto.PanoramaOrBuilder> panoramaBuilder_;
       public boolean hasPanorama() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00100000) == 0x00100000);
       }
       public com.ugcs.ucs.proto.DomainProto.Panorama getPanorama() {
         if (panoramaBuilder_ == null) {
@@ -9538,7 +9855,7 @@ public final class DomainProto {
         } else {
           panoramaBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       public Builder setPanorama(
@@ -9549,12 +9866,12 @@ public final class DomainProto {
         } else {
           panoramaBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       public Builder mergePanorama(com.ugcs.ucs.proto.DomainProto.Panorama value) {
         if (panoramaBuilder_ == null) {
-          if (((bitField0_ & 0x00200000) == 0x00200000) &&
+          if (((bitField0_ & 0x00100000) == 0x00100000) &&
               panorama_ != com.ugcs.ucs.proto.DomainProto.Panorama.getDefaultInstance()) {
             panorama_ =
               com.ugcs.ucs.proto.DomainProto.Panorama.newBuilder(panorama_).mergeFrom(value).buildPartial();
@@ -9565,7 +9882,7 @@ public final class DomainProto {
         } else {
           panoramaBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         return this;
       }
       public Builder clearPanorama() {
@@ -9575,11 +9892,11 @@ public final class DomainProto {
         } else {
           panoramaBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Panorama.Builder getPanoramaBuilder() {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return getPanoramaFieldBuilder().getBuilder();
       }
@@ -9609,7 +9926,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PanoramaDefinition, com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.Builder, com.ugcs.ucs.proto.DomainProto.PanoramaDefinitionOrBuilder> panoramaDefinitionBuilder_;
       public boolean hasPanoramaDefinition() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00200000) == 0x00200000);
       }
       public com.ugcs.ucs.proto.DomainProto.PanoramaDefinition getPanoramaDefinition() {
         if (panoramaDefinitionBuilder_ == null) {
@@ -9628,7 +9945,7 @@ public final class DomainProto {
         } else {
           panoramaDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       public Builder setPanoramaDefinition(
@@ -9639,12 +9956,12 @@ public final class DomainProto {
         } else {
           panoramaDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       public Builder mergePanoramaDefinition(com.ugcs.ucs.proto.DomainProto.PanoramaDefinition value) {
         if (panoramaDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00400000) == 0x00400000) &&
+          if (((bitField0_ & 0x00200000) == 0x00200000) &&
               panoramaDefinition_ != com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.getDefaultInstance()) {
             panoramaDefinition_ =
               com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.newBuilder(panoramaDefinition_).mergeFrom(value).buildPartial();
@@ -9655,7 +9972,7 @@ public final class DomainProto {
         } else {
           panoramaDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         return this;
       }
       public Builder clearPanoramaDefinition() {
@@ -9665,11 +9982,11 @@ public final class DomainProto {
         } else {
           panoramaDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.Builder getPanoramaDefinitionBuilder() {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         onChanged();
         return getPanoramaDefinitionFieldBuilder().getBuilder();
       }
@@ -9699,7 +10016,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ParameterDefinition, com.ugcs.ucs.proto.DomainProto.ParameterDefinition.Builder, com.ugcs.ucs.proto.DomainProto.ParameterDefinitionOrBuilder> parameterDefinitionBuilder_;
       public boolean hasParameterDefinition() {
-        return ((bitField0_ & 0x00800000) == 0x00800000);
+        return ((bitField0_ & 0x00400000) == 0x00400000);
       }
       public com.ugcs.ucs.proto.DomainProto.ParameterDefinition getParameterDefinition() {
         if (parameterDefinitionBuilder_ == null) {
@@ -9718,7 +10035,7 @@ public final class DomainProto {
         } else {
           parameterDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       public Builder setParameterDefinition(
@@ -9729,12 +10046,12 @@ public final class DomainProto {
         } else {
           parameterDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       public Builder mergeParameterDefinition(com.ugcs.ucs.proto.DomainProto.ParameterDefinition value) {
         if (parameterDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x00800000) == 0x00800000) &&
+          if (((bitField0_ & 0x00400000) == 0x00400000) &&
               parameterDefinition_ != com.ugcs.ucs.proto.DomainProto.ParameterDefinition.getDefaultInstance()) {
             parameterDefinition_ =
               com.ugcs.ucs.proto.DomainProto.ParameterDefinition.newBuilder(parameterDefinition_).mergeFrom(value).buildPartial();
@@ -9745,7 +10062,7 @@ public final class DomainProto {
         } else {
           parameterDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         return this;
       }
       public Builder clearParameterDefinition() {
@@ -9755,11 +10072,11 @@ public final class DomainProto {
         } else {
           parameterDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ParameterDefinition.Builder getParameterDefinitionBuilder() {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         onChanged();
         return getParameterDefinitionFieldBuilder().getBuilder();
       }
@@ -9789,7 +10106,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ParameterValue, com.ugcs.ucs.proto.DomainProto.ParameterValue.Builder, com.ugcs.ucs.proto.DomainProto.ParameterValueOrBuilder> parameterValueBuilder_;
       public boolean hasParameterValue() {
-        return ((bitField0_ & 0x01000000) == 0x01000000);
+        return ((bitField0_ & 0x00800000) == 0x00800000);
       }
       public com.ugcs.ucs.proto.DomainProto.ParameterValue getParameterValue() {
         if (parameterValueBuilder_ == null) {
@@ -9808,7 +10125,7 @@ public final class DomainProto {
         } else {
           parameterValueBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       public Builder setParameterValue(
@@ -9819,12 +10136,12 @@ public final class DomainProto {
         } else {
           parameterValueBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       public Builder mergeParameterValue(com.ugcs.ucs.proto.DomainProto.ParameterValue value) {
         if (parameterValueBuilder_ == null) {
-          if (((bitField0_ & 0x01000000) == 0x01000000) &&
+          if (((bitField0_ & 0x00800000) == 0x00800000) &&
               parameterValue_ != com.ugcs.ucs.proto.DomainProto.ParameterValue.getDefaultInstance()) {
             parameterValue_ =
               com.ugcs.ucs.proto.DomainProto.ParameterValue.newBuilder(parameterValue_).mergeFrom(value).buildPartial();
@@ -9835,7 +10152,7 @@ public final class DomainProto {
         } else {
           parameterValueBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         return this;
       }
       public Builder clearParameterValue() {
@@ -9845,11 +10162,11 @@ public final class DomainProto {
         } else {
           parameterValueBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ParameterValue.Builder getParameterValueBuilder() {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         onChanged();
         return getParameterValueFieldBuilder().getBuilder();
       }
@@ -9879,7 +10196,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PayloadParameter, com.ugcs.ucs.proto.DomainProto.PayloadParameter.Builder, com.ugcs.ucs.proto.DomainProto.PayloadParameterOrBuilder> payloadParameterBuilder_;
       public boolean hasPayloadParameter() {
-        return ((bitField0_ & 0x02000000) == 0x02000000);
+        return ((bitField0_ & 0x01000000) == 0x01000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PayloadParameter getPayloadParameter() {
         if (payloadParameterBuilder_ == null) {
@@ -9898,7 +10215,7 @@ public final class DomainProto {
         } else {
           payloadParameterBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       public Builder setPayloadParameter(
@@ -9909,12 +10226,12 @@ public final class DomainProto {
         } else {
           payloadParameterBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       public Builder mergePayloadParameter(com.ugcs.ucs.proto.DomainProto.PayloadParameter value) {
         if (payloadParameterBuilder_ == null) {
-          if (((bitField0_ & 0x02000000) == 0x02000000) &&
+          if (((bitField0_ & 0x01000000) == 0x01000000) &&
               payloadParameter_ != com.ugcs.ucs.proto.DomainProto.PayloadParameter.getDefaultInstance()) {
             payloadParameter_ =
               com.ugcs.ucs.proto.DomainProto.PayloadParameter.newBuilder(payloadParameter_).mergeFrom(value).buildPartial();
@@ -9925,7 +10242,7 @@ public final class DomainProto {
         } else {
           payloadParameterBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         return this;
       }
       public Builder clearPayloadParameter() {
@@ -9935,11 +10252,11 @@ public final class DomainProto {
         } else {
           payloadParameterBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PayloadParameter.Builder getPayloadParameterBuilder() {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         onChanged();
         return getPayloadParameterFieldBuilder().getBuilder();
       }
@@ -9969,7 +10286,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PayloadProfile, com.ugcs.ucs.proto.DomainProto.PayloadProfile.Builder, com.ugcs.ucs.proto.DomainProto.PayloadProfileOrBuilder> payloadProfileBuilder_;
       public boolean hasPayloadProfile() {
-        return ((bitField0_ & 0x04000000) == 0x04000000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PayloadProfile getPayloadProfile() {
         if (payloadProfileBuilder_ == null) {
@@ -9988,7 +10305,7 @@ public final class DomainProto {
         } else {
           payloadProfileBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       public Builder setPayloadProfile(
@@ -9999,12 +10316,12 @@ public final class DomainProto {
         } else {
           payloadProfileBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       public Builder mergePayloadProfile(com.ugcs.ucs.proto.DomainProto.PayloadProfile value) {
         if (payloadProfileBuilder_ == null) {
-          if (((bitField0_ & 0x04000000) == 0x04000000) &&
+          if (((bitField0_ & 0x02000000) == 0x02000000) &&
               payloadProfile_ != com.ugcs.ucs.proto.DomainProto.PayloadProfile.getDefaultInstance()) {
             payloadProfile_ =
               com.ugcs.ucs.proto.DomainProto.PayloadProfile.newBuilder(payloadProfile_).mergeFrom(value).buildPartial();
@@ -10015,7 +10332,7 @@ public final class DomainProto {
         } else {
           payloadProfileBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         return this;
       }
       public Builder clearPayloadProfile() {
@@ -10025,11 +10342,11 @@ public final class DomainProto {
         } else {
           payloadProfileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x04000000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PayloadProfile.Builder getPayloadProfileBuilder() {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x02000000;
         onChanged();
         return getPayloadProfileFieldBuilder().getBuilder();
       }
@@ -10059,7 +10376,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Platform, com.ugcs.ucs.proto.DomainProto.Platform.Builder, com.ugcs.ucs.proto.DomainProto.PlatformOrBuilder> platformBuilder_;
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x08000000) == 0x08000000);
+        return ((bitField0_ & 0x04000000) == 0x04000000);
       }
       public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
         if (platformBuilder_ == null) {
@@ -10078,7 +10395,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       public Builder setPlatform(
@@ -10089,12 +10406,12 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       public Builder mergePlatform(com.ugcs.ucs.proto.DomainProto.Platform value) {
         if (platformBuilder_ == null) {
-          if (((bitField0_ & 0x08000000) == 0x08000000) &&
+          if (((bitField0_ & 0x04000000) == 0x04000000) &&
               platform_ != com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance()) {
             platform_ =
               com.ugcs.ucs.proto.DomainProto.Platform.newBuilder(platform_).mergeFrom(value).buildPartial();
@@ -10105,7 +10422,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         return this;
       }
       public Builder clearPlatform() {
@@ -10115,11 +10432,11 @@ public final class DomainProto {
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x08000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Platform.Builder getPlatformBuilder() {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x04000000;
         onChanged();
         return getPlatformFieldBuilder().getBuilder();
       }
@@ -10149,7 +10466,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile, com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.Builder, com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfileOrBuilder> platformPayloadProfileBuilder_;
       public boolean hasPlatformPayloadProfile() {
-        return ((bitField0_ & 0x10000000) == 0x10000000);
+        return ((bitField0_ & 0x08000000) == 0x08000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile getPlatformPayloadProfile() {
         if (platformPayloadProfileBuilder_ == null) {
@@ -10168,7 +10485,7 @@ public final class DomainProto {
         } else {
           platformPayloadProfileBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       public Builder setPlatformPayloadProfile(
@@ -10179,12 +10496,12 @@ public final class DomainProto {
         } else {
           platformPayloadProfileBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       public Builder mergePlatformPayloadProfile(com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile value) {
         if (platformPayloadProfileBuilder_ == null) {
-          if (((bitField0_ & 0x10000000) == 0x10000000) &&
+          if (((bitField0_ & 0x08000000) == 0x08000000) &&
               platformPayloadProfile_ != com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.getDefaultInstance()) {
             platformPayloadProfile_ =
               com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.newBuilder(platformPayloadProfile_).mergeFrom(value).buildPartial();
@@ -10195,7 +10512,7 @@ public final class DomainProto {
         } else {
           platformPayloadProfileBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         return this;
       }
       public Builder clearPlatformPayloadProfile() {
@@ -10205,11 +10522,11 @@ public final class DomainProto {
         } else {
           platformPayloadProfileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x10000000);
+        bitField0_ = (bitField0_ & ~0x08000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.Builder getPlatformPayloadProfileBuilder() {
-        bitField0_ |= 0x10000000;
+        bitField0_ |= 0x08000000;
         onChanged();
         return getPlatformPayloadProfileFieldBuilder().getBuilder();
       }
@@ -10239,7 +10556,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType, com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType.Builder, com.ugcs.ucs.proto.DomainProto.PlatformTelemetryTypeOrBuilder> platformTelemetryTypeBuilder_;
       public boolean hasPlatformTelemetryType() {
-        return ((bitField0_ & 0x20000000) == 0x20000000);
+        return ((bitField0_ & 0x10000000) == 0x10000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType getPlatformTelemetryType() {
         if (platformTelemetryTypeBuilder_ == null) {
@@ -10258,7 +10575,7 @@ public final class DomainProto {
         } else {
           platformTelemetryTypeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
         return this;
       }
       public Builder setPlatformTelemetryType(
@@ -10269,12 +10586,12 @@ public final class DomainProto {
         } else {
           platformTelemetryTypeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
         return this;
       }
       public Builder mergePlatformTelemetryType(com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType value) {
         if (platformTelemetryTypeBuilder_ == null) {
-          if (((bitField0_ & 0x20000000) == 0x20000000) &&
+          if (((bitField0_ & 0x10000000) == 0x10000000) &&
               platformTelemetryType_ != com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType.getDefaultInstance()) {
             platformTelemetryType_ =
               com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType.newBuilder(platformTelemetryType_).mergeFrom(value).buildPartial();
@@ -10285,7 +10602,7 @@ public final class DomainProto {
         } else {
           platformTelemetryTypeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
         return this;
       }
       public Builder clearPlatformTelemetryType() {
@@ -10295,11 +10612,11 @@ public final class DomainProto {
         } else {
           platformTelemetryTypeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x20000000);
+        bitField0_ = (bitField0_ & ~0x10000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformTelemetryType.Builder getPlatformTelemetryTypeBuilder() {
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x10000000;
         onChanged();
         return getPlatformTelemetryTypeFieldBuilder().getBuilder();
       }
@@ -10329,7 +10646,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PoiChange, com.ugcs.ucs.proto.DomainProto.PoiChange.Builder, com.ugcs.ucs.proto.DomainProto.PoiChangeOrBuilder> poiChangeBuilder_;
       public boolean hasPoiChange() {
-        return ((bitField0_ & 0x40000000) == 0x40000000);
+        return ((bitField0_ & 0x20000000) == 0x20000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PoiChange getPoiChange() {
         if (poiChangeBuilder_ == null) {
@@ -10348,7 +10665,7 @@ public final class DomainProto {
         } else {
           poiChangeBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
         return this;
       }
       public Builder setPoiChange(
@@ -10359,12 +10676,12 @@ public final class DomainProto {
         } else {
           poiChangeBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
         return this;
       }
       public Builder mergePoiChange(com.ugcs.ucs.proto.DomainProto.PoiChange value) {
         if (poiChangeBuilder_ == null) {
-          if (((bitField0_ & 0x40000000) == 0x40000000) &&
+          if (((bitField0_ & 0x20000000) == 0x20000000) &&
               poiChange_ != com.ugcs.ucs.proto.DomainProto.PoiChange.getDefaultInstance()) {
             poiChange_ =
               com.ugcs.ucs.proto.DomainProto.PoiChange.newBuilder(poiChange_).mergeFrom(value).buildPartial();
@@ -10375,7 +10692,7 @@ public final class DomainProto {
         } else {
           poiChangeBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
         return this;
       }
       public Builder clearPoiChange() {
@@ -10385,11 +10702,11 @@ public final class DomainProto {
         } else {
           poiChangeBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x40000000);
+        bitField0_ = (bitField0_ & ~0x20000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PoiChange.Builder getPoiChangeBuilder() {
-        bitField0_ |= 0x40000000;
+        bitField0_ |= 0x20000000;
         onChanged();
         return getPoiChangeFieldBuilder().getBuilder();
       }
@@ -10419,7 +10736,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PoiDefinition, com.ugcs.ucs.proto.DomainProto.PoiDefinition.Builder, com.ugcs.ucs.proto.DomainProto.PoiDefinitionOrBuilder> poiDefinitionBuilder_;
       public boolean hasPoiDefinition() {
-        return ((bitField0_ & 0x80000000) == 0x80000000);
+        return ((bitField0_ & 0x40000000) == 0x40000000);
       }
       public com.ugcs.ucs.proto.DomainProto.PoiDefinition getPoiDefinition() {
         if (poiDefinitionBuilder_ == null) {
@@ -10438,7 +10755,7 @@ public final class DomainProto {
         } else {
           poiDefinitionBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
         return this;
       }
       public Builder setPoiDefinition(
@@ -10449,12 +10766,12 @@ public final class DomainProto {
         } else {
           poiDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
         return this;
       }
       public Builder mergePoiDefinition(com.ugcs.ucs.proto.DomainProto.PoiDefinition value) {
         if (poiDefinitionBuilder_ == null) {
-          if (((bitField0_ & 0x80000000) == 0x80000000) &&
+          if (((bitField0_ & 0x40000000) == 0x40000000) &&
               poiDefinition_ != com.ugcs.ucs.proto.DomainProto.PoiDefinition.getDefaultInstance()) {
             poiDefinition_ =
               com.ugcs.ucs.proto.DomainProto.PoiDefinition.newBuilder(poiDefinition_).mergeFrom(value).buildPartial();
@@ -10465,7 +10782,7 @@ public final class DomainProto {
         } else {
           poiDefinitionBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
         return this;
       }
       public Builder clearPoiDefinition() {
@@ -10475,11 +10792,11 @@ public final class DomainProto {
         } else {
           poiDefinitionBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x80000000);
+        bitField0_ = (bitField0_ & ~0x40000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PoiDefinition.Builder getPoiDefinitionBuilder() {
-        bitField0_ |= 0x80000000;
+        bitField0_ |= 0x40000000;
         onChanged();
         return getPoiDefinitionFieldBuilder().getBuilder();
       }
@@ -10509,7 +10826,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Prism, com.ugcs.ucs.proto.DomainProto.Prism.Builder, com.ugcs.ucs.proto.DomainProto.PrismOrBuilder> prismBuilder_;
       public boolean hasPrism() {
-        return ((bitField1_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x80000000) == 0x80000000);
       }
       public com.ugcs.ucs.proto.DomainProto.Prism getPrism() {
         if (prismBuilder_ == null) {
@@ -10528,7 +10845,7 @@ public final class DomainProto {
         } else {
           prismBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
         return this;
       }
       public Builder setPrism(
@@ -10539,12 +10856,12 @@ public final class DomainProto {
         } else {
           prismBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
         return this;
       }
       public Builder mergePrism(com.ugcs.ucs.proto.DomainProto.Prism value) {
         if (prismBuilder_ == null) {
-          if (((bitField1_ & 0x00000001) == 0x00000001) &&
+          if (((bitField0_ & 0x80000000) == 0x80000000) &&
               prism_ != com.ugcs.ucs.proto.DomainProto.Prism.getDefaultInstance()) {
             prism_ =
               com.ugcs.ucs.proto.DomainProto.Prism.newBuilder(prism_).mergeFrom(value).buildPartial();
@@ -10555,7 +10872,7 @@ public final class DomainProto {
         } else {
           prismBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
         return this;
       }
       public Builder clearPrism() {
@@ -10565,11 +10882,11 @@ public final class DomainProto {
         } else {
           prismBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x80000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Prism.Builder getPrismBuilder() {
-        bitField1_ |= 0x00000001;
+        bitField0_ |= 0x80000000;
         onChanged();
         return getPrismFieldBuilder().getBuilder();
       }
@@ -10599,7 +10916,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PolygonPoint, com.ugcs.ucs.proto.DomainProto.PolygonPoint.Builder, com.ugcs.ucs.proto.DomainProto.PolygonPointOrBuilder> polygonPointBuilder_;
       public boolean hasPolygonPoint() {
-        return ((bitField1_ & 0x00000002) == 0x00000002);
+        return ((bitField1_ & 0x00000001) == 0x00000001);
       }
       public com.ugcs.ucs.proto.DomainProto.PolygonPoint getPolygonPoint() {
         if (polygonPointBuilder_ == null) {
@@ -10618,7 +10935,7 @@ public final class DomainProto {
         } else {
           polygonPointBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000001;
         return this;
       }
       public Builder setPolygonPoint(
@@ -10629,12 +10946,12 @@ public final class DomainProto {
         } else {
           polygonPointBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000001;
         return this;
       }
       public Builder mergePolygonPoint(com.ugcs.ucs.proto.DomainProto.PolygonPoint value) {
         if (polygonPointBuilder_ == null) {
-          if (((bitField1_ & 0x00000002) == 0x00000002) &&
+          if (((bitField1_ & 0x00000001) == 0x00000001) &&
               polygonPoint_ != com.ugcs.ucs.proto.DomainProto.PolygonPoint.getDefaultInstance()) {
             polygonPoint_ =
               com.ugcs.ucs.proto.DomainProto.PolygonPoint.newBuilder(polygonPoint_).mergeFrom(value).buildPartial();
@@ -10645,7 +10962,7 @@ public final class DomainProto {
         } else {
           polygonPointBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000001;
         return this;
       }
       public Builder clearPolygonPoint() {
@@ -10655,11 +10972,11 @@ public final class DomainProto {
         } else {
           polygonPointBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000002);
+        bitField1_ = (bitField1_ & ~0x00000001);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PolygonPoint.Builder getPolygonPointBuilder() {
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000001;
         onChanged();
         return getPolygonPointFieldBuilder().getBuilder();
       }
@@ -10689,7 +11006,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ProcessedRoute, com.ugcs.ucs.proto.DomainProto.ProcessedRoute.Builder, com.ugcs.ucs.proto.DomainProto.ProcessedRouteOrBuilder> processedRouteBuilder_;
       public boolean hasProcessedRoute() {
-        return ((bitField1_ & 0x00000004) == 0x00000004);
+        return ((bitField1_ & 0x00000002) == 0x00000002);
       }
       public com.ugcs.ucs.proto.DomainProto.ProcessedRoute getProcessedRoute() {
         if (processedRouteBuilder_ == null) {
@@ -10708,7 +11025,7 @@ public final class DomainProto {
         } else {
           processedRouteBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000002;
         return this;
       }
       public Builder setProcessedRoute(
@@ -10719,12 +11036,12 @@ public final class DomainProto {
         } else {
           processedRouteBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000002;
         return this;
       }
       public Builder mergeProcessedRoute(com.ugcs.ucs.proto.DomainProto.ProcessedRoute value) {
         if (processedRouteBuilder_ == null) {
-          if (((bitField1_ & 0x00000004) == 0x00000004) &&
+          if (((bitField1_ & 0x00000002) == 0x00000002) &&
               processedRoute_ != com.ugcs.ucs.proto.DomainProto.ProcessedRoute.getDefaultInstance()) {
             processedRoute_ =
               com.ugcs.ucs.proto.DomainProto.ProcessedRoute.newBuilder(processedRoute_).mergeFrom(value).buildPartial();
@@ -10735,7 +11052,7 @@ public final class DomainProto {
         } else {
           processedRouteBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000002;
         return this;
       }
       public Builder clearProcessedRoute() {
@@ -10745,11 +11062,11 @@ public final class DomainProto {
         } else {
           processedRouteBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000004);
+        bitField1_ = (bitField1_ & ~0x00000002);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ProcessedRoute.Builder getProcessedRouteBuilder() {
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000002;
         onChanged();
         return getProcessedRouteFieldBuilder().getBuilder();
       }
@@ -10779,7 +11096,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Route, com.ugcs.ucs.proto.DomainProto.Route.Builder, com.ugcs.ucs.proto.DomainProto.RouteOrBuilder> routeBuilder_;
       public boolean hasRoute() {
-        return ((bitField1_ & 0x00000008) == 0x00000008);
+        return ((bitField1_ & 0x00000004) == 0x00000004);
       }
       public com.ugcs.ucs.proto.DomainProto.Route getRoute() {
         if (routeBuilder_ == null) {
@@ -10798,7 +11115,7 @@ public final class DomainProto {
         } else {
           routeBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000004;
         return this;
       }
       public Builder setRoute(
@@ -10809,12 +11126,12 @@ public final class DomainProto {
         } else {
           routeBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000004;
         return this;
       }
       public Builder mergeRoute(com.ugcs.ucs.proto.DomainProto.Route value) {
         if (routeBuilder_ == null) {
-          if (((bitField1_ & 0x00000008) == 0x00000008) &&
+          if (((bitField1_ & 0x00000004) == 0x00000004) &&
               route_ != com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance()) {
             route_ =
               com.ugcs.ucs.proto.DomainProto.Route.newBuilder(route_).mergeFrom(value).buildPartial();
@@ -10825,7 +11142,7 @@ public final class DomainProto {
         } else {
           routeBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000004;
         return this;
       }
       public Builder clearRoute() {
@@ -10835,11 +11152,11 @@ public final class DomainProto {
         } else {
           routeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000008);
+        bitField1_ = (bitField1_ & ~0x00000004);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Route.Builder getRouteBuilder() {
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000004;
         onChanged();
         return getRouteFieldBuilder().getBuilder();
       }
@@ -10869,7 +11186,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.SegmentDefinition, com.ugcs.ucs.proto.DomainProto.SegmentDefinition.Builder, com.ugcs.ucs.proto.DomainProto.SegmentDefinitionOrBuilder> segmentDefinitionBuilder_;
       public boolean hasSegmentDefinition() {
-        return ((bitField1_ & 0x00000010) == 0x00000010);
+        return ((bitField1_ & 0x00000008) == 0x00000008);
       }
       public com.ugcs.ucs.proto.DomainProto.SegmentDefinition getSegmentDefinition() {
         if (segmentDefinitionBuilder_ == null) {
@@ -10888,7 +11205,7 @@ public final class DomainProto {
         } else {
           segmentDefinitionBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000008;
         return this;
       }
       public Builder setSegmentDefinition(
@@ -10899,12 +11216,12 @@ public final class DomainProto {
         } else {
           segmentDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000008;
         return this;
       }
       public Builder mergeSegmentDefinition(com.ugcs.ucs.proto.DomainProto.SegmentDefinition value) {
         if (segmentDefinitionBuilder_ == null) {
-          if (((bitField1_ & 0x00000010) == 0x00000010) &&
+          if (((bitField1_ & 0x00000008) == 0x00000008) &&
               segmentDefinition_ != com.ugcs.ucs.proto.DomainProto.SegmentDefinition.getDefaultInstance()) {
             segmentDefinition_ =
               com.ugcs.ucs.proto.DomainProto.SegmentDefinition.newBuilder(segmentDefinition_).mergeFrom(value).buildPartial();
@@ -10915,7 +11232,7 @@ public final class DomainProto {
         } else {
           segmentDefinitionBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000008;
         return this;
       }
       public Builder clearSegmentDefinition() {
@@ -10925,11 +11242,11 @@ public final class DomainProto {
         } else {
           segmentDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000010);
+        bitField1_ = (bitField1_ & ~0x00000008);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.SegmentDefinition.Builder getSegmentDefinitionBuilder() {
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000008;
         onChanged();
         return getSegmentDefinitionFieldBuilder().getBuilder();
       }
@@ -10959,7 +11276,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.SpeedChange, com.ugcs.ucs.proto.DomainProto.SpeedChange.Builder, com.ugcs.ucs.proto.DomainProto.SpeedChangeOrBuilder> speedChangeBuilder_;
       public boolean hasSpeedChange() {
-        return ((bitField1_ & 0x00000020) == 0x00000020);
+        return ((bitField1_ & 0x00000010) == 0x00000010);
       }
       public com.ugcs.ucs.proto.DomainProto.SpeedChange getSpeedChange() {
         if (speedChangeBuilder_ == null) {
@@ -10978,7 +11295,7 @@ public final class DomainProto {
         } else {
           speedChangeBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000010;
         return this;
       }
       public Builder setSpeedChange(
@@ -10989,12 +11306,12 @@ public final class DomainProto {
         } else {
           speedChangeBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000010;
         return this;
       }
       public Builder mergeSpeedChange(com.ugcs.ucs.proto.DomainProto.SpeedChange value) {
         if (speedChangeBuilder_ == null) {
-          if (((bitField1_ & 0x00000020) == 0x00000020) &&
+          if (((bitField1_ & 0x00000010) == 0x00000010) &&
               speedChange_ != com.ugcs.ucs.proto.DomainProto.SpeedChange.getDefaultInstance()) {
             speedChange_ =
               com.ugcs.ucs.proto.DomainProto.SpeedChange.newBuilder(speedChange_).mergeFrom(value).buildPartial();
@@ -11005,7 +11322,7 @@ public final class DomainProto {
         } else {
           speedChangeBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000010;
         return this;
       }
       public Builder clearSpeedChange() {
@@ -11015,11 +11332,11 @@ public final class DomainProto {
         } else {
           speedChangeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000020);
+        bitField1_ = (bitField1_ & ~0x00000010);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.SpeedChange.Builder getSpeedChangeBuilder() {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000010;
         onChanged();
         return getSpeedChangeFieldBuilder().getBuilder();
       }
@@ -11049,7 +11366,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Takeoff, com.ugcs.ucs.proto.DomainProto.Takeoff.Builder, com.ugcs.ucs.proto.DomainProto.TakeoffOrBuilder> takeoffBuilder_;
       public boolean hasTakeoff() {
-        return ((bitField1_ & 0x00000040) == 0x00000040);
+        return ((bitField1_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.Takeoff getTakeoff() {
         if (takeoffBuilder_ == null) {
@@ -11068,7 +11385,7 @@ public final class DomainProto {
         } else {
           takeoffBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000020;
         return this;
       }
       public Builder setTakeoff(
@@ -11079,12 +11396,12 @@ public final class DomainProto {
         } else {
           takeoffBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000020;
         return this;
       }
       public Builder mergeTakeoff(com.ugcs.ucs.proto.DomainProto.Takeoff value) {
         if (takeoffBuilder_ == null) {
-          if (((bitField1_ & 0x00000040) == 0x00000040) &&
+          if (((bitField1_ & 0x00000020) == 0x00000020) &&
               takeoff_ != com.ugcs.ucs.proto.DomainProto.Takeoff.getDefaultInstance()) {
             takeoff_ =
               com.ugcs.ucs.proto.DomainProto.Takeoff.newBuilder(takeoff_).mergeFrom(value).buildPartial();
@@ -11095,7 +11412,7 @@ public final class DomainProto {
         } else {
           takeoffBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000020;
         return this;
       }
       public Builder clearTakeoff() {
@@ -11105,11 +11422,11 @@ public final class DomainProto {
         } else {
           takeoffBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000040);
+        bitField1_ = (bitField1_ & ~0x00000020);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Takeoff.Builder getTakeoffBuilder() {
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000020;
         onChanged();
         return getTakeoffFieldBuilder().getBuilder();
       }
@@ -11139,7 +11456,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Telemetry, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> telemetryBuilder_;
       public boolean hasTelemetry() {
-        return ((bitField1_ & 0x00000080) == 0x00000080);
+        return ((bitField1_ & 0x00000040) == 0x00000040);
       }
       public com.ugcs.ucs.proto.DomainProto.Telemetry getTelemetry() {
         if (telemetryBuilder_ == null) {
@@ -11158,7 +11475,7 @@ public final class DomainProto {
         } else {
           telemetryBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000040;
         return this;
       }
       public Builder setTelemetry(
@@ -11169,12 +11486,12 @@ public final class DomainProto {
         } else {
           telemetryBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000040;
         return this;
       }
       public Builder mergeTelemetry(com.ugcs.ucs.proto.DomainProto.Telemetry value) {
         if (telemetryBuilder_ == null) {
-          if (((bitField1_ & 0x00000080) == 0x00000080) &&
+          if (((bitField1_ & 0x00000040) == 0x00000040) &&
               telemetry_ != com.ugcs.ucs.proto.DomainProto.Telemetry.getDefaultInstance()) {
             telemetry_ =
               com.ugcs.ucs.proto.DomainProto.Telemetry.newBuilder(telemetry_).mergeFrom(value).buildPartial();
@@ -11185,7 +11502,7 @@ public final class DomainProto {
         } else {
           telemetryBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000040;
         return this;
       }
       public Builder clearTelemetry() {
@@ -11195,11 +11512,11 @@ public final class DomainProto {
         } else {
           telemetryBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000080);
+        bitField1_ = (bitField1_ & ~0x00000040);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Telemetry.Builder getTelemetryBuilder() {
-        bitField1_ |= 0x00000080;
+        bitField1_ |= 0x00000040;
         onChanged();
         return getTelemetryFieldBuilder().getBuilder();
       }
@@ -11229,7 +11546,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder, com.ugcs.ucs.proto.DomainProto.TraverseAlgorithmOrBuilder> traverseAlgorithmBuilder_;
       public boolean hasTraverseAlgorithm() {
-        return ((bitField1_ & 0x00000100) == 0x00000100);
+        return ((bitField1_ & 0x00000080) == 0x00000080);
       }
       public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm getTraverseAlgorithm() {
         if (traverseAlgorithmBuilder_ == null) {
@@ -11248,7 +11565,7 @@ public final class DomainProto {
         } else {
           traverseAlgorithmBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000080;
         return this;
       }
       public Builder setTraverseAlgorithm(
@@ -11259,12 +11576,12 @@ public final class DomainProto {
         } else {
           traverseAlgorithmBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000080;
         return this;
       }
       public Builder mergeTraverseAlgorithm(com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm value) {
         if (traverseAlgorithmBuilder_ == null) {
-          if (((bitField1_ & 0x00000100) == 0x00000100) &&
+          if (((bitField1_ & 0x00000080) == 0x00000080) &&
               traverseAlgorithm_ != com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.getDefaultInstance()) {
             traverseAlgorithm_ =
               com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.newBuilder(traverseAlgorithm_).mergeFrom(value).buildPartial();
@@ -11275,7 +11592,7 @@ public final class DomainProto {
         } else {
           traverseAlgorithmBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000080;
         return this;
       }
       public Builder clearTraverseAlgorithm() {
@@ -11285,11 +11602,11 @@ public final class DomainProto {
         } else {
           traverseAlgorithmBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000100);
+        bitField1_ = (bitField1_ & ~0x00000080);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder getTraverseAlgorithmBuilder() {
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000080;
         onChanged();
         return getTraverseAlgorithmFieldBuilder().getBuilder();
       }
@@ -11319,7 +11636,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.User, com.ugcs.ucs.proto.DomainProto.User.Builder, com.ugcs.ucs.proto.DomainProto.UserOrBuilder> userBuilder_;
       public boolean hasUser() {
-        return ((bitField1_ & 0x00000200) == 0x00000200);
+        return ((bitField1_ & 0x00000100) == 0x00000100);
       }
       public com.ugcs.ucs.proto.DomainProto.User getUser() {
         if (userBuilder_ == null) {
@@ -11338,7 +11655,7 @@ public final class DomainProto {
         } else {
           userBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000100;
         return this;
       }
       public Builder setUser(
@@ -11349,12 +11666,12 @@ public final class DomainProto {
         } else {
           userBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000100;
         return this;
       }
       public Builder mergeUser(com.ugcs.ucs.proto.DomainProto.User value) {
         if (userBuilder_ == null) {
-          if (((bitField1_ & 0x00000200) == 0x00000200) &&
+          if (((bitField1_ & 0x00000100) == 0x00000100) &&
               user_ != com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance()) {
             user_ =
               com.ugcs.ucs.proto.DomainProto.User.newBuilder(user_).mergeFrom(value).buildPartial();
@@ -11365,7 +11682,7 @@ public final class DomainProto {
         } else {
           userBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000100;
         return this;
       }
       public Builder clearUser() {
@@ -11375,11 +11692,11 @@ public final class DomainProto {
         } else {
           userBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000200);
+        bitField1_ = (bitField1_ & ~0x00000100);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.User.Builder getUserBuilder() {
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000100;
         onChanged();
         return getUserFieldBuilder().getBuilder();
       }
@@ -11409,7 +11726,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
       public boolean hasVehicle() {
-        return ((bitField1_ & 0x00000400) == 0x00000400);
+        return ((bitField1_ & 0x00000200) == 0x00000200);
       }
       public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
         if (vehicleBuilder_ == null) {
@@ -11428,7 +11745,7 @@ public final class DomainProto {
         } else {
           vehicleBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000200;
         return this;
       }
       public Builder setVehicle(
@@ -11439,12 +11756,12 @@ public final class DomainProto {
         } else {
           vehicleBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000200;
         return this;
       }
       public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
         if (vehicleBuilder_ == null) {
-          if (((bitField1_ & 0x00000400) == 0x00000400) &&
+          if (((bitField1_ & 0x00000200) == 0x00000200) &&
               vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
             vehicle_ =
               com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
@@ -11455,7 +11772,7 @@ public final class DomainProto {
         } else {
           vehicleBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000200;
         return this;
       }
       public Builder clearVehicle() {
@@ -11465,11 +11782,11 @@ public final class DomainProto {
         } else {
           vehicleBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000400);
+        bitField1_ = (bitField1_ & ~0x00000200);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00000200;
         onChanged();
         return getVehicleFieldBuilder().getBuilder();
       }
@@ -11499,7 +11816,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition, com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.Builder, com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinitionOrBuilder> vehicleCommandDefinitionBuilder_;
       public boolean hasVehicleCommandDefinition() {
-        return ((bitField1_ & 0x00000800) == 0x00000800);
+        return ((bitField1_ & 0x00000400) == 0x00000400);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition getVehicleCommandDefinition() {
         if (vehicleCommandDefinitionBuilder_ == null) {
@@ -11518,7 +11835,7 @@ public final class DomainProto {
         } else {
           vehicleCommandDefinitionBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00000400;
         return this;
       }
       public Builder setVehicleCommandDefinition(
@@ -11529,12 +11846,12 @@ public final class DomainProto {
         } else {
           vehicleCommandDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00000400;
         return this;
       }
       public Builder mergeVehicleCommandDefinition(com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition value) {
         if (vehicleCommandDefinitionBuilder_ == null) {
-          if (((bitField1_ & 0x00000800) == 0x00000800) &&
+          if (((bitField1_ & 0x00000400) == 0x00000400) &&
               vehicleCommandDefinition_ != com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.getDefaultInstance()) {
             vehicleCommandDefinition_ =
               com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.newBuilder(vehicleCommandDefinition_).mergeFrom(value).buildPartial();
@@ -11545,7 +11862,7 @@ public final class DomainProto {
         } else {
           vehicleCommandDefinitionBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00000400;
         return this;
       }
       public Builder clearVehicleCommandDefinition() {
@@ -11555,11 +11872,11 @@ public final class DomainProto {
         } else {
           vehicleCommandDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00000800);
+        bitField1_ = (bitField1_ & ~0x00000400);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.Builder getVehicleCommandDefinitionBuilder() {
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00000400;
         onChanged();
         return getVehicleCommandDefinitionFieldBuilder().getBuilder();
       }
@@ -11589,7 +11906,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleLogEntry, com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.Builder, com.ugcs.ucs.proto.DomainProto.VehicleLogEntryOrBuilder> vehicleLogEntryBuilder_;
       public boolean hasVehicleLogEntry() {
-        return ((bitField1_ & 0x00001000) == 0x00001000);
+        return ((bitField1_ & 0x00000800) == 0x00000800);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleLogEntry getVehicleLogEntry() {
         if (vehicleLogEntryBuilder_ == null) {
@@ -11608,7 +11925,7 @@ public final class DomainProto {
         } else {
           vehicleLogEntryBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00000800;
         return this;
       }
       public Builder setVehicleLogEntry(
@@ -11619,12 +11936,12 @@ public final class DomainProto {
         } else {
           vehicleLogEntryBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00000800;
         return this;
       }
       public Builder mergeVehicleLogEntry(com.ugcs.ucs.proto.DomainProto.VehicleLogEntry value) {
         if (vehicleLogEntryBuilder_ == null) {
-          if (((bitField1_ & 0x00001000) == 0x00001000) &&
+          if (((bitField1_ & 0x00000800) == 0x00000800) &&
               vehicleLogEntry_ != com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.getDefaultInstance()) {
             vehicleLogEntry_ =
               com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.newBuilder(vehicleLogEntry_).mergeFrom(value).buildPartial();
@@ -11635,7 +11952,7 @@ public final class DomainProto {
         } else {
           vehicleLogEntryBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00000800;
         return this;
       }
       public Builder clearVehicleLogEntry() {
@@ -11645,11 +11962,11 @@ public final class DomainProto {
         } else {
           vehicleLogEntryBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00001000);
+        bitField1_ = (bitField1_ & ~0x00000800);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.Builder getVehicleLogEntryBuilder() {
-        bitField1_ |= 0x00001000;
+        bitField1_ |= 0x00000800;
         onChanged();
         return getVehicleLogEntryFieldBuilder().getBuilder();
       }
@@ -11679,7 +11996,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleParameter, com.ugcs.ucs.proto.DomainProto.VehicleParameter.Builder, com.ugcs.ucs.proto.DomainProto.VehicleParameterOrBuilder> vehicleParameterBuilder_;
       public boolean hasVehicleParameter() {
-        return ((bitField1_ & 0x00002000) == 0x00002000);
+        return ((bitField1_ & 0x00001000) == 0x00001000);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleParameter getVehicleParameter() {
         if (vehicleParameterBuilder_ == null) {
@@ -11698,7 +12015,7 @@ public final class DomainProto {
         } else {
           vehicleParameterBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00001000;
         return this;
       }
       public Builder setVehicleParameter(
@@ -11709,12 +12026,12 @@ public final class DomainProto {
         } else {
           vehicleParameterBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00001000;
         return this;
       }
       public Builder mergeVehicleParameter(com.ugcs.ucs.proto.DomainProto.VehicleParameter value) {
         if (vehicleParameterBuilder_ == null) {
-          if (((bitField1_ & 0x00002000) == 0x00002000) &&
+          if (((bitField1_ & 0x00001000) == 0x00001000) &&
               vehicleParameter_ != com.ugcs.ucs.proto.DomainProto.VehicleParameter.getDefaultInstance()) {
             vehicleParameter_ =
               com.ugcs.ucs.proto.DomainProto.VehicleParameter.newBuilder(vehicleParameter_).mergeFrom(value).buildPartial();
@@ -11725,7 +12042,7 @@ public final class DomainProto {
         } else {
           vehicleParameterBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00001000;
         return this;
       }
       public Builder clearVehicleParameter() {
@@ -11735,11 +12052,11 @@ public final class DomainProto {
         } else {
           vehicleParameterBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00002000);
+        bitField1_ = (bitField1_ & ~0x00001000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleParameter.Builder getVehicleParameterBuilder() {
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00001000;
         onChanged();
         return getVehicleParameterFieldBuilder().getBuilder();
       }
@@ -11769,7 +12086,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleProfile, com.ugcs.ucs.proto.DomainProto.VehicleProfile.Builder, com.ugcs.ucs.proto.DomainProto.VehicleProfileOrBuilder> vehicleProfileBuilder_;
       public boolean hasVehicleProfile() {
-        return ((bitField1_ & 0x00004000) == 0x00004000);
+        return ((bitField1_ & 0x00002000) == 0x00002000);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfile getVehicleProfile() {
         if (vehicleProfileBuilder_ == null) {
@@ -11788,7 +12105,7 @@ public final class DomainProto {
         } else {
           vehicleProfileBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00002000;
         return this;
       }
       public Builder setVehicleProfile(
@@ -11799,12 +12116,12 @@ public final class DomainProto {
         } else {
           vehicleProfileBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00002000;
         return this;
       }
       public Builder mergeVehicleProfile(com.ugcs.ucs.proto.DomainProto.VehicleProfile value) {
         if (vehicleProfileBuilder_ == null) {
-          if (((bitField1_ & 0x00004000) == 0x00004000) &&
+          if (((bitField1_ & 0x00002000) == 0x00002000) &&
               vehicleProfile_ != com.ugcs.ucs.proto.DomainProto.VehicleProfile.getDefaultInstance()) {
             vehicleProfile_ =
               com.ugcs.ucs.proto.DomainProto.VehicleProfile.newBuilder(vehicleProfile_).mergeFrom(value).buildPartial();
@@ -11815,7 +12132,7 @@ public final class DomainProto {
         } else {
           vehicleProfileBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00002000;
         return this;
       }
       public Builder clearVehicleProfile() {
@@ -11825,11 +12142,11 @@ public final class DomainProto {
         } else {
           vehicleProfileBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00004000);
+        bitField1_ = (bitField1_ & ~0x00002000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfile.Builder getVehicleProfileBuilder() {
-        bitField1_ |= 0x00004000;
+        bitField1_ |= 0x00002000;
         onChanged();
         return getVehicleProfileFieldBuilder().getBuilder();
       }
@@ -11859,7 +12176,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile, com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.Builder, com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfileOrBuilder> vehicleProfilePayloadProfileBuilder_;
       public boolean hasVehicleProfilePayloadProfile() {
-        return ((bitField1_ & 0x00008000) == 0x00008000);
+        return ((bitField1_ & 0x00004000) == 0x00004000);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile getVehicleProfilePayloadProfile() {
         if (vehicleProfilePayloadProfileBuilder_ == null) {
@@ -11878,7 +12195,7 @@ public final class DomainProto {
         } else {
           vehicleProfilePayloadProfileBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00004000;
         return this;
       }
       public Builder setVehicleProfilePayloadProfile(
@@ -11889,12 +12206,12 @@ public final class DomainProto {
         } else {
           vehicleProfilePayloadProfileBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00004000;
         return this;
       }
       public Builder mergeVehicleProfilePayloadProfile(com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile value) {
         if (vehicleProfilePayloadProfileBuilder_ == null) {
-          if (((bitField1_ & 0x00008000) == 0x00008000) &&
+          if (((bitField1_ & 0x00004000) == 0x00004000) &&
               vehicleProfilePayloadProfile_ != com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.getDefaultInstance()) {
             vehicleProfilePayloadProfile_ =
               com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.newBuilder(vehicleProfilePayloadProfile_).mergeFrom(value).buildPartial();
@@ -11905,7 +12222,7 @@ public final class DomainProto {
         } else {
           vehicleProfilePayloadProfileBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00004000;
         return this;
       }
       public Builder clearVehicleProfilePayloadProfile() {
@@ -11915,11 +12232,11 @@ public final class DomainProto {
         } else {
           vehicleProfilePayloadProfileBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00008000);
+        bitField1_ = (bitField1_ & ~0x00004000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.Builder getVehicleProfilePayloadProfileBuilder() {
-        bitField1_ |= 0x00008000;
+        bitField1_ |= 0x00004000;
         onChanged();
         return getVehicleProfilePayloadProfileFieldBuilder().getBuilder();
       }
@@ -11949,7 +12266,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Vsm, com.ugcs.ucs.proto.DomainProto.Vsm.Builder, com.ugcs.ucs.proto.DomainProto.VsmOrBuilder> vsmBuilder_;
       public boolean hasVsm() {
-        return ((bitField1_ & 0x00010000) == 0x00010000);
+        return ((bitField1_ & 0x00008000) == 0x00008000);
       }
       public com.ugcs.ucs.proto.DomainProto.Vsm getVsm() {
         if (vsmBuilder_ == null) {
@@ -11968,7 +12285,7 @@ public final class DomainProto {
         } else {
           vsmBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00010000;
+        bitField1_ |= 0x00008000;
         return this;
       }
       public Builder setVsm(
@@ -11979,12 +12296,12 @@ public final class DomainProto {
         } else {
           vsmBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00010000;
+        bitField1_ |= 0x00008000;
         return this;
       }
       public Builder mergeVsm(com.ugcs.ucs.proto.DomainProto.Vsm value) {
         if (vsmBuilder_ == null) {
-          if (((bitField1_ & 0x00010000) == 0x00010000) &&
+          if (((bitField1_ & 0x00008000) == 0x00008000) &&
               vsm_ != com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance()) {
             vsm_ =
               com.ugcs.ucs.proto.DomainProto.Vsm.newBuilder(vsm_).mergeFrom(value).buildPartial();
@@ -11995,7 +12312,7 @@ public final class DomainProto {
         } else {
           vsmBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00010000;
+        bitField1_ |= 0x00008000;
         return this;
       }
       public Builder clearVsm() {
@@ -12005,11 +12322,11 @@ public final class DomainProto {
         } else {
           vsmBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00010000);
+        bitField1_ = (bitField1_ & ~0x00008000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Vsm.Builder getVsmBuilder() {
-        bitField1_ |= 0x00010000;
+        bitField1_ |= 0x00008000;
         onChanged();
         return getVsmFieldBuilder().getBuilder();
       }
@@ -12039,7 +12356,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Wait, com.ugcs.ucs.proto.DomainProto.Wait.Builder, com.ugcs.ucs.proto.DomainProto.WaitOrBuilder> waitBuilder_;
       public boolean hasWait() {
-        return ((bitField1_ & 0x00020000) == 0x00020000);
+        return ((bitField1_ & 0x00010000) == 0x00010000);
       }
       public com.ugcs.ucs.proto.DomainProto.Wait getWait() {
         if (waitBuilder_ == null) {
@@ -12058,7 +12375,7 @@ public final class DomainProto {
         } else {
           waitBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00010000;
         return this;
       }
       public Builder setWait(
@@ -12069,12 +12386,12 @@ public final class DomainProto {
         } else {
           waitBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00010000;
         return this;
       }
       public Builder mergeWait(com.ugcs.ucs.proto.DomainProto.Wait value) {
         if (waitBuilder_ == null) {
-          if (((bitField1_ & 0x00020000) == 0x00020000) &&
+          if (((bitField1_ & 0x00010000) == 0x00010000) &&
               wait_ != com.ugcs.ucs.proto.DomainProto.Wait.getDefaultInstance()) {
             wait_ =
               com.ugcs.ucs.proto.DomainProto.Wait.newBuilder(wait_).mergeFrom(value).buildPartial();
@@ -12085,7 +12402,7 @@ public final class DomainProto {
         } else {
           waitBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00010000;
         return this;
       }
       public Builder clearWait() {
@@ -12095,11 +12412,11 @@ public final class DomainProto {
         } else {
           waitBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00020000);
+        bitField1_ = (bitField1_ & ~0x00010000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Wait.Builder getWaitBuilder() {
-        bitField1_ |= 0x00020000;
+        bitField1_ |= 0x00010000;
         onChanged();
         return getWaitFieldBuilder().getBuilder();
       }
@@ -12129,7 +12446,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.WaitDefinition, com.ugcs.ucs.proto.DomainProto.WaitDefinition.Builder, com.ugcs.ucs.proto.DomainProto.WaitDefinitionOrBuilder> waitDefinitionBuilder_;
       public boolean hasWaitDefinition() {
-        return ((bitField1_ & 0x00040000) == 0x00040000);
+        return ((bitField1_ & 0x00020000) == 0x00020000);
       }
       public com.ugcs.ucs.proto.DomainProto.WaitDefinition getWaitDefinition() {
         if (waitDefinitionBuilder_ == null) {
@@ -12148,7 +12465,7 @@ public final class DomainProto {
         } else {
           waitDefinitionBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00040000;
+        bitField1_ |= 0x00020000;
         return this;
       }
       public Builder setWaitDefinition(
@@ -12159,12 +12476,12 @@ public final class DomainProto {
         } else {
           waitDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00040000;
+        bitField1_ |= 0x00020000;
         return this;
       }
       public Builder mergeWaitDefinition(com.ugcs.ucs.proto.DomainProto.WaitDefinition value) {
         if (waitDefinitionBuilder_ == null) {
-          if (((bitField1_ & 0x00040000) == 0x00040000) &&
+          if (((bitField1_ & 0x00020000) == 0x00020000) &&
               waitDefinition_ != com.ugcs.ucs.proto.DomainProto.WaitDefinition.getDefaultInstance()) {
             waitDefinition_ =
               com.ugcs.ucs.proto.DomainProto.WaitDefinition.newBuilder(waitDefinition_).mergeFrom(value).buildPartial();
@@ -12175,7 +12492,7 @@ public final class DomainProto {
         } else {
           waitDefinitionBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00040000;
+        bitField1_ |= 0x00020000;
         return this;
       }
       public Builder clearWaitDefinition() {
@@ -12185,11 +12502,11 @@ public final class DomainProto {
         } else {
           waitDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00040000);
+        bitField1_ = (bitField1_ & ~0x00020000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.WaitDefinition.Builder getWaitDefinitionBuilder() {
-        bitField1_ |= 0x00040000;
+        bitField1_ |= 0x00020000;
         onChanged();
         return getWaitDefinitionFieldBuilder().getBuilder();
       }
@@ -12219,7 +12536,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Waypoint, com.ugcs.ucs.proto.DomainProto.Waypoint.Builder, com.ugcs.ucs.proto.DomainProto.WaypointOrBuilder> waypointBuilder_;
       public boolean hasWaypoint() {
-        return ((bitField1_ & 0x00080000) == 0x00080000);
+        return ((bitField1_ & 0x00040000) == 0x00040000);
       }
       public com.ugcs.ucs.proto.DomainProto.Waypoint getWaypoint() {
         if (waypointBuilder_ == null) {
@@ -12238,7 +12555,7 @@ public final class DomainProto {
         } else {
           waypointBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00040000;
         return this;
       }
       public Builder setWaypoint(
@@ -12249,12 +12566,12 @@ public final class DomainProto {
         } else {
           waypointBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00040000;
         return this;
       }
       public Builder mergeWaypoint(com.ugcs.ucs.proto.DomainProto.Waypoint value) {
         if (waypointBuilder_ == null) {
-          if (((bitField1_ & 0x00080000) == 0x00080000) &&
+          if (((bitField1_ & 0x00040000) == 0x00040000) &&
               waypoint_ != com.ugcs.ucs.proto.DomainProto.Waypoint.getDefaultInstance()) {
             waypoint_ =
               com.ugcs.ucs.proto.DomainProto.Waypoint.newBuilder(waypoint_).mergeFrom(value).buildPartial();
@@ -12265,7 +12582,7 @@ public final class DomainProto {
         } else {
           waypointBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00040000;
         return this;
       }
       public Builder clearWaypoint() {
@@ -12275,11 +12592,11 @@ public final class DomainProto {
         } else {
           waypointBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00080000);
+        bitField1_ = (bitField1_ & ~0x00040000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Waypoint.Builder getWaypointBuilder() {
-        bitField1_ |= 0x00080000;
+        bitField1_ |= 0x00040000;
         onChanged();
         return getWaypointFieldBuilder().getBuilder();
       }
@@ -12309,7 +12626,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.MessageSet, com.ugcs.ucs.proto.DomainProto.MessageSet.Builder, com.ugcs.ucs.proto.DomainProto.MessageSetOrBuilder> messageSetBuilder_;
       public boolean hasMessageSet() {
-        return ((bitField1_ & 0x00100000) == 0x00100000);
+        return ((bitField1_ & 0x00080000) == 0x00080000);
       }
       public com.ugcs.ucs.proto.DomainProto.MessageSet getMessageSet() {
         if (messageSetBuilder_ == null) {
@@ -12328,7 +12645,7 @@ public final class DomainProto {
         } else {
           messageSetBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00080000;
         return this;
       }
       public Builder setMessageSet(
@@ -12339,12 +12656,12 @@ public final class DomainProto {
         } else {
           messageSetBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00080000;
         return this;
       }
       public Builder mergeMessageSet(com.ugcs.ucs.proto.DomainProto.MessageSet value) {
         if (messageSetBuilder_ == null) {
-          if (((bitField1_ & 0x00100000) == 0x00100000) &&
+          if (((bitField1_ & 0x00080000) == 0x00080000) &&
               messageSet_ != com.ugcs.ucs.proto.DomainProto.MessageSet.getDefaultInstance()) {
             messageSet_ =
               com.ugcs.ucs.proto.DomainProto.MessageSet.newBuilder(messageSet_).mergeFrom(value).buildPartial();
@@ -12355,7 +12672,7 @@ public final class DomainProto {
         } else {
           messageSetBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00080000;
         return this;
       }
       public Builder clearMessageSet() {
@@ -12365,11 +12682,11 @@ public final class DomainProto {
         } else {
           messageSetBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00100000);
+        bitField1_ = (bitField1_ & ~0x00080000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.MessageSet.Builder getMessageSetBuilder() {
-        bitField1_ |= 0x00100000;
+        bitField1_ |= 0x00080000;
         onChanged();
         return getMessageSetFieldBuilder().getBuilder();
       }
@@ -12399,7 +12716,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.LocalizedMessage, com.ugcs.ucs.proto.DomainProto.LocalizedMessage.Builder, com.ugcs.ucs.proto.DomainProto.LocalizedMessageOrBuilder> localizedMessageBuilder_;
       public boolean hasLocalizedMessage() {
-        return ((bitField1_ & 0x00200000) == 0x00200000);
+        return ((bitField1_ & 0x00100000) == 0x00100000);
       }
       public com.ugcs.ucs.proto.DomainProto.LocalizedMessage getLocalizedMessage() {
         if (localizedMessageBuilder_ == null) {
@@ -12418,7 +12735,7 @@ public final class DomainProto {
         } else {
           localizedMessageBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00100000;
         return this;
       }
       public Builder setLocalizedMessage(
@@ -12429,12 +12746,12 @@ public final class DomainProto {
         } else {
           localizedMessageBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00100000;
         return this;
       }
       public Builder mergeLocalizedMessage(com.ugcs.ucs.proto.DomainProto.LocalizedMessage value) {
         if (localizedMessageBuilder_ == null) {
-          if (((bitField1_ & 0x00200000) == 0x00200000) &&
+          if (((bitField1_ & 0x00100000) == 0x00100000) &&
               localizedMessage_ != com.ugcs.ucs.proto.DomainProto.LocalizedMessage.getDefaultInstance()) {
             localizedMessage_ =
               com.ugcs.ucs.proto.DomainProto.LocalizedMessage.newBuilder(localizedMessage_).mergeFrom(value).buildPartial();
@@ -12445,7 +12762,7 @@ public final class DomainProto {
         } else {
           localizedMessageBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00100000;
         return this;
       }
       public Builder clearLocalizedMessage() {
@@ -12455,11 +12772,11 @@ public final class DomainProto {
         } else {
           localizedMessageBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00200000);
+        bitField1_ = (bitField1_ & ~0x00100000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.LocalizedMessage.Builder getLocalizedMessageBuilder() {
-        bitField1_ |= 0x00200000;
+        bitField1_ |= 0x00100000;
         onChanged();
         return getLocalizedMessageFieldBuilder().getBuilder();
       }
@@ -12489,7 +12806,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant, com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant.Builder, com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariantOrBuilder> localizedMessageVariantBuilder_;
       public boolean hasLocalizedMessageVariant() {
-        return ((bitField1_ & 0x00400000) == 0x00400000);
+        return ((bitField1_ & 0x00200000) == 0x00200000);
       }
       public com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant getLocalizedMessageVariant() {
         if (localizedMessageVariantBuilder_ == null) {
@@ -12508,7 +12825,7 @@ public final class DomainProto {
         } else {
           localizedMessageVariantBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00400000;
+        bitField1_ |= 0x00200000;
         return this;
       }
       public Builder setLocalizedMessageVariant(
@@ -12519,12 +12836,12 @@ public final class DomainProto {
         } else {
           localizedMessageVariantBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00400000;
+        bitField1_ |= 0x00200000;
         return this;
       }
       public Builder mergeLocalizedMessageVariant(com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant value) {
         if (localizedMessageVariantBuilder_ == null) {
-          if (((bitField1_ & 0x00400000) == 0x00400000) &&
+          if (((bitField1_ & 0x00200000) == 0x00200000) &&
               localizedMessageVariant_ != com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant.getDefaultInstance()) {
             localizedMessageVariant_ =
               com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant.newBuilder(localizedMessageVariant_).mergeFrom(value).buildPartial();
@@ -12535,7 +12852,7 @@ public final class DomainProto {
         } else {
           localizedMessageVariantBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00400000;
+        bitField1_ |= 0x00200000;
         return this;
       }
       public Builder clearLocalizedMessageVariant() {
@@ -12545,11 +12862,11 @@ public final class DomainProto {
         } else {
           localizedMessageVariantBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00400000);
+        bitField1_ = (bitField1_ & ~0x00200000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.LocalizedMessageVariant.Builder getLocalizedMessageVariantBuilder() {
-        bitField1_ |= 0x00400000;
+        bitField1_ |= 0x00200000;
         onChanged();
         return getLocalizedMessageVariantFieldBuilder().getBuilder();
       }
@@ -12579,7 +12896,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.TelemetryInterval, com.ugcs.ucs.proto.DomainProto.TelemetryInterval.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryIntervalOrBuilder> telemetryIntervalBuilder_;
       public boolean hasTelemetryInterval() {
-        return ((bitField1_ & 0x00800000) == 0x00800000);
+        return ((bitField1_ & 0x00400000) == 0x00400000);
       }
       public com.ugcs.ucs.proto.DomainProto.TelemetryInterval getTelemetryInterval() {
         if (telemetryIntervalBuilder_ == null) {
@@ -12598,7 +12915,7 @@ public final class DomainProto {
         } else {
           telemetryIntervalBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x00400000;
         return this;
       }
       public Builder setTelemetryInterval(
@@ -12609,12 +12926,12 @@ public final class DomainProto {
         } else {
           telemetryIntervalBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x00400000;
         return this;
       }
       public Builder mergeTelemetryInterval(com.ugcs.ucs.proto.DomainProto.TelemetryInterval value) {
         if (telemetryIntervalBuilder_ == null) {
-          if (((bitField1_ & 0x00800000) == 0x00800000) &&
+          if (((bitField1_ & 0x00400000) == 0x00400000) &&
               telemetryInterval_ != com.ugcs.ucs.proto.DomainProto.TelemetryInterval.getDefaultInstance()) {
             telemetryInterval_ =
               com.ugcs.ucs.proto.DomainProto.TelemetryInterval.newBuilder(telemetryInterval_).mergeFrom(value).buildPartial();
@@ -12625,7 +12942,7 @@ public final class DomainProto {
         } else {
           telemetryIntervalBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x00400000;
         return this;
       }
       public Builder clearTelemetryInterval() {
@@ -12635,11 +12952,11 @@ public final class DomainProto {
         } else {
           telemetryIntervalBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x00800000);
+        bitField1_ = (bitField1_ & ~0x00400000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.TelemetryInterval.Builder getTelemetryIntervalBuilder() {
-        bitField1_ |= 0x00800000;
+        bitField1_ |= 0x00400000;
         onChanged();
         return getTelemetryIntervalFieldBuilder().getBuilder();
       }
@@ -12669,7 +12986,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle, com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicleOrBuilder> telemetryIntervalVehicleBuilder_;
       public boolean hasTelemetryIntervalVehicle() {
-        return ((bitField1_ & 0x01000000) == 0x01000000);
+        return ((bitField1_ & 0x00800000) == 0x00800000);
       }
       public com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle getTelemetryIntervalVehicle() {
         if (telemetryIntervalVehicleBuilder_ == null) {
@@ -12688,7 +13005,7 @@ public final class DomainProto {
         } else {
           telemetryIntervalVehicleBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x00800000;
         return this;
       }
       public Builder setTelemetryIntervalVehicle(
@@ -12699,12 +13016,12 @@ public final class DomainProto {
         } else {
           telemetryIntervalVehicleBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x00800000;
         return this;
       }
       public Builder mergeTelemetryIntervalVehicle(com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle value) {
         if (telemetryIntervalVehicleBuilder_ == null) {
-          if (((bitField1_ & 0x01000000) == 0x01000000) &&
+          if (((bitField1_ & 0x00800000) == 0x00800000) &&
               telemetryIntervalVehicle_ != com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.getDefaultInstance()) {
             telemetryIntervalVehicle_ =
               com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.newBuilder(telemetryIntervalVehicle_).mergeFrom(value).buildPartial();
@@ -12715,7 +13032,7 @@ public final class DomainProto {
         } else {
           telemetryIntervalVehicleBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x00800000;
         return this;
       }
       public Builder clearTelemetryIntervalVehicle() {
@@ -12725,11 +13042,11 @@ public final class DomainProto {
         } else {
           telemetryIntervalVehicleBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x01000000);
+        bitField1_ = (bitField1_ & ~0x00800000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.Builder getTelemetryIntervalVehicleBuilder() {
-        bitField1_ |= 0x01000000;
+        bitField1_ |= 0x00800000;
         onChanged();
         return getTelemetryIntervalVehicleFieldBuilder().getBuilder();
       }
@@ -12759,7 +13076,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CommandLogArguments, com.ugcs.ucs.proto.DomainProto.CommandLogArguments.Builder, com.ugcs.ucs.proto.DomainProto.CommandLogArgumentsOrBuilder> commandLogArgumentsBuilder_;
       public boolean hasCommandLogArguments() {
-        return ((bitField1_ & 0x02000000) == 0x02000000);
+        return ((bitField1_ & 0x01000000) == 0x01000000);
       }
       public com.ugcs.ucs.proto.DomainProto.CommandLogArguments getCommandLogArguments() {
         if (commandLogArgumentsBuilder_ == null) {
@@ -12778,7 +13095,7 @@ public final class DomainProto {
         } else {
           commandLogArgumentsBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x02000000;
+        bitField1_ |= 0x01000000;
         return this;
       }
       public Builder setCommandLogArguments(
@@ -12789,12 +13106,12 @@ public final class DomainProto {
         } else {
           commandLogArgumentsBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x02000000;
+        bitField1_ |= 0x01000000;
         return this;
       }
       public Builder mergeCommandLogArguments(com.ugcs.ucs.proto.DomainProto.CommandLogArguments value) {
         if (commandLogArgumentsBuilder_ == null) {
-          if (((bitField1_ & 0x02000000) == 0x02000000) &&
+          if (((bitField1_ & 0x01000000) == 0x01000000) &&
               commandLogArguments_ != com.ugcs.ucs.proto.DomainProto.CommandLogArguments.getDefaultInstance()) {
             commandLogArguments_ =
               com.ugcs.ucs.proto.DomainProto.CommandLogArguments.newBuilder(commandLogArguments_).mergeFrom(value).buildPartial();
@@ -12805,7 +13122,7 @@ public final class DomainProto {
         } else {
           commandLogArgumentsBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x02000000;
+        bitField1_ |= 0x01000000;
         return this;
       }
       public Builder clearCommandLogArguments() {
@@ -12815,11 +13132,11 @@ public final class DomainProto {
         } else {
           commandLogArgumentsBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x02000000);
+        bitField1_ = (bitField1_ & ~0x01000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CommandLogArguments.Builder getCommandLogArgumentsBuilder() {
-        bitField1_ |= 0x02000000;
+        bitField1_ |= 0x01000000;
         onChanged();
         return getCommandLogArgumentsFieldBuilder().getBuilder();
       }
@@ -12849,7 +13166,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.UploadLogArguments, com.ugcs.ucs.proto.DomainProto.UploadLogArguments.Builder, com.ugcs.ucs.proto.DomainProto.UploadLogArgumentsOrBuilder> uploadLogArgumentsBuilder_;
       public boolean hasUploadLogArguments() {
-        return ((bitField1_ & 0x04000000) == 0x04000000);
+        return ((bitField1_ & 0x02000000) == 0x02000000);
       }
       public com.ugcs.ucs.proto.DomainProto.UploadLogArguments getUploadLogArguments() {
         if (uploadLogArgumentsBuilder_ == null) {
@@ -12868,7 +13185,7 @@ public final class DomainProto {
         } else {
           uploadLogArgumentsBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x02000000;
         return this;
       }
       public Builder setUploadLogArguments(
@@ -12879,12 +13196,12 @@ public final class DomainProto {
         } else {
           uploadLogArgumentsBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x02000000;
         return this;
       }
       public Builder mergeUploadLogArguments(com.ugcs.ucs.proto.DomainProto.UploadLogArguments value) {
         if (uploadLogArgumentsBuilder_ == null) {
-          if (((bitField1_ & 0x04000000) == 0x04000000) &&
+          if (((bitField1_ & 0x02000000) == 0x02000000) &&
               uploadLogArguments_ != com.ugcs.ucs.proto.DomainProto.UploadLogArguments.getDefaultInstance()) {
             uploadLogArguments_ =
               com.ugcs.ucs.proto.DomainProto.UploadLogArguments.newBuilder(uploadLogArguments_).mergeFrom(value).buildPartial();
@@ -12895,7 +13212,7 @@ public final class DomainProto {
         } else {
           uploadLogArgumentsBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x02000000;
         return this;
       }
       public Builder clearUploadLogArguments() {
@@ -12905,11 +13222,11 @@ public final class DomainProto {
         } else {
           uploadLogArgumentsBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x04000000);
+        bitField1_ = (bitField1_ & ~0x02000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.UploadLogArguments.Builder getUploadLogArgumentsBuilder() {
-        bitField1_ |= 0x04000000;
+        bitField1_ |= 0x02000000;
         onChanged();
         return getUploadLogArgumentsFieldBuilder().getBuilder();
       }
@@ -12939,7 +13256,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder> elevationSourceBuilder_;
       public boolean hasElevationSource() {
-        return ((bitField1_ & 0x08000000) == 0x08000000);
+        return ((bitField1_ & 0x04000000) == 0x04000000);
       }
       public com.ugcs.ucs.proto.DomainProto.ElevationSource getElevationSource() {
         if (elevationSourceBuilder_ == null) {
@@ -12958,7 +13275,7 @@ public final class DomainProto {
         } else {
           elevationSourceBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x04000000;
         return this;
       }
       public Builder setElevationSource(
@@ -12969,12 +13286,12 @@ public final class DomainProto {
         } else {
           elevationSourceBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x04000000;
         return this;
       }
       public Builder mergeElevationSource(com.ugcs.ucs.proto.DomainProto.ElevationSource value) {
         if (elevationSourceBuilder_ == null) {
-          if (((bitField1_ & 0x08000000) == 0x08000000) &&
+          if (((bitField1_ & 0x04000000) == 0x04000000) &&
               elevationSource_ != com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance()) {
             elevationSource_ =
               com.ugcs.ucs.proto.DomainProto.ElevationSource.newBuilder(elevationSource_).mergeFrom(value).buildPartial();
@@ -12985,7 +13302,7 @@ public final class DomainProto {
         } else {
           elevationSourceBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x04000000;
         return this;
       }
       public Builder clearElevationSource() {
@@ -12995,11 +13312,11 @@ public final class DomainProto {
         } else {
           elevationSourceBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x08000000);
+        bitField1_ = (bitField1_ & ~0x04000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder getElevationSourceBuilder() {
-        bitField1_ |= 0x08000000;
+        bitField1_ |= 0x04000000;
         onChanged();
         return getElevationSourceFieldBuilder().getBuilder();
       }
@@ -13029,7 +13346,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.GeoServer, com.ugcs.ucs.proto.DomainProto.GeoServer.Builder, com.ugcs.ucs.proto.DomainProto.GeoServerOrBuilder> geoServerBuilder_;
       public boolean hasGeoServer() {
-        return ((bitField1_ & 0x10000000) == 0x10000000);
+        return ((bitField1_ & 0x08000000) == 0x08000000);
       }
       public com.ugcs.ucs.proto.DomainProto.GeoServer getGeoServer() {
         if (geoServerBuilder_ == null) {
@@ -13048,7 +13365,7 @@ public final class DomainProto {
         } else {
           geoServerBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x08000000;
         return this;
       }
       public Builder setGeoServer(
@@ -13059,12 +13376,12 @@ public final class DomainProto {
         } else {
           geoServerBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x08000000;
         return this;
       }
       public Builder mergeGeoServer(com.ugcs.ucs.proto.DomainProto.GeoServer value) {
         if (geoServerBuilder_ == null) {
-          if (((bitField1_ & 0x10000000) == 0x10000000) &&
+          if (((bitField1_ & 0x08000000) == 0x08000000) &&
               geoServer_ != com.ugcs.ucs.proto.DomainProto.GeoServer.getDefaultInstance()) {
             geoServer_ =
               com.ugcs.ucs.proto.DomainProto.GeoServer.newBuilder(geoServer_).mergeFrom(value).buildPartial();
@@ -13075,7 +13392,7 @@ public final class DomainProto {
         } else {
           geoServerBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x08000000;
         return this;
       }
       public Builder clearGeoServer() {
@@ -13085,11 +13402,11 @@ public final class DomainProto {
         } else {
           geoServerBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x10000000);
+        bitField1_ = (bitField1_ & ~0x08000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.GeoServer.Builder getGeoServerBuilder() {
-        bitField1_ |= 0x10000000;
+        bitField1_ |= 0x08000000;
         onChanged();
         return getGeoServerFieldBuilder().getBuilder();
       }
@@ -13119,7 +13436,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance, com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.Builder, com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceOrBuilder> cameraSeriesByDistanceBuilder_;
       public boolean hasCameraSeriesByDistance() {
-        return ((bitField1_ & 0x20000000) == 0x20000000);
+        return ((bitField1_ & 0x10000000) == 0x10000000);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance getCameraSeriesByDistance() {
         if (cameraSeriesByDistanceBuilder_ == null) {
@@ -13138,7 +13455,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x10000000;
         return this;
       }
       public Builder setCameraSeriesByDistance(
@@ -13149,12 +13466,12 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x10000000;
         return this;
       }
       public Builder mergeCameraSeriesByDistance(com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance value) {
         if (cameraSeriesByDistanceBuilder_ == null) {
-          if (((bitField1_ & 0x20000000) == 0x20000000) &&
+          if (((bitField1_ & 0x10000000) == 0x10000000) &&
               cameraSeriesByDistance_ != com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.getDefaultInstance()) {
             cameraSeriesByDistance_ =
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.newBuilder(cameraSeriesByDistance_).mergeFrom(value).buildPartial();
@@ -13165,7 +13482,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x10000000;
         return this;
       }
       public Builder clearCameraSeriesByDistance() {
@@ -13175,11 +13492,11 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x20000000);
+        bitField1_ = (bitField1_ & ~0x10000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistance.Builder getCameraSeriesByDistanceBuilder() {
-        bitField1_ |= 0x20000000;
+        bitField1_ |= 0x10000000;
         onChanged();
         return getCameraSeriesByDistanceFieldBuilder().getBuilder();
       }
@@ -13209,7 +13526,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition, com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinitionOrBuilder> cameraSeriesByDistanceDefinitionBuilder_;
       public boolean hasCameraSeriesByDistanceDefinition() {
-        return ((bitField1_ & 0x40000000) == 0x40000000);
+        return ((bitField1_ & 0x20000000) == 0x20000000);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition getCameraSeriesByDistanceDefinition() {
         if (cameraSeriesByDistanceDefinitionBuilder_ == null) {
@@ -13228,7 +13545,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceDefinitionBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x20000000;
         return this;
       }
       public Builder setCameraSeriesByDistanceDefinition(
@@ -13239,12 +13556,12 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x20000000;
         return this;
       }
       public Builder mergeCameraSeriesByDistanceDefinition(com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition value) {
         if (cameraSeriesByDistanceDefinitionBuilder_ == null) {
-          if (((bitField1_ & 0x40000000) == 0x40000000) &&
+          if (((bitField1_ & 0x20000000) == 0x20000000) &&
               cameraSeriesByDistanceDefinition_ != com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.getDefaultInstance()) {
             cameraSeriesByDistanceDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.newBuilder(cameraSeriesByDistanceDefinition_).mergeFrom(value).buildPartial();
@@ -13255,7 +13572,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceDefinitionBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x20000000;
         return this;
       }
       public Builder clearCameraSeriesByDistanceDefinition() {
@@ -13265,11 +13582,11 @@ public final class DomainProto {
         } else {
           cameraSeriesByDistanceDefinitionBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x40000000);
+        bitField1_ = (bitField1_ & ~0x20000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.Builder getCameraSeriesByDistanceDefinitionBuilder() {
-        bitField1_ |= 0x40000000;
+        bitField1_ |= 0x20000000;
         onChanged();
         return getCameraSeriesByDistanceDefinitionFieldBuilder().getBuilder();
       }
@@ -13299,7 +13616,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime, com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.Builder, com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeOrBuilder> cameraSeriesByTimeBuilder_;
       public boolean hasCameraSeriesByTime() {
-        return ((bitField1_ & 0x80000000) == 0x80000000);
+        return ((bitField1_ & 0x40000000) == 0x40000000);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime getCameraSeriesByTime() {
         if (cameraSeriesByTimeBuilder_ == null) {
@@ -13318,7 +13635,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeBuilder_.setMessage(value);
         }
-        bitField1_ |= 0x80000000;
+        bitField1_ |= 0x40000000;
         return this;
       }
       public Builder setCameraSeriesByTime(
@@ -13329,12 +13646,12 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeBuilder_.setMessage(builderForValue.build());
         }
-        bitField1_ |= 0x80000000;
+        bitField1_ |= 0x40000000;
         return this;
       }
       public Builder mergeCameraSeriesByTime(com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime value) {
         if (cameraSeriesByTimeBuilder_ == null) {
-          if (((bitField1_ & 0x80000000) == 0x80000000) &&
+          if (((bitField1_ & 0x40000000) == 0x40000000) &&
               cameraSeriesByTime_ != com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.getDefaultInstance()) {
             cameraSeriesByTime_ =
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.newBuilder(cameraSeriesByTime_).mergeFrom(value).buildPartial();
@@ -13345,7 +13662,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeBuilder_.mergeFrom(value);
         }
-        bitField1_ |= 0x80000000;
+        bitField1_ |= 0x40000000;
         return this;
       }
       public Builder clearCameraSeriesByTime() {
@@ -13355,11 +13672,11 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeBuilder_.clear();
         }
-        bitField1_ = (bitField1_ & ~0x80000000);
+        bitField1_ = (bitField1_ & ~0x40000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTime.Builder getCameraSeriesByTimeBuilder() {
-        bitField1_ |= 0x80000000;
+        bitField1_ |= 0x40000000;
         onChanged();
         return getCameraSeriesByTimeFieldBuilder().getBuilder();
       }
@@ -13389,7 +13706,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition, com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinitionOrBuilder> cameraSeriesByTimeDefinitionBuilder_;
       public boolean hasCameraSeriesByTimeDefinition() {
-        return ((bitField2_ & 0x00000001) == 0x00000001);
+        return ((bitField1_ & 0x80000000) == 0x80000000);
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition getCameraSeriesByTimeDefinition() {
         if (cameraSeriesByTimeDefinitionBuilder_ == null) {
@@ -13408,7 +13725,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeDefinitionBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000001;
+        bitField1_ |= 0x80000000;
         return this;
       }
       public Builder setCameraSeriesByTimeDefinition(
@@ -13419,12 +13736,12 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000001;
+        bitField1_ |= 0x80000000;
         return this;
       }
       public Builder mergeCameraSeriesByTimeDefinition(com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition value) {
         if (cameraSeriesByTimeDefinitionBuilder_ == null) {
-          if (((bitField2_ & 0x00000001) == 0x00000001) &&
+          if (((bitField1_ & 0x80000000) == 0x80000000) &&
               cameraSeriesByTimeDefinition_ != com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.getDefaultInstance()) {
             cameraSeriesByTimeDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.newBuilder(cameraSeriesByTimeDefinition_).mergeFrom(value).buildPartial();
@@ -13435,7 +13752,7 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeDefinitionBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000001;
+        bitField1_ |= 0x80000000;
         return this;
       }
       public Builder clearCameraSeriesByTimeDefinition() {
@@ -13445,11 +13762,11 @@ public final class DomainProto {
         } else {
           cameraSeriesByTimeDefinitionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000001);
+        bitField1_ = (bitField1_ & ~0x80000000);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.Builder getCameraSeriesByTimeDefinitionBuilder() {
-        bitField2_ |= 0x00000001;
+        bitField1_ |= 0x80000000;
         onChanged();
         return getCameraSeriesByTimeDefinitionFieldBuilder().getBuilder();
       }
@@ -13479,7 +13796,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.PlatformAction, com.ugcs.ucs.proto.DomainProto.PlatformAction.Builder, com.ugcs.ucs.proto.DomainProto.PlatformActionOrBuilder> platformActionBuilder_;
       public boolean hasPlatformAction() {
-        return ((bitField2_ & 0x00000002) == 0x00000002);
+        return ((bitField2_ & 0x00000001) == 0x00000001);
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformAction getPlatformAction() {
         if (platformActionBuilder_ == null) {
@@ -13498,7 +13815,7 @@ public final class DomainProto {
         } else {
           platformActionBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000001;
         return this;
       }
       public Builder setPlatformAction(
@@ -13509,12 +13826,12 @@ public final class DomainProto {
         } else {
           platformActionBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000001;
         return this;
       }
       public Builder mergePlatformAction(com.ugcs.ucs.proto.DomainProto.PlatformAction value) {
         if (platformActionBuilder_ == null) {
-          if (((bitField2_ & 0x00000002) == 0x00000002) &&
+          if (((bitField2_ & 0x00000001) == 0x00000001) &&
               platformAction_ != com.ugcs.ucs.proto.DomainProto.PlatformAction.getDefaultInstance()) {
             platformAction_ =
               com.ugcs.ucs.proto.DomainProto.PlatformAction.newBuilder(platformAction_).mergeFrom(value).buildPartial();
@@ -13525,7 +13842,7 @@ public final class DomainProto {
         } else {
           platformActionBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000001;
         return this;
       }
       public Builder clearPlatformAction() {
@@ -13535,11 +13852,11 @@ public final class DomainProto {
         } else {
           platformActionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000002);
+        bitField2_ = (bitField2_ & ~0x00000001);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.PlatformAction.Builder getPlatformActionBuilder() {
-        bitField2_ |= 0x00000002;
+        bitField2_ |= 0x00000001;
         onChanged();
         return getPlatformActionFieldBuilder().getBuilder();
       }
@@ -13569,7 +13886,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.FeatureSource, com.ugcs.ucs.proto.DomainProto.FeatureSource.Builder, com.ugcs.ucs.proto.DomainProto.FeatureSourceOrBuilder> featureSourceBuilder_;
       public boolean hasFeatureSource() {
-        return ((bitField2_ & 0x00000004) == 0x00000004);
+        return ((bitField2_ & 0x00000002) == 0x00000002);
       }
       public com.ugcs.ucs.proto.DomainProto.FeatureSource getFeatureSource() {
         if (featureSourceBuilder_ == null) {
@@ -13588,7 +13905,7 @@ public final class DomainProto {
         } else {
           featureSourceBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000002;
         return this;
       }
       public Builder setFeatureSource(
@@ -13599,12 +13916,12 @@ public final class DomainProto {
         } else {
           featureSourceBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000002;
         return this;
       }
       public Builder mergeFeatureSource(com.ugcs.ucs.proto.DomainProto.FeatureSource value) {
         if (featureSourceBuilder_ == null) {
-          if (((bitField2_ & 0x00000004) == 0x00000004) &&
+          if (((bitField2_ & 0x00000002) == 0x00000002) &&
               featureSource_ != com.ugcs.ucs.proto.DomainProto.FeatureSource.getDefaultInstance()) {
             featureSource_ =
               com.ugcs.ucs.proto.DomainProto.FeatureSource.newBuilder(featureSource_).mergeFrom(value).buildPartial();
@@ -13615,7 +13932,7 @@ public final class DomainProto {
         } else {
           featureSourceBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000002;
         return this;
       }
       public Builder clearFeatureSource() {
@@ -13625,11 +13942,11 @@ public final class DomainProto {
         } else {
           featureSourceBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000004);
+        bitField2_ = (bitField2_ & ~0x00000002);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.FeatureSource.Builder getFeatureSourceBuilder() {
-        bitField2_ |= 0x00000004;
+        bitField2_ |= 0x00000002;
         onChanged();
         return getFeatureSourceFieldBuilder().getBuilder();
       }
@@ -13659,7 +13976,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments, com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.Builder, com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArgumentsOrBuilder> videoRecordingLogArgumentsBuilder_;
       public boolean hasVideoRecordingLogArguments() {
-        return ((bitField2_ & 0x00000008) == 0x00000008);
+        return ((bitField2_ & 0x00000004) == 0x00000004);
       }
       public com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments getVideoRecordingLogArguments() {
         if (videoRecordingLogArgumentsBuilder_ == null) {
@@ -13678,7 +13995,7 @@ public final class DomainProto {
         } else {
           videoRecordingLogArgumentsBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000004;
         return this;
       }
       public Builder setVideoRecordingLogArguments(
@@ -13689,12 +14006,12 @@ public final class DomainProto {
         } else {
           videoRecordingLogArgumentsBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000004;
         return this;
       }
       public Builder mergeVideoRecordingLogArguments(com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments value) {
         if (videoRecordingLogArgumentsBuilder_ == null) {
-          if (((bitField2_ & 0x00000008) == 0x00000008) &&
+          if (((bitField2_ & 0x00000004) == 0x00000004) &&
               videoRecordingLogArguments_ != com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.getDefaultInstance()) {
             videoRecordingLogArguments_ =
               com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.newBuilder(videoRecordingLogArguments_).mergeFrom(value).buildPartial();
@@ -13705,7 +14022,7 @@ public final class DomainProto {
         } else {
           videoRecordingLogArgumentsBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000004;
         return this;
       }
       public Builder clearVideoRecordingLogArguments() {
@@ -13715,11 +14032,11 @@ public final class DomainProto {
         } else {
           videoRecordingLogArgumentsBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000008);
+        bitField2_ = (bitField2_ & ~0x00000004);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.Builder getVideoRecordingLogArgumentsBuilder() {
-        bitField2_ |= 0x00000008;
+        bitField2_ |= 0x00000004;
         onChanged();
         return getVideoRecordingLogArgumentsFieldBuilder().getBuilder();
       }
@@ -13749,7 +14066,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.UtmOperation, com.ugcs.ucs.proto.DomainProto.UtmOperation.Builder, com.ugcs.ucs.proto.DomainProto.UtmOperationOrBuilder> utmOperationBuilder_;
       public boolean hasUtmOperation() {
-        return ((bitField2_ & 0x00000010) == 0x00000010);
+        return ((bitField2_ & 0x00000008) == 0x00000008);
       }
       public com.ugcs.ucs.proto.DomainProto.UtmOperation getUtmOperation() {
         if (utmOperationBuilder_ == null) {
@@ -13768,7 +14085,7 @@ public final class DomainProto {
         } else {
           utmOperationBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000008;
         return this;
       }
       public Builder setUtmOperation(
@@ -13779,12 +14096,12 @@ public final class DomainProto {
         } else {
           utmOperationBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000008;
         return this;
       }
       public Builder mergeUtmOperation(com.ugcs.ucs.proto.DomainProto.UtmOperation value) {
         if (utmOperationBuilder_ == null) {
-          if (((bitField2_ & 0x00000010) == 0x00000010) &&
+          if (((bitField2_ & 0x00000008) == 0x00000008) &&
               utmOperation_ != com.ugcs.ucs.proto.DomainProto.UtmOperation.getDefaultInstance()) {
             utmOperation_ =
               com.ugcs.ucs.proto.DomainProto.UtmOperation.newBuilder(utmOperation_).mergeFrom(value).buildPartial();
@@ -13795,7 +14112,7 @@ public final class DomainProto {
         } else {
           utmOperationBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000008;
         return this;
       }
       public Builder clearUtmOperation() {
@@ -13805,11 +14122,11 @@ public final class DomainProto {
         } else {
           utmOperationBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000010);
+        bitField2_ = (bitField2_ & ~0x00000008);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.UtmOperation.Builder getUtmOperationBuilder() {
-        bitField2_ |= 0x00000010;
+        bitField2_ |= 0x00000008;
         onChanged();
         return getUtmOperationFieldBuilder().getBuilder();
       }
@@ -13839,7 +14156,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition, com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.Builder, com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinitionOrBuilder> commandArgumentDefinitionBuilder_;
       public boolean hasCommandArgumentDefinition() {
-        return ((bitField2_ & 0x00000020) == 0x00000020);
+        return ((bitField2_ & 0x00000010) == 0x00000010);
       }
       public com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition getCommandArgumentDefinition() {
         if (commandArgumentDefinitionBuilder_ == null) {
@@ -13858,7 +14175,7 @@ public final class DomainProto {
         } else {
           commandArgumentDefinitionBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000020;
+        bitField2_ |= 0x00000010;
         return this;
       }
       public Builder setCommandArgumentDefinition(
@@ -13869,12 +14186,12 @@ public final class DomainProto {
         } else {
           commandArgumentDefinitionBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000020;
+        bitField2_ |= 0x00000010;
         return this;
       }
       public Builder mergeCommandArgumentDefinition(com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition value) {
         if (commandArgumentDefinitionBuilder_ == null) {
-          if (((bitField2_ & 0x00000020) == 0x00000020) &&
+          if (((bitField2_ & 0x00000010) == 0x00000010) &&
               commandArgumentDefinition_ != com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.getDefaultInstance()) {
             commandArgumentDefinition_ =
               com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.newBuilder(commandArgumentDefinition_).mergeFrom(value).buildPartial();
@@ -13885,7 +14202,7 @@ public final class DomainProto {
         } else {
           commandArgumentDefinitionBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000020;
+        bitField2_ |= 0x00000010;
         return this;
       }
       public Builder clearCommandArgumentDefinition() {
@@ -13895,11 +14212,11 @@ public final class DomainProto {
         } else {
           commandArgumentDefinitionBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000020);
+        bitField2_ = (bitField2_ & ~0x00000010);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.Builder getCommandArgumentDefinitionBuilder() {
-        bitField2_ |= 0x00000020;
+        bitField2_ |= 0x00000010;
         onChanged();
         return getCommandArgumentDefinitionFieldBuilder().getBuilder();
       }
@@ -13929,7 +14246,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Failsafe, com.ugcs.ucs.proto.DomainProto.Failsafe.Builder, com.ugcs.ucs.proto.DomainProto.FailsafeOrBuilder> failsafeBuilder_;
       public boolean hasFailsafe() {
-        return ((bitField2_ & 0x00000040) == 0x00000040);
+        return ((bitField2_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.Failsafe getFailsafe() {
         if (failsafeBuilder_ == null) {
@@ -13948,7 +14265,7 @@ public final class DomainProto {
         } else {
           failsafeBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000020;
         return this;
       }
       public Builder setFailsafe(
@@ -13959,12 +14276,12 @@ public final class DomainProto {
         } else {
           failsafeBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000020;
         return this;
       }
       public Builder mergeFailsafe(com.ugcs.ucs.proto.DomainProto.Failsafe value) {
         if (failsafeBuilder_ == null) {
-          if (((bitField2_ & 0x00000040) == 0x00000040) &&
+          if (((bitField2_ & 0x00000020) == 0x00000020) &&
               failsafe_ != com.ugcs.ucs.proto.DomainProto.Failsafe.getDefaultInstance()) {
             failsafe_ =
               com.ugcs.ucs.proto.DomainProto.Failsafe.newBuilder(failsafe_).mergeFrom(value).buildPartial();
@@ -13975,7 +14292,7 @@ public final class DomainProto {
         } else {
           failsafeBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000020;
         return this;
       }
       public Builder clearFailsafe() {
@@ -13985,11 +14302,11 @@ public final class DomainProto {
         } else {
           failsafeBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000040);
+        bitField2_ = (bitField2_ & ~0x00000020);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Failsafe.Builder getFailsafeBuilder() {
-        bitField2_ |= 0x00000040;
+        bitField2_ |= 0x00000020;
         onChanged();
         return getFailsafeFieldBuilder().getBuilder();
       }
@@ -14019,7 +14336,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.ProcessedSegment, com.ugcs.ucs.proto.DomainProto.ProcessedSegment.Builder, com.ugcs.ucs.proto.DomainProto.ProcessedSegmentOrBuilder> processedSegmentBuilder_;
       public boolean hasProcessedSegment() {
-        return ((bitField2_ & 0x00000080) == 0x00000080);
+        return ((bitField2_ & 0x00000040) == 0x00000040);
       }
       public com.ugcs.ucs.proto.DomainProto.ProcessedSegment getProcessedSegment() {
         if (processedSegmentBuilder_ == null) {
@@ -14038,7 +14355,7 @@ public final class DomainProto {
         } else {
           processedSegmentBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000040;
         return this;
       }
       public Builder setProcessedSegment(
@@ -14049,12 +14366,12 @@ public final class DomainProto {
         } else {
           processedSegmentBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000040;
         return this;
       }
       public Builder mergeProcessedSegment(com.ugcs.ucs.proto.DomainProto.ProcessedSegment value) {
         if (processedSegmentBuilder_ == null) {
-          if (((bitField2_ & 0x00000080) == 0x00000080) &&
+          if (((bitField2_ & 0x00000040) == 0x00000040) &&
               processedSegment_ != com.ugcs.ucs.proto.DomainProto.ProcessedSegment.getDefaultInstance()) {
             processedSegment_ =
               com.ugcs.ucs.proto.DomainProto.ProcessedSegment.newBuilder(processedSegment_).mergeFrom(value).buildPartial();
@@ -14065,7 +14382,7 @@ public final class DomainProto {
         } else {
           processedSegmentBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000040;
         return this;
       }
       public Builder clearProcessedSegment() {
@@ -14075,11 +14392,11 @@ public final class DomainProto {
         } else {
           processedSegmentBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000080);
+        bitField2_ = (bitField2_ & ~0x00000040);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.ProcessedSegment.Builder getProcessedSegmentBuilder() {
-        bitField2_ |= 0x00000080;
+        bitField2_ |= 0x00000040;
         onChanged();
         return getProcessedSegmentFieldBuilder().getBuilder();
       }
@@ -14109,7 +14426,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.RouteAttributes, com.ugcs.ucs.proto.DomainProto.RouteAttributes.Builder, com.ugcs.ucs.proto.DomainProto.RouteAttributesOrBuilder> routeAttributesBuilder_;
       public boolean hasRouteAttributes() {
-        return ((bitField2_ & 0x00000100) == 0x00000100);
+        return ((bitField2_ & 0x00000080) == 0x00000080);
       }
       public com.ugcs.ucs.proto.DomainProto.RouteAttributes getRouteAttributes() {
         if (routeAttributesBuilder_ == null) {
@@ -14128,7 +14445,7 @@ public final class DomainProto {
         } else {
           routeAttributesBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000080;
         return this;
       }
       public Builder setRouteAttributes(
@@ -14139,12 +14456,12 @@ public final class DomainProto {
         } else {
           routeAttributesBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000080;
         return this;
       }
       public Builder mergeRouteAttributes(com.ugcs.ucs.proto.DomainProto.RouteAttributes value) {
         if (routeAttributesBuilder_ == null) {
-          if (((bitField2_ & 0x00000100) == 0x00000100) &&
+          if (((bitField2_ & 0x00000080) == 0x00000080) &&
               routeAttributes_ != com.ugcs.ucs.proto.DomainProto.RouteAttributes.getDefaultInstance()) {
             routeAttributes_ =
               com.ugcs.ucs.proto.DomainProto.RouteAttributes.newBuilder(routeAttributes_).mergeFrom(value).buildPartial();
@@ -14155,7 +14472,7 @@ public final class DomainProto {
         } else {
           routeAttributesBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000080;
         return this;
       }
       public Builder clearRouteAttributes() {
@@ -14165,11 +14482,11 @@ public final class DomainProto {
         } else {
           routeAttributesBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000100);
+        bitField2_ = (bitField2_ & ~0x00000080);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.RouteAttributes.Builder getRouteAttributesBuilder() {
-        bitField2_ |= 0x00000100;
+        bitField2_ |= 0x00000080;
         onChanged();
         return getRouteAttributesFieldBuilder().getBuilder();
       }
@@ -14199,7 +14516,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Value, com.ugcs.ucs.proto.DomainProto.Value.Builder, com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> valueBuilder_;
       public boolean hasValue() {
-        return ((bitField2_ & 0x00000200) == 0x00000200);
+        return ((bitField2_ & 0x00000100) == 0x00000100);
       }
       public com.ugcs.ucs.proto.DomainProto.Value getValue() {
         if (valueBuilder_ == null) {
@@ -14218,7 +14535,7 @@ public final class DomainProto {
         } else {
           valueBuilder_.setMessage(value);
         }
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000100;
         return this;
       }
       public Builder setValue(
@@ -14229,12 +14546,12 @@ public final class DomainProto {
         } else {
           valueBuilder_.setMessage(builderForValue.build());
         }
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000100;
         return this;
       }
       public Builder mergeValue(com.ugcs.ucs.proto.DomainProto.Value value) {
         if (valueBuilder_ == null) {
-          if (((bitField2_ & 0x00000200) == 0x00000200) &&
+          if (((bitField2_ & 0x00000100) == 0x00000100) &&
               value_ != com.ugcs.ucs.proto.DomainProto.Value.getDefaultInstance()) {
             value_ =
               com.ugcs.ucs.proto.DomainProto.Value.newBuilder(value_).mergeFrom(value).buildPartial();
@@ -14245,7 +14562,7 @@ public final class DomainProto {
         } else {
           valueBuilder_.mergeFrom(value);
         }
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000100;
         return this;
       }
       public Builder clearValue() {
@@ -14255,11 +14572,11 @@ public final class DomainProto {
         } else {
           valueBuilder_.clear();
         }
-        bitField2_ = (bitField2_ & ~0x00000200);
+        bitField2_ = (bitField2_ & ~0x00000100);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Value.Builder getValueBuilder() {
-        bitField2_ |= 0x00000200;
+        bitField2_ |= 0x00000100;
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
@@ -14282,6 +14599,456 @@ public final class DomainProto {
           value_ = null;
         }
         return valueBuilder_;
+      }
+      
+      // optional .SetServo setServo = 82;
+      private com.ugcs.ucs.proto.DomainProto.SetServo setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder> setServoBuilder_;
+      public boolean hasSetServo() {
+        return ((bitField2_ & 0x00000200) == 0x00000200);
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServo getSetServo() {
+        if (setServoBuilder_ == null) {
+          return setServo_;
+        } else {
+          return setServoBuilder_.getMessage();
+        }
+      }
+      public Builder setSetServo(com.ugcs.ucs.proto.DomainProto.SetServo value) {
+        if (setServoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          setServo_ = value;
+          onChanged();
+        } else {
+          setServoBuilder_.setMessage(value);
+        }
+        bitField2_ |= 0x00000200;
+        return this;
+      }
+      public Builder setSetServo(
+          com.ugcs.ucs.proto.DomainProto.SetServo.Builder builderForValue) {
+        if (setServoBuilder_ == null) {
+          setServo_ = builderForValue.build();
+          onChanged();
+        } else {
+          setServoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField2_ |= 0x00000200;
+        return this;
+      }
+      public Builder mergeSetServo(com.ugcs.ucs.proto.DomainProto.SetServo value) {
+        if (setServoBuilder_ == null) {
+          if (((bitField2_ & 0x00000200) == 0x00000200) &&
+              setServo_ != com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance()) {
+            setServo_ =
+              com.ugcs.ucs.proto.DomainProto.SetServo.newBuilder(setServo_).mergeFrom(value).buildPartial();
+          } else {
+            setServo_ = value;
+          }
+          onChanged();
+        } else {
+          setServoBuilder_.mergeFrom(value);
+        }
+        bitField2_ |= 0x00000200;
+        return this;
+      }
+      public Builder clearSetServo() {
+        if (setServoBuilder_ == null) {
+          setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+          onChanged();
+        } else {
+          setServoBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00000200);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServo.Builder getSetServoBuilder() {
+        bitField2_ |= 0x00000200;
+        onChanged();
+        return getSetServoFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder() {
+        if (setServoBuilder_ != null) {
+          return setServoBuilder_.getMessageOrBuilder();
+        } else {
+          return setServo_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder> 
+          getSetServoFieldBuilder() {
+        if (setServoBuilder_ == null) {
+          setServoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder>(
+                  setServo_,
+                  getParentForChildren(),
+                  isClean());
+          setServo_ = null;
+        }
+        return setServoBuilder_;
+      }
+      
+      // optional .RepeatServo repeatServo = 83;
+      private com.ugcs.ucs.proto.DomainProto.RepeatServo repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder> repeatServoBuilder_;
+      public boolean hasRepeatServo() {
+        return ((bitField2_ & 0x00000400) == 0x00000400);
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo() {
+        if (repeatServoBuilder_ == null) {
+          return repeatServo_;
+        } else {
+          return repeatServoBuilder_.getMessage();
+        }
+      }
+      public Builder setRepeatServo(com.ugcs.ucs.proto.DomainProto.RepeatServo value) {
+        if (repeatServoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          repeatServo_ = value;
+          onChanged();
+        } else {
+          repeatServoBuilder_.setMessage(value);
+        }
+        bitField2_ |= 0x00000400;
+        return this;
+      }
+      public Builder setRepeatServo(
+          com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder builderForValue) {
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = builderForValue.build();
+          onChanged();
+        } else {
+          repeatServoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField2_ |= 0x00000400;
+        return this;
+      }
+      public Builder mergeRepeatServo(com.ugcs.ucs.proto.DomainProto.RepeatServo value) {
+        if (repeatServoBuilder_ == null) {
+          if (((bitField2_ & 0x00000400) == 0x00000400) &&
+              repeatServo_ != com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance()) {
+            repeatServo_ =
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.newBuilder(repeatServo_).mergeFrom(value).buildPartial();
+          } else {
+            repeatServo_ = value;
+          }
+          onChanged();
+        } else {
+          repeatServoBuilder_.mergeFrom(value);
+        }
+        bitField2_ |= 0x00000400;
+        return this;
+      }
+      public Builder clearRepeatServo() {
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+          onChanged();
+        } else {
+          repeatServoBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00000400);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder getRepeatServoBuilder() {
+        bitField2_ |= 0x00000400;
+        onChanged();
+        return getRepeatServoFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder() {
+        if (repeatServoBuilder_ != null) {
+          return repeatServoBuilder_.getMessageOrBuilder();
+        } else {
+          return repeatServo_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder> 
+          getRepeatServoFieldBuilder() {
+        if (repeatServoBuilder_ == null) {
+          repeatServoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder>(
+                  repeatServo_,
+                  getParentForChildren(),
+                  isClean());
+          repeatServo_ = null;
+        }
+        return repeatServoBuilder_;
+      }
+      
+      // optional .TransitionFixed transitionFixed = 84;
+      private com.ugcs.ucs.proto.DomainProto.TransitionFixed transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder> transitionFixedBuilder_;
+      public boolean hasTransitionFixed() {
+        return ((bitField2_ & 0x00000800) == 0x00000800);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed() {
+        if (transitionFixedBuilder_ == null) {
+          return transitionFixed_;
+        } else {
+          return transitionFixedBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionFixed(com.ugcs.ucs.proto.DomainProto.TransitionFixed value) {
+        if (transitionFixedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionFixed_ = value;
+          onChanged();
+        } else {
+          transitionFixedBuilder_.setMessage(value);
+        }
+        bitField2_ |= 0x00000800;
+        return this;
+      }
+      public Builder setTransitionFixed(
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder builderForValue) {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionFixedBuilder_.setMessage(builderForValue.build());
+        }
+        bitField2_ |= 0x00000800;
+        return this;
+      }
+      public Builder mergeTransitionFixed(com.ugcs.ucs.proto.DomainProto.TransitionFixed value) {
+        if (transitionFixedBuilder_ == null) {
+          if (((bitField2_ & 0x00000800) == 0x00000800) &&
+              transitionFixed_ != com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance()) {
+            transitionFixed_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.newBuilder(transitionFixed_).mergeFrom(value).buildPartial();
+          } else {
+            transitionFixed_ = value;
+          }
+          onChanged();
+        } else {
+          transitionFixedBuilder_.mergeFrom(value);
+        }
+        bitField2_ |= 0x00000800;
+        return this;
+      }
+      public Builder clearTransitionFixed() {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionFixedBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00000800);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder getTransitionFixedBuilder() {
+        bitField2_ |= 0x00000800;
+        onChanged();
+        return getTransitionFixedFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder() {
+        if (transitionFixedBuilder_ != null) {
+          return transitionFixedBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionFixed_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder> 
+          getTransitionFixedFieldBuilder() {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder>(
+                  transitionFixed_,
+                  getParentForChildren(),
+                  isClean());
+          transitionFixed_ = null;
+        }
+        return transitionFixedBuilder_;
+      }
+      
+      // optional .TransitionVtol transitionVtol = 85;
+      private com.ugcs.ucs.proto.DomainProto.TransitionVtol transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder> transitionVtolBuilder_;
+      public boolean hasTransitionVtol() {
+        return ((bitField2_ & 0x00001000) == 0x00001000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol() {
+        if (transitionVtolBuilder_ == null) {
+          return transitionVtol_;
+        } else {
+          return transitionVtolBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionVtol(com.ugcs.ucs.proto.DomainProto.TransitionVtol value) {
+        if (transitionVtolBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionVtol_ = value;
+          onChanged();
+        } else {
+          transitionVtolBuilder_.setMessage(value);
+        }
+        bitField2_ |= 0x00001000;
+        return this;
+      }
+      public Builder setTransitionVtol(
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder builderForValue) {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionVtolBuilder_.setMessage(builderForValue.build());
+        }
+        bitField2_ |= 0x00001000;
+        return this;
+      }
+      public Builder mergeTransitionVtol(com.ugcs.ucs.proto.DomainProto.TransitionVtol value) {
+        if (transitionVtolBuilder_ == null) {
+          if (((bitField2_ & 0x00001000) == 0x00001000) &&
+              transitionVtol_ != com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance()) {
+            transitionVtol_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.newBuilder(transitionVtol_).mergeFrom(value).buildPartial();
+          } else {
+            transitionVtol_ = value;
+          }
+          onChanged();
+        } else {
+          transitionVtolBuilder_.mergeFrom(value);
+        }
+        bitField2_ |= 0x00001000;
+        return this;
+      }
+      public Builder clearTransitionVtol() {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionVtolBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00001000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder getTransitionVtolBuilder() {
+        bitField2_ |= 0x00001000;
+        onChanged();
+        return getTransitionVtolFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder() {
+        if (transitionVtolBuilder_ != null) {
+          return transitionVtolBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionVtol_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder> 
+          getTransitionVtolFieldBuilder() {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtolBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder>(
+                  transitionVtol_,
+                  getParentForChildren(),
+                  isClean());
+          transitionVtol_ = null;
+        }
+        return transitionVtolBuilder_;
+      }
+      
+      // optional .RouteUpload routeUpload = 86;
+      private com.ugcs.ucs.proto.DomainProto.RouteUpload routeUpload_ = com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RouteUpload, com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder, com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder> routeUploadBuilder_;
+      public boolean hasRouteUpload() {
+        return ((bitField2_ & 0x00002000) == 0x00002000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.RouteUpload getRouteUpload() {
+        if (routeUploadBuilder_ == null) {
+          return routeUpload_;
+        } else {
+          return routeUploadBuilder_.getMessage();
+        }
+      }
+      public Builder setRouteUpload(com.ugcs.ucs.proto.DomainProto.RouteUpload value) {
+        if (routeUploadBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          routeUpload_ = value;
+          onChanged();
+        } else {
+          routeUploadBuilder_.setMessage(value);
+        }
+        bitField2_ |= 0x00002000;
+        return this;
+      }
+      public Builder setRouteUpload(
+          com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder builderForValue) {
+        if (routeUploadBuilder_ == null) {
+          routeUpload_ = builderForValue.build();
+          onChanged();
+        } else {
+          routeUploadBuilder_.setMessage(builderForValue.build());
+        }
+        bitField2_ |= 0x00002000;
+        return this;
+      }
+      public Builder mergeRouteUpload(com.ugcs.ucs.proto.DomainProto.RouteUpload value) {
+        if (routeUploadBuilder_ == null) {
+          if (((bitField2_ & 0x00002000) == 0x00002000) &&
+              routeUpload_ != com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance()) {
+            routeUpload_ =
+              com.ugcs.ucs.proto.DomainProto.RouteUpload.newBuilder(routeUpload_).mergeFrom(value).buildPartial();
+          } else {
+            routeUpload_ = value;
+          }
+          onChanged();
+        } else {
+          routeUploadBuilder_.mergeFrom(value);
+        }
+        bitField2_ |= 0x00002000;
+        return this;
+      }
+      public Builder clearRouteUpload() {
+        if (routeUploadBuilder_ == null) {
+          routeUpload_ = com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance();
+          onChanged();
+        } else {
+          routeUploadBuilder_.clear();
+        }
+        bitField2_ = (bitField2_ & ~0x00002000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder getRouteUploadBuilder() {
+        bitField2_ |= 0x00002000;
+        onChanged();
+        return getRouteUploadFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder getRouteUploadOrBuilder() {
+        if (routeUploadBuilder_ != null) {
+          return routeUploadBuilder_.getMessageOrBuilder();
+        } else {
+          return routeUpload_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RouteUpload, com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder, com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder> 
+          getRouteUploadFieldBuilder() {
+        if (routeUploadBuilder_ == null) {
+          routeUploadBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.RouteUpload, com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder, com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder>(
+                  routeUpload_,
+                  getParentForChildren(),
+                  isClean());
+          routeUpload_ = null;
+        }
+        return routeUploadBuilder_;
       }
       
       // @@protoc_insertion_point(builder_scope:DomainObjectWrapper)
@@ -22574,11 +23341,6 @@ public final class DomainProto {
     boolean hasVehicleId();
     long getVehicleId();
     
-    // optional .Vsm vsm = 4;
-    boolean hasVsm();
-    com.ugcs.ucs.proto.DomainProto.Vsm getVsm();
-    com.ugcs.ucs.proto.DomainProto.VsmOrBuilder getVsmOrBuilder();
-    
     // optional string name = 5;
     boolean hasName();
     String getName();
@@ -22590,14 +23352,6 @@ public final class DomainProto {
     // optional .VehicleType type = 7;
     boolean hasType();
     com.ugcs.ucs.proto.DomainProto.VehicleType getType();
-    
-    // optional bool downlinkConnected = 8;
-    boolean hasDownlinkConnected();
-    boolean getDownlinkConnected();
-    
-    // optional bool uplinkConnected = 9;
-    boolean hasUplinkConnected();
-    boolean getUplinkConnected();
     
     // optional double altitudeOrigin = 13;
     boolean hasAltitudeOrigin();
@@ -22631,22 +23385,6 @@ public final class DomainProto {
     boolean hasEmulator();
     boolean getEmulator();
     
-    // optional string droneshareUuid = 19;
-    boolean hasDroneshareUuid();
-    String getDroneshareUuid();
-    
-    // optional double homeLatitude = 20;
-    boolean hasHomeLatitude();
-    double getHomeLatitude();
-    
-    // optional double homeLongitude = 21;
-    boolean hasHomeLongitude();
-    double getHomeLongitude();
-    
-    // optional double homeAltitude = 22;
-    boolean hasHomeAltitude();
-    double getHomeAltitude();
-    
     // optional int32 icaoAddress = 23;
     boolean hasIcaoAddress();
     int getIcaoAddress();
@@ -22668,6 +23406,10 @@ public final class DomainProto {
     // optional string port = 26;
     boolean hasPort();
     String getPort();
+    
+    // optional .VehicleSource source = 27;
+    boolean hasSource();
+    com.ugcs.ucs.proto.DomainProto.VehicleSource getSource();
   }
   public static final class Vehicle extends
       com.google.protobuf.GeneratedMessage
@@ -22728,24 +23470,11 @@ public final class DomainProto {
       return vehicleId_;
     }
     
-    // optional .Vsm vsm = 4;
-    public static final int VSM_FIELD_NUMBER = 4;
-    private com.ugcs.ucs.proto.DomainProto.Vsm vsm_;
-    public boolean hasVsm() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public com.ugcs.ucs.proto.DomainProto.Vsm getVsm() {
-      return vsm_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.VsmOrBuilder getVsmOrBuilder() {
-      return vsm_;
-    }
-    
     // optional string name = 5;
     public static final int NAME_FIELD_NUMBER = 5;
     private java.lang.Object name_;
     public boolean hasName() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     public String getName() {
       java.lang.Object ref = name_;
@@ -22777,7 +23506,7 @@ public final class DomainProto {
     public static final int TAILNUMBER_FIELD_NUMBER = 6;
     private java.lang.Object tailNumber_;
     public boolean hasTailNumber() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public String getTailNumber() {
       java.lang.Object ref = tailNumber_;
@@ -22809,37 +23538,17 @@ public final class DomainProto {
     public static final int TYPE_FIELD_NUMBER = 7;
     private com.ugcs.ucs.proto.DomainProto.VehicleType type_;
     public boolean hasType() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleType getType() {
       return type_;
-    }
-    
-    // optional bool downlinkConnected = 8;
-    public static final int DOWNLINKCONNECTED_FIELD_NUMBER = 8;
-    private boolean downlinkConnected_;
-    public boolean hasDownlinkConnected() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public boolean getDownlinkConnected() {
-      return downlinkConnected_;
-    }
-    
-    // optional bool uplinkConnected = 9;
-    public static final int UPLINKCONNECTED_FIELD_NUMBER = 9;
-    private boolean uplinkConnected_;
-    public boolean hasUplinkConnected() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
-    }
-    public boolean getUplinkConnected() {
-      return uplinkConnected_;
     }
     
     // optional double altitudeOrigin = 13;
     public static final int ALTITUDEORIGIN_FIELD_NUMBER = 13;
     private double altitudeOrigin_;
     public boolean hasAltitudeOrigin() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public double getAltitudeOrigin() {
       return altitudeOrigin_;
@@ -22870,7 +23579,7 @@ public final class DomainProto {
     public static final int PLATFORM_FIELD_NUMBER = 15;
     private com.ugcs.ucs.proto.DomainProto.Platform platform_;
     public boolean hasPlatform() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
       return platform_;
@@ -22883,7 +23592,7 @@ public final class DomainProto {
     public static final int PROFILE_FIELD_NUMBER = 16;
     private com.ugcs.ucs.proto.DomainProto.VehicleProfile profile_;
     public boolean hasProfile() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public com.ugcs.ucs.proto.DomainProto.VehicleProfile getProfile() {
       return profile_;
@@ -22896,7 +23605,7 @@ public final class DomainProto {
     public static final int TAG_FIELD_NUMBER = 17;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -22928,79 +23637,17 @@ public final class DomainProto {
     public static final int EMULATOR_FIELD_NUMBER = 18;
     private boolean emulator_;
     public boolean hasEmulator() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     public boolean getEmulator() {
       return emulator_;
-    }
-    
-    // optional string droneshareUuid = 19;
-    public static final int DRONESHAREUUID_FIELD_NUMBER = 19;
-    private java.lang.Object droneshareUuid_;
-    public boolean hasDroneshareUuid() {
-      return ((bitField0_ & 0x00004000) == 0x00004000);
-    }
-    public String getDroneshareUuid() {
-      java.lang.Object ref = droneshareUuid_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          droneshareUuid_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getDroneshareUuidBytes() {
-      java.lang.Object ref = droneshareUuid_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        droneshareUuid_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional double homeLatitude = 20;
-    public static final int HOMELATITUDE_FIELD_NUMBER = 20;
-    private double homeLatitude_;
-    public boolean hasHomeLatitude() {
-      return ((bitField0_ & 0x00008000) == 0x00008000);
-    }
-    public double getHomeLatitude() {
-      return homeLatitude_;
-    }
-    
-    // optional double homeLongitude = 21;
-    public static final int HOMELONGITUDE_FIELD_NUMBER = 21;
-    private double homeLongitude_;
-    public boolean hasHomeLongitude() {
-      return ((bitField0_ & 0x00010000) == 0x00010000);
-    }
-    public double getHomeLongitude() {
-      return homeLongitude_;
-    }
-    
-    // optional double homeAltitude = 22;
-    public static final int HOMEALTITUDE_FIELD_NUMBER = 22;
-    private double homeAltitude_;
-    public boolean hasHomeAltitude() {
-      return ((bitField0_ & 0x00020000) == 0x00020000);
-    }
-    public double getHomeAltitude() {
-      return homeAltitude_;
     }
     
     // optional int32 icaoAddress = 23;
     public static final int ICAOADDRESS_FIELD_NUMBER = 23;
     private int icaoAddress_;
     public boolean hasIcaoAddress() {
-      return ((bitField0_ & 0x00040000) == 0x00040000);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     public int getIcaoAddress() {
       return icaoAddress_;
@@ -23031,7 +23678,7 @@ public final class DomainProto {
     public static final int SERIALNUMBER_FIELD_NUMBER = 25;
     private java.lang.Object serialNumber_;
     public boolean hasSerialNumber() {
-      return ((bitField0_ & 0x00080000) == 0x00080000);
+      return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     public String getSerialNumber() {
       java.lang.Object ref = serialNumber_;
@@ -23063,7 +23710,7 @@ public final class DomainProto {
     public static final int PORT_FIELD_NUMBER = 26;
     private java.lang.Object port_;
     public boolean hasPort() {
-      return ((bitField0_ & 0x00100000) == 0x00100000);
+      return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     public String getPort() {
       java.lang.Object ref = port_;
@@ -23091,30 +23738,34 @@ public final class DomainProto {
       }
     }
     
+    // optional .VehicleSource source = 27;
+    public static final int SOURCE_FIELD_NUMBER = 27;
+    private com.ugcs.ucs.proto.DomainProto.VehicleSource source_;
+    public boolean hasSource() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleSource getSource() {
+      return source_;
+    }
+    
     private void initFields() {
       id_ = 0;
       version_ = 0;
       vehicleId_ = 0L;
-      vsm_ = com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance();
       name_ = "";
       tailNumber_ = "";
       type_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
-      downlinkConnected_ = false;
-      uplinkConnected_ = false;
       altitudeOrigin_ = 0D;
       commandDefinitions_ = java.util.Collections.emptyList();
       platform_ = com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance();
       profile_ = com.ugcs.ucs.proto.DomainProto.VehicleProfile.getDefaultInstance();
       tag_ = "";
       emulator_ = false;
-      droneshareUuid_ = "";
-      homeLatitude_ = 0D;
-      homeLongitude_ = 0D;
-      homeAltitude_ = 0D;
       icaoAddress_ = 0;
       adsbAircrafts_ = java.util.Collections.emptyList();
       serialNumber_ = "";
       port_ = "";
+      source_ = com.ugcs.ucs.proto.DomainProto.VehicleSource.VS_VSM;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -23138,64 +23789,46 @@ public final class DomainProto {
         output.writeInt64(3, vehicleId_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, vsm_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(5, getNameBytes());
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeBytes(6, getTailNumberBytes());
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeEnum(7, type_.getNumber());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBool(8, downlinkConnected_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeBool(9, uplinkConnected_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeDouble(13, altitudeOrigin_);
       }
       for (int i = 0; i < commandDefinitions_.size(); i++) {
         output.writeMessage(14, commandDefinitions_.get(i));
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeMessage(15, platform_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeMessage(16, profile_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         output.writeBytes(17, getTagBytes());
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         output.writeBool(18, emulator_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        output.writeBytes(19, getDroneshareUuidBytes());
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        output.writeDouble(20, homeLatitude_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        output.writeDouble(21, homeLongitude_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        output.writeDouble(22, homeAltitude_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeInt32(23, icaoAddress_);
       }
       for (int i = 0; i < adsbAircrafts_.size(); i++) {
         output.writeMessage(24, adsbAircrafts_.get(i));
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeBytes(25, getSerialNumberBytes());
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         output.writeBytes(26, getPortBytes());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeEnum(27, source_.getNumber());
       }
       getUnknownFields().writeTo(output);
     }
@@ -23220,29 +23853,17 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, vsm_);
+          .computeBytesSize(5, getNameBytes());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getNameBytes());
+          .computeBytesSize(6, getTailNumberBytes());
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, getTailNumberBytes());
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, type_.getNumber());
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, downlinkConnected_);
-      }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, uplinkConnected_);
-      }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(13, altitudeOrigin_);
       }
@@ -23250,39 +23871,23 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, commandDefinitions_.get(i));
       }
-      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, platform_);
       }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, profile_);
       }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(17, getTagBytes());
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(18, emulator_);
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(19, getDroneshareUuidBytes());
-      }
-      if (((bitField0_ & 0x00008000) == 0x00008000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(20, homeLatitude_);
-      }
-      if (((bitField0_ & 0x00010000) == 0x00010000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(21, homeLongitude_);
-      }
-      if (((bitField0_ & 0x00020000) == 0x00020000)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(22, homeAltitude_);
-      }
-      if (((bitField0_ & 0x00040000) == 0x00040000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, icaoAddress_);
       }
@@ -23290,13 +23895,17 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(24, adsbAircrafts_.get(i));
       }
-      if (((bitField0_ & 0x00080000) == 0x00080000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(25, getSerialNumberBytes());
       }
-      if (((bitField0_ & 0x00100000) == 0x00100000)) {
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(26, getPortBytes());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(27, source_.getNumber());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -23414,7 +24023,6 @@ public final class DomainProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getVsmFieldBuilder();
           getCommandDefinitionsFieldBuilder();
           getPlatformFieldBuilder();
           getProfileFieldBuilder();
@@ -23433,27 +24041,17 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         vehicleId_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (vsmBuilder_ == null) {
-          vsm_ = com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance();
-        } else {
-          vsmBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
         name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         tailNumber_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         type_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
-        bitField0_ = (bitField0_ & ~0x00000040);
-        downlinkConnected_ = false;
-        bitField0_ = (bitField0_ & ~0x00000080);
-        uplinkConnected_ = false;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000020);
         altitudeOrigin_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (commandDefinitionsBuilder_ == null) {
           commandDefinitions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           commandDefinitionsBuilder_.clear();
         }
@@ -23462,37 +24060,31 @@ public final class DomainProto {
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (profileBuilder_ == null) {
           profile_ = com.ugcs.ucs.proto.DomainProto.VehicleProfile.getDefaultInstance();
         } else {
           profileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000200);
         tag_ = "";
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         emulator_ = false;
-        bitField0_ = (bitField0_ & ~0x00004000);
-        droneshareUuid_ = "";
-        bitField0_ = (bitField0_ & ~0x00008000);
-        homeLatitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00010000);
-        homeLongitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00020000);
-        homeAltitude_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         icaoAddress_ = 0;
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (adsbAircraftsBuilder_ == null) {
           adsbAircrafts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           adsbAircraftsBuilder_.clear();
         }
         serialNumber_ = "";
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         port_ = "";
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00008000);
+        source_ = com.ugcs.ucs.proto.DomainProto.VehicleSource.VS_VSM;
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
       
@@ -23546,105 +24138,77 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (vsmBuilder_ == null) {
-          result.vsm_ = vsm_;
-        } else {
-          result.vsm_ = vsmBuilder_.build();
-        }
+        result.name_ = name_;
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.name_ = name_;
+        result.tailNumber_ = tailNumber_;
         if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.tailNumber_ = tailNumber_;
+        result.type_ = type_;
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.type_ = type_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.downlinkConnected_ = downlinkConnected_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
-          to_bitField0_ |= 0x00000100;
-        }
-        result.uplinkConnected_ = uplinkConnected_;
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
         result.altitudeOrigin_ = altitudeOrigin_;
         if (commandDefinitionsBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          if (((bitField0_ & 0x00000080) == 0x00000080)) {
             commandDefinitions_ = java.util.Collections.unmodifiableList(commandDefinitions_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.commandDefinitions_ = commandDefinitions_;
         } else {
           result.commandDefinitions_ = commandDefinitionsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000400;
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000080;
         }
         if (platformBuilder_ == null) {
           result.platform_ = platform_;
         } else {
           result.platform_ = platformBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00000800;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000100;
         }
         if (profileBuilder_ == null) {
           result.profile_ = profile_;
         } else {
           result.profile_ = profileBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
-          to_bitField0_ |= 0x00001000;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000200;
         }
         result.tag_ = tag_;
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00002000;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000400;
         }
         result.emulator_ = emulator_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00004000;
-        }
-        result.droneshareUuid_ = droneshareUuid_;
-        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
-          to_bitField0_ |= 0x00008000;
-        }
-        result.homeLatitude_ = homeLatitude_;
-        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
-          to_bitField0_ |= 0x00010000;
-        }
-        result.homeLongitude_ = homeLongitude_;
-        if (((from_bitField0_ & 0x00040000) == 0x00040000)) {
-          to_bitField0_ |= 0x00020000;
-        }
-        result.homeAltitude_ = homeAltitude_;
-        if (((from_bitField0_ & 0x00080000) == 0x00080000)) {
-          to_bitField0_ |= 0x00040000;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00000800;
         }
         result.icaoAddress_ = icaoAddress_;
         if (adsbAircraftsBuilder_ == null) {
-          if (((bitField0_ & 0x00100000) == 0x00100000)) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
             adsbAircrafts_ = java.util.Collections.unmodifiableList(adsbAircrafts_);
-            bitField0_ = (bitField0_ & ~0x00100000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           }
           result.adsbAircrafts_ = adsbAircrafts_;
         } else {
           result.adsbAircrafts_ = adsbAircraftsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
-          to_bitField0_ |= 0x00080000;
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00001000;
         }
         result.serialNumber_ = serialNumber_;
-        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
-          to_bitField0_ |= 0x00100000;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00002000;
         }
         result.port_ = port_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.source_ = source_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -23670,9 +24234,6 @@ public final class DomainProto {
         if (other.hasVehicleId()) {
           setVehicleId(other.getVehicleId());
         }
-        if (other.hasVsm()) {
-          mergeVsm(other.getVsm());
-        }
         if (other.hasName()) {
           setName(other.getName());
         }
@@ -23682,12 +24243,6 @@ public final class DomainProto {
         if (other.hasType()) {
           setType(other.getType());
         }
-        if (other.hasDownlinkConnected()) {
-          setDownlinkConnected(other.getDownlinkConnected());
-        }
-        if (other.hasUplinkConnected()) {
-          setUplinkConnected(other.getUplinkConnected());
-        }
         if (other.hasAltitudeOrigin()) {
           setAltitudeOrigin(other.getAltitudeOrigin());
         }
@@ -23695,7 +24250,7 @@ public final class DomainProto {
           if (!other.commandDefinitions_.isEmpty()) {
             if (commandDefinitions_.isEmpty()) {
               commandDefinitions_ = other.commandDefinitions_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureCommandDefinitionsIsMutable();
               commandDefinitions_.addAll(other.commandDefinitions_);
@@ -23708,7 +24263,7 @@ public final class DomainProto {
               commandDefinitionsBuilder_.dispose();
               commandDefinitionsBuilder_ = null;
               commandDefinitions_ = other.commandDefinitions_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000080);
               commandDefinitionsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getCommandDefinitionsFieldBuilder() : null;
@@ -23729,18 +24284,6 @@ public final class DomainProto {
         if (other.hasEmulator()) {
           setEmulator(other.getEmulator());
         }
-        if (other.hasDroneshareUuid()) {
-          setDroneshareUuid(other.getDroneshareUuid());
-        }
-        if (other.hasHomeLatitude()) {
-          setHomeLatitude(other.getHomeLatitude());
-        }
-        if (other.hasHomeLongitude()) {
-          setHomeLongitude(other.getHomeLongitude());
-        }
-        if (other.hasHomeAltitude()) {
-          setHomeAltitude(other.getHomeAltitude());
-        }
         if (other.hasIcaoAddress()) {
           setIcaoAddress(other.getIcaoAddress());
         }
@@ -23748,7 +24291,7 @@ public final class DomainProto {
           if (!other.adsbAircrafts_.isEmpty()) {
             if (adsbAircrafts_.isEmpty()) {
               adsbAircrafts_ = other.adsbAircrafts_;
-              bitField0_ = (bitField0_ & ~0x00100000);
+              bitField0_ = (bitField0_ & ~0x00002000);
             } else {
               ensureAdsbAircraftsIsMutable();
               adsbAircrafts_.addAll(other.adsbAircrafts_);
@@ -23761,7 +24304,7 @@ public final class DomainProto {
               adsbAircraftsBuilder_.dispose();
               adsbAircraftsBuilder_ = null;
               adsbAircrafts_ = other.adsbAircrafts_;
-              bitField0_ = (bitField0_ & ~0x00100000);
+              bitField0_ = (bitField0_ & ~0x00002000);
               adsbAircraftsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getAdsbAircraftsFieldBuilder() : null;
@@ -23775,6 +24318,9 @@ public final class DomainProto {
         }
         if (other.hasPort()) {
           setPort(other.getPort());
+        }
+        if (other.hasSource()) {
+          setSource(other.getSource());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -23822,22 +24368,13 @@ public final class DomainProto {
               vehicleId_ = input.readInt64();
               break;
             }
-            case 34: {
-              com.ugcs.ucs.proto.DomainProto.Vsm.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vsm.newBuilder();
-              if (hasVsm()) {
-                subBuilder.mergeFrom(getVsm());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVsm(subBuilder.buildPartial());
-              break;
-            }
             case 42: {
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000008;
               name_ = input.readBytes();
               break;
             }
             case 50: {
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000010;
               tailNumber_ = input.readBytes();
               break;
             }
@@ -23847,23 +24384,13 @@ public final class DomainProto {
               if (value == null) {
                 unknownFields.mergeVarintField(7, rawValue);
               } else {
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000020;
                 type_ = value;
               }
               break;
             }
-            case 64: {
-              bitField0_ |= 0x00000080;
-              downlinkConnected_ = input.readBool();
-              break;
-            }
-            case 72: {
-              bitField0_ |= 0x00000100;
-              uplinkConnected_ = input.readBool();
-              break;
-            }
             case 105: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000040;
               altitudeOrigin_ = input.readDouble();
               break;
             }
@@ -23892,37 +24419,17 @@ public final class DomainProto {
               break;
             }
             case 138: {
-              bitField0_ |= 0x00002000;
+              bitField0_ |= 0x00000400;
               tag_ = input.readBytes();
               break;
             }
             case 144: {
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00000800;
               emulator_ = input.readBool();
               break;
             }
-            case 154: {
-              bitField0_ |= 0x00008000;
-              droneshareUuid_ = input.readBytes();
-              break;
-            }
-            case 161: {
-              bitField0_ |= 0x00010000;
-              homeLatitude_ = input.readDouble();
-              break;
-            }
-            case 169: {
-              bitField0_ |= 0x00020000;
-              homeLongitude_ = input.readDouble();
-              break;
-            }
-            case 177: {
-              bitField0_ |= 0x00040000;
-              homeAltitude_ = input.readDouble();
-              break;
-            }
             case 184: {
-              bitField0_ |= 0x00080000;
+              bitField0_ |= 0x00001000;
               icaoAddress_ = input.readInt32();
               break;
             }
@@ -23933,13 +24440,24 @@ public final class DomainProto {
               break;
             }
             case 202: {
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x00004000;
               serialNumber_ = input.readBytes();
               break;
             }
             case 210: {
-              bitField0_ |= 0x00400000;
+              bitField0_ |= 0x00008000;
               port_ = input.readBytes();
+              break;
+            }
+            case 216: {
+              int rawValue = input.readEnum();
+              com.ugcs.ucs.proto.DomainProto.VehicleSource value = com.ugcs.ucs.proto.DomainProto.VehicleSource.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(27, rawValue);
+              } else {
+                bitField0_ |= 0x00010000;
+                source_ = value;
+              }
               break;
             }
           }
@@ -24011,100 +24529,10 @@ public final class DomainProto {
         return this;
       }
       
-      // optional .Vsm vsm = 4;
-      private com.ugcs.ucs.proto.DomainProto.Vsm vsm_ = com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vsm, com.ugcs.ucs.proto.DomainProto.Vsm.Builder, com.ugcs.ucs.proto.DomainProto.VsmOrBuilder> vsmBuilder_;
-      public boolean hasVsm() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vsm getVsm() {
-        if (vsmBuilder_ == null) {
-          return vsm_;
-        } else {
-          return vsmBuilder_.getMessage();
-        }
-      }
-      public Builder setVsm(com.ugcs.ucs.proto.DomainProto.Vsm value) {
-        if (vsmBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          vsm_ = value;
-          onChanged();
-        } else {
-          vsmBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder setVsm(
-          com.ugcs.ucs.proto.DomainProto.Vsm.Builder builderForValue) {
-        if (vsmBuilder_ == null) {
-          vsm_ = builderForValue.build();
-          onChanged();
-        } else {
-          vsmBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder mergeVsm(com.ugcs.ucs.proto.DomainProto.Vsm value) {
-        if (vsmBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              vsm_ != com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance()) {
-            vsm_ =
-              com.ugcs.ucs.proto.DomainProto.Vsm.newBuilder(vsm_).mergeFrom(value).buildPartial();
-          } else {
-            vsm_ = value;
-          }
-          onChanged();
-        } else {
-          vsmBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000008;
-        return this;
-      }
-      public Builder clearVsm() {
-        if (vsmBuilder_ == null) {
-          vsm_ = com.ugcs.ucs.proto.DomainProto.Vsm.getDefaultInstance();
-          onChanged();
-        } else {
-          vsmBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000008);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.Vsm.Builder getVsmBuilder() {
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return getVsmFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.VsmOrBuilder getVsmOrBuilder() {
-        if (vsmBuilder_ != null) {
-          return vsmBuilder_.getMessageOrBuilder();
-        } else {
-          return vsm_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Vsm, com.ugcs.ucs.proto.DomainProto.Vsm.Builder, com.ugcs.ucs.proto.DomainProto.VsmOrBuilder> 
-          getVsmFieldBuilder() {
-        if (vsmBuilder_ == null) {
-          vsmBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.Vsm, com.ugcs.ucs.proto.DomainProto.Vsm.Builder, com.ugcs.ucs.proto.DomainProto.VsmOrBuilder>(
-                  vsm_,
-                  getParentForChildren(),
-                  isClean());
-          vsm_ = null;
-        }
-        return vsmBuilder_;
-      }
-      
       // optional string name = 5;
       private java.lang.Object name_ = "";
       public boolean hasName() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       public String getName() {
         java.lang.Object ref = name_;
@@ -24120,19 +24548,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000008;
         name_ = value;
         onChanged();
         return this;
       }
       public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       void setName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         name_ = value;
         onChanged();
       }
@@ -24140,7 +24568,7 @@ public final class DomainProto {
       // optional string tailNumber = 6;
       private java.lang.Object tailNumber_ = "";
       public boolean hasTailNumber() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public String getTailNumber() {
         java.lang.Object ref = tailNumber_;
@@ -24156,19 +24584,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000010;
         tailNumber_ = value;
         onChanged();
         return this;
       }
       public Builder clearTailNumber() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         tailNumber_ = getDefaultInstance().getTailNumber();
         onChanged();
         return this;
       }
       void setTailNumber(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         tailNumber_ = value;
         onChanged();
       }
@@ -24176,7 +24604,7 @@ public final class DomainProto {
       // optional .VehicleType type = 7;
       private com.ugcs.ucs.proto.DomainProto.VehicleType type_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
       public boolean hasType() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleType getType() {
         return type_;
@@ -24185,56 +24613,14 @@ public final class DomainProto {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         type_ = value;
         onChanged();
         return this;
       }
       public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         type_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
-        onChanged();
-        return this;
-      }
-      
-      // optional bool downlinkConnected = 8;
-      private boolean downlinkConnected_ ;
-      public boolean hasDownlinkConnected() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      public boolean getDownlinkConnected() {
-        return downlinkConnected_;
-      }
-      public Builder setDownlinkConnected(boolean value) {
-        bitField0_ |= 0x00000080;
-        downlinkConnected_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearDownlinkConnected() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        downlinkConnected_ = false;
-        onChanged();
-        return this;
-      }
-      
-      // optional bool uplinkConnected = 9;
-      private boolean uplinkConnected_ ;
-      public boolean hasUplinkConnected() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
-      }
-      public boolean getUplinkConnected() {
-        return uplinkConnected_;
-      }
-      public Builder setUplinkConnected(boolean value) {
-        bitField0_ |= 0x00000100;
-        uplinkConnected_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearUplinkConnected() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        uplinkConnected_ = false;
         onChanged();
         return this;
       }
@@ -24242,19 +24628,19 @@ public final class DomainProto {
       // optional double altitudeOrigin = 13;
       private double altitudeOrigin_ ;
       public boolean hasAltitudeOrigin() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public double getAltitudeOrigin() {
         return altitudeOrigin_;
       }
       public Builder setAltitudeOrigin(double value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000040;
         altitudeOrigin_ = value;
         onChanged();
         return this;
       }
       public Builder clearAltitudeOrigin() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000040);
         altitudeOrigin_ = 0D;
         onChanged();
         return this;
@@ -24264,9 +24650,9 @@ public final class DomainProto {
       private java.util.List<com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition> commandDefinitions_ =
         java.util.Collections.emptyList();
       private void ensureCommandDefinitionsIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
           commandDefinitions_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition>(commandDefinitions_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000080;
          }
       }
       
@@ -24382,7 +24768,7 @@ public final class DomainProto {
       public Builder clearCommandDefinitions() {
         if (commandDefinitionsBuilder_ == null) {
           commandDefinitions_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           commandDefinitionsBuilder_.clear();
@@ -24438,7 +24824,7 @@ public final class DomainProto {
           commandDefinitionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition, com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.Builder, com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinitionOrBuilder>(
                   commandDefinitions_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  ((bitField0_ & 0x00000080) == 0x00000080),
                   getParentForChildren(),
                   isClean());
           commandDefinitions_ = null;
@@ -24451,7 +24837,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Platform, com.ugcs.ucs.proto.DomainProto.Platform.Builder, com.ugcs.ucs.proto.DomainProto.PlatformOrBuilder> platformBuilder_;
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
         if (platformBuilder_ == null) {
@@ -24470,7 +24856,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder setPlatform(
@@ -24481,12 +24867,12 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder mergePlatform(com.ugcs.ucs.proto.DomainProto.Platform value) {
         if (platformBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) == 0x00000800) &&
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
               platform_ != com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance()) {
             platform_ =
               com.ugcs.ucs.proto.DomainProto.Platform.newBuilder(platform_).mergeFrom(value).buildPartial();
@@ -24497,7 +24883,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000100;
         return this;
       }
       public Builder clearPlatform() {
@@ -24507,11 +24893,11 @@ public final class DomainProto {
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Platform.Builder getPlatformBuilder() {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000100;
         onChanged();
         return getPlatformFieldBuilder().getBuilder();
       }
@@ -24541,7 +24927,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.VehicleProfile, com.ugcs.ucs.proto.DomainProto.VehicleProfile.Builder, com.ugcs.ucs.proto.DomainProto.VehicleProfileOrBuilder> profileBuilder_;
       public boolean hasProfile() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfile getProfile() {
         if (profileBuilder_ == null) {
@@ -24560,7 +24946,7 @@ public final class DomainProto {
         } else {
           profileBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder setProfile(
@@ -24571,12 +24957,12 @@ public final class DomainProto {
         } else {
           profileBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder mergeProfile(com.ugcs.ucs.proto.DomainProto.VehicleProfile value) {
         if (profileBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
               profile_ != com.ugcs.ucs.proto.DomainProto.VehicleProfile.getDefaultInstance()) {
             profile_ =
               com.ugcs.ucs.proto.DomainProto.VehicleProfile.newBuilder(profile_).mergeFrom(value).buildPartial();
@@ -24587,7 +24973,7 @@ public final class DomainProto {
         } else {
           profileBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000200;
         return this;
       }
       public Builder clearProfile() {
@@ -24597,11 +24983,11 @@ public final class DomainProto {
         } else {
           profileBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.VehicleProfile.Builder getProfileBuilder() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getProfileFieldBuilder().getBuilder();
       }
@@ -24629,7 +25015,7 @@ public final class DomainProto {
       // optional string tag = 17;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -24645,19 +25031,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00000400;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000400;
         tag_ = value;
         onChanged();
       }
@@ -24665,119 +25051,20 @@ public final class DomainProto {
       // optional bool emulator = 18;
       private boolean emulator_ ;
       public boolean hasEmulator() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       public boolean getEmulator() {
         return emulator_;
       }
       public Builder setEmulator(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000800;
         emulator_ = value;
         onChanged();
         return this;
       }
       public Builder clearEmulator() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         emulator_ = false;
-        onChanged();
-        return this;
-      }
-      
-      // optional string droneshareUuid = 19;
-      private java.lang.Object droneshareUuid_ = "";
-      public boolean hasDroneshareUuid() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
-      }
-      public String getDroneshareUuid() {
-        java.lang.Object ref = droneshareUuid_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          droneshareUuid_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setDroneshareUuid(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00008000;
-        droneshareUuid_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearDroneshareUuid() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        droneshareUuid_ = getDefaultInstance().getDroneshareUuid();
-        onChanged();
-        return this;
-      }
-      void setDroneshareUuid(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00008000;
-        droneshareUuid_ = value;
-        onChanged();
-      }
-      
-      // optional double homeLatitude = 20;
-      private double homeLatitude_ ;
-      public boolean hasHomeLatitude() {
-        return ((bitField0_ & 0x00010000) == 0x00010000);
-      }
-      public double getHomeLatitude() {
-        return homeLatitude_;
-      }
-      public Builder setHomeLatitude(double value) {
-        bitField0_ |= 0x00010000;
-        homeLatitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearHomeLatitude() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        homeLatitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double homeLongitude = 21;
-      private double homeLongitude_ ;
-      public boolean hasHomeLongitude() {
-        return ((bitField0_ & 0x00020000) == 0x00020000);
-      }
-      public double getHomeLongitude() {
-        return homeLongitude_;
-      }
-      public Builder setHomeLongitude(double value) {
-        bitField0_ |= 0x00020000;
-        homeLongitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearHomeLongitude() {
-        bitField0_ = (bitField0_ & ~0x00020000);
-        homeLongitude_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double homeAltitude = 22;
-      private double homeAltitude_ ;
-      public boolean hasHomeAltitude() {
-        return ((bitField0_ & 0x00040000) == 0x00040000);
-      }
-      public double getHomeAltitude() {
-        return homeAltitude_;
-      }
-      public Builder setHomeAltitude(double value) {
-        bitField0_ |= 0x00040000;
-        homeAltitude_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearHomeAltitude() {
-        bitField0_ = (bitField0_ & ~0x00040000);
-        homeAltitude_ = 0D;
         onChanged();
         return this;
       }
@@ -24785,19 +25072,19 @@ public final class DomainProto {
       // optional int32 icaoAddress = 23;
       private int icaoAddress_ ;
       public boolean hasIcaoAddress() {
-        return ((bitField0_ & 0x00080000) == 0x00080000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       public int getIcaoAddress() {
         return icaoAddress_;
       }
       public Builder setIcaoAddress(int value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00001000;
         icaoAddress_ = value;
         onChanged();
         return this;
       }
       public Builder clearIcaoAddress() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         icaoAddress_ = 0;
         onChanged();
         return this;
@@ -24807,9 +25094,9 @@ public final class DomainProto {
       private java.util.List<com.ugcs.ucs.proto.DomainProto.AdsbAircraft> adsbAircrafts_ =
         java.util.Collections.emptyList();
       private void ensureAdsbAircraftsIsMutable() {
-        if (!((bitField0_ & 0x00100000) == 0x00100000)) {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
           adsbAircrafts_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.AdsbAircraft>(adsbAircrafts_);
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00002000;
          }
       }
       
@@ -24925,7 +25212,7 @@ public final class DomainProto {
       public Builder clearAdsbAircrafts() {
         if (adsbAircraftsBuilder_ == null) {
           adsbAircrafts_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00100000);
+          bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
           adsbAircraftsBuilder_.clear();
@@ -24981,7 +25268,7 @@ public final class DomainProto {
           adsbAircraftsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.AdsbAircraft, com.ugcs.ucs.proto.DomainProto.AdsbAircraft.Builder, com.ugcs.ucs.proto.DomainProto.AdsbAircraftOrBuilder>(
                   adsbAircrafts_,
-                  ((bitField0_ & 0x00100000) == 0x00100000),
+                  ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
           adsbAircrafts_ = null;
@@ -24992,7 +25279,7 @@ public final class DomainProto {
       // optional string serialNumber = 25;
       private java.lang.Object serialNumber_ = "";
       public boolean hasSerialNumber() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       public String getSerialNumber() {
         java.lang.Object ref = serialNumber_;
@@ -25008,19 +25295,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00200000;
+  bitField0_ |= 0x00004000;
         serialNumber_ = value;
         onChanged();
         return this;
       }
       public Builder clearSerialNumber() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         serialNumber_ = getDefaultInstance().getSerialNumber();
         onChanged();
         return this;
       }
       void setSerialNumber(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00004000;
         serialNumber_ = value;
         onChanged();
       }
@@ -25028,7 +25315,7 @@ public final class DomainProto {
       // optional string port = 26;
       private java.lang.Object port_ = "";
       public boolean hasPort() {
-        return ((bitField0_ & 0x00400000) == 0x00400000);
+        return ((bitField0_ & 0x00008000) == 0x00008000);
       }
       public String getPort() {
         java.lang.Object ref = port_;
@@ -25044,21 +25331,45 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00400000;
+  bitField0_ |= 0x00008000;
         port_ = value;
         onChanged();
         return this;
       }
       public Builder clearPort() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         port_ = getDefaultInstance().getPort();
         onChanged();
         return this;
       }
       void setPort(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00008000;
         port_ = value;
         onChanged();
+      }
+      
+      // optional .VehicleSource source = 27;
+      private com.ugcs.ucs.proto.DomainProto.VehicleSource source_ = com.ugcs.ucs.proto.DomainProto.VehicleSource.VS_VSM;
+      public boolean hasSource() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleSource getSource() {
+        return source_;
+      }
+      public Builder setSource(com.ugcs.ucs.proto.DomainProto.VehicleSource value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00010000;
+        source_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearSource() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        source_ = com.ugcs.ucs.proto.DomainProto.VehicleSource.VS_VSM;
+        onChanged();
+        return this;
       }
       
       // @@protoc_insertion_point(builder_scope:Vehicle)
@@ -27189,897 +27500,6 @@ public final class DomainProto {
     // @@protoc_insertion_point(class_scope:VehicleProfilePayloadProfile)
   }
   
-  public interface AvatarOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional int32 id = 1;
-    boolean hasId();
-    int getId();
-    
-    // optional int32 version = 2;
-    boolean hasVersion();
-    int getVersion();
-    
-    // optional string imageMimeType = 3;
-    boolean hasImageMimeType();
-    String getImageMimeType();
-    
-    // optional bytes imageData = 4;
-    boolean hasImageData();
-    com.google.protobuf.ByteString getImageData();
-    
-    // optional string modelMimeType = 5;
-    boolean hasModelMimeType();
-    String getModelMimeType();
-    
-    // optional bytes modelData = 6;
-    boolean hasModelData();
-    com.google.protobuf.ByteString getModelData();
-    
-    // optional string name = 7;
-    boolean hasName();
-    String getName();
-    
-    // optional string tag = 8;
-    boolean hasTag();
-    String getTag();
-  }
-  public static final class Avatar extends
-      com.google.protobuf.GeneratedMessage
-      implements AvatarOrBuilder {
-    // Use Avatar.newBuilder() to construct.
-    private Avatar(Builder builder) {
-      super(builder);
-    }
-    private Avatar(boolean noInit) {}
-    
-    private static final Avatar defaultInstance;
-    public static Avatar getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public Avatar getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_Avatar_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_Avatar_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional int32 id = 1;
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    public boolean hasId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getId() {
-      return id_;
-    }
-    
-    // optional int32 version = 2;
-    public static final int VERSION_FIELD_NUMBER = 2;
-    private int version_;
-    public boolean hasVersion() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public int getVersion() {
-      return version_;
-    }
-    
-    // optional string imageMimeType = 3;
-    public static final int IMAGEMIMETYPE_FIELD_NUMBER = 3;
-    private java.lang.Object imageMimeType_;
-    public boolean hasImageMimeType() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public String getImageMimeType() {
-      java.lang.Object ref = imageMimeType_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          imageMimeType_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getImageMimeTypeBytes() {
-      java.lang.Object ref = imageMimeType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        imageMimeType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional bytes imageData = 4;
-    public static final int IMAGEDATA_FIELD_NUMBER = 4;
-    private com.google.protobuf.ByteString imageData_;
-    public boolean hasImageData() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public com.google.protobuf.ByteString getImageData() {
-      return imageData_;
-    }
-    
-    // optional string modelMimeType = 5;
-    public static final int MODELMIMETYPE_FIELD_NUMBER = 5;
-    private java.lang.Object modelMimeType_;
-    public boolean hasModelMimeType() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public String getModelMimeType() {
-      java.lang.Object ref = modelMimeType_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          modelMimeType_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getModelMimeTypeBytes() {
-      java.lang.Object ref = modelMimeType_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        modelMimeType_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional bytes modelData = 6;
-    public static final int MODELDATA_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString modelData_;
-    public boolean hasModelData() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public com.google.protobuf.ByteString getModelData() {
-      return modelData_;
-    }
-    
-    // optional string name = 7;
-    public static final int NAME_FIELD_NUMBER = 7;
-    private java.lang.Object name_;
-    public boolean hasName() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
-    }
-    public String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          name_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    // optional string tag = 8;
-    public static final int TAG_FIELD_NUMBER = 8;
-    private java.lang.Object tag_;
-    public boolean hasTag() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
-    }
-    public String getTag() {
-      java.lang.Object ref = tag_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          tag_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getTagBytes() {
-      java.lang.Object ref = tag_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        tag_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    
-    private void initFields() {
-      id_ = 0;
-      version_ = 0;
-      imageMimeType_ = "";
-      imageData_ = com.google.protobuf.ByteString.EMPTY;
-      modelMimeType_ = "";
-      modelData_ = com.google.protobuf.ByteString.EMPTY;
-      name_ = "";
-      tag_ = "";
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeInt32(2, version_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getImageMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, imageData_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getModelMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, modelData_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeBytes(7, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeBytes(8, getTagBytes());
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, version_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getImageMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, imageData_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getModelMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, modelData_);
-      }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(7, getNameBytes());
-      }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(8, getTagBytes());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.Avatar parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.Avatar prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_Avatar_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_Avatar_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.DomainProto.Avatar.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        id_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        version_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        imageMimeType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000004);
-        imageData_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        modelMimeType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
-        modelData_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        name_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
-        tag_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.DomainProto.Avatar.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.Avatar getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.Avatar build() {
-        com.ugcs.ucs.proto.DomainProto.Avatar result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.DomainProto.Avatar buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.DomainProto.Avatar result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.Avatar buildPartial() {
-        com.ugcs.ucs.proto.DomainProto.Avatar result = new com.ugcs.ucs.proto.DomainProto.Avatar(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.id_ = id_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.version_ = version_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.imageMimeType_ = imageMimeType_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.imageData_ = imageData_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.modelMimeType_ = modelMimeType_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.modelData_ = modelData_;
-        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
-          to_bitField0_ |= 0x00000040;
-        }
-        result.name_ = name_;
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000080;
-        }
-        result.tag_ = tag_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.DomainProto.Avatar) {
-          return mergeFrom((com.ugcs.ucs.proto.DomainProto.Avatar)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.Avatar other) {
-        if (other == com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance()) return this;
-        if (other.hasId()) {
-          setId(other.getId());
-        }
-        if (other.hasVersion()) {
-          setVersion(other.getVersion());
-        }
-        if (other.hasImageMimeType()) {
-          setImageMimeType(other.getImageMimeType());
-        }
-        if (other.hasImageData()) {
-          setImageData(other.getImageData());
-        }
-        if (other.hasModelMimeType()) {
-          setModelMimeType(other.getModelMimeType());
-        }
-        if (other.hasModelData()) {
-          setModelData(other.getModelData());
-        }
-        if (other.hasName()) {
-          setName(other.getName());
-        }
-        if (other.hasTag()) {
-          setTag(other.getTag());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              id_ = input.readInt32();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              version_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              bitField0_ |= 0x00000004;
-              imageMimeType_ = input.readBytes();
-              break;
-            }
-            case 34: {
-              bitField0_ |= 0x00000008;
-              imageData_ = input.readBytes();
-              break;
-            }
-            case 42: {
-              bitField0_ |= 0x00000010;
-              modelMimeType_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              bitField0_ |= 0x00000020;
-              modelData_ = input.readBytes();
-              break;
-            }
-            case 58: {
-              bitField0_ |= 0x00000040;
-              name_ = input.readBytes();
-              break;
-            }
-            case 66: {
-              bitField0_ |= 0x00000080;
-              tag_ = input.readBytes();
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // optional int32 id = 1;
-      private int id_ ;
-      public boolean hasId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public int getId() {
-        return id_;
-      }
-      public Builder setId(int value) {
-        bitField0_ |= 0x00000001;
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // optional int32 version = 2;
-      private int version_ ;
-      public boolean hasVersion() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public int getVersion() {
-        return version_;
-      }
-      public Builder setVersion(int value) {
-        bitField0_ |= 0x00000002;
-        version_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearVersion() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        version_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // optional string imageMimeType = 3;
-      private java.lang.Object imageMimeType_ = "";
-      public boolean hasImageMimeType() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public String getImageMimeType() {
-        java.lang.Object ref = imageMimeType_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          imageMimeType_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setImageMimeType(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
-        imageMimeType_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearImageMimeType() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        imageMimeType_ = getDefaultInstance().getImageMimeType();
-        onChanged();
-        return this;
-      }
-      void setImageMimeType(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000004;
-        imageMimeType_ = value;
-        onChanged();
-      }
-      
-      // optional bytes imageData = 4;
-      private com.google.protobuf.ByteString imageData_ = com.google.protobuf.ByteString.EMPTY;
-      public boolean hasImageData() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public com.google.protobuf.ByteString getImageData() {
-        return imageData_;
-      }
-      public Builder setImageData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        imageData_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearImageData() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        imageData_ = getDefaultInstance().getImageData();
-        onChanged();
-        return this;
-      }
-      
-      // optional string modelMimeType = 5;
-      private java.lang.Object modelMimeType_ = "";
-      public boolean hasModelMimeType() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public String getModelMimeType() {
-        java.lang.Object ref = modelMimeType_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          modelMimeType_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setModelMimeType(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        modelMimeType_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearModelMimeType() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        modelMimeType_ = getDefaultInstance().getModelMimeType();
-        onChanged();
-        return this;
-      }
-      void setModelMimeType(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000010;
-        modelMimeType_ = value;
-        onChanged();
-      }
-      
-      // optional bytes modelData = 6;
-      private com.google.protobuf.ByteString modelData_ = com.google.protobuf.ByteString.EMPTY;
-      public boolean hasModelData() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public com.google.protobuf.ByteString getModelData() {
-        return modelData_;
-      }
-      public Builder setModelData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        modelData_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearModelData() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        modelData_ = getDefaultInstance().getModelData();
-        onChanged();
-        return this;
-      }
-      
-      // optional string name = 7;
-      private java.lang.Object name_ = "";
-      public boolean hasName() {
-        return ((bitField0_ & 0x00000040) == 0x00000040);
-      }
-      public String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setName(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000040;
-        name_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearName() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        name_ = getDefaultInstance().getName();
-        onChanged();
-        return this;
-      }
-      void setName(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000040;
-        name_ = value;
-        onChanged();
-      }
-      
-      // optional string tag = 8;
-      private java.lang.Object tag_ = "";
-      public boolean hasTag() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
-      }
-      public String getTag() {
-        java.lang.Object ref = tag_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          tag_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
-      }
-      public Builder setTag(String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000080;
-        tag_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        tag_ = getDefaultInstance().getTag();
-        onChanged();
-        return this;
-      }
-      void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000080;
-        tag_ = value;
-        onChanged();
-      }
-      
-      // @@protoc_insertion_point(builder_scope:Avatar)
-    }
-    
-    static {
-      defaultInstance = new Avatar(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:Avatar)
-  }
-  
   public interface VehicleProfileOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -28098,11 +27518,6 @@ public final class DomainProto {
     // optional .VehicleType vehicleType = 4;
     boolean hasVehicleType();
     com.ugcs.ucs.proto.DomainProto.VehicleType getVehicleType();
-    
-    // optional .Avatar avatar = 5;
-    boolean hasAvatar();
-    com.ugcs.ucs.proto.DomainProto.Avatar getAvatar();
-    com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder();
     
     // repeated .VehicleParameter parameters = 6;
     java.util.List<com.ugcs.ucs.proto.DomainProto.VehicleParameter> 
@@ -28144,6 +27559,14 @@ public final class DomainProto {
     // optional bool primary = 12;
     boolean hasPrimary();
     boolean getPrimary();
+    
+    // optional string modelKey = 13;
+    boolean hasModelKey();
+    String getModelKey();
+    
+    // optional string imageKey = 14;
+    boolean hasImageKey();
+    String getImageKey();
   }
   public static final class VehicleProfile extends
       com.google.protobuf.GeneratedMessage
@@ -28236,19 +27659,6 @@ public final class DomainProto {
       return vehicleType_;
     }
     
-    // optional .Avatar avatar = 5;
-    public static final int AVATAR_FIELD_NUMBER = 5;
-    private com.ugcs.ucs.proto.DomainProto.Avatar avatar_;
-    public boolean hasAvatar() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public com.ugcs.ucs.proto.DomainProto.Avatar getAvatar() {
-      return avatar_;
-    }
-    public com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder() {
-      return avatar_;
-    }
-    
     // repeated .VehicleParameter parameters = 6;
     public static final int PARAMETERS_FIELD_NUMBER = 6;
     private java.util.List<com.ugcs.ucs.proto.DomainProto.VehicleParameter> parameters_;
@@ -28295,7 +27705,7 @@ public final class DomainProto {
     public static final int PLATFORM_FIELD_NUMBER = 8;
     private com.ugcs.ucs.proto.DomainProto.Platform platform_;
     public boolean hasPlatform() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
       return platform_;
@@ -28308,7 +27718,7 @@ public final class DomainProto {
     public static final int SEALED_FIELD_NUMBER = 9;
     private boolean sealed_;
     public boolean hasSealed() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public boolean getSealed() {
       return sealed_;
@@ -28318,7 +27728,7 @@ public final class DomainProto {
     public static final int UNREMOVABLE_FIELD_NUMBER = 10;
     private boolean unremovable_;
     public boolean hasUnremovable() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public boolean getUnremovable() {
       return unremovable_;
@@ -28328,7 +27738,7 @@ public final class DomainProto {
     public static final int TAG_FIELD_NUMBER = 11;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -28360,10 +27770,74 @@ public final class DomainProto {
     public static final int PRIMARY_FIELD_NUMBER = 12;
     private boolean primary_;
     public boolean hasPrimary() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
+      return ((bitField0_ & 0x00000100) == 0x00000100);
     }
     public boolean getPrimary() {
       return primary_;
+    }
+    
+    // optional string modelKey = 13;
+    public static final int MODELKEY_FIELD_NUMBER = 13;
+    private java.lang.Object modelKey_;
+    public boolean hasModelKey() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    public String getModelKey() {
+      java.lang.Object ref = modelKey_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          modelKey_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getModelKeyBytes() {
+      java.lang.Object ref = modelKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        modelKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string imageKey = 14;
+    public static final int IMAGEKEY_FIELD_NUMBER = 14;
+    private java.lang.Object imageKey_;
+    public boolean hasImageKey() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    public String getImageKey() {
+      java.lang.Object ref = imageKey_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          imageKey_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getImageKeyBytes() {
+      java.lang.Object ref = imageKey_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        imageKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
     
     private void initFields() {
@@ -28371,7 +27845,6 @@ public final class DomainProto {
       version_ = 0;
       name_ = "";
       vehicleType_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
-      avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
       parameters_ = java.util.Collections.emptyList();
       payloadProfiles_ = java.util.Collections.emptyList();
       platform_ = com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance();
@@ -28379,6 +27852,8 @@ public final class DomainProto {
       unremovable_ = false;
       tag_ = "";
       primary_ = false;
+      modelKey_ = "";
+      imageKey_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -28404,29 +27879,32 @@ public final class DomainProto {
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeEnum(4, vehicleType_.getNumber());
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeMessage(5, avatar_);
-      }
       for (int i = 0; i < parameters_.size(); i++) {
         output.writeMessage(6, parameters_.get(i));
       }
       for (int i = 0; i < payloadProfiles_.size(); i++) {
         output.writeMessage(7, payloadProfiles_.get(i));
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(8, platform_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBool(9, sealed_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBool(10, unremovable_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(11, getTagBytes());
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBool(12, primary_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeBytes(13, getModelKeyBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeBytes(14, getImageKeyBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -28453,10 +27931,6 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, vehicleType_.getNumber());
       }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, avatar_);
-      }
       for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, parameters_.get(i));
@@ -28465,25 +27939,33 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, payloadProfiles_.get(i));
       }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, platform_);
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, sealed_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, unremovable_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(11, getTagBytes());
       }
-      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+      if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, primary_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(13, getModelKeyBytes());
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(14, getImageKeyBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -28601,7 +28083,6 @@ public final class DomainProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getAvatarFieldBuilder();
           getParametersFieldBuilder();
           getPayloadProfilesFieldBuilder();
           getPlatformFieldBuilder();
@@ -28621,21 +28102,15 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         vehicleType_ = com.ugcs.ucs.proto.DomainProto.VehicleType.VT_FIXED_WING;
         bitField0_ = (bitField0_ & ~0x00000008);
-        if (avatarBuilder_ == null) {
-          avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-        } else {
-          avatarBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000010);
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
           parametersBuilder_.clear();
         }
         if (payloadProfilesBuilder_ == null) {
           payloadProfiles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           payloadProfilesBuilder_.clear();
         }
@@ -28644,15 +28119,19 @@ public final class DomainProto {
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         sealed_ = false;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         unremovable_ = false;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         tag_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         primary_ = false;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        modelKey_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
+        imageKey_ = "";
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
       
@@ -28707,56 +28186,56 @@ public final class DomainProto {
           to_bitField0_ |= 0x00000008;
         }
         result.vehicleType_ = vehicleType_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        if (avatarBuilder_ == null) {
-          result.avatar_ = avatar_;
-        } else {
-          result.avatar_ = avatarBuilder_.build();
-        }
         if (parametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
             parameters_ = java.util.Collections.unmodifiableList(parameters_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.parameters_ = parameters_;
         } else {
           result.parameters_ = parametersBuilder_.build();
         }
         if (payloadProfilesBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             payloadProfiles_ = java.util.Collections.unmodifiableList(payloadProfiles_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.payloadProfiles_ = payloadProfiles_;
         } else {
           result.payloadProfiles_ = payloadProfilesBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
-          to_bitField0_ |= 0x00000020;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000010;
         }
         if (platformBuilder_ == null) {
           result.platform_ = platform_;
         } else {
           result.platform_ = platformBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.sealed_ = sealed_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.sealed_ = sealed_;
+        result.unremovable_ = unremovable_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000080;
         }
-        result.unremovable_ = unremovable_;
+        result.tag_ = tag_;
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000100;
         }
-        result.tag_ = tag_;
+        result.primary_ = primary_;
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.primary_ = primary_;
+        result.modelKey_ = modelKey_;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.imageKey_ = imageKey_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -28785,14 +28264,11 @@ public final class DomainProto {
         if (other.hasVehicleType()) {
           setVehicleType(other.getVehicleType());
         }
-        if (other.hasAvatar()) {
-          mergeAvatar(other.getAvatar());
-        }
         if (parametersBuilder_ == null) {
           if (!other.parameters_.isEmpty()) {
             if (parameters_.isEmpty()) {
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureParametersIsMutable();
               parameters_.addAll(other.parameters_);
@@ -28805,7 +28281,7 @@ public final class DomainProto {
               parametersBuilder_.dispose();
               parametersBuilder_ = null;
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000010);
               parametersBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getParametersFieldBuilder() : null;
@@ -28818,7 +28294,7 @@ public final class DomainProto {
           if (!other.payloadProfiles_.isEmpty()) {
             if (payloadProfiles_.isEmpty()) {
               payloadProfiles_ = other.payloadProfiles_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensurePayloadProfilesIsMutable();
               payloadProfiles_.addAll(other.payloadProfiles_);
@@ -28831,7 +28307,7 @@ public final class DomainProto {
               payloadProfilesBuilder_.dispose();
               payloadProfilesBuilder_ = null;
               payloadProfiles_ = other.payloadProfiles_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000020);
               payloadProfilesBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getPayloadProfilesFieldBuilder() : null;
@@ -28854,6 +28330,12 @@ public final class DomainProto {
         }
         if (other.hasPrimary()) {
           setPrimary(other.getPrimary());
+        }
+        if (other.hasModelKey()) {
+          setModelKey(other.getModelKey());
+        }
+        if (other.hasImageKey()) {
+          setImageKey(other.getImageKey());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -28912,15 +28394,6 @@ public final class DomainProto {
               }
               break;
             }
-            case 42: {
-              com.ugcs.ucs.proto.DomainProto.Avatar.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Avatar.newBuilder();
-              if (hasAvatar()) {
-                subBuilder.mergeFrom(getAvatar());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setAvatar(subBuilder.buildPartial());
-              break;
-            }
             case 50: {
               com.ugcs.ucs.proto.DomainProto.VehicleParameter.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.VehicleParameter.newBuilder();
               input.readMessage(subBuilder, extensionRegistry);
@@ -28943,23 +28416,33 @@ public final class DomainProto {
               break;
             }
             case 72: {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000080;
               sealed_ = input.readBool();
               break;
             }
             case 80: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000100;
               unremovable_ = input.readBool();
               break;
             }
             case 90: {
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000200;
               tag_ = input.readBytes();
               break;
             }
             case 96: {
-              bitField0_ |= 0x00000800;
+              bitField0_ |= 0x00000400;
               primary_ = input.readBool();
+              break;
+            }
+            case 106: {
+              bitField0_ |= 0x00000800;
+              modelKey_ = input.readBytes();
+              break;
+            }
+            case 114: {
+              bitField0_ |= 0x00001000;
+              imageKey_ = input.readBytes();
               break;
             }
           }
@@ -29070,103 +28553,13 @@ public final class DomainProto {
         return this;
       }
       
-      // optional .Avatar avatar = 5;
-      private com.ugcs.ucs.proto.DomainProto.Avatar avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder> avatarBuilder_;
-      public boolean hasAvatar() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public com.ugcs.ucs.proto.DomainProto.Avatar getAvatar() {
-        if (avatarBuilder_ == null) {
-          return avatar_;
-        } else {
-          return avatarBuilder_.getMessage();
-        }
-      }
-      public Builder setAvatar(com.ugcs.ucs.proto.DomainProto.Avatar value) {
-        if (avatarBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          avatar_ = value;
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-      public Builder setAvatar(
-          com.ugcs.ucs.proto.DomainProto.Avatar.Builder builderForValue) {
-        if (avatarBuilder_ == null) {
-          avatar_ = builderForValue.build();
-          onChanged();
-        } else {
-          avatarBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-      public Builder mergeAvatar(com.ugcs.ucs.proto.DomainProto.Avatar value) {
-        if (avatarBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010) &&
-              avatar_ != com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance()) {
-            avatar_ =
-              com.ugcs.ucs.proto.DomainProto.Avatar.newBuilder(avatar_).mergeFrom(value).buildPartial();
-          } else {
-            avatar_ = value;
-          }
-          onChanged();
-        } else {
-          avatarBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000010;
-        return this;
-      }
-      public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          avatar_ = com.ugcs.ucs.proto.DomainProto.Avatar.getDefaultInstance();
-          onChanged();
-        } else {
-          avatarBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-      public com.ugcs.ucs.proto.DomainProto.Avatar.Builder getAvatarBuilder() {
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return getAvatarFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder getAvatarOrBuilder() {
-        if (avatarBuilder_ != null) {
-          return avatarBuilder_.getMessageOrBuilder();
-        } else {
-          return avatar_;
-        }
-      }
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder> 
-          getAvatarFieldBuilder() {
-        if (avatarBuilder_ == null) {
-          avatarBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.Avatar, com.ugcs.ucs.proto.DomainProto.Avatar.Builder, com.ugcs.ucs.proto.DomainProto.AvatarOrBuilder>(
-                  avatar_,
-                  getParentForChildren(),
-                  isClean());
-          avatar_ = null;
-        }
-        return avatarBuilder_;
-      }
-      
       // repeated .VehicleParameter parameters = 6;
       private java.util.List<com.ugcs.ucs.proto.DomainProto.VehicleParameter> parameters_ =
         java.util.Collections.emptyList();
       private void ensureParametersIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
           parameters_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.VehicleParameter>(parameters_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
          }
       }
       
@@ -29282,7 +28675,7 @@ public final class DomainProto {
       public Builder clearParameters() {
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           parametersBuilder_.clear();
@@ -29338,7 +28731,7 @@ public final class DomainProto {
           parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.VehicleParameter, com.ugcs.ucs.proto.DomainProto.VehicleParameter.Builder, com.ugcs.ucs.proto.DomainProto.VehicleParameterOrBuilder>(
                   parameters_,
-                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
                   isClean());
           parameters_ = null;
@@ -29350,9 +28743,9 @@ public final class DomainProto {
       private java.util.List<com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile> payloadProfiles_ =
         java.util.Collections.emptyList();
       private void ensurePayloadProfilesIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           payloadProfiles_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile>(payloadProfiles_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
          }
       }
       
@@ -29468,7 +28861,7 @@ public final class DomainProto {
       public Builder clearPayloadProfiles() {
         if (payloadProfilesBuilder_ == null) {
           payloadProfiles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           payloadProfilesBuilder_.clear();
@@ -29524,7 +28917,7 @@ public final class DomainProto {
           payloadProfilesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile, com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.Builder, com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfileOrBuilder>(
                   payloadProfiles_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           payloadProfiles_ = null;
@@ -29537,7 +28930,7 @@ public final class DomainProto {
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Platform, com.ugcs.ucs.proto.DomainProto.Platform.Builder, com.ugcs.ucs.proto.DomainProto.PlatformOrBuilder> platformBuilder_;
       public boolean hasPlatform() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       public com.ugcs.ucs.proto.DomainProto.Platform getPlatform() {
         if (platformBuilder_ == null) {
@@ -29556,7 +28949,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder setPlatform(
@@ -29567,12 +28960,12 @@ public final class DomainProto {
         } else {
           platformBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder mergePlatform(com.ugcs.ucs.proto.DomainProto.Platform value) {
         if (platformBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
               platform_ != com.ugcs.ucs.proto.DomainProto.Platform.getDefaultInstance()) {
             platform_ =
               com.ugcs.ucs.proto.DomainProto.Platform.newBuilder(platform_).mergeFrom(value).buildPartial();
@@ -29583,7 +28976,7 @@ public final class DomainProto {
         } else {
           platformBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         return this;
       }
       public Builder clearPlatform() {
@@ -29593,11 +28986,11 @@ public final class DomainProto {
         } else {
           platformBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       public com.ugcs.ucs.proto.DomainProto.Platform.Builder getPlatformBuilder() {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getPlatformFieldBuilder().getBuilder();
       }
@@ -29625,19 +29018,19 @@ public final class DomainProto {
       // optional bool sealed = 9;
       private boolean sealed_ ;
       public boolean hasSealed() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public boolean getSealed() {
         return sealed_;
       }
       public Builder setSealed(boolean value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         sealed_ = value;
         onChanged();
         return this;
       }
       public Builder clearSealed() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         sealed_ = false;
         onChanged();
         return this;
@@ -29646,19 +29039,19 @@ public final class DomainProto {
       // optional bool unremovable = 10;
       private boolean unremovable_ ;
       public boolean hasUnremovable() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public boolean getUnremovable() {
         return unremovable_;
       }
       public Builder setUnremovable(boolean value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         unremovable_ = value;
         onChanged();
         return this;
       }
       public Builder clearUnremovable() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         unremovable_ = false;
         onChanged();
         return this;
@@ -29667,7 +29060,7 @@ public final class DomainProto {
       // optional string tag = 11;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -29683,19 +29076,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
       }
@@ -29703,22 +29096,94 @@ public final class DomainProto {
       // optional bool primary = 12;
       private boolean primary_ ;
       public boolean hasPrimary() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       public boolean getPrimary() {
         return primary_;
       }
       public Builder setPrimary(boolean value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         primary_ = value;
         onChanged();
         return this;
       }
       public Builder clearPrimary() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         primary_ = false;
         onChanged();
         return this;
+      }
+      
+      // optional string modelKey = 13;
+      private java.lang.Object modelKey_ = "";
+      public boolean hasModelKey() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      public String getModelKey() {
+        java.lang.Object ref = modelKey_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          modelKey_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setModelKey(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
+        modelKey_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearModelKey() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        modelKey_ = getDefaultInstance().getModelKey();
+        onChanged();
+        return this;
+      }
+      void setModelKey(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000800;
+        modelKey_ = value;
+        onChanged();
+      }
+      
+      // optional string imageKey = 14;
+      private java.lang.Object imageKey_ = "";
+      public boolean hasImageKey() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      public String getImageKey() {
+        java.lang.Object ref = imageKey_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          imageKey_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setImageKey(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
+        imageKey_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearImageKey() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        imageKey_ = getDefaultInstance().getImageKey();
+        onChanged();
+        return this;
+      }
+      void setImageKey(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00001000;
+        imageKey_ = value;
+        onChanged();
       }
       
       // @@protoc_insertion_point(builder_scope:VehicleProfile)
@@ -30506,13 +29971,9 @@ public final class DomainProto {
     boolean hasPayloadType();
     com.ugcs.ucs.proto.DomainProto.PayloadType getPayloadType();
     
-    // optional string imageMimeType = 5;
-    boolean hasImageMimeType();
-    String getImageMimeType();
-    
-    // optional bytes imageData = 6;
-    boolean hasImageData();
-    com.google.protobuf.ByteString getImageData();
+    // optional string imageKey = 5;
+    boolean hasImageKey();
+    String getImageKey();
     
     // repeated .PayloadParameter parameters = 7;
     java.util.List<com.ugcs.ucs.proto.DomainProto.PayloadParameter> 
@@ -30637,14 +30098,14 @@ public final class DomainProto {
       return payloadType_;
     }
     
-    // optional string imageMimeType = 5;
-    public static final int IMAGEMIMETYPE_FIELD_NUMBER = 5;
-    private java.lang.Object imageMimeType_;
-    public boolean hasImageMimeType() {
+    // optional string imageKey = 5;
+    public static final int IMAGEKEY_FIELD_NUMBER = 5;
+    private java.lang.Object imageKey_;
+    public boolean hasImageKey() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
-    public String getImageMimeType() {
-      java.lang.Object ref = imageMimeType_;
+    public String getImageKey() {
+      java.lang.Object ref = imageKey_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
@@ -30652,31 +30113,21 @@ public final class DomainProto {
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          imageMimeType_ = s;
+          imageKey_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getImageMimeTypeBytes() {
-      java.lang.Object ref = imageMimeType_;
+    private com.google.protobuf.ByteString getImageKeyBytes() {
+      java.lang.Object ref = imageKey_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        imageMimeType_ = b;
+        imageKey_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-    
-    // optional bytes imageData = 6;
-    public static final int IMAGEDATA_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString imageData_;
-    public boolean hasImageData() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    public com.google.protobuf.ByteString getImageData() {
-      return imageData_;
     }
     
     // repeated .PayloadParameter parameters = 7;
@@ -30725,7 +30176,7 @@ public final class DomainProto {
     public static final int SEALED_FIELD_NUMBER = 9;
     private boolean sealed_;
     public boolean hasSealed() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     public boolean getSealed() {
       return sealed_;
@@ -30735,7 +30186,7 @@ public final class DomainProto {
     public static final int UNREMOVABLE_FIELD_NUMBER = 10;
     private boolean unremovable_;
     public boolean hasUnremovable() {
-      return ((bitField0_ & 0x00000080) == 0x00000080);
+      return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     public boolean getUnremovable() {
       return unremovable_;
@@ -30745,7 +30196,7 @@ public final class DomainProto {
     public static final int TAG_FIELD_NUMBER = 11;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -30778,8 +30229,7 @@ public final class DomainProto {
       version_ = 0;
       name_ = "";
       payloadType_ = com.ugcs.ucs.proto.DomainProto.PayloadType.PT_CAMERA;
-      imageMimeType_ = "";
-      imageData_ = com.google.protobuf.ByteString.EMPTY;
+      imageKey_ = "";
       parameters_ = java.util.Collections.emptyList();
       platforms_ = java.util.Collections.emptyList();
       sealed_ = false;
@@ -30811,10 +30261,7 @@ public final class DomainProto {
         output.writeEnum(4, payloadType_.getNumber());
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getImageMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeBytes(6, imageData_);
+        output.writeBytes(5, getImageKeyBytes());
       }
       for (int i = 0; i < parameters_.size(); i++) {
         output.writeMessage(7, parameters_.get(i));
@@ -30822,13 +30269,13 @@ public final class DomainProto {
       for (int i = 0; i < platforms_.size(); i++) {
         output.writeMessage(8, platforms_.get(i));
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         output.writeBool(9, sealed_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         output.writeBool(10, unremovable_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(11, getTagBytes());
       }
       getUnknownFields().writeTo(output);
@@ -30858,11 +30305,7 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getImageMimeTypeBytes());
-      }
-      if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(6, imageData_);
+          .computeBytesSize(5, getImageKeyBytes());
       }
       for (int i = 0; i < parameters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -30872,15 +30315,15 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, platforms_.get(i));
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, sealed_);
       }
-      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, unremovable_);
       }
-      if (((bitField0_ & 0x00000100) == 0x00000100)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(11, getTagBytes());
       }
@@ -31018,28 +30461,26 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000004);
         payloadType_ = com.ugcs.ucs.proto.DomainProto.PayloadType.PT_CAMERA;
         bitField0_ = (bitField0_ & ~0x00000008);
-        imageMimeType_ = "";
+        imageKey_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
-        imageData_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           parametersBuilder_.clear();
         }
         if (platformsBuilder_ == null) {
           platforms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           platformsBuilder_.clear();
         }
         sealed_ = false;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         unremovable_ = false;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         tag_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       
@@ -31097,39 +30538,35 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.imageMimeType_ = imageMimeType_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        result.imageData_ = imageData_;
+        result.imageKey_ = imageKey_;
         if (parametersBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             parameters_ = java.util.Collections.unmodifiableList(parameters_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.parameters_ = parameters_;
         } else {
           result.parameters_ = parametersBuilder_.build();
         }
         if (platformsBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             platforms_ = java.util.Collections.unmodifiableList(platforms_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.platforms_ = platforms_;
         } else {
           result.platforms_ = platformsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.sealed_ = sealed_;
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.sealed_ = sealed_;
+        result.unremovable_ = unremovable_;
         if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000080;
-        }
-        result.unremovable_ = unremovable_;
-        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
-          to_bitField0_ |= 0x00000100;
         }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
@@ -31160,17 +30597,14 @@ public final class DomainProto {
         if (other.hasPayloadType()) {
           setPayloadType(other.getPayloadType());
         }
-        if (other.hasImageMimeType()) {
-          setImageMimeType(other.getImageMimeType());
-        }
-        if (other.hasImageData()) {
-          setImageData(other.getImageData());
+        if (other.hasImageKey()) {
+          setImageKey(other.getImageKey());
         }
         if (parametersBuilder_ == null) {
           if (!other.parameters_.isEmpty()) {
             if (parameters_.isEmpty()) {
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureParametersIsMutable();
               parameters_.addAll(other.parameters_);
@@ -31183,7 +30617,7 @@ public final class DomainProto {
               parametersBuilder_.dispose();
               parametersBuilder_ = null;
               parameters_ = other.parameters_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000020);
               parametersBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getParametersFieldBuilder() : null;
@@ -31196,7 +30630,7 @@ public final class DomainProto {
           if (!other.platforms_.isEmpty()) {
             if (platforms_.isEmpty()) {
               platforms_ = other.platforms_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensurePlatformsIsMutable();
               platforms_.addAll(other.platforms_);
@@ -31209,7 +30643,7 @@ public final class DomainProto {
               platformsBuilder_.dispose();
               platformsBuilder_ = null;
               platforms_ = other.platforms_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000040);
               platformsBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getPlatformsFieldBuilder() : null;
@@ -31286,12 +30720,7 @@ public final class DomainProto {
             }
             case 42: {
               bitField0_ |= 0x00000010;
-              imageMimeType_ = input.readBytes();
-              break;
-            }
-            case 50: {
-              bitField0_ |= 0x00000020;
-              imageData_ = input.readBytes();
+              imageKey_ = input.readBytes();
               break;
             }
             case 58: {
@@ -31307,17 +30736,17 @@ public final class DomainProto {
               break;
             }
             case 72: {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000080;
               sealed_ = input.readBool();
               break;
             }
             case 80: {
-              bitField0_ |= 0x00000200;
+              bitField0_ |= 0x00000100;
               unremovable_ = input.readBool();
               break;
             }
             case 90: {
-              bitField0_ |= 0x00000400;
+              bitField0_ |= 0x00000200;
               tag_ = input.readBytes();
               break;
             }
@@ -31429,73 +30858,49 @@ public final class DomainProto {
         return this;
       }
       
-      // optional string imageMimeType = 5;
-      private java.lang.Object imageMimeType_ = "";
-      public boolean hasImageMimeType() {
+      // optional string imageKey = 5;
+      private java.lang.Object imageKey_ = "";
+      public boolean hasImageKey() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
-      public String getImageMimeType() {
-        java.lang.Object ref = imageMimeType_;
+      public String getImageKey() {
+        java.lang.Object ref = imageKey_;
         if (!(ref instanceof String)) {
           String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          imageMimeType_ = s;
+          imageKey_ = s;
           return s;
         } else {
           return (String) ref;
         }
       }
-      public Builder setImageMimeType(String value) {
+      public Builder setImageKey(String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000010;
-        imageMimeType_ = value;
+        imageKey_ = value;
         onChanged();
         return this;
       }
-      public Builder clearImageMimeType() {
+      public Builder clearImageKey() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        imageMimeType_ = getDefaultInstance().getImageMimeType();
+        imageKey_ = getDefaultInstance().getImageKey();
         onChanged();
         return this;
       }
-      void setImageMimeType(com.google.protobuf.ByteString value) {
+      void setImageKey(com.google.protobuf.ByteString value) {
         bitField0_ |= 0x00000010;
-        imageMimeType_ = value;
+        imageKey_ = value;
         onChanged();
-      }
-      
-      // optional bytes imageData = 6;
-      private com.google.protobuf.ByteString imageData_ = com.google.protobuf.ByteString.EMPTY;
-      public boolean hasImageData() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      public com.google.protobuf.ByteString getImageData() {
-        return imageData_;
-      }
-      public Builder setImageData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000020;
-        imageData_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearImageData() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        imageData_ = getDefaultInstance().getImageData();
-        onChanged();
-        return this;
       }
       
       // repeated .PayloadParameter parameters = 7;
       private java.util.List<com.ugcs.ucs.proto.DomainProto.PayloadParameter> parameters_ =
         java.util.Collections.emptyList();
       private void ensureParametersIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           parameters_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.PayloadParameter>(parameters_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
          }
       }
       
@@ -31611,7 +31016,7 @@ public final class DomainProto {
       public Builder clearParameters() {
         if (parametersBuilder_ == null) {
           parameters_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           parametersBuilder_.clear();
@@ -31667,7 +31072,7 @@ public final class DomainProto {
           parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.PayloadParameter, com.ugcs.ucs.proto.DomainProto.PayloadParameter.Builder, com.ugcs.ucs.proto.DomainProto.PayloadParameterOrBuilder>(
                   parameters_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           parameters_ = null;
@@ -31679,9 +31084,9 @@ public final class DomainProto {
       private java.util.List<com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile> platforms_ =
         java.util.Collections.emptyList();
       private void ensurePlatformsIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           platforms_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile>(platforms_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000040;
          }
       }
       
@@ -31797,7 +31202,7 @@ public final class DomainProto {
       public Builder clearPlatforms() {
         if (platformsBuilder_ == null) {
           platforms_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           platformsBuilder_.clear();
@@ -31853,7 +31258,7 @@ public final class DomainProto {
           platformsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile, com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfile.Builder, com.ugcs.ucs.proto.DomainProto.PlatformPayloadProfileOrBuilder>(
                   platforms_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           platforms_ = null;
@@ -31864,19 +31269,19 @@ public final class DomainProto {
       // optional bool sealed = 9;
       private boolean sealed_ ;
       public boolean hasSealed() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       public boolean getSealed() {
         return sealed_;
       }
       public Builder setSealed(boolean value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         sealed_ = value;
         onChanged();
         return this;
       }
       public Builder clearSealed() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         sealed_ = false;
         onChanged();
         return this;
@@ -31885,19 +31290,19 @@ public final class DomainProto {
       // optional bool unremovable = 10;
       private boolean unremovable_ ;
       public boolean hasUnremovable() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public boolean getUnremovable() {
         return unremovable_;
       }
       public Builder setUnremovable(boolean value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         unremovable_ = value;
         onChanged();
         return this;
       }
       public Builder clearUnremovable() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         unremovable_ = false;
         onChanged();
         return this;
@@ -31906,7 +31311,7 @@ public final class DomainProto {
       // optional string tag = 11;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -31922,19 +31327,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
       }
@@ -44441,6 +43846,1075 @@ public final class DomainProto {
     // @@protoc_insertion_point(class_scope:Route)
   }
   
+  public interface RouteUploadOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional .Route route = 3;
+    boolean hasRoute();
+    com.ugcs.ucs.proto.DomainProto.Route getRoute();
+    com.ugcs.ucs.proto.DomainProto.RouteOrBuilder getRouteOrBuilder();
+    
+    // optional string routeModificationUuid = 4;
+    boolean hasRouteModificationUuid();
+    String getRouteModificationUuid();
+    
+    // optional .Vehicle vehicle = 5;
+    boolean hasVehicle();
+    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
+    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
+    
+    // optional .User user = 6;
+    boolean hasUser();
+    com.ugcs.ucs.proto.DomainProto.User getUser();
+    com.ugcs.ucs.proto.DomainProto.UserOrBuilder getUserOrBuilder();
+    
+    // optional int64 uploadTime = 7;
+    boolean hasUploadTime();
+    long getUploadTime();
+    
+    // optional string tag = 8;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class RouteUpload extends
+      com.google.protobuf.GeneratedMessage
+      implements RouteUploadOrBuilder {
+    // Use RouteUpload.newBuilder() to construct.
+    private RouteUpload(Builder builder) {
+      super(builder);
+    }
+    private RouteUpload(boolean noInit) {}
+    
+    private static final RouteUpload defaultInstance;
+    public static RouteUpload getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public RouteUpload getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RouteUpload_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RouteUpload_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional .Route route = 3;
+    public static final int ROUTE_FIELD_NUMBER = 3;
+    private com.ugcs.ucs.proto.DomainProto.Route route_;
+    public boolean hasRoute() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Route getRoute() {
+      return route_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.RouteOrBuilder getRouteOrBuilder() {
+      return route_;
+    }
+    
+    // optional string routeModificationUuid = 4;
+    public static final int ROUTEMODIFICATIONUUID_FIELD_NUMBER = 4;
+    private java.lang.Object routeModificationUuid_;
+    public boolean hasRouteModificationUuid() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getRouteModificationUuid() {
+      java.lang.Object ref = routeModificationUuid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          routeModificationUuid_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getRouteModificationUuidBytes() {
+      java.lang.Object ref = routeModificationUuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        routeModificationUuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional .Vehicle vehicle = 5;
+    public static final int VEHICLE_FIELD_NUMBER = 5;
+    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
+    public boolean hasVehicle() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+      return vehicle_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+      return vehicle_;
+    }
+    
+    // optional .User user = 6;
+    public static final int USER_FIELD_NUMBER = 6;
+    private com.ugcs.ucs.proto.DomainProto.User user_;
+    public boolean hasUser() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public com.ugcs.ucs.proto.DomainProto.User getUser() {
+      return user_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.UserOrBuilder getUserOrBuilder() {
+      return user_;
+    }
+    
+    // optional int64 uploadTime = 7;
+    public static final int UPLOADTIME_FIELD_NUMBER = 7;
+    private long uploadTime_;
+    public boolean hasUploadTime() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public long getUploadTime() {
+      return uploadTime_;
+    }
+    
+    // optional string tag = 8;
+    public static final int TAG_FIELD_NUMBER = 8;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000080) == 0x00000080);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      route_ = com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance();
+      routeModificationUuid_ = "";
+      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      user_ = com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance();
+      uploadTime_ = 0L;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, route_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getRouteModificationUuidBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeMessage(5, vehicle_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeMessage(6, user_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeInt64(7, uploadTime_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        output.writeBytes(8, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, route_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getRouteModificationUuidBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, vehicle_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, user_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, uploadTime_);
+      }
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(8, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RouteUpload parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.RouteUpload prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.RouteUploadOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RouteUpload_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RouteUpload_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.RouteUpload.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getRouteFieldBuilder();
+          getVehicleFieldBuilder();
+          getUserFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (routeBuilder_ == null) {
+          route_ = com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance();
+        } else {
+          routeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        routeModificationUuid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        if (userBuilder_ == null) {
+          user_ = com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance();
+        } else {
+          userBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        uploadTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.RouteUpload.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RouteUpload getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RouteUpload build() {
+        com.ugcs.ucs.proto.DomainProto.RouteUpload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.RouteUpload buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.RouteUpload result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RouteUpload buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.RouteUpload result = new com.ugcs.ucs.proto.DomainProto.RouteUpload(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (routeBuilder_ == null) {
+          result.route_ = route_;
+        } else {
+          result.route_ = routeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.routeModificationUuid_ = routeModificationUuid_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        if (vehicleBuilder_ == null) {
+          result.vehicle_ = vehicle_;
+        } else {
+          result.vehicle_ = vehicleBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        if (userBuilder_ == null) {
+          result.user_ = user_;
+        } else {
+          result.user_ = userBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.uploadTime_ = uploadTime_;
+        if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
+          to_bitField0_ |= 0x00000080;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.RouteUpload) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.RouteUpload)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.RouteUpload other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.RouteUpload.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasRoute()) {
+          mergeRoute(other.getRoute());
+        }
+        if (other.hasRouteModificationUuid()) {
+          setRouteModificationUuid(other.getRouteModificationUuid());
+        }
+        if (other.hasVehicle()) {
+          mergeVehicle(other.getVehicle());
+        }
+        if (other.hasUser()) {
+          mergeUser(other.getUser());
+        }
+        if (other.hasUploadTime()) {
+          setUploadTime(other.getUploadTime());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              com.ugcs.ucs.proto.DomainProto.Route.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Route.newBuilder();
+              if (hasRoute()) {
+                subBuilder.mergeFrom(getRoute());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setRoute(subBuilder.buildPartial());
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              routeModificationUuid_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
+              if (hasVehicle()) {
+                subBuilder.mergeFrom(getVehicle());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVehicle(subBuilder.buildPartial());
+              break;
+            }
+            case 50: {
+              com.ugcs.ucs.proto.DomainProto.User.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.User.newBuilder();
+              if (hasUser()) {
+                subBuilder.mergeFrom(getUser());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setUser(subBuilder.buildPartial());
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              uploadTime_ = input.readInt64();
+              break;
+            }
+            case 66: {
+              bitField0_ |= 0x00000080;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional .Route route = 3;
+      private com.ugcs.ucs.proto.DomainProto.Route route_ = com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Route, com.ugcs.ucs.proto.DomainProto.Route.Builder, com.ugcs.ucs.proto.DomainProto.RouteOrBuilder> routeBuilder_;
+      public boolean hasRoute() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Route getRoute() {
+        if (routeBuilder_ == null) {
+          return route_;
+        } else {
+          return routeBuilder_.getMessage();
+        }
+      }
+      public Builder setRoute(com.ugcs.ucs.proto.DomainProto.Route value) {
+        if (routeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          route_ = value;
+          onChanged();
+        } else {
+          routeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder setRoute(
+          com.ugcs.ucs.proto.DomainProto.Route.Builder builderForValue) {
+        if (routeBuilder_ == null) {
+          route_ = builderForValue.build();
+          onChanged();
+        } else {
+          routeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder mergeRoute(com.ugcs.ucs.proto.DomainProto.Route value) {
+        if (routeBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              route_ != com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance()) {
+            route_ =
+              com.ugcs.ucs.proto.DomainProto.Route.newBuilder(route_).mergeFrom(value).buildPartial();
+          } else {
+            route_ = value;
+          }
+          onChanged();
+        } else {
+          routeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder clearRoute() {
+        if (routeBuilder_ == null) {
+          route_ = com.ugcs.ucs.proto.DomainProto.Route.getDefaultInstance();
+          onChanged();
+        } else {
+          routeBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Route.Builder getRouteBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getRouteFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.RouteOrBuilder getRouteOrBuilder() {
+        if (routeBuilder_ != null) {
+          return routeBuilder_.getMessageOrBuilder();
+        } else {
+          return route_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Route, com.ugcs.ucs.proto.DomainProto.Route.Builder, com.ugcs.ucs.proto.DomainProto.RouteOrBuilder> 
+          getRouteFieldBuilder() {
+        if (routeBuilder_ == null) {
+          routeBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Route, com.ugcs.ucs.proto.DomainProto.Route.Builder, com.ugcs.ucs.proto.DomainProto.RouteOrBuilder>(
+                  route_,
+                  getParentForChildren(),
+                  isClean());
+          route_ = null;
+        }
+        return routeBuilder_;
+      }
+      
+      // optional string routeModificationUuid = 4;
+      private java.lang.Object routeModificationUuid_ = "";
+      public boolean hasRouteModificationUuid() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public String getRouteModificationUuid() {
+        java.lang.Object ref = routeModificationUuid_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          routeModificationUuid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setRouteModificationUuid(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        routeModificationUuid_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRouteModificationUuid() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        routeModificationUuid_ = getDefaultInstance().getRouteModificationUuid();
+        onChanged();
+        return this;
+      }
+      void setRouteModificationUuid(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
+        routeModificationUuid_ = value;
+        onChanged();
+      }
+      
+      // optional .Vehicle vehicle = 5;
+      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
+      public boolean hasVehicle() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+        if (vehicleBuilder_ == null) {
+          return vehicle_;
+        } else {
+          return vehicleBuilder_.getMessage();
+        }
+      }
+      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vehicle_ = value;
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      public Builder setVehicle(
+          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
+            vehicle_ =
+              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+          } else {
+            vehicle_ = value;
+          }
+          onChanged();
+        } else {
+          vehicleBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      public Builder clearVehicle() {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+          onChanged();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getVehicleFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+        if (vehicleBuilder_ != null) {
+          return vehicleBuilder_.getMessageOrBuilder();
+        } else {
+          return vehicle_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
+          getVehicleFieldBuilder() {
+        if (vehicleBuilder_ == null) {
+          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
+                  vehicle_,
+                  getParentForChildren(),
+                  isClean());
+          vehicle_ = null;
+        }
+        return vehicleBuilder_;
+      }
+      
+      // optional .User user = 6;
+      private com.ugcs.ucs.proto.DomainProto.User user_ = com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.User, com.ugcs.ucs.proto.DomainProto.User.Builder, com.ugcs.ucs.proto.DomainProto.UserOrBuilder> userBuilder_;
+      public boolean hasUser() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public com.ugcs.ucs.proto.DomainProto.User getUser() {
+        if (userBuilder_ == null) {
+          return user_;
+        } else {
+          return userBuilder_.getMessage();
+        }
+      }
+      public Builder setUser(com.ugcs.ucs.proto.DomainProto.User value) {
+        if (userBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          user_ = value;
+          onChanged();
+        } else {
+          userBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      public Builder setUser(
+          com.ugcs.ucs.proto.DomainProto.User.Builder builderForValue) {
+        if (userBuilder_ == null) {
+          user_ = builderForValue.build();
+          onChanged();
+        } else {
+          userBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      public Builder mergeUser(com.ugcs.ucs.proto.DomainProto.User value) {
+        if (userBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              user_ != com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance()) {
+            user_ =
+              com.ugcs.ucs.proto.DomainProto.User.newBuilder(user_).mergeFrom(value).buildPartial();
+          } else {
+            user_ = value;
+          }
+          onChanged();
+        } else {
+          userBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+      public Builder clearUser() {
+        if (userBuilder_ == null) {
+          user_ = com.ugcs.ucs.proto.DomainProto.User.getDefaultInstance();
+          onChanged();
+        } else {
+          userBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.User.Builder getUserBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getUserFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.UserOrBuilder getUserOrBuilder() {
+        if (userBuilder_ != null) {
+          return userBuilder_.getMessageOrBuilder();
+        } else {
+          return user_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.User, com.ugcs.ucs.proto.DomainProto.User.Builder, com.ugcs.ucs.proto.DomainProto.UserOrBuilder> 
+          getUserFieldBuilder() {
+        if (userBuilder_ == null) {
+          userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.User, com.ugcs.ucs.proto.DomainProto.User.Builder, com.ugcs.ucs.proto.DomainProto.UserOrBuilder>(
+                  user_,
+                  getParentForChildren(),
+                  isClean());
+          user_ = null;
+        }
+        return userBuilder_;
+      }
+      
+      // optional int64 uploadTime = 7;
+      private long uploadTime_ ;
+      public boolean hasUploadTime() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public long getUploadTime() {
+        return uploadTime_;
+      }
+      public Builder setUploadTime(long value) {
+        bitField0_ |= 0x00000040;
+        uploadTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearUploadTime() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        uploadTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 8;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000080;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:RouteUpload)
+    }
+    
+    static {
+      defaultInstance = new RouteUpload(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:RouteUpload)
+  }
+  
   public interface FailsafeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -53556,9 +54030,33 @@ public final class DomainProto {
     com.ugcs.ucs.proto.DomainProto.RouteAttributes getRouteAttributes();
     com.ugcs.ucs.proto.DomainProto.RouteAttributesOrBuilder getRouteAttributesOrBuilder();
     
+    // optional .SetServo setServo = 23;
+    boolean hasSetServo();
+    com.ugcs.ucs.proto.DomainProto.SetServo getSetServo();
+    com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder();
+    
+    // optional .RepeatServo repeatServo = 24;
+    boolean hasRepeatServo();
+    com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo();
+    com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder();
+    
+    // optional .TransitionVtol transitionVtol = 26;
+    boolean hasTransitionVtol();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder();
+    
+    // optional .TransitionFixed transitionFixed = 27;
+    boolean hasTransitionFixed();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder();
+    
     // optional string tag = 21;
     boolean hasTag();
     String getTag();
+    
+    // optional double estimatedTime = 25;
+    boolean hasEstimatedTime();
+    double getEstimatedTime();
   }
   public static final class Action extends
       com.google.protobuf.GeneratedMessage
@@ -53850,11 +54348,63 @@ public final class DomainProto {
       return routeAttributes_;
     }
     
+    // optional .SetServo setServo = 23;
+    public static final int SETSERVO_FIELD_NUMBER = 23;
+    private com.ugcs.ucs.proto.DomainProto.SetServo setServo_;
+    public boolean hasSetServo() {
+      return ((bitField0_ & 0x00200000) == 0x00200000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServo getSetServo() {
+      return setServo_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder() {
+      return setServo_;
+    }
+    
+    // optional .RepeatServo repeatServo = 24;
+    public static final int REPEATSERVO_FIELD_NUMBER = 24;
+    private com.ugcs.ucs.proto.DomainProto.RepeatServo repeatServo_;
+    public boolean hasRepeatServo() {
+      return ((bitField0_ & 0x00400000) == 0x00400000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo() {
+      return repeatServo_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder() {
+      return repeatServo_;
+    }
+    
+    // optional .TransitionVtol transitionVtol = 26;
+    public static final int TRANSITIONVTOL_FIELD_NUMBER = 26;
+    private com.ugcs.ucs.proto.DomainProto.TransitionVtol transitionVtol_;
+    public boolean hasTransitionVtol() {
+      return ((bitField0_ & 0x00800000) == 0x00800000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol() {
+      return transitionVtol_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder() {
+      return transitionVtol_;
+    }
+    
+    // optional .TransitionFixed transitionFixed = 27;
+    public static final int TRANSITIONFIXED_FIELD_NUMBER = 27;
+    private com.ugcs.ucs.proto.DomainProto.TransitionFixed transitionFixed_;
+    public boolean hasTransitionFixed() {
+      return ((bitField0_ & 0x01000000) == 0x01000000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed() {
+      return transitionFixed_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder() {
+      return transitionFixed_;
+    }
+    
     // optional string tag = 21;
     public static final int TAG_FIELD_NUMBER = 21;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00200000) == 0x00200000);
+      return ((bitField0_ & 0x02000000) == 0x02000000);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -53882,6 +54432,16 @@ public final class DomainProto {
       }
     }
     
+    // optional double estimatedTime = 25;
+    public static final int ESTIMATEDTIME_FIELD_NUMBER = 25;
+    private double estimatedTime_;
+    public boolean hasEstimatedTime() {
+      return ((bitField0_ & 0x04000000) == 0x04000000);
+    }
+    public double getEstimatedTime() {
+      return estimatedTime_;
+    }
+    
     private void initFields() {
       id_ = 0;
       version_ = 0;
@@ -53904,7 +54464,12 @@ public final class DomainProto {
       landing_ = com.ugcs.ucs.proto.DomainProto.Landing.getDefaultInstance();
       panorama_ = com.ugcs.ucs.proto.DomainProto.Panorama.getDefaultInstance();
       routeAttributes_ = com.ugcs.ucs.proto.DomainProto.RouteAttributes.getDefaultInstance();
+      setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+      repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+      transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+      transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
       tag_ = "";
+      estimatedTime_ = 0D;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -53978,11 +54543,26 @@ public final class DomainProto {
       if (((bitField0_ & 0x00080000) == 0x00080000)) {
         output.writeMessage(20, panorama_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         output.writeBytes(21, getTagBytes());
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         output.writeMessage(22, routeAttributes_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        output.writeMessage(23, setServo_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        output.writeMessage(24, repeatServo_);
+      }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+        output.writeDouble(25, estimatedTime_);
+      }
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        output.writeMessage(26, transitionVtol_);
+      }
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+        output.writeMessage(27, transitionFixed_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -54073,13 +54653,33 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(20, panorama_);
       }
-      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+      if (((bitField0_ & 0x02000000) == 0x02000000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(21, getTagBytes());
       }
       if (((bitField0_ & 0x00100000) == 0x00100000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(22, routeAttributes_);
+      }
+      if (((bitField0_ & 0x00200000) == 0x00200000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(23, setServo_);
+      }
+      if (((bitField0_ & 0x00400000) == 0x00400000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(24, repeatServo_);
+      }
+      if (((bitField0_ & 0x04000000) == 0x04000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(25, estimatedTime_);
+      }
+      if (((bitField0_ & 0x00800000) == 0x00800000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(26, transitionVtol_);
+      }
+      if (((bitField0_ & 0x01000000) == 0x01000000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(27, transitionFixed_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -54214,6 +54814,10 @@ public final class DomainProto {
           getLandingFieldBuilder();
           getPanoramaFieldBuilder();
           getRouteAttributesFieldBuilder();
+          getSetServoFieldBuilder();
+          getRepeatServoFieldBuilder();
+          getTransitionVtolFieldBuilder();
+          getTransitionFixedFieldBuilder();
         }
       }
       private static Builder create() {
@@ -54332,8 +54936,34 @@ public final class DomainProto {
           routeAttributesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00100000);
-        tag_ = "";
+        if (setServoBuilder_ == null) {
+          setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+        } else {
+          setServoBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00200000);
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+        } else {
+          repeatServoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00400000);
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+        } else {
+          transitionVtolBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00800000);
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+        } else {
+          transitionFixedBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x01000000);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x02000000);
+        estimatedTime_ = 0D;
+        bitField0_ = (bitField0_ & ~0x04000000);
         return this;
       }
       
@@ -54527,7 +55157,43 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00200000) == 0x00200000)) {
           to_bitField0_ |= 0x00200000;
         }
+        if (setServoBuilder_ == null) {
+          result.setServo_ = setServo_;
+        } else {
+          result.setServo_ = setServoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00400000) == 0x00400000)) {
+          to_bitField0_ |= 0x00400000;
+        }
+        if (repeatServoBuilder_ == null) {
+          result.repeatServo_ = repeatServo_;
+        } else {
+          result.repeatServo_ = repeatServoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00800000) == 0x00800000)) {
+          to_bitField0_ |= 0x00800000;
+        }
+        if (transitionVtolBuilder_ == null) {
+          result.transitionVtol_ = transitionVtol_;
+        } else {
+          result.transitionVtol_ = transitionVtolBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x01000000) == 0x01000000)) {
+          to_bitField0_ |= 0x01000000;
+        }
+        if (transitionFixedBuilder_ == null) {
+          result.transitionFixed_ = transitionFixed_;
+        } else {
+          result.transitionFixed_ = transitionFixedBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x02000000) == 0x02000000)) {
+          to_bitField0_ |= 0x02000000;
+        }
         result.tag_ = tag_;
+        if (((from_bitField0_ & 0x04000000) == 0x04000000)) {
+          to_bitField0_ |= 0x04000000;
+        }
+        result.estimatedTime_ = estimatedTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -54607,8 +55273,23 @@ public final class DomainProto {
         if (other.hasRouteAttributes()) {
           mergeRouteAttributes(other.getRouteAttributes());
         }
+        if (other.hasSetServo()) {
+          mergeSetServo(other.getSetServo());
+        }
+        if (other.hasRepeatServo()) {
+          mergeRepeatServo(other.getRepeatServo());
+        }
+        if (other.hasTransitionVtol()) {
+          mergeTransitionVtol(other.getTransitionVtol());
+        }
+        if (other.hasTransitionFixed()) {
+          mergeTransitionFixed(other.getTransitionFixed());
+        }
         if (other.hasTag()) {
           setTag(other.getTag());
+        }
+        if (other.hasEstimatedTime()) {
+          setEstimatedTime(other.getEstimatedTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -54812,7 +55493,7 @@ public final class DomainProto {
               break;
             }
             case 170: {
-              bitField0_ |= 0x00200000;
+              bitField0_ |= 0x02000000;
               tag_ = input.readBytes();
               break;
             }
@@ -54823,6 +55504,47 @@ public final class DomainProto {
               }
               input.readMessage(subBuilder, extensionRegistry);
               setRouteAttributes(subBuilder.buildPartial());
+              break;
+            }
+            case 186: {
+              com.ugcs.ucs.proto.DomainProto.SetServo.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.SetServo.newBuilder();
+              if (hasSetServo()) {
+                subBuilder.mergeFrom(getSetServo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSetServo(subBuilder.buildPartial());
+              break;
+            }
+            case 194: {
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.RepeatServo.newBuilder();
+              if (hasRepeatServo()) {
+                subBuilder.mergeFrom(getRepeatServo());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setRepeatServo(subBuilder.buildPartial());
+              break;
+            }
+            case 201: {
+              bitField0_ |= 0x04000000;
+              estimatedTime_ = input.readDouble();
+              break;
+            }
+            case 210: {
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionVtol.newBuilder();
+              if (hasTransitionVtol()) {
+                subBuilder.mergeFrom(getTransitionVtol());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionVtol(subBuilder.buildPartial());
+              break;
+            }
+            case 218: {
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionFixed.newBuilder();
+              if (hasTransitionFixed()) {
+                subBuilder.mergeFrom(getTransitionFixed());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionFixed(subBuilder.buildPartial());
               break;
             }
           }
@@ -56448,10 +57170,370 @@ public final class DomainProto {
         return routeAttributesBuilder_;
       }
       
+      // optional .SetServo setServo = 23;
+      private com.ugcs.ucs.proto.DomainProto.SetServo setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder> setServoBuilder_;
+      public boolean hasSetServo() {
+        return ((bitField0_ & 0x00200000) == 0x00200000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServo getSetServo() {
+        if (setServoBuilder_ == null) {
+          return setServo_;
+        } else {
+          return setServoBuilder_.getMessage();
+        }
+      }
+      public Builder setSetServo(com.ugcs.ucs.proto.DomainProto.SetServo value) {
+        if (setServoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          setServo_ = value;
+          onChanged();
+        } else {
+          setServoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      public Builder setSetServo(
+          com.ugcs.ucs.proto.DomainProto.SetServo.Builder builderForValue) {
+        if (setServoBuilder_ == null) {
+          setServo_ = builderForValue.build();
+          onChanged();
+        } else {
+          setServoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      public Builder mergeSetServo(com.ugcs.ucs.proto.DomainProto.SetServo value) {
+        if (setServoBuilder_ == null) {
+          if (((bitField0_ & 0x00200000) == 0x00200000) &&
+              setServo_ != com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance()) {
+            setServo_ =
+              com.ugcs.ucs.proto.DomainProto.SetServo.newBuilder(setServo_).mergeFrom(value).buildPartial();
+          } else {
+            setServo_ = value;
+          }
+          onChanged();
+        } else {
+          setServoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00200000;
+        return this;
+      }
+      public Builder clearSetServo() {
+        if (setServoBuilder_ == null) {
+          setServo_ = com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+          onChanged();
+        } else {
+          setServoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00200000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServo.Builder getSetServoBuilder() {
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return getSetServoFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder getSetServoOrBuilder() {
+        if (setServoBuilder_ != null) {
+          return setServoBuilder_.getMessageOrBuilder();
+        } else {
+          return setServo_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder> 
+          getSetServoFieldBuilder() {
+        if (setServoBuilder_ == null) {
+          setServoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.SetServo, com.ugcs.ucs.proto.DomainProto.SetServo.Builder, com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder>(
+                  setServo_,
+                  getParentForChildren(),
+                  isClean());
+          setServo_ = null;
+        }
+        return setServoBuilder_;
+      }
+      
+      // optional .RepeatServo repeatServo = 24;
+      private com.ugcs.ucs.proto.DomainProto.RepeatServo repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder> repeatServoBuilder_;
+      public boolean hasRepeatServo() {
+        return ((bitField0_ & 0x00400000) == 0x00400000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo getRepeatServo() {
+        if (repeatServoBuilder_ == null) {
+          return repeatServo_;
+        } else {
+          return repeatServoBuilder_.getMessage();
+        }
+      }
+      public Builder setRepeatServo(com.ugcs.ucs.proto.DomainProto.RepeatServo value) {
+        if (repeatServoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          repeatServo_ = value;
+          onChanged();
+        } else {
+          repeatServoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00400000;
+        return this;
+      }
+      public Builder setRepeatServo(
+          com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder builderForValue) {
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = builderForValue.build();
+          onChanged();
+        } else {
+          repeatServoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00400000;
+        return this;
+      }
+      public Builder mergeRepeatServo(com.ugcs.ucs.proto.DomainProto.RepeatServo value) {
+        if (repeatServoBuilder_ == null) {
+          if (((bitField0_ & 0x00400000) == 0x00400000) &&
+              repeatServo_ != com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance()) {
+            repeatServo_ =
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.newBuilder(repeatServo_).mergeFrom(value).buildPartial();
+          } else {
+            repeatServo_ = value;
+          }
+          onChanged();
+        } else {
+          repeatServoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00400000;
+        return this;
+      }
+      public Builder clearRepeatServo() {
+        if (repeatServoBuilder_ == null) {
+          repeatServo_ = com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+          onChanged();
+        } else {
+          repeatServoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00400000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder getRepeatServoBuilder() {
+        bitField0_ |= 0x00400000;
+        onChanged();
+        return getRepeatServoFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder getRepeatServoOrBuilder() {
+        if (repeatServoBuilder_ != null) {
+          return repeatServoBuilder_.getMessageOrBuilder();
+        } else {
+          return repeatServo_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder> 
+          getRepeatServoFieldBuilder() {
+        if (repeatServoBuilder_ == null) {
+          repeatServoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.RepeatServo, com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder>(
+                  repeatServo_,
+                  getParentForChildren(),
+                  isClean());
+          repeatServo_ = null;
+        }
+        return repeatServoBuilder_;
+      }
+      
+      // optional .TransitionVtol transitionVtol = 26;
+      private com.ugcs.ucs.proto.DomainProto.TransitionVtol transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder> transitionVtolBuilder_;
+      public boolean hasTransitionVtol() {
+        return ((bitField0_ & 0x00800000) == 0x00800000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol getTransitionVtol() {
+        if (transitionVtolBuilder_ == null) {
+          return transitionVtol_;
+        } else {
+          return transitionVtolBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionVtol(com.ugcs.ucs.proto.DomainProto.TransitionVtol value) {
+        if (transitionVtolBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionVtol_ = value;
+          onChanged();
+        } else {
+          transitionVtolBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00800000;
+        return this;
+      }
+      public Builder setTransitionVtol(
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder builderForValue) {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionVtolBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00800000;
+        return this;
+      }
+      public Builder mergeTransitionVtol(com.ugcs.ucs.proto.DomainProto.TransitionVtol value) {
+        if (transitionVtolBuilder_ == null) {
+          if (((bitField0_ & 0x00800000) == 0x00800000) &&
+              transitionVtol_ != com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance()) {
+            transitionVtol_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.newBuilder(transitionVtol_).mergeFrom(value).buildPartial();
+          } else {
+            transitionVtol_ = value;
+          }
+          onChanged();
+        } else {
+          transitionVtolBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00800000;
+        return this;
+      }
+      public Builder clearTransitionVtol() {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtol_ = com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionVtolBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00800000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder getTransitionVtolBuilder() {
+        bitField0_ |= 0x00800000;
+        onChanged();
+        return getTransitionVtolFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder getTransitionVtolOrBuilder() {
+        if (transitionVtolBuilder_ != null) {
+          return transitionVtolBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionVtol_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder> 
+          getTransitionVtolFieldBuilder() {
+        if (transitionVtolBuilder_ == null) {
+          transitionVtolBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol, com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder>(
+                  transitionVtol_,
+                  getParentForChildren(),
+                  isClean());
+          transitionVtol_ = null;
+        }
+        return transitionVtolBuilder_;
+      }
+      
+      // optional .TransitionFixed transitionFixed = 27;
+      private com.ugcs.ucs.proto.DomainProto.TransitionFixed transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder> transitionFixedBuilder_;
+      public boolean hasTransitionFixed() {
+        return ((bitField0_ & 0x01000000) == 0x01000000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed getTransitionFixed() {
+        if (transitionFixedBuilder_ == null) {
+          return transitionFixed_;
+        } else {
+          return transitionFixedBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionFixed(com.ugcs.ucs.proto.DomainProto.TransitionFixed value) {
+        if (transitionFixedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionFixed_ = value;
+          onChanged();
+        } else {
+          transitionFixedBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x01000000;
+        return this;
+      }
+      public Builder setTransitionFixed(
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder builderForValue) {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionFixedBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x01000000;
+        return this;
+      }
+      public Builder mergeTransitionFixed(com.ugcs.ucs.proto.DomainProto.TransitionFixed value) {
+        if (transitionFixedBuilder_ == null) {
+          if (((bitField0_ & 0x01000000) == 0x01000000) &&
+              transitionFixed_ != com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance()) {
+            transitionFixed_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.newBuilder(transitionFixed_).mergeFrom(value).buildPartial();
+          } else {
+            transitionFixed_ = value;
+          }
+          onChanged();
+        } else {
+          transitionFixedBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x01000000;
+        return this;
+      }
+      public Builder clearTransitionFixed() {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixed_ = com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionFixedBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x01000000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder getTransitionFixedBuilder() {
+        bitField0_ |= 0x01000000;
+        onChanged();
+        return getTransitionFixedFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder getTransitionFixedOrBuilder() {
+        if (transitionFixedBuilder_ != null) {
+          return transitionFixedBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionFixed_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder> 
+          getTransitionFixedFieldBuilder() {
+        if (transitionFixedBuilder_ == null) {
+          transitionFixedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed, com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder>(
+                  transitionFixed_,
+                  getParentForChildren(),
+                  isClean());
+          transitionFixed_ = null;
+        }
+        return transitionFixedBuilder_;
+      }
+      
       // optional string tag = 21;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00200000) == 0x00200000);
+        return ((bitField0_ & 0x02000000) == 0x02000000);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -56467,21 +57549,42 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00200000;
+  bitField0_ |= 0x02000000;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x02000000;
         tag_ = value;
         onChanged();
+      }
+      
+      // optional double estimatedTime = 25;
+      private double estimatedTime_ ;
+      public boolean hasEstimatedTime() {
+        return ((bitField0_ & 0x04000000) == 0x04000000);
+      }
+      public double getEstimatedTime() {
+        return estimatedTime_;
+      }
+      public Builder setEstimatedTime(double value) {
+        bitField0_ |= 0x04000000;
+        estimatedTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearEstimatedTime() {
+        bitField0_ = (bitField0_ & ~0x04000000);
+        estimatedTime_ = 0D;
+        onChanged();
+        return this;
       }
       
       // @@protoc_insertion_point(builder_scope:Action)
@@ -60113,7 +61216,11 @@ public final class DomainProto {
     boolean hasInterval();
     double getInterval();
     
-    // optional string tag = 4;
+    // optional bool waitForOperator = 4;
+    boolean hasWaitForOperator();
+    boolean getWaitForOperator();
+    
+    // optional string tag = 5;
     boolean hasTag();
     String getTag();
   }
@@ -60176,11 +61283,21 @@ public final class DomainProto {
       return interval_;
     }
     
-    // optional string tag = 4;
-    public static final int TAG_FIELD_NUMBER = 4;
+    // optional bool waitForOperator = 4;
+    public static final int WAITFOROPERATOR_FIELD_NUMBER = 4;
+    private boolean waitForOperator_;
+    public boolean hasWaitForOperator() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public boolean getWaitForOperator() {
+      return waitForOperator_;
+    }
+    
+    // optional string tag = 5;
+    public static final int TAG_FIELD_NUMBER = 5;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -60212,6 +61329,7 @@ public final class DomainProto {
       id_ = 0;
       version_ = 0;
       interval_ = 0D;
+      waitForOperator_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -60236,7 +61354,10 @@ public final class DomainProto {
         output.writeDouble(3, interval_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getTagBytes());
+        output.writeBool(4, waitForOperator_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getTagBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -60261,7 +61382,11 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getTagBytes());
+          .computeBoolSize(4, waitForOperator_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getTagBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -60393,8 +61518,10 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         interval_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
-        tag_ = "";
+        waitForOperator_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       
@@ -60448,6 +61575,10 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
+        result.waitForOperator_ = waitForOperator_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -60473,6 +61604,9 @@ public final class DomainProto {
         }
         if (other.hasInterval()) {
           setInterval(other.getInterval());
+        }
+        if (other.hasWaitForOperator()) {
+          setWaitForOperator(other.getWaitForOperator());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -60523,8 +61657,13 @@ public final class DomainProto {
               interval_ = input.readDouble();
               break;
             }
-            case 34: {
+            case 32: {
               bitField0_ |= 0x00000008;
+              waitForOperator_ = input.readBool();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
               tag_ = input.readBytes();
               break;
             }
@@ -60597,10 +61736,31 @@ public final class DomainProto {
         return this;
       }
       
-      // optional string tag = 4;
+      // optional bool waitForOperator = 4;
+      private boolean waitForOperator_ ;
+      public boolean hasWaitForOperator() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public boolean getWaitForOperator() {
+        return waitForOperator_;
+      }
+      public Builder setWaitForOperator(boolean value) {
+        bitField0_ |= 0x00000008;
+        waitForOperator_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearWaitForOperator() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        waitForOperator_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 5;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -60616,19 +61776,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         tag_ = value;
         onChanged();
       }
@@ -66671,6 +67831,2304 @@ public final class DomainProto {
     // @@protoc_insertion_point(class_scope:RouteAttributes)
   }
   
+  public interface SetServoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional int32 servoId = 3;
+    boolean hasServoId();
+    int getServoId();
+    
+    // optional int32 pwm = 4;
+    boolean hasPwm();
+    int getPwm();
+    
+    // optional string tag = 5;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class SetServo extends
+      com.google.protobuf.GeneratedMessage
+      implements SetServoOrBuilder {
+    // Use SetServo.newBuilder() to construct.
+    private SetServo(Builder builder) {
+      super(builder);
+    }
+    private SetServo(boolean noInit) {}
+    
+    private static final SetServo defaultInstance;
+    public static SetServo getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public SetServo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_SetServo_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_SetServo_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional int32 servoId = 3;
+    public static final int SERVOID_FIELD_NUMBER = 3;
+    private int servoId_;
+    public boolean hasServoId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public int getServoId() {
+      return servoId_;
+    }
+    
+    // optional int32 pwm = 4;
+    public static final int PWM_FIELD_NUMBER = 4;
+    private int pwm_;
+    public boolean hasPwm() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getPwm() {
+      return pwm_;
+    }
+    
+    // optional string tag = 5;
+    public static final int TAG_FIELD_NUMBER = 5;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      servoId_ = 0;
+      pwm_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.SetServo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.SetServoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_SetServo_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_SetServo_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.SetServo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        servoId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pwm_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.SetServo.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServo getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServo build() {
+        com.ugcs.ucs.proto.DomainProto.SetServo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.SetServo buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.SetServo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServo buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.SetServo result = new com.ugcs.ucs.proto.DomainProto.SetServo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.servoId_ = servoId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.pwm_ = pwm_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.SetServo) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.SetServo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.SetServo other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.SetServo.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasServoId()) {
+          setServoId(other.getServoId());
+        }
+        if (other.hasPwm()) {
+          setPwm(other.getPwm());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              servoId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              pwm_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 servoId = 3;
+      private int servoId_ ;
+      public boolean hasServoId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public int getServoId() {
+        return servoId_;
+      }
+      public Builder setServoId(int value) {
+        bitField0_ |= 0x00000004;
+        servoId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearServoId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        servoId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 pwm = 4;
+      private int pwm_ ;
+      public boolean hasPwm() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getPwm() {
+        return pwm_;
+      }
+      public Builder setPwm(int value) {
+        bitField0_ |= 0x00000008;
+        pwm_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPwm() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pwm_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 5;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:SetServo)
+    }
+    
+    static {
+      defaultInstance = new SetServo(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:SetServo)
+  }
+  
+  public interface RepeatServoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional int32 servoId = 3;
+    boolean hasServoId();
+    int getServoId();
+    
+    // optional int32 pwm = 4;
+    boolean hasPwm();
+    int getPwm();
+    
+    // optional double delay = 5;
+    boolean hasDelay();
+    double getDelay();
+    
+    // optional int32 count = 6;
+    boolean hasCount();
+    int getCount();
+    
+    // optional string tag = 7;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class RepeatServo extends
+      com.google.protobuf.GeneratedMessage
+      implements RepeatServoOrBuilder {
+    // Use RepeatServo.newBuilder() to construct.
+    private RepeatServo(Builder builder) {
+      super(builder);
+    }
+    private RepeatServo(boolean noInit) {}
+    
+    private static final RepeatServo defaultInstance;
+    public static RepeatServo getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public RepeatServo getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServo_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServo_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional int32 servoId = 3;
+    public static final int SERVOID_FIELD_NUMBER = 3;
+    private int servoId_;
+    public boolean hasServoId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public int getServoId() {
+      return servoId_;
+    }
+    
+    // optional int32 pwm = 4;
+    public static final int PWM_FIELD_NUMBER = 4;
+    private int pwm_;
+    public boolean hasPwm() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getPwm() {
+      return pwm_;
+    }
+    
+    // optional double delay = 5;
+    public static final int DELAY_FIELD_NUMBER = 5;
+    private double delay_;
+    public boolean hasDelay() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public double getDelay() {
+      return delay_;
+    }
+    
+    // optional int32 count = 6;
+    public static final int COUNT_FIELD_NUMBER = 6;
+    private int count_;
+    public boolean hasCount() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public int getCount() {
+      return count_;
+    }
+    
+    // optional string tag = 7;
+    public static final int TAG_FIELD_NUMBER = 7;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      servoId_ = 0;
+      pwm_ = 0;
+      delay_ = 0D;
+      count_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, delay_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(6, count_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, delay_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, count_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServo parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.RepeatServo prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.RepeatServoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServo_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServo_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.RepeatServo.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        servoId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pwm_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        delay_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        count_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.RepeatServo.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo build() {
+        com.ugcs.ucs.proto.DomainProto.RepeatServo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.RepeatServo buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.RepeatServo result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServo buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.RepeatServo result = new com.ugcs.ucs.proto.DomainProto.RepeatServo(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.servoId_ = servoId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.pwm_ = pwm_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.delay_ = delay_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.count_ = count_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.RepeatServo) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.RepeatServo)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.RepeatServo other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.RepeatServo.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasServoId()) {
+          setServoId(other.getServoId());
+        }
+        if (other.hasPwm()) {
+          setPwm(other.getPwm());
+        }
+        if (other.hasDelay()) {
+          setDelay(other.getDelay());
+        }
+        if (other.hasCount()) {
+          setCount(other.getCount());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              servoId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              pwm_ = input.readInt32();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              delay_ = input.readDouble();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              count_ = input.readInt32();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 servoId = 3;
+      private int servoId_ ;
+      public boolean hasServoId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public int getServoId() {
+        return servoId_;
+      }
+      public Builder setServoId(int value) {
+        bitField0_ |= 0x00000004;
+        servoId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearServoId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        servoId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 pwm = 4;
+      private int pwm_ ;
+      public boolean hasPwm() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getPwm() {
+        return pwm_;
+      }
+      public Builder setPwm(int value) {
+        bitField0_ |= 0x00000008;
+        pwm_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPwm() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pwm_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional double delay = 5;
+      private double delay_ ;
+      public boolean hasDelay() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public double getDelay() {
+        return delay_;
+      }
+      public Builder setDelay(double value) {
+        bitField0_ |= 0x00000010;
+        delay_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearDelay() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        delay_ = 0D;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 count = 6;
+      private int count_ ;
+      public boolean hasCount() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public int getCount() {
+        return count_;
+      }
+      public Builder setCount(int value) {
+        bitField0_ |= 0x00000020;
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        count_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 7;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000040;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:RepeatServo)
+    }
+    
+    static {
+      defaultInstance = new RepeatServo(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:RepeatServo)
+  }
+  
+  public interface TransitionFixedOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional string tag = 3;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class TransitionFixed extends
+      com.google.protobuf.GeneratedMessage
+      implements TransitionFixedOrBuilder {
+    // Use TransitionFixed.newBuilder() to construct.
+    private TransitionFixed(Builder builder) {
+      super(builder);
+    }
+    private TransitionFixed(boolean noInit) {}
+    
+    private static final TransitionFixed defaultInstance;
+    public static TransitionFixed getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public TransitionFixed getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixed_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixed_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional string tag = 3;
+    public static final int TAG_FIELD_NUMBER = 3;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixed parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.TransitionFixed prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.TransitionFixedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixed_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixed_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.TransitionFixed.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed build() {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixed result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.TransitionFixed buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixed result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixed buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixed result = new com.ugcs.ucs.proto.DomainProto.TransitionFixed(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.TransitionFixed) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.TransitionFixed)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.TransitionFixed other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.TransitionFixed.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 3;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:TransitionFixed)
+    }
+    
+    static {
+      defaultInstance = new TransitionFixed(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:TransitionFixed)
+  }
+  
+  public interface TransitionVtolOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional string tag = 3;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class TransitionVtol extends
+      com.google.protobuf.GeneratedMessage
+      implements TransitionVtolOrBuilder {
+    // Use TransitionVtol.newBuilder() to construct.
+    private TransitionVtol(Builder builder) {
+      super(builder);
+    }
+    private TransitionVtol(boolean noInit) {}
+    
+    private static final TransitionVtol defaultInstance;
+    public static TransitionVtol getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public TransitionVtol getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtol_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtol_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional string tag = 3;
+    public static final int TAG_FIELD_NUMBER = 3;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtol parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.TransitionVtol prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.TransitionVtolOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtol_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtol_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.TransitionVtol.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol build() {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtol result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.TransitionVtol buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtol result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtol buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtol result = new com.ugcs.ucs.proto.DomainProto.TransitionVtol(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.TransitionVtol) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.TransitionVtol)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.TransitionVtol other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.TransitionVtol.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 3;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:TransitionVtol)
+    }
+    
+    static {
+      defaultInstance = new TransitionVtol(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:TransitionVtol)
+  }
+  
   public interface ActionDefinitionOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -66735,7 +70193,27 @@ public final class DomainProto {
     com.ugcs.ucs.proto.DomainProto.PanoramaDefinition getPanoramaDefinition();
     com.ugcs.ucs.proto.DomainProto.PanoramaDefinitionOrBuilder getPanoramaDefinitionOrBuilder();
     
-    // optional string tag = 14;
+    // optional .SetServoDefinition setServoDefinition = 14;
+    boolean hasSetServoDefinition();
+    com.ugcs.ucs.proto.DomainProto.SetServoDefinition getSetServoDefinition();
+    com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder getSetServoDefinitionOrBuilder();
+    
+    // optional .RepeatServoDefinition repeatServoDefinition = 15;
+    boolean hasRepeatServoDefinition();
+    com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition getRepeatServoDefinition();
+    com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder getRepeatServoDefinitionOrBuilder();
+    
+    // optional .TransitionVtolDefinition transitionVtolDefinition = 17;
+    boolean hasTransitionVtolDefinition();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition getTransitionVtolDefinition();
+    com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder getTransitionVtolDefinitionOrBuilder();
+    
+    // optional .TransitionFixedDefinition transitionFixedDefinition = 18;
+    boolean hasTransitionFixedDefinition();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition getTransitionFixedDefinition();
+    com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder getTransitionFixedDefinitionOrBuilder();
+    
+    // optional string tag = 16;
     boolean hasTag();
     String getTag();
   }
@@ -66947,11 +70425,63 @@ public final class DomainProto {
       return panoramaDefinition_;
     }
     
-    // optional string tag = 14;
-    public static final int TAG_FIELD_NUMBER = 14;
+    // optional .SetServoDefinition setServoDefinition = 14;
+    public static final int SETSERVODEFINITION_FIELD_NUMBER = 14;
+    private com.ugcs.ucs.proto.DomainProto.SetServoDefinition setServoDefinition_;
+    public boolean hasSetServoDefinition() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServoDefinition getSetServoDefinition() {
+      return setServoDefinition_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder getSetServoDefinitionOrBuilder() {
+      return setServoDefinition_;
+    }
+    
+    // optional .RepeatServoDefinition repeatServoDefinition = 15;
+    public static final int REPEATSERVODEFINITION_FIELD_NUMBER = 15;
+    private com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition repeatServoDefinition_;
+    public boolean hasRepeatServoDefinition() {
+      return ((bitField0_ & 0x00004000) == 0x00004000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition getRepeatServoDefinition() {
+      return repeatServoDefinition_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder getRepeatServoDefinitionOrBuilder() {
+      return repeatServoDefinition_;
+    }
+    
+    // optional .TransitionVtolDefinition transitionVtolDefinition = 17;
+    public static final int TRANSITIONVTOLDEFINITION_FIELD_NUMBER = 17;
+    private com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition transitionVtolDefinition_;
+    public boolean hasTransitionVtolDefinition() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition getTransitionVtolDefinition() {
+      return transitionVtolDefinition_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder getTransitionVtolDefinitionOrBuilder() {
+      return transitionVtolDefinition_;
+    }
+    
+    // optional .TransitionFixedDefinition transitionFixedDefinition = 18;
+    public static final int TRANSITIONFIXEDDEFINITION_FIELD_NUMBER = 18;
+    private com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition transitionFixedDefinition_;
+    public boolean hasTransitionFixedDefinition() {
+      return ((bitField0_ & 0x00010000) == 0x00010000);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition getTransitionFixedDefinition() {
+      return transitionFixedDefinition_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder getTransitionFixedDefinitionOrBuilder() {
+      return transitionFixedDefinition_;
+    }
+    
+    // optional string tag = 16;
+    public static final int TAG_FIELD_NUMBER = 16;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00020000) == 0x00020000);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -66993,6 +70523,10 @@ public final class DomainProto {
       cameraSeriesByTimeDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.getDefaultInstance();
       cameraSeriesByDistanceDefinition_ = com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.getDefaultInstance();
       panoramaDefinition_ = com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.getDefaultInstance();
+      setServoDefinition_ = com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance();
+      repeatServoDefinition_ = com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance();
+      transitionVtolDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance();
+      transitionFixedDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance();
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -67047,7 +70581,19 @@ public final class DomainProto {
         output.writeMessage(13, panoramaDefinition_);
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
-        output.writeBytes(14, getTagBytes());
+        output.writeMessage(14, setServoDefinition_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeMessage(15, repeatServoDefinition_);
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        output.writeBytes(16, getTagBytes());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeMessage(17, transitionVtolDefinition_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        output.writeMessage(18, transitionFixedDefinition_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -67112,7 +70658,23 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00002000) == 0x00002000)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(14, getTagBytes());
+          .computeMessageSize(14, setServoDefinition_);
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(15, repeatServoDefinition_);
+      }
+      if (((bitField0_ & 0x00020000) == 0x00020000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(16, getTagBytes());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, transitionVtolDefinition_);
+      }
+      if (((bitField0_ & 0x00010000) == 0x00010000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(18, transitionFixedDefinition_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -67239,6 +70801,10 @@ public final class DomainProto {
           getCameraSeriesByTimeDefinitionFieldBuilder();
           getCameraSeriesByDistanceDefinitionFieldBuilder();
           getPanoramaDefinitionFieldBuilder();
+          getSetServoDefinitionFieldBuilder();
+          getRepeatServoDefinitionFieldBuilder();
+          getTransitionVtolDefinitionFieldBuilder();
+          getTransitionFixedDefinitionFieldBuilder();
         }
       }
       private static Builder create() {
@@ -67309,8 +70875,32 @@ public final class DomainProto {
           panoramaDefinitionBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00001000);
-        tag_ = "";
+        if (setServoDefinitionBuilder_ == null) {
+          setServoDefinition_ = com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance();
+        } else {
+          setServoDefinitionBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00002000);
+        if (repeatServoDefinitionBuilder_ == null) {
+          repeatServoDefinition_ = com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance();
+        } else {
+          repeatServoDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00004000);
+        if (transitionVtolDefinitionBuilder_ == null) {
+          transitionVtolDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance();
+        } else {
+          transitionVtolDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        if (transitionFixedDefinitionBuilder_ == null) {
+          transitionFixedDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance();
+        } else {
+          transitionFixedDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00010000);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00020000);
         return this;
       }
       
@@ -67440,6 +71030,38 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
           to_bitField0_ |= 0x00002000;
         }
+        if (setServoDefinitionBuilder_ == null) {
+          result.setServoDefinition_ = setServoDefinition_;
+        } else {
+          result.setServoDefinition_ = setServoDefinitionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        if (repeatServoDefinitionBuilder_ == null) {
+          result.repeatServoDefinition_ = repeatServoDefinition_;
+        } else {
+          result.repeatServoDefinition_ = repeatServoDefinitionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        if (transitionVtolDefinitionBuilder_ == null) {
+          result.transitionVtolDefinition_ = transitionVtolDefinition_;
+        } else {
+          result.transitionVtolDefinition_ = transitionVtolDefinitionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00010000;
+        }
+        if (transitionFixedDefinitionBuilder_ == null) {
+          result.transitionFixedDefinition_ = transitionFixedDefinition_;
+        } else {
+          result.transitionFixedDefinition_ = transitionFixedDefinitionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00020000) == 0x00020000)) {
+          to_bitField0_ |= 0x00020000;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -67495,6 +71117,18 @@ public final class DomainProto {
         }
         if (other.hasPanoramaDefinition()) {
           mergePanoramaDefinition(other.getPanoramaDefinition());
+        }
+        if (other.hasSetServoDefinition()) {
+          mergeSetServoDefinition(other.getSetServoDefinition());
+        }
+        if (other.hasRepeatServoDefinition()) {
+          mergeRepeatServoDefinition(other.getRepeatServoDefinition());
+        }
+        if (other.hasTransitionVtolDefinition()) {
+          mergeTransitionVtolDefinition(other.getTransitionVtolDefinition());
+        }
+        if (other.hasTransitionFixedDefinition()) {
+          mergeTransitionFixedDefinition(other.getTransitionFixedDefinition());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -67632,8 +71266,44 @@ public final class DomainProto {
               break;
             }
             case 114: {
-              bitField0_ |= 0x00002000;
+              com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.SetServoDefinition.newBuilder();
+              if (hasSetServoDefinition()) {
+                subBuilder.mergeFrom(getSetServoDefinition());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSetServoDefinition(subBuilder.buildPartial());
+              break;
+            }
+            case 122: {
+              com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.newBuilder();
+              if (hasRepeatServoDefinition()) {
+                subBuilder.mergeFrom(getRepeatServoDefinition());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setRepeatServoDefinition(subBuilder.buildPartial());
+              break;
+            }
+            case 130: {
+              bitField0_ |= 0x00020000;
               tag_ = input.readBytes();
+              break;
+            }
+            case 138: {
+              com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.newBuilder();
+              if (hasTransitionVtolDefinition()) {
+                subBuilder.mergeFrom(getTransitionVtolDefinition());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionVtolDefinition(subBuilder.buildPartial());
+              break;
+            }
+            case 146: {
+              com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.newBuilder();
+              if (hasTransitionFixedDefinition()) {
+                subBuilder.mergeFrom(getTransitionFixedDefinition());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setTransitionFixedDefinition(subBuilder.buildPartial());
               break;
             }
           }
@@ -68551,10 +72221,370 @@ public final class DomainProto {
         return panoramaDefinitionBuilder_;
       }
       
-      // optional string tag = 14;
+      // optional .SetServoDefinition setServoDefinition = 14;
+      private com.ugcs.ucs.proto.DomainProto.SetServoDefinition setServoDefinition_ = com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServoDefinition, com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder> setServoDefinitionBuilder_;
+      public boolean hasSetServoDefinition() {
+        return ((bitField0_ & 0x00002000) == 0x00002000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinition getSetServoDefinition() {
+        if (setServoDefinitionBuilder_ == null) {
+          return setServoDefinition_;
+        } else {
+          return setServoDefinitionBuilder_.getMessage();
+        }
+      }
+      public Builder setSetServoDefinition(com.ugcs.ucs.proto.DomainProto.SetServoDefinition value) {
+        if (setServoDefinitionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          setServoDefinition_ = value;
+          onChanged();
+        } else {
+          setServoDefinitionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      public Builder setSetServoDefinition(
+          com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder builderForValue) {
+        if (setServoDefinitionBuilder_ == null) {
+          setServoDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          setServoDefinitionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      public Builder mergeSetServoDefinition(com.ugcs.ucs.proto.DomainProto.SetServoDefinition value) {
+        if (setServoDefinitionBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+              setServoDefinition_ != com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance()) {
+            setServoDefinition_ =
+              com.ugcs.ucs.proto.DomainProto.SetServoDefinition.newBuilder(setServoDefinition_).mergeFrom(value).buildPartial();
+          } else {
+            setServoDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          setServoDefinitionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00002000;
+        return this;
+      }
+      public Builder clearSetServoDefinition() {
+        if (setServoDefinitionBuilder_ == null) {
+          setServoDefinition_ = com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance();
+          onChanged();
+        } else {
+          setServoDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00002000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder getSetServoDefinitionBuilder() {
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return getSetServoDefinitionFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder getSetServoDefinitionOrBuilder() {
+        if (setServoDefinitionBuilder_ != null) {
+          return setServoDefinitionBuilder_.getMessageOrBuilder();
+        } else {
+          return setServoDefinition_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SetServoDefinition, com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder> 
+          getSetServoDefinitionFieldBuilder() {
+        if (setServoDefinitionBuilder_ == null) {
+          setServoDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.SetServoDefinition, com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder>(
+                  setServoDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          setServoDefinition_ = null;
+        }
+        return setServoDefinitionBuilder_;
+      }
+      
+      // optional .RepeatServoDefinition repeatServoDefinition = 15;
+      private com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition repeatServoDefinition_ = com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder> repeatServoDefinitionBuilder_;
+      public boolean hasRepeatServoDefinition() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition getRepeatServoDefinition() {
+        if (repeatServoDefinitionBuilder_ == null) {
+          return repeatServoDefinition_;
+        } else {
+          return repeatServoDefinitionBuilder_.getMessage();
+        }
+      }
+      public Builder setRepeatServoDefinition(com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition value) {
+        if (repeatServoDefinitionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          repeatServoDefinition_ = value;
+          onChanged();
+        } else {
+          repeatServoDefinitionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      public Builder setRepeatServoDefinition(
+          com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder builderForValue) {
+        if (repeatServoDefinitionBuilder_ == null) {
+          repeatServoDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          repeatServoDefinitionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      public Builder mergeRepeatServoDefinition(com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition value) {
+        if (repeatServoDefinitionBuilder_ == null) {
+          if (((bitField0_ & 0x00004000) == 0x00004000) &&
+              repeatServoDefinition_ != com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance()) {
+            repeatServoDefinition_ =
+              com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.newBuilder(repeatServoDefinition_).mergeFrom(value).buildPartial();
+          } else {
+            repeatServoDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          repeatServoDefinitionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00004000;
+        return this;
+      }
+      public Builder clearRepeatServoDefinition() {
+        if (repeatServoDefinitionBuilder_ == null) {
+          repeatServoDefinition_ = com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance();
+          onChanged();
+        } else {
+          repeatServoDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00004000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder getRepeatServoDefinitionBuilder() {
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return getRepeatServoDefinitionFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder getRepeatServoDefinitionOrBuilder() {
+        if (repeatServoDefinitionBuilder_ != null) {
+          return repeatServoDefinitionBuilder_.getMessageOrBuilder();
+        } else {
+          return repeatServoDefinition_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder> 
+          getRepeatServoDefinitionFieldBuilder() {
+        if (repeatServoDefinitionBuilder_ == null) {
+          repeatServoDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder, com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder>(
+                  repeatServoDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          repeatServoDefinition_ = null;
+        }
+        return repeatServoDefinitionBuilder_;
+      }
+      
+      // optional .TransitionVtolDefinition transitionVtolDefinition = 17;
+      private com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition transitionVtolDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder> transitionVtolDefinitionBuilder_;
+      public boolean hasTransitionVtolDefinition() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition getTransitionVtolDefinition() {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          return transitionVtolDefinition_;
+        } else {
+          return transitionVtolDefinitionBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionVtolDefinition(com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition value) {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionVtolDefinition_ = value;
+          onChanged();
+        } else {
+          transitionVtolDefinitionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder setTransitionVtolDefinition(
+          com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder builderForValue) {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          transitionVtolDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionVtolDefinitionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder mergeTransitionVtolDefinition(com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition value) {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          if (((bitField0_ & 0x00008000) == 0x00008000) &&
+              transitionVtolDefinition_ != com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance()) {
+            transitionVtolDefinition_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.newBuilder(transitionVtolDefinition_).mergeFrom(value).buildPartial();
+          } else {
+            transitionVtolDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          transitionVtolDefinitionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00008000;
+        return this;
+      }
+      public Builder clearTransitionVtolDefinition() {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          transitionVtolDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionVtolDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00008000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder getTransitionVtolDefinitionBuilder() {
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return getTransitionVtolDefinitionFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder getTransitionVtolDefinitionOrBuilder() {
+        if (transitionVtolDefinitionBuilder_ != null) {
+          return transitionVtolDefinitionBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionVtolDefinition_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder> 
+          getTransitionVtolDefinitionFieldBuilder() {
+        if (transitionVtolDefinitionBuilder_ == null) {
+          transitionVtolDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder>(
+                  transitionVtolDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          transitionVtolDefinition_ = null;
+        }
+        return transitionVtolDefinitionBuilder_;
+      }
+      
+      // optional .TransitionFixedDefinition transitionFixedDefinition = 18;
+      private com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition transitionFixedDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder> transitionFixedDefinitionBuilder_;
+      public boolean hasTransitionFixedDefinition() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition getTransitionFixedDefinition() {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          return transitionFixedDefinition_;
+        } else {
+          return transitionFixedDefinitionBuilder_.getMessage();
+        }
+      }
+      public Builder setTransitionFixedDefinition(com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition value) {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          transitionFixedDefinition_ = value;
+          onChanged();
+        } else {
+          transitionFixedDefinitionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      public Builder setTransitionFixedDefinition(
+          com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder builderForValue) {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          transitionFixedDefinition_ = builderForValue.build();
+          onChanged();
+        } else {
+          transitionFixedDefinitionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      public Builder mergeTransitionFixedDefinition(com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition value) {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          if (((bitField0_ & 0x00010000) == 0x00010000) &&
+              transitionFixedDefinition_ != com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance()) {
+            transitionFixedDefinition_ =
+              com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.newBuilder(transitionFixedDefinition_).mergeFrom(value).buildPartial();
+          } else {
+            transitionFixedDefinition_ = value;
+          }
+          onChanged();
+        } else {
+          transitionFixedDefinitionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00010000;
+        return this;
+      }
+      public Builder clearTransitionFixedDefinition() {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          transitionFixedDefinition_ = com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance();
+          onChanged();
+        } else {
+          transitionFixedDefinitionBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00010000);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder getTransitionFixedDefinitionBuilder() {
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return getTransitionFixedDefinitionFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder getTransitionFixedDefinitionOrBuilder() {
+        if (transitionFixedDefinitionBuilder_ != null) {
+          return transitionFixedDefinitionBuilder_.getMessageOrBuilder();
+        } else {
+          return transitionFixedDefinition_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder> 
+          getTransitionFixedDefinitionFieldBuilder() {
+        if (transitionFixedDefinitionBuilder_ == null) {
+          transitionFixedDefinitionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder, com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder>(
+                  transitionFixedDefinition_,
+                  getParentForChildren(),
+                  isClean());
+          transitionFixedDefinition_ = null;
+        }
+        return transitionFixedDefinitionBuilder_;
+      }
+      
+      // optional string tag = 16;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00002000) == 0x00002000);
+        return ((bitField0_ & 0x00020000) == 0x00020000);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -68570,19 +72600,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00002000;
+  bitField0_ |= 0x00020000;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00020000;
         tag_ = value;
         onChanged();
       }
@@ -72828,7 +76858,11 @@ public final class DomainProto {
     boolean hasInterval();
     double getInterval();
     
-    // optional string tag = 4;
+    // optional bool waitForOperator = 4;
+    boolean hasWaitForOperator();
+    boolean getWaitForOperator();
+    
+    // optional string tag = 5;
     boolean hasTag();
     String getTag();
   }
@@ -72891,11 +76925,21 @@ public final class DomainProto {
       return interval_;
     }
     
-    // optional string tag = 4;
-    public static final int TAG_FIELD_NUMBER = 4;
+    // optional bool waitForOperator = 4;
+    public static final int WAITFOROPERATOR_FIELD_NUMBER = 4;
+    private boolean waitForOperator_;
+    public boolean hasWaitForOperator() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public boolean getWaitForOperator() {
+      return waitForOperator_;
+    }
+    
+    // optional string tag = 5;
+    public static final int TAG_FIELD_NUMBER = 5;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
+      return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -72927,6 +76971,7 @@ public final class DomainProto {
       id_ = 0;
       version_ = 0;
       interval_ = 0D;
+      waitForOperator_ = false;
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -72951,7 +76996,10 @@ public final class DomainProto {
         output.writeDouble(3, interval_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getTagBytes());
+        output.writeBool(4, waitForOperator_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getTagBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -72976,7 +77024,11 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getTagBytes());
+          .computeBoolSize(4, waitForOperator_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getTagBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -73108,8 +77160,10 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         interval_ = 0D;
         bitField0_ = (bitField0_ & ~0x00000004);
-        tag_ = "";
+        waitForOperator_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
       
@@ -73163,6 +77217,10 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
+        result.waitForOperator_ = waitForOperator_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -73188,6 +77246,9 @@ public final class DomainProto {
         }
         if (other.hasInterval()) {
           setInterval(other.getInterval());
+        }
+        if (other.hasWaitForOperator()) {
+          setWaitForOperator(other.getWaitForOperator());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -73238,8 +77299,13 @@ public final class DomainProto {
               interval_ = input.readDouble();
               break;
             }
-            case 34: {
+            case 32: {
               bitField0_ |= 0x00000008;
+              waitForOperator_ = input.readBool();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
               tag_ = input.readBytes();
               break;
             }
@@ -73312,10 +77378,31 @@ public final class DomainProto {
         return this;
       }
       
-      // optional string tag = 4;
+      // optional bool waitForOperator = 4;
+      private boolean waitForOperator_ ;
+      public boolean hasWaitForOperator() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public boolean getWaitForOperator() {
+        return waitForOperator_;
+      }
+      public Builder setWaitForOperator(boolean value) {
+        bitField0_ |= 0x00000008;
+        waitForOperator_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearWaitForOperator() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        waitForOperator_ = false;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 5;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
+        return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -73331,19 +77418,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000008;
+  bitField0_ |= 0x00000010;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         tag_ = value;
         onChanged();
       }
@@ -74206,6 +78293,2304 @@ public final class DomainProto {
     }
     
     // @@protoc_insertion_point(class_scope:PanoramaDefinition)
+  }
+  
+  public interface SetServoDefinitionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional int32 servoId = 3;
+    boolean hasServoId();
+    int getServoId();
+    
+    // optional int32 pwm = 4;
+    boolean hasPwm();
+    int getPwm();
+    
+    // optional string tag = 5;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class SetServoDefinition extends
+      com.google.protobuf.GeneratedMessage
+      implements SetServoDefinitionOrBuilder {
+    // Use SetServoDefinition.newBuilder() to construct.
+    private SetServoDefinition(Builder builder) {
+      super(builder);
+    }
+    private SetServoDefinition(boolean noInit) {}
+    
+    private static final SetServoDefinition defaultInstance;
+    public static SetServoDefinition getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public SetServoDefinition getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_SetServoDefinition_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_SetServoDefinition_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional int32 servoId = 3;
+    public static final int SERVOID_FIELD_NUMBER = 3;
+    private int servoId_;
+    public boolean hasServoId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public int getServoId() {
+      return servoId_;
+    }
+    
+    // optional int32 pwm = 4;
+    public static final int PWM_FIELD_NUMBER = 4;
+    private int pwm_;
+    public boolean hasPwm() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getPwm() {
+      return pwm_;
+    }
+    
+    // optional string tag = 5;
+    public static final int TAG_FIELD_NUMBER = 5;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      servoId_ = 0;
+      pwm_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.SetServoDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.SetServoDefinition prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.SetServoDefinitionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_SetServoDefinition_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_SetServoDefinition_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.SetServoDefinition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        servoId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pwm_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinition getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinition build() {
+        com.ugcs.ucs.proto.DomainProto.SetServoDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.SetServoDefinition buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.SetServoDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.SetServoDefinition buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.SetServoDefinition result = new com.ugcs.ucs.proto.DomainProto.SetServoDefinition(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.servoId_ = servoId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.pwm_ = pwm_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.SetServoDefinition) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.SetServoDefinition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.SetServoDefinition other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.SetServoDefinition.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasServoId()) {
+          setServoId(other.getServoId());
+        }
+        if (other.hasPwm()) {
+          setPwm(other.getPwm());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              servoId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              pwm_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 servoId = 3;
+      private int servoId_ ;
+      public boolean hasServoId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public int getServoId() {
+        return servoId_;
+      }
+      public Builder setServoId(int value) {
+        bitField0_ |= 0x00000004;
+        servoId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearServoId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        servoId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 pwm = 4;
+      private int pwm_ ;
+      public boolean hasPwm() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getPwm() {
+        return pwm_;
+      }
+      public Builder setPwm(int value) {
+        bitField0_ |= 0x00000008;
+        pwm_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPwm() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pwm_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 5;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:SetServoDefinition)
+    }
+    
+    static {
+      defaultInstance = new SetServoDefinition(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:SetServoDefinition)
+  }
+  
+  public interface RepeatServoDefinitionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional int32 servoId = 3;
+    boolean hasServoId();
+    int getServoId();
+    
+    // optional int32 pwm = 4;
+    boolean hasPwm();
+    int getPwm();
+    
+    // optional double delay = 5;
+    boolean hasDelay();
+    double getDelay();
+    
+    // optional int32 count = 6;
+    boolean hasCount();
+    int getCount();
+    
+    // optional string tag = 7;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class RepeatServoDefinition extends
+      com.google.protobuf.GeneratedMessage
+      implements RepeatServoDefinitionOrBuilder {
+    // Use RepeatServoDefinition.newBuilder() to construct.
+    private RepeatServoDefinition(Builder builder) {
+      super(builder);
+    }
+    private RepeatServoDefinition(boolean noInit) {}
+    
+    private static final RepeatServoDefinition defaultInstance;
+    public static RepeatServoDefinition getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public RepeatServoDefinition getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServoDefinition_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServoDefinition_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional int32 servoId = 3;
+    public static final int SERVOID_FIELD_NUMBER = 3;
+    private int servoId_;
+    public boolean hasServoId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public int getServoId() {
+      return servoId_;
+    }
+    
+    // optional int32 pwm = 4;
+    public static final int PWM_FIELD_NUMBER = 4;
+    private int pwm_;
+    public boolean hasPwm() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getPwm() {
+      return pwm_;
+    }
+    
+    // optional double delay = 5;
+    public static final int DELAY_FIELD_NUMBER = 5;
+    private double delay_;
+    public boolean hasDelay() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public double getDelay() {
+      return delay_;
+    }
+    
+    // optional int32 count = 6;
+    public static final int COUNT_FIELD_NUMBER = 6;
+    private int count_;
+    public boolean hasCount() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public int getCount() {
+      return count_;
+    }
+    
+    // optional string tag = 7;
+    public static final int TAG_FIELD_NUMBER = 7;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      servoId_ = 0;
+      pwm_ = 0;
+      delay_ = 0D;
+      count_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeInt32(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeDouble(5, delay_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeInt32(6, count_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, servoId_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, pwm_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, delay_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, count_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.RepeatServoDefinitionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServoDefinition_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_RepeatServoDefinition_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        servoId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pwm_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        delay_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        count_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition build() {
+        com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition result = new com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.servoId_ = servoId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.pwm_ = pwm_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.delay_ = delay_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.count_ = count_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasServoId()) {
+          setServoId(other.getServoId());
+        }
+        if (other.hasPwm()) {
+          setPwm(other.getPwm());
+        }
+        if (other.hasDelay()) {
+          setDelay(other.getDelay());
+        }
+        if (other.hasCount()) {
+          setCount(other.getCount());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              servoId_ = input.readInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              pwm_ = input.readInt32();
+              break;
+            }
+            case 41: {
+              bitField0_ |= 0x00000010;
+              delay_ = input.readDouble();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              count_ = input.readInt32();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 servoId = 3;
+      private int servoId_ ;
+      public boolean hasServoId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public int getServoId() {
+        return servoId_;
+      }
+      public Builder setServoId(int value) {
+        bitField0_ |= 0x00000004;
+        servoId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearServoId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        servoId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 pwm = 4;
+      private int pwm_ ;
+      public boolean hasPwm() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getPwm() {
+        return pwm_;
+      }
+      public Builder setPwm(int value) {
+        bitField0_ |= 0x00000008;
+        pwm_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPwm() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pwm_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional double delay = 5;
+      private double delay_ ;
+      public boolean hasDelay() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public double getDelay() {
+        return delay_;
+      }
+      public Builder setDelay(double value) {
+        bitField0_ |= 0x00000010;
+        delay_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearDelay() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        delay_ = 0D;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 count = 6;
+      private int count_ ;
+      public boolean hasCount() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public int getCount() {
+        return count_;
+      }
+      public Builder setCount(int value) {
+        bitField0_ |= 0x00000020;
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCount() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        count_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 7;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000040;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:RepeatServoDefinition)
+    }
+    
+    static {
+      defaultInstance = new RepeatServoDefinition(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:RepeatServoDefinition)
+  }
+  
+  public interface TransitionFixedDefinitionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional string tag = 3;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class TransitionFixedDefinition extends
+      com.google.protobuf.GeneratedMessage
+      implements TransitionFixedDefinitionOrBuilder {
+    // Use TransitionFixedDefinition.newBuilder() to construct.
+    private TransitionFixedDefinition(Builder builder) {
+      super(builder);
+    }
+    private TransitionFixedDefinition(boolean noInit) {}
+    
+    private static final TransitionFixedDefinition defaultInstance;
+    public static TransitionFixedDefinition getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public TransitionFixedDefinition getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixedDefinition_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixedDefinition_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional string tag = 3;
+    public static final int TAG_FIELD_NUMBER = 3;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinitionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixedDefinition_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionFixedDefinition_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition build() {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition result = new com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 3;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:TransitionFixedDefinition)
+    }
+    
+    static {
+      defaultInstance = new TransitionFixedDefinition(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:TransitionFixedDefinition)
+  }
+  
+  public interface TransitionVtolDefinitionOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional int32 id = 1;
+    boolean hasId();
+    int getId();
+    
+    // optional int32 version = 2;
+    boolean hasVersion();
+    int getVersion();
+    
+    // optional string tag = 3;
+    boolean hasTag();
+    String getTag();
+  }
+  public static final class TransitionVtolDefinition extends
+      com.google.protobuf.GeneratedMessage
+      implements TransitionVtolDefinitionOrBuilder {
+    // Use TransitionVtolDefinition.newBuilder() to construct.
+    private TransitionVtolDefinition(Builder builder) {
+      super(builder);
+    }
+    private TransitionVtolDefinition(boolean noInit) {}
+    
+    private static final TransitionVtolDefinition defaultInstance;
+    public static TransitionVtolDefinition getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public TransitionVtolDefinition getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtolDefinition_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtolDefinition_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getId() {
+      return id_;
+    }
+    
+    // optional int32 version = 2;
+    public static final int VERSION_FIELD_NUMBER = 2;
+    private int version_;
+    public boolean hasVersion() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public int getVersion() {
+      return version_;
+    }
+    
+    // optional string tag = 3;
+    public static final int TAG_FIELD_NUMBER = 3;
+    private java.lang.Object tag_;
+    public boolean hasTag() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getTag() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          tag_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getTagBytes() {
+      java.lang.Object ref = tag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        tag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      id_ = 0;
+      version_ = 0;
+      tag_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getTagBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, version_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getTagBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinitionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtolDefinition_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.DomainProto.internal_static_TransitionVtolDefinition_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        version_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition build() {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition buildPartial() {
+        com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition result = new com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.version_ = version_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.tag_ = tag_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition) {
+          return mergeFrom((com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition other) {
+        if (other == com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (other.hasVersion()) {
+          setVersion(other.getVersion());
+        }
+        if (other.hasTag()) {
+          setTag(other.getTag());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              version_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              tag_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional int32 id = 1;
+      private int id_ ;
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getId() {
+        return id_;
+      }
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional int32 version = 2;
+      private int version_ ;
+      public boolean hasVersion() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public int getVersion() {
+        return version_;
+      }
+      public Builder setVersion(int value) {
+        bitField0_ |= 0x00000002;
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string tag = 3;
+      private java.lang.Object tag_ = "";
+      public boolean hasTag() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getTag() {
+        java.lang.Object ref = tag_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          tag_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setTag(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTag() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        tag_ = getDefaultInstance().getTag();
+        onChanged();
+        return this;
+      }
+      void setTag(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        tag_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:TransitionVtolDefinition)
+    }
+    
+    static {
+      defaultInstance = new TransitionVtolDefinition(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:TransitionVtolDefinition)
   }
   
   public interface NoFlightZoneOrBuilder
@@ -75200,572 +81585,6 @@ public final class DomainProto {
     // @@protoc_insertion_point(class_scope:NoFlightZone)
   }
   
-  public interface NoFlightZoneRTreeIndexOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
-    
-    // optional int32 nfzId = 1;
-    boolean hasNfzId();
-    int getNfzId();
-    
-    // optional double minLat = 2;
-    boolean hasMinLat();
-    double getMinLat();
-    
-    // optional double maxLat = 3;
-    boolean hasMaxLat();
-    double getMaxLat();
-    
-    // optional double minLng = 4;
-    boolean hasMinLng();
-    double getMinLng();
-    
-    // optional double maxLng = 5;
-    boolean hasMaxLng();
-    double getMaxLng();
-  }
-  public static final class NoFlightZoneRTreeIndex extends
-      com.google.protobuf.GeneratedMessage
-      implements NoFlightZoneRTreeIndexOrBuilder {
-    // Use NoFlightZoneRTreeIndex.newBuilder() to construct.
-    private NoFlightZoneRTreeIndex(Builder builder) {
-      super(builder);
-    }
-    private NoFlightZoneRTreeIndex(boolean noInit) {}
-    
-    private static final NoFlightZoneRTreeIndex defaultInstance;
-    public static NoFlightZoneRTreeIndex getDefaultInstance() {
-      return defaultInstance;
-    }
-    
-    public NoFlightZoneRTreeIndex getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-    
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_NoFlightZoneRTreeIndex_descriptor;
-    }
-    
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.ugcs.ucs.proto.DomainProto.internal_static_NoFlightZoneRTreeIndex_fieldAccessorTable;
-    }
-    
-    private int bitField0_;
-    // optional int32 nfzId = 1;
-    public static final int NFZID_FIELD_NUMBER = 1;
-    private int nfzId_;
-    public boolean hasNfzId() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    public int getNfzId() {
-      return nfzId_;
-    }
-    
-    // optional double minLat = 2;
-    public static final int MINLAT_FIELD_NUMBER = 2;
-    private double minLat_;
-    public boolean hasMinLat() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    public double getMinLat() {
-      return minLat_;
-    }
-    
-    // optional double maxLat = 3;
-    public static final int MAXLAT_FIELD_NUMBER = 3;
-    private double maxLat_;
-    public boolean hasMaxLat() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
-    }
-    public double getMaxLat() {
-      return maxLat_;
-    }
-    
-    // optional double minLng = 4;
-    public static final int MINLNG_FIELD_NUMBER = 4;
-    private double minLng_;
-    public boolean hasMinLng() {
-      return ((bitField0_ & 0x00000008) == 0x00000008);
-    }
-    public double getMinLng() {
-      return minLng_;
-    }
-    
-    // optional double maxLng = 5;
-    public static final int MAXLNG_FIELD_NUMBER = 5;
-    private double maxLng_;
-    public boolean hasMaxLng() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
-    }
-    public double getMaxLng() {
-      return maxLng_;
-    }
-    
-    private void initFields() {
-      nfzId_ = 0;
-      minLat_ = 0D;
-      maxLat_ = 0D;
-      minLng_ = 0D;
-      maxLng_ = 0D;
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
-      
-      memoizedIsInitialized = 1;
-      return true;
-    }
-    
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeInt32(1, nfzId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeDouble(2, minLat_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeDouble(3, maxLat_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeDouble(4, minLng_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeDouble(5, maxLng_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-    
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-    
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, nfzId_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(2, minLat_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(3, maxLat_);
-      }
-      if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(4, minLng_);
-      }
-      if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeDoubleSize(5, maxLng_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-    
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-    
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
-    }
-    public static com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
-    }
-    
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-    
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndexOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_NoFlightZoneRTreeIndex_descriptor;
-      }
-      
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.ugcs.ucs.proto.DomainProto.internal_static_NoFlightZoneRTreeIndex_fieldAccessorTable;
-      }
-      
-      // Construct using com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-      
-      private Builder(BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-      
-      public Builder clear() {
-        super.clear();
-        nfzId_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        minLat_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        maxLat_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000004);
-        minLng_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        maxLng_ = 0D;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        return this;
-      }
-      
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-      
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.getDescriptor();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex getDefaultInstanceForType() {
-        return com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.getDefaultInstance();
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex build() {
-        com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-      
-      private com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
-      public com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex buildPartial() {
-        com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex result = new com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.nfzId_ = nfzId_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        result.minLat_ = minLat_;
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
-        }
-        result.maxLat_ = maxLat_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.minLng_ = minLng_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.maxLng_ = maxLng_;
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-      
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex) {
-          return mergeFrom((com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-      
-      public Builder mergeFrom(com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex other) {
-        if (other == com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.getDefaultInstance()) return this;
-        if (other.hasNfzId()) {
-          setNfzId(other.getNfzId());
-        }
-        if (other.hasMinLat()) {
-          setMinLat(other.getMinLat());
-        }
-        if (other.hasMaxLat()) {
-          setMaxLat(other.getMaxLat());
-        }
-        if (other.hasMinLng()) {
-          setMinLng(other.getMinLng());
-        }
-        if (other.hasMaxLng()) {
-          setMaxLng(other.getMaxLng());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-      
-      public final boolean isInitialized() {
-        return true;
-      }
-      
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 8: {
-              bitField0_ |= 0x00000001;
-              nfzId_ = input.readInt32();
-              break;
-            }
-            case 17: {
-              bitField0_ |= 0x00000002;
-              minLat_ = input.readDouble();
-              break;
-            }
-            case 25: {
-              bitField0_ |= 0x00000004;
-              maxLat_ = input.readDouble();
-              break;
-            }
-            case 33: {
-              bitField0_ |= 0x00000008;
-              minLng_ = input.readDouble();
-              break;
-            }
-            case 41: {
-              bitField0_ |= 0x00000010;
-              maxLng_ = input.readDouble();
-              break;
-            }
-          }
-        }
-      }
-      
-      private int bitField0_;
-      
-      // optional int32 nfzId = 1;
-      private int nfzId_ ;
-      public boolean hasNfzId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      public int getNfzId() {
-        return nfzId_;
-      }
-      public Builder setNfzId(int value) {
-        bitField0_ |= 0x00000001;
-        nfzId_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearNfzId() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        nfzId_ = 0;
-        onChanged();
-        return this;
-      }
-      
-      // optional double minLat = 2;
-      private double minLat_ ;
-      public boolean hasMinLat() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public double getMinLat() {
-        return minLat_;
-      }
-      public Builder setMinLat(double value) {
-        bitField0_ |= 0x00000002;
-        minLat_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearMinLat() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        minLat_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double maxLat = 3;
-      private double maxLat_ ;
-      public boolean hasMaxLat() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      public double getMaxLat() {
-        return maxLat_;
-      }
-      public Builder setMaxLat(double value) {
-        bitField0_ |= 0x00000004;
-        maxLat_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearMaxLat() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        maxLat_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double minLng = 4;
-      private double minLng_ ;
-      public boolean hasMinLng() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      public double getMinLng() {
-        return minLng_;
-      }
-      public Builder setMinLng(double value) {
-        bitField0_ |= 0x00000008;
-        minLng_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearMinLng() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        minLng_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // optional double maxLng = 5;
-      private double maxLng_ ;
-      public boolean hasMaxLng() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      public double getMaxLng() {
-        return maxLng_;
-      }
-      public Builder setMaxLng(double value) {
-        bitField0_ |= 0x00000010;
-        maxLng_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearMaxLng() {
-        bitField0_ = (bitField0_ & ~0x00000010);
-        maxLng_ = 0D;
-        onChanged();
-        return this;
-      }
-      
-      // @@protoc_insertion_point(builder_scope:NoFlightZoneRTreeIndex)
-    }
-    
-    static {
-      defaultInstance = new NoFlightZoneRTreeIndex(true);
-      defaultInstance.initFields();
-    }
-    
-    // @@protoc_insertion_point(class_scope:NoFlightZoneRTreeIndex)
-  }
-  
   public interface ConeFrustumOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -76700,6 +82519,11 @@ public final class DomainProto {
     boolean hasName();
     String getName();
     
+    // optional .Vehicle vehicle = 9;
+    boolean hasVehicle();
+    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
+    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
+    
     // optional string tag = 6;
     boolean hasTag();
     String getTag();
@@ -76858,11 +82682,24 @@ public final class DomainProto {
       }
     }
     
+    // optional .Vehicle vehicle = 9;
+    public static final int VEHICLE_FIELD_NUMBER = 9;
+    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
+    public boolean hasVehicle() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+      return vehicle_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+      return vehicle_;
+    }
+    
     // optional string tag = 6;
     public static final int TAG_FIELD_NUMBER = 6;
     private java.lang.Object tag_;
     public boolean hasTag() {
-      return ((bitField0_ & 0x00000040) == 0x00000040);
+      return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     public String getTag() {
       java.lang.Object ref = tag_;
@@ -76898,6 +82735,7 @@ public final class DomainProto {
       subsystemId_ = 0;
       arguments_ = java.util.Collections.emptyList();
       name_ = "";
+      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -76927,7 +82765,7 @@ public final class DomainProto {
       for (int i = 0; i < arguments_.size(); i++) {
         output.writeMessage(5, arguments_.get(i));
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         output.writeBytes(6, getTagBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
@@ -76935,6 +82773,9 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeInt32(8, subsystemId_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeMessage(9, vehicle_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -76965,7 +82806,7 @@ public final class DomainProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, arguments_.get(i));
       }
-      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+      if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(6, getTagBytes());
       }
@@ -76976,6 +82817,10 @@ public final class DomainProto {
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, subsystemId_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, vehicle_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -77094,6 +82939,7 @@ public final class DomainProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getArgumentsFieldBuilder();
+          getVehicleFieldBuilder();
         }
       }
       private static Builder create() {
@@ -77120,8 +82966,14 @@ public final class DomainProto {
         }
         name_ = "";
         bitField0_ = (bitField0_ & ~0x00000040);
-        tag_ = "";
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+        } else {
+          vehicleBuilder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000080);
+        tag_ = "";
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
       
@@ -77196,6 +83048,14 @@ public final class DomainProto {
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000040;
         }
+        if (vehicleBuilder_ == null) {
+          result.vehicle_ = vehicle_;
+        } else {
+          result.vehicle_ = vehicleBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+          to_bitField0_ |= 0x00000080;
+        }
         result.tag_ = tag_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -77256,6 +83116,9 @@ public final class DomainProto {
         }
         if (other.hasName()) {
           setName(other.getName());
+        }
+        if (other.hasVehicle()) {
+          mergeVehicle(other.getVehicle());
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -77318,7 +83181,7 @@ public final class DomainProto {
               break;
             }
             case 50: {
-              bitField0_ |= 0x00000080;
+              bitField0_ |= 0x00000100;
               tag_ = input.readBytes();
               break;
             }
@@ -77336,6 +83199,15 @@ public final class DomainProto {
             case 64: {
               bitField0_ |= 0x00000010;
               subsystemId_ = input.readInt32();
+              break;
+            }
+            case 74: {
+              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
+              if (hasVehicle()) {
+                subBuilder.mergeFrom(getVehicle());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVehicle(subBuilder.buildPartial());
               break;
             }
           }
@@ -77689,10 +83561,100 @@ public final class DomainProto {
         onChanged();
       }
       
+      // optional .Vehicle vehicle = 9;
+      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
+      public boolean hasVehicle() {
+        return ((bitField0_ & 0x00000080) == 0x00000080);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+        if (vehicleBuilder_ == null) {
+          return vehicle_;
+        } else {
+          return vehicleBuilder_.getMessage();
+        }
+      }
+      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vehicle_ = value;
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      public Builder setVehicle(
+          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) == 0x00000080) &&
+              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
+            vehicle_ =
+              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+          } else {
+            vehicle_ = value;
+          }
+          onChanged();
+        } else {
+          vehicleBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000080;
+        return this;
+      }
+      public Builder clearVehicle() {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+          onChanged();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000080);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return getVehicleFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+        if (vehicleBuilder_ != null) {
+          return vehicleBuilder_.getMessageOrBuilder();
+        } else {
+          return vehicle_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
+          getVehicleFieldBuilder() {
+        if (vehicleBuilder_ == null) {
+          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
+                  vehicle_,
+                  getParentForChildren(),
+                  isClean());
+          vehicle_ = null;
+        }
+        return vehicleBuilder_;
+      }
+      
       // optional string tag = 6;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000080) == 0x00000080);
+        return ((bitField0_ & 0x00000100) == 0x00000100);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -77708,19 +83670,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000100;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         tag_ = value;
         onChanged();
       }
@@ -81284,6 +87246,16 @@ public final class DomainProto {
     boolean hasStringValue();
     String getStringValue();
     
+    // repeated .Value listValue = 10;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.Value> 
+        getListValueList();
+    com.ugcs.ucs.proto.DomainProto.Value getListValue(int index);
+    int getListValueCount();
+    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> 
+        getListValueOrBuilderList();
+    com.ugcs.ucs.proto.DomainProto.ValueOrBuilder getListValueOrBuilder(
+        int index);
+    
     // optional string tag = 9;
     boolean hasTag();
     String getTag();
@@ -81419,6 +87391,27 @@ public final class DomainProto {
       }
     }
     
+    // repeated .Value listValue = 10;
+    public static final int LISTVALUE_FIELD_NUMBER = 10;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.Value> listValue_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.Value> getListValueList() {
+      return listValue_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> 
+        getListValueOrBuilderList() {
+      return listValue_;
+    }
+    public int getListValueCount() {
+      return listValue_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.Value getListValue(int index) {
+      return listValue_.get(index);
+    }
+    public com.ugcs.ucs.proto.DomainProto.ValueOrBuilder getListValueOrBuilder(
+        int index) {
+      return listValue_.get(index);
+    }
+    
     // optional string tag = 9;
     public static final int TAG_FIELD_NUMBER = 9;
     private java.lang.Object tag_;
@@ -81460,6 +87453,7 @@ public final class DomainProto {
       floatValue_ = 0F;
       doubleValue_ = 0D;
       stringValue_ = "";
+      listValue_ = java.util.Collections.emptyList();
       tag_ = "";
     }
     private byte memoizedIsInitialized = -1;
@@ -81500,6 +87494,9 @@ public final class DomainProto {
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeBytes(9, getTagBytes());
+      }
+      for (int i = 0; i < listValue_.size(); i++) {
+        output.writeMessage(10, listValue_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -81545,6 +87542,10 @@ public final class DomainProto {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(9, getTagBytes());
+      }
+      for (int i = 0; i < listValue_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, listValue_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -81662,6 +87663,7 @@ public final class DomainProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getListValueFieldBuilder();
         }
       }
       private static Builder create() {
@@ -81686,8 +87688,14 @@ public final class DomainProto {
         bitField0_ = (bitField0_ & ~0x00000040);
         stringValue_ = "";
         bitField0_ = (bitField0_ & ~0x00000080);
+        if (listValueBuilder_ == null) {
+          listValue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          listValueBuilder_.clear();
+        }
         tag_ = "";
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       
@@ -81758,7 +87766,16 @@ public final class DomainProto {
           to_bitField0_ |= 0x00000080;
         }
         result.stringValue_ = stringValue_;
-        if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
+        if (listValueBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            listValue_ = java.util.Collections.unmodifiableList(listValue_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.listValue_ = listValue_;
+        } else {
+          result.listValue_ = listValueBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
           to_bitField0_ |= 0x00000100;
         }
         result.tag_ = tag_;
@@ -81801,6 +87818,32 @@ public final class DomainProto {
         }
         if (other.hasStringValue()) {
           setStringValue(other.getStringValue());
+        }
+        if (listValueBuilder_ == null) {
+          if (!other.listValue_.isEmpty()) {
+            if (listValue_.isEmpty()) {
+              listValue_ = other.listValue_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureListValueIsMutable();
+              listValue_.addAll(other.listValue_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.listValue_.isEmpty()) {
+            if (listValueBuilder_.isEmpty()) {
+              listValueBuilder_.dispose();
+              listValueBuilder_ = null;
+              listValue_ = other.listValue_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              listValueBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getListValueFieldBuilder() : null;
+            } else {
+              listValueBuilder_.addAllMessages(other.listValue_);
+            }
+          }
         }
         if (other.hasTag()) {
           setTag(other.getTag());
@@ -81877,8 +87920,14 @@ public final class DomainProto {
               break;
             }
             case 74: {
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               tag_ = input.readBytes();
+              break;
+            }
+            case 82: {
+              com.ugcs.ucs.proto.DomainProto.Value.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Value.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addListValue(subBuilder.buildPartial());
               break;
             }
           }
@@ -82070,10 +88119,196 @@ public final class DomainProto {
         onChanged();
       }
       
+      // repeated .Value listValue = 10;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.Value> listValue_ =
+        java.util.Collections.emptyList();
+      private void ensureListValueIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          listValue_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.Value>(listValue_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Value, com.ugcs.ucs.proto.DomainProto.Value.Builder, com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> listValueBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Value> getListValueList() {
+        if (listValueBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(listValue_);
+        } else {
+          return listValueBuilder_.getMessageList();
+        }
+      }
+      public int getListValueCount() {
+        if (listValueBuilder_ == null) {
+          return listValue_.size();
+        } else {
+          return listValueBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.Value getListValue(int index) {
+        if (listValueBuilder_ == null) {
+          return listValue_.get(index);
+        } else {
+          return listValueBuilder_.getMessage(index);
+        }
+      }
+      public Builder setListValue(
+          int index, com.ugcs.ucs.proto.DomainProto.Value value) {
+        if (listValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListValueIsMutable();
+          listValue_.set(index, value);
+          onChanged();
+        } else {
+          listValueBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setListValue(
+          int index, com.ugcs.ucs.proto.DomainProto.Value.Builder builderForValue) {
+        if (listValueBuilder_ == null) {
+          ensureListValueIsMutable();
+          listValue_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          listValueBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addListValue(com.ugcs.ucs.proto.DomainProto.Value value) {
+        if (listValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListValueIsMutable();
+          listValue_.add(value);
+          onChanged();
+        } else {
+          listValueBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addListValue(
+          int index, com.ugcs.ucs.proto.DomainProto.Value value) {
+        if (listValueBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureListValueIsMutable();
+          listValue_.add(index, value);
+          onChanged();
+        } else {
+          listValueBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addListValue(
+          com.ugcs.ucs.proto.DomainProto.Value.Builder builderForValue) {
+        if (listValueBuilder_ == null) {
+          ensureListValueIsMutable();
+          listValue_.add(builderForValue.build());
+          onChanged();
+        } else {
+          listValueBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addListValue(
+          int index, com.ugcs.ucs.proto.DomainProto.Value.Builder builderForValue) {
+        if (listValueBuilder_ == null) {
+          ensureListValueIsMutable();
+          listValue_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          listValueBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllListValue(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.Value> values) {
+        if (listValueBuilder_ == null) {
+          ensureListValueIsMutable();
+          super.addAll(values, listValue_);
+          onChanged();
+        } else {
+          listValueBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearListValue() {
+        if (listValueBuilder_ == null) {
+          listValue_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          listValueBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeListValue(int index) {
+        if (listValueBuilder_ == null) {
+          ensureListValueIsMutable();
+          listValue_.remove(index);
+          onChanged();
+        } else {
+          listValueBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Value.Builder getListValueBuilder(
+          int index) {
+        return getListValueFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.DomainProto.ValueOrBuilder getListValueOrBuilder(
+          int index) {
+        if (listValueBuilder_ == null) {
+          return listValue_.get(index);  } else {
+          return listValueBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> 
+           getListValueOrBuilderList() {
+        if (listValueBuilder_ != null) {
+          return listValueBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(listValue_);
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.Value.Builder addListValueBuilder() {
+        return getListValueFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.DomainProto.Value.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.DomainProto.Value.Builder addListValueBuilder(
+          int index) {
+        return getListValueFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.DomainProto.Value.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Value.Builder> 
+           getListValueBuilderList() {
+        return getListValueFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Value, com.ugcs.ucs.proto.DomainProto.Value.Builder, com.ugcs.ucs.proto.DomainProto.ValueOrBuilder> 
+          getListValueFieldBuilder() {
+        if (listValueBuilder_ == null) {
+          listValueBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Value, com.ugcs.ucs.proto.DomainProto.Value.Builder, com.ugcs.ucs.proto.DomainProto.ValueOrBuilder>(
+                  listValue_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  getParentForChildren(),
+                  isClean());
+          listValue_ = null;
+        }
+        return listValueBuilder_;
+      }
+      
       // optional string tag = 9;
       private java.lang.Object tag_ = "";
       public boolean hasTag() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       public String getTag() {
         java.lang.Object ref = tag_;
@@ -82089,19 +88324,19 @@ public final class DomainProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000100;
+  bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
         return this;
       }
       public Builder clearTag() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         tag_ = getDefaultInstance().getTag();
         onChanged();
         return this;
       }
       void setTag(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         tag_ = value;
         onChanged();
       }
@@ -103524,11 +109759,6 @@ public final class DomainProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_VehicleProfilePayloadProfile_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Avatar_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Avatar_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_VehicleProfile_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -103598,6 +109828,11 @@ public final class DomainProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Route_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_RouteUpload_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_RouteUpload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Failsafe_descriptor;
   private static
@@ -103714,6 +109949,26 @@ public final class DomainProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_RouteAttributes_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetServo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_SetServo_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_RepeatServo_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_RepeatServo_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransitionFixed_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_TransitionFixed_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransitionVtol_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_TransitionVtol_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_ActionDefinition_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -103759,15 +110014,30 @@ public final class DomainProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_PanoramaDefinition_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_SetServoDefinition_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_SetServoDefinition_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_RepeatServoDefinition_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_RepeatServoDefinition_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransitionFixedDefinition_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_TransitionFixedDefinition_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_TransitionVtolDefinition_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_TransitionVtolDefinition_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_NoFlightZone_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_NoFlightZone_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_NoFlightZoneRTreeIndex_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_NoFlightZoneRTreeIndex_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_ConeFrustum_descriptor;
   private static
@@ -103967,700 +110237,751 @@ public final class DomainProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Domain.proto\"\207\030\n\023DomainObjectWrapper\022\027" +
+      "\n\014Domain.proto\"\245\031\n\023DomainObjectWrapper\022\027" +
       "\n\006action\030\001 \001(\0132\007.Action\022+\n\020actionDefinit" +
       "ion\030\002 \001(\0132\021.ActionDefinition\022#\n\014adsbAirc" +
-      "raft\030\003 \001(\0132\r.AdsbAircraft\022\027\n\006avatar\030\004 \001(" +
-      "\0132\007.Avatar\022%\n\rcameraControl\030\005 \001(\0132\016.Came" +
-      "raControl\0229\n\027cameraControlDefinition\030\006 \001" +
-      "(\0132\030.CameraControlDefinition\022%\n\rcameraTr" +
-      "igger\030\007 \001(\0132\016.CameraTrigger\0229\n\027cameraTri" +
-      "ggerDefinition\030\010 \001(\0132\030.CameraTriggerDefi" +
-      "nition\022-\n\021commandDefinition\030\t \001(\0132\022.Comm",
-      "andDefinition\022\027\n\006figure\030\n \001(\0132\007.Figure\022)" +
-      "\n\017figureParameter\030\013 \001(\0132\020.FigureParamete" +
-      "r\022!\n\013figurePoint\030\014 \001(\0132\014.FigurePoint\022%\n\r" +
-      "headingChange\030\r \001(\0132\016.HeadingChange\022-\n\021h" +
-      "eadingDefinition\030\016 \001(\0132\022.HeadingDefiniti" +
-      "on\022#\n\014homeLocation\030\017 \001(\0132\r.HomeLocation\022" +
-      "\031\n\007landing\030\020 \001(\0132\010.Landing\022\031\n\007license\030\022 " +
-      "\001(\0132\010.License\022\031\n\007mission\030\023 \001(\0132\010.Mission" +
-      "\022-\n\021missionPreference\030\025 \001(\0132\022.MissionPre" +
-      "ference\022\'\n\016missionVehicle\030\026 \001(\0132\017.Missio",
-      "nVehicle\022#\n\014noFlightZone\030\031 \001(\0132\r.NoFligh" +
-      "tZone\022\033\n\010panorama\030\032 \001(\0132\t.Panorama\022/\n\022pa" +
-      "noramaDefinition\030\033 \001(\0132\023.PanoramaDefinit" +
-      "ion\0221\n\023parameterDefinition\030\034 \001(\0132\024.Param" +
-      "eterDefinition\022\'\n\016parameterValue\030\035 \001(\0132\017" +
-      ".ParameterValue\022+\n\020payloadParameter\030\036 \001(" +
-      "\0132\021.PayloadParameter\022\'\n\016payloadProfile\030\037" +
-      " \001(\0132\017.PayloadProfile\022\033\n\010platform\030  \001(\0132" +
-      "\t.Platform\0227\n\026platformPayloadProfile\030! \001" +
-      "(\0132\027.PlatformPayloadProfile\0225\n\025platformT",
-      "elemetryType\030\" \001(\0132\026.PlatformTelemetryTy" +
-      "pe\022\035\n\tpoiChange\030$ \001(\0132\n.PoiChange\022%\n\rpoi" +
-      "Definition\030% \001(\0132\016.PoiDefinition\022\025\n\005pris" +
-      "m\030& \001(\0132\006.Prism\022#\n\014polygonPoint\030\' \001(\0132\r." +
-      "PolygonPoint\022\'\n\016processedRoute\030( \001(\0132\017.P" +
-      "rocessedRoute\022\025\n\005route\030) \001(\0132\006.Route\022-\n\021" +
-      "segmentDefinition\030* \001(\0132\022.SegmentDefinit" +
-      "ion\022!\n\013speedChange\030, \001(\0132\014.SpeedChange\022\031" +
-      "\n\007takeoff\030- \001(\0132\010.Takeoff\022\035\n\ttelemetry\030." +
-      " \001(\0132\n.Telemetry\022-\n\021traverseAlgorithm\030/ ",
-      "\001(\0132\022.TraverseAlgorithm\022\023\n\004user\0300 \001(\0132\005." +
-      "User\022\031\n\007vehicle\0301 \001(\0132\010.Vehicle\022;\n\030vehic" +
-      "leCommandDefinition\0302 \001(\0132\031.VehicleComma" +
-      "ndDefinition\022)\n\017vehicleLogEntry\0303 \001(\0132\020." +
-      "VehicleLogEntry\022+\n\020vehicleParameter\0304 \001(" +
-      "\0132\021.VehicleParameter\022\'\n\016vehicleProfile\0305" +
-      " \001(\0132\017.VehicleProfile\022C\n\034vehicleProfileP" +
-      "ayloadProfile\0306 \001(\0132\035.VehicleProfilePayl" +
-      "oadProfile\022\021\n\003vsm\0307 \001(\0132\004.Vsm\022\023\n\004wait\0309 " +
-      "\001(\0132\005.Wait\022\'\n\016waitDefinition\030: \001(\0132\017.Wai",
-      "tDefinition\022\033\n\010waypoint\030; \001(\0132\t.Waypoint" +
-      "\022\037\n\nmessageSet\030< \001(\0132\013.MessageSet\022+\n\020loc" +
-      "alizedMessage\030= \001(\0132\021.LocalizedMessage\0229" +
-      "\n\027localizedMessageVariant\030> \001(\0132\030.Locali" +
-      "zedMessageVariant\022-\n\021telemetryInterval\030?" +
-      " \001(\0132\022.TelemetryInterval\022;\n\030telemetryInt" +
-      "ervalVehicle\030@ \001(\0132\031.TelemetryIntervalVe" +
-      "hicle\0221\n\023commandLogArguments\030A \001(\0132\024.Com" +
-      "mandLogArguments\022/\n\022uploadLogArguments\030B" +
-      " \001(\0132\023.UploadLogArguments\022)\n\017elevationSo",
-      "urce\030C \001(\0132\020.ElevationSource\022\035\n\tgeoServe" +
-      "r\030D \001(\0132\n.GeoServer\0227\n\026cameraSeriesByDis" +
-      "tance\030E \001(\0132\027.CameraSeriesByDistance\022K\n " +
-      "cameraSeriesByDistanceDefinition\030F \001(\0132!" +
-      ".CameraSeriesByDistanceDefinition\022/\n\022cam" +
-      "eraSeriesByTime\030G \001(\0132\023.CameraSeriesByTi" +
-      "me\022C\n\034cameraSeriesByTimeDefinition\030H \001(\013" +
-      "2\035.CameraSeriesByTimeDefinition\022\'\n\016platf" +
-      "ormAction\030I \001(\0132\017.PlatformAction\022%\n\rfeat" +
-      "ureSource\030J \001(\0132\016.FeatureSource\022?\n\032video",
-      "RecordingLogArguments\030K \001(\0132\033.VideoRecor" +
-      "dingLogArguments\022#\n\014utmOperation\030L \001(\0132\r" +
-      ".UtmOperation\022=\n\031commandArgumentDefiniti" +
-      "on\030M \001(\0132\032.CommandArgumentDefinition\022\033\n\010" +
-      "failsafe\030N \001(\0132\t.Failsafe\022+\n\020processedSe" +
-      "gment\030O \001(\0132\021.ProcessedSegment\022)\n\017routeA" +
-      "ttributes\030P \001(\0132\020.RouteAttributes\022\025\n\005val" +
-      "ue\030Q \001(\0132\006.Value\"a\n\007Version\022\n\n\002id\030\001 \001(\005\022" +
-      "\r\n\005major\030\002 \001(\005\022\r\n\005minor\030\003 \001(\005\022\r\n\005build\030\005" +
-      " \001(\005\022\035\n\tcomponent\030\004 \001(\0162\n.Component\"q\n\007L",
-      "icense\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004t" +
-      "ype\030\003 \001(\t\022\026\n\016activationCode\030\004 \001(\t\022\026\n\016act" +
-      "ivationTime\030\005 \001(\003\022\013\n\003tag\030\006 \001(\t\"\232\001\n\004User\022" +
-      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005login\030\003 " +
-      "\001(\t\022\020\n\010password\030\004 \001(\t\022\027\n\004role\030\005 \001(\0162\t.Us" +
-      "erRole\022\013\n\003tag\030\006 \001(\t\022.\n\022missionPreference" +
-      "s\030\007 \003(\0132\022.MissionPreference\"\212\001\n\021MissionP" +
-      "reference\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\023" +
-      "\n\004user\030\003 \001(\0132\005.User\022\031\n\007mission\030\004 \001(\0132\010.M" +
-      "ission\022\014\n\004name\030\005 \001(\t\022\r\n\005value\030\006 \001(\t\022\013\n\003t",
-      "ag\030\007 \001(\t\"k\n\003Vsm\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002" +
-      " \001(\005\022\014\n\004name\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port" +
-      "\030\005 \001(\005\022\020\n\010protocol\030\006 \001(\t\022\013\n\003tag\030\010 \001(\t\"\215\002" +
-      "\n\010Platform\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022" +
-      "\014\n\004code\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\r\n\005alias\030\005 \001" +
-      "(\t\022 \n\007actions\030\006 \003(\0132\017.PlatformAction\022.\n\016" +
-      "telemetryTypes\030\007 \003(\0132\026.PlatformTelemetry" +
-      "Type\022(\n\017vehicleProfiles\030\010 \003(\0132\017.VehicleP" +
-      "rofile\0220\n\017payloadProfiles\030\t \003(\0132\027.Platfo" +
-      "rmPayloadProfile\022\013\n\003tag\030\n \001(\t\"x\n\016Platfor",
-      "mAction\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\033\n\010" +
-      "platform\030\003 \001(\0132\t.Platform\022\037\n\nactionCode\030" +
-      "\004 \001(\0162\013.ActionCode\022\013\n\003tag\030\005 \001(\t\"\247\001\n\025Plat" +
-      "formTelemetryType\022\n\n\002id\030\001 \001(\005\022\017\n\007version" +
-      "\030\002 \001(\005\022\033\n\010platform\030\003 \001(\0132\t.Platform\022\034\n\004t" +
-      "ype\030\004 \001(\0162\016.TelemetryType\022\023\n\013compactView" +
-      "\030\005 \001(\010\022\024\n\014detailedView\030\006 \001(\010\022\013\n\003tag\030\007 \001(" +
-      "\t\"\210\001\n\026PlatformPayloadProfile\022\n\n\002id\030\001 \001(\005" +
-      "\022\017\n\007version\030\002 \001(\005\022\033\n\010platform\030\003 \001(\0132\t.Pl" +
-      "atform\022\'\n\016payloadProfile\030\004 \001(\0132\017.Payload",
-      "Profile\022\013\n\003tag\030\005 \001(\t\"\245\004\n\007Vehicle\022\n\n\002id\030\001" +
-      " \001(\005\022\017\n\007version\030\002 \001(\005\022\021\n\tvehicleId\030\003 \001(\003" +
-      "\022\021\n\003vsm\030\004 \001(\0132\004.Vsm\022\014\n\004name\030\005 \001(\t\022\022\n\ntai" +
-      "lNumber\030\006 \001(\t\022\032\n\004type\030\007 \001(\0162\014.VehicleTyp" +
-      "e\022\031\n\021downlinkConnected\030\010 \001(\010\022\027\n\017uplinkCo" +
-      "nnected\030\t \001(\010\022\026\n\016altitudeOrigin\030\r \001(\001\0225\n" +
-      "\022commandDefinitions\030\016 \003(\0132\031.VehicleComma" +
-      "ndDefinition\022\033\n\010platform\030\017 \001(\0132\t.Platfor" +
-      "m\022 \n\007profile\030\020 \001(\0132\017.VehicleProfile\022\013\n\003t" +
-      "ag\030\021 \001(\t\022\020\n\010emulator\030\022 \001(\010\022\026\n\016droneshare",
-      "Uuid\030\023 \001(\t\022\024\n\014homeLatitude\030\024 \001(\001\022\025\n\rhome" +
-      "Longitude\030\025 \001(\001\022\024\n\014homeAltitude\030\026 \001(\001\022\023\n" +
-      "\013icaoAddress\030\027 \001(\005\022$\n\radsbAircrafts\030\030 \003(" +
-      "\0132\r.AdsbAircraft\022\024\n\014serialNumber\030\031 \001(\t\022\014" +
-      "\n\004port\030\032 \001(\t\"\317\002\n\014AdsbAircraft\022\n\n\002id\030\001 \001(" +
-      "\005\022\017\n\007version\030\002 \001(\005\022\023\n\013icaoAddress\030\003 \001(\005\022" +
-      ")\n\017icaoAddressType\030\004 \001(\0162\020.IcaoAddressTy" +
-      "pe\022\022\n\nupdateTime\030\005 \001(\003\022\026\n\016identification" +
-      "\030\006 \001(\t\022\020\n\010latitude\030\007 \001(\001\022\021\n\tlongitude\030\010 " +
-      "\001(\001\022\023\n\013mslAltitude\030\t \001(\001\022\017\n\007heading\030\n \001(",
-      "\001\022\023\n\013groundSpeed\030\013 \001(\001\022\030\n\020verticalVeloci" +
-      "ty\030\014 \001(\001\022\013\n\003tag\030\r \001(\t\022\024\n\014registration\030\016 " +
-      "\001(\t\022\031\n\007vehicle\030\017 \001(\0132\010.Vehicle\"\232\001\n\034Vehic" +
-      "leProfilePayloadProfile\022\n\n\002id\030\001 \001(\005\022\017\n\007v" +
-      "ersion\030\002 \001(\005\022\'\n\016vehicleProfile\030\003 \001(\0132\017.V" +
-      "ehicleProfile\022\'\n\016payloadProfile\030\004 \001(\0132\017." +
-      "PayloadProfile\022\013\n\003tag\030\005 \001(\t\"\224\001\n\006Avatar\022\n" +
-      "\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\025\n\rimageMime" +
-      "Type\030\003 \001(\t\022\021\n\timageData\030\004 \001(\014\022\025\n\rmodelMi" +
-      "meType\030\005 \001(\t\022\021\n\tmodelData\030\006 \001(\014\022\014\n\004name\030",
-      "\007 \001(\t\022\013\n\003tag\030\010 \001(\t\"\266\002\n\016VehicleProfile\022\n\n" +
-      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t" +
-      "\022!\n\013vehicleType\030\004 \001(\0162\014.VehicleType\022\027\n\006a" +
-      "vatar\030\005 \001(\0132\007.Avatar\022%\n\nparameters\030\006 \003(\013" +
-      "2\021.VehicleParameter\0226\n\017payloadProfiles\030\007" +
-      " \003(\0132\035.VehicleProfilePayloadProfile\022\033\n\010p" +
-      "latform\030\010 \001(\0132\t.Platform\022\016\n\006sealed\030\t \001(\010" +
-      "\022\023\n\013unremovable\030\n \001(\010\022\013\n\003tag\030\013 \001(\t\022\017\n\007pr" +
-      "imary\030\014 \001(\010\"\231\001\n\020VehicleParameter\022\n\n\002id\030\001" +
-      " \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003 \001(\001\022\'\n\016",
-      "vehicleProfile\030\004 \001(\0132\017.VehicleProfile\022#\n" +
-      "\004type\030\005 \001(\0162\025.VehicleParameterType\022\013\n\003ta" +
-      "g\030\006 \001(\t\"\215\002\n\016PayloadProfile\022\n\n\002id\030\001 \001(\005\022\017" +
-      "\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022!\n\013payload" +
-      "Type\030\004 \001(\0162\014.PayloadType\022\025\n\rimageMimeTyp" +
-      "e\030\005 \001(\t\022\021\n\timageData\030\006 \001(\014\022%\n\nparameters" +
-      "\030\007 \003(\0132\021.PayloadParameter\022*\n\tplatforms\030\010" +
-      " \003(\0132\027.PlatformPayloadProfile\022\016\n\006sealed\030" +
-      "\t \001(\010\022\023\n\013unremovable\030\n \001(\010\022\013\n\003tag\030\013 \001(\t\"" +
-      "\231\001\n\020PayloadParameter\022\n\n\002id\030\001 \001(\005\022\017\n\007vers",
-      "ion\030\002 \001(\005\022\r\n\005value\030\003 \001(\001\022\'\n\016payloadProfi" +
-      "le\030\004 \001(\0132\017.PayloadProfile\022#\n\004type\030\005 \001(\0162" +
-      "\025.PayloadParameterType\022\013\n\003tag\030\006 \001(\t\"\360\001\n\021" +
-      "TraverseAlgorithm\022\n\n\002id\030\001 \001(\005\022\017\n\007version" +
-      "\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\033\n\023i" +
-      "mplementationClass\030\005 \001(\t\022\024\n\014selectFigure" +
-      "\030\006 \001(\010\022\037\n\nfigureType\030\007 \001(\0162\013.FigureType\022" +
-      "2\n\024parameterDefinitions\030\t \003(\0132\024.Paramete" +
-      "rDefinition\022\013\n\003tag\030\n \001(\t\022\014\n\004code\030\013 \001(\t\"\223" +
-      "\002\n\023ParameterDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007ve",
-      "rsion\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\014\n\004name\030\004 \001(\t" +
-      "\022\023\n\013description\030\005 \001(\t\022\034\n\004type\030\006 \001(\0162\016.Pa" +
-      "rameterType\022\021\n\tmandatory\030\007 \001(\010\022\024\n\014defaul" +
-      "tValue\030\010 \001(\t\022\027\n\017validationRegex\030\t \001(\t\022%\n" +
-      "\talgorithm\030\n \001(\0132\022.TraverseAlgorithm\022\031\n\004" +
-      "unit\030\013 \001(\0162\013.MetricUnit\022\013\n\003tag\030\014 \001(\t\"\233\001\n" +
-      "\005Prism\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003t" +
-      "ag\030\003 \001(\t\022\035\n\006points\030\004 \003(\0132\r.PolygonPoint\022" +
-      "#\n\014altitudeType\030\005 \001(\0162\r.AltitudeType\022\024\n\014" +
-      "baseAltitude\030\006 \001(\001\022\016\n\006height\030\007 \001(\001\"\203\001\n\014P",
-      "olygonPoint\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005" +
-      "\022\013\n\003tag\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\022\025\n\005prism\030\005 " +
-      "\001(\0132\006.Prism\022\020\n\010latitude\030\006 \001(\001\022\021\n\tlongitu" +
-      "de\030\007 \001(\001\"\221\001\n\006Figure\022\n\n\002id\030\001 \001(\005\022\017\n\007versi" +
-      "on\030\002 \001(\005\022\031\n\004type\030\003 \001(\0162\013.FigureType\022\034\n\006p" +
-      "oints\030\004 \003(\0132\014.FigurePoint\022$\n\nparameters\030" +
-      "\005 \003(\0132\020.FigureParameter\022\013\n\003tag\030\006 \001(\t\"r\n\017" +
-      "FigureParameter\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002" +
-      " \001(\005\022\r\n\005order\030\003 \001(\005\022\r\n\005value\030\004 \001(\001\022\027\n\006fi" +
-      "gure\030\005 \001(\0132\007.Figure\022\013\n\003tag\030\006 \001(\t\"\325\001\n\013Fig",
-      "urePoint\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n" +
-      "\005order\030\003 \001(\005\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongit" +
-      "ude\030\005 \001(\001\022\025\n\rwgs84Altitude\030\006 \001(\001\022\023\n\013aglA" +
-      "ltitude\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162\r.Al" +
-      "titudeType\022\027\n\006figure\030\t \001(\0132\007.Figure\022\013\n\003t" +
-      "ag\030\n \001(\t\"\275\001\n\007Mission\022\n\n\002id\030\001 \001(\005\022\017\n\007vers" +
-      "ion\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\023\n\013description\030\004" +
-      " \001(\t\022\024\n\014creationTime\030\005 \001(\003\022\026\n\006routes\030\006 \003" +
-      "(\0132\006.Route\022\024\n\005owner\030\007 \001(\0132\005.User\022!\n\010vehi" +
-      "cles\030\010 \003(\0132\017.MissionVehicle\022\013\n\003tag\030\t \001(\t",
-      "\"p\n\016MissionVehicle\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
-      "n\030\002 \001(\005\022\031\n\007mission\030\003 \001(\0132\010.Mission\022\031\n\007ve" +
-      "hicle\030\004 \001(\0132\010.Vehicle\022\013\n\003tag\030\005 \001(\t\"\202\005\n\005R" +
-      "oute\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004uui" +
-      "d\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\024\n\014creationTime\030\005 " +
-      "\001(\003\022\025\n\rscheduledTime\030\006 \001(\003\022\031\n\007mission\030\007 " +
-      "\001(\0132\010.Mission\022$\n\010segments\030\010 \003(\0132\022.Segmen" +
-      "tDefinition\022#\n\014altitudeType\030\t \001(\0162\r.Alti" +
-      "tudeType\022\'\n\016trajectoryType\030\n \001(\0162\017.Traje" +
-      "ctoryType\022\024\n\014safeAltitude\030\013 \001(\001\022\023\n\013maxAl",
-      "titude\030\014 \001(\001\022\024\n\014initialSpeed\030\r \001(\001\022\020\n\010ma" +
-      "xSpeed\030\016 \001(\001\022/\n\022homeLocationSource\030\017 \001(\016" +
-      "2\023.HomeLocationSource\022\024\n\014homeLatitude\030\020 " +
-      "\001(\001\022\025\n\rhomeLongitude\030\021 \001(\001\022\031\n\021homeWgs84A" +
-      "ltitude\030\022 \001(\001\022\027\n\017homeAglAltitude\030\023 \001(\001\022\034" +
-      "\n\tfailsafes\030\024 \003(\0132\t.Failsafe\022\'\n\016vehicleP" +
-      "rofile\030\025 \001(\0132\017.VehicleProfile\022\013\n\003tag\030\026 \001" +
-      "(\t\022\031\n\021checkAerodromeNfz\030\027 \001(\010\022\026\n\016checkCu" +
-      "stomNfz\030\030 \001(\010\022\030\n\020modificationUuid\030\031 \001(\t\"" +
-      "\215\001\n\010Failsafe\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(",
-      "\005\022\025\n\005route\030\003 \001(\0132\006.Route\022\037\n\006reason\030\004 \001(\016" +
-      "2\017.FailsafeReason\022\037\n\006action\030\005 \001(\0162\017.Fail" +
-      "safeAction\022\013\n\003tag\030\006 \001(\t\"\230\002\n\021SegmentDefin" +
-      "ition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004uu" +
-      "id\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\022\025\n\005route\030\005 \001(\0132\006" +
-      ".Route\022\032\n\022algorithmClassName\030\006 \001(\t\022\027\n\006fi" +
-      "gure\030\010 \001(\0132\007.Figure\022(\n\017parameterValues\030\n" +
-      " \003(\0132\017.ParameterValue\022,\n\021actionDefinitio" +
-      "ns\030\013 \003(\0132\021.ActionDefinition\022\013\n\003tag\030\014 \001(\t" +
-      "\022\030\n\020modificationUuid\030\r \001(\t\"\206\001\n\016Parameter",
-      "Value\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004na" +
-      "me\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022-\n\021segmentDefini" +
-      "tion\030\005 \001(\0132\022.SegmentDefinition\022\013\n\003tag\030\006 " +
-      "\001(\t\"\236\001\n\016ProcessedRoute\022\n\n\002id\030\001 \001(\005\022\017\n\007ve" +
-      "rsion\030\002 \001(\005\022\025\n\005route\030\003 \001(\0132\006.Route\022#\n\010se" +
-      "gments\030\004 \003(\0132\021.ProcessedSegment\022\013\n\003tag\030\006" +
-      " \001(\t\022\014\n\004uuid\030\007 \001(\t\022\030\n\020modificationUuid\030\010" +
-      " \001(\t\"\370\002\n\020ProcessedSegment\022\n\n\002id\030\001 \001(\005\022\017\n" +
-      "\007version\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022&\n\006status\030\004" +
-      " \001(\0162\026.RouteProcessingStatus\022\031\n\021estimate",
-      "dDistance\030\005 \001(\001\022\025\n\restimatedTime\030\006 \001(\001\022\030" +
-      "\n\020wrongPointNumber\030\007 \001(\005\022\037\n\nmessageSet\030\010" +
-      " \001(\0132\013.MessageSet\022\037\n\016segmentActions\030\t \003(" +
-      "\0132\007.Action\022\"\n\021connectionActions\030\n \003(\0132\007." +
-      "Action\022!\n\020optimizedActions\030\013 \003(\0132\007.Actio" +
-      "n\022\013\n\003tag\030\014 \001(\t\022\030\n\020modificationUuid\030\r \001(\t" +
-      "\022\025\n\ralgorithmCode\030\016 \001(\t\"[\n\nMessageSet\022\n\n" +
-      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022#\n\010messages\030\003" +
-      " \003(\0132\021.LocalizedMessage\022\013\n\003tag\030\004 \001(\t\"\321\001\n" +
-      "\020LocalizedMessage\022\n\n\002id\030\001 \001(\005\022\017\n\007version",
-      "\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\037\n\nmessageSet\030\004 \001(" +
-      "\0132\013.MessageSet\022\"\n\010severity\030\005 \001(\0162\020.Messa" +
-      "geSeverity\022\023\n\013defaultText\030\006 \001(\t\022*\n\010varia" +
-      "nts\030\007 \003(\0132\030.LocalizedMessageVariant\022\013\n\003t" +
-      "ag\030\010 \001(\t\"\216\001\n\027LocalizedMessageVariant\022\n\n\002" +
-      "id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\"\n\007message\030\004 \001" +
-      "(\0132\021.LocalizedMessage\022\020\n\010localeId\030\005 \001(\t\022" +
-      "\023\n\013messageText\030\006 \001(\t\022\013\n\003tag\030\007 \001(\t\"\330\005\n\006Ac" +
-      "tion\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005ord" +
-      "er\030\003 \001(\005\022\035\n\006origin\030\004 \001(\0162\r.ObjectOrigin\022",
-      ")\n\020processedSegment\030\005 \001(\0132\017.ProcessedRou" +
-      "te\022,\n\023processedConnection\030\006 \001(\0132\017.Proces" +
-      "sedRoute\022\'\n\016optimizedRoute\030\007 \001(\0132\017.Proce" +
-      "ssedRoute\022\033\n\010waypoint\030\010 \001(\0132\t.Waypoint\022!" +
-      "\n\013speedChange\030\t \001(\0132\014.SpeedChange\022#\n\014hom" +
-      "eLocation\030\n \001(\0132\r.HomeLocation\022\023\n\004wait\030\013" +
-      " \001(\0132\005.Wait\022\035\n\tpoiChange\030\014 \001(\0132\n.PoiChan" +
-      "ge\022%\n\rheadingChange\030\r \001(\0132\016.HeadingChang" +
-      "e\022%\n\rcameraControl\030\016 \001(\0132\016.CameraControl" +
-      "\022%\n\rcameraTrigger\030\017 \001(\0132\016.CameraTrigger\022",
-      "/\n\022cameraSeriesByTime\030\020 \001(\0132\023.CameraSeri" +
-      "esByTime\0227\n\026cameraSeriesByDistance\030\021 \001(\013" +
-      "2\027.CameraSeriesByDistance\022\031\n\007takeoff\030\022 \001" +
-      "(\0132\010.Takeoff\022\031\n\007landing\030\023 \001(\0132\010.Landing\022" +
-      "\033\n\010panorama\030\024 \001(\0132\t.Panorama\022)\n\017routeAtt" +
-      "ributes\030\026 \001(\0132\020.RouteAttributes\022\013\n\003tag\030\025" +
-      " \001(\t\"\323\001\n\010Waypoint\022\n\n\002id\030\001 \001(\005\022\017\n\007version" +
-      "\030\002 \001(\005\022\020\n\010latitude\030\003 \001(\001\022\021\n\tlongitude\030\004 " +
-      "\001(\001\022\025\n\rwgs84Altitude\030\005 \001(\001\022\021\n\televation\030" +
-      "\006 \001(\001\022\017\n\007heading\030\007 \001(\001\022\030\n\020acceptanceRadi",
-      "us\030\010 \001(\001\022#\n\010turnType\030\t \001(\0162\021.WaypointTur" +
-      "nType\022\013\n\003tag\030\n \001(\t\"u\n\rCameraControl\022\n\n\002i" +
-      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004tilt\030\003 \001(\001\022\014" +
-      "\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n\tzoomLevel\030\006" +
-      " \001(\005\022\013\n\003tag\030\007 \001(\t\"W\n\rCameraTrigger\022\n\n\002id" +
-      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\034\n\005state\030\003 \001(\0162\r" +
-      ".TriggerState\022\013\n\003tag\030\005 \001(\t\"\213\001\n\022CameraSer" +
-      "iesByTime\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020" +
-      "\n\010interval\030\003 \001(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022\n" +
-      "\nstartDelay\030\005 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003t",
-      "ag\030\006 \001(\t\"\217\001\n\026CameraSeriesByDistance\022\n\n\002i" +
-      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\003 \001" +
-      "(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022\n\nstartDelay\030\005 " +
-      "\001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\006 \001(\t\"B\n\004Wa" +
-      "it\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010inter" +
-      "val\030\003 \001(\001\022\013\n\003tag\030\004 \001(\t\"\203\001\n\rHeadingChange" +
+      "raft\030\003 \001(\0132\r.AdsbAircraft\022%\n\rcameraContr" +
+      "ol\030\005 \001(\0132\016.CameraControl\0229\n\027cameraContro" +
+      "lDefinition\030\006 \001(\0132\030.CameraControlDefinit" +
+      "ion\022%\n\rcameraTrigger\030\007 \001(\0132\016.CameraTrigg" +
+      "er\0229\n\027cameraTriggerDefinition\030\010 \001(\0132\030.Ca" +
+      "meraTriggerDefinition\022-\n\021commandDefiniti" +
+      "on\030\t \001(\0132\022.CommandDefinition\022\027\n\006figure\030\n",
+      " \001(\0132\007.Figure\022)\n\017figureParameter\030\013 \001(\0132\020" +
+      ".FigureParameter\022!\n\013figurePoint\030\014 \001(\0132\014." +
+      "FigurePoint\022%\n\rheadingChange\030\r \001(\0132\016.Hea" +
+      "dingChange\022-\n\021headingDefinition\030\016 \001(\0132\022." +
+      "HeadingDefinition\022#\n\014homeLocation\030\017 \001(\0132" +
+      "\r.HomeLocation\022\031\n\007landing\030\020 \001(\0132\010.Landin" +
+      "g\022\031\n\007license\030\022 \001(\0132\010.License\022\031\n\007mission\030" +
+      "\023 \001(\0132\010.Mission\022-\n\021missionPreference\030\025 \001" +
+      "(\0132\022.MissionPreference\022\'\n\016missionVehicle" +
+      "\030\026 \001(\0132\017.MissionVehicle\022#\n\014noFlightZone\030",
+      "\031 \001(\0132\r.NoFlightZone\022\033\n\010panorama\030\032 \001(\0132\t" +
+      ".Panorama\022/\n\022panoramaDefinition\030\033 \001(\0132\023." +
+      "PanoramaDefinition\0221\n\023parameterDefinitio" +
+      "n\030\034 \001(\0132\024.ParameterDefinition\022\'\n\016paramet" +
+      "erValue\030\035 \001(\0132\017.ParameterValue\022+\n\020payloa" +
+      "dParameter\030\036 \001(\0132\021.PayloadParameter\022\'\n\016p" +
+      "ayloadProfile\030\037 \001(\0132\017.PayloadProfile\022\033\n\010" +
+      "platform\030  \001(\0132\t.Platform\0227\n\026platformPay" +
+      "loadProfile\030! \001(\0132\027.PlatformPayloadProfi" +
+      "le\0225\n\025platformTelemetryType\030\" \001(\0132\026.Plat",
+      "formTelemetryType\022\035\n\tpoiChange\030$ \001(\0132\n.P" +
+      "oiChange\022%\n\rpoiDefinition\030% \001(\0132\016.PoiDef" +
+      "inition\022\025\n\005prism\030& \001(\0132\006.Prism\022#\n\014polygo" +
+      "nPoint\030\' \001(\0132\r.PolygonPoint\022\'\n\016processed" +
+      "Route\030( \001(\0132\017.ProcessedRoute\022\025\n\005route\030) " +
+      "\001(\0132\006.Route\022-\n\021segmentDefinition\030* \001(\0132\022" +
+      ".SegmentDefinition\022!\n\013speedChange\030, \001(\0132" +
+      "\014.SpeedChange\022\031\n\007takeoff\030- \001(\0132\010.Takeoff" +
+      "\022\035\n\ttelemetry\030. \001(\0132\n.Telemetry\022-\n\021trave" +
+      "rseAlgorithm\030/ \001(\0132\022.TraverseAlgorithm\022\023",
+      "\n\004user\0300 \001(\0132\005.User\022\031\n\007vehicle\0301 \001(\0132\010.V" +
+      "ehicle\022;\n\030vehicleCommandDefinition\0302 \001(\013" +
+      "2\031.VehicleCommandDefinition\022)\n\017vehicleLo" +
+      "gEntry\0303 \001(\0132\020.VehicleLogEntry\022+\n\020vehicl" +
+      "eParameter\0304 \001(\0132\021.VehicleParameter\022\'\n\016v" +
+      "ehicleProfile\0305 \001(\0132\017.VehicleProfile\022C\n\034" +
+      "vehicleProfilePayloadProfile\0306 \001(\0132\035.Veh" +
+      "icleProfilePayloadProfile\022\021\n\003vsm\0307 \001(\0132\004" +
+      ".Vsm\022\023\n\004wait\0309 \001(\0132\005.Wait\022\'\n\016waitDefinit" +
+      "ion\030: \001(\0132\017.WaitDefinition\022\033\n\010waypoint\030;",
+      " \001(\0132\t.Waypoint\022\037\n\nmessageSet\030< \001(\0132\013.Me" +
+      "ssageSet\022+\n\020localizedMessage\030= \001(\0132\021.Loc" +
+      "alizedMessage\0229\n\027localizedMessageVariant" +
+      "\030> \001(\0132\030.LocalizedMessageVariant\022-\n\021tele" +
+      "metryInterval\030? \001(\0132\022.TelemetryInterval\022" +
+      ";\n\030telemetryIntervalVehicle\030@ \001(\0132\031.Tele" +
+      "metryIntervalVehicle\0221\n\023commandLogArgume" +
+      "nts\030A \001(\0132\024.CommandLogArguments\022/\n\022uploa" +
+      "dLogArguments\030B \001(\0132\023.UploadLogArguments" +
+      "\022)\n\017elevationSource\030C \001(\0132\020.ElevationSou",
+      "rce\022\035\n\tgeoServer\030D \001(\0132\n.GeoServer\0227\n\026ca" +
+      "meraSeriesByDistance\030E \001(\0132\027.CameraSerie" +
+      "sByDistance\022K\n cameraSeriesByDistanceDef" +
+      "inition\030F \001(\0132!.CameraSeriesByDistanceDe" +
+      "finition\022/\n\022cameraSeriesByTime\030G \001(\0132\023.C" +
+      "ameraSeriesByTime\022C\n\034cameraSeriesByTimeD" +
+      "efinition\030H \001(\0132\035.CameraSeriesByTimeDefi" +
+      "nition\022\'\n\016platformAction\030I \001(\0132\017.Platfor" +
+      "mAction\022%\n\rfeatureSource\030J \001(\0132\016.Feature" +
+      "Source\022?\n\032videoRecordingLogArguments\030K \001",
+      "(\0132\033.VideoRecordingLogArguments\022#\n\014utmOp" +
+      "eration\030L \001(\0132\r.UtmOperation\022=\n\031commandA" +
+      "rgumentDefinition\030M \001(\0132\032.CommandArgumen" +
+      "tDefinition\022\033\n\010failsafe\030N \001(\0132\t.Failsafe" +
+      "\022+\n\020processedSegment\030O \001(\0132\021.ProcessedSe" +
+      "gment\022)\n\017routeAttributes\030P \001(\0132\020.RouteAt" +
+      "tributes\022\025\n\005value\030Q \001(\0132\006.Value\022\033\n\010setSe" +
+      "rvo\030R \001(\0132\t.SetServo\022!\n\013repeatServo\030S \001(" +
+      "\0132\014.RepeatServo\022)\n\017transitionFixed\030T \001(\013" +
+      "2\020.TransitionFixed\022\'\n\016transitionVtol\030U \001",
+      "(\0132\017.TransitionVtol\022!\n\013routeUpload\030V \001(\013" +
+      "2\014.RouteUpload\"a\n\007Version\022\n\n\002id\030\001 \001(\005\022\r\n" +
+      "\005major\030\002 \001(\005\022\r\n\005minor\030\003 \001(\005\022\r\n\005build\030\005 \001" +
+      "(\005\022\035\n\tcomponent\030\004 \001(\0162\n.Component\"q\n\007Lic" +
+      "ense\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004typ" +
+      "e\030\003 \001(\t\022\026\n\016activationCode\030\004 \001(\t\022\026\n\016activ" +
+      "ationTime\030\005 \001(\003\022\013\n\003tag\030\006 \001(\t\"\232\001\n\004User\022\n\n" +
+      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005login\030\003 \001(" +
+      "\t\022\020\n\010password\030\004 \001(\t\022\027\n\004role\030\005 \001(\0162\t.User" +
+      "Role\022\013\n\003tag\030\006 \001(\t\022.\n\022missionPreferences\030",
+      "\007 \003(\0132\022.MissionPreference\"\212\001\n\021MissionPre" +
+      "ference\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\023\n\004" +
+      "user\030\003 \001(\0132\005.User\022\031\n\007mission\030\004 \001(\0132\010.Mis" +
+      "sion\022\014\n\004name\030\005 \001(\t\022\r\n\005value\030\006 \001(\t\022\013\n\003tag" +
+      "\030\007 \001(\t\"k\n\003Vsm\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001" +
+      "(\005\022\014\n\004name\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\022\014\n\004port\030\005" +
+      " \001(\005\022\020\n\010protocol\030\006 \001(\t\022\013\n\003tag\030\010 \001(\t\"\215\002\n\010" +
+      "Platform\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n" +
+      "\004code\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\r\n\005alias\030\005 \001(\t" +
+      "\022 \n\007actions\030\006 \003(\0132\017.PlatformAction\022.\n\016te",
+      "lemetryTypes\030\007 \003(\0132\026.PlatformTelemetryTy" +
+      "pe\022(\n\017vehicleProfiles\030\010 \003(\0132\017.VehiclePro" +
+      "file\0220\n\017payloadProfiles\030\t \003(\0132\027.Platform" +
+      "PayloadProfile\022\013\n\003tag\030\n \001(\t\"x\n\016PlatformA" +
+      "ction\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\033\n\010pl" +
+      "atform\030\003 \001(\0132\t.Platform\022\037\n\nactionCode\030\004 " +
+      "\001(\0162\013.ActionCode\022\013\n\003tag\030\005 \001(\t\"\247\001\n\025Platfo" +
+      "rmTelemetryType\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002" +
+      " \001(\005\022\033\n\010platform\030\003 \001(\0132\t.Platform\022\034\n\004typ" +
+      "e\030\004 \001(\0162\016.TelemetryType\022\023\n\013compactView\030\005",
+      " \001(\010\022\024\n\014detailedView\030\006 \001(\010\022\013\n\003tag\030\007 \001(\t\"" +
+      "\210\001\n\026PlatformPayloadProfile\022\n\n\002id\030\001 \001(\005\022\017" +
+      "\n\007version\030\002 \001(\005\022\033\n\010platform\030\003 \001(\0132\t.Plat" +
+      "form\022\'\n\016payloadProfile\030\004 \001(\0132\017.PayloadPr" +
+      "ofile\022\013\n\003tag\030\005 \001(\t\"\243\003\n\007Vehicle\022\n\n\002id\030\001 \001" +
+      "(\005\022\017\n\007version\030\002 \001(\005\022\021\n\tvehicleId\030\003 \001(\003\022\014" +
+      "\n\004name\030\005 \001(\t\022\022\n\ntailNumber\030\006 \001(\t\022\032\n\004type" +
+      "\030\007 \001(\0162\014.VehicleType\022\026\n\016altitudeOrigin\030\r" +
+      " \001(\001\0225\n\022commandDefinitions\030\016 \003(\0132\031.Vehic" +
+      "leCommandDefinition\022\033\n\010platform\030\017 \001(\0132\t.",
+      "Platform\022 \n\007profile\030\020 \001(\0132\017.VehicleProfi" +
+      "le\022\013\n\003tag\030\021 \001(\t\022\020\n\010emulator\030\022 \001(\010\022\023\n\013ica" +
+      "oAddress\030\027 \001(\005\022$\n\radsbAircrafts\030\030 \003(\0132\r." +
+      "AdsbAircraft\022\024\n\014serialNumber\030\031 \001(\t\022\014\n\004po" +
+      "rt\030\032 \001(\t\022\036\n\006source\030\033 \001(\0162\016.VehicleSource" +
+      "\"\317\002\n\014AdsbAircraft\022\n\n\002id\030\001 \001(\005\022\017\n\007version" +
+      "\030\002 \001(\005\022\023\n\013icaoAddress\030\003 \001(\005\022)\n\017icaoAddre" +
+      "ssType\030\004 \001(\0162\020.IcaoAddressType\022\022\n\nupdate" +
+      "Time\030\005 \001(\003\022\026\n\016identification\030\006 \001(\t\022\020\n\010la" +
+      "titude\030\007 \001(\001\022\021\n\tlongitude\030\010 \001(\001\022\023\n\013mslAl",
+      "titude\030\t \001(\001\022\017\n\007heading\030\n \001(\001\022\023\n\013groundS" +
+      "peed\030\013 \001(\001\022\030\n\020verticalVelocity\030\014 \001(\001\022\013\n\003" +
+      "tag\030\r \001(\t\022\024\n\014registration\030\016 \001(\t\022\031\n\007vehic" +
+      "le\030\017 \001(\0132\010.Vehicle\"\232\001\n\034VehicleProfilePay" +
+      "loadProfile\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005" +
+      "\022\'\n\016vehicleProfile\030\003 \001(\0132\017.VehicleProfil" +
+      "e\022\'\n\016payloadProfile\030\004 \001(\0132\017.PayloadProfi" +
+      "le\022\013\n\003tag\030\005 \001(\t\"\301\002\n\016VehicleProfile\022\n\n\002id" +
+      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022!\n" +
+      "\013vehicleType\030\004 \001(\0162\014.VehicleType\022%\n\npara",
+      "meters\030\006 \003(\0132\021.VehicleParameter\0226\n\017paylo" +
+      "adProfiles\030\007 \003(\0132\035.VehicleProfilePayload" +
+      "Profile\022\033\n\010platform\030\010 \001(\0132\t.Platform\022\016\n\006" +
+      "sealed\030\t \001(\010\022\023\n\013unremovable\030\n \001(\010\022\013\n\003tag" +
+      "\030\013 \001(\t\022\017\n\007primary\030\014 \001(\010\022\020\n\010modelKey\030\r \001(" +
+      "\t\022\020\n\010imageKey\030\016 \001(\t\"\231\001\n\020VehicleParameter" +
+      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003" +
+      " \001(\001\022\'\n\016vehicleProfile\030\004 \001(\0132\017.VehiclePr" +
+      "ofile\022#\n\004type\030\005 \001(\0162\025.VehicleParameterTy" +
+      "pe\022\013\n\003tag\030\006 \001(\t\"\365\001\n\016PayloadProfile\022\n\n\002id",
+      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022!\n" +
+      "\013payloadType\030\004 \001(\0162\014.PayloadType\022\020\n\010imag" +
+      "eKey\030\005 \001(\t\022%\n\nparameters\030\007 \003(\0132\021.Payload" +
+      "Parameter\022*\n\tplatforms\030\010 \003(\0132\027.PlatformP" +
+      "ayloadProfile\022\016\n\006sealed\030\t \001(\010\022\023\n\013unremov" +
+      "able\030\n \001(\010\022\013\n\003tag\030\013 \001(\t\"\231\001\n\020PayloadParam" +
+      "eter\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005val" +
+      "ue\030\003 \001(\001\022\'\n\016payloadProfile\030\004 \001(\0132\017.Paylo" +
+      "adProfile\022#\n\004type\030\005 \001(\0162\025.PayloadParamet" +
+      "erType\022\013\n\003tag\030\006 \001(\t\"\360\001\n\021TraverseAlgorith",
+      "m\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030" +
+      "\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\033\n\023implementationCla" +
+      "ss\030\005 \001(\t\022\024\n\014selectFigure\030\006 \001(\010\022\037\n\nfigure" +
+      "Type\030\007 \001(\0162\013.FigureType\0222\n\024parameterDefi" +
+      "nitions\030\t \003(\0132\024.ParameterDefinition\022\013\n\003t" +
+      "ag\030\n \001(\t\022\014\n\004code\030\013 \001(\t\"\223\002\n\023ParameterDefi" +
+      "nition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005o" +
+      "rder\030\003 \001(\005\022\014\n\004name\030\004 \001(\t\022\023\n\013description\030" +
+      "\005 \001(\t\022\034\n\004type\030\006 \001(\0162\016.ParameterType\022\021\n\tm" +
+      "andatory\030\007 \001(\010\022\024\n\014defaultValue\030\010 \001(\t\022\027\n\017",
+      "validationRegex\030\t \001(\t\022%\n\talgorithm\030\n \001(\013" +
+      "2\022.TraverseAlgorithm\022\031\n\004unit\030\013 \001(\0162\013.Met" +
+      "ricUnit\022\013\n\003tag\030\014 \001(\t\"\233\001\n\005Prism\022\n\n\002id\030\001 \001" +
+      "(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\035\n\006poin" +
+      "ts\030\004 \003(\0132\r.PolygonPoint\022#\n\014altitudeType\030" +
+      "\005 \001(\0162\r.AltitudeType\022\024\n\014baseAltitude\030\006 \001" +
+      "(\001\022\016\n\006height\030\007 \001(\001\"\203\001\n\014PolygonPoint\022\n\n\002i" +
+      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\r\n" +
+      "\005order\030\004 \001(\005\022\025\n\005prism\030\005 \001(\0132\006.Prism\022\020\n\010l" +
+      "atitude\030\006 \001(\001\022\021\n\tlongitude\030\007 \001(\001\"\221\001\n\006Fig",
+      "ure\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\004type" +
+      "\030\003 \001(\0162\013.FigureType\022\034\n\006points\030\004 \003(\0132\014.Fi" +
+      "gurePoint\022$\n\nparameters\030\005 \003(\0132\020.FigurePa" +
+      "rameter\022\013\n\003tag\030\006 \001(\t\"r\n\017FigureParameter\022" +
+      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030\003 " +
+      "\001(\005\022\r\n\005value\030\004 \001(\001\022\027\n\006figure\030\005 \001(\0132\007.Fig" +
+      "ure\022\013\n\003tag\030\006 \001(\t\"\325\001\n\013FigurePoint\022\n\n\002id\030\001" +
+      " \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\020\n\010" +
+      "latitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001(\001\022\025\n\rwgs" +
+      "84Altitude\030\006 \001(\001\022\023\n\013aglAltitude\030\007 \001(\001\022#\n",
+      "\014altitudeType\030\010 \001(\0162\r.AltitudeType\022\027\n\006fi" +
+      "gure\030\t \001(\0132\007.Figure\022\013\n\003tag\030\n \001(\t\"\275\001\n\007Mis" +
+      "sion\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004nam" +
+      "e\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022\024\n\014creation" +
+      "Time\030\005 \001(\003\022\026\n\006routes\030\006 \003(\0132\006.Route\022\024\n\005ow" +
+      "ner\030\007 \001(\0132\005.User\022!\n\010vehicles\030\010 \003(\0132\017.Mis" +
+      "sionVehicle\022\013\n\003tag\030\t \001(\t\"p\n\016MissionVehic" +
+      "le\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\007missi" +
+      "on\030\003 \001(\0132\010.Mission\022\031\n\007vehicle\030\004 \001(\0132\010.Ve" +
+      "hicle\022\013\n\003tag\030\005 \001(\t\"\202\005\n\005Route\022\n\n\002id\030\001 \001(\005",
+      "\022\017\n\007version\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\014\n\004name\030" +
+      "\004 \001(\t\022\024\n\014creationTime\030\005 \001(\003\022\025\n\rscheduled" +
+      "Time\030\006 \001(\003\022\031\n\007mission\030\007 \001(\0132\010.Mission\022$\n" +
+      "\010segments\030\010 \003(\0132\022.SegmentDefinition\022#\n\014a" +
+      "ltitudeType\030\t \001(\0162\r.AltitudeType\022\'\n\016traj" +
+      "ectoryType\030\n \001(\0162\017.TrajectoryType\022\024\n\014saf" +
+      "eAltitude\030\013 \001(\001\022\023\n\013maxAltitude\030\014 \001(\001\022\024\n\014" +
+      "initialSpeed\030\r \001(\001\022\020\n\010maxSpeed\030\016 \001(\001\022/\n\022" +
+      "homeLocationSource\030\017 \001(\0162\023.HomeLocationS" +
+      "ource\022\024\n\014homeLatitude\030\020 \001(\001\022\025\n\rhomeLongi",
+      "tude\030\021 \001(\001\022\031\n\021homeWgs84Altitude\030\022 \001(\001\022\027\n" +
+      "\017homeAglAltitude\030\023 \001(\001\022\034\n\tfailsafes\030\024 \003(" +
+      "\0132\t.Failsafe\022\'\n\016vehicleProfile\030\025 \001(\0132\017.V" +
+      "ehicleProfile\022\013\n\003tag\030\026 \001(\t\022\031\n\021checkAerod" +
+      "romeNfz\030\027 \001(\010\022\026\n\016checkCustomNfz\030\030 \001(\010\022\030\n" +
+      "\020modificationUuid\030\031 \001(\t\"\261\001\n\013RouteUpload\022" +
+      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\025\n\005route\030\003 " +
+      "\001(\0132\006.Route\022\035\n\025routeModificationUuid\030\004 \001" +
+      "(\t\022\031\n\007vehicle\030\005 \001(\0132\010.Vehicle\022\023\n\004user\030\006 " +
+      "\001(\0132\005.User\022\022\n\nuploadTime\030\007 \001(\003\022\013\n\003tag\030\010 ",
+      "\001(\t\"\215\001\n\010Failsafe\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030" +
+      "\002 \001(\005\022\025\n\005route\030\003 \001(\0132\006.Route\022\037\n\006reason\030\004" +
+      " \001(\0162\017.FailsafeReason\022\037\n\006action\030\005 \001(\0162\017." +
+      "FailsafeAction\022\013\n\003tag\030\006 \001(\t\"\230\002\n\021SegmentD" +
+      "efinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014" +
+      "\n\004uuid\030\003 \001(\t\022\r\n\005order\030\004 \001(\005\022\025\n\005route\030\005 \001" +
+      "(\0132\006.Route\022\032\n\022algorithmClassName\030\006 \001(\t\022\027" +
+      "\n\006figure\030\010 \001(\0132\007.Figure\022(\n\017parameterValu" +
+      "es\030\n \003(\0132\017.ParameterValue\022,\n\021actionDefin" +
+      "itions\030\013 \003(\0132\021.ActionDefinition\022\013\n\003tag\030\014",
+      " \001(\t\022\030\n\020modificationUuid\030\r \001(\t\"\206\001\n\016Param" +
+      "eterValue\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014" +
+      "\n\004name\030\003 \001(\t\022\r\n\005value\030\004 \001(\t\022-\n\021segmentDe" +
+      "finition\030\005 \001(\0132\022.SegmentDefinition\022\013\n\003ta" +
+      "g\030\006 \001(\t\"\236\001\n\016ProcessedRoute\022\n\n\002id\030\001 \001(\005\022\017" +
+      "\n\007version\030\002 \001(\005\022\025\n\005route\030\003 \001(\0132\006.Route\022#" +
+      "\n\010segments\030\004 \003(\0132\021.ProcessedSegment\022\013\n\003t" +
+      "ag\030\006 \001(\t\022\014\n\004uuid\030\007 \001(\t\022\030\n\020modificationUu" +
+      "id\030\010 \001(\t\"\370\002\n\020ProcessedSegment\022\n\n\002id\030\001 \001(" +
+      "\005\022\017\n\007version\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022&\n\006stat",
+      "us\030\004 \001(\0162\026.RouteProcessingStatus\022\031\n\021esti" +
+      "matedDistance\030\005 \001(\001\022\025\n\restimatedTime\030\006 \001" +
+      "(\001\022\030\n\020wrongPointNumber\030\007 \001(\005\022\037\n\nmessageS" +
+      "et\030\010 \001(\0132\013.MessageSet\022\037\n\016segmentActions\030" +
+      "\t \003(\0132\007.Action\022\"\n\021connectionActions\030\n \003(" +
+      "\0132\007.Action\022!\n\020optimizedActions\030\013 \003(\0132\007.A" +
+      "ction\022\013\n\003tag\030\014 \001(\t\022\030\n\020modificationUuid\030\r" +
+      " \001(\t\022\025\n\ralgorithmCode\030\016 \001(\t\"[\n\nMessageSe" +
+      "t\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022#\n\010messag" +
+      "es\030\003 \003(\0132\021.LocalizedMessage\022\013\n\003tag\030\004 \001(\t",
+      "\"\321\001\n\020LocalizedMessage\022\n\n\002id\030\001 \001(\005\022\017\n\007ver" +
+      "sion\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\037\n\nmessageSet\030" +
+      "\004 \001(\0132\013.MessageSet\022\"\n\010severity\030\005 \001(\0162\020.M" +
+      "essageSeverity\022\023\n\013defaultText\030\006 \001(\t\022*\n\010v" +
+      "ariants\030\007 \003(\0132\030.LocalizedMessageVariant\022" +
+      "\013\n\003tag\030\010 \001(\t\"\216\001\n\027LocalizedMessageVariant" +
+      "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\"\n\007message" +
+      "\030\004 \001(\0132\021.LocalizedMessage\022\020\n\010localeId\030\005 " +
+      "\001(\t\022\023\n\013messageText\030\006 \001(\t\022\013\n\003tag\030\007 \001(\t\"\203\007" +
+      "\n\006Action\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n",
+      "\005order\030\003 \001(\005\022\035\n\006origin\030\004 \001(\0162\r.ObjectOri" +
+      "gin\022)\n\020processedSegment\030\005 \001(\0132\017.Processe" +
+      "dRoute\022,\n\023processedConnection\030\006 \001(\0132\017.Pr" +
+      "ocessedRoute\022\'\n\016optimizedRoute\030\007 \001(\0132\017.P" +
+      "rocessedRoute\022\033\n\010waypoint\030\010 \001(\0132\t.Waypoi" +
+      "nt\022!\n\013speedChange\030\t \001(\0132\014.SpeedChange\022#\n" +
+      "\014homeLocation\030\n \001(\0132\r.HomeLocation\022\023\n\004wa" +
+      "it\030\013 \001(\0132\005.Wait\022\035\n\tpoiChange\030\014 \001(\0132\n.Poi" +
+      "Change\022%\n\rheadingChange\030\r \001(\0132\016.HeadingC" +
+      "hange\022%\n\rcameraControl\030\016 \001(\0132\016.CameraCon",
+      "trol\022%\n\rcameraTrigger\030\017 \001(\0132\016.CameraTrig" +
+      "ger\022/\n\022cameraSeriesByTime\030\020 \001(\0132\023.Camera" +
+      "SeriesByTime\0227\n\026cameraSeriesByDistance\030\021" +
+      " \001(\0132\027.CameraSeriesByDistance\022\031\n\007takeoff" +
+      "\030\022 \001(\0132\010.Takeoff\022\031\n\007landing\030\023 \001(\0132\010.Land" +
+      "ing\022\033\n\010panorama\030\024 \001(\0132\t.Panorama\022)\n\017rout" +
+      "eAttributes\030\026 \001(\0132\020.RouteAttributes\022\033\n\010s" +
+      "etServo\030\027 \001(\0132\t.SetServo\022!\n\013repeatServo\030" +
+      "\030 \001(\0132\014.RepeatServo\022\'\n\016transitionVtol\030\032 " +
+      "\001(\0132\017.TransitionVtol\022)\n\017transitionFixed\030",
+      "\033 \001(\0132\020.TransitionFixed\022\013\n\003tag\030\025 \001(\t\022\025\n\r" +
+      "estimatedTime\030\031 \001(\001\"\323\001\n\010Waypoint\022\n\n\002id\030\001" +
+      " \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010latitude\030\003 \001(\001\022" +
+      "\021\n\tlongitude\030\004 \001(\001\022\025\n\rwgs84Altitude\030\005 \001(" +
+      "\001\022\021\n\televation\030\006 \001(\001\022\017\n\007heading\030\007 \001(\001\022\030\n" +
+      "\020acceptanceRadius\030\010 \001(\001\022#\n\010turnType\030\t \001(" +
+      "\0162\021.WaypointTurnType\022\013\n\003tag\030\n \001(\t\"u\n\rCam" +
+      "eraControl\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022" +
+      "\014\n\004tilt\030\003 \001(\001\022\014\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001" +
+      "\022\021\n\tzoomLevel\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"W\n\rCame",
+      "raTrigger\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\034" +
+      "\n\005state\030\003 \001(\0162\r.TriggerState\022\013\n\003tag\030\005 \001(" +
+      "\t\"\213\001\n\022CameraSeriesByTime\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
+      "version\030\002 \001(\005\022\020\n\010interval\030\003 \001(\001\022\023\n\013shots" +
+      "Number\030\004 \001(\005\022\022\n\nstartDelay\030\005 \001(\001\022\020\n\010auto" +
+      "Calc\030\007 \001(\010\022\013\n\003tag\030\006 \001(\t\"\217\001\n\026CameraSeries" +
+      "ByDistance\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022" +
+      "\020\n\010interval\030\003 \001(\001\022\023\n\013shotsNumber\030\004 \001(\005\022\022" +
+      "\n\nstartDelay\030\005 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003" +
+      "tag\030\006 \001(\t\"[\n\004Wait\022\n\n\002id\030\001 \001(\005\022\017\n\007version",
+      "\030\002 \001(\005\022\020\n\010interval\030\003 \001(\001\022\027\n\017waitForOpera" +
+      "tor\030\004 \001(\010\022\013\n\003tag\030\005 \001(\t\"\203\001\n\rHeadingChange" +
       "\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n\007heading" +
       "\030\003 \001(\001\022\036\n\026relativeToNextWaypoint\030\004 \001(\010\022\027" +
       "\n\017relativeToNorth\030\005 \001(\010\022\013\n\003tag\030\006 \001(\t\"\207\001\n" +
-      "\014HomeLocation\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001",
+      "\014HomeLocation\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001" +
       "(\005\022\020\n\010latitude\030\003 \001(\001\022\021\n\tlongitude\030\004 \001(\001\022" +
       "\025\n\rwgs84Altitude\030\005 \001(\001\022\021\n\televation\030\006 \001(" +
       "\001\022\013\n\003tag\030\007 \001(\t\"\211\001\n\tPoiChange\022\n\n\002id\030\001 \001(\005" +
-      "\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.PoiMod" +
+      "\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.PoiMod",
       "e\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001(\001\022\025" +
       "\n\rwgs84Altitude\030\006 \001(\001\022\013\n\003tag\030\007 \001(\t\"a\n\013Sp" +
       "eedChange\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\023" +
       "\n\013groundSpeed\030\003 \001(\001\022\023\n\013rateOfClimb\030\004 \001(\001" +
       "\022\013\n\003tag\030\005 \001(\t\"\261\001\n\007Takeoff\022\n\n\002id\030\001 \001(\005\022\017\n" +
-      "\007version\030\002 \001(\005\022\030\n\020acceptanceRadius\030\003 \001(\001",
+      "\007version\030\002 \001(\005\022\030\n\020acceptanceRadius\030\003 \001(\001" +
       "\022\023\n\013rateOfClimb\030\004 \001(\001\022\020\n\010latitude\030\005 \001(\001\022" +
       "\021\n\tlongitude\030\006 \001(\001\022\025\n\rwgs84Altitude\030\007 \001(" +
       "\001\022\021\n\televation\030\010 \001(\001\022\013\n\003tag\030\t \001(\t\"\263\001\n\007La" +
-      "nding\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\030\n\020ac" +
+      "nding\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\030\n\020ac",
       "ceptanceRadius\030\003 \001(\001\022\025\n\rrateOfDescent\030\004 " +
       "\001(\001\022\020\n\010latitude\030\005 \001(\001\022\021\n\tlongitude\030\006 \001(\001" +
       "\022\025\n\rwgs84Altitude\030\007 \001(\001\022\021\n\televation\030\010 \001" +
       "(\001\022\013\n\003tag\030\t \001(\t\"\324\001\n\010Panorama\022\n\n\002id\030\001 \001(\005" +
       "\022\017\n\007version\030\002 \001(\005\022\r\n\005angle\030\003 \001(\001\022\021\n\tstep" +
-      "Angle\030\004 \001(\001\022\021\n\tstepDelay\030\005 \001(\001\022-\n\021rotati",
+      "Angle\030\004 \001(\001\022\021\n\tstepDelay\030\005 \001(\001\022-\n\021rotati" +
       "onDirection\030\006 \001(\0162\022.RotationDirection\022\025\n" +
       "\rrotationSpeed\030\007 \001(\001\022#\n\014panoramaMode\030\010 \001" +
       "(\0162\r.PanoramaMode\022\013\n\003tag\030\t \001(\t\"\370\001\n\017Route" +
-      "Attributes\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022" +
+      "Attributes\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022",
       "\024\n\014safeAltitude\030\003 \001(\001\022%\n\014rcLostAction\030\004 " +
       "\001(\0162\017.FailsafeAction\022&\n\rgpsLostAction\030\005 " +
       "\001(\0162\017.FailsafeAction\022)\n\020lowBatteryAction" +
       "\030\006 \001(\0162\017.FailsafeAction\022+\n\022datalinkLostA" +
       "ction\030\007 \001(\0162\017.FailsafeAction\022\013\n\003tag\030\010 \001(" +
-      "\t\"\300\004\n\020ActionDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007ve",
-      "rsion\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\r\n\005order\030\004 \001(\005" +
-      "\022-\n\021segmentDefinition\030\005 \001(\0132\022.SegmentDef" +
-      "inition\022\'\n\016waitDefinition\030\006 \001(\0132\017.WaitDe" +
-      "finition\022%\n\rpoiDefinition\030\007 \001(\0132\016.PoiDef" +
-      "inition\022-\n\021headingDefinition\030\010 \001(\0132\022.Hea" +
-      "dingDefinition\0229\n\027cameraControlDefinitio" +
-      "n\030\t \001(\0132\030.CameraControlDefinition\0229\n\027cam" +
-      "eraTriggerDefinition\030\n \001(\0132\030.CameraTrigg" +
-      "erDefinition\022C\n\034cameraSeriesByTimeDefini" +
-      "tion\030\013 \001(\0132\035.CameraSeriesByTimeDefinitio",
-      "n\022K\n cameraSeriesByDistanceDefinition\030\014 " +
-      "\001(\0132!.CameraSeriesByDistanceDefinition\022/" +
-      "\n\022panoramaDefinition\030\r \001(\0132\023.PanoramaDef" +
-      "inition\022\013\n\003tag\030\016 \001(\t\"\177\n\027CameraControlDef" +
-      "inition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004" +
-      "tilt\030\003 \001(\001\022\014\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n" +
-      "\tzoomLevel\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"a\n\027CameraT" +
-      "riggerDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030" +
-      "\002 \001(\005\022\034\n\005state\030\003 \001(\0162\r.TriggerState\022\013\n\003t" +
-      "ag\030\005 \001(\t\"\225\001\n\034CameraSeriesByTimeDefinitio",
-      "n\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interv" +
-      "al\030\004 \001(\001\022\023\n\013shotsNumber\030\005 \001(\005\022\022\n\nstartDe" +
-      "lay\030\006 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t" +
-      "\"\231\001\n CameraSeriesByDistanceDefinition\022\n\n" +
-      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\004" +
-      " \001(\001\022\023\n\013shotsNumber\030\005 \001(\005\022\022\n\nstartDelay\030" +
-      "\006 \001(\001\022\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\207\001\n" +
-      "\021HeadingDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
-      "n\030\002 \001(\005\022\017\n\007heading\030\003 \001(\001\022\036\n\026relativeToNe" +
-      "xtWaypoint\030\004 \001(\010\022\027\n\017relativeToNorth\030\005 \001(",
-      "\010\022\013\n\003tag\030\006 \001(\t\"\307\001\n\rPoiDefinition\022\n\n\002id\030\001" +
-      " \001(\005\022\017\n\007version\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.Po" +
-      "iMode\022\020\n\010latitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001" +
-      "(\001\022\025\n\rwgs84Altitude\030\006 \001(\001\022\023\n\013aglAltitude" +
-      "\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162\r.AltitudeT" +
-      "ype\022\013\n\003tag\030\t \001(\t\"L\n\016WaitDefinition\022\n\n\002id" +
-      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\003 \001(" +
-      "\001\022\013\n\003tag\030\004 \001(\t\"\336\001\n\022PanoramaDefinition\022\n\n" +
-      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005angle\030\003 \001(" +
-      "\001\022\021\n\tstepAngle\030\004 \001(\001\022\021\n\tstepDelay\030\005 \001(\001\022",
-      "-\n\021rotationDirection\030\006 \001(\0162\022.RotationDir" +
-      "ection\022\025\n\rrotationSpeed\030\007 \001(\001\022#\n\014panoram" +
-      "aMode\030\010 \001(\0162\r.PanoramaMode\022\013\n\003tag\030\t \001(\t\"" +
-      "\250\001\n\014NoFlightZone\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030" +
-      "\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\026\n\004type" +
-      "\030\005 \001(\0162\010.NfzType\022\016\n\006sealed\030\006 \001(\010\022\025\n\005pris" +
-      "m\030\007 \001(\0132\006.Prism\022!\n\013coneFrustum\030\010 \001(\0132\014.C" +
-      "oneFrustum\"g\n\026NoFlightZoneRTreeIndex\022\r\n\005" +
-      "nfzId\030\001 \001(\005\022\016\n\006minLat\030\002 \001(\001\022\016\n\006maxLat\030\003 " +
-      "\001(\001\022\016\n\006minLng\030\004 \001(\001\022\016\n\006maxLng\030\005 \001(\001\"\326\001\n\013",
-      "ConeFrustum\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005" +
-      "\022\013\n\003tag\030\003 \001(\t\022\021\n\ttopRadius\030\004 \001(\001\022\022\n\nbase" +
-      "Radius\030\005 \001(\001\022\024\n\014baseLatitude\030\006 \001(\001\022\025\n\rba" +
-      "seLongitude\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162" +
-      "\r.AltitudeType\022\024\n\014baseAltitude\030\t \001(\001\022\016\n\006" +
-      "height\030\n \001(\001\"\274\001\n\021CommandDefinition\022\n\n\002id" +
-      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004code\030\003 \001(\t\022\035\n" +
-      "\tsubsystem\030\007 \001(\0162\n.Subsystem\022\023\n\013subsyste" +
-      "mId\030\010 \001(\005\022-\n\targuments\030\005 \003(\0132\032.CommandAr" +
-      "gumentDefinition\022\014\n\004name\030\004 \001(\t\022\013\n\003tag\030\006 ",
-      "\001(\t\"\347\001\n\031CommandArgumentDefinition\022\n\n\002id\030" +
-      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022#\n\007command\030\013 \001(\0132" +
-      "\022.CommandDefinition\022\014\n\004code\030\r \001(\t\022\033\n\010sem" +
-      "antic\030\016 \001(\0162\t.Semantic\022\034\n\014defaultValue\030\017" +
-      " \001(\0132\006.Value\022\030\n\010minValue\030\020 \001(\0132\006.Value\022\030" +
-      "\n\010maxValue\030\021 \001(\0132\006.Value\022\013\n\003tag\030\014 \001(\t\"\237\001" +
-      "\n\030VehicleCommandDefinition\022\n\n\002id\030\001 \001(\005\022\017" +
-      "\n\007version\030\002 \001(\005\022\031\n\007vehicle\030\003 \001(\0132\010.Vehic" +
-      "le\022-\n\021commandDefinition\030\004 \001(\0132\022.CommandD" +
-      "efinition\022\017\n\007enabled\030\005 \001(\010\022\013\n\003tag\030\006 \001(\t\"",
-      "\253\001\n\007Command\022\014\n\004code\030\001 \001(\t\022\035\n\tsubsystem\030\006" +
-      " \001(\0162\n.Subsystem\022\023\n\013subsystemId\030\007 \001(\005\022#\n" +
-      "\targuments\030\002 \003(\0132\020.CommandArgument\022\016\n\006si" +
-      "lent\030\003 \001(\010\022\031\n\021resultIndifferent\030\004 \001(\010\022\016\n" +
-      "\006forced\030\005 \001(\010\"6\n\017CommandArgument\022\014\n\004code" +
-      "\030\001 \001(\t\022\025\n\005value\030\002 \001(\0132\006.Value\"\247\001\n\005Value\022" +
-      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\021\n\tboolValu" +
-      "e\030\003 \001(\010\022\020\n\010intValue\030\004 \001(\005\022\021\n\tlongValue\030\005" +
-      " \001(\003\022\022\n\nfloatValue\030\006 \001(\002\022\023\n\013doubleValue\030" +
-      "\007 \001(\001\022\023\n\013stringValue\030\010 \001(\t\022\013\n\003tag\030\t \001(\t\"",
-      "\362\002\n\017VehicleLogEntry\022\n\n\002id\030\001 \001(\005\022\017\n\007versi" +
-      "on\030\002 \001(\005\022\014\n\004time\030\003 \001(\003\022\031\n\007vehicle\030\004 \001(\0132" +
-      "\010.Vehicle\022\017\n\007message\030\005 \001(\t\022\035\n\005level\030\006 \001(" +
-      "\0162\016.SeverityLevel\022\034\n\005stage\030\007 \001(\0162\r.Proce" +
-      "ssStage\022\"\n\004type\030\010 \001(\0162\024.VehicleLogEntryT" +
-      "ype\022.\n\020commandArguments\030\t \001(\0132\024.CommandL" +
-      "ogArguments\022,\n\017uploadArguments\030\n \001(\0132\023.U" +
-      "ploadLogArguments\022<\n\027videoRecordingArgum" +
-      "ents\030\013 \001(\0132\033.VideoRecordingLogArguments\022" +
-      "\013\n\003tag\030\014 \001(\t\"X\n\023CommandLogArguments\022\n\n\002i",
-      "d\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\023\n\013commandC" +
-      "ode\030\003 \001(\t\022\013\n\003tag\030\004 \001(\t\"Y\n\022UploadLogArgum" +
-      "ents\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\025\n" +
-      "\005route\030\003 \001(\0132\006.Route\022\013\n\003tag\030\004 \001(\t\"\267\001\n\032Vi" +
-      "deoRecordingLogArguments\022\n\n\002id\030\001 \001(\005\022\023\n\004" +
-      "user\030\002 \001(\0132\005.User\022\020\n\010streamId\030\003 \001(\t\022\'\n\016v" +
-      "ideoEventType\030\004 \001(\0162\017.VideoEventType\022\027\n\017" +
-      "videoServerHost\030\005 \001(\t\022\027\n\017videoServerPort" +
-      "\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"\213\001\n\tTelemetry\022\n\n\002id\030" +
-      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003 \001(\002\022\014\n",
-      "\004time\030\004 \001(\003\022\031\n\007vehicle\030\005 \001(\0132\010.Vehicle\022\034" +
-      "\n\004type\030\006 \001(\0162\016.TelemetryType\022\013\n\003tag\030\007 \001(" +
-      "\t\"I\n\014TelemetryDto\022\r\n\005value\030\001 \001(\002\022\014\n\004time" +
-      "\030\002 \001(\003\022\034\n\004type\030\003 \001(\0162\016.TelemetryType\"\240\001\n" +
-      "\021TelemetryInterval\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
-      "n\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\025\n\rbeginningTime\030\004" +
-      " \001(\003\022\017\n\007endTime\030\005 \001(\003\022+\n\010vehicles\030\006 \003(\0132" +
-      "\031.TelemetryIntervalVehicle\022\013\n\003tag\030\007 \001(\t\"" +
-      "\205\001\n\030TelemetryIntervalVehicle\022\n\n\002id\030\001 \001(\005" +
-      "\022\017\n\007version\030\002 \001(\005\022$\n\010interval\030\003 \001(\0132\022.Te",
-      "lemetryInterval\022\031\n\007vehicle\030\004 \001(\0132\010.Vehic" +
-      "le\022\013\n\003tag\030\005 \001(\t\"\216\001\n\017ElevationSource\022\n\n\002i" +
-      "d\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022" +
-      "\035\n\tgeoServer\030\004 \001(\0132\n.GeoServer\022\022\n\nsource" +
-      "Name\030\005 \001(\t\022\013\n\003tag\030\006 \001(\t\022\017\n\007enabled\030\007 \001(\010" +
-      "\"\257\001\n\rFeatureSource\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
-      "n\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\035\n\tgeoServer\030\004 \001(" +
-      "\0132\n.GeoServer\022\022\n\nsourceName\030\005 \001(\t\022!\n\013fea" +
-      "tureType\030\006 \001(\0162\014.FeatureType\022\017\n\007enabled\030" +
-      "\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\244\001\n\tGeoServer\022\n\n\002id\030\001",
-      " \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\013\n\003u" +
-      "ri\030\004 \001(\t\022*\n\020elevationSources\030\006 \003(\0132\020.Ele" +
-      "vationSource\022&\n\016featureSources\030\007 \003(\0132\016.F" +
-      "eatureSource\022\013\n\003tag\030\010 \001(\t\"\326\001\n\014UtmOperati" +
-      "on\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\007vehic" +
-      "le\030\003 \001(\0132\010.Vehicle\022#\n\006status\030\004 \001(\0162\023.Utm" +
-      "OperationStatus\022\014\n\004gufi\030\005 \001(\t\022\024\n\014flightN" +
-      "umber\030\006 \001(\t\022\036\n\026effectiveBeginningTime\030\007 " +
-      "\001(\003\022\030\n\020effectiveEndTime\030\010 \001(\003\022\013\n\003tag\030\t \001" +
-      "(\t\"B\n\004Lock\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010object",
-      "Id\030\002 \001(\005\022\024\n\005owner\030\003 \001(\0132\005.User\"?\n\tSelect" +
-      "ion\022\023\n\013selectionId\030\001 \001(\t\022\035\n\005items\030\002 \003(\0132" +
-      "\016.SelectionItem\"H\n\rSelectionItem\022\r\n\005valu" +
-      "e\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\023\n\013markDefa" +
-      "ult\030\003 \001(\010\"\222\001\n\027ObjectModificationEvent\022+\n" +
-      "\020modificationType\030\001 \001(\0162\021.ModificationTy" +
-      "pe\022\022\n\nobjectType\030\002 \001(\t\022\020\n\010objectId\030\003 \001(\005" +
-      "\022$\n\006object\030\004 \001(\0132\024.DomainObjectWrapper\"F" +
-      "\n\036ObjectModificationSubscription\022\022\n\nobje" +
-      "ctType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005\"F\n\tLockEv",
-      "ent\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(" +
-      "\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"8\n\020LockSubscripti" +
-      "on\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005" +
-      "\"J\n\016TelemetryEvent\022\031\n\007vehicle\030\001 \001(\0132\010.Ve" +
-      "hicle\022\035\n\ttelemetry\030\002 \003(\0132\n.Telemetry\"2\n\025" +
-      "TelemetrySubscription\022\031\n\007vehicle\030\001 \001(\0132\010" +
-      ".Vehicle\"T\n\025TelemetryRemovalEvent\022\031\n\007veh" +
-      "icle\030\001 \001(\0132\010.Vehicle\022\020\n\010fromTime\030\002 \001(\003\022\016" +
-      "\n\006toTime\030\003 \001(\003\"9\n\034TelemetryRemovalSubscr" +
-      "iption\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\" \n\022Ads",
-      "bIndicatorEvent\022\n\n\002on\030\001 \001(\010\"\033\n\031AdsbIndic" +
-      "atorSubscription\"C\n\013ProgressDto\022\r\n\005title" +
-      "\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\022\023\n\013maxProgress\030" +
-      "\003 \001(\005\"4\n\020ProgressStackDto\022 \n\nprogresses\030" +
-      "\001 \003(\0132\014.ProgressDto\"@\n\023ServerProgressEve" +
-      "nt\022)\n\016progressStacks\030\001 \003(\0132\021.ProgressSta" +
-      "ckDto\"\034\n\032ServerProgressSubscription\"\254\002\n\014" +
-      "EventWrapper\0229\n\027objectModificationEvent\030" +
-      "\001 \001(\0132\030.ObjectModificationEvent\022\035\n\tlockE" +
-      "vent\030\002 \001(\0132\n.LockEvent\022\'\n\016telemetryEvent",
-      "\030\003 \001(\0132\017.TelemetryEvent\0225\n\025telemetryRemo" +
-      "valEvent\030\004 \001(\0132\026.TelemetryRemovalEvent\022/" +
-      "\n\022adsbIndicatorEvent\030\005 \001(\0132\023.AdsbIndicat" +
-      "orEvent\0221\n\023serverProgressEvent\030\007 \001(\0132\024.S" +
-      "erverProgressEvent\"\214\003\n\030EventSubscription" +
-      "Wrapper\022G\n\036objectModificationSubscriptio" +
-      "n\030\001 \001(\0132\037.ObjectModificationSubscription" +
-      "\022+\n\020lockSubscription\030\002 \001(\0132\021.LockSubscri" +
-      "ption\0225\n\025telemetrySubscription\030\003 \001(\0132\026.T" +
-      "elemetrySubscription\022C\n\034telemetryRemoval",
-      "Subscription\030\004 \001(\0132\035.TelemetryRemovalSub" +
-      "scription\022=\n\031adsbIndicatorSubscription\030\005" +
-      " \001(\0132\032.AdsbIndicatorSubscription\022?\n\032serv" +
-      "erProgressSubscription\030\007 \001(\0132\033.ServerPro" +
-      "gressSubscription*]\n\025RouteProcessingStat" +
-      "us\022\020\n\014RPS_MODIFIED\020\000\022\017\n\013RPS_INVALID\020\001\022\016\n" +
-      "\nRPS_MARKED\020\002\022\021\n\rRPS_PROCESSED\020\003*1\n\010User" +
-      "Role\022\024\n\020UR_ADMINISTRATOR\020\000\022\017\n\013UR_OPERATO" +
-      "R\020\001**\n\014ObjectOrigin\022\013\n\007OO_USER\020\000\022\r\n\tOO_S" +
-      "YSTEM\020\001*(\n\014AltitudeType\022\014\n\010AT_WGS84\020\000\022\n\n",
-      "\006AT_AGL\020\001*e\n\017ActionExecution\022\024\n\020AE_ONLY_" +
-      "AT_START\020\000\022\032\n\026AE_ACTIONS_EVERY_POINT\020\001\022 " +
-      "\n\034AE_ACTIONS_ON_FORWARD_PASSES\020\002*y\n\nFigu" +
-      "reType\022\014\n\010FT_POINT\020\000\022\016\n\nFT_POLYGON\020\001\022\r\n\t" +
-      "FT_CIRCLE\020\002\022\022\n\016FT_EIGHT_CURVE\020\003\022\024\n\020FT_TA" +
-      "KEOFF_POINT\020\004\022\024\n\020FT_LANDING_POINT\020\005*_\n\rP" +
-      "arameterType\022\r\n\tPT_STRING\020\000\022\016\n\nPT_INTEGE" +
-      "R\020\001\022\r\n\tPT_DOUBLE\020\002\022\016\n\nPT_BOOLEAN\020\003\022\020\n\014PT" +
-      "_SELECTION\020\004*\254\021\n\rTelemetryType\022\026\n\022TT_BAT" +
-      "TERY_VOLTAGE\020\000\022\013\n\007TT_ROLL\020\001\022\014\n\010TT_PITCH\020",
-      "\002\022\n\n\006TT_YAW\020\003\022\021\n\rTT_ROLL_SPEED\020\004\022\022\n\016TT_P" +
-      "ITCH_SPEED\020\005\022\020\n\014TT_YAW_SPEED\020\006\022\017\n\013TT_LAT" +
-      "ITUDE\020\007\022\020\n\014TT_LONGITUDE\020\010\022\023\n\017TT_MSL_ALTI" +
-      "TUDE\020\t\022\023\n\017TT_AGL_ALTITUDE\020\n\022\025\n\021TT_GROUND" +
-      "_SPEED_X\020\013\022\025\n\021TT_GROUND_SPEED_Y\020\014\022\025\n\021TT_" +
-      "GROUND_SPEED_Z\020\r\022\023\n\017TT_LATITUDE_GPS\020\016\022\024\n" +
-      "\020TT_LONGITUDE_GPS\020\017\022\023\n\017TT_ALTITUDE_GPS\020\020" +
-      "\022\027\n\023TT_GROUND_SPEED_GPS\020\021\022\031\n\025TT_ACCELERA" +
-      "TION_X_RAW\020\022\022\031\n\025TT_ACCELERATION_Y_RAW\020\023\022" +
-      "\031\n\025TT_ACCELERATION_Z_RAW\020\024\022\032\n\026TT_ANGULAR",
-      "_SPEED_X_RAW\020\025\022\032\n\026TT_ANGULAR_SPEED_Y_RAW" +
-      "\020\026\022\032\n\026TT_ANGULAR_SPEED_Z_RAW\020\027\022\025\n\021TT_MAG" +
-      "NETIC_X_RAW\020\030\022\025\n\021TT_MAGNETIC_Y_RAW\020\031\022\025\n\021" +
-      "TT_MAGNETIC_Z_RAW\020\032\022\030\n\024TT_ABSOLUTE_PRESS" +
-      "URE\020\033\022\034\n\030TT_DIFFERENTIAL_PRESSURE\020\034\022\022\n\016T" +
-      "T_TEMPERATURE\020\035\022\020\n\014TT_AIR_SPEED\020\036\022\023\n\017TT_" +
-      "GROUND_SPEED\020\037\022\016\n\nTT_HEADING\020 \022\017\n\013TT_THR" +
-      "OTTLE\020!\022\021\n\rTT_CLIMB_RATE\020\"\022\035\n\031TT_GPS_SAT" +
-      "ELLITES_VISIBLE\020#\022\023\n\017TT_ROUTE_MILAGE\020$\022\032" +
-      "\n\026TT_TELEMETRY_DROP_RATE\020%\022\031\n\025TT_DOWNLIN",
-      "K_CONNECTED\020&\022\027\n\023TT_UPLINK_CONNECTED\020\'\022\023" +
-      "\n\017TT_CONTROL_MODE\020(\022\014\n\010TT_STATE\020)\022\r\n\tTT_" +
-      "COURSE\020*\022\030\n\024TT_RELATIVE_ALTITUDE\020+\022\020\n\014TT" +
-      "_ELEVATION\020,\022\025\n\021TT_PAYLOAD_1_ROLL\020-\022\025\n\021T" +
-      "T_PAYLOAD_1_TILT\020.\022\024\n\020TT_PAYLOAD_1_YAW\020/" +
-      "\022\036\n\032TT_CAMERA_1_FOV_HORIZONTAL\0200\022\034\n\030TT_C" +
-      "AMERA_1_FOV_VERTICAL\0201\022\023\n\017TT_GPS_FIX_TYP" +
-      "E\0202\022\026\n\022TT_RC_LINK_QUALITY\0203\022\034\n\030TT_ADSB_T" +
-      "RANSPONDER_MODE\0204\022\027\n\023TT_ADSB_IDENT_STATE" +
-      "\0205\022\027\n\023TT_ADSB_SQUAWK_CODE\0206\022\033\n\027TT_ADSB_A",
-      "LTITUDE_SOURCE\0207\022\024\n\020TT_ADSB_ALTITUDE\0208\022\027" +
-      "\n\023TT_ADSB_ERROR_FLAGS\0209\022\025\n\021TT_PAYLOAD_2_" +
-      "ROLL\020:\022\025\n\021TT_PAYLOAD_2_TILT\020;\022\024\n\020TT_PAYL" +
-      "OAD_2_YAW\020<\022\036\n\032TT_CAMERA_2_FOV_HORIZONTA" +
-      "L\020=\022\034\n\030TT_CAMERA_2_FOV_VERTICAL\020>\022\035\n\031TT_" +
-      "PAYLOAD_1_CONTROL_MODE\020?\022\035\n\031TT_PAYLOAD_2" +
-      "_CONTROL_MODE\020@\022\032\n\026TT_PAYLOAD_1_AVAILABL" +
-      "E\020A\022\032\n\026TT_PAYLOAD_2_AVAILABLE\020B\022\030\n\024TT_PA" +
-      "YLOAD_1_POWERED\020C\022\030\n\024TT_PAYLOAD_2_POWERE" +
-      "D\020D\022\024\n\020TT_CAMERA_1_ZOOM\020E\022\024\n\020TT_CAMERA_2",
-      "_ZOOM\020F\022\031\n\025TT_CAMERA_1_RECORDING\020G\022\031\n\025TT" +
-      "_CAMERA_2_RECORDING\020H\022\033\n\027TT_CAMERA_1_IMA" +
-      "GE_COUNT\020I\022\033\n\027TT_CAMERA_2_IMAGE_COUNT\020J\022" +
-      "\036\n\032TT_CAMERA_1_IMAGE_CAPACITY\020K\022\036\n\032TT_CA" +
-      "MERA_2_IMAGE_CAPACITY\020L\022\033\n\027TT_CAMERA_1_V" +
-      "IDEO_COUNT\020M\022\033\n\027TT_CAMERA_2_VIDEO_COUNT\020" +
-      "N\022\024\n\020TT_HOME_LATITUDE\020O\022\025\n\021TT_HOME_LONGI" +
-      "TUDE\020P\022\031\n\025TT_HOME_AMSL_ALTITUDE\020Q\022\025\n\021TT_" +
-      "ADSB_ERROR_GPS\020R\022\026\n\022TT_ADSB_ERROR_ICAO\020S" +
-      "\022\"\n\036TT_ADSB_ERROR_OVER_TEMPERATURE\020T\022\024\n\020",
-      "TT_ADSB_ERROR_ES\020U\022\035\n\031TT_ADSB_ERROR_TRAN" +
-      "SPONDER\020V\022\026\n\022TT_TARGET_LATITUDE\020W\022\027\n\023TT_" +
-      "TARGET_LONGITUDE\020X\022\033\n\027TT_TARGET_AMSL_ALT" +
-      "ITUDE\020Y\022\032\n\026TT_BATTERY_POWER_LEVEL\020Z*G\n\013V" +
-      "ehicleType\022\021\n\rVT_FIXED_WING\020\000\022\021\n\rVT_HELI" +
-      "COPTER\020\001\022\022\n\016VT_MULTICOPTER\020\002*\214\n\n\024Vehicle" +
-      "ParameterType\022\016\n\nVPT_HEIGHT\020\000\022\r\n\tVPT_WID" +
-      "TH\020\001\022\016\n\nVPT_LENGTH\020\002\022\026\n\022VPT_MAX_CLIMB_RA" +
-      "TE\020\003\022\034\n\030VPT_MAX_HORIZONTAL_SPEED\020\004\022\024\n\020VP" +
-      "T_MAX_ALTITUDE\020\005\022\025\n\021VPT_MAX_WAYPOINTS\020\006\022",
-      "\027\n\023VPT_MAX_FLIGHT_TIME\020\007\022\027\n\023VPT_WIND_RES" +
-      "ISTANCE\020\010\022\032\n\026VPT_DRY_TAKEOFF_WEIGHT\020\t\022\032\n" +
-      "\026VPT_MAX_TAKEOFF_WEIGHT\020\n\022\026\n\022VPT_BATTERY" +
-      "_WEIGHT\020\013\022\037\n\033VPT_CHARGED_BATTERY_VOLTAGE" +
-      "\020\014\022\"\n\036VPT_DISCHARGED_BATTERY_VOLTAGE\020\r\022\036" +
-      "\n\032VPT_NORMAL_BATTERY_VOLTAGE\020\016\022\033\n\027VPT_LO" +
-      "W_BATTERY_VOLTAGE\020\017\022\032\n\026VPT_LOW_GPS_SATEL" +
-      "LITES\020\020\022\035\n\031VPT_NORMAL_GPS_SATELLITES\020\021\022 " +
-      "\n\034VPT_SAFE_DISTANCE_TO_TERRAIN\020\022\022!\n\035VPT_" +
-      "SAFE_DISTANCE_TO_OBSTACLE\020\023\022\"\n\036VPT_WAYPO",
-      "INT_ACCEPTANCE_RADIUS\020\024\022\024\n\020VPT_FENCE_RAD" +
-      "IUS\020\025\022\033\n\027VPT_LOW_TELEMETRY_LEVEL\020\026\022\036\n\032VP" +
-      "T_NORMAL_TELEMETRY_LEVEL\020\027\022\032\n\026VPT_DEFAUL" +
-      "T_CLIMB_RATE\020\030\022\034\n\030VPT_DEFAULT_DESCENT_RA" +
-      "TE\020\031\022\023\n\017VPT_GLIDE_SLOPE\020\032\022 \n\034VPT_DEFAULT" +
-      "_HORIZONTAL_SPEED\020\033\022\034\n\030VPT_LANDING_GROUN" +
-      "D_SPEED\020\034\022\030\n\024VPT_MAX_ALTITUDE_AGL\020\035\022\036\n\032V" +
-      "PT_LANDING_FLARE_ALTITUDE\020\036\022\032\n\026VPT_LANDI" +
-      "NG_FLARE_TIME\020\037\022\031\n\025VPT_MIN_LANDING_PITCH" +
-      "\020 \022\032\n\026VPT_LANDING_FLARE_DAMP\020!\022!\n\035VPT_LA",
-      "NDING_APPROACH_AIRSPEED\020\"\022\037\n\033VPT_LANDING" +
-      "_SPEED_WEIGHTING\020#\022\035\n\031VPT_MAX_AUTO_FLIGH" +
-      "T_PITCH\020$\022\021\n\rVPT_MAX_PITCH\020%\022\024\n\020VPT_MIN_" +
-      "THROTTLE\020&\022\031\n\025VPT_LANDING_SINK_RATE\020\'\022#\n" +
-      "\037VPT_LANDING_RANGEFINDER_ENABLED\020(\022 \n\034VP" +
-      "T_MIN_RANGEFINDER_DISTANCE\020)\022\030\n\024VPT_MAX_" +
-      "DESCENT_RATE\020*\022\037\n\033VPT_LOW_BATTERY_POWER_" +
-      "LEVEL\020+\022\"\n\036VPT_NORMAL_BATTERY_POWER_LEVE" +
-      "L\020,*.\n\013PayloadType\022\r\n\tPT_CAMERA\020\000\022\020\n\014PT_" +
-      "DATA_LINK\020\001*\363\001\n\024PayloadParameterType\022\016\n\n",
-      "PPT_WEIGHT\020\000\022\021\n\rPPT_FREQUENCY\020\001\022\r\n\tPPT_P" +
-      "OWER\020\002\022\031\n\025PPT_TRUE_FOCAL_LENGTH\020\003\022\024\n\020PPT" +
-      "_SENSOR_WIDTH\020\004\022\025\n\021PPT_SENSOR_HEIGHT\020\005\022 " +
-      "\n\034PPT_SENSOR_HORIZONTAL_PIXELS\020\006\022\036\n\032PPT_" +
-      "SENSOR_VERTICAL_PIXELS\020\007\022\037\n\033PPT_MIN_TRIG" +
-      "GERING_INTERVAL\020\010*\221\001\n\rSeverityLevel\022\020\n\014S" +
-      "L_EMERGENCY\020\000\022\014\n\010SL_ALERT\020\001\022\017\n\013SL_CRITIC" +
-      "AL\020\002\022\014\n\010SL_ERROR\020\003\022\016\n\nSL_WARNING\020\004\022\r\n\tSL" +
-      "_NOTICE\020\005\022\024\n\020SL_INFORMATIONAL\020\006\022\014\n\010SL_DE" +
-      "BUG\020\007*/\n\016TrajectoryType\022\017\n\013TT_STRAIGHT\020\000",
-      "\022\014\n\010TT_STAIR\020\001*[\n\016FailsafeReason\022\016\n\nFR_R" +
-      "C_LOST\020\000\022\017\n\013FR_GPS_LOST\020\001\022\022\n\016FR_LOW_BATT" +
-      "ERY\020\002\022\024\n\020FR_DATALINK_LOST\020\003*K\n\016FailsafeA" +
-      "ction\022\016\n\nFA_GO_HOME\020\000\022\013\n\007FA_LAND\020\001\022\013\n\007FA" +
-      "_WAIT\020\002\022\017\n\013FA_CONTINUE\020\003*j\n\014TriggerState" +
-      "\022\022\n\016TS_SINGLE_SHOT\020\000\022\026\n\022TS_START_RECORDI" +
-      "NG\020\001\022\025\n\021TS_STOP_RECORDING\020\002\022\027\n\023TS_TOGGLE" +
-      "_RECORDING\020\003*2\n\nPowerState\022\n\n\006PS_OFF\020\000\022\t" +
-      "\n\005PS_ON\020\001\022\r\n\tPS_TOGGLE\020\002*>\n\022HomeLocation" +
-      "Source\022\020\n\014HLS_EXPLICIT\020\000\022\026\n\022HLS_FIRST_WA",
-      "YPOINT\020\001*\'\n\007PoiMode\022\013\n\007PM_NONE\020\000\022\017\n\013PM_L" +
-      "OCATION\020\001**\n\014PanoramaMode\022\014\n\010PM_PHOTO\020\000\022" +
-      "\014\n\010PM_VIDEO\020\001*>\n\021RotationDirection\022\020\n\014RD" +
-      "_CLOCKWISE\020\000\022\027\n\023RD_COUNTERCLOCKWISE\020\001*2\n" +
-      "\017IcaoAddressType\022\014\n\010IAT_REAL\020\000\022\021\n\rIAT_AN" +
-      "ONYMOUS\020\001**\n\tComponent\022\016\n\nC_DATABASE\020\000\022\r" +
-      "\n\tC_LICENSE\020\001*\231\001\n\nMetricUnit\022\013\n\007MU_NONE\020" +
-      "\000\022\r\n\tMU_SECOND\020\001\022\014\n\010MU_METRE\020\002\022\020\n\014MU_KIL" +
-      "OMETRE\020\003\022\025\n\021MU_METREPERSECOND\020\004\022\022\n\016MU_SQ" +
-      "UAREMETRE\020\005\022\021\n\rMU_KILOGRAMME\020\006\022\021\n\rMU_CEN",
-      "TIMETRE\020\007*C\n\017MessageSeverity\022\014\n\010MS_ERROR" +
-      "\020\000\022\016\n\nMS_WARNING\020\001\022\022\n\016MS_INFORMATION\020\002*F" +
-      "\n\026ConflictResolutionMode\022\014\n\010CRM_KEEP\020\000\022\017" +
-      "\n\013CRM_REPLACE\020\001\022\r\n\tCRM_MERGE\020\002*d\n\023Vehicl" +
-      "eLogEntryType\022\020\n\014VLET_GENERIC\020\000\022\020\n\014VLET_" +
-      "COMMAND\020\001\022\017\n\013VLET_UPLOAD\020\002\022\030\n\024VLET_VIDEO" +
-      "_RECORDING\020\003*M\n\014ProcessStage\022\014\n\010PS_START" +
-      "\020\000\022\017\n\013PS_PROGRESS\020\001\022\016\n\nPS_SUCCESS\020\002\022\016\n\nP" +
-      "S_FAILURE\020\003*^\n\020WaypointTurnType\022\025\n\021WTT_S" +
-      "TOP_AND_TURN\020\000\022\020\n\014WTT_STRAIGHT\020\001\022\016\n\nWTT_",
-      "SPLINE\020\002\022\021\n\rWTT_BANK_TURN\020\003*\236\002\n\nActionCo" +
-      "de\022\017\n\013AC_WAYPOINT\020\000\022\023\n\017AC_SPEED_CHANGE\020\001" +
-      "\022\024\n\020AC_HOME_LOCATION\020\002\022\013\n\007AC_WAIT\020\003\022\021\n\rA" +
-      "C_POI_CHANGE\020\004\022\025\n\021AC_HEADING_CHANGE\020\005\022\025\n" +
-      "\021AC_CAMERA_CONTROL\020\006\022\025\n\021AC_CAMERA_TRIGGE" +
-      "R\020\007\022\034\n\030AC_CAMERA_SERIES_BY_TIME\020\010\022 \n\034AC_" +
-      "CAMERA_SERIES_BY_DISTANCE\020\t\022\016\n\nAC_TAKEOF" +
-      "F\020\n\022\016\n\nAC_LANDING\020\013\022\017\n\013AC_PANORAMA\020\014**\n\007" +
-      "NfzType\022\r\n\tNT_CUSTOM\020\000\022\020\n\014NT_AERODROME\020\001" +
-      "*}\n\016VideoEventType\022\031\n\025VET_RECORDING_STAR",
-      "TED\020\000\022\031\n\025VET_RECORDING_STOPPED\020\001\022\035\n\031VET_" +
-      "RECORDING_INTERRUPTED\020\002\022\026\n\022VET_STREAM_RE" +
-      "MOVED\020\003*5\n\013FeatureType\022\024\n\020FT_STATIC_OBJE" +
-      "CT\020\000\022\020\n\014FT_PLACEMARK\020\001*\246\002\n\022UtmOperationS" +
-      "tatus\022\021\n\rUOS_PROPOSING\020\000\022\020\n\014UOS_ACCEPTED" +
-      "\020\001\022\020\n\014UOS_REJECTED\020\002\022\017\n\013UOS_READIED\020\003\022\021\n" +
-      "\rUOS_ACTIVATED\020\004\022\016\n\nUOS_CLOSED\020\005\022\017\n\013UOS_" +
-      "EXPIRED\020\006\022\021\n\rUOS_CANCELLED\020\007\022\026\n\022UOS_NON_" +
-      "CONFORMING\020\010\022\r\n\tUOS_ROGUE\020\t\022\021\n\rUOS_MODIF" +
-      "YING\020\n\022\022\n\016UOS_REQUESTING\020\013\022\020\n\014UOS_ABORTI",
-      "NG\020\014\022\017\n\013UOS_ABORTED\020\r\022\020\n\014UOS_INTRUDER\020\016*" +
-      "N\n\rCommandStatus\022\017\n\013CS_REJECTED\020\000\022\013\n\007CS_" +
-      "SENT\020\001\022\020\n\014CS_SUCCEEDED\020\002\022\r\n\tCS_FAILED\020\003*" +
-      "n\n\tSubsystem\022\024\n\020S_CONTROL_SERVER\020\000\022\027\n\023S_" +
-      "FLIGHT_CONTROLLER\020\001\022\014\n\010S_GIMBAL\020\002\022\014\n\010S_C" +
-      "AMERA\020\003\022\026\n\022S_ADSB_TRANSPONDER\020\004*\333\004\n\010Sema" +
-      "ntic\022\r\n\tS_DEFAULT\020\001\022\016\n\nS_LATITUDE\020\002\022\017\n\013S" +
-      "_LONGITUDE\020\003\022\023\n\017S_ALTITUDE_AMSL\020\004\022\022\n\016S_A" +
-      "LTITUDE_AGL\020\005\022\022\n\016S_ALTITUDE_RAW\020\006\022\r\n\tS_H" +
-      "EADING\020\007\022\r\n\tS_VOLTAGE\020\010\022\017\n\013S_AIR_SPEED\020\t",
-      "\022\022\n\016S_GROUND_SPEED\020\n\022\024\n\020S_VERTICAL_SPEED" +
-      "\020\013\022\025\n\021S_SATELLITE_COUNT\020\014\022\022\n\016S_GPS_FIX_T" +
-      "YPE\020\r\022\n\n\006S_ROLL\020\016\022\013\n\007S_PITCH\020\017\022\t\n\005S_YAW\020" +
-      "\020\022\025\n\021S_RC_LINK_QUALITY\020\021\022\r\n\tS_CURRENT\020\022\022" +
-      "\026\n\022S_GCS_LINK_QUALITY\020\023\022\013\n\007S_FOV_H\020\024\022\013\n\007" +
-      "S_FOV_V\020\025\022\022\n\016S_CONTROL_MODE\020\026\022\026\n\022S_GROUN" +
-      "D_ELEVATION\020\027\022\027\n\023S_ACCEPTANCE_RADIUS\020\030\022\023" +
-      "\n\017S_LOITER_RADIUS\020\031\022\n\n\006S_ICAO\020\032\022\017\n\013S_ADS" +
-      "B_MODE\020\033\022\014\n\010S_SQUAWK\020\034\022\022\n\016S_MILLISECONDS" +
-      "\020\035\022\r\n\tS_NUMERIC\020\036\022\n\n\006S_BOOL\020\037\022\014\n\010S_STRIN",
-      "G\020 \022\n\n\006S_ENUM\020!\022\024\n\020S_CAPACITY_LEVEL\020\"*?\n" +
-      "\020ModificationType\022\r\n\tMT_CREATE\020\000\022\r\n\tMT_U" +
-      "PDATE\020\001\022\r\n\tMT_DELETE\020\002B!\n\022com.ugcs.ucs.p" +
-      "rotoB\013DomainProto"
+      "\t\"R\n\010SetServo\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001" +
+      "(\005\022\017\n\007servoId\030\003 \001(\005\022\013\n\003pwm\030\004 \001(\005\022\013\n\003tag\030" +
+      "\005 \001(\t\"s\n\013RepeatServo\022\n\n\002id\030\001 \001(\005\022\017\n\007vers" +
+      "ion\030\002 \001(\005\022\017\n\007servoId\030\003 \001(\005\022\013\n\003pwm\030\004 \001(\005\022" +
+      "\r\n\005delay\030\005 \001(\001\022\r\n\005count\030\006 \001(\005\022\013\n\003tag\030\007 \001",
+      "(\t\";\n\017TransitionFixed\022\n\n\002id\030\001 \001(\005\022\017\n\007ver" +
+      "sion\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\":\n\016TransitionVto" +
+      "l\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003tag\030\003 " +
+      "\001(\t\"\244\006\n\020ActionDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
+      "version\030\002 \001(\005\022\014\n\004uuid\030\003 \001(\t\022\r\n\005order\030\004 \001" +
+      "(\005\022-\n\021segmentDefinition\030\005 \001(\0132\022.SegmentD" +
+      "efinition\022\'\n\016waitDefinition\030\006 \001(\0132\017.Wait" +
+      "Definition\022%\n\rpoiDefinition\030\007 \001(\0132\016.PoiD" +
+      "efinition\022-\n\021headingDefinition\030\010 \001(\0132\022.H" +
+      "eadingDefinition\0229\n\027cameraControlDefinit",
+      "ion\030\t \001(\0132\030.CameraControlDefinition\0229\n\027c" +
+      "ameraTriggerDefinition\030\n \001(\0132\030.CameraTri" +
+      "ggerDefinition\022C\n\034cameraSeriesByTimeDefi" +
+      "nition\030\013 \001(\0132\035.CameraSeriesByTimeDefinit" +
+      "ion\022K\n cameraSeriesByDistanceDefinition\030" +
+      "\014 \001(\0132!.CameraSeriesByDistanceDefinition" +
+      "\022/\n\022panoramaDefinition\030\r \001(\0132\023.PanoramaD" +
+      "efinition\022/\n\022setServoDefinition\030\016 \001(\0132\023." +
+      "SetServoDefinition\0225\n\025repeatServoDefinit" +
+      "ion\030\017 \001(\0132\026.RepeatServoDefinition\022;\n\030tra",
+      "nsitionVtolDefinition\030\021 \001(\0132\031.Transition" +
+      "VtolDefinition\022=\n\031transitionFixedDefinit" +
+      "ion\030\022 \001(\0132\032.TransitionFixedDefinition\022\013\n" +
+      "\003tag\030\020 \001(\t\"\177\n\027CameraControlDefinition\022\n\n" +
+      "\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004tilt\030\003 \001(\001" +
+      "\022\014\n\004roll\030\004 \001(\001\022\013\n\003yaw\030\005 \001(\001\022\021\n\tzoomLevel" +
+      "\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"a\n\027CameraTriggerDefi" +
+      "nition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\034\n\005s" +
+      "tate\030\003 \001(\0162\r.TriggerState\022\013\n\003tag\030\005 \001(\t\"\225" +
+      "\001\n\034CameraSeriesByTimeDefinition\022\n\n\002id\030\001 ",
+      "\001(\005\022\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\004 \001(\001\022\023" +
+      "\n\013shotsNumber\030\005 \001(\005\022\022\n\nstartDelay\030\006 \001(\001\022" +
+      "\020\n\010autoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\231\001\n Camer" +
+      "aSeriesByDistanceDefinition\022\n\n\002id\030\001 \001(\005\022" +
+      "\017\n\007version\030\002 \001(\005\022\020\n\010interval\030\004 \001(\001\022\023\n\013sh" +
+      "otsNumber\030\005 \001(\005\022\022\n\nstartDelay\030\006 \001(\001\022\020\n\010a" +
+      "utoCalc\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\207\001\n\021HeadingDe" +
+      "finition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n" +
+      "\007heading\030\003 \001(\001\022\036\n\026relativeToNextWaypoint" +
+      "\030\004 \001(\010\022\027\n\017relativeToNorth\030\005 \001(\010\022\013\n\003tag\030\006",
+      " \001(\t\"\307\001\n\rPoiDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007ve" +
+      "rsion\030\002 \001(\005\022\026\n\004mode\030\003 \001(\0162\010.PoiMode\022\020\n\010l" +
+      "atitude\030\004 \001(\001\022\021\n\tlongitude\030\005 \001(\001\022\025\n\rwgs8" +
+      "4Altitude\030\006 \001(\001\022\023\n\013aglAltitude\030\007 \001(\001\022#\n\014" +
+      "altitudeType\030\010 \001(\0162\r.AltitudeType\022\013\n\003tag" +
+      "\030\t \001(\t\"e\n\016WaitDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
+      "version\030\002 \001(\005\022\020\n\010interval\030\003 \001(\001\022\027\n\017waitF" +
+      "orOperator\030\004 \001(\010\022\013\n\003tag\030\005 \001(\t\"\336\001\n\022Panora" +
+      "maDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(" +
+      "\005\022\r\n\005angle\030\003 \001(\001\022\021\n\tstepAngle\030\004 \001(\001\022\021\n\ts",
+      "tepDelay\030\005 \001(\001\022-\n\021rotationDirection\030\006 \001(" +
+      "\0162\022.RotationDirection\022\025\n\rrotationSpeed\030\007" +
+      " \001(\001\022#\n\014panoramaMode\030\010 \001(\0162\r.PanoramaMod" +
+      "e\022\013\n\003tag\030\t \001(\t\"\\\n\022SetServoDefinition\022\n\n\002" +
+      "id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\017\n\007servoId\030\003 \001" +
+      "(\005\022\013\n\003pwm\030\004 \001(\005\022\013\n\003tag\030\005 \001(\t\"}\n\025RepeatSe" +
+      "rvoDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001" +
+      "(\005\022\017\n\007servoId\030\003 \001(\005\022\013\n\003pwm\030\004 \001(\005\022\r\n\005dela" +
+      "y\030\005 \001(\001\022\r\n\005count\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"E\n\031T" +
+      "ransitionFixedDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007",
+      "version\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\"D\n\030Transition" +
+      "VtolDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 " +
+      "\001(\005\022\013\n\003tag\030\003 \001(\t\"\250\001\n\014NoFlightZone\022\n\n\002id\030" +
+      "\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003tag\030\003 \001(\t\022\014\n\004n" +
+      "ame\030\004 \001(\t\022\026\n\004type\030\005 \001(\0162\010.NfzType\022\016\n\006sea" +
+      "led\030\006 \001(\010\022\025\n\005prism\030\007 \001(\0132\006.Prism\022!\n\013cone" +
+      "Frustum\030\010 \001(\0132\014.ConeFrustum\"\326\001\n\013ConeFrus" +
+      "tum\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\013\n\003tag\030" +
+      "\003 \001(\t\022\021\n\ttopRadius\030\004 \001(\001\022\022\n\nbaseRadius\030\005" +
+      " \001(\001\022\024\n\014baseLatitude\030\006 \001(\001\022\025\n\rbaseLongit",
+      "ude\030\007 \001(\001\022#\n\014altitudeType\030\010 \001(\0162\r.Altitu" +
+      "deType\022\024\n\014baseAltitude\030\t \001(\001\022\016\n\006height\030\n" +
+      " \001(\001\"\327\001\n\021CommandDefinition\022\n\n\002id\030\001 \001(\005\022\017" +
+      "\n\007version\030\002 \001(\005\022\014\n\004code\030\003 \001(\t\022\035\n\tsubsyst" +
+      "em\030\007 \001(\0162\n.Subsystem\022\023\n\013subsystemId\030\010 \001(" +
+      "\005\022-\n\targuments\030\005 \003(\0132\032.CommandArgumentDe" +
+      "finition\022\014\n\004name\030\004 \001(\t\022\031\n\007vehicle\030\t \001(\0132" +
+      "\010.Vehicle\022\013\n\003tag\030\006 \001(\t\"\347\001\n\031CommandArgume" +
+      "ntDefinition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(" +
+      "\005\022#\n\007command\030\013 \001(\0132\022.CommandDefinition\022\014",
+      "\n\004code\030\r \001(\t\022\033\n\010semantic\030\016 \001(\0162\t.Semanti" +
+      "c\022\034\n\014defaultValue\030\017 \001(\0132\006.Value\022\030\n\010minVa" +
+      "lue\030\020 \001(\0132\006.Value\022\030\n\010maxValue\030\021 \001(\0132\006.Va" +
+      "lue\022\013\n\003tag\030\014 \001(\t\"\237\001\n\030VehicleCommandDefin" +
+      "ition\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n\007ve" +
+      "hicle\030\003 \001(\0132\010.Vehicle\022-\n\021commandDefiniti" +
+      "on\030\004 \001(\0132\022.CommandDefinition\022\017\n\007enabled\030" +
+      "\005 \001(\010\022\013\n\003tag\030\006 \001(\t\"\253\001\n\007Command\022\014\n\004code\030\001" +
+      " \001(\t\022\035\n\tsubsystem\030\006 \001(\0162\n.Subsystem\022\023\n\013s" +
+      "ubsystemId\030\007 \001(\005\022#\n\targuments\030\002 \003(\0132\020.Co",
+      "mmandArgument\022\016\n\006silent\030\003 \001(\010\022\031\n\021resultI" +
+      "ndifferent\030\004 \001(\010\022\016\n\006forced\030\005 \001(\010\"6\n\017Comm" +
+      "andArgument\022\014\n\004code\030\001 \001(\t\022\025\n\005value\030\002 \001(\013" +
+      "2\006.Value\"\302\001\n\005Value\022\n\n\002id\030\001 \001(\005\022\017\n\007versio" +
+      "n\030\002 \001(\005\022\021\n\tboolValue\030\003 \001(\010\022\020\n\010intValue\030\004" +
+      " \001(\005\022\021\n\tlongValue\030\005 \001(\003\022\022\n\nfloatValue\030\006 " +
+      "\001(\002\022\023\n\013doubleValue\030\007 \001(\001\022\023\n\013stringValue\030" +
+      "\010 \001(\t\022\031\n\tlistValue\030\n \003(\0132\006.Value\022\013\n\003tag\030" +
+      "\t \001(\t\"\362\002\n\017VehicleLogEntry\022\n\n\002id\030\001 \001(\005\022\017\n" +
+      "\007version\030\002 \001(\005\022\014\n\004time\030\003 \001(\003\022\031\n\007vehicle\030",
+      "\004 \001(\0132\010.Vehicle\022\017\n\007message\030\005 \001(\t\022\035\n\005leve" +
+      "l\030\006 \001(\0162\016.SeverityLevel\022\034\n\005stage\030\007 \001(\0162\r" +
+      ".ProcessStage\022\"\n\004type\030\010 \001(\0162\024.VehicleLog" +
+      "EntryType\022.\n\020commandArguments\030\t \001(\0132\024.Co" +
+      "mmandLogArguments\022,\n\017uploadArguments\030\n \001" +
+      "(\0132\023.UploadLogArguments\022<\n\027videoRecordin" +
+      "gArguments\030\013 \001(\0132\033.VideoRecordingLogArgu" +
+      "ments\022\013\n\003tag\030\014 \001(\t\"X\n\023CommandLogArgument" +
+      "s\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\023\n\013co" +
+      "mmandCode\030\003 \001(\t\022\013\n\003tag\030\004 \001(\t\"Y\n\022UploadLo",
+      "gArguments\022\n\n\002id\030\001 \001(\005\022\023\n\004user\030\002 \001(\0132\005.U" +
+      "ser\022\025\n\005route\030\003 \001(\0132\006.Route\022\013\n\003tag\030\004 \001(\t\"" +
+      "\267\001\n\032VideoRecordingLogArguments\022\n\n\002id\030\001 \001" +
+      "(\005\022\023\n\004user\030\002 \001(\0132\005.User\022\020\n\010streamId\030\003 \001(" +
+      "\t\022\'\n\016videoEventType\030\004 \001(\0162\017.VideoEventTy" +
+      "pe\022\027\n\017videoServerHost\030\005 \001(\t\022\027\n\017videoServ" +
+      "erPort\030\006 \001(\005\022\013\n\003tag\030\007 \001(\t\"\213\001\n\tTelemetry\022" +
+      "\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005value\030\003 " +
+      "\001(\002\022\014\n\004time\030\004 \001(\003\022\031\n\007vehicle\030\005 \001(\0132\010.Veh" +
+      "icle\022\034\n\004type\030\006 \001(\0162\016.TelemetryType\022\013\n\003ta",
+      "g\030\007 \001(\t\"I\n\014TelemetryDto\022\r\n\005value\030\001 \001(\002\022\014" +
+      "\n\004time\030\002 \001(\003\022\034\n\004type\030\003 \001(\0162\016.TelemetryTy" +
+      "pe\"\240\001\n\021TelemetryInterval\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
+      "version\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\025\n\rbeginning" +
+      "Time\030\004 \001(\003\022\017\n\007endTime\030\005 \001(\003\022+\n\010vehicles\030" +
+      "\006 \003(\0132\031.TelemetryIntervalVehicle\022\013\n\003tag\030" +
+      "\007 \001(\t\"\205\001\n\030TelemetryIntervalVehicle\022\n\n\002id" +
+      "\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022$\n\010interval\030\003 \001(" +
+      "\0132\022.TelemetryInterval\022\031\n\007vehicle\030\004 \001(\0132\010" +
+      ".Vehicle\022\013\n\003tag\030\005 \001(\t\"\216\001\n\017ElevationSourc",
+      "e\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\r\n\005order\030" +
+      "\003 \001(\005\022\035\n\tgeoServer\030\004 \001(\0132\n.GeoServer\022\022\n\n" +
+      "sourceName\030\005 \001(\t\022\013\n\003tag\030\006 \001(\t\022\017\n\007enabled" +
+      "\030\007 \001(\010\"\257\001\n\rFeatureSource\022\n\n\002id\030\001 \001(\005\022\017\n\007" +
+      "version\030\002 \001(\005\022\r\n\005order\030\003 \001(\005\022\035\n\tgeoServe" +
+      "r\030\004 \001(\0132\n.GeoServer\022\022\n\nsourceName\030\005 \001(\t\022" +
+      "!\n\013featureType\030\006 \001(\0162\014.FeatureType\022\017\n\007en" +
+      "abled\030\007 \001(\010\022\013\n\003tag\030\010 \001(\t\"\244\001\n\tGeoServer\022\n" +
+      "\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\014\n\004name\030\003 \001(" +
+      "\t\022\013\n\003uri\030\004 \001(\t\022*\n\020elevationSources\030\006 \003(\013",
+      "2\020.ElevationSource\022&\n\016featureSources\030\007 \003" +
+      "(\0132\016.FeatureSource\022\013\n\003tag\030\010 \001(\t\"\326\001\n\014UtmO" +
+      "peration\022\n\n\002id\030\001 \001(\005\022\017\n\007version\030\002 \001(\005\022\031\n" +
+      "\007vehicle\030\003 \001(\0132\010.Vehicle\022#\n\006status\030\004 \001(\016" +
+      "2\023.UtmOperationStatus\022\014\n\004gufi\030\005 \001(\t\022\024\n\014f" +
+      "lightNumber\030\006 \001(\t\022\036\n\026effectiveBeginningT" +
+      "ime\030\007 \001(\003\022\030\n\020effectiveEndTime\030\010 \001(\003\022\013\n\003t" +
+      "ag\030\t \001(\t\"B\n\004Lock\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010" +
+      "objectId\030\002 \001(\005\022\024\n\005owner\030\003 \001(\0132\005.User\"?\n\t" +
+      "Selection\022\023\n\013selectionId\030\001 \001(\t\022\035\n\005items\030",
+      "\002 \003(\0132\016.SelectionItem\"H\n\rSelectionItem\022\r" +
+      "\n\005value\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\023\n\013ma" +
+      "rkDefault\030\003 \001(\010\"\222\001\n\027ObjectModificationEv" +
+      "ent\022+\n\020modificationType\030\001 \001(\0162\021.Modifica" +
+      "tionType\022\022\n\nobjectType\030\002 \001(\t\022\020\n\010objectId" +
+      "\030\003 \001(\005\022$\n\006object\030\004 \001(\0132\024.DomainObjectWra" +
+      "pper\"F\n\036ObjectModificationSubscription\022\022" +
+      "\n\nobjectType\030\001 \001(\t\022\020\n\010objectId\030\002 \001(\005\"F\n\t" +
+      "LockEvent\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectI" +
+      "d\030\002 \001(\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"8\n\020LockSubs",
+      "cription\022\022\n\nobjectType\030\001 \001(\t\022\020\n\010objectId" +
+      "\030\002 \001(\005\"J\n\016TelemetryEvent\022\031\n\007vehicle\030\001 \001(" +
+      "\0132\010.Vehicle\022\035\n\ttelemetry\030\002 \003(\0132\n.Telemet" +
+      "ry\"2\n\025TelemetrySubscription\022\031\n\007vehicle\030\001" +
+      " \001(\0132\010.Vehicle\"T\n\025TelemetryRemovalEvent\022" +
+      "\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\022\020\n\010fromTime\030\002" +
+      " \001(\003\022\016\n\006toTime\030\003 \001(\003\"9\n\034TelemetryRemoval" +
+      "Subscription\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\"" +
+      " \n\022AdsbIndicatorEvent\022\n\n\002on\030\001 \001(\010\"\033\n\031Ads" +
+      "bIndicatorSubscription\"C\n\013ProgressDto\022\r\n",
+      "\005title\030\001 \001(\t\022\020\n\010progress\030\002 \001(\005\022\023\n\013maxPro" +
+      "gress\030\003 \001(\005\"4\n\020ProgressStackDto\022 \n\nprogr" +
+      "esses\030\001 \003(\0132\014.ProgressDto\"@\n\023ServerProgr" +
+      "essEvent\022)\n\016progressStacks\030\001 \003(\0132\021.Progr" +
+      "essStackDto\"\034\n\032ServerProgressSubscriptio" +
+      "n\"\254\002\n\014EventWrapper\0229\n\027objectModification" +
+      "Event\030\001 \001(\0132\030.ObjectModificationEvent\022\035\n" +
+      "\tlockEvent\030\002 \001(\0132\n.LockEvent\022\'\n\016telemetr" +
+      "yEvent\030\003 \001(\0132\017.TelemetryEvent\0225\n\025telemet" +
+      "ryRemovalEvent\030\004 \001(\0132\026.TelemetryRemovalE",
+      "vent\022/\n\022adsbIndicatorEvent\030\005 \001(\0132\023.AdsbI" +
+      "ndicatorEvent\0221\n\023serverProgressEvent\030\007 \001" +
+      "(\0132\024.ServerProgressEvent\"\214\003\n\030EventSubscr" +
+      "iptionWrapper\022G\n\036objectModificationSubsc" +
+      "ription\030\001 \001(\0132\037.ObjectModificationSubscr" +
+      "iption\022+\n\020lockSubscription\030\002 \001(\0132\021.LockS" +
+      "ubscription\0225\n\025telemetrySubscription\030\003 \001" +
+      "(\0132\026.TelemetrySubscription\022C\n\034telemetryR" +
+      "emovalSubscription\030\004 \001(\0132\035.TelemetryRemo" +
+      "valSubscription\022=\n\031adsbIndicatorSubscrip",
+      "tion\030\005 \001(\0132\032.AdsbIndicatorSubscription\022?" +
+      "\n\032serverProgressSubscription\030\007 \001(\0132\033.Ser" +
+      "verProgressSubscription*]\n\025RouteProcessi" +
+      "ngStatus\022\020\n\014RPS_MODIFIED\020\000\022\017\n\013RPS_INVALI" +
+      "D\020\001\022\016\n\nRPS_MARKED\020\002\022\021\n\rRPS_PROCESSED\020\003*1" +
+      "\n\010UserRole\022\024\n\020UR_ADMINISTRATOR\020\000\022\017\n\013UR_O" +
+      "PERATOR\020\001**\n\014ObjectOrigin\022\013\n\007OO_USER\020\000\022\r" +
+      "\n\tOO_SYSTEM\020\001*(\n\014AltitudeType\022\014\n\010AT_WGS8" +
+      "4\020\000\022\n\n\006AT_AGL\020\001*e\n\017ActionExecution\022\024\n\020AE" +
+      "_ONLY_AT_START\020\000\022\032\n\026AE_ACTIONS_EVERY_POI",
+      "NT\020\001\022 \n\034AE_ACTIONS_ON_FORWARD_PASSES\020\002*y" +
+      "\n\nFigureType\022\014\n\010FT_POINT\020\000\022\016\n\nFT_POLYGON" +
+      "\020\001\022\r\n\tFT_CIRCLE\020\002\022\022\n\016FT_EIGHT_CURVE\020\003\022\024\n" +
+      "\020FT_TAKEOFF_POINT\020\004\022\024\n\020FT_LANDING_POINT\020" +
+      "\005*_\n\rParameterType\022\r\n\tPT_STRING\020\000\022\016\n\nPT_" +
+      "INTEGER\020\001\022\r\n\tPT_DOUBLE\020\002\022\016\n\nPT_BOOLEAN\020\003" +
+      "\022\020\n\014PT_SELECTION\020\004*\226\026\n\rTelemetryType\022\026\n\022" +
+      "TT_BATTERY_VOLTAGE\020\000\022\013\n\007TT_ROLL\020\001\022\014\n\010TT_" +
+      "PITCH\020\002\022\n\n\006TT_YAW\020\003\022\021\n\rTT_ROLL_SPEED\020\004\022\022" +
+      "\n\016TT_PITCH_SPEED\020\005\022\020\n\014TT_YAW_SPEED\020\006\022\017\n\013",
+      "TT_LATITUDE\020\007\022\020\n\014TT_LONGITUDE\020\010\022\023\n\017TT_MS" +
+      "L_ALTITUDE\020\t\022\023\n\017TT_AGL_ALTITUDE\020\n\022\025\n\021TT_" +
+      "GROUND_SPEED_X\020\013\022\025\n\021TT_GROUND_SPEED_Y\020\014\022" +
+      "\025\n\021TT_GROUND_SPEED_Z\020\r\022\023\n\017TT_LATITUDE_GP" +
+      "S\020\016\022\024\n\020TT_LONGITUDE_GPS\020\017\022\023\n\017TT_ALTITUDE" +
+      "_GPS\020\020\022\027\n\023TT_GROUND_SPEED_GPS\020\021\022\031\n\025TT_AC" +
+      "CELERATION_X_RAW\020\022\022\031\n\025TT_ACCELERATION_Y_" +
+      "RAW\020\023\022\031\n\025TT_ACCELERATION_Z_RAW\020\024\022\032\n\026TT_A" +
+      "NGULAR_SPEED_X_RAW\020\025\022\032\n\026TT_ANGULAR_SPEED" +
+      "_Y_RAW\020\026\022\032\n\026TT_ANGULAR_SPEED_Z_RAW\020\027\022\025\n\021",
+      "TT_MAGNETIC_X_RAW\020\030\022\025\n\021TT_MAGNETIC_Y_RAW" +
+      "\020\031\022\025\n\021TT_MAGNETIC_Z_RAW\020\032\022\030\n\024TT_ABSOLUTE" +
+      "_PRESSURE\020\033\022\034\n\030TT_DIFFERENTIAL_PRESSURE\020" +
+      "\034\022\022\n\016TT_TEMPERATURE\020\035\022\020\n\014TT_AIR_SPEED\020\036\022" +
+      "\023\n\017TT_GROUND_SPEED\020\037\022\016\n\nTT_HEADING\020 \022\017\n\013" +
+      "TT_THROTTLE\020!\022\021\n\rTT_CLIMB_RATE\020\"\022\035\n\031TT_G" +
+      "PS_SATELLITES_VISIBLE\020#\022\023\n\017TT_ROUTE_MILA" +
+      "GE\020$\022\032\n\026TT_TELEMETRY_DROP_RATE\020%\022\031\n\025TT_D" +
+      "OWNLINK_CONNECTED\020&\022\027\n\023TT_UPLINK_CONNECT" +
+      "ED\020\'\022\023\n\017TT_CONTROL_MODE\020(\022\014\n\010TT_STATE\020)\022",
+      "\r\n\tTT_COURSE\020*\022\030\n\024TT_RELATIVE_ALTITUDE\020+" +
+      "\022\020\n\014TT_ELEVATION\020,\022\025\n\021TT_PAYLOAD_1_ROLL\020" +
+      "-\022\025\n\021TT_PAYLOAD_1_TILT\020.\022\024\n\020TT_PAYLOAD_1" +
+      "_YAW\020/\022\036\n\032TT_CAMERA_1_FOV_HORIZONTAL\0200\022\034" +
+      "\n\030TT_CAMERA_1_FOV_VERTICAL\0201\022\023\n\017TT_GPS_F" +
+      "IX_TYPE\0202\022\026\n\022TT_RC_LINK_QUALITY\0203\022\034\n\030TT_" +
+      "ADSB_TRANSPONDER_MODE\0204\022\027\n\023TT_ADSB_IDENT" +
+      "_STATE\0205\022\027\n\023TT_ADSB_SQUAWK_CODE\0206\022\033\n\027TT_" +
+      "ADSB_ALTITUDE_SOURCE\0207\022\024\n\020TT_ADSB_ALTITU" +
+      "DE\0208\022\027\n\023TT_ADSB_ERROR_FLAGS\0209\022\025\n\021TT_PAYL",
+      "OAD_2_ROLL\020:\022\025\n\021TT_PAYLOAD_2_TILT\020;\022\024\n\020T" +
+      "T_PAYLOAD_2_YAW\020<\022\036\n\032TT_CAMERA_2_FOV_HOR" +
+      "IZONTAL\020=\022\034\n\030TT_CAMERA_2_FOV_VERTICAL\020>\022" +
+      "\035\n\031TT_PAYLOAD_1_CONTROL_MODE\020?\022\035\n\031TT_PAY" +
+      "LOAD_2_CONTROL_MODE\020@\022\032\n\026TT_PAYLOAD_1_AV" +
+      "AILABLE\020A\022\032\n\026TT_PAYLOAD_2_AVAILABLE\020B\022\030\n" +
+      "\024TT_PAYLOAD_1_POWERED\020C\022\030\n\024TT_PAYLOAD_2_" +
+      "POWERED\020D\022\024\n\020TT_CAMERA_1_ZOOM\020E\022\024\n\020TT_CA" +
+      "MERA_2_ZOOM\020F\022\031\n\025TT_CAMERA_1_RECORDING\020G" +
+      "\022\031\n\025TT_CAMERA_2_RECORDING\020H\022\033\n\027TT_CAMERA",
+      "_1_IMAGE_COUNT\020I\022\033\n\027TT_CAMERA_2_IMAGE_CO" +
+      "UNT\020J\022\036\n\032TT_CAMERA_1_IMAGE_CAPACITY\020K\022\036\n" +
+      "\032TT_CAMERA_2_IMAGE_CAPACITY\020L\022\033\n\027TT_CAME" +
+      "RA_1_VIDEO_COUNT\020M\022\033\n\027TT_CAMERA_2_VIDEO_" +
+      "COUNT\020N\022\024\n\020TT_HOME_LATITUDE\020O\022\025\n\021TT_HOME" +
+      "_LONGITUDE\020P\022\031\n\025TT_HOME_AMSL_ALTITUDE\020Q\022" +
+      "\025\n\021TT_ADSB_ERROR_GPS\020R\022\026\n\022TT_ADSB_ERROR_" +
+      "ICAO\020S\022\"\n\036TT_ADSB_ERROR_OVER_TEMPERATURE" +
+      "\020T\022\024\n\020TT_ADSB_ERROR_ES\020U\022\035\n\031TT_ADSB_ERRO" +
+      "R_TRANSPONDER\020V\022\026\n\022TT_TARGET_LATITUDE\020W\022",
+      "\027\n\023TT_TARGET_LONGITUDE\020X\022\033\n\027TT_TARGET_AM" +
+      "SL_ALTITUDE\020Y\022\032\n\026TT_BATTERY_POWER_LEVEL\020" +
+      "Z\022\024\n\020TT_FENCE_ENABLED\020[\022\016\n\nTT_CURRENT\020\\\022" +
+      "\022\n\016TT_VIBRATION_X\020]\022\022\n\016TT_VIBRATION_Y\020^\022" +
+      "\022\n\016TT_VIBRATION_Z\020_\022\020\n\014TT_MOTORS_OK\020`\022\022\n" +
+      "\016TT_MOTOR_PWM_1\020a\022\022\n\016TT_MOTOR_PWM_2\020b\022\022\n" +
+      "\016TT_MOTOR_PWM_3\020c\022\022\n\016TT_MOTOR_PWM_4\020d\022\022\n" +
+      "\016TT_MOTOR_PWM_5\020e\022\022\n\016TT_MOTOR_PWM_6\020f\022\022\n" +
+      "\016TT_MOTOR_PWM_7\020g\022\022\n\016TT_MOTOR_PWM_8\020h\022\"\n" +
+      "\036TT_WINCH_SAFETY_BATTERY_ACTIVE\020i\022#\n\037TT_",
+      "WINCH_SAFETY_BATTERY_VOLTAGE\020j\022\026\n\022TT_WIN" +
+      "CH_CONNECTED\020k\022\016\n\nTT_STANDBY\020l\022\026\n\022TT_WAY" +
+      "POINT_NUMBER\020m\022\022\n\016TT_FLIGHT_MODE\020n\022\022\n\016TT" +
+      "_SERVO_PWM_1\020o\022\022\n\016TT_SERVO_PWM_2\020p\022\022\n\016TT" +
+      "_SERVO_PWM_3\020q\022\022\n\016TT_SERVO_PWM_4\020r\022\022\n\016TT" +
+      "_SERVO_PWM_5\020s\022\022\n\016TT_SERVO_PWM_6\020t\022\022\n\016TT" +
+      "_SERVO_PWM_7\020u\022\022\n\016TT_SERVO_PWM_8\020v\022\027\n\023TT" +
+      "_AUTOPILOT_STATUS\020w*T\n\013VehicleType\022\021\n\rVT" +
+      "_FIXED_WING\020\000\022\021\n\rVT_HELICOPTER\020\001\022\022\n\016VT_M" +
+      "ULTICOPTER\020\002\022\013\n\007VT_VTOL\020\003**\n\rVehicleSour",
+      "ce\022\n\n\006VS_VSM\020\000\022\r\n\tVS_IMPORT\020\001*\214\n\n\024Vehicl" +
+      "eParameterType\022\016\n\nVPT_HEIGHT\020\000\022\r\n\tVPT_WI" +
+      "DTH\020\001\022\016\n\nVPT_LENGTH\020\002\022\026\n\022VPT_MAX_CLIMB_R" +
+      "ATE\020\003\022\034\n\030VPT_MAX_HORIZONTAL_SPEED\020\004\022\024\n\020V" +
+      "PT_MAX_ALTITUDE\020\005\022\025\n\021VPT_MAX_WAYPOINTS\020\006" +
+      "\022\027\n\023VPT_MAX_FLIGHT_TIME\020\007\022\027\n\023VPT_WIND_RE" +
+      "SISTANCE\020\010\022\032\n\026VPT_DRY_TAKEOFF_WEIGHT\020\t\022\032" +
+      "\n\026VPT_MAX_TAKEOFF_WEIGHT\020\n\022\026\n\022VPT_BATTER" +
+      "Y_WEIGHT\020\013\022\037\n\033VPT_CHARGED_BATTERY_VOLTAG" +
+      "E\020\014\022\"\n\036VPT_DISCHARGED_BATTERY_VOLTAGE\020\r\022",
+      "\036\n\032VPT_NORMAL_BATTERY_VOLTAGE\020\016\022\033\n\027VPT_L" +
+      "OW_BATTERY_VOLTAGE\020\017\022\032\n\026VPT_LOW_GPS_SATE" +
+      "LLITES\020\020\022\035\n\031VPT_NORMAL_GPS_SATELLITES\020\021\022" +
+      " \n\034VPT_SAFE_DISTANCE_TO_TERRAIN\020\022\022!\n\035VPT" +
+      "_SAFE_DISTANCE_TO_OBSTACLE\020\023\022\"\n\036VPT_WAYP" +
+      "OINT_ACCEPTANCE_RADIUS\020\024\022\024\n\020VPT_FENCE_RA" +
+      "DIUS\020\025\022\033\n\027VPT_LOW_TELEMETRY_LEVEL\020\026\022\036\n\032V" +
+      "PT_NORMAL_TELEMETRY_LEVEL\020\027\022\032\n\026VPT_DEFAU" +
+      "LT_CLIMB_RATE\020\030\022\034\n\030VPT_DEFAULT_DESCENT_R" +
+      "ATE\020\031\022\023\n\017VPT_GLIDE_SLOPE\020\032\022 \n\034VPT_DEFAUL",
+      "T_HORIZONTAL_SPEED\020\033\022\034\n\030VPT_LANDING_GROU" +
+      "ND_SPEED\020\034\022\030\n\024VPT_MAX_ALTITUDE_AGL\020\035\022\036\n\032" +
+      "VPT_LANDING_FLARE_ALTITUDE\020\036\022\032\n\026VPT_LAND" +
+      "ING_FLARE_TIME\020\037\022\031\n\025VPT_MIN_LANDING_PITC" +
+      "H\020 \022\032\n\026VPT_LANDING_FLARE_DAMP\020!\022!\n\035VPT_L" +
+      "ANDING_APPROACH_AIRSPEED\020\"\022\037\n\033VPT_LANDIN" +
+      "G_SPEED_WEIGHTING\020#\022\035\n\031VPT_MAX_AUTO_FLIG" +
+      "HT_PITCH\020$\022\021\n\rVPT_MAX_PITCH\020%\022\024\n\020VPT_MIN" +
+      "_THROTTLE\020&\022\031\n\025VPT_LANDING_SINK_RATE\020\'\022#" +
+      "\n\037VPT_LANDING_RANGEFINDER_ENABLED\020(\022 \n\034V",
+      "PT_MIN_RANGEFINDER_DISTANCE\020)\022\030\n\024VPT_MAX" +
+      "_DESCENT_RATE\020*\022\037\n\033VPT_LOW_BATTERY_POWER" +
+      "_LEVEL\020+\022\"\n\036VPT_NORMAL_BATTERY_POWER_LEV" +
+      "EL\020,*.\n\013PayloadType\022\r\n\tPT_CAMERA\020\000\022\020\n\014PT" +
+      "_DATA_LINK\020\001*\363\001\n\024PayloadParameterType\022\016\n" +
+      "\nPPT_WEIGHT\020\000\022\021\n\rPPT_FREQUENCY\020\001\022\r\n\tPPT_" +
+      "POWER\020\002\022\031\n\025PPT_TRUE_FOCAL_LENGTH\020\003\022\024\n\020PP" +
+      "T_SENSOR_WIDTH\020\004\022\025\n\021PPT_SENSOR_HEIGHT\020\005\022" +
+      " \n\034PPT_SENSOR_HORIZONTAL_PIXELS\020\006\022\036\n\032PPT" +
+      "_SENSOR_VERTICAL_PIXELS\020\007\022\037\n\033PPT_MIN_TRI",
+      "GGERING_INTERVAL\020\010*\221\001\n\rSeverityLevel\022\020\n\014" +
+      "SL_EMERGENCY\020\000\022\014\n\010SL_ALERT\020\001\022\017\n\013SL_CRITI" +
+      "CAL\020\002\022\014\n\010SL_ERROR\020\003\022\016\n\nSL_WARNING\020\004\022\r\n\tS" +
+      "L_NOTICE\020\005\022\024\n\020SL_INFORMATIONAL\020\006\022\014\n\010SL_D" +
+      "EBUG\020\007*/\n\016TrajectoryType\022\017\n\013TT_STRAIGHT\020" +
+      "\000\022\014\n\010TT_STAIR\020\001*[\n\016FailsafeReason\022\016\n\nFR_" +
+      "RC_LOST\020\000\022\017\n\013FR_GPS_LOST\020\001\022\022\n\016FR_LOW_BAT" +
+      "TERY\020\002\022\024\n\020FR_DATALINK_LOST\020\003*V\n\016Failsafe" +
+      "Action\022\016\n\nFA_GO_HOME\020\000\022\013\n\007FA_LAND\020\001\022\013\n\007F" +
+      "A_WAIT\020\002\022\017\n\013FA_CONTINUE\020\003\022\t\n\005FA_NA\020\004*j\n\014",
+      "TriggerState\022\022\n\016TS_SINGLE_SHOT\020\000\022\026\n\022TS_S" +
+      "TART_RECORDING\020\001\022\025\n\021TS_STOP_RECORDING\020\002\022" +
+      "\027\n\023TS_TOGGLE_RECORDING\020\003*2\n\nPowerState\022\n" +
+      "\n\006PS_OFF\020\000\022\t\n\005PS_ON\020\001\022\r\n\tPS_TOGGLE\020\002*>\n\022" +
+      "HomeLocationSource\022\020\n\014HLS_EXPLICIT\020\000\022\026\n\022" +
+      "HLS_FIRST_WAYPOINT\020\001*\'\n\007PoiMode\022\013\n\007PM_NO" +
+      "NE\020\000\022\017\n\013PM_LOCATION\020\001**\n\014PanoramaMode\022\014\n" +
+      "\010PM_PHOTO\020\000\022\014\n\010PM_VIDEO\020\001*>\n\021RotationDir" +
+      "ection\022\020\n\014RD_CLOCKWISE\020\000\022\027\n\023RD_COUNTERCL" +
+      "OCKWISE\020\001*2\n\017IcaoAddressType\022\014\n\010IAT_REAL",
+      "\020\000\022\021\n\rIAT_ANONYMOUS\020\001**\n\tComponent\022\016\n\nC_" +
+      "DATABASE\020\000\022\r\n\tC_LICENSE\020\001*\301\001\n\nMetricUnit" +
+      "\022\013\n\007MU_NONE\020\000\022\r\n\tMU_SECOND\020\001\022\014\n\010MU_METRE" +
+      "\020\002\022\020\n\014MU_KILOMETRE\020\003\022\025\n\021MU_METREPERSECON" +
+      "D\020\004\022\022\n\016MU_SQUAREMETRE\020\005\022\021\n\rMU_KILOGRAMME" +
+      "\020\006\022\021\n\rMU_CENTIMETRE\020\007\022\016\n\nMU_HECTARE\020\010\022\026\n" +
+      "\022MU_SQUAREKILOMETRE\020\t*C\n\017MessageSeverity" +
+      "\022\014\n\010MS_ERROR\020\000\022\016\n\nMS_WARNING\020\001\022\022\n\016MS_INF" +
+      "ORMATION\020\002*F\n\026ConflictResolutionMode\022\014\n\010" +
+      "CRM_KEEP\020\000\022\017\n\013CRM_REPLACE\020\001\022\r\n\tCRM_MERGE",
+      "\020\002*d\n\023VehicleLogEntryType\022\020\n\014VLET_GENERI" +
+      "C\020\000\022\020\n\014VLET_COMMAND\020\001\022\017\n\013VLET_UPLOAD\020\002\022\030" +
+      "\n\024VLET_VIDEO_RECORDING\020\003*M\n\014ProcessStage" +
+      "\022\014\n\010PS_START\020\000\022\017\n\013PS_PROGRESS\020\001\022\016\n\nPS_SU" +
+      "CCESS\020\002\022\016\n\nPS_FAILURE\020\003*^\n\020WaypointTurnT" +
+      "ype\022\025\n\021WTT_STOP_AND_TURN\020\000\022\020\n\014WTT_STRAIG" +
+      "HT\020\001\022\016\n\nWTT_SPLINE\020\002\022\021\n\rWTT_BANK_TURN\020\003*" +
+      "\217\003\n\nActionCode\022\017\n\013AC_WAYPOINT\020\000\022\023\n\017AC_SP" +
+      "EED_CHANGE\020\001\022\024\n\020AC_HOME_LOCATION\020\002\022\013\n\007AC" +
+      "_WAIT\020\003\022\021\n\rAC_POI_CHANGE\020\004\022\025\n\021AC_HEADING",
+      "_CHANGE\020\005\022\025\n\021AC_CAMERA_CONTROL\020\006\022\025\n\021AC_C" +
+      "AMERA_TRIGGER\020\007\022\034\n\030AC_CAMERA_SERIES_BY_T" +
+      "IME\020\010\022 \n\034AC_CAMERA_SERIES_BY_DISTANCE\020\t\022" +
+      "\016\n\nAC_TAKEOFF\020\n\022\016\n\nAC_LANDING\020\013\022\017\n\013AC_PA" +
+      "NORAMA\020\014\022\027\n\023AC_ROUTE_ATTRIBUTES\020\r\022\020\n\014AC_" +
+      "SET_SERVO\020\016\022\023\n\017AC_REPEAT_SERVO\020\017\022\027\n\023AC_T" +
+      "RANSITION_FIXED\020\020\022\026\n\022AC_TRANSITION_VTOL\020" +
+      "\021**\n\007NfzType\022\r\n\tNT_CUSTOM\020\000\022\020\n\014NT_AERODR" +
+      "OME\020\001*}\n\016VideoEventType\022\031\n\025VET_RECORDING" +
+      "_STARTED\020\000\022\031\n\025VET_RECORDING_STOPPED\020\001\022\035\n",
+      "\031VET_RECORDING_INTERRUPTED\020\002\022\026\n\022VET_STRE" +
+      "AM_REMOVED\020\003*5\n\013FeatureType\022\024\n\020FT_STATIC" +
+      "_OBJECT\020\000\022\020\n\014FT_PLACEMARK\020\001*\246\002\n\022UtmOpera" +
+      "tionStatus\022\021\n\rUOS_PROPOSING\020\000\022\020\n\014UOS_ACC" +
+      "EPTED\020\001\022\020\n\014UOS_REJECTED\020\002\022\017\n\013UOS_READIED" +
+      "\020\003\022\021\n\rUOS_ACTIVATED\020\004\022\016\n\nUOS_CLOSED\020\005\022\017\n" +
+      "\013UOS_EXPIRED\020\006\022\021\n\rUOS_CANCELLED\020\007\022\026\n\022UOS" +
+      "_NON_CONFORMING\020\010\022\r\n\tUOS_ROGUE\020\t\022\021\n\rUOS_" +
+      "MODIFYING\020\n\022\022\n\016UOS_REQUESTING\020\013\022\020\n\014UOS_A" +
+      "BORTING\020\014\022\017\n\013UOS_ABORTED\020\r\022\020\n\014UOS_INTRUD",
+      "ER\020\016*N\n\rCommandStatus\022\017\n\013CS_REJECTED\020\000\022\013" +
+      "\n\007CS_SENT\020\001\022\020\n\014CS_SUCCEEDED\020\002\022\r\n\tCS_FAIL" +
+      "ED\020\003*{\n\tSubsystem\022\024\n\020S_CONTROL_SERVER\020\000\022" +
+      "\027\n\023S_FLIGHT_CONTROLLER\020\001\022\014\n\010S_GIMBAL\020\002\022\014" +
+      "\n\010S_CAMERA\020\003\022\026\n\022S_ADSB_TRANSPONDER\020\004\022\013\n\007" +
+      "S_WINCH\020\005*\222\005\n\010Semantic\022\r\n\tS_DEFAULT\020\001\022\016\n" +
+      "\nS_LATITUDE\020\002\022\017\n\013S_LONGITUDE\020\003\022\023\n\017S_ALTI" +
+      "TUDE_AMSL\020\004\022\022\n\016S_ALTITUDE_AGL\020\005\022\022\n\016S_ALT" +
+      "ITUDE_RAW\020\006\022\r\n\tS_HEADING\020\007\022\r\n\tS_VOLTAGE\020" +
+      "\010\022\017\n\013S_AIR_SPEED\020\t\022\022\n\016S_GROUND_SPEED\020\n\022\024",
+      "\n\020S_VERTICAL_SPEED\020\013\022\025\n\021S_SATELLITE_COUN" +
+      "T\020\014\022\022\n\016S_GPS_FIX_TYPE\020\r\022\n\n\006S_ROLL\020\016\022\013\n\007S" +
+      "_PITCH\020\017\022\t\n\005S_YAW\020\020\022\025\n\021S_RC_LINK_QUALITY" +
+      "\020\021\022\r\n\tS_CURRENT\020\022\022\026\n\022S_GCS_LINK_QUALITY\020" +
+      "\023\022\013\n\007S_FOV_H\020\024\022\013\n\007S_FOV_V\020\025\022\022\n\016S_CONTROL" +
+      "_MODE\020\026\022\026\n\022S_GROUND_ELEVATION\020\027\022\027\n\023S_ACC" +
+      "EPTANCE_RADIUS\020\030\022\023\n\017S_LOITER_RADIUS\020\031\022\n\n" +
+      "\006S_ICAO\020\032\022\017\n\013S_ADSB_MODE\020\033\022\014\n\010S_SQUAWK\020\034" +
+      "\022\022\n\016S_MILLISECONDS\020\035\022\r\n\tS_NUMERIC\020\036\022\n\n\006S" +
+      "_BOOL\020\037\022\014\n\010S_STRING\020 \022\n\n\006S_ENUM\020!\022\024\n\020S_C",
+      "APACITY_LEVEL\020\"\022\021\n\rS_FLIGHT_MODE\020#\022\n\n\006S_" +
+      "LIST\020$\022\026\n\022S_AUTOPILOT_STATUS\020%*?\n\020Modifi" +
+      "cationType\022\r\n\tMT_CREATE\020\000\022\r\n\tMT_UPDATE\020\001" +
+      "\022\r\n\tMT_DELETE\020\002B!\n\022com.ugcs.ucs.protoB\013D" +
+      "omainProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -104672,7 +110993,7 @@ public final class DomainProto {
           internal_static_DomainObjectWrapper_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DomainObjectWrapper_descriptor,
-              new java.lang.String[] { "Action", "ActionDefinition", "AdsbAircraft", "Avatar", "CameraControl", "CameraControlDefinition", "CameraTrigger", "CameraTriggerDefinition", "CommandDefinition", "Figure", "FigureParameter", "FigurePoint", "HeadingChange", "HeadingDefinition", "HomeLocation", "Landing", "License", "Mission", "MissionPreference", "MissionVehicle", "NoFlightZone", "Panorama", "PanoramaDefinition", "ParameterDefinition", "ParameterValue", "PayloadParameter", "PayloadProfile", "Platform", "PlatformPayloadProfile", "PlatformTelemetryType", "PoiChange", "PoiDefinition", "Prism", "PolygonPoint", "ProcessedRoute", "Route", "SegmentDefinition", "SpeedChange", "Takeoff", "Telemetry", "TraverseAlgorithm", "User", "Vehicle", "VehicleCommandDefinition", "VehicleLogEntry", "VehicleParameter", "VehicleProfile", "VehicleProfilePayloadProfile", "Vsm", "Wait", "WaitDefinition", "Waypoint", "MessageSet", "LocalizedMessage", "LocalizedMessageVariant", "TelemetryInterval", "TelemetryIntervalVehicle", "CommandLogArguments", "UploadLogArguments", "ElevationSource", "GeoServer", "CameraSeriesByDistance", "CameraSeriesByDistanceDefinition", "CameraSeriesByTime", "CameraSeriesByTimeDefinition", "PlatformAction", "FeatureSource", "VideoRecordingLogArguments", "UtmOperation", "CommandArgumentDefinition", "Failsafe", "ProcessedSegment", "RouteAttributes", "Value", },
+              new java.lang.String[] { "Action", "ActionDefinition", "AdsbAircraft", "CameraControl", "CameraControlDefinition", "CameraTrigger", "CameraTriggerDefinition", "CommandDefinition", "Figure", "FigureParameter", "FigurePoint", "HeadingChange", "HeadingDefinition", "HomeLocation", "Landing", "License", "Mission", "MissionPreference", "MissionVehicle", "NoFlightZone", "Panorama", "PanoramaDefinition", "ParameterDefinition", "ParameterValue", "PayloadParameter", "PayloadProfile", "Platform", "PlatformPayloadProfile", "PlatformTelemetryType", "PoiChange", "PoiDefinition", "Prism", "PolygonPoint", "ProcessedRoute", "Route", "SegmentDefinition", "SpeedChange", "Takeoff", "Telemetry", "TraverseAlgorithm", "User", "Vehicle", "VehicleCommandDefinition", "VehicleLogEntry", "VehicleParameter", "VehicleProfile", "VehicleProfilePayloadProfile", "Vsm", "Wait", "WaitDefinition", "Waypoint", "MessageSet", "LocalizedMessage", "LocalizedMessageVariant", "TelemetryInterval", "TelemetryIntervalVehicle", "CommandLogArguments", "UploadLogArguments", "ElevationSource", "GeoServer", "CameraSeriesByDistance", "CameraSeriesByDistanceDefinition", "CameraSeriesByTime", "CameraSeriesByTimeDefinition", "PlatformAction", "FeatureSource", "VideoRecordingLogArguments", "UtmOperation", "CommandArgumentDefinition", "Failsafe", "ProcessedSegment", "RouteAttributes", "Value", "SetServo", "RepeatServo", "TransitionFixed", "TransitionVtol", "RouteUpload", },
               com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper.class,
               com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper.Builder.class);
           internal_static_Version_descriptor =
@@ -104752,7 +111073,7 @@ public final class DomainProto {
           internal_static_Vehicle_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Vehicle_descriptor,
-              new java.lang.String[] { "Id", "Version", "VehicleId", "Vsm", "Name", "TailNumber", "Type", "DownlinkConnected", "UplinkConnected", "AltitudeOrigin", "CommandDefinitions", "Platform", "Profile", "Tag", "Emulator", "DroneshareUuid", "HomeLatitude", "HomeLongitude", "HomeAltitude", "IcaoAddress", "AdsbAircrafts", "SerialNumber", "Port", },
+              new java.lang.String[] { "Id", "Version", "VehicleId", "Name", "TailNumber", "Type", "AltitudeOrigin", "CommandDefinitions", "Platform", "Profile", "Tag", "Emulator", "IcaoAddress", "AdsbAircrafts", "SerialNumber", "Port", "Source", },
               com.ugcs.ucs.proto.DomainProto.Vehicle.class,
               com.ugcs.ucs.proto.DomainProto.Vehicle.Builder.class);
           internal_static_AdsbAircraft_descriptor =
@@ -104771,24 +111092,16 @@ public final class DomainProto {
               new java.lang.String[] { "Id", "Version", "VehicleProfile", "PayloadProfile", "Tag", },
               com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.class,
               com.ugcs.ucs.proto.DomainProto.VehicleProfilePayloadProfile.Builder.class);
-          internal_static_Avatar_descriptor =
-            getDescriptor().getMessageTypes().get(13);
-          internal_static_Avatar_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Avatar_descriptor,
-              new java.lang.String[] { "Id", "Version", "ImageMimeType", "ImageData", "ModelMimeType", "ModelData", "Name", "Tag", },
-              com.ugcs.ucs.proto.DomainProto.Avatar.class,
-              com.ugcs.ucs.proto.DomainProto.Avatar.Builder.class);
           internal_static_VehicleProfile_descriptor =
-            getDescriptor().getMessageTypes().get(14);
+            getDescriptor().getMessageTypes().get(13);
           internal_static_VehicleProfile_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VehicleProfile_descriptor,
-              new java.lang.String[] { "Id", "Version", "Name", "VehicleType", "Avatar", "Parameters", "PayloadProfiles", "Platform", "Sealed", "Unremovable", "Tag", "Primary", },
+              new java.lang.String[] { "Id", "Version", "Name", "VehicleType", "Parameters", "PayloadProfiles", "Platform", "Sealed", "Unremovable", "Tag", "Primary", "ModelKey", "ImageKey", },
               com.ugcs.ucs.proto.DomainProto.VehicleProfile.class,
               com.ugcs.ucs.proto.DomainProto.VehicleProfile.Builder.class);
           internal_static_VehicleParameter_descriptor =
-            getDescriptor().getMessageTypes().get(15);
+            getDescriptor().getMessageTypes().get(14);
           internal_static_VehicleParameter_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VehicleParameter_descriptor,
@@ -104796,15 +111109,15 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.VehicleParameter.class,
               com.ugcs.ucs.proto.DomainProto.VehicleParameter.Builder.class);
           internal_static_PayloadProfile_descriptor =
-            getDescriptor().getMessageTypes().get(16);
+            getDescriptor().getMessageTypes().get(15);
           internal_static_PayloadProfile_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PayloadProfile_descriptor,
-              new java.lang.String[] { "Id", "Version", "Name", "PayloadType", "ImageMimeType", "ImageData", "Parameters", "Platforms", "Sealed", "Unremovable", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Name", "PayloadType", "ImageKey", "Parameters", "Platforms", "Sealed", "Unremovable", "Tag", },
               com.ugcs.ucs.proto.DomainProto.PayloadProfile.class,
               com.ugcs.ucs.proto.DomainProto.PayloadProfile.Builder.class);
           internal_static_PayloadParameter_descriptor =
-            getDescriptor().getMessageTypes().get(17);
+            getDescriptor().getMessageTypes().get(16);
           internal_static_PayloadParameter_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PayloadParameter_descriptor,
@@ -104812,7 +111125,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.PayloadParameter.class,
               com.ugcs.ucs.proto.DomainProto.PayloadParameter.Builder.class);
           internal_static_TraverseAlgorithm_descriptor =
-            getDescriptor().getMessageTypes().get(18);
+            getDescriptor().getMessageTypes().get(17);
           internal_static_TraverseAlgorithm_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TraverseAlgorithm_descriptor,
@@ -104820,7 +111133,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.class,
               com.ugcs.ucs.proto.DomainProto.TraverseAlgorithm.Builder.class);
           internal_static_ParameterDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(19);
+            getDescriptor().getMessageTypes().get(18);
           internal_static_ParameterDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ParameterDefinition_descriptor,
@@ -104828,7 +111141,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ParameterDefinition.class,
               com.ugcs.ucs.proto.DomainProto.ParameterDefinition.Builder.class);
           internal_static_Prism_descriptor =
-            getDescriptor().getMessageTypes().get(20);
+            getDescriptor().getMessageTypes().get(19);
           internal_static_Prism_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Prism_descriptor,
@@ -104836,7 +111149,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Prism.class,
               com.ugcs.ucs.proto.DomainProto.Prism.Builder.class);
           internal_static_PolygonPoint_descriptor =
-            getDescriptor().getMessageTypes().get(21);
+            getDescriptor().getMessageTypes().get(20);
           internal_static_PolygonPoint_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PolygonPoint_descriptor,
@@ -104844,7 +111157,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.PolygonPoint.class,
               com.ugcs.ucs.proto.DomainProto.PolygonPoint.Builder.class);
           internal_static_Figure_descriptor =
-            getDescriptor().getMessageTypes().get(22);
+            getDescriptor().getMessageTypes().get(21);
           internal_static_Figure_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Figure_descriptor,
@@ -104852,7 +111165,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Figure.class,
               com.ugcs.ucs.proto.DomainProto.Figure.Builder.class);
           internal_static_FigureParameter_descriptor =
-            getDescriptor().getMessageTypes().get(23);
+            getDescriptor().getMessageTypes().get(22);
           internal_static_FigureParameter_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FigureParameter_descriptor,
@@ -104860,7 +111173,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.FigureParameter.class,
               com.ugcs.ucs.proto.DomainProto.FigureParameter.Builder.class);
           internal_static_FigurePoint_descriptor =
-            getDescriptor().getMessageTypes().get(24);
+            getDescriptor().getMessageTypes().get(23);
           internal_static_FigurePoint_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FigurePoint_descriptor,
@@ -104868,7 +111181,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.FigurePoint.class,
               com.ugcs.ucs.proto.DomainProto.FigurePoint.Builder.class);
           internal_static_Mission_descriptor =
-            getDescriptor().getMessageTypes().get(25);
+            getDescriptor().getMessageTypes().get(24);
           internal_static_Mission_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Mission_descriptor,
@@ -104876,7 +111189,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Mission.class,
               com.ugcs.ucs.proto.DomainProto.Mission.Builder.class);
           internal_static_MissionVehicle_descriptor =
-            getDescriptor().getMessageTypes().get(26);
+            getDescriptor().getMessageTypes().get(25);
           internal_static_MissionVehicle_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_MissionVehicle_descriptor,
@@ -104884,13 +111197,21 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.MissionVehicle.class,
               com.ugcs.ucs.proto.DomainProto.MissionVehicle.Builder.class);
           internal_static_Route_descriptor =
-            getDescriptor().getMessageTypes().get(27);
+            getDescriptor().getMessageTypes().get(26);
           internal_static_Route_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Route_descriptor,
               new java.lang.String[] { "Id", "Version", "Uuid", "Name", "CreationTime", "ScheduledTime", "Mission", "Segments", "AltitudeType", "TrajectoryType", "SafeAltitude", "MaxAltitude", "InitialSpeed", "MaxSpeed", "HomeLocationSource", "HomeLatitude", "HomeLongitude", "HomeWgs84Altitude", "HomeAglAltitude", "Failsafes", "VehicleProfile", "Tag", "CheckAerodromeNfz", "CheckCustomNfz", "ModificationUuid", },
               com.ugcs.ucs.proto.DomainProto.Route.class,
               com.ugcs.ucs.proto.DomainProto.Route.Builder.class);
+          internal_static_RouteUpload_descriptor =
+            getDescriptor().getMessageTypes().get(27);
+          internal_static_RouteUpload_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_RouteUpload_descriptor,
+              new java.lang.String[] { "Id", "Version", "Route", "RouteModificationUuid", "Vehicle", "User", "UploadTime", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.RouteUpload.class,
+              com.ugcs.ucs.proto.DomainProto.RouteUpload.Builder.class);
           internal_static_Failsafe_descriptor =
             getDescriptor().getMessageTypes().get(28);
           internal_static_Failsafe_fieldAccessorTable = new
@@ -104960,7 +111281,7 @@ public final class DomainProto {
           internal_static_Action_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Action_descriptor,
-              new java.lang.String[] { "Id", "Version", "Order", "Origin", "ProcessedSegment", "ProcessedConnection", "OptimizedRoute", "Waypoint", "SpeedChange", "HomeLocation", "Wait", "PoiChange", "HeadingChange", "CameraControl", "CameraTrigger", "CameraSeriesByTime", "CameraSeriesByDistance", "Takeoff", "Landing", "Panorama", "RouteAttributes", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Order", "Origin", "ProcessedSegment", "ProcessedConnection", "OptimizedRoute", "Waypoint", "SpeedChange", "HomeLocation", "Wait", "PoiChange", "HeadingChange", "CameraControl", "CameraTrigger", "CameraSeriesByTime", "CameraSeriesByDistance", "Takeoff", "Landing", "Panorama", "RouteAttributes", "SetServo", "RepeatServo", "TransitionVtol", "TransitionFixed", "Tag", "EstimatedTime", },
               com.ugcs.ucs.proto.DomainProto.Action.class,
               com.ugcs.ucs.proto.DomainProto.Action.Builder.class);
           internal_static_Waypoint_descriptor =
@@ -105008,7 +111329,7 @@ public final class DomainProto {
           internal_static_Wait_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Wait_descriptor,
-              new java.lang.String[] { "Id", "Version", "Interval", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Interval", "WaitForOperator", "Tag", },
               com.ugcs.ucs.proto.DomainProto.Wait.class,
               com.ugcs.ucs.proto.DomainProto.Wait.Builder.class);
           internal_static_HeadingChange_descriptor =
@@ -105075,16 +111396,48 @@ public final class DomainProto {
               new java.lang.String[] { "Id", "Version", "SafeAltitude", "RcLostAction", "GpsLostAction", "LowBatteryAction", "DatalinkLostAction", "Tag", },
               com.ugcs.ucs.proto.DomainProto.RouteAttributes.class,
               com.ugcs.ucs.proto.DomainProto.RouteAttributes.Builder.class);
-          internal_static_ActionDefinition_descriptor =
+          internal_static_SetServo_descriptor =
             getDescriptor().getMessageTypes().get(51);
+          internal_static_SetServo_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_SetServo_descriptor,
+              new java.lang.String[] { "Id", "Version", "ServoId", "Pwm", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.SetServo.class,
+              com.ugcs.ucs.proto.DomainProto.SetServo.Builder.class);
+          internal_static_RepeatServo_descriptor =
+            getDescriptor().getMessageTypes().get(52);
+          internal_static_RepeatServo_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_RepeatServo_descriptor,
+              new java.lang.String[] { "Id", "Version", "ServoId", "Pwm", "Delay", "Count", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.class,
+              com.ugcs.ucs.proto.DomainProto.RepeatServo.Builder.class);
+          internal_static_TransitionFixed_descriptor =
+            getDescriptor().getMessageTypes().get(53);
+          internal_static_TransitionFixed_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_TransitionFixed_descriptor,
+              new java.lang.String[] { "Id", "Version", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.class,
+              com.ugcs.ucs.proto.DomainProto.TransitionFixed.Builder.class);
+          internal_static_TransitionVtol_descriptor =
+            getDescriptor().getMessageTypes().get(54);
+          internal_static_TransitionVtol_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_TransitionVtol_descriptor,
+              new java.lang.String[] { "Id", "Version", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.class,
+              com.ugcs.ucs.proto.DomainProto.TransitionVtol.Builder.class);
+          internal_static_ActionDefinition_descriptor =
+            getDescriptor().getMessageTypes().get(55);
           internal_static_ActionDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActionDefinition_descriptor,
-              new java.lang.String[] { "Id", "Version", "Uuid", "Order", "SegmentDefinition", "WaitDefinition", "PoiDefinition", "HeadingDefinition", "CameraControlDefinition", "CameraTriggerDefinition", "CameraSeriesByTimeDefinition", "CameraSeriesByDistanceDefinition", "PanoramaDefinition", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Uuid", "Order", "SegmentDefinition", "WaitDefinition", "PoiDefinition", "HeadingDefinition", "CameraControlDefinition", "CameraTriggerDefinition", "CameraSeriesByTimeDefinition", "CameraSeriesByDistanceDefinition", "PanoramaDefinition", "SetServoDefinition", "RepeatServoDefinition", "TransitionVtolDefinition", "TransitionFixedDefinition", "Tag", },
               com.ugcs.ucs.proto.DomainProto.ActionDefinition.class,
               com.ugcs.ucs.proto.DomainProto.ActionDefinition.Builder.class);
           internal_static_CameraControlDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(52);
+            getDescriptor().getMessageTypes().get(56);
           internal_static_CameraControlDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraControlDefinition_descriptor,
@@ -105092,7 +111445,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CameraControlDefinition.Builder.class);
           internal_static_CameraTriggerDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(53);
+            getDescriptor().getMessageTypes().get(57);
           internal_static_CameraTriggerDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraTriggerDefinition_descriptor,
@@ -105100,7 +111453,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CameraTriggerDefinition.Builder.class);
           internal_static_CameraSeriesByTimeDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(54);
+            getDescriptor().getMessageTypes().get(58);
           internal_static_CameraSeriesByTimeDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraSeriesByTimeDefinition_descriptor,
@@ -105108,7 +111461,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByTimeDefinition.Builder.class);
           internal_static_CameraSeriesByDistanceDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(55);
+            getDescriptor().getMessageTypes().get(59);
           internal_static_CameraSeriesByDistanceDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CameraSeriesByDistanceDefinition_descriptor,
@@ -105116,7 +111469,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CameraSeriesByDistanceDefinition.Builder.class);
           internal_static_HeadingDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(56);
+            getDescriptor().getMessageTypes().get(60);
           internal_static_HeadingDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_HeadingDefinition_descriptor,
@@ -105124,7 +111477,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.HeadingDefinition.class,
               com.ugcs.ucs.proto.DomainProto.HeadingDefinition.Builder.class);
           internal_static_PoiDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(57);
+            getDescriptor().getMessageTypes().get(61);
           internal_static_PoiDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PoiDefinition_descriptor,
@@ -105132,39 +111485,63 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.PoiDefinition.class,
               com.ugcs.ucs.proto.DomainProto.PoiDefinition.Builder.class);
           internal_static_WaitDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(58);
+            getDescriptor().getMessageTypes().get(62);
           internal_static_WaitDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_WaitDefinition_descriptor,
-              new java.lang.String[] { "Id", "Version", "Interval", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Interval", "WaitForOperator", "Tag", },
               com.ugcs.ucs.proto.DomainProto.WaitDefinition.class,
               com.ugcs.ucs.proto.DomainProto.WaitDefinition.Builder.class);
           internal_static_PanoramaDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(59);
+            getDescriptor().getMessageTypes().get(63);
           internal_static_PanoramaDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_PanoramaDefinition_descriptor,
               new java.lang.String[] { "Id", "Version", "Angle", "StepAngle", "StepDelay", "RotationDirection", "RotationSpeed", "PanoramaMode", "Tag", },
               com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.class,
               com.ugcs.ucs.proto.DomainProto.PanoramaDefinition.Builder.class);
+          internal_static_SetServoDefinition_descriptor =
+            getDescriptor().getMessageTypes().get(64);
+          internal_static_SetServoDefinition_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_SetServoDefinition_descriptor,
+              new java.lang.String[] { "Id", "Version", "ServoId", "Pwm", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.SetServoDefinition.class,
+              com.ugcs.ucs.proto.DomainProto.SetServoDefinition.Builder.class);
+          internal_static_RepeatServoDefinition_descriptor =
+            getDescriptor().getMessageTypes().get(65);
+          internal_static_RepeatServoDefinition_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_RepeatServoDefinition_descriptor,
+              new java.lang.String[] { "Id", "Version", "ServoId", "Pwm", "Delay", "Count", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.class,
+              com.ugcs.ucs.proto.DomainProto.RepeatServoDefinition.Builder.class);
+          internal_static_TransitionFixedDefinition_descriptor =
+            getDescriptor().getMessageTypes().get(66);
+          internal_static_TransitionFixedDefinition_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_TransitionFixedDefinition_descriptor,
+              new java.lang.String[] { "Id", "Version", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.class,
+              com.ugcs.ucs.proto.DomainProto.TransitionFixedDefinition.Builder.class);
+          internal_static_TransitionVtolDefinition_descriptor =
+            getDescriptor().getMessageTypes().get(67);
+          internal_static_TransitionVtolDefinition_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_TransitionVtolDefinition_descriptor,
+              new java.lang.String[] { "Id", "Version", "Tag", },
+              com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.class,
+              com.ugcs.ucs.proto.DomainProto.TransitionVtolDefinition.Builder.class);
           internal_static_NoFlightZone_descriptor =
-            getDescriptor().getMessageTypes().get(60);
+            getDescriptor().getMessageTypes().get(68);
           internal_static_NoFlightZone_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_NoFlightZone_descriptor,
               new java.lang.String[] { "Id", "Version", "Tag", "Name", "Type", "Sealed", "Prism", "ConeFrustum", },
               com.ugcs.ucs.proto.DomainProto.NoFlightZone.class,
               com.ugcs.ucs.proto.DomainProto.NoFlightZone.Builder.class);
-          internal_static_NoFlightZoneRTreeIndex_descriptor =
-            getDescriptor().getMessageTypes().get(61);
-          internal_static_NoFlightZoneRTreeIndex_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_NoFlightZoneRTreeIndex_descriptor,
-              new java.lang.String[] { "NfzId", "MinLat", "MaxLat", "MinLng", "MaxLng", },
-              com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.class,
-              com.ugcs.ucs.proto.DomainProto.NoFlightZoneRTreeIndex.Builder.class);
           internal_static_ConeFrustum_descriptor =
-            getDescriptor().getMessageTypes().get(62);
+            getDescriptor().getMessageTypes().get(69);
           internal_static_ConeFrustum_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ConeFrustum_descriptor,
@@ -105172,15 +111549,15 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ConeFrustum.class,
               com.ugcs.ucs.proto.DomainProto.ConeFrustum.Builder.class);
           internal_static_CommandDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(63);
+            getDescriptor().getMessageTypes().get(70);
           internal_static_CommandDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CommandDefinition_descriptor,
-              new java.lang.String[] { "Id", "Version", "Code", "Subsystem", "SubsystemId", "Arguments", "Name", "Tag", },
+              new java.lang.String[] { "Id", "Version", "Code", "Subsystem", "SubsystemId", "Arguments", "Name", "Vehicle", "Tag", },
               com.ugcs.ucs.proto.DomainProto.CommandDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CommandDefinition.Builder.class);
           internal_static_CommandArgumentDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(64);
+            getDescriptor().getMessageTypes().get(71);
           internal_static_CommandArgumentDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CommandArgumentDefinition_descriptor,
@@ -105188,7 +111565,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.class,
               com.ugcs.ucs.proto.DomainProto.CommandArgumentDefinition.Builder.class);
           internal_static_VehicleCommandDefinition_descriptor =
-            getDescriptor().getMessageTypes().get(65);
+            getDescriptor().getMessageTypes().get(72);
           internal_static_VehicleCommandDefinition_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VehicleCommandDefinition_descriptor,
@@ -105196,7 +111573,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.class,
               com.ugcs.ucs.proto.DomainProto.VehicleCommandDefinition.Builder.class);
           internal_static_Command_descriptor =
-            getDescriptor().getMessageTypes().get(66);
+            getDescriptor().getMessageTypes().get(73);
           internal_static_Command_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Command_descriptor,
@@ -105204,7 +111581,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Command.class,
               com.ugcs.ucs.proto.DomainProto.Command.Builder.class);
           internal_static_CommandArgument_descriptor =
-            getDescriptor().getMessageTypes().get(67);
+            getDescriptor().getMessageTypes().get(74);
           internal_static_CommandArgument_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CommandArgument_descriptor,
@@ -105212,15 +111589,15 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CommandArgument.class,
               com.ugcs.ucs.proto.DomainProto.CommandArgument.Builder.class);
           internal_static_Value_descriptor =
-            getDescriptor().getMessageTypes().get(68);
+            getDescriptor().getMessageTypes().get(75);
           internal_static_Value_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Value_descriptor,
-              new java.lang.String[] { "Id", "Version", "BoolValue", "IntValue", "LongValue", "FloatValue", "DoubleValue", "StringValue", "Tag", },
+              new java.lang.String[] { "Id", "Version", "BoolValue", "IntValue", "LongValue", "FloatValue", "DoubleValue", "StringValue", "ListValue", "Tag", },
               com.ugcs.ucs.proto.DomainProto.Value.class,
               com.ugcs.ucs.proto.DomainProto.Value.Builder.class);
           internal_static_VehicleLogEntry_descriptor =
-            getDescriptor().getMessageTypes().get(69);
+            getDescriptor().getMessageTypes().get(76);
           internal_static_VehicleLogEntry_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VehicleLogEntry_descriptor,
@@ -105228,7 +111605,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.class,
               com.ugcs.ucs.proto.DomainProto.VehicleLogEntry.Builder.class);
           internal_static_CommandLogArguments_descriptor =
-            getDescriptor().getMessageTypes().get(70);
+            getDescriptor().getMessageTypes().get(77);
           internal_static_CommandLogArguments_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CommandLogArguments_descriptor,
@@ -105236,7 +111613,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.CommandLogArguments.class,
               com.ugcs.ucs.proto.DomainProto.CommandLogArguments.Builder.class);
           internal_static_UploadLogArguments_descriptor =
-            getDescriptor().getMessageTypes().get(71);
+            getDescriptor().getMessageTypes().get(78);
           internal_static_UploadLogArguments_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UploadLogArguments_descriptor,
@@ -105244,7 +111621,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.UploadLogArguments.class,
               com.ugcs.ucs.proto.DomainProto.UploadLogArguments.Builder.class);
           internal_static_VideoRecordingLogArguments_descriptor =
-            getDescriptor().getMessageTypes().get(72);
+            getDescriptor().getMessageTypes().get(79);
           internal_static_VideoRecordingLogArguments_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_VideoRecordingLogArguments_descriptor,
@@ -105252,7 +111629,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.class,
               com.ugcs.ucs.proto.DomainProto.VideoRecordingLogArguments.Builder.class);
           internal_static_Telemetry_descriptor =
-            getDescriptor().getMessageTypes().get(73);
+            getDescriptor().getMessageTypes().get(80);
           internal_static_Telemetry_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Telemetry_descriptor,
@@ -105260,7 +111637,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Telemetry.class,
               com.ugcs.ucs.proto.DomainProto.Telemetry.Builder.class);
           internal_static_TelemetryDto_descriptor =
-            getDescriptor().getMessageTypes().get(74);
+            getDescriptor().getMessageTypes().get(81);
           internal_static_TelemetryDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryDto_descriptor,
@@ -105268,7 +111645,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryDto.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder.class);
           internal_static_TelemetryInterval_descriptor =
-            getDescriptor().getMessageTypes().get(75);
+            getDescriptor().getMessageTypes().get(82);
           internal_static_TelemetryInterval_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryInterval_descriptor,
@@ -105276,7 +111653,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryInterval.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryInterval.Builder.class);
           internal_static_TelemetryIntervalVehicle_descriptor =
-            getDescriptor().getMessageTypes().get(76);
+            getDescriptor().getMessageTypes().get(83);
           internal_static_TelemetryIntervalVehicle_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryIntervalVehicle_descriptor,
@@ -105284,7 +111661,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryIntervalVehicle.Builder.class);
           internal_static_ElevationSource_descriptor =
-            getDescriptor().getMessageTypes().get(77);
+            getDescriptor().getMessageTypes().get(84);
           internal_static_ElevationSource_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ElevationSource_descriptor,
@@ -105292,7 +111669,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ElevationSource.class,
               com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder.class);
           internal_static_FeatureSource_descriptor =
-            getDescriptor().getMessageTypes().get(78);
+            getDescriptor().getMessageTypes().get(85);
           internal_static_FeatureSource_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_FeatureSource_descriptor,
@@ -105300,7 +111677,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.FeatureSource.class,
               com.ugcs.ucs.proto.DomainProto.FeatureSource.Builder.class);
           internal_static_GeoServer_descriptor =
-            getDescriptor().getMessageTypes().get(79);
+            getDescriptor().getMessageTypes().get(86);
           internal_static_GeoServer_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GeoServer_descriptor,
@@ -105308,7 +111685,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.GeoServer.class,
               com.ugcs.ucs.proto.DomainProto.GeoServer.Builder.class);
           internal_static_UtmOperation_descriptor =
-            getDescriptor().getMessageTypes().get(80);
+            getDescriptor().getMessageTypes().get(87);
           internal_static_UtmOperation_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UtmOperation_descriptor,
@@ -105316,7 +111693,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.UtmOperation.class,
               com.ugcs.ucs.proto.DomainProto.UtmOperation.Builder.class);
           internal_static_Lock_descriptor =
-            getDescriptor().getMessageTypes().get(81);
+            getDescriptor().getMessageTypes().get(88);
           internal_static_Lock_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Lock_descriptor,
@@ -105324,7 +111701,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Lock.class,
               com.ugcs.ucs.proto.DomainProto.Lock.Builder.class);
           internal_static_Selection_descriptor =
-            getDescriptor().getMessageTypes().get(82);
+            getDescriptor().getMessageTypes().get(89);
           internal_static_Selection_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Selection_descriptor,
@@ -105332,7 +111709,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.Selection.class,
               com.ugcs.ucs.proto.DomainProto.Selection.Builder.class);
           internal_static_SelectionItem_descriptor =
-            getDescriptor().getMessageTypes().get(83);
+            getDescriptor().getMessageTypes().get(90);
           internal_static_SelectionItem_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SelectionItem_descriptor,
@@ -105340,7 +111717,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.SelectionItem.class,
               com.ugcs.ucs.proto.DomainProto.SelectionItem.Builder.class);
           internal_static_ObjectModificationEvent_descriptor =
-            getDescriptor().getMessageTypes().get(84);
+            getDescriptor().getMessageTypes().get(91);
           internal_static_ObjectModificationEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ObjectModificationEvent_descriptor,
@@ -105348,7 +111725,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ObjectModificationEvent.class,
               com.ugcs.ucs.proto.DomainProto.ObjectModificationEvent.Builder.class);
           internal_static_ObjectModificationSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(85);
+            getDescriptor().getMessageTypes().get(92);
           internal_static_ObjectModificationSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ObjectModificationSubscription_descriptor,
@@ -105356,7 +111733,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ObjectModificationSubscription.class,
               com.ugcs.ucs.proto.DomainProto.ObjectModificationSubscription.Builder.class);
           internal_static_LockEvent_descriptor =
-            getDescriptor().getMessageTypes().get(86);
+            getDescriptor().getMessageTypes().get(93);
           internal_static_LockEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LockEvent_descriptor,
@@ -105364,7 +111741,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.LockEvent.class,
               com.ugcs.ucs.proto.DomainProto.LockEvent.Builder.class);
           internal_static_LockSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(87);
+            getDescriptor().getMessageTypes().get(94);
           internal_static_LockSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LockSubscription_descriptor,
@@ -105372,7 +111749,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.LockSubscription.class,
               com.ugcs.ucs.proto.DomainProto.LockSubscription.Builder.class);
           internal_static_TelemetryEvent_descriptor =
-            getDescriptor().getMessageTypes().get(88);
+            getDescriptor().getMessageTypes().get(95);
           internal_static_TelemetryEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryEvent_descriptor,
@@ -105380,7 +111757,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryEvent.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryEvent.Builder.class);
           internal_static_TelemetrySubscription_descriptor =
-            getDescriptor().getMessageTypes().get(89);
+            getDescriptor().getMessageTypes().get(96);
           internal_static_TelemetrySubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetrySubscription_descriptor,
@@ -105388,7 +111765,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetrySubscription.class,
               com.ugcs.ucs.proto.DomainProto.TelemetrySubscription.Builder.class);
           internal_static_TelemetryRemovalEvent_descriptor =
-            getDescriptor().getMessageTypes().get(90);
+            getDescriptor().getMessageTypes().get(97);
           internal_static_TelemetryRemovalEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryRemovalEvent_descriptor,
@@ -105396,7 +111773,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryRemovalEvent.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryRemovalEvent.Builder.class);
           internal_static_TelemetryRemovalSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(91);
+            getDescriptor().getMessageTypes().get(98);
           internal_static_TelemetryRemovalSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TelemetryRemovalSubscription_descriptor,
@@ -105404,7 +111781,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.TelemetryRemovalSubscription.class,
               com.ugcs.ucs.proto.DomainProto.TelemetryRemovalSubscription.Builder.class);
           internal_static_AdsbIndicatorEvent_descriptor =
-            getDescriptor().getMessageTypes().get(92);
+            getDescriptor().getMessageTypes().get(99);
           internal_static_AdsbIndicatorEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AdsbIndicatorEvent_descriptor,
@@ -105412,7 +111789,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorEvent.class,
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorEvent.Builder.class);
           internal_static_AdsbIndicatorSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(93);
+            getDescriptor().getMessageTypes().get(100);
           internal_static_AdsbIndicatorSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AdsbIndicatorSubscription_descriptor,
@@ -105420,7 +111797,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription.class,
               com.ugcs.ucs.proto.DomainProto.AdsbIndicatorSubscription.Builder.class);
           internal_static_ProgressDto_descriptor =
-            getDescriptor().getMessageTypes().get(94);
+            getDescriptor().getMessageTypes().get(101);
           internal_static_ProgressDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressDto_descriptor,
@@ -105428,7 +111805,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ProgressDto.class,
               com.ugcs.ucs.proto.DomainProto.ProgressDto.Builder.class);
           internal_static_ProgressStackDto_descriptor =
-            getDescriptor().getMessageTypes().get(95);
+            getDescriptor().getMessageTypes().get(102);
           internal_static_ProgressStackDto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressStackDto_descriptor,
@@ -105436,7 +111813,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ProgressStackDto.class,
               com.ugcs.ucs.proto.DomainProto.ProgressStackDto.Builder.class);
           internal_static_ServerProgressEvent_descriptor =
-            getDescriptor().getMessageTypes().get(96);
+            getDescriptor().getMessageTypes().get(103);
           internal_static_ServerProgressEvent_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ServerProgressEvent_descriptor,
@@ -105444,7 +111821,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.class,
               com.ugcs.ucs.proto.DomainProto.ServerProgressEvent.Builder.class);
           internal_static_ServerProgressSubscription_descriptor =
-            getDescriptor().getMessageTypes().get(97);
+            getDescriptor().getMessageTypes().get(104);
           internal_static_ServerProgressSubscription_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ServerProgressSubscription_descriptor,
@@ -105452,7 +111829,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.class,
               com.ugcs.ucs.proto.DomainProto.ServerProgressSubscription.Builder.class);
           internal_static_EventWrapper_descriptor =
-            getDescriptor().getMessageTypes().get(98);
+            getDescriptor().getMessageTypes().get(105);
           internal_static_EventWrapper_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_EventWrapper_descriptor,
@@ -105460,7 +111837,7 @@ public final class DomainProto {
               com.ugcs.ucs.proto.DomainProto.EventWrapper.class,
               com.ugcs.ucs.proto.DomainProto.EventWrapper.Builder.class);
           internal_static_EventSubscriptionWrapper_descriptor =
-            getDescriptor().getMessageTypes().get(99);
+            getDescriptor().getMessageTypes().get(106);
           internal_static_EventSubscriptionWrapper_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_EventSubscriptionWrapper_descriptor,

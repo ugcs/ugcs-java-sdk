@@ -2,25 +2,26 @@ package com.ugcs.messaging.api;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.EventListener;
-import java.util.EventObject;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-public class MessageFuture implements Future<Object>, MessageListener {
+import com.ugcs.messaging.AbstractListenableFuture;
+import com.ugcs.messaging.CompletionEvent;
+import com.ugcs.messaging.CompletionListener;
+
+public class MessageFuture extends AbstractListenableFuture<Object> implements MessageListener {
+
 	private final MessageSession session;
-	private final List<EventListener> listeners = new ArrayList<>();
-	
+	private final List<CompletionListener<Object>> listeners = new ArrayList<>();
+
 	private FutureState state;
 	private FutureResult result;
 	private final Object stateSync = new Object();
-	
+
 	public MessageFuture(MessageSession session, Object message, MessageSelector selector) {
 		Objects.requireNonNull(session);
 		Objects.requireNonNull(message);
@@ -47,12 +48,12 @@ public class MessageFuture implements Future<Object>, MessageListener {
 		synchronized (stateSync) {
 			if (state != FutureState.RUNNING || !mayInterruptIfRunning)
 				return false;
-			
+
 			completeIfRunning(FutureState.CANCELLED, null, null);
 			return state == FutureState.CANCELLED;
 		}
 	}
-	
+
 	@Override
 	public boolean isCancelled() {
 		synchronized (stateSync) {
@@ -65,10 +66,9 @@ public class MessageFuture implements Future<Object>, MessageListener {
 		// completion may be due to normal termination (success),
 		// an exception (failure, timeout) or cancellation
 		synchronized (stateSync) {
-			return
-					state == FutureState.SUCCEEDED || 
-					state == FutureState.FAILED || 
-					state == FutureState.CANCELLED;
+			return state == FutureState.SUCCEEDED
+					|| state == FutureState.FAILED
+					|| state == FutureState.CANCELLED;
 		}
 	}
 
@@ -108,19 +108,19 @@ public class MessageFuture implements Future<Object>, MessageListener {
 				// interrupt does not cause task cancellation
 				stateSync.wait(
 						nanosTimeout / 1_000_000L,
-						(int) (nanosTimeout % 1_000_000L));
+						(int)(nanosTimeout % 1_000_000L));
 			}
 			// obtain result
 			return getResult();
 		}
 	}
-	
+
 	private void completeIfRunning(FutureState state, Object value, Throwable error) {
 		if (state == null || state == FutureState.RUNNING)
 			throw new IllegalArgumentException("state");
 
 		boolean completed = false;
-		List<CompletionListener> completionListeners = null;
+		List<CompletionListener<Object>> listenersCopy = null;
 		try {
 			synchronized (stateSync) {
 				if (this.state == FutureState.RUNNING) {
@@ -129,15 +129,8 @@ public class MessageFuture implements Future<Object>, MessageListener {
 					completed = true;
 
 					// copy completion listeners
-					completionListeners = new ArrayList<>(listeners.size());
-					Iterator<EventListener> iterator = listeners.iterator();
-					while (iterator.hasNext()) {
-						EventListener listener = iterator.next();
-						if (listener instanceof CompletionListener) {
-							completionListeners.add((CompletionListener) listener);
-							iterator.remove();
-						}
-					}
+					listenersCopy = new ArrayList<>(listeners);
+					listeners.clear();
 
 					// notify all waiting threads
 					stateSync.notifyAll();
@@ -148,23 +141,23 @@ public class MessageFuture implements Future<Object>, MessageListener {
 				session.removeListener(this);
 
 				// fire completed event
-				invokeCompleted(completionListeners);
+				invokeCompleted(listenersCopy);
 			}
 		}
 	}
-	
+
 	private Object getResult() throws ExecutionException {
 		synchronized (stateSync) {
 			switch (state) {
-			case SUCCEEDED:
-				return result.getValue();
-			case FAILED:
-				throwResultException();
-				break;
-			case CANCELLED:
-				throw new CancellationException();
-			default:
-				break;
+				case SUCCEEDED:
+					return result.getValue();
+				case FAILED:
+					throwResultException();
+					break;
+				case CANCELLED:
+					throw new CancellationException();
+				default:
+					break;
 			}
 		}
 		throw new IllegalStateException();
@@ -181,21 +174,21 @@ public class MessageFuture implements Future<Object>, MessageListener {
 	}
 
 	/* MessageListener implementation */
-	
+
 	@Override
 	public void messageReceived(MessageEvent event) {
 		Objects.requireNonNull(event);
 
 		completeIfRunning(FutureState.SUCCEEDED, event.getMessage(), null);
 	}
-	
+
 	@Override
 	public void cancelled() {
 		cancel(true);
 	}
 	
 	/* inner classes */
-	
+
 	enum FutureState {
 		RUNNING,
 		CANCELLED,
@@ -204,18 +197,19 @@ public class MessageFuture implements Future<Object>, MessageListener {
 	}
 
 	static class FutureResult {
+
 		private final Object value;
 		private final Throwable error;
-		
+
 		FutureResult(Object value, Throwable error) {
 			this.value = value;
 			this.error = error;
 		}
-		
+
 		Object getValue() {
 			return value;
 		}
-		
+
 		Throwable getError() {
 			return error;
 		}
@@ -223,40 +217,24 @@ public class MessageFuture implements Future<Object>, MessageListener {
 
 	/* events */
 
-	public void addListener(EventListener listener) {
+	@Override
+	public void addCompletionListener(CompletionListener<Object> listener) {
 		Objects.requireNonNull(listener);
 
-		if (listener instanceof CompletionListener) {
-			CompletionListener completionListener = (CompletionListener) listener;
-			boolean invokeNow = true;
-			synchronized (stateSync) {
-				if (state == FutureState.RUNNING) {
-					listeners.add(listener);
-					invokeNow = false;
-				}
-			}
-			if (invokeNow) {
-				// fire completion event for this listener
-				invokeCompleted(Collections.singletonList(completionListener));
-			}
-		} else {
-			synchronized (stateSync) {
+		boolean invokeNow = true;
+		synchronized (stateSync) {
+			if (state == FutureState.RUNNING) {
 				listeners.add(listener);
+				invokeNow = false;
 			}
+		}
+		if (invokeNow) {
+			// fire completion event for this listener
+			invokeCompleted(Collections.singletonList(listener));
 		}
 	}
 
-	public void removeListener(EventListener listener) {
-		Objects.requireNonNull(listener);
-
-		if (listeners.contains(listener)) {
-			synchronized (stateSync) {
-				listeners.remove(listener);
-			}
-		}
-	}
-
-	private void invokeCompleted(List<CompletionListener> listeners) {
+	private void invokeCompleted(List<CompletionListener<Object>> listeners) {
 		if (listeners == null || listeners.isEmpty())
 			return;
 
@@ -273,37 +251,12 @@ public class MessageFuture implements Future<Object>, MessageListener {
 			error = state == FutureState.FAILED
 					? result.getError()
 					: state == FutureState.CANCELLED
-						? new CancellationException()
-						: null;
+							? new CancellationException()
+							: null;
 		}
 
-		CompletionEvent event = new CompletionEvent(this, value, error);
-		for (CompletionListener listener : listeners)
+		CompletionEvent<Object> event = new CompletionEvent<>(this, value, error);
+		for (CompletionListener<Object> listener : listeners)
 			listener.completed(event);
-	}
-
-	@SuppressWarnings("serial")
-	public static class CompletionEvent extends EventObject {
-		private final Object value;
-		private final Throwable error;
-
-		private CompletionEvent(Object source, Object value, Throwable error) {
-			super(source);
-
-			this.value = value;
-			this.error = error;
-		}
-
-		public Object getValue() {
-			return this.value;
-		}
-
-		public Throwable getError() {
-			return this.error;
-		}
-	}
-
-	public interface CompletionListener extends EventListener {
-		void completed(CompletionEvent event);
 	}
 }

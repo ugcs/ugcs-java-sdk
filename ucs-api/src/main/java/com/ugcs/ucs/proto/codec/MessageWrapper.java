@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.google.protobuf.Message;
 
 public class MessageWrapper {
+
 	private final Message message;
 	private final int instanceId;
 

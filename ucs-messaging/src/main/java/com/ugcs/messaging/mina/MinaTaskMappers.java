@@ -8,9 +8,13 @@ import org.apache.mina.core.session.IoSession;
 import org.apache.mina.core.write.WriteRequest;
 
 import com.ugcs.messaging.api.MessageMapper;
-import com.ugcs.messaging.api.TaskMapper;
+import com.ugcs.messaging.TaskMapper;
 
-public class MinaTaskMappers {
+public final class MinaTaskMappers {
+
+	private MinaTaskMappers() {
+	}
+
 	public static TaskMapper newMapper(MessageMapper messageMapper) {
 		return new SessionMapper(messageMapper);
 	}
@@ -29,7 +33,8 @@ public class MinaTaskMappers {
 
 	/* task mappers */
 
-	static class SessionMapper implements TaskMapper {
+	private static class SessionMapper implements TaskMapper {
+
 		private final MessageMapper messageMapper;
 
 		public SessionMapper(MessageMapper messageMapper) {
@@ -43,37 +48,39 @@ public class MinaTaskMappers {
 			if (!(runnable instanceof IoEvent))
 				throw new IllegalArgumentException();
 
-			IoEvent event = (IoEvent) runnable;
-			TaskChannel channel = new TaskChannel();
+			IoEvent event = (IoEvent)runnable;
 
 			// sessionId
 			IoSession session = event.getSession();
-			if (session != null)
-				channel.sessionId = session.getId();
+			long sessionId = session != null
+					? session.getId()
+					: 0L;
 
 			// channelType
-			channel.type = TaskChannelType.of(event.getType());
+			TaskChannelType type = TaskChannelType.of(event.getType());
 
 			// isolation
+			Object isolation = null;
 			if (messageMapper != null) {
 				Object parameter = event.getParameter();
 				if (parameter != null) {
 					Object message = null;
 					if (event.getParameter() instanceof WriteRequest) {
-						WriteRequest writeRequest = (WriteRequest) event.getParameter();
+						WriteRequest writeRequest = (WriteRequest)event.getParameter();
 						message = writeRequest.getMessage();
 					} else {
 						message = event.getParameter();
 					}
 					if (message != null)
-						channel.isolation = messageMapper.map(message);
+						isolation = messageMapper.map(message);
 				}
 			}
-			return channel;
+
+			return new TaskChannel(sessionId, type, isolation);
 		}
 	}
 
-	enum TaskChannelType {
+	private enum TaskChannelType {
 		IN,
 		OUT;
 
@@ -91,15 +98,22 @@ public class MinaTaskMappers {
 		}
 	}
 
-	static class TaskChannel {
-		private long sessionId;
-		private TaskChannelType type;
-		private Object isolation;
+	private static class TaskChannel {
+
+		private final long sessionId;
+		private final TaskChannelType type;
+		private final Object isolation;
+
+		public TaskChannel(long sessionId, TaskChannelType type, Object isolation) {
+			this.sessionId = sessionId;
+			this.type = type;
+			this.isolation = isolation;
+		}
 
 		@Override
 		public int hashCode() {
 			int h = 1;
-			h = 31 * h + (int) sessionId;
+			h = 31 * h + (int)sessionId;
 			h = 31 * h + (type != null
 					? type.hashCode()
 					: 0);
@@ -116,7 +130,7 @@ public class MinaTaskMappers {
 			if (!(other instanceof TaskChannel))
 				return false;
 
-			TaskChannel channel = (TaskChannel) other;
+			TaskChannel channel = (TaskChannel)other;
 			return sessionId == channel.sessionId
 					&& type == channel.type
 					&& isolation == null
@@ -127,7 +141,7 @@ public class MinaTaskMappers {
 
 	/* message mappers */
 
-	static class TypeMapper implements MessageMapper {
+	private static class TypeMapper implements MessageMapper {
 
 		@Override
 		public Object map(Object message) {
@@ -137,12 +151,10 @@ public class MinaTaskMappers {
 		}
 	}
 
-	static class SelfMapper implements MessageMapper {
+	private static class SelfMapper implements MessageMapper {
 
 		@Override
 		public Object map(Object message) {
-			if (message == null)
-				return null;
 			return message;
 		}
 	}

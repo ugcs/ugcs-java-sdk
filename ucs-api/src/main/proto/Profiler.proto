@@ -11,6 +11,9 @@ message ActionSummary {
 	required int64 avgTime = 7;
 	required int64 firstStartTimeMillis = 8;
 	required int64 lastStopTimeMillis = 9;
+	optional int64 recentMinTime = 10;
+	optional int64 recentMaxTime = 11;
+	optional int64 recentAvgTime = 12;
 }
 
 message ActionSummaryRequest {

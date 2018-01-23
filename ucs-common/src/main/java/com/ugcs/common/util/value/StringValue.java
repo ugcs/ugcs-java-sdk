@@ -46,11 +46,16 @@ public class StringValue extends AbstractValue {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public Object objectValue() {
+		return value;
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
 			return true;
-		if (!(obj instanceof AbstractValue))
+		if (!(other instanceof AbstractValue))
 			return false;
-		return Objects.equals(this.value, ((AbstractValue) obj).stringValue());
+		return Objects.equals(this.value, ((AbstractValue)other).stringValue());
 	}
 }

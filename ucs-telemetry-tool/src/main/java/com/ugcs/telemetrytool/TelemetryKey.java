@@ -11,11 +11,10 @@ import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.Strings;
 
 public final class TelemetryKey {
+
 	public static final String DEFAULT_SEMANTIC = "DEFAULT";
 	public static final int DEFAULT_SUBSYSTEM_ID = 0;
-
 	public static final Comparator<TelemetryKey> CODE_COMPARATOR = new CodeComparator();
-
 	private static final Map<String, String> SUBSYSTEM_ALIASES = newSubsystemAliases();
 
 	private final String code;
@@ -86,9 +85,10 @@ public final class TelemetryKey {
 		String id = matches
 				? matcher.group("i")
 				: null;
+		Preconditions.checkNotEmpty(alias);
+		Preconditions.checkNotEmpty(code);
 
 		String subsystem = null;
-
 		for (Map.Entry<String, String> entry : SUBSYSTEM_ALIASES.entrySet()) {
 			if (entry.getValue().equals(alias)) {
 				subsystem = entry.getKey();
@@ -98,11 +98,15 @@ public final class TelemetryKey {
 		if (subsystem == null)
 			subsystem = alias;
 
+		int subsystemId = Strings.isNullOrEmpty(id)
+				? DEFAULT_SUBSYSTEM_ID
+				: Integer.parseInt(id);
+
 		return TelemetryKey.create(
 				code,
 				TelemetryKey.DEFAULT_SEMANTIC,
 				subsystem,
-				DEFAULT_SUBSYSTEM_ID);
+				subsystemId);
 	}
 
 	public static Comparator<TelemetryKey> codeComparator() {

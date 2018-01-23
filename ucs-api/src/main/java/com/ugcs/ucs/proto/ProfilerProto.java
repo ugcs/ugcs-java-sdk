@@ -46,6 +46,18 @@ public final class ProfilerProto {
     // required int64 lastStopTimeMillis = 9;
     boolean hasLastStopTimeMillis();
     long getLastStopTimeMillis();
+    
+    // optional int64 recentMinTime = 10;
+    boolean hasRecentMinTime();
+    long getRecentMinTime();
+    
+    // optional int64 recentMaxTime = 11;
+    boolean hasRecentMaxTime();
+    long getRecentMaxTime();
+    
+    // optional int64 recentAvgTime = 12;
+    boolean hasRecentAvgTime();
+    long getRecentAvgTime();
   }
   public static final class ActionSummary extends
       com.google.protobuf.GeneratedMessage
@@ -188,6 +200,36 @@ public final class ProfilerProto {
       return lastStopTimeMillis_;
     }
     
+    // optional int64 recentMinTime = 10;
+    public static final int RECENTMINTIME_FIELD_NUMBER = 10;
+    private long recentMinTime_;
+    public boolean hasRecentMinTime() {
+      return ((bitField0_ & 0x00000200) == 0x00000200);
+    }
+    public long getRecentMinTime() {
+      return recentMinTime_;
+    }
+    
+    // optional int64 recentMaxTime = 11;
+    public static final int RECENTMAXTIME_FIELD_NUMBER = 11;
+    private long recentMaxTime_;
+    public boolean hasRecentMaxTime() {
+      return ((bitField0_ & 0x00000400) == 0x00000400);
+    }
+    public long getRecentMaxTime() {
+      return recentMaxTime_;
+    }
+    
+    // optional int64 recentAvgTime = 12;
+    public static final int RECENTAVGTIME_FIELD_NUMBER = 12;
+    private long recentAvgTime_;
+    public boolean hasRecentAvgTime() {
+      return ((bitField0_ & 0x00000800) == 0x00000800);
+    }
+    public long getRecentAvgTime() {
+      return recentAvgTime_;
+    }
+    
     private void initFields() {
       actionType_ = "";
       count_ = 0L;
@@ -198,6 +240,9 @@ public final class ProfilerProto {
       avgTime_ = 0L;
       firstStartTimeMillis_ = 0L;
       lastStopTimeMillis_ = 0L;
+      recentMinTime_ = 0L;
+      recentMaxTime_ = 0L;
+      recentAvgTime_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -274,6 +319,15 @@ public final class ProfilerProto {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         output.writeInt64(9, lastStopTimeMillis_);
       }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        output.writeInt64(10, recentMinTime_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        output.writeInt64(11, recentMaxTime_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        output.writeInt64(12, recentAvgTime_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -318,6 +372,18 @@ public final class ProfilerProto {
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(9, lastStopTimeMillis_);
+      }
+      if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, recentMinTime_);
+      }
+      if (((bitField0_ & 0x00000400) == 0x00000400)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(11, recentMaxTime_);
+      }
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(12, recentAvgTime_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -461,6 +527,12 @@ public final class ProfilerProto {
         bitField0_ = (bitField0_ & ~0x00000080);
         lastStopTimeMillis_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000100);
+        recentMinTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        recentMaxTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        recentAvgTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
       
@@ -535,6 +607,18 @@ public final class ProfilerProto {
           to_bitField0_ |= 0x00000100;
         }
         result.lastStopTimeMillis_ = lastStopTimeMillis_;
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
+        }
+        result.recentMinTime_ = recentMinTime_;
+        if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
+          to_bitField0_ |= 0x00000400;
+        }
+        result.recentMaxTime_ = recentMaxTime_;
+        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
+          to_bitField0_ |= 0x00000800;
+        }
+        result.recentAvgTime_ = recentAvgTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -577,6 +661,15 @@ public final class ProfilerProto {
         }
         if (other.hasLastStopTimeMillis()) {
           setLastStopTimeMillis(other.getLastStopTimeMillis());
+        }
+        if (other.hasRecentMinTime()) {
+          setRecentMinTime(other.getRecentMinTime());
+        }
+        if (other.hasRecentMaxTime()) {
+          setRecentMaxTime(other.getRecentMaxTime());
+        }
+        if (other.hasRecentAvgTime()) {
+          setRecentAvgTime(other.getRecentAvgTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -688,6 +781,21 @@ public final class ProfilerProto {
             case 72: {
               bitField0_ |= 0x00000100;
               lastStopTimeMillis_ = input.readInt64();
+              break;
+            }
+            case 80: {
+              bitField0_ |= 0x00000200;
+              recentMinTime_ = input.readInt64();
+              break;
+            }
+            case 88: {
+              bitField0_ |= 0x00000400;
+              recentMaxTime_ = input.readInt64();
+              break;
+            }
+            case 96: {
+              bitField0_ |= 0x00000800;
+              recentAvgTime_ = input.readInt64();
               break;
             }
           }
@@ -896,6 +1004,69 @@ public final class ProfilerProto {
       public Builder clearLastStopTimeMillis() {
         bitField0_ = (bitField0_ & ~0x00000100);
         lastStopTimeMillis_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional int64 recentMinTime = 10;
+      private long recentMinTime_ ;
+      public boolean hasRecentMinTime() {
+        return ((bitField0_ & 0x00000200) == 0x00000200);
+      }
+      public long getRecentMinTime() {
+        return recentMinTime_;
+      }
+      public Builder setRecentMinTime(long value) {
+        bitField0_ |= 0x00000200;
+        recentMinTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRecentMinTime() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        recentMinTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional int64 recentMaxTime = 11;
+      private long recentMaxTime_ ;
+      public boolean hasRecentMaxTime() {
+        return ((bitField0_ & 0x00000400) == 0x00000400);
+      }
+      public long getRecentMaxTime() {
+        return recentMaxTime_;
+      }
+      public Builder setRecentMaxTime(long value) {
+        bitField0_ |= 0x00000400;
+        recentMaxTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRecentMaxTime() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        recentMaxTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // optional int64 recentAvgTime = 12;
+      private long recentAvgTime_ ;
+      public boolean hasRecentAvgTime() {
+        return ((bitField0_ & 0x00000800) == 0x00000800);
+      }
+      public long getRecentAvgTime() {
+        return recentAvgTime_;
+      }
+      public Builder setRecentAvgTime(long value) {
+        bitField0_ |= 0x00000800;
+        recentAvgTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearRecentAvgTime() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        recentAvgTime_ = 0L;
         onChanged();
         return this;
       }
@@ -1834,15 +2005,17 @@ public final class ProfilerProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\016Profiler.proto\"\310\001\n\rActionSummary\022\022\n\nac" +
+      "\n\016Profiler.proto\"\215\002\n\rActionSummary\022\022\n\nac" +
       "tionType\030\001 \002(\t\022\r\n\005count\030\002 \002(\003\022\022\n\nerrorCo" +
       "unt\030\003 \002(\003\022\023\n\013activeCount\030\004 \002(\003\022\017\n\007minTim" +
       "e\030\005 \002(\003\022\017\n\007maxTime\030\006 \002(\003\022\017\n\007avgTime\030\007 \002(" +
       "\003\022\034\n\024firstStartTimeMillis\030\010 \002(\003\022\032\n\022lastS" +
-      "topTimeMillis\030\t \002(\003\"\026\n\024ActionSummaryRequ" +
-      "est\"K\n\025ActionSummaryResponse\022!\n\tsummarie" +
-      "s\030\001 \003(\0132\016.ActionSummary\022\017\n\004coma\030\002 \001(\005:\0010" +
-      "B#\n\022com.ugcs.ucs.protoB\rProfilerProto"
+      "topTimeMillis\030\t \002(\003\022\025\n\rrecentMinTime\030\n \001" +
+      "(\003\022\025\n\rrecentMaxTime\030\013 \001(\003\022\025\n\rrecentAvgTi" +
+      "me\030\014 \001(\003\"\026\n\024ActionSummaryRequest\"K\n\025Acti" +
+      "onSummaryResponse\022!\n\tsummaries\030\001 \003(\0132\016.A" +
+      "ctionSummary\022\017\n\004coma\030\002 \001(\005:\0010B#\n\022com.ugc",
+      "s.ucs.protoB\rProfilerProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1854,7 +2027,7 @@ public final class ProfilerProto {
           internal_static_ActionSummary_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActionSummary_descriptor,
-              new java.lang.String[] { "ActionType", "Count", "ErrorCount", "ActiveCount", "MinTime", "MaxTime", "AvgTime", "FirstStartTimeMillis", "LastStopTimeMillis", },
+              new java.lang.String[] { "ActionType", "Count", "ErrorCount", "ActiveCount", "MinTime", "MaxTime", "AvgTime", "FirstStartTimeMillis", "LastStopTimeMillis", "RecentMinTime", "RecentMaxTime", "RecentAvgTime", },
               com.ugcs.ucs.proto.ProfilerProto.ActionSummary.class,
               com.ugcs.ucs.proto.ProfilerProto.ActionSummary.Builder.class);
           internal_static_ActionSummaryRequest_descriptor =

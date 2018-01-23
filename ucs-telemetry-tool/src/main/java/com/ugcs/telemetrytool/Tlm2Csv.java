@@ -3,7 +3,7 @@ package com.ugcs.telemetrytool;
 import java.io.IOException;
 import java.text.ParseException;
 
-public final class Tlm2Csv extends TlmConverter{
+public final class Tlm2Csv extends TlmConverter {
 
 	public Tlm2Csv(String[] args) throws ParseException {
 		super(args);

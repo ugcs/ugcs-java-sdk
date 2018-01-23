@@ -1,37 +1,38 @@
 package com.ugcs.common.util.value;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 import com.ugcs.common.util.codec.BytesCodec;
-import com.ugcs.common.util.codec.ObjectCodec;
 import com.ugcs.common.util.codec.ObjectCodecContext;
 
 public abstract class AbstractValue {
-	private static final AbstractValue UNAVAILABLE = new Unavailable();
-
-	private static final MetaCodec metaCodec = new MetaCodec();
-	private static final MetaCodecContext metaCodecContext = new MetaCodecContext();
+	private static final AbstractValue UNAVAILABLE = new ObjectValue(
+			MetaValue.UNAVAILABLE, MetaValueCodec.getInstance());
+	private static final byte[] ENCODED_UNAVAILABLE = UNAVAILABLE.toBytes();
 
 	public static AbstractValue of(Object value) {
+		return of(value, DefaultCodecContext.getInstance());
+	}
+
+	public static AbstractValue of(Object value, ObjectCodecContext codecContext) {
+		Objects.requireNonNull(codecContext);
 		if (value == null)
 			return null;
-		if (value instanceof AbstractValue.Meta) {
-			switch ((AbstractValue.Meta) value) {
-				case UNAVAILABLE:
-					return unavailable();
-			}
-		}
 		if (value instanceof Boolean)
-			return new BooleanValue((Boolean) value);
+			return new BooleanValue((Boolean)value);
 		if (value instanceof Integer)
-			return new LongValue((Integer) value);
+			return new LongValue((Integer)value);
 		if (value instanceof Long)
-			return new LongValue((Long) value);
+			return new LongValue((Long)value);
 		if (value instanceof Float)
-			return new FloatValue((Float) value);
+			return new FloatValue((Float)value);
 		if (value instanceof Double)
-			return new DoubleValue((Double) value);
+			return new DoubleValue((Double)value);
 		if (value instanceof String)
-			return new StringValue((String) value);
-		throw new IllegalArgumentException();
+			return new StringValue((String)value);
+		// default
+		return new ObjectValue(value, codecContext.byObjectType(value.getClass()));
 	}
 
 	/* serialization */
@@ -39,9 +40,14 @@ public abstract class AbstractValue {
 	public abstract byte[] toBytes();
 
 	public static AbstractValue fromBytes(byte[] bytes) {
+		return fromBytes(bytes, DefaultCodecContext.getInstance());
+	}
+
+	public static AbstractValue fromBytes(byte[] bytes, ObjectCodecContext codecContext) {
+		Objects.requireNonNull(codecContext);
 		if (bytes == null)
 			return null;
-		return of(BytesCodec.decodeObject(bytes, metaCodecContext));
+		return of(BytesCodec.decodeObject(bytes, codecContext), codecContext);
 	}
 
 	/* meta */
@@ -52,6 +58,10 @@ public abstract class AbstractValue {
 
 	public boolean isAvailable() {
 		return true;
+	}
+
+	public static boolean isAvailable(byte[] bytes) {
+		return !Arrays.equals(bytes, ENCODED_UNAVAILABLE);
 	}
 
 	/* defaults */
@@ -93,7 +103,7 @@ public abstract class AbstractValue {
 	public abstract boolean booleanValue();
 
 	public int intValue() {
-		return (int) longValue();
+		return (int)longValue();
 	}
 
 	public abstract long longValue();
@@ -104,83 +114,10 @@ public abstract class AbstractValue {
 
 	public abstract String stringValue();
 
-	/* built-in classes */
+	public abstract Object objectValue();
 
-	private static class Unavailable extends AbstractValue {
-
-		public boolean isAvailable() {
-			return false;
-		}
-
-		@Override
-		public boolean booleanValue() {
-			return false;
-		}
-
-		@Override
-		public long longValue() {
-			return 0L;
-		}
-
-		@Override
-		public float floatValue() {
-			return Float.NaN;
-		}
-
-		@Override
-		public double doubleValue() {
-			return Double.NaN;
-		}
-
-		@Override
-		public String stringValue() {
-			return null;
-		}
-
-		@Override
-		public byte[] toBytes() {
-			return BytesCodec.encodeObject(Meta.UNAVAILABLE, metaCodec);
-		}
-	}
-
-	/* meta codec */
-
-	private enum Meta {
-		UNAVAILABLE
-	}
-
-	private static class MetaCodec implements ObjectCodec<AbstractValue.Meta> {
-		public static final byte TYPE = 42;
-
-		@Override
-		public byte[] encode(AbstractValue.Meta value) {
-			if (value == null)
-				return null;
-			return new byte[] {(byte) value.ordinal()};
-		}
-
-		@Override
-		public AbstractValue.Meta decode(byte[] bytes) {
-			if (bytes == null)
-				return null;
-			if (bytes.length != 1)
-				throw new IllegalArgumentException();
-			return AbstractValue.Meta.values()[bytes[0]];
-		}
-
-		@Override
-		public byte getType() {
-			return TYPE;
-		}
-	}
-
-	private static class MetaCodecContext implements ObjectCodecContext {
-
-		@Override
-		public ObjectCodec byType(byte type) {
-			if (type == MetaCodec.TYPE)
-				return new MetaCodec();
-			return null;
-		}
+	@Override
+	public String toString() {
+		return stringValue();
 	}
 }

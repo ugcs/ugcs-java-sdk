@@ -7,12 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
-import org.apache.mina.core.future.CloseFuture;
-import org.apache.mina.core.future.IoFutureListener;
-import org.apache.mina.core.session.IoSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.concurrent.Future;
 
 import com.ugcs.messaging.api.CloseListener;
 import com.ugcs.messaging.api.MessageEvent;
@@ -21,25 +16,32 @@ import com.ugcs.messaging.api.MessageSelector;
 import com.ugcs.messaging.api.MessageSession;
 import com.ugcs.messaging.api.MessageSessionErrorEvent;
 import com.ugcs.messaging.api.MessageSessionEvent;
+import org.apache.mina.core.future.CloseFuture;
+import org.apache.mina.core.future.IoFutureListener;
+import org.apache.mina.core.session.IoSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MinaMessageSession implements MessageSession {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaMessageSession.class);
-	
+
 	private final IoSession session;
 	private final Map<MessageListener, MessageSelector> listeners = new HashMap<>();
-	
+
 	private static final MessageSelector SELECT_ALL = new MessageSelector() {
 		public boolean select(Object message) {
 			return true;
-		}}; 
-	
+		}
+	};
+
 	public MinaMessageSession(IoSession session) {
 		if (session == null)
 			throw new IllegalArgumentException("session");
-		
+
 		this.session = session;
 	}
-	
+
 	@Override
 	public SocketAddress getLocalAddress() {
 		return session == null
@@ -53,12 +55,12 @@ public class MinaMessageSession implements MessageSession {
 				? null
 				: session.getRemoteAddress();
 	}
-	
+
 	@Override
 	public void addListener(MessageListener listener) {
 		addListener(listener, SELECT_ALL);
 	}
-	
+
 	@Override
 	public void addListener(MessageListener listener, MessageSelector selector) {
 		Objects.requireNonNull(listener);
@@ -68,14 +70,14 @@ public class MinaMessageSession implements MessageSession {
 			listeners.put(listener, selector);
 		}
 	}
-	
+
 	@Override
 	public void removeListener(MessageListener listener) {
 		synchronized (listeners) {
 			listeners.remove(listener);
 		}
 	}
-	
+
 	@Override
 	public void setAttribute(Object key, Object value) {
 		session.setAttribute(key, value);
@@ -90,12 +92,12 @@ public class MinaMessageSession implements MessageSession {
 	public Object getAttribute(Object key, Object defaultValue) {
 		return session.getAttribute(key, defaultValue);
 	}
-	
+
 	@Override
 	public boolean isOpened() {
 		return session.isConnected() && !session.isClosing();
 	}
-	
+
 	@Override
 	public void close() throws IOException {
 		CloseFuture closeFuture = session.close(false);
@@ -103,7 +105,7 @@ public class MinaMessageSession implements MessageSession {
 		if (!closeFuture.isClosed())
 			throw new IOException("Session not closed");
 	}
-	
+
 	@Override
 	public void closeNonBlocking(final CloseListener listener) {
 		CloseFuture closeFuture = session.close(false);
@@ -113,7 +115,7 @@ public class MinaMessageSession implements MessageSession {
 				public void operationComplete(CloseFuture future) {
 					if (future == null)
 						throw new IllegalArgumentException("future");
-					
+
 					if (!future.isClosed()) {
 						MessageSessionErrorEvent event = new MessageSessionErrorEvent(
 								MinaMessageSession.this,
@@ -126,17 +128,18 @@ public class MinaMessageSession implements MessageSession {
 							MinaMessageSession.this,
 							MinaMessageSession.this);
 					listener.closed(event);
-				}});
+				}
+			});
 		}
 	}
-	
+
 	@Override
-	public void send(Object message) {
+	public Future<Void> send(Object message) {
 		Objects.requireNonNull(message);
 
-		session.write(message);
+		return new WriteFutureAdapter(session.write(message));
 	}
-	
+
 	protected void messageReceived(Object message) throws Exception {
 		List<MessageListener> listenersCopy = new ArrayList<>();
 		synchronized (listeners) {
@@ -160,7 +163,7 @@ public class MinaMessageSession implements MessageSession {
 			}
 		}
 	}
-	
+
 	protected void cancelAllListeners() {
 		List<MessageListener> listenersCopy = new ArrayList<>();
 		synchronized (listeners) {
@@ -174,5 +177,17 @@ public class MinaMessageSession implements MessageSession {
 				log.warn("Listener cancellation error", ignore);
 			}
 		}
+	}
+
+	@Override
+	public String toString() {
+		return new StringBuilder("{id: ")
+				.append(Long.toString(session.getId()))
+				.append(", local: ")
+				.append(session.getLocalAddress())
+				.append(", remote: ")
+				.append(session.getRemoteAddress())
+				.append("}")
+				.toString();
 	}
 }

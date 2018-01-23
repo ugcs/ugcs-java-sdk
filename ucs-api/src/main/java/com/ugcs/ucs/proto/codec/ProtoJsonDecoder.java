@@ -9,20 +9,23 @@ import com.googlecode.protobuf.format.JsonFormat;
 import com.googlecode.protobuf.format.JsonFormat.ParseException;
 
 public class ProtoJsonDecoder implements ProtoMessageDecoder {
-	private final Charset charset = Charset.forName("UTF-8"); 
-	
+
+	private final Charset charset = Charset.forName("UTF-8");
+
 	@Override
-	public Message decode(byte[] buffer, Class<? extends Message> messageClass) throws InvalidProtocolBufferException, ParseException {
+	public Message decode(byte[] buffer, Class<? extends Message> messageClass)
+			throws InvalidProtocolBufferException, ParseException {
 		return decode(buffer, createMessageBuilder(messageClass));
 	}
-	
+
 	@Override
-	public Message decode(byte[] buffer, Message.Builder builder) throws InvalidProtocolBufferException, ParseException {
+	public Message decode(byte[] buffer, Message.Builder builder)
+			throws InvalidProtocolBufferException, ParseException {
 		if (builder == null)
 			throw new IllegalArgumentException("Message builder not specified");
 		if (buffer == null)
 			return null;
-		
+
 		String json = new String(buffer, charset);
 		JsonFormat.merge(json, builder);
 		return builder.build();
@@ -31,11 +34,11 @@ public class ProtoJsonDecoder implements ProtoMessageDecoder {
 	private Message.Builder createMessageBuilder(Class<? extends Message> messageClass) {
 		if (messageClass == null)
 			throw new IllegalArgumentException("Message class not specified");
-		
+
 		Message.Builder builder = null;
 		try {
 			Method method = messageClass.getMethod("newBuilder");
-			builder = (Message.Builder) method.invoke(null);
+			builder = (Message.Builder)method.invoke(null);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

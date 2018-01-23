@@ -11,16 +11,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MinaDecoder implements ProtocolDecoder {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaDecoder.class);
 	private final MessageDecoder decoder;
-	
+
 	public MinaDecoder(MessageDecoder decoder) {
 		if (decoder == null)
 			throw new IllegalArgumentException("decoder");
-		
+
 		this.decoder = decoder;
 	}
-	
+
 	@Override
 	public void decode(IoSession session, IoBuffer in, ProtocolDecoderOutput out) throws Exception {
 		List<Object> decodedObjects;

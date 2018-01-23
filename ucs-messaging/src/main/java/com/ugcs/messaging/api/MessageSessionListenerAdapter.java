@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MessageSessionListenerAdapter implements MessageSessionListener {
+
 	private static final Logger log = LoggerFactory.getLogger(MessageSessionListenerAdapter.class);
 
 	@Override

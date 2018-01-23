@@ -23,45 +23,46 @@ import com.ugcs.ucs.proto.codec.MessageWrapperCodecFactory;
 import com.ugcs.ucs.proto.mapping.HciMessageMapping;
 
 public class Client implements Closeable {
+
 	private final Connector connector;
 	private final SocketAddress serverAddress;
 	private MessageSession session;
 	private MessageExecutor executor;
 	private int messageInstanceId = 0;
-	private final List<ServerNotificationListener> notificationListeners = 
+	private final List<ServerNotificationListener> notificationListeners =
 			new CopyOnWriteArrayList<>();
-	
+
 	private static final long DEFAULT_REQUEST_TIMEOUT = 60_000L;
-	
+
 	public Client(SocketAddress serverAddress) {
 		if (serverAddress == null)
 			throw new IllegalArgumentException("serverAddress");
-		
+
 		this.serverAddress = serverAddress;
 		this.connector = new MinaConnector(
-				new MessageWrapperCodecFactory(new HciMessageMapping()), 
-				1, 
+				new MessageWrapperCodecFactory(new HciMessageMapping()),
+				1,
 				1);
 	}
-	
+
 	public void addNotificationListener(ServerNotificationListener listener) {
 		if (listener == null)
 			throw new IllegalArgumentException("listener");
-		
+
 		notificationListeners.add(listener);
 	}
-	
+
 	public void removeNotificationListener(ServerNotificationListener listener) {
 		if (listener == null)
 			throw new IllegalArgumentException("listener");
-		
+
 		notificationListeners.remove(listener);
 	}
-	
+
 	public boolean isConnected() {
 		return session != null && session.isOpened();
 	}
-	
+
 	public void connect() throws IOException {
 		if (session != null) {
 			session.close();
@@ -70,9 +71,9 @@ public class Client implements Closeable {
 		try {
 			session = connector.connect(serverAddress);
 			session.addListener(
-					new NotificationDispatcher(), 
+					new NotificationDispatcher(),
 					new NotificationSelector());
-			
+
 			executor = new MessageExecutor(session);
 		} catch (Exception e) {
 			if (session != null)
@@ -80,7 +81,7 @@ public class Client implements Closeable {
 			throw new IOException("Connection error", e);
 		}
 	}
-	
+
 	@Override
 	public void close() throws IOException {
 		if (session != null)
@@ -88,50 +89,50 @@ public class Client implements Closeable {
 		if (connector != null)
 			connector.close();
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public <T> T execute(Message message, long timeoutMillis) throws Exception {
 		MessageWrapper request = wrap(message);
 		MessageSelector selector = new ResponseSelector(request);
-		Message response = ((MessageWrapper) executor.submit(request, selector)
+		Message response = ((MessageWrapper)executor.submit(request, selector)
 				.get(timeoutMillis, TimeUnit.MILLISECONDS))
 				.getMessage();
 		if (response instanceof MessagesProto.Error) {
-			Error errorResponse = (MessagesProto.Error) response;
+			Error errorResponse = (MessagesProto.Error)response;
 			throw new Exception(errorResponse.getErrorMessage());
 		}
-		return (T) response;
+		return (T)response;
 	}
-	
+
 	public <T> T execute(Message message) throws Exception {
 		return execute(message, DEFAULT_REQUEST_TIMEOUT);
 	}
-	
+
 	private MessageWrapper wrap(Message message) {
 		MessageWrapper messageWrapper = new MessageWrapper(message, messageInstanceId++);
 		return messageWrapper;
 	}
-	
+
 	class NotificationDispatcher extends MessageListenerAdapter {
 
 		@Override
 		public void messageReceived(MessageEvent messageEvent) {
 			if (!(messageEvent.getMessage() instanceof MessageWrapper))
 				return;
-			MessageWrapper wrapper = (MessageWrapper) messageEvent.getMessage();
+			MessageWrapper wrapper = (MessageWrapper)messageEvent.getMessage();
 			Object message = wrapper.getMessage();
 			if (message instanceof Notification) {
-				Notification notification = (Notification) message;
+				Notification notification = (Notification)message;
 				ServerNotification serverNotification = new ServerNotification(
-						Client.this, 
-						notification.getEvent(), 
+						Client.this,
+						notification.getEvent(),
 						notification.getSubscriptionId());
 				for (ServerNotificationListener listener : notificationListeners)
 					listener.notificationReceived(serverNotification);
 			}
 		}
 	}
-	
+
 	static class NotificationSelector implements MessageSelector {
 
 		@Override
@@ -140,30 +141,31 @@ public class Client implements Closeable {
 				return false;
 			if (!(message instanceof MessageWrapper))
 				return false;
-			
-			MessageWrapper wrapper = (MessageWrapper) message;
-			return wrapper != null && wrapper.getInstanceId() == -1;
+
+			MessageWrapper wrapper = (MessageWrapper)message;
+			return wrapper.getInstanceId() == -1;
 		}
 	}
-	
+
 	static class ResponseSelector implements MessageSelector {
+
 		private int instanceId;
-		
+
 		public ResponseSelector(MessageWrapper request) {
 			if (request == null)
 				throw new IllegalArgumentException("request");
-			
+
 			instanceId = request.getInstanceId();
 		}
-		
+
 		@Override
 		public boolean select(Object message) {
 			if (message == null)
 				return false;
 			if (!(message instanceof MessageWrapper))
 				return false;
-			
-			MessageWrapper wrapper = (MessageWrapper) message;
+
+			MessageWrapper wrapper = (MessageWrapper)message;
 			return wrapper != null && instanceId == wrapper.getInstanceId();
 		}
 	}

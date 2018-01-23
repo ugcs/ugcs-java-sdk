@@ -18,14 +18,12 @@ public final class TelemetryReader {
 	private static final int FORMAT_VERSION = 1;
 	private static final int FORMAT_END_OF_TELEMETRY = Integer.MIN_VALUE;
 
-	private TelemetryReader() {}
+	private TelemetryReader() {
+	}
 
-	public static Map<FlightKey, FlightTelemetry> read(CodecInputStream in,
-													   int tolerance,
-													   Date intervalStartTime,
-													   Date intervalEndTime)
+	public static Map<FlightKey, FlightTelemetry> read(
+			CodecInputStream in, int tolerance, Date intervalStartTime, Date intervalEndTime)
 			throws IOException {
-
 		Preconditions.checkNotNull(in);
 
 		Map<FlightKey, FlightTelemetry> model = new HashMap<>();

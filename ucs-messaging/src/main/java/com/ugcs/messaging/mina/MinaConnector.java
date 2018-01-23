@@ -6,20 +6,8 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
-import org.apache.mina.core.future.ConnectFuture;
-import org.apache.mina.core.future.IoFutureListener;
-import org.apache.mina.core.session.IdleStatus;
-import org.apache.mina.core.session.IoSession;
-import org.apache.mina.filter.codec.ProtocolCodecFilter;
-import org.apache.mina.filter.executor.ExecutorFilter;
-import org.apache.mina.filter.logging.LoggingFilter;
-import org.apache.mina.transport.socket.SocketConnector;
-import org.apache.mina.transport.socket.nio.NioSocketConnector;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.ugcs.messaging.GroupingThreadPool;
+import com.ugcs.messaging.TaskMapper;
 import com.ugcs.messaging.api.CodecFactory;
 import com.ugcs.messaging.api.ConnectListener;
 import com.ugcs.messaging.api.Connector;
@@ -27,19 +15,35 @@ import com.ugcs.messaging.api.MessageSession;
 import com.ugcs.messaging.api.MessageSessionErrorEvent;
 import com.ugcs.messaging.api.MessageSessionEvent;
 import com.ugcs.messaging.api.MessageSessionListener;
-import com.ugcs.messaging.api.TaskMapper;
+import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
+import org.apache.mina.core.future.ConnectFuture;
+import org.apache.mina.core.future.IoFutureListener;
+import org.apache.mina.core.service.IoProcessor;
+import org.apache.mina.core.service.SimpleIoProcessorPool;
+import org.apache.mina.core.session.IdleStatus;
+import org.apache.mina.core.session.IoSession;
+import org.apache.mina.filter.codec.ProtocolCodecFilter;
+import org.apache.mina.filter.executor.ExecutorFilter;
+import org.apache.mina.filter.logging.LoggingFilter;
+import org.apache.mina.transport.socket.SocketConnector;
+import org.apache.mina.transport.socket.nio.NioProcessor;
+import org.apache.mina.transport.socket.nio.NioSession;
+import org.apache.mina.transport.socket.nio.NioSocketConnector;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class MinaConnector implements Connector {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaConnector.class);
-	
+
 	private static final int DEFAULT_MAX_IO_THREADS = 4;
 	private static final int DEFAULT_MAX_TASK_THREADS = 16;
 	private static final int DEFAULT_SESSION_IDLE_SECONDS = 3;
-	
+
 	private final SocketConnector connector;
 	private final MinaAdapter minaAdapter;
 	private final ExecutorService executor;
-	
+
 	public MinaConnector(CodecFactory codecFactory) {
 		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS);
 	}
@@ -47,24 +51,30 @@ public class MinaConnector implements Connector {
 	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads) {
 		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes());
 	}
-	
-	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper) {
-		Objects.requireNonNull(codecFactory);
 
-		log.info("Initializing connector {max I/O threads: {}, max task threads: {}}",
+	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper) {
+		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
+				newExecutor(maxTaskThreads, taskMapper));
+		log.info("Initialized connector {max I/O threads: {}, max task threads: {}}",
 				Integer.toString(maxIoThreads),
 				maxTaskThreads > 0
 						? Integer.toString(maxTaskThreads)
 						: "unbounded");
+	}
 
-		connector = new NioSocketConnector(maxIoThreads);
+	public MinaConnector(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor) {
+		Objects.requireNonNull(codecFactory);
+		Objects.requireNonNull(processor);
+		Objects.requireNonNull(executor);
+
+		connector = new NioSocketConnector(processor);
 		DefaultIoFilterChainBuilder filters = connector.getFilterChain();
-		
+
 		// encoding
 		filters.addLast("codec", new ProtocolCodecFilter(new MinaCodecFactory(codecFactory)));
-		
+
 		// thread model
-		executor = newExecutor(maxTaskThreads, taskMapper);
+		this.executor = executor;
 		filters.addLast("threadPool", new ExecutorFilter(executor));
 
 		// logging
@@ -73,7 +83,7 @@ public class MinaConnector implements Connector {
 		// session handler
 		minaAdapter = new MinaAdapter();
 		connector.setHandler(minaAdapter);
-		
+
 		// connector configuration
 		connector.getSessionConfig().setReuseAddress(true);
 		connector.getSessionConfig().setKeepAlive(true);
@@ -82,7 +92,7 @@ public class MinaConnector implements Connector {
 		connector.getSessionConfig().setTcpNoDelay(true);
 	}
 
-	private ExecutorService newExecutor(int maxThreads, TaskMapper taskMapper) {
+	private static ExecutorService newExecutor(int maxThreads, TaskMapper taskMapper) {
 		if (taskMapper == null) {
 			// unspecified order
 			// maxThreads = 0 -> unbound pool
@@ -96,17 +106,17 @@ public class MinaConnector implements Connector {
 			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper);
 		}
 	}
-	
+
 	public void addSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 		minaAdapter.addSessionListener(sessionListener);
 	}
-	
+
 	public void removeSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 		minaAdapter.removeSessionListener(sessionListener);
 	}
-	
+
 	public MessageSession connect(SocketAddress address) throws IOException {
 		Objects.requireNonNull(address);
 
@@ -115,7 +125,7 @@ public class MinaConnector implements Connector {
 		connectFuture.awaitUninterruptibly();
 		if (!connectFuture.isConnected() || connectFuture.getException() != null)
 			throw new IOException("Connection error", connectFuture.getException());
-		
+
 		IoSession minaSession = connectFuture.getSession();
 		return minaAdapter.getMessageSession(minaSession);
 	}
@@ -154,7 +164,8 @@ public class MinaConnector implements Connector {
 							MinaConnector.this,
 							messageSession);
 					listener.connected(event);
-				}});
+				}
+			});
 		}
 	}
 

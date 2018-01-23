@@ -3,6 +3,7 @@ package com.ugcs.telemetrytool;
 import com.ugcs.common.util.Preconditions;
 
 public class FlightKey {
+
 	private final String vehicleName;
 	private final long flightStartTime;
 

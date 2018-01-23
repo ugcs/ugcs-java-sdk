@@ -7,6 +7,8 @@ import java.util.List;
  * Message decoder extracts message objects from a byte array.
  */
 public interface MessageDecoder {
+
 	List<Object> decode(ByteBuffer buffer) throws Exception;
+
 	void close() throws Exception;
 }

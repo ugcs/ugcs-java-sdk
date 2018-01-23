@@ -5,10 +5,37 @@ import java.util.Locale;
 import java.util.Objects;
 
 import com.google.protobuf.Message;
-import com.ugcs.ucs.proto.DomainProto.*;
-import com.ugcs.ucs.proto.MessagesProto.*;
+import com.ugcs.ucs.proto.DomainProto.Command;
+import com.ugcs.ucs.proto.DomainProto.CommandStatus;
+import com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper;
+import com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper;
+import com.ugcs.ucs.proto.DomainProto.LocalizedMessage;
+import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
+import com.ugcs.ucs.proto.DomainProto.ProcessedSegment;
+import com.ugcs.ucs.proto.DomainProto.Route;
+import com.ugcs.ucs.proto.DomainProto.RouteProcessingStatus;
+import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
+import com.ugcs.ucs.proto.DomainProto.Vehicle;
+import com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
+import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
+import com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest;
+import com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse;
+import com.ugcs.ucs.proto.MessagesProto.LoginRequest;
+import com.ugcs.ucs.proto.MessagesProto.LogoutRequest;
+import com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest;
+import com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse;
+import com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest;
+import com.ugcs.ucs.proto.MessagesProto.SendCommandRequest;
+import com.ugcs.ucs.proto.MessagesProto.SendCommandResponse;
+import com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest;
+import com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse;
+import com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest;
+import com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest;
+import com.ugcs.ucs.proto.MessagesProto.VehicleCommandResultDto;
 
 public class ClientSession {
+
 	protected final Client client;
 	protected int clientId = -1;
 

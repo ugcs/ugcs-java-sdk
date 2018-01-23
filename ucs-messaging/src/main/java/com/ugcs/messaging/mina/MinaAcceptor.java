@@ -6,30 +6,34 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import com.ugcs.messaging.GroupingThreadPool;
+import com.ugcs.messaging.TaskMapper;
+import com.ugcs.messaging.api.Acceptor;
+import com.ugcs.messaging.api.CodecFactory;
+import com.ugcs.messaging.api.MessageSessionListener;
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
+import org.apache.mina.core.service.IoProcessor;
+import org.apache.mina.core.service.SimpleIoProcessorPool;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.SocketAcceptor;
+import org.apache.mina.transport.socket.nio.NioProcessor;
+import org.apache.mina.transport.socket.nio.NioSession;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ugcs.messaging.GroupingThreadPool;
-import com.ugcs.messaging.api.Acceptor;
-import com.ugcs.messaging.api.CodecFactory;
-import com.ugcs.messaging.api.MessageSessionListener;
-import com.ugcs.messaging.api.TaskMapper;
-
 public class MinaAcceptor implements Acceptor {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaAcceptor.class);
-	
+
 	private static final int DEFAULT_MAX_IO_THREADS = 4;
 	private static final int DEFAULT_MAX_TASK_THREADS = 32;
 	private static final int DEFAULT_SESSION_IDLE_SECONDS = 3;
-	
+
 	private final SocketAcceptor acceptor;
 	private final MinaAdapter minaAdapter;
 	private final ExecutorService executor;
@@ -43,22 +47,28 @@ public class MinaAcceptor implements Acceptor {
 	}
 
 	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper) {
-		Objects.requireNonNull(codecFactory);
-
-		log.info("Initializing acceptor {max I/O threads: {}, max task threads: {}}",
+		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
+				newExecutor(maxTaskThreads, taskMapper));
+		log.info("Initialized acceptor {max I/O threads: {}, max task threads: {}}",
 				maxIoThreads,
 				maxTaskThreads > 0
 						? Integer.toString(maxTaskThreads)
 						: "unbounded");
-		
-		acceptor = new NioSocketAcceptor(maxIoThreads);
+	}
+
+	public MinaAcceptor(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor) {
+		Objects.requireNonNull(codecFactory);
+		Objects.requireNonNull(processor);
+		Objects.requireNonNull(executor);
+
+		acceptor = new NioSocketAcceptor(processor);
 		DefaultIoFilterChainBuilder filters = acceptor.getFilterChain();
 
 		// encoding
 		filters.addLast("codec", new ProtocolCodecFilter(new MinaCodecFactory(codecFactory)));
-		
+
 		// thread model
-		executor = newExecutor(maxTaskThreads, taskMapper);
+		this.executor = executor;
 		filters.addLast("threadPool", new ExecutorFilter(executor));
 
 		// logging
@@ -67,7 +77,7 @@ public class MinaAcceptor implements Acceptor {
 		// session handler
 		minaAdapter = new MinaAdapter();
 		acceptor.setHandler(minaAdapter);
-		
+
 		// acceptor configuration
 		// disable disconnection on unbind
 		acceptor.setCloseOnDeactivation(false);
@@ -80,7 +90,7 @@ public class MinaAcceptor implements Acceptor {
 		acceptor.getSessionConfig().setTcpNoDelay(true);
 	}
 
-	private ExecutorService newExecutor(int maxThreads, TaskMapper taskMapper) {
+	private static ExecutorService newExecutor(int maxThreads, TaskMapper taskMapper) {
 		if (taskMapper == null) {
 			// unspecified order
 			// maxThreads = 0 -> unbound pool
@@ -94,25 +104,25 @@ public class MinaAcceptor implements Acceptor {
 			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper);
 		}
 	}
-	
+
 	public void addSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 		minaAdapter.addSessionListener(sessionListener);
 	}
-	
+
 	public void removeSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 		minaAdapter.removeSessionListener(sessionListener);
 	}
-	
+
 	public void start(SocketAddress socketAddress) throws IOException {
 		acceptor.bind(socketAddress);
 	}
-	
+
 	public void stop() {
 		acceptor.unbind();
 	}
-	
+
 	public void close() {
 		for (IoSession session : acceptor.getManagedSessions().values())
 			session.close(false);

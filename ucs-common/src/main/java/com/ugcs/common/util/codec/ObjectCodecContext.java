@@ -4,4 +4,5 @@ public interface ObjectCodecContext {
 
 	ObjectCodec byType(byte type);
 
+	ObjectCodec byObjectType(Class<?> objectType);
 }

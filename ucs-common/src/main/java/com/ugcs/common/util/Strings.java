@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-
 public final class Strings {
 	public static final String EMPTY_STRING = "";
 
@@ -46,24 +45,49 @@ public final class Strings {
 	}
 
 	public static String padLeft(String source, int targetLength, char padChar) {
-		StringBuilder builder = new StringBuilder(targetLength);
-		for (int i = source.length(); i < targetLength; ++i) {
-			builder.append(padChar);
+		return padLeft(source, targetLength, padChar, false);
+	}
+
+	public static String padLeft(String source, int targetLength, char padChar, boolean truncate) {
+		if (source.length() < targetLength) {
+			StringBuilder builder = new StringBuilder(targetLength);
+			for (int i = source.length(); i < targetLength; ++i)
+				builder.append(padChar);
+			builder.append(source);
+			return builder.toString();
 		}
-		builder.append(source);
-		return builder.toString();
+		return truncate
+				? truncateWithDots(source, targetLength)
+				: source;
 	}
 
 	public static String padRight(String source, int targetLength, char padChar) {
-		StringBuilder builder = targetLength > 0 ? new StringBuilder(targetLength) : new StringBuilder();
-		builder.append(source);
-		for (int i = source.length(); i < targetLength; ++i) {
-			builder.append(padChar);
-		}
-		return builder.toString();
+		return padRight(source, targetLength, padChar, false);
 	}
 
-	public static int findIndexOf(String source, boolean ignoreCase, String ... variants) {
+	public static String padRight(String source, int targetLength, char padChar, boolean truncate) {
+		if (source.length() < targetLength) {
+			StringBuilder builder = new StringBuilder(targetLength);
+			builder.append(source);
+			for (int i = source.length(); i < targetLength; ++i)
+				builder.append(padChar);
+			return builder.toString();
+		}
+		return truncate
+				? truncateWithDots(source, targetLength)
+				: source;
+	}
+
+	private static String truncateWithDots(String text, int targetLength) {
+		if (text.length() <= targetLength)
+			return text;
+		String dots = targetLength == 1
+				? "."
+				: "..";
+		return text.substring(0, targetLength - dots.length()) + dots;
+	}
+
+	public static int findIndexOf(String source, boolean ignoreCase, String... variants) {
 		boolean isEmptySource = isNullOrEmpty(source);
 		if (variants != null && variants.length > 0) {
 			for (int index = 0; index < variants.length; index++) {
@@ -82,12 +106,7 @@ public final class Strings {
 		return -1;
 	}
 
-	public static String findOneOf(String source, boolean ignoreCase, String ... variants) {
-		int index = findIndexOf(source, ignoreCase, variants);
-		return index == -1 ? null : variants[index];
-	}
-
-	public static boolean isEqualOneOf(String source, boolean ignoreCase, String ... variants) {
+	public static boolean isEqualOneOf(String source, boolean ignoreCase, String... variants) {
 		if (isNullOrEmpty(source) && (variants == null || variants.length == 0))
 			return true;
 		return findIndexOf(source, ignoreCase, variants) != -1;
@@ -97,7 +116,7 @@ public final class Strings {
 		if (Strings.isNullOrEmpty(source))
 			return new String[0];
 		if (Strings.isNullOrEmpty(regex))
-			return new String[] { source };
+			return new String[] {source};
 
 		String[] split = source.split(regex);
 		if (split == null || split.length == 0)
@@ -123,7 +142,7 @@ public final class Strings {
 		return result.toArray(new String[result.size()]);
 	}
 
-	public static String trim(String source, String ... trimedVariants) {
+	public static String trim(String source, String... trimedVariants) {
 		if (isNullOrEmpty(source))
 			return source;
 		if (trimedVariants == null || trimedVariants.length == 0)

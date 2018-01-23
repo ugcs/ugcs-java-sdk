@@ -28,12 +28,12 @@ public class LongValue extends AbstractValue {
 
 	@Override
 	public float floatValue() {
-		return (float) value;
+		return (float)value;
 	}
 
 	@Override
 	public double doubleValue() {
-		return (double) value;
+		return (double)value;
 	}
 
 	@Override
@@ -42,11 +42,16 @@ public class LongValue extends AbstractValue {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public Object objectValue() {
+		return value;
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
 			return true;
-		if (!(obj instanceof AbstractValue))
+		if (!(other instanceof AbstractValue))
 			return false;
-		return this.value == ((AbstractValue) obj).longValue();
+		return this.value == ((AbstractValue)other).longValue();
 	}
 }

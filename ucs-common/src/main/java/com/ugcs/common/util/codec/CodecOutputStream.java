@@ -7,8 +7,8 @@ import java.io.OutputStream;
 import com.ugcs.common.util.Preconditions;
 
 /**
- * This implementation extends {@link java.io.DataOutputStream} and provides new methods to write variable-length encoded
- * parameters of different types to the provided {@link OutputStream}.
+ * This implementation extends {@link java.io.DataOutputStream} and provides new methods
+ * to write variable-length encoded parameters of different types to the provided {@link OutputStream}.
  */
 public class CodecOutputStream extends DataOutputStream {
 

@@ -21,8 +21,9 @@ import java.util.Set;
 import com.ugcs.common.util.codec.CodecInputStream;
 
 public abstract class TlmConverter {
-	private static final SimpleDateFormat FLIGHT_INTERVAL_FORMAT =
-			new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+
+	private static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+
 	private Date intervalStartTime = null;
 	private Date intervalStopTime = null;
 	private int tolerance = 60;
@@ -37,14 +38,14 @@ public abstract class TlmConverter {
 
 		for (int i = 0; i < args.length; ++i) {
 			switch (args[i]) {
-				case "-t" :
-				case "--tolerance" :
+				case "-t":
+				case "--tolerance":
 					tolerance = Integer.parseInt(args[i + 1]);
 					break;
-				case "-f" :
+				case "-f":
 					sourceFile = args[i + 1];
 					break;
-				case "-d" :
+				case "-d":
 					destinationDirectory = args[i + 1];
 					try {
 						boolean mkdir = new File(destinationDirectory).mkdir();
@@ -53,23 +54,23 @@ public abstract class TlmConverter {
 						System.exit(-2);
 					}
 					break;
-				case "-h" :
-				case "--help" :
+				case "-h":
+				case "--help":
 					usage();
 					break;
-				case "-l" :
-				case "--fields" :
+				case "-l":
+				case "--fields":
 					fieldsFile = args[i + 1];
 					break;
-				case "-s" :
-				case "--start" :
-					intervalStartTime = FLIGHT_INTERVAL_FORMAT.parse(args[i + 1]);
+				case "-s":
+				case "--start":
+					intervalStartTime = new SimpleDateFormat(DATE_FORMAT).parse(args[i + 1]);
 					break;
-				case "-e" :
-				case "--end" :
-					intervalStopTime = FLIGHT_INTERVAL_FORMAT.parse(args[i + 1]);
+				case "-e":
+				case "--end":
+					intervalStopTime = new SimpleDateFormat(DATE_FORMAT).parse(args[i + 1]);
 					break;
-				default :
+				default:
 					usage();
 					break;
 			}

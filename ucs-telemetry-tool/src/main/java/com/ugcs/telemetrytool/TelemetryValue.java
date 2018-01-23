@@ -6,6 +6,7 @@ import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.value.AbstractValue;
 
 public final class TelemetryValue {
+
 	private final AbstractValue value;
 	private final Date time;
 

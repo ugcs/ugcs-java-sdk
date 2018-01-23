@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TelemetryPointIterator implements Iterator<TelemetryPoint> {
+
 	private final List<TelemetryRecord> records;
 	private int pos; // index of current iterable element
 	private double lastLongitude;

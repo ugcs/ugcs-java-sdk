@@ -17,22 +17,23 @@ import com.google.protobuf.Message;
 import com.ugcs.messaging.api.MessageDecoder;
 
 public class MessageWrapperDecoder implements MessageDecoder {
+
 	private static final Logger log = LoggerFactory.getLogger(MessageWrapperDecoder.class);
-	
+
 	private final ProtoMessageDecoder protoDecoder;
 	private final ProtoMessageMapping protoMapping;
 	private final CircularBuffer decoderBuffer = new CircularBuffer();
-	
+
 	public MessageWrapperDecoder(ProtoMessageDecoder protoDecoder, ProtoMessageMapping protoMapping) {
 		if (protoDecoder == null)
 			throw new IllegalArgumentException("protoDecoder");
 		if (protoMapping == null)
 			throw new IllegalArgumentException("protoMapping");
-		
+
 		this.protoDecoder = protoDecoder;
 		this.protoMapping = protoMapping;
 	}
-	
+
 	private void fillBuffer(ByteBuffer buffer) throws IOException {
 		if (buffer == null)
 			return;
@@ -40,15 +41,15 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		WritableByteChannel channel = Channels.newChannel(decoderOut);
 		channel.write(buffer);
 	}
-	
+
 	private short readShort(InputStream in) throws IOException {
 		int a = in.read();
 		int b = in.read();
 		if ((a | b) < 0)
 			throw new EOFException();
-		return (short) ((a << 8) | b);
+		return (short)((a << 8) | b);
 	}
-	
+
 	private int readInt(InputStream in) throws IOException {
 		int a = in.read();
 		int b = in.read();
@@ -58,13 +59,13 @@ public class MessageWrapperDecoder implements MessageDecoder {
 			throw new EOFException();
 		return (a << 24) | (b << 16) | (c << 8) | d;
 	}
-	
+
 	private boolean isDecodable(InputStream in) throws IOException {
 		if (in == null)
 			return false;
 		if (!in.markSupported())
 			throw new IllegalArgumentException("Mark support required");
-			
+
 		// 16 bytes is the smallest possible message length
 		if (in.available() < 16)
 			return false;
@@ -81,7 +82,7 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		// ok
 		return true;
 	}
-	
+
 	private Object decodeFirst(InputStream in) throws Exception {
 		// header
 		int protocolSignature = readShort(in) & 0xffff;
@@ -89,7 +90,7 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		int instanceId = readInt(in);
 		int messageType = readInt(in);
 		int messageLength = readInt(in);
-		
+
 		// message data
 		byte[] messageData = new byte[messageLength];
 		int messageBytesRead = in.read(messageData);
@@ -99,23 +100,23 @@ public class MessageWrapperDecoder implements MessageDecoder {
 			// TODO possible alignment problem
 			throw new IOException("Cannot read message data");
 		}
-		
+
 		// checks: signature & version
 		if (protocolSignature != Protocol.SIGNATURE)
 			throw new Exception("Protocol signature error");
 		if (protocolVersion != Protocol.VERSION)
 			throw new Exception("Unsupported protocol version: " + protocolVersion);
-		
+
 		// well-formed message received
 		Message protoMessage = protoDecoder.decode(messageData, protoMapping.getMessageClass(messageType));
 		return new MessageWrapper(protoMessage, instanceId);
 	}
-	
+
 	@Override
 	public List<Object> decode(ByteBuffer buffer) throws Exception {
 		fillBuffer(buffer);
 		InputStream in = decoderBuffer.getInputStream();
-		
+
 		List<Object> result = new ArrayList<Object>();
 		while (isDecodable(in)) {
 			Object decodedMessage = null;

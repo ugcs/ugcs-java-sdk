@@ -24,9 +24,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ugcs.messaging.api.TaskMapper;
-
 public class GroupingThreadPool extends AbstractExecutorService {
+
 	private static final Logger log = LoggerFactory.getLogger(GroupingThreadPool.class);
 
 	/* properties */
@@ -401,6 +400,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 	/* Worker */
 
 	private class Worker implements Runnable {
+
 		private final Thread thread;
 
 		public Worker() {
@@ -414,6 +414,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 				try {
 					thread.interrupt();
 				} catch (SecurityException ignore) {
+					// ignored
 				}
 			}
 		}
@@ -508,6 +509,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 							try {
 								timedOut = !taskWaiting.await(10L, TimeUnit.SECONDS);
 							} catch (InterruptedException ignored) {
+								// ignored
 							}
 						} finally {
 							ql.unlock();
@@ -515,7 +517,6 @@ public class GroupingThreadPool extends AbstractExecutorService {
 						if (timedOut && dismissWorker(this))
 							break;
 					} else {
-						//log.info("{} Task waiting time: {}", this, (double) (System.nanoTime() - task.createdAt) / 1e6);
 						task.runnable.run();
 					}
 				}
@@ -538,6 +539,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 	/* Tasks */
 
 	private static class Task {
+
 		private final Runnable runnable;
 		private final long createdAt;
 
@@ -564,6 +566,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 	}
 
 	private static class TaskQueue {
+
 		private final Queue<Task> tasks;
 		private final Object isolation;
 
@@ -574,6 +577,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 	}
 
 	private static class TaskQueueComparator implements Comparator<TaskQueue> {
+
 		private final Comparator<Task> taskComparator = new TaskOrder();
 
 		@Override

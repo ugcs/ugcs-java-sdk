@@ -9,6 +9,7 @@ import java.util.List;
 import com.ugcs.common.util.Preconditions;
 
 public class KmlTelemetryWriter implements TelemetryWriter {
+
 	@Override
 	public void write(OutputStream out, FlightTelemetry telemetry, List<TelemetryKey> emptyFields) throws IOException {
 		Preconditions.checkNotNull(out);

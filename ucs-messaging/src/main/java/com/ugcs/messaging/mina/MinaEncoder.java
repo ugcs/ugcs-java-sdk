@@ -9,16 +9,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class MinaEncoder implements ProtocolEncoder {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaEncoder.class);
 	private final MessageEncoder encoder;
-	
+
 	public MinaEncoder(MessageEncoder encoder) {
 		if (encoder == null)
 			throw new IllegalArgumentException("encoder");
-		
+
 		this.encoder = encoder;
 	}
-	
+
 	@Override
 	public void encode(IoSession session, Object message, ProtocolEncoderOutput out) throws Exception {
 		byte[] encodedMessage;

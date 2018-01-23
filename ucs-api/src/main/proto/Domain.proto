@@ -142,12 +142,47 @@ enum TelemetryType {
 	TT_TARGET_LONGITUDE = 88;
 	TT_TARGET_AMSL_ALTITUDE = 89;
 	TT_BATTERY_POWER_LEVEL = 90;
+	TT_FENCE_ENABLED = 91;
+	TT_CURRENT = 92;
+	TT_VIBRATION_X = 93;
+	TT_VIBRATION_Y = 94;
+	TT_VIBRATION_Z = 95;
+	TT_MOTORS_OK = 96;
+	TT_MOTOR_PWM_1 = 97;
+	TT_MOTOR_PWM_2 = 98;
+	TT_MOTOR_PWM_3 = 99;
+	TT_MOTOR_PWM_4 = 100;
+	TT_MOTOR_PWM_5 = 101;
+	TT_MOTOR_PWM_6 = 102;
+	TT_MOTOR_PWM_7 = 103;
+	TT_MOTOR_PWM_8 = 104;
+	TT_WINCH_SAFETY_BATTERY_ACTIVE = 105;
+	TT_WINCH_SAFETY_BATTERY_VOLTAGE = 106;
+	TT_WINCH_CONNECTED = 107;
+	TT_STANDBY = 108;
+	TT_WAYPOINT_NUMBER = 109;
+	TT_FLIGHT_MODE = 110;
+	TT_SERVO_PWM_1 = 111;
+	TT_SERVO_PWM_2 = 112;
+	TT_SERVO_PWM_3 = 113;
+	TT_SERVO_PWM_4 = 114;
+	TT_SERVO_PWM_5 = 115;
+	TT_SERVO_PWM_6 = 116;
+	TT_SERVO_PWM_7 = 117;
+	TT_SERVO_PWM_8 = 118;
+	TT_AUTOPILOT_STATUS = 119;
 }
 
 enum VehicleType {
 	VT_FIXED_WING = 0;
 	VT_HELICOPTER = 1;
 	VT_MULTICOPTER = 2;
+	VT_VTOL = 3;
+}
+
+enum VehicleSource {
+	VS_VSM = 0;
+	VS_IMPORT = 1;
 }
 
 enum VehicleParameterType {
@@ -243,6 +278,7 @@ enum FailsafeAction {
 	FA_LAND = 1;
 	FA_WAIT = 2;
 	FA_CONTINUE = 3;
+	FA_NA = 4;
 }
 
 enum TriggerState {
@@ -297,6 +333,8 @@ enum MetricUnit {
 	MU_SQUAREMETRE = 5;
 	MU_KILOGRAMME = 6;
 	MU_CENTIMETRE = 7;
+	MU_HECTARE = 8;
+	MU_SQUAREKILOMETRE = 9;
 }
 
 enum MessageSeverity {
@@ -346,6 +384,11 @@ enum ActionCode {
 	AC_TAKEOFF = 10;
 	AC_LANDING = 11;
 	AC_PANORAMA = 12;
+	AC_ROUTE_ATTRIBUTES = 13;
+	AC_SET_SERVO = 14;
+	AC_REPEAT_SERVO = 15;
+	AC_TRANSITION_FIXED = 16;
+	AC_TRANSITION_VTOL = 17;
 }
 
 enum NfzType {
@@ -396,6 +439,7 @@ enum Subsystem {
 	S_GIMBAL = 2;
 	S_CAMERA = 3;
 	S_ADSB_TRANSPONDER = 4;
+	S_WINCH = 5;
 }
 
 enum Semantic {
@@ -433,6 +477,9 @@ enum Semantic {
 	S_STRING = 32;
 	S_ENUM = 33;
 	S_CAPACITY_LEVEL = 34;
+	S_FLIGHT_MODE = 35;
+	S_LIST = 36;
+	S_AUTOPILOT_STATUS = 37;
 }
 
 //*****************************************************************************
@@ -448,7 +495,6 @@ message DomainObjectWrapper {
 	optional Action action = 1;
 	optional ActionDefinition actionDefinition = 2;
 	optional AdsbAircraft adsbAircraft = 3;
-	optional Avatar avatar = 4;
 	optional CameraControl cameraControl = 5;
 	optional CameraControlDefinition cameraControlDefinition = 6;
 	optional CameraTrigger cameraTrigger = 7;
@@ -519,8 +565,12 @@ message DomainObjectWrapper {
 	optional ProcessedSegment processedSegment = 79;
 	optional RouteAttributes routeAttributes = 80;
 	optional Value value = 81;
+	optional SetServo setServo = 82;
+	optional RepeatServo repeatServo = 83;
+	optional TransitionFixed transitionFixed = 84;
+    optional TransitionVtol transitionVtol = 85;
+	optional RouteUpload routeUpload = 86;
 }
-
 
 //*****************************************************************************
 // Types
@@ -623,26 +673,20 @@ message Vehicle {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional int64 vehicleId = 3;
-	optional Vsm vsm = 4;
 	optional string name = 5;
 	optional string tailNumber = 6;
 	optional VehicleType type = 7;
-	optional bool downlinkConnected = 8;
-	optional bool uplinkConnected = 9;
 	optional double altitudeOrigin = 13;
 	repeated VehicleCommandDefinition commandDefinitions = 14;
 	optional Platform platform = 15;
 	optional VehicleProfile profile = 16;
 	optional string tag = 17;
 	optional bool emulator = 18;
-	optional string droneshareUuid = 19;
-	optional double homeLatitude = 20;
-	optional double homeLongitude = 21;
-	optional double homeAltitude = 22;
 	optional int32 icaoAddress = 23;
 	repeated AdsbAircraft adsbAircrafts = 24;
 	optional string serialNumber = 25;
 	optional string port = 26;
+	optional VehicleSource source = 27;
 }
 
 message AdsbAircraft {
@@ -671,23 +715,11 @@ message VehicleProfilePayloadProfile {
 	optional string tag = 5;
 }
 
-message Avatar {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional string imageMimeType = 3;
-	optional bytes imageData = 4;
-	optional string modelMimeType = 5;
-	optional bytes modelData = 6;
-	optional string name = 7;
-	optional string tag = 8;
-}
-
 message VehicleProfile {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string name = 3;
 	optional VehicleType vehicleType = 4;
-	optional Avatar avatar = 5;
 	repeated VehicleParameter parameters = 6;
 	repeated VehicleProfilePayloadProfile payloadProfiles = 7;
 	optional Platform platform = 8;
@@ -695,6 +727,8 @@ message VehicleProfile {
 	optional bool unremovable = 10;
 	optional string tag = 11;
 	optional bool primary = 12;
+	optional string modelKey = 13;
+	optional string imageKey = 14;
 }
 
 message VehicleParameter {
@@ -711,8 +745,7 @@ message PayloadProfile {
 	optional int32 version = 2;
 	optional string name = 3;
 	optional PayloadType payloadType = 4;
-	optional string imageMimeType = 5;
-	optional bytes imageData = 6;
+	optional string imageKey = 5;
 	repeated PayloadParameter parameters = 7;
 	repeated PlatformPayloadProfile platforms = 8;
 	optional bool sealed = 9;
@@ -865,6 +898,17 @@ message Route {
 	optional string modificationUuid = 25;
 }
 
+message RouteUpload {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Route route = 3;
+	optional string routeModificationUuid = 4;
+	optional Vehicle vehicle = 5;
+	optional User user = 6;
+	optional int64 uploadTime = 7;
+	optional string tag = 8;
+}
+
 message Failsafe {
 	optional int32 id = 1;
 	optional int32 version = 2;
@@ -985,7 +1029,12 @@ message Action {
 	optional Landing landing = 19;
 	optional Panorama panorama = 20;
 	optional RouteAttributes routeAttributes = 22;
+    optional SetServo setServo = 23;
+    optional RepeatServo repeatServo = 24;
+    optional TransitionVtol transitionVtol = 26;
+    optional TransitionFixed transitionFixed = 27;
 	optional string tag = 21;
+	optional double estimatedTime = 25;
 }
 
 message Waypoint {
@@ -1042,7 +1091,8 @@ message Wait {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double interval = 3;
-	optional string tag = 4;
+	optional bool waitForOperator = 4;
+	optional string tag = 5;
 }
 
 message HeadingChange {
@@ -1129,6 +1179,37 @@ message RouteAttributes {
 	optional string tag = 8;
 }
 
+message SetServo {
+    optional int32 id = 1;
+    optional int32 version = 2;
+	optional int32 servoId = 3;
+    optional int32 pwm = 4;
+	optional string tag = 5;
+}
+
+message RepeatServo {
+    optional int32 id = 1;
+    optional int32 version = 2;
+    optional int32 servoId = 3;
+    optional int32 pwm = 4;
+    optional double delay = 5;
+    optional int32 count = 6;
+	optional string tag = 7;
+}
+
+message TransitionFixed {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
+
+message TransitionVtol {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
+
+
 //-- Definitions of Actions - Container and specific definitions --------------
 
 message ActionDefinition {
@@ -1145,7 +1226,11 @@ message ActionDefinition {
 	optional CameraSeriesByTimeDefinition cameraSeriesByTimeDefinition = 11;
 	optional CameraSeriesByDistanceDefinition cameraSeriesByDistanceDefinition = 12;
 	optional PanoramaDefinition panoramaDefinition = 13;
-	optional string tag = 14;
+	optional SetServoDefinition setServoDefinition = 14;
+	optional RepeatServoDefinition repeatServoDefinition = 15;
+    optional TransitionVtolDefinition transitionVtolDefinition =  17;
+	optional TransitionFixedDefinition transitionFixedDefinition = 18;
+	optional string tag = 16;
 }
 
 message CameraControlDefinition {
@@ -1210,7 +1295,8 @@ message WaitDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double interval = 3;
-	optional string tag = 4;
+	optional bool waitForOperator = 4;
+	optional string tag = 5;
 }
 
 message PanoramaDefinition {
@@ -1225,6 +1311,35 @@ message PanoramaDefinition {
 	optional string tag = 9;
 }
 
+message SetServoDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 servoId = 3;
+	optional int32 pwm = 4;
+	optional string tag = 5;
+}
+
+message RepeatServoDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional int32 servoId = 3;
+	optional int32 pwm = 4;
+	optional double delay = 5;
+	optional int32 count = 6;
+	optional string tag = 7;
+}
+
+message TransitionFixedDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
+
+message TransitionVtolDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
 
 //-- No-Flight Zones ----------------------------------------------------------
 
@@ -1239,18 +1354,6 @@ message NoFlightZone {
 	/* Definition of the volume */
 	optional Prism prism = 7;
 	optional ConeFrustum coneFrustum = 8;
-}
-
-// The R*Tree index for NoFlightZone
-message NoFlightZoneRTreeIndex {
-	/* The id of NoFlightZone */
-	optional int32 nfzId = 1;
-	/* Minimum and maximum latitudes */
-	optional double minLat = 2;
-	optional double maxLat = 3;
-	/* Minimum and maximum longitudes */
-	optional double minLng = 4;
-	optional double maxLng = 5;
 }
 
 message ConeFrustum {
@@ -1277,6 +1380,7 @@ message CommandDefinition {
 	optional int32 subsystemId = 8;
 	repeated CommandArgumentDefinition arguments = 5;
 	optional string name = 4;
+	optional Vehicle vehicle = 9;
 	optional string tag = 6;
 }
 
@@ -1325,6 +1429,7 @@ message Value {
 	optional float floatValue = 6;
 	optional double doubleValue = 7;
 	optional string stringValue = 8;
+	repeated Value listValue = 10;
 	optional string tag = 9;
 }
 

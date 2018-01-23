@@ -1,7 +1,9 @@
 package com.ugcs.telemetrytool;
 
+import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,13 +15,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import com.ugcs.common.csv.CsvWriter;
 import com.ugcs.common.util.Preconditions;
 import com.ugcs.common.util.value.AbstractValue;
 
 public class CsvTelemetryWriter implements TelemetryWriter {
 
 	private static final Set<String> ANGLE_SEMANTICS = new HashSet<>(
-			Arrays.asList(new String[] {"LATITUDE", "LONGITUDE", "HEADING", "ROLL", "PITCH"})
+			Arrays.asList("LATITUDE", "LONGITUDE", "HEADING", "ROLL", "PITCH")
 	);
 
 	@Override
@@ -29,7 +32,7 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 		Preconditions.checkNotNull(telemetry);
 		Preconditions.checkNotNull(telemetryKeys);
 
-		try (CsvWriter writer = new CsvWriter(out)) {
+		try (CsvWriter writer = new CsvWriter(new OutputStreamWriter(new BufferedOutputStream(out)))) {
 			List<String> header = new ArrayList<>(telemetryKeys.size() + 1);
 			header.add("Time");
 			for (TelemetryKey key : telemetryKeys) {
@@ -38,7 +41,7 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 				header.add(cell);
 			}
 
-			writer.writeNext(header.toArray(new String[header.size()]));
+			writer.writeFields(header.toArray(new String[header.size()]));
 
 			Map<TelemetryKey, AbstractValue> mostRecent = new HashMap<>();
 			Date lastTime = null;
@@ -84,12 +87,12 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 	}
 
 	private void flush(Map<TelemetryKey, List<AbstractValue>> timeRows,
-									 List<TelemetryKey> telemetryKeys,
-									 Map<TelemetryKey, AbstractValue> mostRecent,
-									 CsvWriter writer,
-					   				 Date time) throws IOException {
+			List<TelemetryKey> telemetryKeys,
+			Map<TelemetryKey, AbstractValue> mostRecent,
+			CsvWriter writer,
+			Date time) throws IOException {
 		int numRows = getMaxNumRows(timeRows);
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.S");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
 
 		for (int i = 0; i < numRows; ++i) {
 			List<String> row = new ArrayList<>(telemetryKeys.size() + 1);
@@ -104,12 +107,12 @@ public class CsvTelemetryWriter implements TelemetryWriter {
 				row.add(
 						value != null && value.isAvailable()
 								? ANGLE_SEMANTICS.contains(telemetryKey.getSemantic())
-										? String.valueOf(Math.toDegrees(value.doubleValue()))
-										: value.stringValue()
+								? String.valueOf(Math.toDegrees(value.doubleValue()))
+								: value.stringValue()
 								: ""
 				);
 			}
-			writer.writeNext(row.toArray(new String[row.size()]));
+			writer.writeFields(row.toArray(new String[row.size()]));
 		}
 	}
 

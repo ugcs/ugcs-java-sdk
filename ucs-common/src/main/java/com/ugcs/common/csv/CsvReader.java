@@ -1,41 +1,40 @@
-package com.ugcs.telemetrytool;
+package com.ugcs.common.csv;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.ugcs.common.util.Preconditions;
+
 // RFC 4180
-public class CsvReader {
-	private static final char SEPARATOR = ',';
-	private static final char QUOTE = '"';
-	
+public class CsvReader implements Closeable {
+
 	private final Reader reader;
 	private final char[] buffer;
 	private int length;
 	private int offset;
-	private char[] fieldBuffer = new char[1024];
+	private char[] fieldBuffer = new char[1_024];
 
 	public CsvReader(Reader reader) {
-		this (reader, 65536);
+		this(reader, 65_536);
 	}
-	
-	public CsvReader(Reader reader, int size) {
-		if (reader == null)
-			throw new IllegalArgumentException("reader");
-		if (size <= 0)
-			throw new IllegalArgumentException("size");
-		
+
+	public CsvReader(Reader reader, int bufferSize) {
+		Preconditions.checkNotNull(reader);
+		Preconditions.checkArgument(bufferSize > 0);
+
 		this.reader = reader;
-		this.buffer = new char[size];
+		this.buffer = new char[bufferSize];
 		this.length = 0;
 		this.offset = 0;
 	}
-	
+
 	private char readChar() throws IOException {
 		if (offset == length) {
-			// refill buffer
+			// re-fill buffer
 			length = reader.read(buffer, 0, buffer.length);
 			offset = 0;
 		}
@@ -43,14 +42,14 @@ public class CsvReader {
 			return 0;
 		return buffer[offset++];
 	}
-	
+
 	public List<String> readFields() throws IOException {
 		if (length == -1)
 			return null;
-		
+
 		List<String> result = new ArrayList<>();
 		int fieldLength = 0;
-		
+
 		boolean quoted = false;
 		while (length != -1) {
 			char c = readChar();
@@ -59,7 +58,7 @@ public class CsvReader {
 			if (!quoted) {
 				if (c == 0x0d) {
 					// skip LF, if necessary
-					char c1 = readChar(); 
+					char c1 = readChar();
 					if (length == -1)
 						break;
 					if (c1 != 0x0a)
@@ -68,23 +67,23 @@ public class CsvReader {
 				}
 				if (c == 0x0a)
 					break;
-				if (c == SEPARATOR) {
+				if (c == Csv.SEPARATOR) {
 					// next field
 					result.add(new String(fieldBuffer, 0, fieldLength));
 					fieldLength = 0;
 					continue;
 				}
-				if (c == QUOTE) {
+				if (c == Csv.QUOTE_CHAR) {
 					quoted = true;
 					continue;
 				}
 			} else {
-				if (c == QUOTE) {
+				if (c == Csv.QUOTE_CHAR) {
 					// check if quote is escaped
 					char c1 = readChar();
 					if (length == -1)
 						break;
-					if (c1 != QUOTE) {
+					if (c1 != Csv.QUOTE_CHAR) {
 						quoted = false;
 						offset -= 1;
 						continue;
@@ -92,7 +91,7 @@ public class CsvReader {
 				}
 			}
 			if (fieldLength + 1 >= fieldBuffer.length) {
-				fieldBuffer = Arrays.copyOf(fieldBuffer, 
+				fieldBuffer = Arrays.copyOf(fieldBuffer,
 						Math.max(fieldBuffer.length + (fieldBuffer.length >> 1), fieldLength + 1));
 			}
 			fieldBuffer[fieldLength++] = c;
@@ -100,7 +99,8 @@ public class CsvReader {
 		result.add(new String(fieldBuffer, 0, fieldLength));
 		return result;
 	}
-	
+
+	@Override
 	public void close() throws IOException {
 		reader.close();
 	}

@@ -6,7 +6,10 @@ import java.io.InputStream;
 
 import com.ugcs.common.util.Preconditions;
 
-public class VarLength {
+public final class VarLength {
+
+	private VarLength() {
+	}
 
 	/**
 	 * Encodes integer value to a variable length byte array.
@@ -19,9 +22,7 @@ public class VarLength {
 		int b1 = i & 0x7f;
 		i >>>= 7;
 		if (i == 0) {
-			return new byte[] {
-					(byte) (b1)
-			};
+			return new byte[] {(byte)b1};
 		}
 		b1 |= 0x80;
 
@@ -29,10 +30,7 @@ public class VarLength {
 		int b2 = i & 0x7f;
 		i >>>= 7;
 		if (i == 0) {
-			return new byte[] {
-					(byte) (b1),
-					(byte) (b2)
-			};
+			return new byte[] {(byte)b1, (byte)b2};
 		}
 		b2 |= 0x80;
 
@@ -40,11 +38,7 @@ public class VarLength {
 		int b3 = i & 0x7f;
 		i >>>= 7;
 		if (i == 0) {
-			return new byte[] {
-					(byte) (b1),
-					(byte) (b2),
-					(byte) (b3)
-			};
+			return new byte[] {(byte)b1, (byte)b2, (byte)b3};
 		}
 		b3 |= 0x80;
 
@@ -52,22 +46,11 @@ public class VarLength {
 		int b4 = i & 0x7f;
 		i >>>= 7;
 		if (i == 0) {
-			return new byte[] {
-					(byte) (b1),
-					(byte) (b2),
-					(byte) (b3),
-					(byte) (b4)
-			};
+			return new byte[] {(byte)b1, (byte)b2, (byte)b3, (byte)b4};
 		}
 		b4 |= 0x80;
 
-		return new byte[] {
-				(byte) b1,
-				(byte) b2,
-				(byte) b3,
-				(byte) b4,
-				(byte) i
-		};
+		return new byte[] {(byte)b1, (byte)b2, (byte)b3, (byte)b4, (byte)i};
 	}
 
 	/**
@@ -77,70 +60,44 @@ public class VarLength {
 	 * @return a byte array representation of the long value with the length from 1 to 10 bytes
 	 */
 	public static byte[] encodeLong(long l) {
-		int i1 = ((int) l) & ((1 << 28) - 1); // bits 0..27
-		int i2 = ((int) (l >>> 28)) & 0x7f; // bits 28..34
-		int i3 = (int) (l >>> 35); // bits 35..63
+		int i1 = ((int)l) & ((1 << 28) - 1); // bits 0..27
+		int i2 = ((int)(l >>> 28)) & 0x7f; // bits 28..34
+		int i3 = (int)(l >>> 35); // bits 35..63
 
 		int b1 = i1 & 0x7f;
 		i1 >>>= 7;
 		if (i1 == 0 && i2 == 0 && i3 == 0) {
-			return new byte[] {
-					(byte) b1
-			};
+			return new byte[] {(byte)b1};
 		}
 		b1 |= 0x80;
 
 		int b2 = i1 & 0x7f;
 		i1 >>>= 7;
 		if (i1 == 0 && i2 == 0 && i3 == 0) {
-			return new byte[] {
-					(byte) b1,
-					(byte) b2
-			};
+			return new byte[] {(byte)b1, (byte)b2};
 		}
 		b2 |= 0x80;
 
 		int b3 = i1 & 0x7f;
 		i1 >>>= 7;
 		if (i1 == 0 && i2 == 0 && i3 == 0) {
-			return new byte[] {
-					(byte) b1,
-					(byte) b2,
-					(byte) b3
-			};
+			return new byte[] {(byte)b1, (byte)b2, (byte)b3};
 		}
 		b3 |= 0x80;
 
 		int b4 = i1 & 0x7f;
 		if (i2 == 0 && i3 == 0) {
-			return new byte[] {
-					(byte) b1,
-					(byte) b2,
-					(byte) b3,
-					(byte) b4
-			};
+			return new byte[] {(byte)b1, (byte)b2, (byte)b3, (byte)b4};
 		}
 		b4 |= 0x80;
 
 		int b5 = i2;
 		if (i3 == 0) {
-			return new byte[] {
-					(byte) b1,
-					(byte) b2,
-					(byte) b3,
-					(byte) b4,
-					(byte) b5
-			};
+			return new byte[] {(byte)b1, (byte)b2, (byte)b3, (byte)b4, (byte)b5};
 		}
 		b5 |= 0x80;
 
-		byte[] i1i2Bytes = new byte[] {
-				(byte) b1,
-				(byte) b2,
-				(byte) b3,
-				(byte) b4,
-				(byte) b5
-		};
+		byte[] i1i2Bytes = new byte[] {(byte)b1, (byte)b2, (byte)b3, (byte)b4, (byte)b5};
 
 		byte[] i3Bytes = encodeInt(i3);
 		byte[] result = new byte[5 + i3Bytes.length];
@@ -230,14 +187,14 @@ public class VarLength {
 		res &= ~(0x80 << 21);
 		x = longBytes[pos++] & 0xff;
 		if ((x & 0x80) == 0) {
-			return (((long) x) << 28) | res;
+			return (((long)x) << 28) | res;
 		}
 
-		long resLong = (((long) (x & 0x7f)) << 28) | res;
+		long resLong = (((long)(x & 0x7f)) << 28) | res;
 		int remainLength = longBytes.length - pos;
 		byte[] remainBytes = new byte[remainLength];
 		System.arraycopy(longBytes, pos, remainBytes, 0, remainLength);
-		return (((long) decodeInt(remainBytes)) << 35) | resLong;
+		return (((long)decodeInt(remainBytes)) << 35) | resLong;
 	}
 
 	/**
@@ -248,7 +205,8 @@ public class VarLength {
 	public static int readVarInt(InputStream is) throws IOException {
 		Preconditions.checkNotNull(is);
 
-		int result = is.read(), x;
+		int result = is.read();
+		int x;
 		if (result == -1) {
 			throw new EOFException();
 		}
@@ -300,7 +258,8 @@ public class VarLength {
 	public static long readVarLong(InputStream is) throws IOException {
 		Preconditions.checkNotNull(is);
 
-		int result = is.read(), x;
+		int result = is.read();
+		int x;
 		if (result == -1) {
 			throw new EOFException();
 		}
@@ -340,10 +299,10 @@ public class VarLength {
 			throw new EOFException();
 		}
 		if ((x & 0x80) == 0) {
-			return (((long) x) << 28) | result;
+			return (((long)x) << 28) | result;
 		}
 
-		long resLong = (((long) (x & 0x7f)) << 28) | result;
-		return (((long) readVarInt(is)) << 35) | resLong;
+		long resLong = (((long)(x & 0x7f)) << 28) | result;
+		return (((long)readVarInt(is)) << 35) | resLong;
 	}
 }

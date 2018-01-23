@@ -8,7 +8,10 @@ import com.ugcs.common.util.Preconditions;
 /**
  * Provides utility methods for encoding and decoding values of different type into and from array of bytes.
  */
-public class BytesCodec {
+public final class BytesCodec {
+
+    private BytesCodec() {
+    }
 
 	/**
 	 * Encodes custom object using the provided {@link ObjectCodec} for this object.
@@ -16,7 +19,7 @@ public class BytesCodec {
 	 * @param objectCodec - an instance of {@link ObjectCodec}, that implements logic to encode this object.
 	 * @return <tt>null</tt>, if <tt>obj</tt> is <tt>null</tt>, encoded <tt>obj</tt> otherwise
 	 */
-	public static <T> byte[] encodeObject(T obj, ObjectCodec<T> objectCodec) {
+	public static byte[] encodeObject(Object obj, ObjectCodec objectCodec) {
 		if (obj == null) {
 			return null;
 		}
@@ -26,8 +29,8 @@ public class BytesCodec {
 
 		if (codecType >= SystemCodecTypes.RESERVED_RANGE_FROM && codecType <= SystemCodecTypes.RESERVED_RANGE_TO) {
 			throw new IllegalArgumentException(String.format(
-					"The provided codec object must have the type out of system codec range [%d; %d]!" +
-							"type of provided codec = %d",
+					"The provided codec object must have the type out of system codec range [%d; %d]!"
+                            + "type of provided codec = %d",
 					SystemCodecTypes.RESERVED_RANGE_FROM,
 					SystemCodecTypes.RESERVED_RANGE_TO,
 					codecType));
@@ -111,7 +114,7 @@ public class BytesCodec {
         if (value == null) {
             return null;
         }
-        return new byte[] {SystemCodecTypes.BOOLEAN_TYPE, (value ? (byte) 1 : (byte) 0)};
+        return new byte[] {SystemCodecTypes.BOOLEAN_TYPE, (value ? (byte)1 : (byte)0)};
     }
 
     /**
@@ -136,7 +139,7 @@ public class BytesCodec {
      * @param bytes encoded variable length byte array
      * @return decoded {@link Object} value
      */
-    public static Object decodeObject(byte[] bytes, ObjectCodecContext objectCodecCtx) {
+    public static Object decodeObject(byte[] bytes, ObjectCodecContext codecContext) {
         if (bytes == null) {
             return null;
         }
@@ -166,11 +169,11 @@ public class BytesCodec {
 				return new String(data, StandardCharsets.UTF_8);
 
             default:
-                Preconditions.checkNotNull(objectCodecCtx);
-				ObjectCodec objectCodec = objectCodecCtx.byType(type);
+                Preconditions.checkNotNull(codecContext);
+				ObjectCodec objectCodec = codecContext.byType(type);
 				if (objectCodec == null) {
-					throw new IllegalArgumentException(String.format("Value can not be decoded! " +
-							"No codec found for type {%d}", type));
+					throw new IllegalArgumentException(String.format("Value can not be decoded! "
+                            + "No codec found for type {%d}", type));
 				}
 				return objectCodec.decode(data);
         }
@@ -196,20 +199,20 @@ public class BytesCodec {
                 return VarLength.decodeInt(data);
 
             case SystemCodecTypes.LONG_TYPE:
-                return (int) VarLength.decodeLong(data);
+                return (int)VarLength.decodeLong(data);
 
             case SystemCodecTypes.DOUBLE_TYPE:
                 long longBits = VarLength.decodeLong(data);
                 double d = Double.longBitsToDouble(longBits);
-                return (int) d;
+                return (int)d;
 
             case SystemCodecTypes.FLOAT_TYPE:
                 int intBits = VarLength.decodeInt(data);
                 float f = Float.intBitsToFloat(intBits);
-                return (int) f;
+                return (int)f;
 
             case SystemCodecTypes.BOOLEAN_TYPE:
-                return (int) data[0];
+                return (int)data[0];
 
             case SystemCodecTypes.STRING_TYPE:
                 String str = new String(data, StandardCharsets.UTF_8);
@@ -242,20 +245,20 @@ public class BytesCodec {
                 return VarLength.decodeLong(data);
 
             case SystemCodecTypes.INTEGER_TYPE:
-                return (long) VarLength.decodeInt(data);
+                return (long)VarLength.decodeInt(data);
 
             case SystemCodecTypes.DOUBLE_TYPE:
                 long longBits = VarLength.decodeLong(data);
                 double d = Double.longBitsToDouble(longBits);
-                return (long) d;
+                return (long)d;
 
             case SystemCodecTypes.FLOAT_TYPE:
                 int intBits = VarLength.decodeInt(data);
                 float f = Float.intBitsToFloat(intBits);
-                return (long) f;
+                return (long)f;
 
             case SystemCodecTypes.BOOLEAN_TYPE:
-                return (long) data[0];
+                return (long)data[0];
 
             case SystemCodecTypes.STRING_TYPE:
                 String str = new String(data, StandardCharsets.UTF_8);
@@ -289,18 +292,18 @@ public class BytesCodec {
                 return Double.longBitsToDouble(longBits);
 
             case SystemCodecTypes.LONG_TYPE:
-                return (double) VarLength.decodeLong(data);
+                return (double)VarLength.decodeLong(data);
 
             case SystemCodecTypes.INTEGER_TYPE:
-                return (double) VarLength.decodeInt(data);
+                return (double)VarLength.decodeInt(data);
 
             case SystemCodecTypes.FLOAT_TYPE:
                 int intBits = VarLength.decodeInt(data);
                 float f = Float.intBitsToFloat(intBits);
-                return (double) f;
+                return (double)f;
 
             case SystemCodecTypes.BOOLEAN_TYPE:
-                return (double) data[0];
+                return (double)data[0];
 
             case SystemCodecTypes.STRING_TYPE:
                 String str = new String(data, StandardCharsets.UTF_8);
@@ -334,18 +337,18 @@ public class BytesCodec {
                 return Float.intBitsToFloat(intBits);
 
             case SystemCodecTypes.LONG_TYPE:
-                return (float) VarLength.decodeLong(data);
+                return (float)VarLength.decodeLong(data);
 
             case SystemCodecTypes.INTEGER_TYPE:
-                return (float) VarLength.decodeInt(data);
+                return (float)VarLength.decodeInt(data);
 
             case SystemCodecTypes.DOUBLE_TYPE:
                 long longBits = VarLength.decodeLong(data);
                 double d = Double.longBitsToDouble(longBits);
-                return (float) d;
+                return (float)d;
 
             case SystemCodecTypes.BOOLEAN_TYPE:
-                return (float) data[0];
+                return (float)data[0];
 
             case SystemCodecTypes.STRING_TYPE:
                 String str = new String(data, StandardCharsets.UTF_8);
@@ -375,7 +378,7 @@ public class BytesCodec {
 
         switch (type) {
             case SystemCodecTypes.BOOLEAN_TYPE:
-                return data[0] == (byte) 1;
+                return data[0] == (byte)1;
 
             case SystemCodecTypes.LONG_TYPE:
                 return VarLength.decodeLong(data) != 0L;
@@ -461,7 +464,8 @@ public class BytesCodec {
     private static void checkSize(byte[] bytes) {
         if (bytes.length < 1) {
             throw new IllegalArgumentException(
-                    String.format("The length of input byte array must be > 0. The actual length is {%s}.", bytes.length));
+                    String.format("The length of input byte array must be > 0. The actual length is {%s}.",
+                            bytes.length));
         }
     }
 }

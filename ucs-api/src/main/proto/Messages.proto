@@ -69,6 +69,7 @@ message LicensePermissionsDto {
 	repeated PlatformAndBooleanPairDto adsbTransponder = 15;
 	repeated string forbiddenAlgorithmCodes = 16;
 	required int32 maxImagesToProcess = 17;
+	required bool remoteVsmConnection = 18;
 }
 
 message PlatformAndBooleanPairDto {
@@ -469,6 +470,18 @@ message CountTelemetryResponse {
 	optional int64 tLogSize = 2;
 }
 
+message GetLocationPassingTimeRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required int64 fromTime = 3;
+	required int64 toTime = 4;
+	required Wgs84LocationDto location = 5;
+}
+
+message GetLocationPassingTimeResponse {
+	required int64 time = 1;
+}
+
 message GetVehicleTracksRequest {
 	required int32 clientId = 1;
 	required Vehicle vehicle = 2;
@@ -518,6 +531,8 @@ message GetVehicleLogRequest {
 	repeated Vehicle vehicles = 2;
 	optional int32 limit = 3 [default = 15];
 	optional SeverityLevel level = 4 [default = SL_INFORMATIONAL];
+	optional int64 fromTime = 5;
+	optional bool reverseOrder = 6 [default = false];
 }
 
 message GetVehicleLogResponse {
@@ -552,9 +567,20 @@ message UploadRouteRequest {
 	required Vehicle vehicle = 2;
 	required ProcessedRoute processedRoute = 3;
 	optional Action startAction = 4;
+	optional bool addFirstWaypoint = 5 [default = true];
 }
 
 message UploadRouteResponse {
+}
+
+message GetNativeRouteRequest {
+	required int32 clientId = 1;
+	required ProcessedRoute processedRoute = 2;
+	required VehicleProfile vehicleProfile = 3;
+}
+
+message GetNativeRouteResponse {
+	required bytes nativeRoute = 1;
 }
 
 message GetAdsbBulbStatusRequest {
@@ -785,6 +811,60 @@ message GetCapabilitiesRequest {
 
 message GetCapabilitiesResponse {
 	required bool utm = 1 [default = false];
+}
+
+message GetPolygonAreaRequest {
+	required int32 clientId = 1;
+	repeated Wgs84LocationDto points = 2;
+}
+
+message GetPolygonAreaResponse {
+	required double area = 1;
+}
+
+// Route transformations
+
+message SplitRouteBySegmentsRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	repeated int32 segmentIndices = 3;
+	required double overshoot = 4 [default = 10.0];
+}
+
+message SplitRouteBySegmentsResponse {
+	repeated Route parts = 1;
+}
+
+message SplitRouteByDistanceRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required double distance = 4;
+	required double tolerance = 5 [default = 10.0];
+	required double overshoot = 6 [default = 10.0];
+	required int32 limit = 7 [default = 2];
+}
+
+message SplitRouteByDistanceResponse {
+	repeated Route parts = 1;
+}
+
+message JoinRouteRequest {
+	 required int32 clientId = 1;
+	 repeated Route parts = 2;
+	 required bool mergeEndpoints = 3 [default = true];
+}
+
+message JoinRouteResponse {
+	required Route route = 1;
+}
+
+message ReconstructRouteRequest {
+	required int32 clientId = 1;
+	required ProcessedRoute processedRoute = 2;
+}
+
+message ReconstructRouteResponse {
+	required Route route = 1;
 }
 
 // Operations

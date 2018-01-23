@@ -15,7 +15,11 @@ import com.ugcs.ucs.proto.DomainProto.Subsystem;
 import com.ugcs.ucs.proto.DomainProto.Value;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
 
-public class SendCommand {
+public final class SendCommand {
+
+	private SendCommand() {
+	}
+
 	public static void main(String[] args) {
 		String vehicleName = null;
 		String commandCode = null;
@@ -79,9 +83,10 @@ public class SendCommand {
 			System.err.println("");
 			System.err.println("Examples:");
 			System.err.println("");
-			System.err.println("\tSendCommand -c arm \"EMU-COPTER-17\"");
-			System.err.println("\tSendCommand -c guided \"EMU-COPTER-17\"");
-			System.err.println("\tSendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 \"EMU-COPTER-17\"");
+			System.err.println("\tSendCommand -c arm \"EMU-101\"");
+			System.err.println("\tSendCommand -c guided \"EMU-101\"");
+			System.err.println("\tSendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 "
+					+ "-a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 \"EMU-101\"");
 			System.exit(1);
 		} else {
 			try {

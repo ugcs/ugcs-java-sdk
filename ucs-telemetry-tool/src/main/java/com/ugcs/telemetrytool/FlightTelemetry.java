@@ -6,6 +6,7 @@ import java.util.List;
 import com.ugcs.common.util.Preconditions;
 
 public class FlightTelemetry {
+
 	private final List<TelemetryRecord> records;
 
 	public FlightTelemetry() {

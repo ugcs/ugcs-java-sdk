@@ -16,17 +16,18 @@ import com.ugcs.messaging.api.MessageSessionEvent;
 import com.ugcs.messaging.api.MessageSessionListener;
 
 class MinaAdapter extends IoHandlerAdapter {
+
 	private static final Logger log = LoggerFactory.getLogger(MinaAdapter.class);
 	private final List<MessageSessionListener> sessionListeners = new CopyOnWriteArrayList<>();
 	
 	/* listeners */
-	
+
 	public void addSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 
 		sessionListeners.add(sessionListener);
 	}
-	
+
 	public void removeSessionListener(MessageSessionListener sessionListener) {
 		Objects.requireNonNull(sessionListener);
 
@@ -34,13 +35,13 @@ class MinaAdapter extends IoHandlerAdapter {
 	}
 	
 	/* message session */
-	
+
 	private MinaMessageSession createMessageSession(IoSession session) {
 		Objects.requireNonNull(session);
-		
+
 		MinaMessageSession messageSession = null;
 		synchronized (session) {
-			messageSession = (MinaMessageSession) session.getAttribute("messageSession");
+			messageSession = (MinaMessageSession)session.getAttribute("messageSession");
 			if (messageSession == null) {
 				messageSession = new MinaMessageSession(session);
 				session.setAttribute("messageSession", messageSession);
@@ -55,21 +56,21 @@ class MinaAdapter extends IoHandlerAdapter {
 				session.getRemoteAddress());
 		return messageSession;
 	}
-	
+
 	public MinaMessageSession getMessageSession(IoSession session) {
 		Objects.requireNonNull(session);
 
 		synchronized (session) {
-			return (MinaMessageSession) session.getAttribute("messageSession");
+			return (MinaMessageSession)session.getAttribute("messageSession");
 		}
 	}
 
 	private void closeMessageSession(IoSession session) {
 		Objects.requireNonNull(session);
-		
+
 		boolean closePending = false;
 		synchronized (session) {
-			closePending = (boolean) session.getAttribute("closePending", false);
+			closePending = (boolean)session.getAttribute("closePending", false);
 			if (!closePending)
 				session.setAttribute("closePending", true);
 		}
@@ -82,7 +83,7 @@ class MinaAdapter extends IoHandlerAdapter {
 			MinaMessageSession messageSession = getMessageSession(session);
 			// notify session to interrupt pending listeners
 			messageSession.cancelAllListeners();
-			
+
 			MessageSessionEvent sessionEvent = new MessageSessionEvent(this, messageSession);
 			for (MessageSessionListener listener : sessionListeners)
 				listener.sessionClosed(sessionEvent);
@@ -90,15 +91,15 @@ class MinaAdapter extends IoHandlerAdapter {
 	}
 	
 	/* Mina handlers */
-	
+
 	@Override
 	public void messageReceived(IoSession session, Object message) throws Exception {
 		Objects.requireNonNull(session);
-		
+
 		MinaMessageSession messageSession = getMessageSession(session);
 		messageSession.messageReceived(message);
 	}
-	
+
 	@Override
 	public void sessionCreated(IoSession session) throws Exception {
 		Objects.requireNonNull(session);
@@ -119,7 +120,7 @@ class MinaAdapter extends IoHandlerAdapter {
 		for (MessageSessionListener listener : sessionListeners)
 			listener.sessionIdle(sessionEvent);
 	}
-	
+
 	@Override
 	public void sessionClosed(IoSession session) throws Exception {
 		Objects.requireNonNull(session);
@@ -138,7 +139,7 @@ class MinaAdapter extends IoHandlerAdapter {
 				this, messageSession, cause);
 		for (MessageSessionListener listener : sessionListeners)
 			listener.sessionError(sessionEvent);
-		
+
 		closeMessageSession(session);
 	}
 }

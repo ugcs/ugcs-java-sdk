@@ -19,7 +19,7 @@ Available via the [JitPack build](https://jitpack.io/#UgCS/ugcs-java-sdk):
 <dependency>
     <groupId>com.github.UgCS</groupId>
     <artifactId>ugcs-java-sdk</artifactId>
-    <version>2.8.1</version>
+    <version>2.13</version>
 </dependency>
 ```
 
@@ -95,9 +95,9 @@ SendCommand -c commandCode [-a commandArgument=value]* vehicleName
 
 Examples:
 
-        SendCommand -c arm "EMU-COPTER-17"
-        SendCommand -c guided "EMU-COPTER-17"
-        SendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 "EMU-COPTER-17"
+        SendCommand -c arm "EMU-101"
+        SendCommand -c guided "EMU-101"
+        SendCommand -c waypoint -a latitude=0.99442 -a longitude=0.42015 -a altitude_agl=100.0 -a ground_speed=5.0 -a vertical_speed=1.0 "EMU-101"
 ```
 
 ## [Route upload example](https://github.com/ugcs/ugcs-java-sdk/blob/master/ucs-client/src/main/java/com/ugcs/ucs/client/samples/UploadSingleWaypointRoute.java)
@@ -117,5 +117,5 @@ UploadSingleWaypointRoute -w waypoint [-s speed] vehicleName
 
 Example:
 
-        UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EMU-COPTER-17"
+        UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EMU-101"
 ```

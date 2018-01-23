@@ -33,7 +33,8 @@ public class BooleanValue extends AbstractValue {
 
 	@Override
 	public double doubleValue() {
-		return value ? 1. : 0.;	}
+		return value ? 1. : 0.;
+	}
 
 	@Override
 	public String stringValue() {
@@ -41,11 +42,16 @@ public class BooleanValue extends AbstractValue {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
+	public Object objectValue() {
+		return value;
+	}
+
+	@Override
+	public boolean equals(Object other) {
+		if (this == other)
 			return true;
-		if (!(obj instanceof AbstractValue))
+		if (!(other instanceof AbstractValue))
 			return false;
-		return this.value == ((AbstractValue) obj).booleanValue();
+		return this.value == ((AbstractValue)other).booleanValue();
 	}
 }

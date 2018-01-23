@@ -3,6 +3,7 @@ package com.ugcs.telemetrytool;
 import com.ugcs.common.util.Preconditions;
 
 public class TelemetryRecord {
+
 	private final TelemetryKey key;
 	private final TelemetryValue value;
 

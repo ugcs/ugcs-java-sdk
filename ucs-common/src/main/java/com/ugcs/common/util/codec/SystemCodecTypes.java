@@ -13,6 +13,5 @@ public final class SystemCodecTypes {
 	public static final byte STRING_TYPE = 6;
 
 	private SystemCodecTypes() {
-		throw new AssertionError("SystemCodecTypes can not be manually instantiated!");
 	}
 }
