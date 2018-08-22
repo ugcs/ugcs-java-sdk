@@ -22141,6 +22141,703 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:ProfileCameraDto)
   }
   
+  public interface VehicleCommandsDtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // optional .Vehicle vehicle = 1;
+    boolean hasVehicle();
+    com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle();
+    com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder();
+    
+    // repeated .Command commands = 2;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.Command> 
+        getCommandsList();
+    com.ugcs.ucs.proto.DomainProto.Command getCommands(int index);
+    int getCommandsCount();
+    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> 
+        getCommandsOrBuilderList();
+    com.ugcs.ucs.proto.DomainProto.CommandOrBuilder getCommandsOrBuilder(
+        int index);
+  }
+  public static final class VehicleCommandsDto extends
+      com.google.protobuf.GeneratedMessage
+      implements VehicleCommandsDtoOrBuilder {
+    // Use VehicleCommandsDto.newBuilder() to construct.
+    private VehicleCommandsDto(Builder builder) {
+      super(builder);
+    }
+    private VehicleCommandsDto(boolean noInit) {}
+    
+    private static final VehicleCommandsDto defaultInstance;
+    public static VehicleCommandsDto getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public VehicleCommandsDto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleCommandsDto_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleCommandsDto_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // optional .Vehicle vehicle = 1;
+    public static final int VEHICLE_FIELD_NUMBER = 1;
+    private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_;
+    public boolean hasVehicle() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+      return vehicle_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+      return vehicle_;
+    }
+    
+    // repeated .Command commands = 2;
+    public static final int COMMANDS_FIELD_NUMBER = 2;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.Command> commands_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.Command> getCommandsList() {
+      return commands_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> 
+        getCommandsOrBuilderList() {
+      return commands_;
+    }
+    public int getCommandsCount() {
+      return commands_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.Command getCommands(int index) {
+      return commands_.get(index);
+    }
+    public com.ugcs.ucs.proto.DomainProto.CommandOrBuilder getCommandsOrBuilder(
+        int index) {
+      return commands_.get(index);
+    }
+    
+    private void initFields() {
+      vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      commands_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeMessage(1, vehicle_);
+      }
+      for (int i = 0; i < commands_.size(); i++) {
+        output.writeMessage(2, commands_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, vehicle_);
+      }
+      for (int i = 0; i < commands_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, commands_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleCommandsDto_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_VehicleCommandsDto_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getVehicleFieldBuilder();
+          getCommandsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (commandsBuilder_ == null) {
+          commands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          commandsBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto build() {
+        com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto result = new com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        if (vehicleBuilder_ == null) {
+          result.vehicle_ = vehicle_;
+        } else {
+          result.vehicle_ = vehicleBuilder_.build();
+        }
+        if (commandsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            commands_ = java.util.Collections.unmodifiableList(commands_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.commands_ = commands_;
+        } else {
+          result.commands_ = commandsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.getDefaultInstance()) return this;
+        if (other.hasVehicle()) {
+          mergeVehicle(other.getVehicle());
+        }
+        if (commandsBuilder_ == null) {
+          if (!other.commands_.isEmpty()) {
+            if (commands_.isEmpty()) {
+              commands_ = other.commands_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureCommandsIsMutable();
+              commands_.addAll(other.commands_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.commands_.isEmpty()) {
+            if (commandsBuilder_.isEmpty()) {
+              commandsBuilder_.dispose();
+              commandsBuilder_ = null;
+              commands_ = other.commands_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              commandsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getCommandsFieldBuilder() : null;
+            } else {
+              commandsBuilder_.addAllMessages(other.commands_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.ugcs.ucs.proto.DomainProto.Vehicle.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder();
+              if (hasVehicle()) {
+                subBuilder.mergeFrom(getVehicle());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setVehicle(subBuilder.buildPartial());
+              break;
+            }
+            case 18: {
+              com.ugcs.ucs.proto.DomainProto.Command.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Command.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addCommands(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // optional .Vehicle vehicle = 1;
+      private com.ugcs.ucs.proto.DomainProto.Vehicle vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> vehicleBuilder_;
+      public boolean hasVehicle() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle getVehicle() {
+        if (vehicleBuilder_ == null) {
+          return vehicle_;
+        } else {
+          return vehicleBuilder_.getMessage();
+        }
+      }
+      public Builder setVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vehicle_ = value;
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder setVehicle(
+          com.ugcs.ucs.proto.DomainProto.Vehicle.Builder builderForValue) {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = builderForValue.build();
+          onChanged();
+        } else {
+          vehicleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder mergeVehicle(com.ugcs.ucs.proto.DomainProto.Vehicle value) {
+        if (vehicleBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              vehicle_ != com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance()) {
+            vehicle_ =
+              com.ugcs.ucs.proto.DomainProto.Vehicle.newBuilder(vehicle_).mergeFrom(value).buildPartial();
+          } else {
+            vehicle_ = value;
+          }
+          onChanged();
+        } else {
+          vehicleBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      public Builder clearVehicle() {
+        if (vehicleBuilder_ == null) {
+          vehicle_ = com.ugcs.ucs.proto.DomainProto.Vehicle.getDefaultInstance();
+          onChanged();
+        } else {
+          vehicleBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Vehicle.Builder getVehicleBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getVehicleFieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder getVehicleOrBuilder() {
+        if (vehicleBuilder_ != null) {
+          return vehicleBuilder_.getMessageOrBuilder();
+        } else {
+          return vehicle_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder> 
+          getVehicleFieldBuilder() {
+        if (vehicleBuilder_ == null) {
+          vehicleBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Vehicle, com.ugcs.ucs.proto.DomainProto.Vehicle.Builder, com.ugcs.ucs.proto.DomainProto.VehicleOrBuilder>(
+                  vehicle_,
+                  getParentForChildren(),
+                  isClean());
+          vehicle_ = null;
+        }
+        return vehicleBuilder_;
+      }
+      
+      // repeated .Command commands = 2;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.Command> commands_ =
+        java.util.Collections.emptyList();
+      private void ensureCommandsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          commands_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.Command>(commands_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Command, com.ugcs.ucs.proto.DomainProto.Command.Builder, com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> commandsBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Command> getCommandsList() {
+        if (commandsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(commands_);
+        } else {
+          return commandsBuilder_.getMessageList();
+        }
+      }
+      public int getCommandsCount() {
+        if (commandsBuilder_ == null) {
+          return commands_.size();
+        } else {
+          return commandsBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.Command getCommands(int index) {
+        if (commandsBuilder_ == null) {
+          return commands_.get(index);
+        } else {
+          return commandsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setCommands(
+          int index, com.ugcs.ucs.proto.DomainProto.Command value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.set(index, value);
+          onChanged();
+        } else {
+          commandsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setCommands(
+          int index, com.ugcs.ucs.proto.DomainProto.Command.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCommands(com.ugcs.ucs.proto.DomainProto.Command value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.add(value);
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addCommands(
+          int index, com.ugcs.ucs.proto.DomainProto.Command value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.add(index, value);
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addCommands(
+          com.ugcs.ucs.proto.DomainProto.Command.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.add(builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCommands(
+          int index, com.ugcs.ucs.proto.DomainProto.Command.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllCommands(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.Command> values) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          super.addAll(values, commands_);
+          onChanged();
+        } else {
+          commandsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearCommands() {
+        if (commandsBuilder_ == null) {
+          commands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          commandsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeCommands(int index) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.remove(index);
+          onChanged();
+        } else {
+          commandsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.Command.Builder getCommandsBuilder(
+          int index) {
+        return getCommandsFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.DomainProto.CommandOrBuilder getCommandsOrBuilder(
+          int index) {
+        if (commandsBuilder_ == null) {
+          return commands_.get(index);  } else {
+          return commandsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> 
+           getCommandsOrBuilderList() {
+        if (commandsBuilder_ != null) {
+          return commandsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(commands_);
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.Command.Builder addCommandsBuilder() {
+        return getCommandsFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.DomainProto.Command.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.DomainProto.Command.Builder addCommandsBuilder(
+          int index) {
+        return getCommandsFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.DomainProto.Command.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Command.Builder> 
+           getCommandsBuilderList() {
+        return getCommandsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.Command, com.ugcs.ucs.proto.DomainProto.Command.Builder, com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> 
+          getCommandsFieldBuilder() {
+        if (commandsBuilder_ == null) {
+          commandsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.Command, com.ugcs.ucs.proto.DomainProto.Command.Builder, com.ugcs.ucs.proto.DomainProto.CommandOrBuilder>(
+                  commands_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          commands_ = null;
+        }
+        return commandsBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:VehicleCommandsDto)
+    }
+    
+    static {
+      defaultInstance = new VehicleCommandsDto(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:VehicleCommandsDto)
+  }
+  
   public interface ErrorOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -38548,6 +39245,2212 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:ImportTelemetryFromXmlResponse)
   }
   
+  public interface GetTrialSubscriptionsPlanRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int32 clientId = 1;
+    boolean hasClientId();
+    int getClientId();
+  }
+  public static final class GetTrialSubscriptionsPlanRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements GetTrialSubscriptionsPlanRequestOrBuilder {
+    // Use GetTrialSubscriptionsPlanRequest.newBuilder() to construct.
+    private GetTrialSubscriptionsPlanRequest(Builder builder) {
+      super(builder);
+    }
+    private GetTrialSubscriptionsPlanRequest(boolean noInit) {}
+    
+    private static final GetTrialSubscriptionsPlanRequest defaultInstance;
+    public static GetTrialSubscriptionsPlanRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetTrialSubscriptionsPlanRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanRequest_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int32 clientId = 1;
+    public static final int CLIENTID_FIELD_NUMBER = 1;
+    private int clientId_;
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getClientId() {
+      return clientId_;
+    }
+    
+    private void initFields() {
+      clientId_ = 0;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, clientId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, clientId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        clientId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest result = new com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.clientId_ = clientId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.getDefaultInstance()) return this;
+        if (other.hasClientId()) {
+          setClientId(other.getClientId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasClientId()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              clientId_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 clientId = 1;
+      private int clientId_ ;
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getClientId() {
+        return clientId_;
+      }
+      public Builder setClientId(int value) {
+        bitField0_ |= 0x00000001;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetTrialSubscriptionsPlanRequest)
+    }
+    
+    static {
+      defaultInstance = new GetTrialSubscriptionsPlanRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetTrialSubscriptionsPlanRequest)
+  }
+  
+  public interface GetTrialSubscriptionsPlanResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // repeated .SubscriptionPlan subscriptionPlans = 1;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> 
+        getSubscriptionPlansList();
+    com.ugcs.ucs.proto.DomainProto.SubscriptionPlan getSubscriptionPlans(int index);
+    int getSubscriptionPlansCount();
+    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder> 
+        getSubscriptionPlansOrBuilderList();
+    com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder getSubscriptionPlansOrBuilder(
+        int index);
+  }
+  public static final class GetTrialSubscriptionsPlanResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements GetTrialSubscriptionsPlanResponseOrBuilder {
+    // Use GetTrialSubscriptionsPlanResponse.newBuilder() to construct.
+    private GetTrialSubscriptionsPlanResponse(Builder builder) {
+      super(builder);
+    }
+    private GetTrialSubscriptionsPlanResponse(boolean noInit) {}
+    
+    private static final GetTrialSubscriptionsPlanResponse defaultInstance;
+    public static GetTrialSubscriptionsPlanResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetTrialSubscriptionsPlanResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanResponse_fieldAccessorTable;
+    }
+    
+    // repeated .SubscriptionPlan subscriptionPlans = 1;
+    public static final int SUBSCRIPTIONPLANS_FIELD_NUMBER = 1;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> subscriptionPlans_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> getSubscriptionPlansList() {
+      return subscriptionPlans_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder> 
+        getSubscriptionPlansOrBuilderList() {
+      return subscriptionPlans_;
+    }
+    public int getSubscriptionPlansCount() {
+      return subscriptionPlans_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.SubscriptionPlan getSubscriptionPlans(int index) {
+      return subscriptionPlans_.get(index);
+    }
+    public com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder getSubscriptionPlansOrBuilder(
+        int index) {
+      return subscriptionPlans_.get(index);
+    }
+    
+    private void initFields() {
+      subscriptionPlans_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < subscriptionPlans_.size(); i++) {
+        output.writeMessage(1, subscriptionPlans_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      for (int i = 0; i < subscriptionPlans_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, subscriptionPlans_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialSubscriptionsPlanResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSubscriptionPlansFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        if (subscriptionPlansBuilder_ == null) {
+          subscriptionPlans_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          subscriptionPlansBuilder_.clear();
+        }
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse result = new com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (subscriptionPlansBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            subscriptionPlans_ = java.util.Collections.unmodifiableList(subscriptionPlans_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.subscriptionPlans_ = subscriptionPlans_;
+        } else {
+          result.subscriptionPlans_ = subscriptionPlansBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.getDefaultInstance()) return this;
+        if (subscriptionPlansBuilder_ == null) {
+          if (!other.subscriptionPlans_.isEmpty()) {
+            if (subscriptionPlans_.isEmpty()) {
+              subscriptionPlans_ = other.subscriptionPlans_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureSubscriptionPlansIsMutable();
+              subscriptionPlans_.addAll(other.subscriptionPlans_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.subscriptionPlans_.isEmpty()) {
+            if (subscriptionPlansBuilder_.isEmpty()) {
+              subscriptionPlansBuilder_.dispose();
+              subscriptionPlansBuilder_ = null;
+              subscriptionPlans_ = other.subscriptionPlans_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              subscriptionPlansBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getSubscriptionPlansFieldBuilder() : null;
+            } else {
+              subscriptionPlansBuilder_.addAllMessages(other.subscriptionPlans_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addSubscriptionPlans(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // repeated .SubscriptionPlan subscriptionPlans = 1;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> subscriptionPlans_ =
+        java.util.Collections.emptyList();
+      private void ensureSubscriptionPlansIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          subscriptionPlans_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan>(subscriptionPlans_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SubscriptionPlan, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder, com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder> subscriptionPlansBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> getSubscriptionPlansList() {
+        if (subscriptionPlansBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(subscriptionPlans_);
+        } else {
+          return subscriptionPlansBuilder_.getMessageList();
+        }
+      }
+      public int getSubscriptionPlansCount() {
+        if (subscriptionPlansBuilder_ == null) {
+          return subscriptionPlans_.size();
+        } else {
+          return subscriptionPlansBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.SubscriptionPlan getSubscriptionPlans(int index) {
+        if (subscriptionPlansBuilder_ == null) {
+          return subscriptionPlans_.get(index);
+        } else {
+          return subscriptionPlansBuilder_.getMessage(index);
+        }
+      }
+      public Builder setSubscriptionPlans(
+          int index, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan value) {
+        if (subscriptionPlansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.set(index, value);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setSubscriptionPlans(
+          int index, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder builderForValue) {
+        if (subscriptionPlansBuilder_ == null) {
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addSubscriptionPlans(com.ugcs.ucs.proto.DomainProto.SubscriptionPlan value) {
+        if (subscriptionPlansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.add(value);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addSubscriptionPlans(
+          int index, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan value) {
+        if (subscriptionPlansBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.add(index, value);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addSubscriptionPlans(
+          com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder builderForValue) {
+        if (subscriptionPlansBuilder_ == null) {
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.add(builderForValue.build());
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addSubscriptionPlans(
+          int index, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder builderForValue) {
+        if (subscriptionPlansBuilder_ == null) {
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllSubscriptionPlans(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.SubscriptionPlan> values) {
+        if (subscriptionPlansBuilder_ == null) {
+          ensureSubscriptionPlansIsMutable();
+          super.addAll(values, subscriptionPlans_);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearSubscriptionPlans() {
+        if (subscriptionPlansBuilder_ == null) {
+          subscriptionPlans_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeSubscriptionPlans(int index) {
+        if (subscriptionPlansBuilder_ == null) {
+          ensureSubscriptionPlansIsMutable();
+          subscriptionPlans_.remove(index);
+          onChanged();
+        } else {
+          subscriptionPlansBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder getSubscriptionPlansBuilder(
+          int index) {
+        return getSubscriptionPlansFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder getSubscriptionPlansOrBuilder(
+          int index) {
+        if (subscriptionPlansBuilder_ == null) {
+          return subscriptionPlans_.get(index);  } else {
+          return subscriptionPlansBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder> 
+           getSubscriptionPlansOrBuilderList() {
+        if (subscriptionPlansBuilder_ != null) {
+          return subscriptionPlansBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(subscriptionPlans_);
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder addSubscriptionPlansBuilder() {
+        return getSubscriptionPlansFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder addSubscriptionPlansBuilder(
+          int index) {
+        return getSubscriptionPlansFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder> 
+           getSubscriptionPlansBuilderList() {
+        return getSubscriptionPlansFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.SubscriptionPlan, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder, com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder> 
+          getSubscriptionPlansFieldBuilder() {
+        if (subscriptionPlansBuilder_ == null) {
+          subscriptionPlansBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.SubscriptionPlan, com.ugcs.ucs.proto.DomainProto.SubscriptionPlan.Builder, com.ugcs.ucs.proto.DomainProto.SubscriptionPlanOrBuilder>(
+                  subscriptionPlans_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          subscriptionPlans_ = null;
+        }
+        return subscriptionPlansBuilder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetTrialSubscriptionsPlanResponse)
+    }
+    
+    static {
+      defaultInstance = new GetTrialSubscriptionsPlanResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetTrialSubscriptionsPlanResponse)
+  }
+  
+  public interface GetTrialRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int32 clientId = 1;
+    boolean hasClientId();
+    int getClientId();
+    
+    // optional string firstName = 2;
+    boolean hasFirstName();
+    String getFirstName();
+    
+    // optional string lastName = 3;
+    boolean hasLastName();
+    String getLastName();
+    
+    // required string email = 4;
+    boolean hasEmail();
+    String getEmail();
+    
+    // optional string country = 5;
+    boolean hasCountry();
+    String getCountry();
+    
+    // required string subscriptionPlan = 6;
+    boolean hasSubscriptionPlan();
+    String getSubscriptionPlan();
+    
+    // optional string companyName = 7;
+    boolean hasCompanyName();
+    String getCompanyName();
+  }
+  public static final class GetTrialRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements GetTrialRequestOrBuilder {
+    // Use GetTrialRequest.newBuilder() to construct.
+    private GetTrialRequest(Builder builder) {
+      super(builder);
+    }
+    private GetTrialRequest(boolean noInit) {}
+    
+    private static final GetTrialRequest defaultInstance;
+    public static GetTrialRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetTrialRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialRequest_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int32 clientId = 1;
+    public static final int CLIENTID_FIELD_NUMBER = 1;
+    private int clientId_;
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getClientId() {
+      return clientId_;
+    }
+    
+    // optional string firstName = 2;
+    public static final int FIRSTNAME_FIELD_NUMBER = 2;
+    private java.lang.Object firstName_;
+    public boolean hasFirstName() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getFirstName() {
+      java.lang.Object ref = firstName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          firstName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getFirstNameBytes() {
+      java.lang.Object ref = firstName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        firstName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string lastName = 3;
+    public static final int LASTNAME_FIELD_NUMBER = 3;
+    private java.lang.Object lastName_;
+    public boolean hasLastName() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public String getLastName() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          lastName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getLastNameBytes() {
+      java.lang.Object ref = lastName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        lastName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string email = 4;
+    public static final int EMAIL_FIELD_NUMBER = 4;
+    private java.lang.Object email_;
+    public boolean hasEmail() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          email_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string country = 5;
+    public static final int COUNTRY_FIELD_NUMBER = 5;
+    private java.lang.Object country_;
+    public boolean hasCountry() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public String getCountry() {
+      java.lang.Object ref = country_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          country_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCountryBytes() {
+      java.lang.Object ref = country_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        country_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // required string subscriptionPlan = 6;
+    public static final int SUBSCRIPTIONPLAN_FIELD_NUMBER = 6;
+    private java.lang.Object subscriptionPlan_;
+    public boolean hasSubscriptionPlan() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public String getSubscriptionPlan() {
+      java.lang.Object ref = subscriptionPlan_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          subscriptionPlan_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getSubscriptionPlanBytes() {
+      java.lang.Object ref = subscriptionPlan_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        subscriptionPlan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional string companyName = 7;
+    public static final int COMPANYNAME_FIELD_NUMBER = 7;
+    private java.lang.Object companyName_;
+    public boolean hasCompanyName() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public String getCompanyName() {
+      java.lang.Object ref = companyName_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          companyName_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getCompanyNameBytes() {
+      java.lang.Object ref = companyName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        companyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      clientId_ = 0;
+      firstName_ = "";
+      lastName_ = "";
+      email_ = "";
+      country_ = "";
+      subscriptionPlan_ = "";
+      companyName_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasEmail()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSubscriptionPlan()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getFirstNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getLastNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getCountryBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getSubscriptionPlanBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeBytes(7, getCompanyNameBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getFirstNameBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getLastNameBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getEmailBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getCountryBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getSubscriptionPlanBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(7, getCompanyNameBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetTrialRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetTrialRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        clientId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        firstName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        lastName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        email_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        country_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        subscriptionPlan_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        companyName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000040);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetTrialRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialRequest result = new com.ugcs.ucs.proto.MessagesProto.GetTrialRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.firstName_ = firstName_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.lastName_ = lastName_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.email_ = email_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.country_ = country_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.subscriptionPlan_ = subscriptionPlan_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.companyName_ = companyName_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetTrialRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetTrialRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetTrialRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.getDefaultInstance()) return this;
+        if (other.hasClientId()) {
+          setClientId(other.getClientId());
+        }
+        if (other.hasFirstName()) {
+          setFirstName(other.getFirstName());
+        }
+        if (other.hasLastName()) {
+          setLastName(other.getLastName());
+        }
+        if (other.hasEmail()) {
+          setEmail(other.getEmail());
+        }
+        if (other.hasCountry()) {
+          setCountry(other.getCountry());
+        }
+        if (other.hasSubscriptionPlan()) {
+          setSubscriptionPlan(other.getSubscriptionPlan());
+        }
+        if (other.hasCompanyName()) {
+          setCompanyName(other.getCompanyName());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasClientId()) {
+          
+          return false;
+        }
+        if (!hasEmail()) {
+          
+          return false;
+        }
+        if (!hasSubscriptionPlan()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              clientId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              firstName_ = input.readBytes();
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              lastName_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              email_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              country_ = input.readBytes();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              subscriptionPlan_ = input.readBytes();
+              break;
+            }
+            case 58: {
+              bitField0_ |= 0x00000040;
+              companyName_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 clientId = 1;
+      private int clientId_ ;
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getClientId() {
+        return clientId_;
+      }
+      public Builder setClientId(int value) {
+        bitField0_ |= 0x00000001;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string firstName = 2;
+      private java.lang.Object firstName_ = "";
+      public boolean hasFirstName() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getFirstName() {
+        java.lang.Object ref = firstName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          firstName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setFirstName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        firstName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearFirstName() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        firstName_ = getDefaultInstance().getFirstName();
+        onChanged();
+        return this;
+      }
+      void setFirstName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        firstName_ = value;
+        onChanged();
+      }
+      
+      // optional string lastName = 3;
+      private java.lang.Object lastName_ = "";
+      public boolean hasLastName() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getLastName() {
+        java.lang.Object ref = lastName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          lastName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setLastName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        lastName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearLastName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        lastName_ = getDefaultInstance().getLastName();
+        onChanged();
+        return this;
+      }
+      void setLastName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        lastName_ = value;
+        onChanged();
+      }
+      
+      // required string email = 4;
+      private java.lang.Object email_ = "";
+      public boolean hasEmail() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setEmail(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        email_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearEmail() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        email_ = getDefaultInstance().getEmail();
+        onChanged();
+        return this;
+      }
+      void setEmail(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000008;
+        email_ = value;
+        onChanged();
+      }
+      
+      // optional string country = 5;
+      private java.lang.Object country_ = "";
+      public boolean hasCountry() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public String getCountry() {
+        java.lang.Object ref = country_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          country_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCountry(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        country_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCountry() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        country_ = getDefaultInstance().getCountry();
+        onChanged();
+        return this;
+      }
+      void setCountry(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000010;
+        country_ = value;
+        onChanged();
+      }
+      
+      // required string subscriptionPlan = 6;
+      private java.lang.Object subscriptionPlan_ = "";
+      public boolean hasSubscriptionPlan() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public String getSubscriptionPlan() {
+        java.lang.Object ref = subscriptionPlan_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          subscriptionPlan_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setSubscriptionPlan(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        subscriptionPlan_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearSubscriptionPlan() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        subscriptionPlan_ = getDefaultInstance().getSubscriptionPlan();
+        onChanged();
+        return this;
+      }
+      void setSubscriptionPlan(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000020;
+        subscriptionPlan_ = value;
+        onChanged();
+      }
+      
+      // optional string companyName = 7;
+      private java.lang.Object companyName_ = "";
+      public boolean hasCompanyName() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public String getCompanyName() {
+        java.lang.Object ref = companyName_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          companyName_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setCompanyName(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
+        companyName_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearCompanyName() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        companyName_ = getDefaultInstance().getCompanyName();
+        onChanged();
+        return this;
+      }
+      void setCompanyName(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000040;
+        companyName_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetTrialRequest)
+    }
+    
+    static {
+      defaultInstance = new GetTrialRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetTrialRequest)
+  }
+  
+  public interface GetTrialResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required string status = 1;
+    boolean hasStatus();
+    String getStatus();
+  }
+  public static final class GetTrialResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements GetTrialResponseOrBuilder {
+    // Use GetTrialResponse.newBuilder() to construct.
+    private GetTrialResponse(Builder builder) {
+      super(builder);
+    }
+    private GetTrialResponse(boolean noInit) {}
+    
+    private static final GetTrialResponse defaultInstance;
+    public static GetTrialResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public GetTrialResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialResponse_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required string status = 1;
+    public static final int STATUS_FIELD_NUMBER = 1;
+    private java.lang.Object status_;
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          status_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    private void initFields() {
+      status_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasStatus()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getStatusBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getStatusBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.GetTrialResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.GetTrialResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.GetTrialResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_GetTrialResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        status_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.GetTrialResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.GetTrialResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.GetTrialResponse result = new com.ugcs.ucs.proto.MessagesProto.GetTrialResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.status_ = status_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.GetTrialResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.GetTrialResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetTrialResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.getDefaultInstance()) return this;
+        if (other.hasStatus()) {
+          setStatus(other.getStatus());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasStatus()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              status_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required string status = 1;
+      private java.lang.Object status_ = "";
+      public boolean hasStatus() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setStatus(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        status_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearStatus() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        status_ = getDefaultInstance().getStatus();
+        onChanged();
+        return this;
+      }
+      void setStatus(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000001;
+        status_ = value;
+        onChanged();
+      }
+      
+      // @@protoc_insertion_point(builder_scope:GetTrialResponse)
+    }
+    
+    static {
+      defaultInstance = new GetTrialResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:GetTrialResponse)
+  }
+  
   public interface GetLineOfSightRequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -39777,6 +42680,11 @@ public final class MessagesProto {
     java.util.List<String> getRefreshExcludesList();
     int getRefreshExcludesCount();
     String getRefreshExcludes(int index);
+    
+    // repeated .NfzType types = 8;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.NfzType> getTypesList();
+    int getTypesCount();
+    com.ugcs.ucs.proto.DomainProto.NfzType getTypes(int index);
   }
   public static final class GetNfzListRequest extends
       com.google.protobuf.GeneratedMessage
@@ -39881,6 +42789,19 @@ public final class MessagesProto {
       return refreshExcludes_.get(index);
     }
     
+    // repeated .NfzType types = 8;
+    public static final int TYPES_FIELD_NUMBER = 8;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.NfzType> types_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.NfzType> getTypesList() {
+      return types_;
+    }
+    public int getTypesCount() {
+      return types_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.NfzType getTypes(int index) {
+      return types_.get(index);
+    }
+    
     private void initFields() {
       clientId_ = 0;
       minLatitude_ = 0D;
@@ -39889,6 +42810,7 @@ public final class MessagesProto {
       maxLongitude_ = 0D;
       refreshDependencies_ = false;
       refreshExcludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      types_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -39943,6 +42865,9 @@ public final class MessagesProto {
       for (int i = 0; i < refreshExcludes_.size(); i++) {
         output.writeBytes(7, refreshExcludes_.getByteString(i));
       }
+      for (int i = 0; i < types_.size(); i++) {
+        output.writeEnum(8, types_.get(i).getNumber());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -39984,6 +42909,15 @@ public final class MessagesProto {
         }
         size += dataSize;
         size += 1 * getRefreshExcludesList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < types_.size(); i++) {
+          dataSize += com.google.protobuf.CodedOutputStream
+            .computeEnumSizeNoTag(types_.get(i).getNumber());
+        }
+        size += dataSize;
+        size += 1 * types_.size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -40123,6 +43057,8 @@ public final class MessagesProto {
         bitField0_ = (bitField0_ & ~0x00000020);
         refreshExcludes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000040);
+        types_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
       
@@ -40191,6 +43127,11 @@ public final class MessagesProto {
           bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.refreshExcludes_ = refreshExcludes_;
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          types_ = java.util.Collections.unmodifiableList(types_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.types_ = types_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -40232,6 +43173,16 @@ public final class MessagesProto {
           } else {
             ensureRefreshExcludesIsMutable();
             refreshExcludes_.addAll(other.refreshExcludes_);
+          }
+          onChanged();
+        }
+        if (!other.types_.isEmpty()) {
+          if (types_.isEmpty()) {
+            types_ = other.types_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureTypesIsMutable();
+            types_.addAll(other.types_);
           }
           onChanged();
         }
@@ -40319,6 +43270,31 @@ public final class MessagesProto {
             case 58: {
               ensureRefreshExcludesIsMutable();
               refreshExcludes_.add(input.readBytes());
+              break;
+            }
+            case 64: {
+              int rawValue = input.readEnum();
+              com.ugcs.ucs.proto.DomainProto.NfzType value = com.ugcs.ucs.proto.DomainProto.NfzType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(8, rawValue);
+              } else {
+                addTypes(value);
+              }
+              break;
+            }
+            case 66: {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while(input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                com.ugcs.ucs.proto.DomainProto.NfzType value = com.ugcs.ucs.proto.DomainProto.NfzType.valueOf(rawValue);
+                if (value == null) {
+                  unknownFields.mergeVarintField(8, rawValue);
+                } else {
+                  addTypes(value);
+                }
+              }
+              input.popLimit(oldLimit);
               break;
             }
           }
@@ -40507,6 +43483,57 @@ public final class MessagesProto {
         ensureRefreshExcludesIsMutable();
         refreshExcludes_.add(value);
         onChanged();
+      }
+      
+      // repeated .NfzType types = 8;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.NfzType> types_ =
+        java.util.Collections.emptyList();
+      private void ensureTypesIsMutable() {
+        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+          types_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.NfzType>(types_);
+          bitField0_ |= 0x00000080;
+        }
+      }
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.NfzType> getTypesList() {
+        return java.util.Collections.unmodifiableList(types_);
+      }
+      public int getTypesCount() {
+        return types_.size();
+      }
+      public com.ugcs.ucs.proto.DomainProto.NfzType getTypes(int index) {
+        return types_.get(index);
+      }
+      public Builder setTypes(
+          int index, com.ugcs.ucs.proto.DomainProto.NfzType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTypesIsMutable();
+        types_.set(index, value);
+        onChanged();
+        return this;
+      }
+      public Builder addTypes(com.ugcs.ucs.proto.DomainProto.NfzType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTypesIsMutable();
+        types_.add(value);
+        onChanged();
+        return this;
+      }
+      public Builder addAllTypes(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.NfzType> values) {
+        ensureTypesIsMutable();
+        super.addAll(values, types_);
+        onChanged();
+        return this;
+      }
+      public Builder clearTypes() {
+        types_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
       }
       
       // @@protoc_insertion_point(builder_scope:GetNfzListRequest)
@@ -43395,6 +46422,930 @@ public final class MessagesProto {
     // @@protoc_insertion_point(class_scope:GetRasterValuesResponse)
   }
   
+  public interface SwapElevationOrderRequestOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+    
+    // required int32 clientId = 1;
+    boolean hasClientId();
+    int getClientId();
+    
+    // required .ElevationSource source1 = 2;
+    boolean hasSource1();
+    com.ugcs.ucs.proto.DomainProto.ElevationSource getSource1();
+    com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource1OrBuilder();
+    
+    // required .ElevationSource source2 = 3;
+    boolean hasSource2();
+    com.ugcs.ucs.proto.DomainProto.ElevationSource getSource2();
+    com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource2OrBuilder();
+  }
+  public static final class SwapElevationOrderRequest extends
+      com.google.protobuf.GeneratedMessage
+      implements SwapElevationOrderRequestOrBuilder {
+    // Use SwapElevationOrderRequest.newBuilder() to construct.
+    private SwapElevationOrderRequest(Builder builder) {
+      super(builder);
+    }
+    private SwapElevationOrderRequest(boolean noInit) {}
+    
+    private static final SwapElevationOrderRequest defaultInstance;
+    public static SwapElevationOrderRequest getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public SwapElevationOrderRequest getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderRequest_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderRequest_fieldAccessorTable;
+    }
+    
+    private int bitField0_;
+    // required int32 clientId = 1;
+    public static final int CLIENTID_FIELD_NUMBER = 1;
+    private int clientId_;
+    public boolean hasClientId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    public int getClientId() {
+      return clientId_;
+    }
+    
+    // required .ElevationSource source1 = 2;
+    public static final int SOURCE1_FIELD_NUMBER = 2;
+    private com.ugcs.ucs.proto.DomainProto.ElevationSource source1_;
+    public boolean hasSource1() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public com.ugcs.ucs.proto.DomainProto.ElevationSource getSource1() {
+      return source1_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource1OrBuilder() {
+      return source1_;
+    }
+    
+    // required .ElevationSource source2 = 3;
+    public static final int SOURCE2_FIELD_NUMBER = 3;
+    private com.ugcs.ucs.proto.DomainProto.ElevationSource source2_;
+    public boolean hasSource2() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    public com.ugcs.ucs.proto.DomainProto.ElevationSource getSource2() {
+      return source2_;
+    }
+    public com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource2OrBuilder() {
+      return source2_;
+    }
+    
+    private void initFields() {
+      clientId_ = 0;
+      source1_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+      source2_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSource1()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSource2()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(2, source1_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, source2_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, source1_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, source2_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderRequest_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderRequest_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getSource1FieldBuilder();
+          getSource2FieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        clientId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (source1Builder_ == null) {
+          source1_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+        } else {
+          source1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (source2Builder_ == null) {
+          source2_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+        } else {
+          source2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest build() {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest result = new com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        if (source1Builder_ == null) {
+          result.source1_ = source1_;
+        } else {
+          result.source1_ = source1Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (source2Builder_ == null) {
+          result.source2_ = source2_;
+        } else {
+          result.source2_ = source2Builder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.getDefaultInstance()) return this;
+        if (other.hasClientId()) {
+          setClientId(other.getClientId());
+        }
+        if (other.hasSource1()) {
+          mergeSource1(other.getSource1());
+        }
+        if (other.hasSource2()) {
+          mergeSource2(other.getSource2());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        if (!hasClientId()) {
+          
+          return false;
+        }
+        if (!hasSource1()) {
+          
+          return false;
+        }
+        if (!hasSource2()) {
+          
+          return false;
+        }
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              clientId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.ElevationSource.newBuilder();
+              if (hasSource1()) {
+                subBuilder.mergeFrom(getSource1());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSource1(subBuilder.buildPartial());
+              break;
+            }
+            case 26: {
+              com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.ElevationSource.newBuilder();
+              if (hasSource2()) {
+                subBuilder.mergeFrom(getSource2());
+              }
+              input.readMessage(subBuilder, extensionRegistry);
+              setSource2(subBuilder.buildPartial());
+              break;
+            }
+          }
+        }
+      }
+      
+      private int bitField0_;
+      
+      // required int32 clientId = 1;
+      private int clientId_ ;
+      public boolean hasClientId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public int getClientId() {
+        return clientId_;
+      }
+      public Builder setClientId(int value) {
+        bitField0_ |= 0x00000001;
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearClientId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        clientId_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // required .ElevationSource source1 = 2;
+      private com.ugcs.ucs.proto.DomainProto.ElevationSource source1_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder> source1Builder_;
+      public boolean hasSource1() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSource getSource1() {
+        if (source1Builder_ == null) {
+          return source1_;
+        } else {
+          return source1Builder_.getMessage();
+        }
+      }
+      public Builder setSource1(com.ugcs.ucs.proto.DomainProto.ElevationSource value) {
+        if (source1Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source1_ = value;
+          onChanged();
+        } else {
+          source1Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder setSource1(
+          com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder builderForValue) {
+        if (source1Builder_ == null) {
+          source1_ = builderForValue.build();
+          onChanged();
+        } else {
+          source1Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder mergeSource1(com.ugcs.ucs.proto.DomainProto.ElevationSource value) {
+        if (source1Builder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              source1_ != com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance()) {
+            source1_ =
+              com.ugcs.ucs.proto.DomainProto.ElevationSource.newBuilder(source1_).mergeFrom(value).buildPartial();
+          } else {
+            source1_ = value;
+          }
+          onChanged();
+        } else {
+          source1Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      public Builder clearSource1() {
+        if (source1Builder_ == null) {
+          source1_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+          onChanged();
+        } else {
+          source1Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder getSource1Builder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getSource1FieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource1OrBuilder() {
+        if (source1Builder_ != null) {
+          return source1Builder_.getMessageOrBuilder();
+        } else {
+          return source1_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder> 
+          getSource1FieldBuilder() {
+        if (source1Builder_ == null) {
+          source1Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder>(
+                  source1_,
+                  getParentForChildren(),
+                  isClean());
+          source1_ = null;
+        }
+        return source1Builder_;
+      }
+      
+      // required .ElevationSource source2 = 3;
+      private com.ugcs.ucs.proto.DomainProto.ElevationSource source2_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder> source2Builder_;
+      public boolean hasSource2() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSource getSource2() {
+        if (source2Builder_ == null) {
+          return source2_;
+        } else {
+          return source2Builder_.getMessage();
+        }
+      }
+      public Builder setSource2(com.ugcs.ucs.proto.DomainProto.ElevationSource value) {
+        if (source2Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          source2_ = value;
+          onChanged();
+        } else {
+          source2Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder setSource2(
+          com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder builderForValue) {
+        if (source2Builder_ == null) {
+          source2_ = builderForValue.build();
+          onChanged();
+        } else {
+          source2Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder mergeSource2(com.ugcs.ucs.proto.DomainProto.ElevationSource value) {
+        if (source2Builder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              source2_ != com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance()) {
+            source2_ =
+              com.ugcs.ucs.proto.DomainProto.ElevationSource.newBuilder(source2_).mergeFrom(value).buildPartial();
+          } else {
+            source2_ = value;
+          }
+          onChanged();
+        } else {
+          source2Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      public Builder clearSource2() {
+        if (source2Builder_ == null) {
+          source2_ = com.ugcs.ucs.proto.DomainProto.ElevationSource.getDefaultInstance();
+          onChanged();
+        } else {
+          source2Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder getSource2Builder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSource2FieldBuilder().getBuilder();
+      }
+      public com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder getSource2OrBuilder() {
+        if (source2Builder_ != null) {
+          return source2Builder_.getMessageOrBuilder();
+        } else {
+          return source2_;
+        }
+      }
+      private com.google.protobuf.SingleFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder> 
+          getSource2FieldBuilder() {
+        if (source2Builder_ == null) {
+          source2Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.ugcs.ucs.proto.DomainProto.ElevationSource, com.ugcs.ucs.proto.DomainProto.ElevationSource.Builder, com.ugcs.ucs.proto.DomainProto.ElevationSourceOrBuilder>(
+                  source2_,
+                  getParentForChildren(),
+                  isClean());
+          source2_ = null;
+        }
+        return source2Builder_;
+      }
+      
+      // @@protoc_insertion_point(builder_scope:SwapElevationOrderRequest)
+    }
+    
+    static {
+      defaultInstance = new SwapElevationOrderRequest(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:SwapElevationOrderRequest)
+  }
+  
+  public interface SwapElevationOrderResponseOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+  }
+  public static final class SwapElevationOrderResponse extends
+      com.google.protobuf.GeneratedMessage
+      implements SwapElevationOrderResponseOrBuilder {
+    // Use SwapElevationOrderResponse.newBuilder() to construct.
+    private SwapElevationOrderResponse(Builder builder) {
+      super(builder);
+    }
+    private SwapElevationOrderResponse(boolean noInit) {}
+    
+    private static final SwapElevationOrderResponse defaultInstance;
+    public static SwapElevationOrderResponse getDefaultInstance() {
+      return defaultInstance;
+    }
+    
+    public SwapElevationOrderResponse getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+    
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderResponse_descriptor;
+    }
+    
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderResponse_fieldAccessorTable;
+    }
+    
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+      
+      memoizedIsInitialized = 1;
+      return true;
+    }
+    
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+    
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+    
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+    
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+    
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return newBuilder().mergeFrom(data, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      Builder builder = newBuilder();
+      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
+        return builder.buildParsed();
+      } else {
+        return null;
+      }
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input).buildParsed();
+    }
+    public static com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return newBuilder().mergeFrom(input, extensionRegistry)
+               .buildParsed();
+    }
+    
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+    
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderResponse_descriptor;
+      }
+      
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.ugcs.ucs.proto.MessagesProto.internal_static_SwapElevationOrderResponse_fieldAccessorTable;
+      }
+      
+      // Construct using com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+      
+      private Builder(BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+      
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+      
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+      
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.getDescriptor();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse getDefaultInstanceForType() {
+        return com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.getDefaultInstance();
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse build() {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+      
+      private com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse buildParsed()
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(
+            result).asInvalidProtocolBufferException();
+        }
+        return result;
+      }
+      
+      public com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse buildPartial() {
+        com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse result = new com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse(this);
+        onBuilt();
+        return result;
+      }
+      
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse) {
+          return mergeFrom((com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+      
+      public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse other) {
+        if (other == com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+      
+      public final boolean isInitialized() {
+        return true;
+      }
+      
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder(
+            this.getUnknownFields());
+        while (true) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              this.setUnknownFields(unknownFields.build());
+              onChanged();
+              return this;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                this.setUnknownFields(unknownFields.build());
+                onChanged();
+                return this;
+              }
+              break;
+            }
+          }
+        }
+      }
+      
+      
+      // @@protoc_insertion_point(builder_scope:SwapElevationOrderResponse)
+    }
+    
+    static {
+      defaultInstance = new SwapElevationOrderResponse(true);
+      defaultInstance.initFields();
+    }
+    
+    // @@protoc_insertion_point(class_scope:SwapElevationOrderResponse)
+  }
+  
   public interface GetTelemetryRequestOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
@@ -44074,19 +48025,19 @@ public final class MessagesProto {
   public interface GetTelemetryResponseOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // repeated .TelemetryDto telemetry = 1;
-    java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto> 
-        getTelemetryList();
-    com.ugcs.ucs.proto.DomainProto.TelemetryDto getTelemetry(int index);
-    int getTelemetryCount();
-    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder> 
-        getTelemetryOrBuilderList();
-    com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder getTelemetryOrBuilder(
-        int index);
-    
     // optional int64 nextTelemetryTime = 2;
     boolean hasNextTelemetryTime();
     long getNextTelemetryTime();
+    
+    // repeated .Telemetry telemetry = 3;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry> 
+        getTelemetryList();
+    com.ugcs.ucs.proto.DomainProto.Telemetry getTelemetry(int index);
+    int getTelemetryCount();
+    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> 
+        getTelemetryOrBuilderList();
+    com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder getTelemetryOrBuilder(
+        int index);
   }
   public static final class GetTelemetryResponse extends
       com.google.protobuf.GeneratedMessage
@@ -44117,27 +48068,6 @@ public final class MessagesProto {
     }
     
     private int bitField0_;
-    // repeated .TelemetryDto telemetry = 1;
-    public static final int TELEMETRY_FIELD_NUMBER = 1;
-    private java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto> telemetry_;
-    public java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto> getTelemetryList() {
-      return telemetry_;
-    }
-    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder> 
-        getTelemetryOrBuilderList() {
-      return telemetry_;
-    }
-    public int getTelemetryCount() {
-      return telemetry_.size();
-    }
-    public com.ugcs.ucs.proto.DomainProto.TelemetryDto getTelemetry(int index) {
-      return telemetry_.get(index);
-    }
-    public com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder getTelemetryOrBuilder(
-        int index) {
-      return telemetry_.get(index);
-    }
-    
     // optional int64 nextTelemetryTime = 2;
     public static final int NEXTTELEMETRYTIME_FIELD_NUMBER = 2;
     private long nextTelemetryTime_;
@@ -44148,9 +48078,30 @@ public final class MessagesProto {
       return nextTelemetryTime_;
     }
     
+    // repeated .Telemetry telemetry = 3;
+    public static final int TELEMETRY_FIELD_NUMBER = 3;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry> telemetry_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry> getTelemetryList() {
+      return telemetry_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> 
+        getTelemetryOrBuilderList() {
+      return telemetry_;
+    }
+    public int getTelemetryCount() {
+      return telemetry_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.Telemetry getTelemetry(int index) {
+      return telemetry_.get(index);
+    }
+    public com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder getTelemetryOrBuilder(
+        int index) {
+      return telemetry_.get(index);
+    }
+    
     private void initFields() {
-      telemetry_ = java.util.Collections.emptyList();
       nextTelemetryTime_ = 0L;
+      telemetry_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -44164,11 +48115,11 @@ public final class MessagesProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      for (int i = 0; i < telemetry_.size(); i++) {
-        output.writeMessage(1, telemetry_.get(i));
-      }
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt64(2, nextTelemetryTime_);
+      }
+      for (int i = 0; i < telemetry_.size(); i++) {
+        output.writeMessage(3, telemetry_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -44179,13 +48130,13 @@ public final class MessagesProto {
       if (size != -1) return size;
     
       size = 0;
-      for (int i = 0; i < telemetry_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, telemetry_.get(i));
-      }
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, nextTelemetryTime_);
+      }
+      for (int i = 0; i < telemetry_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, telemetry_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -44312,14 +48263,14 @@ public final class MessagesProto {
       
       public Builder clear() {
         super.clear();
+        nextTelemetryTime_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (telemetryBuilder_ == null) {
           telemetry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
           telemetryBuilder_.clear();
         }
-        nextTelemetryTime_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       
@@ -44358,19 +48309,19 @@ public final class MessagesProto {
         com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse result = new com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.nextTelemetryTime_ = nextTelemetryTime_;
         if (telemetryBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
             telemetry_ = java.util.Collections.unmodifiableList(telemetry_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.telemetry_ = telemetry_;
         } else {
           result.telemetry_ = telemetryBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.nextTelemetryTime_ = nextTelemetryTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -44387,11 +48338,14 @@ public final class MessagesProto {
       
       public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse other) {
         if (other == com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse.getDefaultInstance()) return this;
+        if (other.hasNextTelemetryTime()) {
+          setNextTelemetryTime(other.getNextTelemetryTime());
+        }
         if (telemetryBuilder_ == null) {
           if (!other.telemetry_.isEmpty()) {
             if (telemetry_.isEmpty()) {
               telemetry_ = other.telemetry_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureTelemetryIsMutable();
               telemetry_.addAll(other.telemetry_);
@@ -44404,7 +48358,7 @@ public final class MessagesProto {
               telemetryBuilder_.dispose();
               telemetryBuilder_ = null;
               telemetry_ = other.telemetry_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               telemetryBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getTelemetryFieldBuilder() : null;
@@ -44412,9 +48366,6 @@ public final class MessagesProto {
               telemetryBuilder_.addAllMessages(other.telemetry_);
             }
           }
-        }
-        if (other.hasNextTelemetryTime()) {
-          setNextTelemetryTime(other.getNextTelemetryTime());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -44447,15 +48398,15 @@ public final class MessagesProto {
               }
               break;
             }
-            case 10: {
-              com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.TelemetryDto.newBuilder();
-              input.readMessage(subBuilder, extensionRegistry);
-              addTelemetry(subBuilder.buildPartial());
+            case 16: {
+              bitField0_ |= 0x00000001;
+              nextTelemetryTime_ = input.readInt64();
               break;
             }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              nextTelemetryTime_ = input.readInt64();
+            case 26: {
+              com.ugcs.ucs.proto.DomainProto.Telemetry.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.Telemetry.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addTelemetry(subBuilder.buildPartial());
               break;
             }
           }
@@ -44464,20 +48415,41 @@ public final class MessagesProto {
       
       private int bitField0_;
       
-      // repeated .TelemetryDto telemetry = 1;
-      private java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto> telemetry_ =
+      // optional int64 nextTelemetryTime = 2;
+      private long nextTelemetryTime_ ;
+      public boolean hasNextTelemetryTime() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      public long getNextTelemetryTime() {
+        return nextTelemetryTime_;
+      }
+      public Builder setNextTelemetryTime(long value) {
+        bitField0_ |= 0x00000001;
+        nextTelemetryTime_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearNextTelemetryTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nextTelemetryTime_ = 0L;
+        onChanged();
+        return this;
+      }
+      
+      // repeated .Telemetry telemetry = 3;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry> telemetry_ =
         java.util.Collections.emptyList();
       private void ensureTelemetryIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          telemetry_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.TelemetryDto>(telemetry_);
-          bitField0_ |= 0x00000001;
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          telemetry_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.Telemetry>(telemetry_);
+          bitField0_ |= 0x00000002;
          }
       }
       
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.TelemetryDto, com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder> telemetryBuilder_;
+          com.ugcs.ucs.proto.DomainProto.Telemetry, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> telemetryBuilder_;
       
-      public java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto> getTelemetryList() {
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry> getTelemetryList() {
         if (telemetryBuilder_ == null) {
           return java.util.Collections.unmodifiableList(telemetry_);
         } else {
@@ -44491,7 +48463,7 @@ public final class MessagesProto {
           return telemetryBuilder_.getCount();
         }
       }
-      public com.ugcs.ucs.proto.DomainProto.TelemetryDto getTelemetry(int index) {
+      public com.ugcs.ucs.proto.DomainProto.Telemetry getTelemetry(int index) {
         if (telemetryBuilder_ == null) {
           return telemetry_.get(index);
         } else {
@@ -44499,7 +48471,7 @@ public final class MessagesProto {
         }
       }
       public Builder setTelemetry(
-          int index, com.ugcs.ucs.proto.DomainProto.TelemetryDto value) {
+          int index, com.ugcs.ucs.proto.DomainProto.Telemetry value) {
         if (telemetryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -44513,7 +48485,7 @@ public final class MessagesProto {
         return this;
       }
       public Builder setTelemetry(
-          int index, com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder builderForValue) {
+          int index, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder builderForValue) {
         if (telemetryBuilder_ == null) {
           ensureTelemetryIsMutable();
           telemetry_.set(index, builderForValue.build());
@@ -44523,7 +48495,7 @@ public final class MessagesProto {
         }
         return this;
       }
-      public Builder addTelemetry(com.ugcs.ucs.proto.DomainProto.TelemetryDto value) {
+      public Builder addTelemetry(com.ugcs.ucs.proto.DomainProto.Telemetry value) {
         if (telemetryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -44537,7 +48509,7 @@ public final class MessagesProto {
         return this;
       }
       public Builder addTelemetry(
-          int index, com.ugcs.ucs.proto.DomainProto.TelemetryDto value) {
+          int index, com.ugcs.ucs.proto.DomainProto.Telemetry value) {
         if (telemetryBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -44551,7 +48523,7 @@ public final class MessagesProto {
         return this;
       }
       public Builder addTelemetry(
-          com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder builderForValue) {
+          com.ugcs.ucs.proto.DomainProto.Telemetry.Builder builderForValue) {
         if (telemetryBuilder_ == null) {
           ensureTelemetryIsMutable();
           telemetry_.add(builderForValue.build());
@@ -44562,7 +48534,7 @@ public final class MessagesProto {
         return this;
       }
       public Builder addTelemetry(
-          int index, com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder builderForValue) {
+          int index, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder builderForValue) {
         if (telemetryBuilder_ == null) {
           ensureTelemetryIsMutable();
           telemetry_.add(index, builderForValue.build());
@@ -44573,7 +48545,7 @@ public final class MessagesProto {
         return this;
       }
       public Builder addAllTelemetry(
-          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.TelemetryDto> values) {
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.Telemetry> values) {
         if (telemetryBuilder_ == null) {
           ensureTelemetryIsMutable();
           super.addAll(values, telemetry_);
@@ -44586,7 +48558,7 @@ public final class MessagesProto {
       public Builder clearTelemetry() {
         if (telemetryBuilder_ == null) {
           telemetry_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           telemetryBuilder_.clear();
@@ -44603,18 +48575,18 @@ public final class MessagesProto {
         }
         return this;
       }
-      public com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder getTelemetryBuilder(
+      public com.ugcs.ucs.proto.DomainProto.Telemetry.Builder getTelemetryBuilder(
           int index) {
         return getTelemetryFieldBuilder().getBuilder(index);
       }
-      public com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder getTelemetryOrBuilder(
+      public com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder getTelemetryOrBuilder(
           int index) {
         if (telemetryBuilder_ == null) {
           return telemetry_.get(index);  } else {
           return telemetryBuilder_.getMessageOrBuilder(index);
         }
       }
-      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder> 
+      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> 
            getTelemetryOrBuilderList() {
         if (telemetryBuilder_ != null) {
           return telemetryBuilder_.getMessageOrBuilderList();
@@ -44622,53 +48594,32 @@ public final class MessagesProto {
           return java.util.Collections.unmodifiableList(telemetry_);
         }
       }
-      public com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder addTelemetryBuilder() {
+      public com.ugcs.ucs.proto.DomainProto.Telemetry.Builder addTelemetryBuilder() {
         return getTelemetryFieldBuilder().addBuilder(
-            com.ugcs.ucs.proto.DomainProto.TelemetryDto.getDefaultInstance());
+            com.ugcs.ucs.proto.DomainProto.Telemetry.getDefaultInstance());
       }
-      public com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder addTelemetryBuilder(
+      public com.ugcs.ucs.proto.DomainProto.Telemetry.Builder addTelemetryBuilder(
           int index) {
         return getTelemetryFieldBuilder().addBuilder(
-            index, com.ugcs.ucs.proto.DomainProto.TelemetryDto.getDefaultInstance());
+            index, com.ugcs.ucs.proto.DomainProto.Telemetry.getDefaultInstance());
       }
-      public java.util.List<com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder> 
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.Telemetry.Builder> 
            getTelemetryBuilderList() {
         return getTelemetryFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.TelemetryDto, com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder> 
+          com.ugcs.ucs.proto.DomainProto.Telemetry, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder> 
           getTelemetryFieldBuilder() {
         if (telemetryBuilder_ == null) {
           telemetryBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              com.ugcs.ucs.proto.DomainProto.TelemetryDto, com.ugcs.ucs.proto.DomainProto.TelemetryDto.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryDtoOrBuilder>(
+              com.ugcs.ucs.proto.DomainProto.Telemetry, com.ugcs.ucs.proto.DomainProto.Telemetry.Builder, com.ugcs.ucs.proto.DomainProto.TelemetryOrBuilder>(
                   telemetry_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  ((bitField0_ & 0x00000002) == 0x00000002),
                   getParentForChildren(),
                   isClean());
           telemetry_ = null;
         }
         return telemetryBuilder_;
-      }
-      
-      // optional int64 nextTelemetryTime = 2;
-      private long nextTelemetryTime_ ;
-      public boolean hasNextTelemetryTime() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      public long getNextTelemetryTime() {
-        return nextTelemetryTime_;
-      }
-      public Builder setNextTelemetryTime(long value) {
-        bitField0_ |= 0x00000002;
-        nextTelemetryTime_ = value;
-        onChanged();
-        return this;
-      }
-      public Builder clearNextTelemetryTime() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        nextTelemetryTime_ = 0L;
-        onChanged();
-        return this;
       }
       
       // @@protoc_insertion_point(builder_scope:GetTelemetryResponse)
@@ -56634,7 +60585,7 @@ public final class MessagesProto {
     boolean hasClientId();
     int getClientId();
     
-    // required .Command command = 2;
+    // optional .Command command = 2;
     boolean hasCommand();
     com.ugcs.ucs.proto.DomainProto.Command getCommand();
     com.ugcs.ucs.proto.DomainProto.CommandOrBuilder getCommandOrBuilder();
@@ -56652,6 +60603,16 @@ public final class MessagesProto {
     // optional int64 interDelay = 4 [default = 0];
     boolean hasInterDelay();
     long getInterDelay();
+    
+    // repeated .VehicleCommandsDto commands = 5;
+    java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> 
+        getCommandsList();
+    com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto getCommands(int index);
+    int getCommandsCount();
+    java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder> 
+        getCommandsOrBuilderList();
+    com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder getCommandsOrBuilder(
+        int index);
   }
   public static final class SendCommandRequest extends
       com.google.protobuf.GeneratedMessage
@@ -56692,7 +60653,7 @@ public final class MessagesProto {
       return clientId_;
     }
     
-    // required .Command command = 2;
+    // optional .Command command = 2;
     public static final int COMMAND_FIELD_NUMBER = 2;
     private com.ugcs.ucs.proto.DomainProto.Command command_;
     public boolean hasCommand() {
@@ -56736,11 +60697,33 @@ public final class MessagesProto {
       return interDelay_;
     }
     
+    // repeated .VehicleCommandsDto commands = 5;
+    public static final int COMMANDS_FIELD_NUMBER = 5;
+    private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> commands_;
+    public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> getCommandsList() {
+      return commands_;
+    }
+    public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder> 
+        getCommandsOrBuilderList() {
+      return commands_;
+    }
+    public int getCommandsCount() {
+      return commands_.size();
+    }
+    public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto getCommands(int index) {
+      return commands_.get(index);
+    }
+    public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder getCommandsOrBuilder(
+        int index) {
+      return commands_.get(index);
+    }
+    
     private void initFields() {
       clientId_ = 0;
       command_ = com.ugcs.ucs.proto.DomainProto.Command.getDefaultInstance();
       vehicles_ = java.util.Collections.emptyList();
       interDelay_ = 0L;
+      commands_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -56748,10 +60731,6 @@ public final class MessagesProto {
       if (isInitialized != -1) return isInitialized == 1;
       
       if (!hasClientId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCommand()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -56773,6 +60752,9 @@ public final class MessagesProto {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeInt64(4, interDelay_);
+      }
+      for (int i = 0; i < commands_.size(); i++) {
+        output.writeMessage(5, commands_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -56798,6 +60780,10 @@ public final class MessagesProto {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, interDelay_);
+      }
+      for (int i = 0; i < commands_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, commands_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -56917,6 +60903,7 @@ public final class MessagesProto {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getCommandFieldBuilder();
           getVehiclesFieldBuilder();
+          getCommandsFieldBuilder();
         }
       }
       private static Builder create() {
@@ -56941,6 +60928,12 @@ public final class MessagesProto {
         }
         interDelay_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000008);
+        if (commandsBuilder_ == null) {
+          commands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          commandsBuilder_.clear();
+        }
         return this;
       }
       
@@ -57004,6 +60997,15 @@ public final class MessagesProto {
           to_bitField0_ |= 0x00000004;
         }
         result.interDelay_ = interDelay_;
+        if (commandsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            commands_ = java.util.Collections.unmodifiableList(commands_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.commands_ = commands_;
+        } else {
+          result.commands_ = commandsBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -57055,16 +61057,38 @@ public final class MessagesProto {
         if (other.hasInterDelay()) {
           setInterDelay(other.getInterDelay());
         }
+        if (commandsBuilder_ == null) {
+          if (!other.commands_.isEmpty()) {
+            if (commands_.isEmpty()) {
+              commands_ = other.commands_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureCommandsIsMutable();
+              commands_.addAll(other.commands_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.commands_.isEmpty()) {
+            if (commandsBuilder_.isEmpty()) {
+              commandsBuilder_.dispose();
+              commandsBuilder_ = null;
+              commands_ = other.commands_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              commandsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getCommandsFieldBuilder() : null;
+            } else {
+              commandsBuilder_.addAllMessages(other.commands_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
       
       public final boolean isInitialized() {
         if (!hasClientId()) {
-          
-          return false;
-        }
-        if (!hasCommand()) {
           
           return false;
         }
@@ -57119,6 +61143,12 @@ public final class MessagesProto {
               interDelay_ = input.readInt64();
               break;
             }
+            case 42: {
+              com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder subBuilder = com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.newBuilder();
+              input.readMessage(subBuilder, extensionRegistry);
+              addCommands(subBuilder.buildPartial());
+              break;
+            }
           }
         }
       }
@@ -57146,7 +61176,7 @@ public final class MessagesProto {
         return this;
       }
       
-      // required .Command command = 2;
+      // optional .Command command = 2;
       private com.ugcs.ucs.proto.DomainProto.Command command_ = com.ugcs.ucs.proto.DomainProto.Command.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.Command, com.ugcs.ucs.proto.DomainProto.Command.Builder, com.ugcs.ucs.proto.DomainProto.CommandOrBuilder> commandBuilder_;
@@ -57441,6 +61471,192 @@ public final class MessagesProto {
         interDelay_ = 0L;
         onChanged();
         return this;
+      }
+      
+      // repeated .VehicleCommandsDto commands = 5;
+      private java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> commands_ =
+        java.util.Collections.emptyList();
+      private void ensureCommandsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          commands_ = new java.util.ArrayList<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto>(commands_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder> commandsBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> getCommandsList() {
+        if (commandsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(commands_);
+        } else {
+          return commandsBuilder_.getMessageList();
+        }
+      }
+      public int getCommandsCount() {
+        if (commandsBuilder_ == null) {
+          return commands_.size();
+        } else {
+          return commandsBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto getCommands(int index) {
+        if (commandsBuilder_ == null) {
+          return commands_.get(index);
+        } else {
+          return commandsBuilder_.getMessage(index);
+        }
+      }
+      public Builder setCommands(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.set(index, value);
+          onChanged();
+        } else {
+          commandsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      public Builder setCommands(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCommands(com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.add(value);
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      public Builder addCommands(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto value) {
+        if (commandsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCommandsIsMutable();
+          commands_.add(index, value);
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      public Builder addCommands(
+          com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.add(builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addCommands(
+          int index, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder builderForValue) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          commandsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllCommands(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto> values) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          super.addAll(values, commands_);
+          onChanged();
+        } else {
+          commandsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearCommands() {
+        if (commandsBuilder_ == null) {
+          commands_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          commandsBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeCommands(int index) {
+        if (commandsBuilder_ == null) {
+          ensureCommandsIsMutable();
+          commands_.remove(index);
+          onChanged();
+        } else {
+          commandsBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder getCommandsBuilder(
+          int index) {
+        return getCommandsFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder getCommandsOrBuilder(
+          int index) {
+        if (commandsBuilder_ == null) {
+          return commands_.get(index);  } else {
+          return commandsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      public java.util.List<? extends com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder> 
+           getCommandsOrBuilderList() {
+        if (commandsBuilder_ != null) {
+          return commandsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(commands_);
+        }
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder addCommandsBuilder() {
+        return getCommandsFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder addCommandsBuilder(
+          int index) {
+        return getCommandsFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder> 
+           getCommandsBuilderList() {
+        return getCommandsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder> 
+          getCommandsFieldBuilder() {
+        if (commandsBuilder_ == null) {
+          commandsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder, com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDtoOrBuilder>(
+                  commands_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          commands_ = null;
+        }
+        return commandsBuilder_;
       }
       
       // @@protoc_insertion_point(builder_scope:SendCommandRequest)
@@ -61179,15 +65395,24 @@ public final class MessagesProto {
   public interface GetLicenseResponseOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
-    // optional .License license = 1;
-    boolean hasLicense();
-    com.ugcs.ucs.proto.DomainProto.License getLicense();
-    com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicenseOrBuilder();
+    // repeated .License licenses = 1;
+    java.util.List<com.ugcs.ucs.proto.DomainProto.License> 
+        getLicensesList();
+    com.ugcs.ucs.proto.DomainProto.License getLicenses(int index);
+    int getLicensesCount();
+    java.util.List<? extends com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> 
+        getLicensesOrBuilderList();
+    com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicensesOrBuilder(
+        int index);
     
     // required .LicensePermissionsDto licensePermissions = 2;
     boolean hasLicensePermissions();
     com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto getLicensePermissions();
     com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDtoOrBuilder getLicensePermissionsOrBuilder();
+    
+    // optional string noLicenseMessage = 3;
+    boolean hasNoLicenseMessage();
+    String getNoLicenseMessage();
   }
   public static final class GetLicenseResponse extends
       com.google.protobuf.GeneratedMessage
@@ -61218,24 +65443,32 @@ public final class MessagesProto {
     }
     
     private int bitField0_;
-    // optional .License license = 1;
-    public static final int LICENSE_FIELD_NUMBER = 1;
-    private com.ugcs.ucs.proto.DomainProto.License license_;
-    public boolean hasLicense() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+    // repeated .License licenses = 1;
+    public static final int LICENSES_FIELD_NUMBER = 1;
+    private java.util.List<com.ugcs.ucs.proto.DomainProto.License> licenses_;
+    public java.util.List<com.ugcs.ucs.proto.DomainProto.License> getLicensesList() {
+      return licenses_;
     }
-    public com.ugcs.ucs.proto.DomainProto.License getLicense() {
-      return license_;
+    public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> 
+        getLicensesOrBuilderList() {
+      return licenses_;
     }
-    public com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicenseOrBuilder() {
-      return license_;
+    public int getLicensesCount() {
+      return licenses_.size();
+    }
+    public com.ugcs.ucs.proto.DomainProto.License getLicenses(int index) {
+      return licenses_.get(index);
+    }
+    public com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicensesOrBuilder(
+        int index) {
+      return licenses_.get(index);
     }
     
     // required .LicensePermissionsDto licensePermissions = 2;
     public static final int LICENSEPERMISSIONS_FIELD_NUMBER = 2;
     private com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto licensePermissions_;
     public boolean hasLicensePermissions() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     public com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto getLicensePermissions() {
       return licensePermissions_;
@@ -61244,9 +65477,42 @@ public final class MessagesProto {
       return licensePermissions_;
     }
     
+    // optional string noLicenseMessage = 3;
+    public static final int NOLICENSEMESSAGE_FIELD_NUMBER = 3;
+    private java.lang.Object noLicenseMessage_;
+    public boolean hasNoLicenseMessage() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getNoLicenseMessage() {
+      java.lang.Object ref = noLicenseMessage_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          noLicenseMessage_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getNoLicenseMessageBytes() {
+      java.lang.Object ref = noLicenseMessage_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        noLicenseMessage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
-      license_ = com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance();
+      licenses_ = java.util.Collections.emptyList();
       licensePermissions_ = com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto.getDefaultInstance();
+      noLicenseMessage_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -61268,11 +65534,14 @@ public final class MessagesProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
+      for (int i = 0; i < licenses_.size(); i++) {
+        output.writeMessage(1, licenses_.get(i));
+      }
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, license_);
+        output.writeMessage(2, licensePermissions_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, licensePermissions_);
+        output.writeBytes(3, getNoLicenseMessageBytes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -61283,13 +65552,17 @@ public final class MessagesProto {
       if (size != -1) return size;
     
       size = 0;
+      for (int i = 0; i < licenses_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, licenses_.get(i));
+      }
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, license_);
+          .computeMessageSize(2, licensePermissions_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, licensePermissions_);
+          .computeBytesSize(3, getNoLicenseMessageBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -61407,7 +65680,7 @@ public final class MessagesProto {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getLicenseFieldBuilder();
+          getLicensesFieldBuilder();
           getLicensePermissionsFieldBuilder();
         }
       }
@@ -61417,18 +65690,20 @@ public final class MessagesProto {
       
       public Builder clear() {
         super.clear();
-        if (licenseBuilder_ == null) {
-          license_ = com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance();
+        if (licensesBuilder_ == null) {
+          licenses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          licenseBuilder_.clear();
+          licensesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (licensePermissionsBuilder_ == null) {
           licensePermissions_ = com.ugcs.ucs.proto.MessagesProto.LicensePermissionsDto.getDefaultInstance();
         } else {
           licensePermissionsBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        noLicenseMessage_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       
@@ -61467,22 +65742,27 @@ public final class MessagesProto {
         com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse result = new com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        if (licenseBuilder_ == null) {
-          result.license_ = license_;
+        if (licensesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            licenses_ = java.util.Collections.unmodifiableList(licenses_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.licenses_ = licenses_;
         } else {
-          result.license_ = licenseBuilder_.build();
+          result.licenses_ = licensesBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
+          to_bitField0_ |= 0x00000001;
         }
         if (licensePermissionsBuilder_ == null) {
           result.licensePermissions_ = licensePermissions_;
         } else {
           result.licensePermissions_ = licensePermissionsBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.noLicenseMessage_ = noLicenseMessage_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -61499,11 +65779,37 @@ public final class MessagesProto {
       
       public Builder mergeFrom(com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse other) {
         if (other == com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse.getDefaultInstance()) return this;
-        if (other.hasLicense()) {
-          mergeLicense(other.getLicense());
+        if (licensesBuilder_ == null) {
+          if (!other.licenses_.isEmpty()) {
+            if (licenses_.isEmpty()) {
+              licenses_ = other.licenses_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureLicensesIsMutable();
+              licenses_.addAll(other.licenses_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.licenses_.isEmpty()) {
+            if (licensesBuilder_.isEmpty()) {
+              licensesBuilder_.dispose();
+              licensesBuilder_ = null;
+              licenses_ = other.licenses_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              licensesBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getLicensesFieldBuilder() : null;
+            } else {
+              licensesBuilder_.addAllMessages(other.licenses_);
+            }
+          }
         }
         if (other.hasLicensePermissions()) {
           mergeLicensePermissions(other.getLicensePermissions());
+        }
+        if (other.hasNoLicenseMessage()) {
+          setNoLicenseMessage(other.getNoLicenseMessage());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -61546,11 +65852,8 @@ public final class MessagesProto {
             }
             case 10: {
               com.ugcs.ucs.proto.DomainProto.License.Builder subBuilder = com.ugcs.ucs.proto.DomainProto.License.newBuilder();
-              if (hasLicense()) {
-                subBuilder.mergeFrom(getLicense());
-              }
               input.readMessage(subBuilder, extensionRegistry);
-              setLicense(subBuilder.buildPartial());
+              addLicenses(subBuilder.buildPartial());
               break;
             }
             case 18: {
@@ -61562,100 +65865,201 @@ public final class MessagesProto {
               setLicensePermissions(subBuilder.buildPartial());
               break;
             }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              noLicenseMessage_ = input.readBytes();
+              break;
+            }
           }
         }
       }
       
       private int bitField0_;
       
-      // optional .License license = 1;
-      private com.ugcs.ucs.proto.DomainProto.License license_ = com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.ugcs.ucs.proto.DomainProto.License, com.ugcs.ucs.proto.DomainProto.License.Builder, com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> licenseBuilder_;
-      public boolean hasLicense() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+      // repeated .License licenses = 1;
+      private java.util.List<com.ugcs.ucs.proto.DomainProto.License> licenses_ =
+        java.util.Collections.emptyList();
+      private void ensureLicensesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          licenses_ = new java.util.ArrayList<com.ugcs.ucs.proto.DomainProto.License>(licenses_);
+          bitField0_ |= 0x00000001;
+         }
       }
-      public com.ugcs.ucs.proto.DomainProto.License getLicense() {
-        if (licenseBuilder_ == null) {
-          return license_;
+      
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.ugcs.ucs.proto.DomainProto.License, com.ugcs.ucs.proto.DomainProto.License.Builder, com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> licensesBuilder_;
+      
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.License> getLicensesList() {
+        if (licensesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(licenses_);
         } else {
-          return licenseBuilder_.getMessage();
+          return licensesBuilder_.getMessageList();
         }
       }
-      public Builder setLicense(com.ugcs.ucs.proto.DomainProto.License value) {
-        if (licenseBuilder_ == null) {
+      public int getLicensesCount() {
+        if (licensesBuilder_ == null) {
+          return licenses_.size();
+        } else {
+          return licensesBuilder_.getCount();
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.License getLicenses(int index) {
+        if (licensesBuilder_ == null) {
+          return licenses_.get(index);
+        } else {
+          return licensesBuilder_.getMessage(index);
+        }
+      }
+      public Builder setLicenses(
+          int index, com.ugcs.ucs.proto.DomainProto.License value) {
+        if (licensesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          license_ = value;
+          ensureLicensesIsMutable();
+          licenses_.set(index, value);
           onChanged();
         } else {
-          licenseBuilder_.setMessage(value);
+          licensesBuilder_.setMessage(index, value);
         }
-        bitField0_ |= 0x00000001;
         return this;
       }
-      public Builder setLicense(
-          com.ugcs.ucs.proto.DomainProto.License.Builder builderForValue) {
-        if (licenseBuilder_ == null) {
-          license_ = builderForValue.build();
+      public Builder setLicenses(
+          int index, com.ugcs.ucs.proto.DomainProto.License.Builder builderForValue) {
+        if (licensesBuilder_ == null) {
+          ensureLicensesIsMutable();
+          licenses_.set(index, builderForValue.build());
           onChanged();
         } else {
-          licenseBuilder_.setMessage(builderForValue.build());
+          licensesBuilder_.setMessage(index, builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
         return this;
       }
-      public Builder mergeLicense(com.ugcs.ucs.proto.DomainProto.License value) {
-        if (licenseBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
-              license_ != com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance()) {
-            license_ =
-              com.ugcs.ucs.proto.DomainProto.License.newBuilder(license_).mergeFrom(value).buildPartial();
-          } else {
-            license_ = value;
+      public Builder addLicenses(com.ugcs.ucs.proto.DomainProto.License value) {
+        if (licensesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
+          ensureLicensesIsMutable();
+          licenses_.add(value);
           onChanged();
         } else {
-          licenseBuilder_.mergeFrom(value);
+          licensesBuilder_.addMessage(value);
         }
-        bitField0_ |= 0x00000001;
         return this;
       }
-      public Builder clearLicense() {
-        if (licenseBuilder_ == null) {
-          license_ = com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance();
+      public Builder addLicenses(
+          int index, com.ugcs.ucs.proto.DomainProto.License value) {
+        if (licensesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureLicensesIsMutable();
+          licenses_.add(index, value);
           onChanged();
         } else {
-          licenseBuilder_.clear();
+          licensesBuilder_.addMessage(index, value);
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
-      public com.ugcs.ucs.proto.DomainProto.License.Builder getLicenseBuilder() {
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return getLicenseFieldBuilder().getBuilder();
-      }
-      public com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicenseOrBuilder() {
-        if (licenseBuilder_ != null) {
-          return licenseBuilder_.getMessageOrBuilder();
+      public Builder addLicenses(
+          com.ugcs.ucs.proto.DomainProto.License.Builder builderForValue) {
+        if (licensesBuilder_ == null) {
+          ensureLicensesIsMutable();
+          licenses_.add(builderForValue.build());
+          onChanged();
         } else {
-          return license_;
+          licensesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addLicenses(
+          int index, com.ugcs.ucs.proto.DomainProto.License.Builder builderForValue) {
+        if (licensesBuilder_ == null) {
+          ensureLicensesIsMutable();
+          licenses_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          licensesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      public Builder addAllLicenses(
+          java.lang.Iterable<? extends com.ugcs.ucs.proto.DomainProto.License> values) {
+        if (licensesBuilder_ == null) {
+          ensureLicensesIsMutable();
+          super.addAll(values, licenses_);
+          onChanged();
+        } else {
+          licensesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      public Builder clearLicenses() {
+        if (licensesBuilder_ == null) {
+          licenses_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          licensesBuilder_.clear();
+        }
+        return this;
+      }
+      public Builder removeLicenses(int index) {
+        if (licensesBuilder_ == null) {
+          ensureLicensesIsMutable();
+          licenses_.remove(index);
+          onChanged();
+        } else {
+          licensesBuilder_.remove(index);
+        }
+        return this;
+      }
+      public com.ugcs.ucs.proto.DomainProto.License.Builder getLicensesBuilder(
+          int index) {
+        return getLicensesFieldBuilder().getBuilder(index);
+      }
+      public com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder getLicensesOrBuilder(
+          int index) {
+        if (licensesBuilder_ == null) {
+          return licenses_.get(index);  } else {
+          return licensesBuilder_.getMessageOrBuilder(index);
         }
       }
-      private com.google.protobuf.SingleFieldBuilder<
+      public java.util.List<? extends com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> 
+           getLicensesOrBuilderList() {
+        if (licensesBuilder_ != null) {
+          return licensesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(licenses_);
+        }
+      }
+      public com.ugcs.ucs.proto.DomainProto.License.Builder addLicensesBuilder() {
+        return getLicensesFieldBuilder().addBuilder(
+            com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance());
+      }
+      public com.ugcs.ucs.proto.DomainProto.License.Builder addLicensesBuilder(
+          int index) {
+        return getLicensesFieldBuilder().addBuilder(
+            index, com.ugcs.ucs.proto.DomainProto.License.getDefaultInstance());
+      }
+      public java.util.List<com.ugcs.ucs.proto.DomainProto.License.Builder> 
+           getLicensesBuilderList() {
+        return getLicensesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
           com.ugcs.ucs.proto.DomainProto.License, com.ugcs.ucs.proto.DomainProto.License.Builder, com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder> 
-          getLicenseFieldBuilder() {
-        if (licenseBuilder_ == null) {
-          licenseBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          getLicensesFieldBuilder() {
+        if (licensesBuilder_ == null) {
+          licensesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               com.ugcs.ucs.proto.DomainProto.License, com.ugcs.ucs.proto.DomainProto.License.Builder, com.ugcs.ucs.proto.DomainProto.LicenseOrBuilder>(
-                  license_,
+                  licenses_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
                   getParentForChildren(),
                   isClean());
-          license_ = null;
+          licenses_ = null;
         }
-        return licenseBuilder_;
+        return licensesBuilder_;
       }
       
       // required .LicensePermissionsDto licensePermissions = 2;
@@ -61746,6 +66150,42 @@ public final class MessagesProto {
           licensePermissions_ = null;
         }
         return licensePermissionsBuilder_;
+      }
+      
+      // optional string noLicenseMessage = 3;
+      private java.lang.Object noLicenseMessage_ = "";
+      public boolean hasNoLicenseMessage() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      public String getNoLicenseMessage() {
+        java.lang.Object ref = noLicenseMessage_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          noLicenseMessage_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setNoLicenseMessage(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        noLicenseMessage_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearNoLicenseMessage() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        noLicenseMessage_ = getDefaultInstance().getNoLicenseMessage();
+        onChanged();
+        return this;
+      }
+      void setNoLicenseMessage(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000004;
+        noLicenseMessage_ = value;
+        onChanged();
       }
       
       // @@protoc_insertion_point(builder_scope:GetLicenseResponse)
@@ -62637,6 +67077,10 @@ public final class MessagesProto {
     // required int32 clientId = 1;
     boolean hasClientId();
     int getClientId();
+    
+    // required string activationCode = 2;
+    boolean hasActivationCode();
+    String getActivationCode();
   }
   public static final class DeactivateLicenseRequest extends
       com.google.protobuf.GeneratedMessage
@@ -62677,8 +67121,41 @@ public final class MessagesProto {
       return clientId_;
     }
     
+    // required string activationCode = 2;
+    public static final int ACTIVATIONCODE_FIELD_NUMBER = 2;
+    private java.lang.Object activationCode_;
+    public boolean hasActivationCode() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    public String getActivationCode() {
+      java.lang.Object ref = activationCode_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          activationCode_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getActivationCodeBytes() {
+      java.lang.Object ref = activationCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        activationCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
     private void initFields() {
       clientId_ = 0;
+      activationCode_ = "";
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -62686,6 +67163,10 @@ public final class MessagesProto {
       if (isInitialized != -1) return isInitialized == 1;
       
       if (!hasClientId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasActivationCode()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -62699,6 +67180,9 @@ public final class MessagesProto {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt32(1, clientId_);
       }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getActivationCodeBytes());
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -62711,6 +67195,10 @@ public final class MessagesProto {
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, clientId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getActivationCodeBytes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -62838,6 +67326,8 @@ public final class MessagesProto {
         super.clear();
         clientId_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
+        activationCode_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       
@@ -62880,6 +67370,10 @@ public final class MessagesProto {
           to_bitField0_ |= 0x00000001;
         }
         result.clientId_ = clientId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.activationCode_ = activationCode_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -62899,12 +67393,19 @@ public final class MessagesProto {
         if (other.hasClientId()) {
           setClientId(other.getClientId());
         }
+        if (other.hasActivationCode()) {
+          setActivationCode(other.getActivationCode());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
       
       public final boolean isInitialized() {
         if (!hasClientId()) {
+          
+          return false;
+        }
+        if (!hasActivationCode()) {
           
           return false;
         }
@@ -62939,6 +67440,11 @@ public final class MessagesProto {
               clientId_ = input.readInt32();
               break;
             }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              activationCode_ = input.readBytes();
+              break;
+            }
           }
         }
       }
@@ -62964,6 +67470,42 @@ public final class MessagesProto {
         clientId_ = 0;
         onChanged();
         return this;
+      }
+      
+      // required string activationCode = 2;
+      private java.lang.Object activationCode_ = "";
+      public boolean hasActivationCode() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      public String getActivationCode() {
+        java.lang.Object ref = activationCode_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          activationCode_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setActivationCode(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        activationCode_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearActivationCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        activationCode_ = getDefaultInstance().getActivationCode();
+        onChanged();
+        return this;
+      }
+      void setActivationCode(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000002;
+        activationCode_ = value;
+        onChanged();
       }
       
       // @@protoc_insertion_point(builder_scope:DeactivateLicenseRequest)
@@ -91982,6 +96524,11 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_ProfileCameraDto_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_VehicleCommandsDto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_VehicleCommandsDto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Error_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -92147,6 +96694,26 @@ public final class MessagesProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_ImportTelemetryFromXmlResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetTrialSubscriptionsPlanRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetTrialSubscriptionsPlanRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetTrialSubscriptionsPlanResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetTrialSubscriptionsPlanResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetTrialRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetTrialRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_GetTrialResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_GetTrialResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_GetLineOfSightRequest_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -92186,6 +96753,16 @@ public final class MessagesProto {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_GetRasterValuesResponse_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_SwapElevationOrderRequest_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_SwapElevationOrderRequest_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_SwapElevationOrderResponse_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_SwapElevationOrderResponse_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_GetTelemetryRequest_descriptor;
   private static
@@ -92743,282 +97320,298 @@ public final class MessagesProto {
       "\002 \003(\0132\023.ActionExecutionDto\"1\n\tCameraDto\022" +
       "\020\n\010cameraId\030\001 \002(\005\022\022\n\ncameraName\030\002 \002(\t\"B\n" +
       "\020ProfileCameraDto\022\021\n\tprofileId\030\001 \002(\005\022\033\n\007" +
-      "cameras\030\002 \003(\0132\n.CameraDto\"0\n\005Error\022\024\n\014er" +
-      "rorMessage\030\001 \001(\t\022\021\n\terrorCode\030\002 \001(\005\";\n\023A",
-      "uthorizeHciRequest\022\024\n\010clientId\030\001 \002(\005:\002-1" +
-      "\022\016\n\006locale\030\002 \001(\t\"(\n\024AuthorizeHciResponse" +
-      "\022\020\n\010clientId\030\001 \002(\005\"7\n\023SetHciLocaleReques" +
-      "t\022\020\n\010clientId\030\001 \002(\005\022\016\n\006locale\030\002 \002(\t\"\026\n\024S" +
-      "etHciLocaleResponse\"I\n\014LoginRequest\022\020\n\010c" +
-      "lientId\030\001 \002(\005\022\021\n\tuserLogin\030\002 \002(\t\022\024\n\014user" +
-      "Password\030\003 \002(\t\"$\n\rLoginResponse\022\023\n\004user\030" +
-      "\001 \002(\0132\005.User\"!\n\rLogoutRequest\022\020\n\010clientI" +
-      "d\030\001 \002(\005\"\020\n\016LogoutResponse\">\n\023ProcessRout" +
-      "eRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(",
-      "\0132\006.Route\"?\n\024ProcessRouteResponse\022\'\n\016pro" +
-      "cessedRoute\030\001 \002(\0132\017.ProcessedRoute\"l\n\034Co" +
-      "nvertRouteAltitudesRequest\022\020\n\010clientId\030\001" +
-      " \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n\014altitudeT" +
-      "ype\030\004 \002(\0162\r.AltitudeType\"6\n\035ConvertRoute" +
-      "AltitudesResponse\022\025\n\005route\030\001 \002(\0132\006.Route" +
-      "\"p\n ChangeRouteVehicleProfileRequest\022\020\n\010" +
-      "clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n" +
-      "\nnewProfile\030\003 \002(\0132\017.VehicleProfile\"R\n!Ch" +
-      "angeRouteVehicleProfileResponse\022\025\n\005route",
-      "\030\001 \002(\0132\006.Route\022\026\n\016warningMessage\030\002 \003(\t\"u" +
-      "\n#GetParametersSelectionValuesRequest\022\020\n" +
-      "\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022%" +
-      "\n\talgorithm\030\003 \002(\0132\022.TraverseAlgorithm\"F\n" +
-      "$GetParametersSelectionValuesResponse\022\036\n" +
-      "\nselections\030\001 \003(\0132\n.Selection\"z\n\032GetElev" +
-      "ationProfileRequest\022\020\n\010clientId\030\001 \002(\005\022\024\n" +
-      "\014samplingStep\030\003 \002(\001\022$\n\tlocations\030\004 \003(\0132\021" +
-      ".Wgs84LocationDto\022\016\n\006number\030\005 \001(\005\"o\n\033Get" +
-      "ElevationProfileResponse\022$\n\tlocations\030\001 ",
-      "\003(\0132\021.Wgs84LocationDto\022\022\n\nelevations\030\002 \003" +
-      "(\001\022\026\n\016obstacleHeight\030\003 \003(\001\"Z\n\026CalculateS" +
-      "plineRequest\022\020\n\010clientId\030\001 \002(\005\022\034\n\twaypou" +
-      "nts\030\002 \003(\0132\t.Waypoint\022\020\n\010accuracy\030\003 \001(\001\"?" +
-      "\n\027CalculateSplineResponse\022$\n\tlocations\030\001" +
-      " \003(\0132\021.Wgs84LocationDto\"B\n\027ExportRouteTo" +
-      "XmlRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 " +
-      "\002(\0132\006.Route\",\n\030ExportRouteToXmlResponse\022" +
-      "\020\n\010routeXml\030\001 \002(\014\"\240\001\n\022ImportRouteRequest" +
-      "\022\020\n\010clientId\030\001 \002(\005\022\021\n\trouteData\030\002 \002(\014\022\020\n",
-      "\010filename\030\003 \002(\t\022%\n\talgorithm\030\004 \001(\0132\022.Tra" +
-      "verseAlgorithm\022,\n\nparameters\030\005 \003(\0132\030.Imp" +
-      "ortRouteParameterDto\",\n\023ImportRouteRespo" +
-      "nse\022\025\n\005route\030\001 \002(\0132\006.Route\"H\n\031ExportMiss" +
-      "ionToXmlRequest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007mis" +
-      "sion\030\002 \002(\0132\010.Mission\"0\n\032ExportMissionToX" +
-      "mlResponse\022\022\n\nmissionXml\030\001 \002(\014\"C\n\033Import" +
-      "MissionFromXmlRequest\022\020\n\010clientId\030\001 \002(\005\022" +
-      "\022\n\nmissionXml\030\002 \002(\014\"9\n\034ImportMissionFrom" +
-      "XmlResponse\022\031\n\007mission\030\001 \002(\0132\010.Mission\"^",
-      "\n\033ExportTelemetryToXmlRequest\022\020\n\010clientI" +
-      "d\030\001 \002(\005\022-\n\021telemetryInterval\030\002 \002(\0132\022.Tel" +
-      "emetryInterval\"4\n\034ExportTelemetryToXmlRe" +
-      "sponse\022\024\n\014telemetryXml\030\001 \002(\014\"\216\001\n\035ImportT" +
-      "elemetryFromXmlRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\022\024\n\014telemetryXml\030\002 \002(\014\0227\n\026conflictResolu" +
-      "tionMode\030\003 \002(\0162\027.ConflictResolutionMode\022" +
-      "\014\n\004name\030\004 \001(\t\"O\n\036ImportTelemetryFromXmlR" +
-      "esponse\022-\n\021telemetryInterval\030\001 \002(\0132\022.Tel" +
-      "emetryInterval\"\206\001\n\025GetLineOfSightRequest",
-      "\022\020\n\010clientId\030\001 \002(\005\022*\n\020observerPosition\030\002" +
-      " \002(\0132\020.MeasurePointDto\022\023\n\013maxDistance\030\003 " +
-      "\002(\001\022\032\n\022approxPointsNumber\030\004 \002(\005\":\n\026GetLi" +
-      "neOfSightResponse\022 \n\006points\030\001 \003(\0132\020.Meas" +
-      "urePointDto\"\270\001\n\021GetNfzListRequest\022\020\n\010cli" +
-      "entId\030\001 \002(\005\022\023\n\013minLatitude\030\002 \002(\001\022\024\n\014minL" +
-      "ongitude\030\003 \002(\001\022\023\n\013maxLatitude\030\004 \002(\001\022\024\n\014m" +
-      "axLongitude\030\005 \002(\001\022\"\n\023refreshDependencies" +
-      "\030\006 \001(\010:\005false\022\027\n\017refreshExcludes\030\007 \003(\t\"2" +
-      "\n\022GetNfzListResponse\022\034\n\005zones\030\001 \003(\0132\r.No",
-      "FlightZone\"\235\001\n\024GetRasterGridRequest\022\020\n\010c" +
-      "lientId\030\001 \002(\005\022\023\n\013minLatitude\030\003 \002(\001\022\024\n\014mi" +
-      "nLongitude\030\004 \002(\001\022\023\n\013maxLatitude\030\005 \002(\001\022\024\n" +
-      "\014maxLongitude\030\006 \002(\001\022\r\n\005width\030\007 \002(\005\022\016\n\006he" +
-      "ight\030\010 \002(\005\"V\n\025GetRasterGridResponse\022\016\n\006v" +
-      "alues\030\001 \003(\002\022\r\n\005width\030\002 \002(\005\022\016\n\006height\030\003 \002" +
-      "(\005\022\016\n\006noData\030\004 \002(\010\"Q\n\026GetRasterValuesReq" +
-      "uest\022\020\n\010clientId\030\001 \002(\005\022\021\n\tlatitudes\030\003 \003(" +
-      "\001\022\022\n\nlongitudes\030\004 \003(\001\"9\n\027GetRasterValues" +
-      "Response\022\016\n\006values\030\001 \003(\002\022\016\n\006noData\030\002 \002(\010",
-      "\"y\n\023GetTelemetryRequest\022\020\n\010clientId\030\001 \002(" +
-      "\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\020\n\010fromTime" +
-      "\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\023\n\005limit\030\005 \001(\005:\0047" +
-      "200\"S\n\024GetTelemetryResponse\022 \n\ttelemetry" +
-      "\030\001 \003(\0132\r.TelemetryDto\022\031\n\021nextTelemetryTi" +
-      "me\030\002 \001(\003\"g\n\026DeleteTelemetryRequest\022\020\n\010cl" +
-      "ientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022" +
-      "\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime\030\004 \001(\003\"\031\n\027Del" +
-      "eteTelemetryResponse\"\200\001\n\033TraceTelemetryF" +
-      "ramesRequest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicl",
-      "e\030\002 \002(\0132\010.Vehicle\022\022\n\noriginTime\030\003 \002(\003\022\020\n" +
-      "\010interval\030\004 \002(\001\022\016\n\006number\030\005 \002(\005\"U\n\034Trace" +
-      "TelemetryFramesResponse\022\016\n\006frames\030\001 \003(\010\022" +
-      "%\n\rcommandFrames\030\002 \003(\0132\016.CommandSetDto\"\207" +
-      "\001\n\025CountTelemetryRequest\022\020\n\010clientId\030\001 \002" +
-      "(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\020\n\010fromTim" +
-      "e\030\003 \001(\003\022\016\n\006toTime\030\004 \001(\003\022\037\n\020estimateTLogS" +
-      "ize\030\005 \001(\010:\005false\"9\n\026CountTelemetryRespon" +
-      "se\022\r\n\005count\030\001 \002(\003\022\020\n\010tLogSize\030\002 \001(\003\"\223\001\n\035" +
-      "GetLocationPassingTimeRequest\022\020\n\010clientI",
-      "d\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\020\n\010fr" +
-      "omTime\030\003 \002(\003\022\016\n\006toTime\030\004 \002(\003\022#\n\010location" +
-      "\030\005 \002(\0132\021.Wgs84LocationDto\".\n\036GetLocation" +
-      "PassingTimeResponse\022\014\n\004time\030\001 \002(\003\"\200\001\n\027Ge" +
-      "tVehicleTracksRequest\022\020\n\010clientId\030\001 \002(\005\022" +
-      "\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\020\n\010fromTime\030\003" +
-      " \002(\003\022\016\n\006toTime\030\004 \001(\003\022\026\n\tmaxPoints\030\005 \001(\005:" +
-      "\003200\"C\n\030GetVehicleTracksResponse\022\'\n\rvehi" +
-      "cleTracks\030\001 \003(\0132\020.VehicleTrackDto\"\233\001\n Ge" +
-      "tKmlRouteRepresentationRequest\022\020\n\010client",
-      "Id\030\001 \002(\005\022\021\n\trouteName\030\002 \002(\t\022,\n\023routeVehi" +
-      "cleProfile\030\003 \002(\0132\017.VehicleProfile\022$\n\tway" +
-      "points\030\004 \003(\0132\021.Wgs84LocationDto\"4\n!GetKm" +
-      "lRouteRepresentationResponse\022\017\n\007kmlData\030" +
-      "\001 \002(\014\"s\n\032GetAdsbAircraftListRequest\022\020\n\010c" +
-      "lientId\030\001 \002(\005\022#\n\010location\030\002 \002(\0132\021.Wgs84L" +
-      "ocationDto\022\016\n\006radius\030\003 \002(\001\022\016\n\006height\030\004 \002" +
-      "(\001\"?\n\033GetAdsbAircraftListResponse\022 \n\tair" +
-      "crafts\030\001 \003(\0132\r.AdsbAircraft\"H\n\023SearchPla" +
-      "cesRequest\022\020\n\010clientId\030\001 \002(\005\022\r\n\005query\030\002 ",
-      "\002(\t\022\020\n\005limit\030\003 \002(\005:\0017\"1\n\024SearchPlacesRes" +
-      "ponse\022\031\n\006places\030\001 \003(\0132\t.PlaceDto\"\267\001\n\024Get" +
-      "VehicleLogRequest\022\020\n\010clientId\030\001 \002(\005\022\032\n\010v" +
-      "ehicles\030\002 \003(\0132\010.Vehicle\022\021\n\005limit\030\003 \001(\005:\002" +
-      "15\022/\n\005level\030\004 \001(\0162\016.SeverityLevel:\020SL_IN" +
-      "FORMATIONAL\022\020\n\010fromTime\030\005 \001(\003\022\033\n\014reverse" +
-      "Order\030\006 \001(\010:\005false\"D\n\025GetVehicleLogRespo" +
-      "nse\022+\n\021vehicleLogEntries\030\001 \003(\0132\020.Vehicle" +
-      "LogEntry\"\242\001\n\037GetVehicleLogByTimeRangeReq" +
-      "uest\022\020\n\010clientId\030\001 \002(\005\022\032\n\010vehicles\030\002 \003(\013",
-      "2\010.Vehicle\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004" +
-      " \002(\003\022/\n\005level\030\005 \001(\0162\016.SeverityLevel:\020SL_" +
-      "INFORMATIONAL\"O\n GetVehicleLogByTimeRang" +
-      "eResponse\022+\n\021vehicleLogEntries\030\001 \003(\0132\020.V" +
-      "ehicleLogEntry\"t\n\022SendCommandRequest\022\020\n\010" +
-      "clientId\030\001 \002(\005\022\031\n\007command\030\002 \002(\0132\010.Comman" +
-      "d\022\032\n\010vehicles\030\003 \003(\0132\010.Vehicle\022\025\n\ninterDe" +
-      "lay\030\004 \001(\003:\0010\"G\n\023SendCommandResponse\0220\n\016c" +
-      "ommandResults\030\001 \003(\0132\030.VehicleCommandResu" +
-      "ltDto\"\250\001\n\022UploadRouteRequest\022\020\n\010clientId",
-      "\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\'\n\016pro" +
-      "cessedRoute\030\003 \002(\0132\017.ProcessedRoute\022\034\n\013st" +
-      "artAction\030\004 \001(\0132\007.Action\022\036\n\020addFirstWayp" +
-      "oint\030\005 \001(\010:\004true\"\025\n\023UploadRouteResponse\"" +
-      "{\n\025GetNativeRouteRequest\022\020\n\010clientId\030\001 \002" +
-      "(\005\022\'\n\016processedRoute\030\002 \002(\0132\017.ProcessedRo" +
-      "ute\022\'\n\016vehicleProfile\030\003 \002(\0132\017.VehiclePro" +
-      "file\"-\n\026GetNativeRouteResponse\022\023\n\013native" +
-      "Route\030\001 \002(\014\",\n\030GetAdsbBulbStatusRequest\022" +
-      "\020\n\010clientId\030\001 \002(\005\"\'\n\031GetAdsbBulbStatusRe",
-      "sponse\022\n\n\002on\030\001 \002(\010\"%\n\021GetLicenseRequest\022" +
-      "\020\n\010clientId\030\001 \002(\005\"c\n\022GetLicenseResponse\022" +
-      "\031\n\007license\030\001 \001(\0132\010.License\0222\n\022licensePer" +
-      "missions\030\002 \002(\0132\026.LicensePermissionsDto\"B" +
+      "cameras\030\002 \003(\0132\n.CameraDto\"K\n\022VehicleComm" +
+      "andsDto\022\031\n\007vehicle\030\001 \001(\0132\010.Vehicle\022\032\n\010co",
+      "mmands\030\002 \003(\0132\010.Command\"0\n\005Error\022\024\n\014error" +
+      "Message\030\001 \001(\t\022\021\n\terrorCode\030\002 \001(\005\";\n\023Auth" +
+      "orizeHciRequest\022\024\n\010clientId\030\001 \002(\005:\002-1\022\016\n" +
+      "\006locale\030\002 \001(\t\"(\n\024AuthorizeHciResponse\022\020\n" +
+      "\010clientId\030\001 \002(\005\"7\n\023SetHciLocaleRequest\022\020" +
+      "\n\010clientId\030\001 \002(\005\022\016\n\006locale\030\002 \002(\t\"\026\n\024SetH" +
+      "ciLocaleResponse\"I\n\014LoginRequest\022\020\n\010clie" +
+      "ntId\030\001 \002(\005\022\021\n\tuserLogin\030\002 \002(\t\022\024\n\014userPas" +
+      "sword\030\003 \002(\t\"$\n\rLoginResponse\022\023\n\004user\030\001 \002" +
+      "(\0132\005.User\"!\n\rLogoutRequest\022\020\n\010clientId\030\001",
+      " \002(\005\"\020\n\016LogoutResponse\">\n\023ProcessRouteRe" +
+      "quest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006" +
+      ".Route\"?\n\024ProcessRouteResponse\022\'\n\016proces" +
+      "sedRoute\030\001 \002(\0132\017.ProcessedRoute\"l\n\034Conve" +
+      "rtRouteAltitudesRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n\014altitudeType" +
+      "\030\004 \002(\0162\r.AltitudeType\"6\n\035ConvertRouteAlt" +
+      "itudesResponse\022\025\n\005route\030\001 \002(\0132\006.Route\"p\n" +
+      " ChangeRouteVehicleProfileRequest\022\020\n\010cli" +
+      "entId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022#\n\nne",
+      "wProfile\030\003 \002(\0132\017.VehicleProfile\"R\n!Chang" +
+      "eRouteVehicleProfileResponse\022\025\n\005route\030\001 " +
+      "\002(\0132\006.Route\022\026\n\016warningMessage\030\002 \003(\t\"u\n#G" +
+      "etParametersSelectionValuesRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022%\n\ta" +
+      "lgorithm\030\003 \002(\0132\022.TraverseAlgorithm\"F\n$Ge" +
+      "tParametersSelectionValuesResponse\022\036\n\nse" +
+      "lections\030\001 \003(\0132\n.Selection\"z\n\032GetElevati" +
+      "onProfileRequest\022\020\n\010clientId\030\001 \002(\005\022\024\n\014sa" +
+      "mplingStep\030\003 \002(\001\022$\n\tlocations\030\004 \003(\0132\021.Wg",
+      "s84LocationDto\022\016\n\006number\030\005 \001(\005\"o\n\033GetEle" +
+      "vationProfileResponse\022$\n\tlocations\030\001 \003(\013" +
+      "2\021.Wgs84LocationDto\022\022\n\nelevations\030\002 \003(\001\022" +
+      "\026\n\016obstacleHeight\030\003 \003(\001\"Z\n\026CalculateSpli" +
+      "neRequest\022\020\n\010clientId\030\001 \002(\005\022\034\n\twaypounts" +
+      "\030\002 \003(\0132\t.Waypoint\022\020\n\010accuracy\030\003 \001(\001\"?\n\027C" +
+      "alculateSplineResponse\022$\n\tlocations\030\001 \003(" +
+      "\0132\021.Wgs84LocationDto\"B\n\027ExportRouteToXml" +
+      "Request\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\013" +
+      "2\006.Route\",\n\030ExportRouteToXmlResponse\022\020\n\010",
+      "routeXml\030\001 \002(\014\"\240\001\n\022ImportRouteRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\021\n\trouteData\030\002 \002(\014\022\020\n\010fi" +
+      "lename\030\003 \002(\t\022%\n\talgorithm\030\004 \001(\0132\022.Traver" +
+      "seAlgorithm\022,\n\nparameters\030\005 \003(\0132\030.Import" +
+      "RouteParameterDto\",\n\023ImportRouteResponse" +
+      "\022\025\n\005route\030\001 \002(\0132\006.Route\"H\n\031ExportMission" +
+      "ToXmlRequest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007missio" +
+      "n\030\002 \002(\0132\010.Mission\"0\n\032ExportMissionToXmlR" +
+      "esponse\022\022\n\nmissionXml\030\001 \002(\014\"C\n\033ImportMis" +
+      "sionFromXmlRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\n",
+      "missionXml\030\002 \002(\014\"9\n\034ImportMissionFromXml" +
+      "Response\022\031\n\007mission\030\001 \002(\0132\010.Mission\"^\n\033E" +
+      "xportTelemetryToXmlRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022-\n\021telemetryInterval\030\002 \002(\0132\022.Teleme" +
+      "tryInterval\"4\n\034ExportTelemetryToXmlRespo" +
+      "nse\022\024\n\014telemetryXml\030\001 \002(\014\"\216\001\n\035ImportTele" +
+      "metryFromXmlRequest\022\020\n\010clientId\030\001 \002(\005\022\024\n" +
+      "\014telemetryXml\030\002 \002(\014\0227\n\026conflictResolutio" +
+      "nMode\030\003 \002(\0162\027.ConflictResolutionMode\022\014\n\004" +
+      "name\030\004 \001(\t\"O\n\036ImportTelemetryFromXmlResp",
+      "onse\022-\n\021telemetryInterval\030\001 \002(\0132\022.Teleme" +
+      "tryInterval\"4\n GetTrialSubscriptionsPlan" +
+      "Request\022\020\n\010clientId\030\001 \002(\005\"Q\n!GetTrialSub" +
+      "scriptionsPlanResponse\022,\n\021subscriptionPl" +
+      "ans\030\001 \003(\0132\021.SubscriptionPlan\"\227\001\n\017GetTria" +
+      "lRequest\022\020\n\010clientId\030\001 \002(\005\022\021\n\tfirstName\030" +
+      "\002 \001(\t\022\020\n\010lastName\030\003 \001(\t\022\r\n\005email\030\004 \002(\t\022\017" +
+      "\n\007country\030\005 \001(\t\022\030\n\020subscriptionPlan\030\006 \002(" +
+      "\t\022\023\n\013companyName\030\007 \001(\t\"\"\n\020GetTrialRespon" +
+      "se\022\016\n\006status\030\001 \002(\t\"\206\001\n\025GetLineOfSightReq",
+      "uest\022\020\n\010clientId\030\001 \002(\005\022*\n\020observerPositi" +
+      "on\030\002 \002(\0132\020.MeasurePointDto\022\023\n\013maxDistanc" +
+      "e\030\003 \002(\001\022\032\n\022approxPointsNumber\030\004 \002(\005\":\n\026G" +
+      "etLineOfSightResponse\022 \n\006points\030\001 \003(\0132\020." +
+      "MeasurePointDto\"\321\001\n\021GetNfzListRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\023\n\013minLatitude\030\002 \002(\001\022\024\n\014" +
+      "minLongitude\030\003 \002(\001\022\023\n\013maxLatitude\030\004 \002(\001\022" +
+      "\024\n\014maxLongitude\030\005 \002(\001\022\"\n\023refreshDependen" +
+      "cies\030\006 \001(\010:\005false\022\027\n\017refreshExcludes\030\007 \003" +
+      "(\t\022\027\n\005types\030\010 \003(\0162\010.NfzType\"2\n\022GetNfzLis",
+      "tResponse\022\034\n\005zones\030\001 \003(\0132\r.NoFlightZone\"" +
+      "\235\001\n\024GetRasterGridRequest\022\020\n\010clientId\030\001 \002" +
+      "(\005\022\023\n\013minLatitude\030\003 \002(\001\022\024\n\014minLongitude\030" +
+      "\004 \002(\001\022\023\n\013maxLatitude\030\005 \002(\001\022\024\n\014maxLongitu" +
+      "de\030\006 \002(\001\022\r\n\005width\030\007 \002(\005\022\016\n\006height\030\010 \002(\005\"" +
+      "V\n\025GetRasterGridResponse\022\016\n\006values\030\001 \003(\002" +
+      "\022\r\n\005width\030\002 \002(\005\022\016\n\006height\030\003 \002(\005\022\016\n\006noDat" +
+      "a\030\004 \002(\010\"Q\n\026GetRasterValuesRequest\022\020\n\010cli" +
+      "entId\030\001 \002(\005\022\021\n\tlatitudes\030\003 \003(\001\022\022\n\nlongit" +
+      "udes\030\004 \003(\001\"9\n\027GetRasterValuesResponse\022\016\n",
+      "\006values\030\001 \003(\002\022\016\n\006noData\030\002 \002(\010\"s\n\031SwapEle" +
+      "vationOrderRequest\022\020\n\010clientId\030\001 \002(\005\022!\n\007" +
+      "source1\030\002 \002(\0132\020.ElevationSource\022!\n\007sourc" +
+      "e2\030\003 \002(\0132\020.ElevationSource\"\034\n\032SwapElevat" +
+      "ionOrderResponse\"y\n\023GetTelemetryRequest\022" +
+      "\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Veh" +
+      "icle\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\023" +
+      "\n\005limit\030\005 \001(\005:\0047200\"P\n\024GetTelemetryRespo" +
+      "nse\022\031\n\021nextTelemetryTime\030\002 \001(\003\022\035\n\tteleme" +
+      "try\030\003 \003(\0132\n.Telemetry\"g\n\026DeleteTelemetry",
+      "Request\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002" +
+      "(\0132\010.Vehicle\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime" +
+      "\030\004 \001(\003\"\031\n\027DeleteTelemetryResponse\"\200\001\n\033Tr" +
+      "aceTelemetryFramesRequest\022\020\n\010clientId\030\001 " +
+      "\002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022\022\n\norigin" +
+      "Time\030\003 \002(\003\022\020\n\010interval\030\004 \002(\001\022\016\n\006number\030\005" +
+      " \002(\005\"U\n\034TraceTelemetryFramesResponse\022\016\n\006" +
+      "frames\030\001 \003(\010\022%\n\rcommandFrames\030\002 \003(\0132\016.Co" +
+      "mmandSetDto\"\207\001\n\025CountTelemetryRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehic",
+      "le\022\020\n\010fromTime\030\003 \001(\003\022\016\n\006toTime\030\004 \001(\003\022\037\n\020" +
+      "estimateTLogSize\030\005 \001(\010:\005false\"9\n\026CountTe" +
+      "lemetryResponse\022\r\n\005count\030\001 \002(\003\022\020\n\010tLogSi" +
+      "ze\030\002 \001(\003\"\223\001\n\035GetLocationPassingTimeReque" +
+      "st\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010." +
+      "Vehicle\022\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \002(" +
+      "\003\022#\n\010location\030\005 \002(\0132\021.Wgs84LocationDto\"." +
+      "\n\036GetLocationPassingTimeResponse\022\014\n\004time" +
+      "\030\001 \002(\003\"\200\001\n\027GetVehicleTracksRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.Vehicle\022",
+      "\020\n\010fromTime\030\003 \002(\003\022\016\n\006toTime\030\004 \001(\003\022\026\n\tmax" +
+      "Points\030\005 \001(\005:\003200\"C\n\030GetVehicleTracksRes" +
+      "ponse\022\'\n\rvehicleTracks\030\001 \003(\0132\020.VehicleTr" +
+      "ackDto\"\233\001\n GetKmlRouteRepresentationRequ" +
+      "est\022\020\n\010clientId\030\001 \002(\005\022\021\n\trouteName\030\002 \002(\t" +
+      "\022,\n\023routeVehicleProfile\030\003 \002(\0132\017.VehicleP" +
+      "rofile\022$\n\twaypoints\030\004 \003(\0132\021.Wgs84Locatio" +
+      "nDto\"4\n!GetKmlRouteRepresentationRespons" +
+      "e\022\017\n\007kmlData\030\001 \002(\014\"s\n\032GetAdsbAircraftLis" +
+      "tRequest\022\020\n\010clientId\030\001 \002(\005\022#\n\010location\030\002",
+      " \002(\0132\021.Wgs84LocationDto\022\016\n\006radius\030\003 \002(\001\022" +
+      "\016\n\006height\030\004 \002(\001\"?\n\033GetAdsbAircraftListRe" +
+      "sponse\022 \n\taircrafts\030\001 \003(\0132\r.AdsbAircraft" +
+      "\"H\n\023SearchPlacesRequest\022\020\n\010clientId\030\001 \002(" +
+      "\005\022\r\n\005query\030\002 \002(\t\022\020\n\005limit\030\003 \002(\005:\0017\"1\n\024Se" +
+      "archPlacesResponse\022\031\n\006places\030\001 \003(\0132\t.Pla" +
+      "ceDto\"\267\001\n\024GetVehicleLogRequest\022\020\n\010client" +
+      "Id\030\001 \002(\005\022\032\n\010vehicles\030\002 \003(\0132\010.Vehicle\022\021\n\005" +
+      "limit\030\003 \001(\005:\00215\022/\n\005level\030\004 \001(\0162\016.Severit" +
+      "yLevel:\020SL_INFORMATIONAL\022\020\n\010fromTime\030\005 \001",
+      "(\003\022\033\n\014reverseOrder\030\006 \001(\010:\005false\"D\n\025GetVe" +
+      "hicleLogResponse\022+\n\021vehicleLogEntries\030\001 " +
+      "\003(\0132\020.VehicleLogEntry\"\242\001\n\037GetVehicleLogB" +
+      "yTimeRangeRequest\022\020\n\010clientId\030\001 \002(\005\022\032\n\010v" +
+      "ehicles\030\002 \003(\0132\010.Vehicle\022\020\n\010fromTime\030\003 \002(" +
+      "\003\022\016\n\006toTime\030\004 \002(\003\022/\n\005level\030\005 \001(\0162\016.Sever" +
+      "ityLevel:\020SL_INFORMATIONAL\"O\n GetVehicle" +
+      "LogByTimeRangeResponse\022+\n\021vehicleLogEntr" +
+      "ies\030\001 \003(\0132\020.VehicleLogEntry\"\233\001\n\022SendComm" +
+      "andRequest\022\020\n\010clientId\030\001 \002(\005\022\031\n\007command\030",
+      "\002 \001(\0132\010.Command\022\032\n\010vehicles\030\003 \003(\0132\010.Vehi" +
+      "cle\022\025\n\ninterDelay\030\004 \001(\003:\0010\022%\n\010commands\030\005" +
+      " \003(\0132\023.VehicleCommandsDto\"G\n\023SendCommand" +
+      "Response\0220\n\016commandResults\030\001 \003(\0132\030.Vehic" +
+      "leCommandResultDto\"\250\001\n\022UploadRouteReques" +
+      "t\022\020\n\010clientId\030\001 \002(\005\022\031\n\007vehicle\030\002 \002(\0132\010.V" +
+      "ehicle\022\'\n\016processedRoute\030\003 \002(\0132\017.Process" +
+      "edRoute\022\034\n\013startAction\030\004 \001(\0132\007.Action\022\036\n" +
+      "\020addFirstWaypoint\030\005 \001(\010:\004true\"\025\n\023UploadR" +
+      "outeResponse\"{\n\025GetNativeRouteRequest\022\020\n",
+      "\010clientId\030\001 \002(\005\022\'\n\016processedRoute\030\002 \002(\0132" +
+      "\017.ProcessedRoute\022\'\n\016vehicleProfile\030\003 \002(\013" +
+      "2\017.VehicleProfile\"-\n\026GetNativeRouteRespo" +
+      "nse\022\023\n\013nativeRoute\030\001 \002(\014\",\n\030GetAdsbBulbS" +
+      "tatusRequest\022\020\n\010clientId\030\001 \002(\005\"\'\n\031GetAds" +
+      "bBulbStatusResponse\022\n\n\002on\030\001 \002(\010\"%\n\021GetLi" +
+      "censeRequest\022\020\n\010clientId\030\001 \002(\005\"~\n\022GetLic" +
+      "enseResponse\022\032\n\010licenses\030\001 \003(\0132\010.License" +
+      "\0222\n\022licensePermissions\030\002 \002(\0132\026.LicensePe" +
+      "rmissionsDto\022\030\n\020noLicenseMessage\030\003 \001(\t\"B",
       "\n\026ActivateLicenseRequest\022\020\n\010clientId\030\001 \002" +
       "(\005\022\026\n\016activationCode\030\002 \002(\t\"4\n\027ActivateLi" +
       "censeResponse\022\031\n\007license\030\001 \001(\0132\010.License" +
-      "\",\n\030DeactivateLicenseRequest\022\020\n\010clientId" +
-      "\030\001 \002(\005\"\033\n\031DeactivateLicenseResponse\"*\n\026C" +
-      "heckForUpdatesRequest\022\020\n\010clientId\030\001 \002(\005\"",
-      "@\n\027CheckForUpdatesResponse\022%\n\013newVersion" +
-      "s\030\001 \001(\0132\020.VersionsInfoDto\"M\n\025SendStatist" +
-      "icsRequest\022\020\n\010clientId\030\001 \002(\005\022\"\n\nstatisti" +
-      "cs\030\002 \002(\0132\016.StatisticsDto\"*\n\026SendStatisti" +
-      "csResponse\022\020\n\010accepted\030\001 \002(\010\"\222\001\n\024GetObje" +
-      "ctListRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjec" +
-      "tType\030\002 \002(\t\022\"\n\023refreshDependencies\030\003 \001(\010" +
-      ":\005false\022\027\n\017refreshExcludes\030\004 \003(\t\022\027\n\ttran" +
-      "slate\030\005 \001(\010:\004true\"R\n\025GetObjectListRespon" +
-      "se\022\022\n\nobjectType\030\001 \002(\t\022%\n\007objects\030\002 \003(\0132",
-      "\024.DomainObjectWrapper\"\240\001\n\020GetObjectReque" +
-      "st\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t" +
-      "\022\020\n\010objectId\030\003 \002(\005\022\"\n\023refreshDependencie" +
-      "s\030\004 \001(\010:\005false\022\027\n\017refreshExcludes\030\005 \003(\t\022" +
-      "\027\n\ttranslate\030\006 \001(\010:\004true\"M\n\021GetObjectRes" +
+      "\"D\n\030DeactivateLicenseRequest\022\020\n\010clientId" +
+      "\030\001 \002(\005\022\026\n\016activationCode\030\002 \002(\t\"\033\n\031Deacti" +
+      "vateLicenseResponse\"*\n\026CheckForUpdatesRe" +
+      "quest\022\020\n\010clientId\030\001 \002(\005\"@\n\027CheckForUpdat" +
+      "esResponse\022%\n\013newVersions\030\001 \001(\0132\020.Versio" +
+      "nsInfoDto\"M\n\025SendStatisticsRequest\022\020\n\010cl" +
+      "ientId\030\001 \002(\005\022\"\n\nstatistics\030\002 \002(\0132\016.Stati",
+      "sticsDto\"*\n\026SendStatisticsResponse\022\020\n\010ac" +
+      "cepted\030\001 \002(\010\"\222\001\n\024GetObjectListRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\"\n\023r" +
+      "efreshDependencies\030\003 \001(\010:\005false\022\027\n\017refre" +
+      "shExcludes\030\004 \003(\t\022\027\n\ttranslate\030\005 \001(\010:\004tru" +
+      "e\"R\n\025GetObjectListResponse\022\022\n\nobjectType" +
+      "\030\001 \002(\t\022%\n\007objects\030\002 \003(\0132\024.DomainObjectWr" +
+      "apper\"\240\001\n\020GetObjectRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002" +
+      "(\005\022\"\n\023refreshDependencies\030\004 \001(\010:\005false\022\027",
+      "\n\017refreshExcludes\030\005 \003(\t\022\027\n\ttranslate\030\006 \001" +
+      "(\010:\004true\"M\n\021GetObjectResponse\022\022\n\nobjectT" +
+      "ype\030\001 \002(\t\022$\n\006object\030\002 \002(\0132\024.DomainObject" +
+      "Wrapper\"\243\001\n\033CreateOrUpdateObjectRequest\022" +
+      "\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022$\n" +
+      "\006object\030\003 \002(\0132\024.DomainObjectWrapper\022\034\n\016w" +
+      "ithComposites\030\004 \001(\010:\004true\022\032\n\013acquireLock" +
+      "\030\005 \001(\010:\005false\"X\n\034CreateOrUpdateObjectRes" +
       "ponse\022\022\n\nobjectType\030\001 \002(\t\022$\n\006object\030\002 \002(" +
-      "\0132\024.DomainObjectWrapper\"\243\001\n\033CreateOrUpda" +
-      "teObjectRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobj" +
-      "ectType\030\002 \002(\t\022$\n\006object\030\003 \002(\0132\024.DomainOb" +
-      "jectWrapper\022\034\n\016withComposites\030\004 \001(\010:\004tru",
-      "e\022\032\n\013acquireLock\030\005 \001(\010:\005false\"X\n\034CreateO" +
-      "rUpdateObjectResponse\022\022\n\nobjectType\030\001 \002(" +
-      "\t\022$\n\006object\030\002 \002(\0132\024.DomainObjectWrapper\"" +
-      "\227\001\n\031UpdateObjectFieldsRequest\022\020\n\010clientI" +
-      "d\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022$\n\006object\030\003 " +
-      "\002(\0132\024.DomainObjectWrapper\022\022\n\nfieldNames\030" +
-      "\004 \003(\t\022\032\n\013acquireLock\030\005 \001(\010:\005false\"V\n\032Upd" +
-      "ateObjectFieldsResponse\022\022\n\nobjectType\030\001 " +
-      "\002(\t\022$\n\006object\030\002 \002(\0132\024.DomainObjectWrappe" +
-      "r\"M\n\023DeleteObjectRequest\022\020\n\010clientId\030\001 \002",
-      "(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005" +
-      "\"S\n\024DeleteObjectResponse\022\022\n\nobjectType\030\001" +
-      " \002(\t\022\020\n\010objectId\030\002 \002(\005\022\025\n\robjectVersion\030" +
-      "\003 \001(\005\"\301\001\n\021GetMappingRequest\022\020\n\010clientId\030" +
-      "\001 \002(\005\022\025\n\rgetAlgorithms\030\002 \001(\010\022\032\n\022getFails" +
-      "afeActions\030\003 \001(\010\022\034\n\024getWaypointTurnTypes" +
-      "\030\004 \001(\010\022\033\n\023getActionExecutions\030\005 \001(\010\022\022\n\ng" +
-      "etCameras\030\006 \001(\010\022\030\n\020getAltitudeTypes\030\007 \001(" +
-      "\010\"\356\002\n\022GetMappingResponse\022\020\n\010clientId\030\001 \002" +
-      "(\005\0220\n\021algorithmsMapping\030\002 \001(\0132\025.Algorith",
-      "msMappingDto\022:\n\026failsafeActionsMapping\030\003" +
-      " \001(\0132\032.FailsafeActionsMappingDto\0226\n\030wayp" +
-      "ointTurnTypesMapping\030\004 \001(\0132\024.TurnTypesMa" +
-      "ppingDto\022<\n\027actionExecutionsMapping\030\005 \001(" +
-      "\0132\033.ActionExecutionsMappingDto\022*\n\016camera" +
-      "sMapping\030\006 \001(\0132\022.CamerasMappingDto\0226\n\024al" +
-      "titudeTypesMapping\030\007 \001(\0132\030.AltitudeTypes" +
-      "MappingDto\"L\n\022AcquireLockRequest\022\020\n\010clie" +
-      "ntId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010object" +
-      "Id\030\003 \002(\005\"\025\n\023AcquireLockResponse\"h\n\022Relea",
-      "seLockRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjec" +
-      "tType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\022\032\n\013ifExclu" +
-      "sive\030\004 \001(\010:\005false\"\025\n\023ReleaseLockResponse" +
-      "\"J\n\020CheckLockRequest\022\020\n\010clientId\030\001 \002(\005\022\022" +
-      "\n\nobjectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"N\n\021" +
-      "CheckLockResponse\022\022\n\nobjectType\030\001 \002(\t\022\020\n" +
-      "\010objectId\030\002 \002(\005\022\023\n\004lock\030\003 \001(\0132\005.Lock\"T\n\031" +
-      "CheckMultipleLocksRequest\022\020\n\010clientId\030\001 " +
-      "\002(\005\022\022\n\nobjectType\030\002 \002(\t\022\021\n\tobjectIds\030\003 \003" +
-      "(\005\"Y\n\032CheckMultipleLocksResponse\022\022\n\nobje",
-      "ctType\030\001 \002(\t\022\021\n\tobjectIds\030\002 \003(\005\022\024\n\005locks" +
-      "\030\003 \003(\0132\005.Lock\"`\n\034GetMissionPreferencesRe" +
-      "quest\022\020\n\010clientId\030\001 \002(\005\022\023\n\004user\030\002 \002(\0132\005." +
-      "User\022\031\n\007mission\030\003 \001(\0132\010.Mission\"H\n\035GetMi" +
-      "ssionPreferencesResponse\022\'\n\013preferences\030" +
-      "\001 \003(\0132\022.MissionPreference\"\\\n\037UpdateMissi" +
-      "onPreferencesRequest\022\020\n\010clientId\030\001 \002(\005\022\'" +
-      "\n\013preferences\030\002 \003(\0132\022.MissionPreference\"" +
-      "\"\n UpdateMissionPreferencesResponse\"{\n\031S" +
-      "ubmitUtmOperationRequest\022\020\n\010clientId\030\001 \002",
-      "(\005\022#\n\014utmOperation\030\002 \002(\0132\r.UtmOperation\022" +
-      "\'\n\016processedRoute\030\003 \002(\0132\017.ProcessedRoute" +
-      "\"A\n\032SubmitUtmOperationResponse\022#\n\014utmOpe" +
-      "ration\030\001 \002(\0132\r.UtmOperation\"*\n\026GetCapabi" +
-      "litiesRequest\022\020\n\010clientId\030\001 \002(\005\"-\n\027GetCa" +
-      "pabilitiesResponse\022\022\n\003utm\030\001 \002(\010:\005false\"L" +
-      "\n\025GetPolygonAreaRequest\022\020\n\010clientId\030\001 \002(" +
-      "\005\022!\n\006points\030\002 \003(\0132\021.Wgs84LocationDto\"&\n\026" +
-      "GetPolygonAreaResponse\022\014\n\004area\030\001 \002(\001\"u\n\033" +
-      "SplitRouteBySegmentsRequest\022\020\n\010clientId\030",
-      "\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022\026\n\016segmentI" +
-      "ndices\030\003 \003(\005\022\025\n\tovershoot\030\004 \002(\001:\00210\"5\n\034S" +
-      "plitRouteBySegmentsResponse\022\025\n\005parts\030\001 \003" +
-      "(\0132\006.Route\"\230\001\n\033SplitRouteByDistanceReque" +
-      "st\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002 \002(\0132\006.Ro" +
-      "ute\022\020\n\010distance\030\004 \002(\001\022\025\n\ttolerance\030\005 \002(\001" +
-      ":\00210\022\025\n\tovershoot\030\006 \002(\001:\00210\022\020\n\005limit\030\007 \002" +
-      "(\005:\0012\"5\n\034SplitRouteByDistanceResponse\022\025\n" +
-      "\005parts\030\001 \003(\0132\006.Route\"Y\n\020JoinRouteRequest" +
-      "\022\020\n\010clientId\030\001 \002(\005\022\025\n\005parts\030\002 \003(\0132\006.Rout",
-      "e\022\034\n\016mergeEndpoints\030\003 \002(\010:\004true\"*\n\021JoinR" +
-      "outeResponse\022\025\n\005route\030\001 \002(\0132\006.Route\"T\n\027R" +
-      "econstructRouteRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\022\'\n\016processedRoute\030\002 \002(\0132\017.ProcessedRout" +
-      "e\"1\n\030ReconstructRouteResponse\022\025\n\005route\030\001" +
-      " \002(\0132\006.Route\"6\n\017OperationStatus\022#\n\rprogr" +
-      "essStack\030\001 \003(\0132\014.ProgressDto\"2\n\017Operatio" +
-      "nStream\022\020\n\010streamId\030\001 \002(\t\022\r\n\005chunk\030\002 \002(\014" +
-      "\"?\n\026OperationStreamRequest\022\020\n\010streamId\030\001" +
-      " \002(\t\022\023\n\013chunkLength\030\002 \002(\005\"+\n\026CancelOpera",
-      "tionRequest\022\021\n\trequestId\030\001 \002(\005\"\031\n\027Cancel" +
-      "OperationResponse\"%\n\021StreamTestRequest\022\020" +
-      "\n\010clientId\030\001 \002(\005\"\024\n\022StreamTestResponse\"\'" +
-      "\n\023ProgressTestRequest\022\020\n\010clientId\030\001 \002(\005\"" +
-      "\026\n\024ProgressTestResponse\"D\n\014Notification\022" +
-      "\026\n\016subscriptionId\030\001 \002(\005\022\034\n\005event\030\002 \002(\0132\r" +
-      ".EventWrapper\"Z\n\025SubscribeEventRequest\022\020" +
-      "\n\010clientId\030\001 \002(\005\022/\n\014subscription\030\002 \002(\0132\031" +
-      ".EventSubscriptionWrapper\"0\n\026SubscribeEv" +
-      "entResponse\022\026\n\016subscriptionId\030\001 \002(\005\"C\n\027U",
-      "nsubscribeEventRequest\022\020\n\010clientId\030\001 \002(\005" +
-      "\022\026\n\016subscriptionId\030\002 \002(\005\"\032\n\030UnsubscribeE" +
-      "ventResponseB#\n\022com.ugcs.ucs.protoB\rMess" +
-      "agesProto"
+      "\0132\024.DomainObjectWrapper\"\227\001\n\031UpdateObject",
+      "FieldsRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjec" +
+      "tType\030\002 \002(\t\022$\n\006object\030\003 \002(\0132\024.DomainObje" +
+      "ctWrapper\022\022\n\nfieldNames\030\004 \003(\t\022\032\n\013acquire" +
+      "Lock\030\005 \001(\010:\005false\"V\n\032UpdateObjectFieldsR" +
+      "esponse\022\022\n\nobjectType\030\001 \002(\t\022$\n\006object\030\002 " +
+      "\002(\0132\024.DomainObjectWrapper\"M\n\023DeleteObjec" +
+      "tRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType" +
+      "\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"S\n\024DeleteObject" +
+      "Response\022\022\n\nobjectType\030\001 \002(\t\022\020\n\010objectId" +
+      "\030\002 \002(\005\022\025\n\robjectVersion\030\003 \001(\005\"\301\001\n\021GetMap",
+      "pingRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\rgetAlgo" +
+      "rithms\030\002 \001(\010\022\032\n\022getFailsafeActions\030\003 \001(\010" +
+      "\022\034\n\024getWaypointTurnTypes\030\004 \001(\010\022\033\n\023getAct" +
+      "ionExecutions\030\005 \001(\010\022\022\n\ngetCameras\030\006 \001(\010\022" +
+      "\030\n\020getAltitudeTypes\030\007 \001(\010\"\356\002\n\022GetMapping" +
+      "Response\022\020\n\010clientId\030\001 \002(\005\0220\n\021algorithms" +
+      "Mapping\030\002 \001(\0132\025.AlgorithmsMappingDto\022:\n\026" +
+      "failsafeActionsMapping\030\003 \001(\0132\032.FailsafeA" +
+      "ctionsMappingDto\0226\n\030waypointTurnTypesMap" +
+      "ping\030\004 \001(\0132\024.TurnTypesMappingDto\022<\n\027acti",
+      "onExecutionsMapping\030\005 \001(\0132\033.ActionExecut" +
+      "ionsMappingDto\022*\n\016camerasMapping\030\006 \001(\0132\022" +
+      ".CamerasMappingDto\0226\n\024altitudeTypesMappi" +
+      "ng\030\007 \001(\0132\030.AltitudeTypesMappingDto\"L\n\022Ac" +
+      "quireLockRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nob" +
+      "jectType\030\002 \002(\t\022\020\n\010objectId\030\003 \002(\005\"\025\n\023Acqu" +
+      "ireLockResponse\"h\n\022ReleaseLockRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002(\t\022\020\n\010o" +
+      "bjectId\030\003 \002(\005\022\032\n\013ifExclusive\030\004 \001(\010:\005fals" +
+      "e\"\025\n\023ReleaseLockResponse\"J\n\020CheckLockReq",
+      "uest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectType\030\002 \002" +
+      "(\t\022\020\n\010objectId\030\003 \002(\005\"N\n\021CheckLockRespons" +
+      "e\022\022\n\nobjectType\030\001 \002(\t\022\020\n\010objectId\030\002 \002(\005\022" +
+      "\023\n\004lock\030\003 \001(\0132\005.Lock\"T\n\031CheckMultipleLoc" +
+      "ksRequest\022\020\n\010clientId\030\001 \002(\005\022\022\n\nobjectTyp" +
+      "e\030\002 \002(\t\022\021\n\tobjectIds\030\003 \003(\005\"Y\n\032CheckMulti" +
+      "pleLocksResponse\022\022\n\nobjectType\030\001 \002(\t\022\021\n\t" +
+      "objectIds\030\002 \003(\005\022\024\n\005locks\030\003 \003(\0132\005.Lock\"`\n" +
+      "\034GetMissionPreferencesRequest\022\020\n\010clientI" +
+      "d\030\001 \002(\005\022\023\n\004user\030\002 \002(\0132\005.User\022\031\n\007mission\030",
+      "\003 \001(\0132\010.Mission\"H\n\035GetMissionPreferences" +
+      "Response\022\'\n\013preferences\030\001 \003(\0132\022.MissionP" +
+      "reference\"\\\n\037UpdateMissionPreferencesReq" +
+      "uest\022\020\n\010clientId\030\001 \002(\005\022\'\n\013preferences\030\002 " +
+      "\003(\0132\022.MissionPreference\"\"\n UpdateMission" +
+      "PreferencesResponse\"{\n\031SubmitUtmOperatio" +
+      "nRequest\022\020\n\010clientId\030\001 \002(\005\022#\n\014utmOperati" +
+      "on\030\002 \002(\0132\r.UtmOperation\022\'\n\016processedRout" +
+      "e\030\003 \002(\0132\017.ProcessedRoute\"A\n\032SubmitUtmOpe" +
+      "rationResponse\022#\n\014utmOperation\030\001 \002(\0132\r.U",
+      "tmOperation\"*\n\026GetCapabilitiesRequest\022\020\n" +
+      "\010clientId\030\001 \002(\005\"-\n\027GetCapabilitiesRespon" +
+      "se\022\022\n\003utm\030\001 \002(\010:\005false\"L\n\025GetPolygonArea" +
+      "Request\022\020\n\010clientId\030\001 \002(\005\022!\n\006points\030\002 \003(" +
+      "\0132\021.Wgs84LocationDto\"&\n\026GetPolygonAreaRe" +
+      "sponse\022\014\n\004area\030\001 \002(\001\"u\n\033SplitRouteBySegm" +
+      "entsRequest\022\020\n\010clientId\030\001 \002(\005\022\025\n\005route\030\002" +
+      " \002(\0132\006.Route\022\026\n\016segmentIndices\030\003 \003(\005\022\025\n\t" +
+      "overshoot\030\004 \002(\001:\00210\"5\n\034SplitRouteBySegme" +
+      "ntsResponse\022\025\n\005parts\030\001 \003(\0132\006.Route\"\230\001\n\033S",
+      "plitRouteByDistanceRequest\022\020\n\010clientId\030\001" +
+      " \002(\005\022\025\n\005route\030\002 \002(\0132\006.Route\022\020\n\010distance\030" +
+      "\004 \002(\001\022\025\n\ttolerance\030\005 \002(\001:\00210\022\025\n\tovershoo" +
+      "t\030\006 \002(\001:\00210\022\020\n\005limit\030\007 \002(\005:\0012\"5\n\034SplitRo" +
+      "uteByDistanceResponse\022\025\n\005parts\030\001 \003(\0132\006.R" +
+      "oute\"Y\n\020JoinRouteRequest\022\020\n\010clientId\030\001 \002" +
+      "(\005\022\025\n\005parts\030\002 \003(\0132\006.Route\022\034\n\016mergeEndpoi" +
+      "nts\030\003 \002(\010:\004true\"*\n\021JoinRouteResponse\022\025\n\005" +
+      "route\030\001 \002(\0132\006.Route\"T\n\027ReconstructRouteR" +
+      "equest\022\020\n\010clientId\030\001 \002(\005\022\'\n\016processedRou",
+      "te\030\002 \002(\0132\017.ProcessedRoute\"1\n\030Reconstruct" +
+      "RouteResponse\022\025\n\005route\030\001 \002(\0132\006.Route\"6\n\017" +
+      "OperationStatus\022#\n\rprogressStack\030\001 \003(\0132\014" +
+      ".ProgressDto\"2\n\017OperationStream\022\020\n\010strea" +
+      "mId\030\001 \002(\t\022\r\n\005chunk\030\002 \002(\014\"?\n\026OperationStr" +
+      "eamRequest\022\020\n\010streamId\030\001 \002(\t\022\023\n\013chunkLen" +
+      "gth\030\002 \002(\005\"+\n\026CancelOperationRequest\022\021\n\tr" +
+      "equestId\030\001 \002(\005\"\031\n\027CancelOperationRespons" +
+      "e\"%\n\021StreamTestRequest\022\020\n\010clientId\030\001 \002(\005" +
+      "\"\024\n\022StreamTestResponse\"\'\n\023ProgressTestRe",
+      "quest\022\020\n\010clientId\030\001 \002(\005\"\026\n\024ProgressTestR" +
+      "esponse\"D\n\014Notification\022\026\n\016subscriptionI" +
+      "d\030\001 \002(\005\022\034\n\005event\030\002 \002(\0132\r.EventWrapper\"Z\n" +
+      "\025SubscribeEventRequest\022\020\n\010clientId\030\001 \002(\005" +
+      "\022/\n\014subscription\030\002 \002(\0132\031.EventSubscripti" +
+      "onWrapper\"0\n\026SubscribeEventResponse\022\026\n\016s" +
+      "ubscriptionId\030\001 \002(\005\"C\n\027UnsubscribeEventR" +
+      "equest\022\020\n\010clientId\030\001 \002(\005\022\026\n\016subscription" +
+      "Id\030\002 \002(\005\"\032\n\030UnsubscribeEventResponseB#\n\022" +
+      "com.ugcs.ucs.protoB\rMessagesProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -93289,8 +97882,16 @@ public final class MessagesProto {
               new java.lang.String[] { "ProfileId", "Cameras", },
               com.ugcs.ucs.proto.MessagesProto.ProfileCameraDto.class,
               com.ugcs.ucs.proto.MessagesProto.ProfileCameraDto.Builder.class);
-          internal_static_Error_descriptor =
+          internal_static_VehicleCommandsDto_descriptor =
             getDescriptor().getMessageTypes().get(33);
+          internal_static_VehicleCommandsDto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_VehicleCommandsDto_descriptor,
+              new java.lang.String[] { "Vehicle", "Commands", },
+              com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.class,
+              com.ugcs.ucs.proto.MessagesProto.VehicleCommandsDto.Builder.class);
+          internal_static_Error_descriptor =
+            getDescriptor().getMessageTypes().get(34);
           internal_static_Error_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Error_descriptor,
@@ -93298,7 +97899,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.Error.class,
               com.ugcs.ucs.proto.MessagesProto.Error.Builder.class);
           internal_static_AuthorizeHciRequest_descriptor =
-            getDescriptor().getMessageTypes().get(34);
+            getDescriptor().getMessageTypes().get(35);
           internal_static_AuthorizeHciRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AuthorizeHciRequest_descriptor,
@@ -93306,7 +97907,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest.class,
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest.Builder.class);
           internal_static_AuthorizeHciResponse_descriptor =
-            getDescriptor().getMessageTypes().get(35);
+            getDescriptor().getMessageTypes().get(36);
           internal_static_AuthorizeHciResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AuthorizeHciResponse_descriptor,
@@ -93314,7 +97915,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse.class,
               com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse.Builder.class);
           internal_static_SetHciLocaleRequest_descriptor =
-            getDescriptor().getMessageTypes().get(36);
+            getDescriptor().getMessageTypes().get(37);
           internal_static_SetHciLocaleRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SetHciLocaleRequest_descriptor,
@@ -93322,7 +97923,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleRequest.Builder.class);
           internal_static_SetHciLocaleResponse_descriptor =
-            getDescriptor().getMessageTypes().get(37);
+            getDescriptor().getMessageTypes().get(38);
           internal_static_SetHciLocaleResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SetHciLocaleResponse_descriptor,
@@ -93330,7 +97931,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SetHciLocaleResponse.Builder.class);
           internal_static_LoginRequest_descriptor =
-            getDescriptor().getMessageTypes().get(38);
+            getDescriptor().getMessageTypes().get(39);
           internal_static_LoginRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LoginRequest_descriptor,
@@ -93338,7 +97939,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LoginRequest.class,
               com.ugcs.ucs.proto.MessagesProto.LoginRequest.Builder.class);
           internal_static_LoginResponse_descriptor =
-            getDescriptor().getMessageTypes().get(39);
+            getDescriptor().getMessageTypes().get(40);
           internal_static_LoginResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LoginResponse_descriptor,
@@ -93346,7 +97947,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LoginResponse.class,
               com.ugcs.ucs.proto.MessagesProto.LoginResponse.Builder.class);
           internal_static_LogoutRequest_descriptor =
-            getDescriptor().getMessageTypes().get(40);
+            getDescriptor().getMessageTypes().get(41);
           internal_static_LogoutRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LogoutRequest_descriptor,
@@ -93354,7 +97955,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LogoutRequest.class,
               com.ugcs.ucs.proto.MessagesProto.LogoutRequest.Builder.class);
           internal_static_LogoutResponse_descriptor =
-            getDescriptor().getMessageTypes().get(41);
+            getDescriptor().getMessageTypes().get(42);
           internal_static_LogoutResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_LogoutResponse_descriptor,
@@ -93362,7 +97963,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.LogoutResponse.class,
               com.ugcs.ucs.proto.MessagesProto.LogoutResponse.Builder.class);
           internal_static_ProcessRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(42);
+            getDescriptor().getMessageTypes().get(43);
           internal_static_ProcessRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProcessRouteRequest_descriptor,
@@ -93370,7 +97971,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteRequest.Builder.class);
           internal_static_ProcessRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(43);
+            getDescriptor().getMessageTypes().get(44);
           internal_static_ProcessRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProcessRouteResponse_descriptor,
@@ -93378,7 +97979,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ProcessRouteResponse.Builder.class);
           internal_static_ConvertRouteAltitudesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(44);
+            getDescriptor().getMessageTypes().get(45);
           internal_static_ConvertRouteAltitudesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ConvertRouteAltitudesRequest_descriptor,
@@ -93386,7 +97987,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesRequest.Builder.class);
           internal_static_ConvertRouteAltitudesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(45);
+            getDescriptor().getMessageTypes().get(46);
           internal_static_ConvertRouteAltitudesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ConvertRouteAltitudesResponse_descriptor,
@@ -93394,7 +97995,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ConvertRouteAltitudesResponse.Builder.class);
           internal_static_ChangeRouteVehicleProfileRequest_descriptor =
-            getDescriptor().getMessageTypes().get(46);
+            getDescriptor().getMessageTypes().get(47);
           internal_static_ChangeRouteVehicleProfileRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ChangeRouteVehicleProfileRequest_descriptor,
@@ -93402,7 +98003,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileRequest.Builder.class);
           internal_static_ChangeRouteVehicleProfileResponse_descriptor =
-            getDescriptor().getMessageTypes().get(47);
+            getDescriptor().getMessageTypes().get(48);
           internal_static_ChangeRouteVehicleProfileResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ChangeRouteVehicleProfileResponse_descriptor,
@@ -93410,7 +98011,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ChangeRouteVehicleProfileResponse.Builder.class);
           internal_static_GetParametersSelectionValuesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(48);
+            getDescriptor().getMessageTypes().get(49);
           internal_static_GetParametersSelectionValuesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetParametersSelectionValuesRequest_descriptor,
@@ -93418,7 +98019,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesRequest.Builder.class);
           internal_static_GetParametersSelectionValuesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(49);
+            getDescriptor().getMessageTypes().get(50);
           internal_static_GetParametersSelectionValuesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetParametersSelectionValuesResponse_descriptor,
@@ -93426,7 +98027,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetParametersSelectionValuesResponse.Builder.class);
           internal_static_GetElevationProfileRequest_descriptor =
-            getDescriptor().getMessageTypes().get(50);
+            getDescriptor().getMessageTypes().get(51);
           internal_static_GetElevationProfileRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetElevationProfileRequest_descriptor,
@@ -93434,7 +98035,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileRequest.Builder.class);
           internal_static_GetElevationProfileResponse_descriptor =
-            getDescriptor().getMessageTypes().get(51);
+            getDescriptor().getMessageTypes().get(52);
           internal_static_GetElevationProfileResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetElevationProfileResponse_descriptor,
@@ -93442,7 +98043,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetElevationProfileResponse.Builder.class);
           internal_static_CalculateSplineRequest_descriptor =
-            getDescriptor().getMessageTypes().get(52);
+            getDescriptor().getMessageTypes().get(53);
           internal_static_CalculateSplineRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CalculateSplineRequest_descriptor,
@@ -93450,7 +98051,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineRequest.Builder.class);
           internal_static_CalculateSplineResponse_descriptor =
-            getDescriptor().getMessageTypes().get(53);
+            getDescriptor().getMessageTypes().get(54);
           internal_static_CalculateSplineResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CalculateSplineResponse_descriptor,
@@ -93458,7 +98059,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CalculateSplineResponse.Builder.class);
           internal_static_ExportRouteToXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(54);
+            getDescriptor().getMessageTypes().get(55);
           internal_static_ExportRouteToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportRouteToXmlRequest_descriptor,
@@ -93466,7 +98067,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlRequest.Builder.class);
           internal_static_ExportRouteToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(55);
+            getDescriptor().getMessageTypes().get(56);
           internal_static_ExportRouteToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportRouteToXmlResponse_descriptor,
@@ -93474,7 +98075,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportRouteToXmlResponse.Builder.class);
           internal_static_ImportRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(56);
+            getDescriptor().getMessageTypes().get(57);
           internal_static_ImportRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportRouteRequest_descriptor,
@@ -93482,7 +98083,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ImportRouteRequest.Builder.class);
           internal_static_ImportRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(57);
+            getDescriptor().getMessageTypes().get(58);
           internal_static_ImportRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportRouteResponse_descriptor,
@@ -93490,7 +98091,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ImportRouteResponse.Builder.class);
           internal_static_ExportMissionToXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(58);
+            getDescriptor().getMessageTypes().get(59);
           internal_static_ExportMissionToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportMissionToXmlRequest_descriptor,
@@ -93498,7 +98099,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlRequest.Builder.class);
           internal_static_ExportMissionToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(59);
+            getDescriptor().getMessageTypes().get(60);
           internal_static_ExportMissionToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportMissionToXmlResponse_descriptor,
@@ -93506,7 +98107,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportMissionToXmlResponse.Builder.class);
           internal_static_ImportMissionFromXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(60);
+            getDescriptor().getMessageTypes().get(61);
           internal_static_ImportMissionFromXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportMissionFromXmlRequest_descriptor,
@@ -93514,7 +98115,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlRequest.Builder.class);
           internal_static_ImportMissionFromXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(61);
+            getDescriptor().getMessageTypes().get(62);
           internal_static_ImportMissionFromXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportMissionFromXmlResponse_descriptor,
@@ -93522,7 +98123,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ImportMissionFromXmlResponse.Builder.class);
           internal_static_ExportTelemetryToXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(62);
+            getDescriptor().getMessageTypes().get(63);
           internal_static_ExportTelemetryToXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportTelemetryToXmlRequest_descriptor,
@@ -93530,7 +98131,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlRequest.Builder.class);
           internal_static_ExportTelemetryToXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(63);
+            getDescriptor().getMessageTypes().get(64);
           internal_static_ExportTelemetryToXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ExportTelemetryToXmlResponse_descriptor,
@@ -93538,7 +98139,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ExportTelemetryToXmlResponse.Builder.class);
           internal_static_ImportTelemetryFromXmlRequest_descriptor =
-            getDescriptor().getMessageTypes().get(64);
+            getDescriptor().getMessageTypes().get(65);
           internal_static_ImportTelemetryFromXmlRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportTelemetryFromXmlRequest_descriptor,
@@ -93546,15 +98147,47 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlRequest.Builder.class);
           internal_static_ImportTelemetryFromXmlResponse_descriptor =
-            getDescriptor().getMessageTypes().get(65);
+            getDescriptor().getMessageTypes().get(66);
           internal_static_ImportTelemetryFromXmlResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ImportTelemetryFromXmlResponse_descriptor,
               new java.lang.String[] { "TelemetryInterval", },
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ImportTelemetryFromXmlResponse.Builder.class);
+          internal_static_GetTrialSubscriptionsPlanRequest_descriptor =
+            getDescriptor().getMessageTypes().get(67);
+          internal_static_GetTrialSubscriptionsPlanRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetTrialSubscriptionsPlanRequest_descriptor,
+              new java.lang.String[] { "ClientId", },
+              com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanRequest.Builder.class);
+          internal_static_GetTrialSubscriptionsPlanResponse_descriptor =
+            getDescriptor().getMessageTypes().get(68);
+          internal_static_GetTrialSubscriptionsPlanResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetTrialSubscriptionsPlanResponse_descriptor,
+              new java.lang.String[] { "SubscriptionPlans", },
+              com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.GetTrialSubscriptionsPlanResponse.Builder.class);
+          internal_static_GetTrialRequest_descriptor =
+            getDescriptor().getMessageTypes().get(69);
+          internal_static_GetTrialRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetTrialRequest_descriptor,
+              new java.lang.String[] { "ClientId", "FirstName", "LastName", "Email", "Country", "SubscriptionPlan", "CompanyName", },
+              com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.GetTrialRequest.Builder.class);
+          internal_static_GetTrialResponse_descriptor =
+            getDescriptor().getMessageTypes().get(70);
+          internal_static_GetTrialResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_GetTrialResponse_descriptor,
+              new java.lang.String[] { "Status", },
+              com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.GetTrialResponse.Builder.class);
           internal_static_GetLineOfSightRequest_descriptor =
-            getDescriptor().getMessageTypes().get(66);
+            getDescriptor().getMessageTypes().get(71);
           internal_static_GetLineOfSightRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLineOfSightRequest_descriptor,
@@ -93562,7 +98195,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightRequest.Builder.class);
           internal_static_GetLineOfSightResponse_descriptor =
-            getDescriptor().getMessageTypes().get(67);
+            getDescriptor().getMessageTypes().get(72);
           internal_static_GetLineOfSightResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLineOfSightResponse_descriptor,
@@ -93570,15 +98203,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetLineOfSightResponse.Builder.class);
           internal_static_GetNfzListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(68);
+            getDescriptor().getMessageTypes().get(73);
           internal_static_GetNfzListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNfzListRequest_descriptor,
-              new java.lang.String[] { "ClientId", "MinLatitude", "MinLongitude", "MaxLatitude", "MaxLongitude", "RefreshDependencies", "RefreshExcludes", },
+              new java.lang.String[] { "ClientId", "MinLatitude", "MinLongitude", "MaxLatitude", "MaxLongitude", "RefreshDependencies", "RefreshExcludes", "Types", },
               com.ugcs.ucs.proto.MessagesProto.GetNfzListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetNfzListRequest.Builder.class);
           internal_static_GetNfzListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(69);
+            getDescriptor().getMessageTypes().get(74);
           internal_static_GetNfzListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNfzListResponse_descriptor,
@@ -93586,7 +98219,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetNfzListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetNfzListResponse.Builder.class);
           internal_static_GetRasterGridRequest_descriptor =
-            getDescriptor().getMessageTypes().get(70);
+            getDescriptor().getMessageTypes().get(75);
           internal_static_GetRasterGridRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterGridRequest_descriptor,
@@ -93594,7 +98227,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridRequest.Builder.class);
           internal_static_GetRasterGridResponse_descriptor =
-            getDescriptor().getMessageTypes().get(71);
+            getDescriptor().getMessageTypes().get(76);
           internal_static_GetRasterGridResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterGridResponse_descriptor,
@@ -93602,7 +98235,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterGridResponse.Builder.class);
           internal_static_GetRasterValuesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(72);
+            getDescriptor().getMessageTypes().get(77);
           internal_static_GetRasterValuesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterValuesRequest_descriptor,
@@ -93610,15 +98243,31 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesRequest.Builder.class);
           internal_static_GetRasterValuesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(73);
+            getDescriptor().getMessageTypes().get(78);
           internal_static_GetRasterValuesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetRasterValuesResponse_descriptor,
               new java.lang.String[] { "Values", "NoData", },
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetRasterValuesResponse.Builder.class);
+          internal_static_SwapElevationOrderRequest_descriptor =
+            getDescriptor().getMessageTypes().get(79);
+          internal_static_SwapElevationOrderRequest_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_SwapElevationOrderRequest_descriptor,
+              new java.lang.String[] { "ClientId", "Source1", "Source2", },
+              com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.class,
+              com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderRequest.Builder.class);
+          internal_static_SwapElevationOrderResponse_descriptor =
+            getDescriptor().getMessageTypes().get(80);
+          internal_static_SwapElevationOrderResponse_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_SwapElevationOrderResponse_descriptor,
+              new java.lang.String[] { },
+              com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.class,
+              com.ugcs.ucs.proto.MessagesProto.SwapElevationOrderResponse.Builder.class);
           internal_static_GetTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(74);
+            getDescriptor().getMessageTypes().get(81);
           internal_static_GetTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetTelemetryRequest_descriptor,
@@ -93626,15 +98275,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryRequest.Builder.class);
           internal_static_GetTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(75);
+            getDescriptor().getMessageTypes().get(82);
           internal_static_GetTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetTelemetryResponse_descriptor,
-              new java.lang.String[] { "Telemetry", "NextTelemetryTime", },
+              new java.lang.String[] { "NextTelemetryTime", "Telemetry", },
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetTelemetryResponse.Builder.class);
           internal_static_DeleteTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(76);
+            getDescriptor().getMessageTypes().get(83);
           internal_static_DeleteTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteTelemetryRequest_descriptor,
@@ -93642,7 +98291,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryRequest.Builder.class);
           internal_static_DeleteTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(77);
+            getDescriptor().getMessageTypes().get(84);
           internal_static_DeleteTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteTelemetryResponse_descriptor,
@@ -93650,7 +98299,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteTelemetryResponse.Builder.class);
           internal_static_TraceTelemetryFramesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(78);
+            getDescriptor().getMessageTypes().get(85);
           internal_static_TraceTelemetryFramesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TraceTelemetryFramesRequest_descriptor,
@@ -93658,7 +98307,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesRequest.Builder.class);
           internal_static_TraceTelemetryFramesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(79);
+            getDescriptor().getMessageTypes().get(86);
           internal_static_TraceTelemetryFramesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TraceTelemetryFramesResponse_descriptor,
@@ -93666,7 +98315,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.TraceTelemetryFramesResponse.Builder.class);
           internal_static_CountTelemetryRequest_descriptor =
-            getDescriptor().getMessageTypes().get(80);
+            getDescriptor().getMessageTypes().get(87);
           internal_static_CountTelemetryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CountTelemetryRequest_descriptor,
@@ -93674,7 +98323,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryRequest.Builder.class);
           internal_static_CountTelemetryResponse_descriptor =
-            getDescriptor().getMessageTypes().get(81);
+            getDescriptor().getMessageTypes().get(88);
           internal_static_CountTelemetryResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CountTelemetryResponse_descriptor,
@@ -93682,7 +98331,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CountTelemetryResponse.Builder.class);
           internal_static_GetLocationPassingTimeRequest_descriptor =
-            getDescriptor().getMessageTypes().get(82);
+            getDescriptor().getMessageTypes().get(89);
           internal_static_GetLocationPassingTimeRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLocationPassingTimeRequest_descriptor,
@@ -93690,7 +98339,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLocationPassingTimeRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetLocationPassingTimeRequest.Builder.class);
           internal_static_GetLocationPassingTimeResponse_descriptor =
-            getDescriptor().getMessageTypes().get(83);
+            getDescriptor().getMessageTypes().get(90);
           internal_static_GetLocationPassingTimeResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLocationPassingTimeResponse_descriptor,
@@ -93698,7 +98347,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLocationPassingTimeResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetLocationPassingTimeResponse.Builder.class);
           internal_static_GetVehicleTracksRequest_descriptor =
-            getDescriptor().getMessageTypes().get(84);
+            getDescriptor().getMessageTypes().get(91);
           internal_static_GetVehicleTracksRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleTracksRequest_descriptor,
@@ -93706,7 +98355,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksRequest.Builder.class);
           internal_static_GetVehicleTracksResponse_descriptor =
-            getDescriptor().getMessageTypes().get(85);
+            getDescriptor().getMessageTypes().get(92);
           internal_static_GetVehicleTracksResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleTracksResponse_descriptor,
@@ -93714,7 +98363,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleTracksResponse.Builder.class);
           internal_static_GetKmlRouteRepresentationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(86);
+            getDescriptor().getMessageTypes().get(93);
           internal_static_GetKmlRouteRepresentationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetKmlRouteRepresentationRequest_descriptor,
@@ -93722,7 +98371,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationRequest.Builder.class);
           internal_static_GetKmlRouteRepresentationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(87);
+            getDescriptor().getMessageTypes().get(94);
           internal_static_GetKmlRouteRepresentationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetKmlRouteRepresentationResponse_descriptor,
@@ -93730,7 +98379,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetKmlRouteRepresentationResponse.Builder.class);
           internal_static_GetAdsbAircraftListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(88);
+            getDescriptor().getMessageTypes().get(95);
           internal_static_GetAdsbAircraftListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbAircraftListRequest_descriptor,
@@ -93738,7 +98387,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListRequest.Builder.class);
           internal_static_GetAdsbAircraftListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(89);
+            getDescriptor().getMessageTypes().get(96);
           internal_static_GetAdsbAircraftListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbAircraftListResponse_descriptor,
@@ -93746,7 +98395,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbAircraftListResponse.Builder.class);
           internal_static_SearchPlacesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(90);
+            getDescriptor().getMessageTypes().get(97);
           internal_static_SearchPlacesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SearchPlacesRequest_descriptor,
@@ -93754,7 +98403,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesRequest.Builder.class);
           internal_static_SearchPlacesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(91);
+            getDescriptor().getMessageTypes().get(98);
           internal_static_SearchPlacesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SearchPlacesResponse_descriptor,
@@ -93762,7 +98411,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SearchPlacesResponse.Builder.class);
           internal_static_GetVehicleLogRequest_descriptor =
-            getDescriptor().getMessageTypes().get(92);
+            getDescriptor().getMessageTypes().get(99);
           internal_static_GetVehicleLogRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogRequest_descriptor,
@@ -93770,7 +98419,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogRequest.Builder.class);
           internal_static_GetVehicleLogResponse_descriptor =
-            getDescriptor().getMessageTypes().get(93);
+            getDescriptor().getMessageTypes().get(100);
           internal_static_GetVehicleLogResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogResponse_descriptor,
@@ -93778,7 +98427,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogResponse.Builder.class);
           internal_static_GetVehicleLogByTimeRangeRequest_descriptor =
-            getDescriptor().getMessageTypes().get(94);
+            getDescriptor().getMessageTypes().get(101);
           internal_static_GetVehicleLogByTimeRangeRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogByTimeRangeRequest_descriptor,
@@ -93786,7 +98435,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeRequest.Builder.class);
           internal_static_GetVehicleLogByTimeRangeResponse_descriptor =
-            getDescriptor().getMessageTypes().get(95);
+            getDescriptor().getMessageTypes().get(102);
           internal_static_GetVehicleLogByTimeRangeResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetVehicleLogByTimeRangeResponse_descriptor,
@@ -93794,15 +98443,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetVehicleLogByTimeRangeResponse.Builder.class);
           internal_static_SendCommandRequest_descriptor =
-            getDescriptor().getMessageTypes().get(96);
+            getDescriptor().getMessageTypes().get(103);
           internal_static_SendCommandRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendCommandRequest_descriptor,
-              new java.lang.String[] { "ClientId", "Command", "Vehicles", "InterDelay", },
+              new java.lang.String[] { "ClientId", "Command", "Vehicles", "InterDelay", "Commands", },
               com.ugcs.ucs.proto.MessagesProto.SendCommandRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SendCommandRequest.Builder.class);
           internal_static_SendCommandResponse_descriptor =
-            getDescriptor().getMessageTypes().get(97);
+            getDescriptor().getMessageTypes().get(104);
           internal_static_SendCommandResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendCommandResponse_descriptor,
@@ -93810,7 +98459,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendCommandResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SendCommandResponse.Builder.class);
           internal_static_UploadRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(98);
+            getDescriptor().getMessageTypes().get(105);
           internal_static_UploadRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UploadRouteRequest_descriptor,
@@ -93818,7 +98467,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest.Builder.class);
           internal_static_UploadRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(99);
+            getDescriptor().getMessageTypes().get(106);
           internal_static_UploadRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UploadRouteResponse_descriptor,
@@ -93826,7 +98475,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UploadRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UploadRouteResponse.Builder.class);
           internal_static_GetNativeRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(100);
+            getDescriptor().getMessageTypes().get(107);
           internal_static_GetNativeRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNativeRouteRequest_descriptor,
@@ -93834,7 +98483,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetNativeRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetNativeRouteRequest.Builder.class);
           internal_static_GetNativeRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(101);
+            getDescriptor().getMessageTypes().get(108);
           internal_static_GetNativeRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetNativeRouteResponse_descriptor,
@@ -93842,7 +98491,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetNativeRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetNativeRouteResponse.Builder.class);
           internal_static_GetAdsbBulbStatusRequest_descriptor =
-            getDescriptor().getMessageTypes().get(102);
+            getDescriptor().getMessageTypes().get(109);
           internal_static_GetAdsbBulbStatusRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbBulbStatusRequest_descriptor,
@@ -93850,7 +98499,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusRequest.Builder.class);
           internal_static_GetAdsbBulbStatusResponse_descriptor =
-            getDescriptor().getMessageTypes().get(103);
+            getDescriptor().getMessageTypes().get(110);
           internal_static_GetAdsbBulbStatusResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetAdsbBulbStatusResponse_descriptor,
@@ -93858,7 +98507,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetAdsbBulbStatusResponse.Builder.class);
           internal_static_GetLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(104);
+            getDescriptor().getMessageTypes().get(111);
           internal_static_GetLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLicenseRequest_descriptor,
@@ -93866,15 +98515,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetLicenseRequest.Builder.class);
           internal_static_GetLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(105);
+            getDescriptor().getMessageTypes().get(112);
           internal_static_GetLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetLicenseResponse_descriptor,
-              new java.lang.String[] { "License", "LicensePermissions", },
+              new java.lang.String[] { "Licenses", "LicensePermissions", "NoLicenseMessage", },
               com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetLicenseResponse.Builder.class);
           internal_static_ActivateLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(106);
+            getDescriptor().getMessageTypes().get(113);
           internal_static_ActivateLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActivateLicenseRequest_descriptor,
@@ -93882,7 +98531,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseRequest.Builder.class);
           internal_static_ActivateLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(107);
+            getDescriptor().getMessageTypes().get(114);
           internal_static_ActivateLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ActivateLicenseResponse_descriptor,
@@ -93890,15 +98539,15 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ActivateLicenseResponse.Builder.class);
           internal_static_DeactivateLicenseRequest_descriptor =
-            getDescriptor().getMessageTypes().get(108);
+            getDescriptor().getMessageTypes().get(115);
           internal_static_DeactivateLicenseRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeactivateLicenseRequest_descriptor,
-              new java.lang.String[] { "ClientId", },
+              new java.lang.String[] { "ClientId", "ActivationCode", },
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseRequest.Builder.class);
           internal_static_DeactivateLicenseResponse_descriptor =
-            getDescriptor().getMessageTypes().get(109);
+            getDescriptor().getMessageTypes().get(116);
           internal_static_DeactivateLicenseResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeactivateLicenseResponse_descriptor,
@@ -93906,7 +98555,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeactivateLicenseResponse.Builder.class);
           internal_static_CheckForUpdatesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(110);
+            getDescriptor().getMessageTypes().get(117);
           internal_static_CheckForUpdatesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckForUpdatesRequest_descriptor,
@@ -93914,7 +98563,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesRequest.Builder.class);
           internal_static_CheckForUpdatesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(111);
+            getDescriptor().getMessageTypes().get(118);
           internal_static_CheckForUpdatesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckForUpdatesResponse_descriptor,
@@ -93922,7 +98571,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckForUpdatesResponse.Builder.class);
           internal_static_SendStatisticsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(112);
+            getDescriptor().getMessageTypes().get(119);
           internal_static_SendStatisticsRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendStatisticsRequest_descriptor,
@@ -93930,7 +98579,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsRequest.Builder.class);
           internal_static_SendStatisticsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(113);
+            getDescriptor().getMessageTypes().get(120);
           internal_static_SendStatisticsResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SendStatisticsResponse_descriptor,
@@ -93938,7 +98587,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SendStatisticsResponse.Builder.class);
           internal_static_GetObjectListRequest_descriptor =
-            getDescriptor().getMessageTypes().get(114);
+            getDescriptor().getMessageTypes().get(121);
           internal_static_GetObjectListRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectListRequest_descriptor,
@@ -93946,7 +98595,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectListRequest.Builder.class);
           internal_static_GetObjectListResponse_descriptor =
-            getDescriptor().getMessageTypes().get(115);
+            getDescriptor().getMessageTypes().get(122);
           internal_static_GetObjectListResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectListResponse_descriptor,
@@ -93954,7 +98603,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectListResponse.Builder.class);
           internal_static_GetObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(116);
+            getDescriptor().getMessageTypes().get(123);
           internal_static_GetObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectRequest_descriptor,
@@ -93962,7 +98611,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectRequest.Builder.class);
           internal_static_GetObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(117);
+            getDescriptor().getMessageTypes().get(124);
           internal_static_GetObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetObjectResponse_descriptor,
@@ -93970,7 +98619,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetObjectResponse.Builder.class);
           internal_static_CreateOrUpdateObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(118);
+            getDescriptor().getMessageTypes().get(125);
           internal_static_CreateOrUpdateObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CreateOrUpdateObjectRequest_descriptor,
@@ -93978,7 +98627,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest.Builder.class);
           internal_static_CreateOrUpdateObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(119);
+            getDescriptor().getMessageTypes().get(126);
           internal_static_CreateOrUpdateObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CreateOrUpdateObjectResponse_descriptor,
@@ -93986,7 +98635,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse.Builder.class);
           internal_static_UpdateObjectFieldsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(120);
+            getDescriptor().getMessageTypes().get(127);
           internal_static_UpdateObjectFieldsRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateObjectFieldsRequest_descriptor,
@@ -93994,7 +98643,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsRequest.Builder.class);
           internal_static_UpdateObjectFieldsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(121);
+            getDescriptor().getMessageTypes().get(128);
           internal_static_UpdateObjectFieldsResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateObjectFieldsResponse_descriptor,
@@ -94002,7 +98651,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateObjectFieldsResponse.Builder.class);
           internal_static_DeleteObjectRequest_descriptor =
-            getDescriptor().getMessageTypes().get(122);
+            getDescriptor().getMessageTypes().get(129);
           internal_static_DeleteObjectRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteObjectRequest_descriptor,
@@ -94010,7 +98659,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectRequest.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectRequest.Builder.class);
           internal_static_DeleteObjectResponse_descriptor =
-            getDescriptor().getMessageTypes().get(123);
+            getDescriptor().getMessageTypes().get(130);
           internal_static_DeleteObjectResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_DeleteObjectResponse_descriptor,
@@ -94018,7 +98667,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectResponse.class,
               com.ugcs.ucs.proto.MessagesProto.DeleteObjectResponse.Builder.class);
           internal_static_GetMappingRequest_descriptor =
-            getDescriptor().getMessageTypes().get(124);
+            getDescriptor().getMessageTypes().get(131);
           internal_static_GetMappingRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMappingRequest_descriptor,
@@ -94026,7 +98675,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMappingRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetMappingRequest.Builder.class);
           internal_static_GetMappingResponse_descriptor =
-            getDescriptor().getMessageTypes().get(125);
+            getDescriptor().getMessageTypes().get(132);
           internal_static_GetMappingResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMappingResponse_descriptor,
@@ -94034,7 +98683,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMappingResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetMappingResponse.Builder.class);
           internal_static_AcquireLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(126);
+            getDescriptor().getMessageTypes().get(133);
           internal_static_AcquireLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AcquireLockRequest_descriptor,
@@ -94042,7 +98691,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest.Builder.class);
           internal_static_AcquireLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(127);
+            getDescriptor().getMessageTypes().get(134);
           internal_static_AcquireLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_AcquireLockResponse_descriptor,
@@ -94050,7 +98699,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.AcquireLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.AcquireLockResponse.Builder.class);
           internal_static_ReleaseLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(128);
+            getDescriptor().getMessageTypes().get(135);
           internal_static_ReleaseLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReleaseLockRequest_descriptor,
@@ -94058,7 +98707,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockRequest.Builder.class);
           internal_static_ReleaseLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(129);
+            getDescriptor().getMessageTypes().get(136);
           internal_static_ReleaseLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReleaseLockResponse_descriptor,
@@ -94066,7 +98715,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ReleaseLockResponse.Builder.class);
           internal_static_CheckLockRequest_descriptor =
-            getDescriptor().getMessageTypes().get(130);
+            getDescriptor().getMessageTypes().get(137);
           internal_static_CheckLockRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckLockRequest_descriptor,
@@ -94074,7 +98723,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckLockRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckLockRequest.Builder.class);
           internal_static_CheckLockResponse_descriptor =
-            getDescriptor().getMessageTypes().get(131);
+            getDescriptor().getMessageTypes().get(138);
           internal_static_CheckLockResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckLockResponse_descriptor,
@@ -94082,7 +98731,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckLockResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckLockResponse.Builder.class);
           internal_static_CheckMultipleLocksRequest_descriptor =
-            getDescriptor().getMessageTypes().get(132);
+            getDescriptor().getMessageTypes().get(139);
           internal_static_CheckMultipleLocksRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckMultipleLocksRequest_descriptor,
@@ -94090,7 +98739,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksRequest.Builder.class);
           internal_static_CheckMultipleLocksResponse_descriptor =
-            getDescriptor().getMessageTypes().get(133);
+            getDescriptor().getMessageTypes().get(140);
           internal_static_CheckMultipleLocksResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CheckMultipleLocksResponse_descriptor,
@@ -94098,7 +98747,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CheckMultipleLocksResponse.Builder.class);
           internal_static_GetMissionPreferencesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(134);
+            getDescriptor().getMessageTypes().get(141);
           internal_static_GetMissionPreferencesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMissionPreferencesRequest_descriptor,
@@ -94106,7 +98755,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesRequest.Builder.class);
           internal_static_GetMissionPreferencesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(135);
+            getDescriptor().getMessageTypes().get(142);
           internal_static_GetMissionPreferencesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetMissionPreferencesResponse_descriptor,
@@ -94114,7 +98763,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetMissionPreferencesResponse.Builder.class);
           internal_static_UpdateMissionPreferencesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(136);
+            getDescriptor().getMessageTypes().get(143);
           internal_static_UpdateMissionPreferencesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateMissionPreferencesRequest_descriptor,
@@ -94122,7 +98771,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesRequest.Builder.class);
           internal_static_UpdateMissionPreferencesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(137);
+            getDescriptor().getMessageTypes().get(144);
           internal_static_UpdateMissionPreferencesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UpdateMissionPreferencesResponse_descriptor,
@@ -94130,7 +98779,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.UpdateMissionPreferencesResponse.Builder.class);
           internal_static_SubmitUtmOperationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(138);
+            getDescriptor().getMessageTypes().get(145);
           internal_static_SubmitUtmOperationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubmitUtmOperationRequest_descriptor,
@@ -94138,7 +98787,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationRequest.Builder.class);
           internal_static_SubmitUtmOperationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(139);
+            getDescriptor().getMessageTypes().get(146);
           internal_static_SubmitUtmOperationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubmitUtmOperationResponse_descriptor,
@@ -94146,7 +98795,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SubmitUtmOperationResponse.Builder.class);
           internal_static_GetCapabilitiesRequest_descriptor =
-            getDescriptor().getMessageTypes().get(140);
+            getDescriptor().getMessageTypes().get(147);
           internal_static_GetCapabilitiesRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetCapabilitiesRequest_descriptor,
@@ -94154,7 +98803,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesRequest.Builder.class);
           internal_static_GetCapabilitiesResponse_descriptor =
-            getDescriptor().getMessageTypes().get(141);
+            getDescriptor().getMessageTypes().get(148);
           internal_static_GetCapabilitiesResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetCapabilitiesResponse_descriptor,
@@ -94162,7 +98811,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetCapabilitiesResponse.Builder.class);
           internal_static_GetPolygonAreaRequest_descriptor =
-            getDescriptor().getMessageTypes().get(142);
+            getDescriptor().getMessageTypes().get(149);
           internal_static_GetPolygonAreaRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetPolygonAreaRequest_descriptor,
@@ -94170,7 +98819,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetPolygonAreaRequest.class,
               com.ugcs.ucs.proto.MessagesProto.GetPolygonAreaRequest.Builder.class);
           internal_static_GetPolygonAreaResponse_descriptor =
-            getDescriptor().getMessageTypes().get(143);
+            getDescriptor().getMessageTypes().get(150);
           internal_static_GetPolygonAreaResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_GetPolygonAreaResponse_descriptor,
@@ -94178,7 +98827,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.GetPolygonAreaResponse.class,
               com.ugcs.ucs.proto.MessagesProto.GetPolygonAreaResponse.Builder.class);
           internal_static_SplitRouteBySegmentsRequest_descriptor =
-            getDescriptor().getMessageTypes().get(144);
+            getDescriptor().getMessageTypes().get(151);
           internal_static_SplitRouteBySegmentsRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SplitRouteBySegmentsRequest_descriptor,
@@ -94186,7 +98835,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SplitRouteBySegmentsRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SplitRouteBySegmentsRequest.Builder.class);
           internal_static_SplitRouteBySegmentsResponse_descriptor =
-            getDescriptor().getMessageTypes().get(145);
+            getDescriptor().getMessageTypes().get(152);
           internal_static_SplitRouteBySegmentsResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SplitRouteBySegmentsResponse_descriptor,
@@ -94194,7 +98843,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SplitRouteBySegmentsResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SplitRouteBySegmentsResponse.Builder.class);
           internal_static_SplitRouteByDistanceRequest_descriptor =
-            getDescriptor().getMessageTypes().get(146);
+            getDescriptor().getMessageTypes().get(153);
           internal_static_SplitRouteByDistanceRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SplitRouteByDistanceRequest_descriptor,
@@ -94202,7 +98851,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SplitRouteByDistanceRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SplitRouteByDistanceRequest.Builder.class);
           internal_static_SplitRouteByDistanceResponse_descriptor =
-            getDescriptor().getMessageTypes().get(147);
+            getDescriptor().getMessageTypes().get(154);
           internal_static_SplitRouteByDistanceResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SplitRouteByDistanceResponse_descriptor,
@@ -94210,7 +98859,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SplitRouteByDistanceResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SplitRouteByDistanceResponse.Builder.class);
           internal_static_JoinRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(148);
+            getDescriptor().getMessageTypes().get(155);
           internal_static_JoinRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_JoinRouteRequest_descriptor,
@@ -94218,7 +98867,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.JoinRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.JoinRouteRequest.Builder.class);
           internal_static_JoinRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(149);
+            getDescriptor().getMessageTypes().get(156);
           internal_static_JoinRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_JoinRouteResponse_descriptor,
@@ -94226,7 +98875,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.JoinRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.JoinRouteResponse.Builder.class);
           internal_static_ReconstructRouteRequest_descriptor =
-            getDescriptor().getMessageTypes().get(150);
+            getDescriptor().getMessageTypes().get(157);
           internal_static_ReconstructRouteRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReconstructRouteRequest_descriptor,
@@ -94234,7 +98883,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReconstructRouteRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ReconstructRouteRequest.Builder.class);
           internal_static_ReconstructRouteResponse_descriptor =
-            getDescriptor().getMessageTypes().get(151);
+            getDescriptor().getMessageTypes().get(158);
           internal_static_ReconstructRouteResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ReconstructRouteResponse_descriptor,
@@ -94242,7 +98891,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ReconstructRouteResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ReconstructRouteResponse.Builder.class);
           internal_static_OperationStatus_descriptor =
-            getDescriptor().getMessageTypes().get(152);
+            getDescriptor().getMessageTypes().get(159);
           internal_static_OperationStatus_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStatus_descriptor,
@@ -94250,7 +98899,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStatus.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStatus.Builder.class);
           internal_static_OperationStream_descriptor =
-            getDescriptor().getMessageTypes().get(153);
+            getDescriptor().getMessageTypes().get(160);
           internal_static_OperationStream_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStream_descriptor,
@@ -94258,7 +98907,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStream.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStream.Builder.class);
           internal_static_OperationStreamRequest_descriptor =
-            getDescriptor().getMessageTypes().get(154);
+            getDescriptor().getMessageTypes().get(161);
           internal_static_OperationStreamRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_OperationStreamRequest_descriptor,
@@ -94266,7 +98915,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.OperationStreamRequest.class,
               com.ugcs.ucs.proto.MessagesProto.OperationStreamRequest.Builder.class);
           internal_static_CancelOperationRequest_descriptor =
-            getDescriptor().getMessageTypes().get(155);
+            getDescriptor().getMessageTypes().get(162);
           internal_static_CancelOperationRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CancelOperationRequest_descriptor,
@@ -94274,7 +98923,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CancelOperationRequest.class,
               com.ugcs.ucs.proto.MessagesProto.CancelOperationRequest.Builder.class);
           internal_static_CancelOperationResponse_descriptor =
-            getDescriptor().getMessageTypes().get(156);
+            getDescriptor().getMessageTypes().get(163);
           internal_static_CancelOperationResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_CancelOperationResponse_descriptor,
@@ -94282,7 +98931,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.CancelOperationResponse.class,
               com.ugcs.ucs.proto.MessagesProto.CancelOperationResponse.Builder.class);
           internal_static_StreamTestRequest_descriptor =
-            getDescriptor().getMessageTypes().get(157);
+            getDescriptor().getMessageTypes().get(164);
           internal_static_StreamTestRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_StreamTestRequest_descriptor,
@@ -94290,7 +98939,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.StreamTestRequest.class,
               com.ugcs.ucs.proto.MessagesProto.StreamTestRequest.Builder.class);
           internal_static_StreamTestResponse_descriptor =
-            getDescriptor().getMessageTypes().get(158);
+            getDescriptor().getMessageTypes().get(165);
           internal_static_StreamTestResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_StreamTestResponse_descriptor,
@@ -94298,7 +98947,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.StreamTestResponse.class,
               com.ugcs.ucs.proto.MessagesProto.StreamTestResponse.Builder.class);
           internal_static_ProgressTestRequest_descriptor =
-            getDescriptor().getMessageTypes().get(159);
+            getDescriptor().getMessageTypes().get(166);
           internal_static_ProgressTestRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressTestRequest_descriptor,
@@ -94306,7 +98955,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProgressTestRequest.class,
               com.ugcs.ucs.proto.MessagesProto.ProgressTestRequest.Builder.class);
           internal_static_ProgressTestResponse_descriptor =
-            getDescriptor().getMessageTypes().get(160);
+            getDescriptor().getMessageTypes().get(167);
           internal_static_ProgressTestResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ProgressTestResponse_descriptor,
@@ -94314,7 +98963,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.ProgressTestResponse.class,
               com.ugcs.ucs.proto.MessagesProto.ProgressTestResponse.Builder.class);
           internal_static_Notification_descriptor =
-            getDescriptor().getMessageTypes().get(161);
+            getDescriptor().getMessageTypes().get(168);
           internal_static_Notification_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Notification_descriptor,
@@ -94322,7 +98971,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.Notification.class,
               com.ugcs.ucs.proto.MessagesProto.Notification.Builder.class);
           internal_static_SubscribeEventRequest_descriptor =
-            getDescriptor().getMessageTypes().get(162);
+            getDescriptor().getMessageTypes().get(169);
           internal_static_SubscribeEventRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubscribeEventRequest_descriptor,
@@ -94330,7 +98979,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest.class,
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventRequest.Builder.class);
           internal_static_SubscribeEventResponse_descriptor =
-            getDescriptor().getMessageTypes().get(163);
+            getDescriptor().getMessageTypes().get(170);
           internal_static_SubscribeEventResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_SubscribeEventResponse_descriptor,
@@ -94338,7 +98987,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse.class,
               com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse.Builder.class);
           internal_static_UnsubscribeEventRequest_descriptor =
-            getDescriptor().getMessageTypes().get(164);
+            getDescriptor().getMessageTypes().get(171);
           internal_static_UnsubscribeEventRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UnsubscribeEventRequest_descriptor,
@@ -94346,7 +98995,7 @@ public final class MessagesProto {
               com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest.class,
               com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest.Builder.class);
           internal_static_UnsubscribeEventResponse_descriptor =
-            getDescriptor().getMessageTypes().get(165);
+            getDescriptor().getMessageTypes().get(172);
           internal_static_UnsubscribeEventResponse_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_UnsubscribeEventResponse_descriptor,

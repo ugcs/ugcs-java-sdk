@@ -134,8 +134,8 @@ public final class MinaTaskMappers {
 			return sessionId == channel.sessionId
 					&& type == channel.type
 					&& isolation == null
-					? channel.isolation == null
-					: isolation.equals(channel.isolation);
+							? channel.isolation == null
+							: isolation.equals(channel.isolation);
 		}
 	}
 

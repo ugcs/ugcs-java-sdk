@@ -196,6 +196,11 @@ message ProfileCameraDto {
 	repeated CameraDto cameras = 2;
 }
 
+message VehicleCommandsDto {
+	optional Vehicle vehicle = 1;
+	repeated Command commands = 2;
+}
+
 // Messages ///////////////////////////////////////////////////////////////////
 
 // Error 
@@ -362,6 +367,29 @@ message ImportTelemetryFromXmlResponse {
 	required TelemetryInterval telemetryInterval = 1; 
 }
 
+message GetTrialSubscriptionsPlanRequest {
+	required int32 clientId = 1;
+}
+
+message GetTrialSubscriptionsPlanResponse {
+	repeated SubscriptionPlan subscriptionPlans = 1;
+}
+
+message GetTrialRequest {
+	required int32 clientId = 1;
+	optional string firstName = 2;
+	optional string lastName = 3;
+	required string email = 4;
+	optional string country = 5;
+	required string subscriptionPlan = 6;
+	optional string companyName = 7;
+
+}
+
+message GetTrialResponse {
+	required string status = 1;
+}
+
 
 // Measuring
 
@@ -387,6 +415,7 @@ message GetNfzListRequest {
 	required double maxLongitude = 5;
 	optional bool refreshDependencies = 6 [default = false];
 	repeated string refreshExcludes = 7;
+	repeated NfzType types = 8;
 }
 
 message GetNfzListResponse {
@@ -421,6 +450,15 @@ message GetRasterValuesResponse {
 	required bool noData = 2;
 }
 
+message SwapElevationOrderRequest {
+	required int32 clientId = 1;
+	required ElevationSource source1 = 2;
+	required ElevationSource source2 = 3;
+}
+
+message SwapElevationOrderResponse {
+}
+
 message GetTelemetryRequest {
 	required int32 clientId = 1;
 	required Vehicle vehicle = 2;
@@ -430,8 +468,8 @@ message GetTelemetryRequest {
 }
 
 message GetTelemetryResponse {
-	repeated TelemetryDto telemetry = 1;
 	optional int64 nextTelemetryTime = 2;
+	repeated Telemetry telemetry = 3;
 }
 
 message DeleteTelemetryRequest {
@@ -553,9 +591,10 @@ message GetVehicleLogByTimeRangeResponse {
 
 message SendCommandRequest {
 	required int32 clientId = 1;
-	required Command command = 2;
+	optional Command command = 2;
 	repeated Vehicle vehicles = 3;
 	optional int64 interDelay = 4 [default = 0];
+	repeated VehicleCommandsDto commands = 5;
 }
 
 message SendCommandResponse {
@@ -598,8 +637,9 @@ message GetLicenseRequest {
 }
 
 message GetLicenseResponse {
-	optional License license = 1;
+	repeated License licenses = 1;
 	required LicensePermissionsDto licensePermissions = 2;
+	optional string noLicenseMessage = 3;
 }
 
 message ActivateLicenseRequest {
@@ -613,6 +653,7 @@ message ActivateLicenseResponse {
 
 message DeactivateLicenseRequest {
 	required int32 clientId = 1;
+	required string activationCode = 2;
 }
 
 message DeactivateLicenseResponse {

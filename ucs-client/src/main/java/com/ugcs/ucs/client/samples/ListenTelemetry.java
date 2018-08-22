@@ -10,8 +10,11 @@ import com.ugcs.ucs.client.ClientSession;
 import com.ugcs.ucs.client.ServerNotification;
 import com.ugcs.ucs.client.ServerNotificationListener;
 import com.ugcs.ucs.proto.DomainProto.EventWrapper;
+import com.ugcs.ucs.proto.DomainProto.Subsystem;
 import com.ugcs.ucs.proto.DomainProto.Telemetry;
 import com.ugcs.ucs.proto.DomainProto.TelemetryEvent;
+import com.ugcs.ucs.proto.DomainProto.TelemetryField;
+import com.ugcs.ucs.proto.DomainProto.Value;
 
 public final class ListenTelemetry {
 
@@ -131,14 +134,39 @@ public final class ListenTelemetry {
 			// (lat, lon) position is not necessary present 
 			// in every batch.
 
-			System.out.println("Telemetry received: " + (telemetryEvent.getVehicle() == null
-					? "Unknown vehicle"
-					: telemetryEvent.getVehicle().getTailNumber()));
+			StringBuilder sb = new StringBuilder("Telemetry received: ");
+			if (telemetryEvent.getVehicle() != null)
+				sb.append(telemetryEvent.getVehicle().getTailNumber());
 			for (Telemetry telemtry : telemetryEvent.getTelemetryList()) {
-				System.out.println("\t" + new Date(telemtry.getTime())
-						+ "\t" + telemtry.getType()
-						+ " = " + telemtry.getValue());
+				// time
+				sb.append("\t");
+				sb.append(new Date(telemtry.getTime()));
+				// field
+				TelemetryField field = telemtry.getTelemetryField();
+				if (field != null) {
+					sb.append("\t");
+					if (field.getSubsystem() != Subsystem.S_FLIGHT_CONTROLLER)
+						sb.append(field.getSubsystem()).append("#");
+					sb.append(field.getCode());
+				}
+				// value
+				sb.append(" = ");
+				Value value = telemtry.getValue();
+				if (value.hasFloatValue()) {
+					sb.append(value.getFloatValue());
+				} else if (value.hasDoubleValue()) {
+					sb.append(value.getDoubleValue());
+				} else if (value.hasIntValue()) {
+					sb.append(value.getIntValue());
+				} else if (value.hasLongValue()) {
+					sb.append(value.getLongValue());
+				} else if (value.hasBoolValue()) {
+					sb.append(value.getBoolValue());
+				} else if (value.hasStringValue()) {
+					sb.append(value.getStringValue());
+				}
 			}
+			System.out.println(sb.toString());
 		}
 	}
 }

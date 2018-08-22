@@ -50,129 +50,6 @@ enum ParameterType {
 	PT_SELECTION = 4;
 }
 
-enum TelemetryType {
-	TT_BATTERY_VOLTAGE = 0;
-	TT_ROLL = 1;
-	TT_PITCH = 2;
-	TT_YAW = 3;
-	TT_ROLL_SPEED = 4;
-	TT_PITCH_SPEED = 5;
-	TT_YAW_SPEED = 6;
-	TT_LATITUDE = 7;
-	TT_LONGITUDE = 8;
-	TT_MSL_ALTITUDE = 9;
-	TT_AGL_ALTITUDE = 10;
-	TT_GROUND_SPEED_X = 11;
-	TT_GROUND_SPEED_Y = 12;
-	TT_GROUND_SPEED_Z = 13;
-	TT_LATITUDE_GPS = 14;
-	TT_LONGITUDE_GPS = 15;
-	TT_ALTITUDE_GPS = 16;
-	TT_GROUND_SPEED_GPS = 17;
-	TT_ACCELERATION_X_RAW = 18;
-	TT_ACCELERATION_Y_RAW = 19;
-	TT_ACCELERATION_Z_RAW = 20;
-	TT_ANGULAR_SPEED_X_RAW = 21;
-	TT_ANGULAR_SPEED_Y_RAW = 22;
-	TT_ANGULAR_SPEED_Z_RAW = 23;
-	TT_MAGNETIC_X_RAW = 24;
-	TT_MAGNETIC_Y_RAW = 25;
-	TT_MAGNETIC_Z_RAW = 26;
-	TT_ABSOLUTE_PRESSURE = 27;
-	TT_DIFFERENTIAL_PRESSURE = 28;
-	TT_TEMPERATURE = 29;
-	TT_AIR_SPEED = 30;
-	TT_GROUND_SPEED = 31;
-	TT_HEADING = 32;
-	TT_THROTTLE = 33;
-	TT_CLIMB_RATE = 34;
-	TT_GPS_SATELLITES_VISIBLE = 35;
-	TT_ROUTE_MILAGE = 36;
-	TT_TELEMETRY_DROP_RATE = 37;
-	TT_DOWNLINK_CONNECTED = 38;
-	TT_UPLINK_CONNECTED = 39;
-	TT_CONTROL_MODE = 40;
-	TT_STATE = 41;
-	TT_COURSE = 42;
-	TT_RELATIVE_ALTITUDE = 43;
-	TT_ELEVATION = 44;
-	TT_PAYLOAD_1_ROLL = 45;
-	TT_PAYLOAD_1_TILT = 46;
-	TT_PAYLOAD_1_YAW = 47;
-	TT_CAMERA_1_FOV_HORIZONTAL = 48;
-	TT_CAMERA_1_FOV_VERTICAL = 49;
-	TT_GPS_FIX_TYPE = 50;
-	TT_RC_LINK_QUALITY = 51;
-	TT_ADSB_TRANSPONDER_MODE = 52;
-	TT_ADSB_IDENT_STATE = 53;
-	TT_ADSB_SQUAWK_CODE = 54;
-	TT_ADSB_ALTITUDE_SOURCE = 55;
-	TT_ADSB_ALTITUDE = 56;
-	TT_ADSB_ERROR_FLAGS = 57;
-	TT_PAYLOAD_2_ROLL = 58;
-	TT_PAYLOAD_2_TILT = 59;
-	TT_PAYLOAD_2_YAW = 60;
-	TT_CAMERA_2_FOV_HORIZONTAL = 61;
-	TT_CAMERA_2_FOV_VERTICAL = 62;
-	TT_PAYLOAD_1_CONTROL_MODE = 63;
-	TT_PAYLOAD_2_CONTROL_MODE = 64;
-	TT_PAYLOAD_1_AVAILABLE = 65;
-	TT_PAYLOAD_2_AVAILABLE = 66;
-	TT_PAYLOAD_1_POWERED = 67;
-	TT_PAYLOAD_2_POWERED = 68;
-	TT_CAMERA_1_ZOOM = 69;
-	TT_CAMERA_2_ZOOM = 70;
-	TT_CAMERA_1_RECORDING = 71;
-	TT_CAMERA_2_RECORDING = 72;
-	TT_CAMERA_1_IMAGE_COUNT = 73;
-	TT_CAMERA_2_IMAGE_COUNT = 74;
-	TT_CAMERA_1_IMAGE_CAPACITY = 75;
-	TT_CAMERA_2_IMAGE_CAPACITY = 76;
-	TT_CAMERA_1_VIDEO_COUNT = 77;
-	TT_CAMERA_2_VIDEO_COUNT = 78;
-	TT_HOME_LATITUDE = 79;
-	TT_HOME_LONGITUDE = 80;
-	TT_HOME_AMSL_ALTITUDE = 81;
-	TT_ADSB_ERROR_GPS = 82;
-	TT_ADSB_ERROR_ICAO = 83;
-	TT_ADSB_ERROR_OVER_TEMPERATURE = 84;
-	TT_ADSB_ERROR_ES = 85;
-	TT_ADSB_ERROR_TRANSPONDER = 86;
-	TT_TARGET_LATITUDE = 87;
-	TT_TARGET_LONGITUDE = 88;
-	TT_TARGET_AMSL_ALTITUDE = 89;
-	TT_BATTERY_POWER_LEVEL = 90;
-	TT_FENCE_ENABLED = 91;
-	TT_CURRENT = 92;
-	TT_VIBRATION_X = 93;
-	TT_VIBRATION_Y = 94;
-	TT_VIBRATION_Z = 95;
-	TT_MOTORS_OK = 96;
-	TT_MOTOR_PWM_1 = 97;
-	TT_MOTOR_PWM_2 = 98;
-	TT_MOTOR_PWM_3 = 99;
-	TT_MOTOR_PWM_4 = 100;
-	TT_MOTOR_PWM_5 = 101;
-	TT_MOTOR_PWM_6 = 102;
-	TT_MOTOR_PWM_7 = 103;
-	TT_MOTOR_PWM_8 = 104;
-	TT_WINCH_SAFETY_BATTERY_ACTIVE = 105;
-	TT_WINCH_SAFETY_BATTERY_VOLTAGE = 106;
-	TT_WINCH_CONNECTED = 107;
-	TT_STANDBY = 108;
-	TT_WAYPOINT_NUMBER = 109;
-	TT_FLIGHT_MODE = 110;
-	TT_SERVO_PWM_1 = 111;
-	TT_SERVO_PWM_2 = 112;
-	TT_SERVO_PWM_3 = 113;
-	TT_SERVO_PWM_4 = 114;
-	TT_SERVO_PWM_5 = 115;
-	TT_SERVO_PWM_6 = 116;
-	TT_SERVO_PWM_7 = 117;
-	TT_SERVO_PWM_8 = 118;
-	TT_AUTOPILOT_STATUS = 119;
-}
-
 enum VehicleType {
 	VT_FIXED_WING = 0;
 	VT_HELICOPTER = 1;
@@ -440,6 +317,11 @@ enum Subsystem {
 	S_CAMERA = 3;
 	S_ADSB_TRANSPONDER = 4;
 	S_WINCH = 5;
+	S_DOCK = 6;
+	S_USER = 7;
+	S_GPR = 8;
+	S_ADSB_RECEIVER = 9;
+	S_ADSB_VEHICLE = 10;
 }
 
 enum Semantic {
@@ -480,6 +362,8 @@ enum Semantic {
 	S_FLIGHT_MODE = 35;
 	S_LIST = 36;
 	S_AUTOPILOT_STATUS = 37;
+	S_TIMESTAMP = 38;
+	S_ANY = 39;
 }
 
 //*****************************************************************************
@@ -520,7 +404,6 @@ message DomainObjectWrapper {
 	optional PayloadProfile payloadProfile = 31;
 	optional Platform platform = 32;
 	optional PlatformPayloadProfile platformPayloadProfile = 33;
-	optional PlatformTelemetryType platformTelemetryType = 34;
 	optional PoiChange poiChange = 36;
 	optional PoiDefinition poiDefinition = 37;
 	optional Prism prism = 38;
@@ -530,7 +413,6 @@ message DomainObjectWrapper {
 	optional SegmentDefinition segmentDefinition = 42;
 	optional SpeedChange speedChange = 44;
 	optional Takeoff takeoff = 45;
-	optional Telemetry telemetry = 46;
 	optional TraverseAlgorithm traverseAlgorithm = 47;
 	optional User user = 48;
 	optional Vehicle vehicle = 49;
@@ -592,6 +474,8 @@ message License {
 	optional string activationCode = 4;
 	optional int64 activationTime = 5;
 	optional string tag = 6;
+	optional int64 subscriptionExpirationTime = 7;
+	optional int64 supportExpirationTime = 8;
 }
 
 
@@ -637,7 +521,6 @@ message Platform {
 	optional string name = 4;
 	optional string alias = 5;
 	repeated PlatformAction actions = 6;
-	repeated PlatformTelemetryType telemetryTypes = 7;
 	repeated VehicleProfile vehicleProfiles = 8;
 	repeated PlatformPayloadProfile payloadProfiles = 9;
 	optional string tag = 10;
@@ -649,16 +532,6 @@ message PlatformAction {
 	optional Platform platform = 3;
 	optional ActionCode actionCode = 4;
 	optional string tag = 5;
-}
-
-message PlatformTelemetryType {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional Platform platform = 3;
-	optional TelemetryType type = 4;
-	optional bool compactView = 5;
-	optional bool detailedView = 6;
-	optional string tag = 7;
 }
 
 message PlatformPayloadProfile {
@@ -877,6 +750,7 @@ message Route {
 	optional string name = 4;
 	optional int64 creationTime = 5;
 	optional int64 scheduledTime = 6;
+	optional double startDelay = 26;
 	optional Mission mission = 7;
 	repeated SegmentDefinition segments = 8;
 	optional AltitudeType altitudeType = 9;
@@ -1091,7 +965,9 @@ message Wait {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double interval = 3;
+	optional int64 scheduledTime = 7;
 	optional bool waitForOperator = 4;
+	optional bool waitForInstant = 6;
 	optional string tag = 5;
 }
 
@@ -1296,6 +1172,7 @@ message WaitDefinition {
 	optional int32 version = 2;
 	optional double interval = 3;
 	optional bool waitForOperator = 4;
+	optional bool waitForInstant = 6;
 	optional string tag = 5;
 }
 
@@ -1477,22 +1354,6 @@ message VideoRecordingLogArguments {
 
 //-- Telemetry ----------------------------------------------------------------
 
-message Telemetry {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional float value = 3;
-	optional int64 time = 4;
-	optional Vehicle vehicle = 5;
-	optional TelemetryType type = 6;
-	optional string tag = 7;
-}
-
-message TelemetryDto {
-	optional float value = 1;
-	optional int64 time = 2;
-	optional TelemetryType type = 3;
-}
-
 message TelemetryInterval {
 	optional int32 id = 1;
 	optional int32 version = 2;
@@ -1511,6 +1372,19 @@ message TelemetryIntervalVehicle {
 	optional string tag = 5;
 }
 
+message Telemetry {
+	optional Value value = 1;
+	optional int64 time = 2;
+	optional TelemetryField telemetryField = 3;
+}
+
+message TelemetryField {
+	optional int32 id = 1;
+	optional string code = 2;
+	optional Semantic semantic = 3;
+	optional Subsystem subsystem = 4;
+	optional int32 subsystemId = 5;
+}
 
 //-- GeoServer ----------------------------------------------------------------
 
@@ -1557,6 +1431,13 @@ message UtmOperation {
 	optional string tag = 9;
 }
 
+//-- Activation Server ----------------------------------------------------------------
+message SubscriptionPlan {
+	optional string name = 1;
+	optional string code = 2;
+	optional int32 period = 3;
+	optional string periodUnit = 4;
+}
 
 //*****************************************************************************
 // Non-persistent types
@@ -1614,7 +1495,7 @@ message LockSubscription {
 
 message TelemetryEvent {
 	optional Vehicle vehicle = 1;
-	repeated Telemetry telemetry = 2;
+	repeated Telemetry telemetry = 3;
 }
 
 message TelemetrySubscription {

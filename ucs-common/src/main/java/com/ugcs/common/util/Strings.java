@@ -33,10 +33,6 @@ public final class Strings {
 		return string == null || string.isEmpty();
 	}
 
-	public static String toReadableString(String string) {
-		return string == null ? "(null)" : (string.isEmpty() ? "(empty)" : string);
-	}
-
 	public static String getLineSeparator() {
 		String lineSeparator = System.getProperty("line.separator");
 		if (Strings.isNullOrEmpty(lineSeparator))
@@ -176,5 +172,20 @@ public final class Strings {
 		if (!Strings.isNullOrEmpty(usedNewLine) && !NL.equals(usedNewLine))
 			result = result.replace(Strings.NL, usedNewLine);
 		return result;
+	}
+
+	public static boolean hasDigitsOnly(String string) {
+		if (isNullOrEmpty(string))
+			return false;
+		for (char c : string.toCharArray())
+			if (!Character.isDigit(c))
+				return false;
+		return true;
+	}
+
+	public static void requireNotEmpty(String string, String message) {
+		if (Strings.isNullOrEmpty(string)) {
+			throw new IllegalArgumentException(message);
+		}
 	}
 }

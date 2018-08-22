@@ -54,6 +54,7 @@ public final class TelemetryReader {
 
 			Set<TelemetryKey> openedKeys = new HashSet<>();
 			Date lastValueTime = null;
+			Long flightStartTime = null;
 
 			while (!eosReached(in)) {
 				int fieldIndex = in.readVarInt();
@@ -90,7 +91,8 @@ public final class TelemetryReader {
 						continue;
 					}
 
-					long flightStartTime = telemetryValue.getTime().getTime();
+					if (flightStartTime == null)
+						flightStartTime = telemetryValue.getTime().getTime();
 					flightKey = new FlightKey(vehicleName, flightStartTime);
 
 					if (telemetryValue.getValue().isAvailable()) {
