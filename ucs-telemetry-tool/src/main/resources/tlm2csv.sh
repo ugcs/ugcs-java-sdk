@@ -1,8 +1,9 @@
 #!/bin/sh
 
-CLASSPATH=$(pwd):$(pwd)/*:$(pwd)/lib/*
-JAVAPATH=/Applications/UgCS/java/bin/java
-if [ ! -e $JAVAPATH ]; then
-    JAVAPATH=$JAVA_HOME
+DIR=`dirname "$0"`
+CP=$DIR:$DIR/*:$DIR/lib/*
+JAVA=/Applications/UgCS/java/bin/java
+if [ ! -e $JAVA ]; then
+    JAVA=$JAVA_HOME/bin/java
 fi
-${JAVAPATH} -cp ${CLASSPATH} com.ugcs.telemetrytool.Tlm2Csv $*
+"$JAVA" -cp "$CP" com.ugcs.telemetrytool.Tlm2Csv $*
