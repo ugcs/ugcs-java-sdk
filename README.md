@@ -1,7 +1,6 @@
 [![Release](https://jitpack.io/v/UgCS/ugcs-java-sdk.svg)](https://jitpack.io/#UgCS/ugcs-java-sdk)
 
- - API and client libraries for the [UgCS Ground Control Station](https://www.ugcs.com/).
- - [UgCS telemetry tool](https://github.com/ugcs/ugcs-java-sdk/tree/master/ucs-telemetry-tool).
+API and client libraries for the [UgCS Ground Control Station](https://www.ugcs.com/).
 
 ## Using as a dependency
 
@@ -19,7 +18,7 @@ Available via the [JitPack build](https://jitpack.io/#UgCS/ugcs-java-sdk):
 <dependency>
     <groupId>com.github.UgCS</groupId>
     <artifactId>ugcs-java-sdk</artifactId>
-    <version>3.0</version>
+    <version>3.1-SNAPSHOT</version>
 </dependency>
 ```
 

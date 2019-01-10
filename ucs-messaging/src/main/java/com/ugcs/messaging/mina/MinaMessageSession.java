@@ -8,6 +8,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.Future;
+import java.util.function.Supplier;
+
+import org.apache.mina.core.future.CloseFuture;
+import org.apache.mina.core.future.IoFutureListener;
+import org.apache.mina.core.session.IoSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.ugcs.messaging.api.CloseListener;
 import com.ugcs.messaging.api.MessageEvent;
@@ -16,11 +23,6 @@ import com.ugcs.messaging.api.MessageSelector;
 import com.ugcs.messaging.api.MessageSession;
 import com.ugcs.messaging.api.MessageSessionErrorEvent;
 import com.ugcs.messaging.api.MessageSessionEvent;
-import org.apache.mina.core.future.CloseFuture;
-import org.apache.mina.core.future.IoFutureListener;
-import org.apache.mina.core.session.IoSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class MinaMessageSession implements MessageSession {
 
@@ -79,18 +81,33 @@ public class MinaMessageSession implements MessageSession {
 	}
 
 	@Override
-	public void setAttribute(Object key, Object value) {
+	public <T> void setAttribute(Object key, T value) {
 		session.setAttribute(key, value);
 	}
 
 	@Override
-	public Object getAttribute(Object key) {
-		return session.getAttribute(key);
+	public <T> T getAttribute(Object key) {
+		return (T)session.getAttribute(key);
 	}
 
 	@Override
-	public Object getAttribute(Object key, Object defaultValue) {
-		return session.getAttribute(key, defaultValue);
+	public <T> T getAttribute(Object key, T defaultValue) {
+		return (T)session.getAttribute(key, defaultValue);
+	}
+
+	@Override
+	public <T> T getAttribute(Object key, Supplier<T> supplier) {
+		T value = (T)session.getAttribute(key);
+		if (value == null) {
+			synchronized (session) {
+				value = (T)session.getAttribute(key);
+				if (value == null) {
+					value = supplier.get();
+					session.setAttribute(key, value);
+				}
+			}
+		}
+		return value;
 	}
 
 	@Override

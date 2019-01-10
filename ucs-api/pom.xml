@@ -4,12 +4,17 @@
 	<parent>
 		<groupId>com.ugcs</groupId>
 		<artifactId>ugcs-java-sdk</artifactId>
-		<version>3.0</version>
+		<version>3.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ucs-api</artifactId>
 	<name>UCS API</name>
 	<packaging>jar</packaging>
 	<dependencies>
+		<dependency>
+			<groupId>com.ugcs</groupId>
+			<artifactId>ucs-common</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.ugcs</groupId>
 			<artifactId>ucs-messaging</artifactId>
@@ -24,4 +29,28 @@
 			<artifactId>protobuf-java-format</artifactId>
 		</dependency>
 	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.os72</groupId>
+				<artifactId>protoc-jar-maven-plugin</artifactId>
+				<version>3.6.0.1</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<protocVersion>2.4.1</protocVersion>
+							<includeStdTypes>true</includeStdTypes>
+							<inputDirectories>
+								<include>src/main/proto</include>
+							</inputDirectories>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

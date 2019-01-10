@@ -1,5 +1,12 @@
+syntax = "proto2";
+
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "DomainProto";
+option (ugcs_domain_package) = "com.ugcs.ucs.domain";
+option (ugcs_assembler_class_name) = "Transformations";
+option (ugcs_assembler_class_package) = "com.ugcs.ucs.proto";
+
+import "Options.proto";
 
 //*****************************************************************************
 // Enums
@@ -179,6 +186,7 @@ enum HomeLocationSource {
 enum PoiMode {
 	PM_NONE = 0;
 	PM_LOCATION = 1;
+	PM_AUTO = 2;
 }
 
 enum PanoramaMode {
@@ -317,11 +325,12 @@ enum Subsystem {
 	S_CAMERA = 3;
 	S_ADSB_TRANSPONDER = 4;
 	S_WINCH = 5;
-	S_DOCK = 6;
+	S_HANGAR = 6;
 	S_USER = 7;
 	S_GPR = 8;
 	S_ADSB_RECEIVER = 9;
 	S_ADSB_VEHICLE = 10;
+	S_WEATHER_STATION = 11;
 }
 
 enum Semantic {
@@ -362,6 +371,9 @@ enum Semantic {
 	S_FLIGHT_MODE = 35;
 	S_LIST = 36;
 	S_AUTOPILOT_STATUS = 37;
+	S_TEMPERATURE = 40;
+	S_HUMIDITY = 41;
+	S_PRECIPITATION = 42;
 	S_TIMESTAMP = 38;
 	S_ANY = 39;
 }
@@ -429,7 +441,6 @@ message DomainObjectWrapper {
 	optional LocalizedMessage localizedMessage = 61;
 	optional LocalizedMessageVariant localizedMessageVariant = 62;
 	optional TelemetryInterval telemetryInterval = 63;
-	optional TelemetryIntervalVehicle telemetryIntervalVehicle = 64;
 	optional CommandLogArguments commandLogArguments = 65;
 	optional UploadLogArguments uploadLogArguments = 66;
 	optional ElevationSource elevationSource = 67;
@@ -472,10 +483,10 @@ message License {
 	optional int32 version = 2;
 	optional string type = 3;
 	optional string activationCode = 4;
-	optional int64 activationTime = 5;
+	optional int64 activationTime = 5 [(ugcs_field_posix_time) = true];
 	optional string tag = 6;
-	optional int64 subscriptionExpirationTime = 7;
-	optional int64 supportExpirationTime = 8;
+	optional int64 subscriptionExpirationTime = 7 [(ugcs_field_posix_time) = true];
+	optional int64 supportExpirationTime = 8 [(ugcs_field_posix_time) = true];
 }
 
 
@@ -567,7 +578,7 @@ message AdsbAircraft {
 	optional int32 version = 2;
 	optional int32 icaoAddress = 3;
 	optional IcaoAddressType icaoAddressType = 4;
-	optional int64 updateTime = 5;
+	optional int64 updateTime = 5 [(ugcs_field_posix_time) = true];
 	optional string identification = 6;
 	optional double latitude = 7;
 	optional double longitude = 8;
@@ -728,7 +739,7 @@ message Mission {
 	optional int32 version = 2;
 	optional string name = 3;
 	optional string description = 4;
-	optional int64 creationTime = 5;
+	optional int64 creationTime = 5 [(ugcs_field_posix_time) = true];
 	repeated Route routes = 6;
 	optional User owner = 7;
 	repeated MissionVehicle vehicles = 8;
@@ -746,10 +757,10 @@ message MissionVehicle {
 message Route {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional string uuid = 3;
+	optional string uuid = 3 [(ugcs_field_uuid) = true];
 	optional string name = 4;
-	optional int64 creationTime = 5;
-	optional int64 scheduledTime = 6;
+	optional int64 creationTime = 5 [(ugcs_field_posix_time) = true];
+	optional int64 scheduledTime = 6 [(ugcs_field_posix_time) = true];
 	optional double startDelay = 26;
 	optional Mission mission = 7;
 	repeated SegmentDefinition segments = 8;
@@ -769,17 +780,17 @@ message Route {
 	optional string tag = 22;
 	optional bool checkAerodromeNfz = 23;
 	optional bool checkCustomNfz = 24;
-	optional string modificationUuid = 25;
+	optional string modificationUuid = 25 [(ugcs_field_uuid) = true];
 }
 
 message RouteUpload {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional Route route = 3;
-	optional string routeModificationUuid = 4;
+	optional string routeModificationUuid = 4 [(ugcs_field_uuid) = true];
 	optional Vehicle vehicle = 5;
 	optional User user = 6;
-	optional int64 uploadTime = 7;
+	optional int64 uploadTime = 7 [(ugcs_field_posix_time) = true];
 	optional string tag = 8;
 }
 
@@ -795,7 +806,7 @@ message Failsafe {
 message SegmentDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional string uuid = 3;
+	optional string uuid = 3 [(ugcs_field_uuid) = true];
 	optional int32 order = 4;
 	optional Route route = 5;
 	// Algorithm and parameters, and specified actions:
@@ -804,7 +815,7 @@ message SegmentDefinition {
 	repeated ParameterValue parameterValues = 10;
 	repeated ActionDefinition actionDefinitions = 11;
 	optional string tag = 12;
-	optional string modificationUuid = 13;
+	optional string modificationUuid = 13 [(ugcs_field_uuid) = true];
 }
 
 message ParameterValue {
@@ -824,14 +835,14 @@ message ProcessedRoute {
 	optional Route route = 3;
 	repeated ProcessedSegment segments = 4;
 	optional string tag = 6;
-	optional string uuid = 7; // Route.uuid
-	optional string modificationUuid = 8; // Route.modificationUuid
+	optional string uuid = 7 [(ugcs_field_uuid) = true]; // Route.uuid
+	optional string modificationUuid = 8 [(ugcs_field_uuid) = true]; // Route.modificationUuid
 }
 
 message ProcessedSegment {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional string uuid = 3; // SegmentDefinition.uuid
+	optional string uuid = 3 [(ugcs_field_uuid) = true]; // SegmentDefinition.uuid
 	// Result of processing:
 	optional RouteProcessingStatus status = 4;
 	optional double estimatedDistance = 5;
@@ -843,7 +854,7 @@ message ProcessedSegment {
 	repeated Action connectionActions = 10;	// for nextcoming connection to the next segment;
 	repeated Action optimizedActions = 11;	//
 	optional string tag = 12;
-	optional string modificationUuid = 13; // SegmentDefinition.modificationUuid
+	optional string modificationUuid = 13 [(ugcs_field_uuid) = true]; // SegmentDefinition.modificationUuid
 	optional string algorithmCode = 14;
 }
 
@@ -965,7 +976,7 @@ message Wait {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double interval = 3;
-	optional int64 scheduledTime = 7;
+	optional int64 scheduledTime = 7 [(ugcs_field_posix_time) = true];
 	optional bool waitForOperator = 4;
 	optional bool waitForInstant = 6;
 	optional string tag = 5;
@@ -1091,7 +1102,7 @@ message TransitionVtol {
 message ActionDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional string uuid = 3;
+	optional string uuid = 3 [(ugcs_field_uuid) = true];
 	optional int32 order = 4;
 	optional SegmentDefinition segmentDefinition = 5;
 	optional WaitDefinition waitDefinition = 6;
@@ -1315,7 +1326,7 @@ message Value {
 message VehicleLogEntry {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int64 time = 3;
+	optional int64 time = 3 [(ugcs_field_posix_time) = true];
 	optional Vehicle vehicle = 4;
 	optional string message = 5;
 	optional SeverityLevel level = 6;
@@ -1358,23 +1369,14 @@ message TelemetryInterval {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string name = 3;
-	optional int64 beginningTime = 4;
-	optional int64 endTime = 5;
-	repeated TelemetryIntervalVehicle vehicles = 6;
+	optional int64 beginningTime = 4 [(ugcs_field_posix_time) = true];
+	optional int64 endTime = 5 [(ugcs_field_posix_time) = true];
 	optional string tag = 7;
-}
-
-message TelemetryIntervalVehicle {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional TelemetryInterval interval = 3;
-	optional Vehicle vehicle = 4;
-	optional string tag = 5;
 }
 
 message Telemetry {
 	optional Value value = 1;
-	optional int64 time = 2;
+	optional int64 time = 2 [(ugcs_field_posix_time) = true];
 	optional TelemetryField telemetryField = 3;
 }
 
@@ -1426,8 +1428,8 @@ message UtmOperation {
 	optional UtmOperationStatus status = 4;
 	optional string gufi = 5;
 	optional string flightNumber = 6;
-	optional int64 effectiveBeginningTime = 7;
-	optional int64 effectiveEndTime = 8;
+	optional int64 effectiveBeginningTime = 7 [(ugcs_field_posix_time) = true];
+	optional int64 effectiveEndTime = 8 [(ugcs_field_posix_time) = true];
 	optional string tag = 9;
 }
 
@@ -1460,17 +1462,37 @@ message SelectionItem {
 	optional bool markDefault = 3;
 }
 
+message TrackPoint {
+	optional int64 time = 1 [(ugcs_field_posix_time) = true];
+	optional double latitude = 2;
+	optional double longitude = 3;
+	optional double altitude = 4;
+}
+
+message Track {
+	repeated TrackPoint points = 1;
+	optional double approximationThreshold = 2;
+}
+
+message VehicleTrack {
+	optional int32 id = 3;
+	optional Vehicle vehicle = 1 [(ugcs_field_id) = true];
+	optional Track track = 2;
+}
+
 //*****************************************************************************
 // Events
 //*****************************************************************************
 
 enum ModificationType {
+	option (ugcs_enum_package) = "com.ugcs.ucs.domain.event";
 	MT_CREATE = 0;
 	MT_UPDATE = 1;
 	MT_DELETE = 2;
 }
 
 message ObjectModificationEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional ModificationType modificationType = 1;
 	optional string objectType = 2;
 	optional int32 objectId = 3;
@@ -1478,78 +1500,106 @@ message ObjectModificationEvent {
 }
 
 message ObjectModificationSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional string objectType = 1;
 	optional int32 objectId = 2;
 }
 
 message LockEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional string objectType = 1;
 	optional int32 objectId = 2;
 	optional Lock lock = 3;
 }
 
 message LockSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional string objectType = 1;
 	optional int32 objectId = 2;
 }
 
 message TelemetryEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional Vehicle vehicle = 1;
 	repeated Telemetry telemetry = 3;
 }
 
 message TelemetrySubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional Vehicle vehicle = 1;
 }
 
 message TelemetryRemovalEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional Vehicle vehicle = 1;
-	optional int64 fromTime = 2;
-	optional int64 toTime = 3;
+	optional int64 fromTime = 2 [(ugcs_field_posix_time) = true];
+	optional int64 toTime = 3 [(ugcs_field_posix_time) = true];
 }
 
 message TelemetryRemovalSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional Vehicle vehicle = 1;
 }
 
 message AdsbIndicatorEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional bool on = 1;
 }
 
 message AdsbIndicatorSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 }
 
 message ProgressDto {
+	option (ugcs_class_name) = "Progress";
 	optional string title = 1;
 	optional int32 progress = 2;
 	optional int32 maxProgress = 3;
 }
 
 message ProgressStackDto {
+	option (ugcs_class_name) = "ProgressStack";
 	repeated ProgressDto progresses = 1;
+	optional string processKey = 2;
 }
 
 message ServerProgressEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	repeated ProgressStackDto progressStacks = 1;
 }
 
 message ServerProgressSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+}
+
+message VehicleTrackEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional VehicleTrack vehicleTrack = 1;
+}
+
+message VehicleTrackSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional Vehicle vehicle = 1;
 }
 
 message EventWrapper {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional ObjectModificationEvent objectModificationEvent = 1;
 	optional LockEvent lockEvent = 2;
 	optional TelemetryEvent telemetryEvent = 3;
 	optional TelemetryRemovalEvent telemetryRemovalEvent = 4;
 	optional AdsbIndicatorEvent adsbIndicatorEvent = 5;
 	optional ServerProgressEvent serverProgressEvent = 7;
+	optional VehicleTrackEvent vehicleTrackEvent = 8;
 }
 
 message EventSubscriptionWrapper {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional ObjectModificationSubscription objectModificationSubscription = 1;
 	optional LockSubscription lockSubscription = 2;
 	optional TelemetrySubscription telemetrySubscription = 3;
 	optional TelemetryRemovalSubscription telemetryRemovalSubscription = 4;
 	optional AdsbIndicatorSubscription adsbIndicatorSubscription = 5;
 	optional ServerProgressSubscription serverProgressSubscription = 7;
+	optional VehicleTrackSubscription vehicleTrackSubscription = 8;
 }

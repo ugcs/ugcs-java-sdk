@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.ugcs</groupId>
 		<artifactId>ugcs-java-sdk</artifactId>
-		<version>3.0</version>
+		<version>3.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>ucs-common</artifactId>
 	<name>UCS Common Data Types and Utilities</name>
@@ -15,8 +15,8 @@
 			<artifactId>slf4j-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

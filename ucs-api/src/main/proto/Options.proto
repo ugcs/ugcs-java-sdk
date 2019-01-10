@@ -1,0 +1,32 @@
+syntax = "proto2";
+
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "OptionsProto";
+
+import "google/protobuf/descriptor.proto";
+
+extend google.protobuf.FileOptions {
+	optional string ugcs_domain_package = 50001;
+	optional string ugcs_assembler_class_name = 50002;
+	optional string ugcs_assembler_class_package = 50003;
+}
+
+extend google.protobuf.MessageOptions {
+	optional bool ugcs_class_ignore = 50001;
+	optional string ugcs_class_name = 50002;
+	optional string ugcs_class_package = 50003;
+}
+
+extend google.protobuf.FieldOptions {
+	optional bool ugcs_field_ignore = 50001;
+	optional string ugcs_field_name = 50002;
+	optional bool ugcs_field_id = 50003;
+	optional bool ugcs_field_posix_time = 50004;
+	optional bool ugcs_field_uuid = 50005;
+}
+
+extend google.protobuf.EnumOptions {
+	optional bool ugcs_enum_ignore = 50001;
+	optional string ugcs_enum_name = 50002;
+	optional string ugcs_enum_package = 50003;
+}

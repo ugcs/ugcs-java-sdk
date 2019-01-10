@@ -256,7 +256,11 @@ public class MessageFuture extends AbstractListenableFuture<Object> implements M
 		}
 
 		CompletionEvent<Object> event = new CompletionEvent<>(this, value, error);
-		for (CompletionListener<Object> listener : listeners)
-			listener.completed(event);
+		for (CompletionListener<Object> listener : listeners) {
+			try {
+				listener.completed(event);
+			} catch (Exception ignore) {
+			}
+		}
 	}
 }

@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+option java_package = "com.ugcs.ucs.proto";
+option java_outer_classname = "TelemetryProto";
+
+message TelemetryTrackPoint {
+    required int64 time = 1;
+    required double latitude = 2;
+    required double longitude = 3;
+    required double altitude = 4;
+}
+
+message TelemetryTrack {
+    repeated TelemetryTrackPoint points = 1;
+    optional double approximationThreshold = 2;
+}
+

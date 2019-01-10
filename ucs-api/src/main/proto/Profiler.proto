@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "ProfilerProto";
 

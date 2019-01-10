@@ -89,10 +89,10 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(87, UpdateMissionPreferencesResponse.class);
 		putMapping(88, GetVehicleLogByTimeRangeRequest.class);
 		putMapping(89, GetVehicleLogByTimeRangeResponse.class);
-		putMapping(90, ExportTelemetryToXmlRequest.class);
-		putMapping(91, ExportTelemetryToXmlResponse.class);
-		putMapping(92, ImportTelemetryFromXmlRequest.class);
-		putMapping(93, ImportTelemetryFromXmlResponse.class);
+		putMapping(90, ExportTelemetryRequest.class);
+		putMapping(91, ExportTelemetryResponse.class);
+		putMapping(92, ImportTelemetryRequest.class);
+		putMapping(93, ImportTelemetryResponse.class);
 		putMapping(94, TraceTelemetryFramesRequest.class);
 		putMapping(95, TraceTelemetryFramesResponse.class);
 		putMapping(96, DeleteTelemetryRequest.class);
@@ -143,6 +143,16 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(145, GetTrialResponse.class);
 		putMapping(146, SwapElevationOrderRequest.class);
 		putMapping(147, SwapElevationOrderResponse.class);
+		putMapping(148, DeleteVehicleTrackRequest.class);
+		putMapping(149, DeleteVehicleTrackResponse.class);
+		putMapping(150, MergeVehicleTrackRequest.class);
+		putMapping(151, MergeVehicleTrackResponse.class);
+		putMapping(152, CheckLocationRequest.class);
+		putMapping(153, CheckLocationResponse.class);
+		putMapping(154, SplitVehicleTrackRequest.class);
+		putMapping(155, SplitVehicleTrackResponse.class);
+		putMapping(156, GetVehicleVideoLogRequest.class);
+		putMapping(157, GetVehicleVideoLogResponse.class);
 
 		putMapping(200, StreamTestRequest.class);
 		putMapping(201, StreamTestResponse.class);

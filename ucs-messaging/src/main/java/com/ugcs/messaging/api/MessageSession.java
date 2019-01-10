@@ -3,6 +3,7 @@ package com.ugcs.messaging.api;
 import java.io.IOException;
 import java.net.SocketAddress;
 import java.util.concurrent.Future;
+import java.util.function.Supplier;
 
 /**
  * Represents connection session within a peer-to-peer
@@ -25,11 +26,13 @@ public interface MessageSession {
 
 	void removeListener(MessageListener listener);
 
-	void setAttribute(Object key, Object value);
+	<T> void setAttribute(Object key, T value);
 
-	Object getAttribute(Object key);
+	<T> T getAttribute(Object key);
 
-	Object getAttribute(Object key, Object defaultValue);
+	<T> T getAttribute(Object key, T defaultValue);
+
+	<T> T getAttribute(Object key, Supplier<T> supplier);
 
 	boolean isOpened();
 
