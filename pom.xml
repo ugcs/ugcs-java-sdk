@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ugcs</groupId>
 	<artifactId>ugcs-java-sdk</artifactId>
-	<version>3.1-SNAPSHOT</version>
+	<version>3.1</version>
 	<name>UgCS Server Java SDK</name>
 	<packaging>pom</packaging>
 	<modules>
