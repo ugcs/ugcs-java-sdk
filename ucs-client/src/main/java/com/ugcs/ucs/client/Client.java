@@ -3,7 +3,10 @@ package com.ugcs.ucs.client;
 import java.io.Closeable;
 import java.io.IOException;
 import java.net.SocketAddress;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -149,6 +152,14 @@ public class Client implements Closeable {
 
 	static class ResponseSelector implements MessageSelector {
 
+		private static final Set<Class<? extends Message>> STATUS_MESSAGE_TYPES = new HashSet<>(Arrays.asList(
+				MessagesProto.OperationStatus.class,
+				MessagesProto.OperationStream.class,
+				MessagesProto.OperationStreamRequest.class,
+				MessagesProto.CancelOperationRequest.class,
+				MessagesProto.CancelOperationResponse.class
+		));
+
 		private int instanceId;
 
 		public ResponseSelector(MessageWrapper request) {
@@ -166,7 +177,10 @@ public class Client implements Closeable {
 				return false;
 
 			MessageWrapper wrapper = (MessageWrapper)message;
-			return wrapper != null && instanceId == wrapper.getInstanceId();
+			return wrapper != null
+					&& instanceId == wrapper.getInstanceId()
+					&& wrapper.getMessage() != null
+					&& !STATUS_MESSAGE_TYPES.contains(wrapper.getMessage().getClass());
 		}
 	}
 }
