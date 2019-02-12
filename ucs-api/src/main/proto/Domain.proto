@@ -40,6 +40,11 @@ enum ActionExecution {
 	AE_ACTIONS_ON_FORWARD_PASSES = 2;
 }
 
+enum FacadeScanPattern {
+	FSP_VERTICAL = 0;
+	FSP_HORIZONTAL = 1;
+}
+
 enum FigureType {
 	FT_POINT = 0;
 	FT_POLYGON = 1;
@@ -47,6 +52,7 @@ enum FigureType {
 	FT_EIGHT_CURVE = 3;
 	FT_TAKEOFF_POINT = 4;
 	FT_LANDING_POINT = 5;
+	FT_POLYLINE = 6;
 }
 
 enum ParameterType {

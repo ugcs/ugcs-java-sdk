@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ugcs</groupId>
-		<artifactId>ugcs-java-sdk</artifactId>
-		<version>3.1</version>
+		<artifactId>server</artifactId>
+		<version>3.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>ucs-common</artifactId>
 	<name>UCS Common Data Types and Utilities</name>
@@ -22,6 +22,16 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.jodah</groupId>
+			<artifactId>expiringmap</artifactId>
+			<version>0.5.8</version>
+		</dependency>
+		<dependency>
+			<groupId>colt</groupId>
+			<artifactId>colt</artifactId>
+			<version>1.2.0</version>
 		</dependency>
 	</dependencies>
 </project>

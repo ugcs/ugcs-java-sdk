@@ -132,6 +132,10 @@ message AltitudeTypesMappingDto {
 	repeated AltitudeTypeDto altitudeTypes = 1;
 }
 
+message FacadeScanPatternsMappingDto {
+	repeated FacadeScanPatternDto facadeScanPatterns = 1;
+}
+
 // Keys and values
 
 message PlatformAndVehicleTypePairDto {
@@ -171,6 +175,11 @@ message PlatformTurnTypeDto {
 
 message AltitudeTypeDto {
 	required string altitudeType = 1;
+	required string description = 2;
+}
+
+message FacadeScanPatternDto {
+	required string facadeScanPattern = 1;
 	required string description = 2;
 }
 
@@ -828,6 +837,7 @@ message GetMappingRequest {
 	optional bool getActionExecutions = 5;
 	optional bool getCameras = 6;
 	optional bool getAltitudeTypes = 7;
+	optional bool getFacadeScanPatterns = 9;
 }
 
 message GetMappingResponse {
@@ -838,6 +848,7 @@ message GetMappingResponse {
 	optional ActionExecutionsMappingDto actionExecutionsMapping = 5;
 	optional CamerasMappingDto camerasMapping = 6;
 	optional AltitudeTypesMappingDto altitudeTypesMapping = 7;
+	optional FacadeScanPatternsMappingDto facadeScanPaterrnsMapping = 9;
 }
 
 // Locks

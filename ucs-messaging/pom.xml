@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ugcs</groupId>
-		<artifactId>ugcs-java-sdk</artifactId>
-		<version>3.1</version>
+		<artifactId>server</artifactId>
+		<version>3.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>ucs-messaging</artifactId>
 	<name>UCS Messaging Library</name>
