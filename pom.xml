@@ -2,9 +2,9 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ugcs</groupId>
-	<artifactId>server</artifactId>
-	<name>UgCS Server</name>
-	<version>3.3-SNAPSHOT</version>
+	<artifactId>ugcs-java-sdk</artifactId>
+	<name>UgCS Server Java SDK</name>
+	<version>3.3</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>ucs-messaging</module>

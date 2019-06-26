@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ugcs</groupId>
-		<artifactId>server</artifactId>
-		<version>3.3-SNAPSHOT</version>
+		<artifactId>ugcs-java-sdk</artifactId>
+		<version>3.3</version>
 	</parent>
 	<artifactId>ucs-common</artifactId>
 	<name>UCS Common Data Types and Utilities</name>
