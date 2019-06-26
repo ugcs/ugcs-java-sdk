@@ -7,7 +7,7 @@
 		<version>3.3</version>
 	</parent>
 	<artifactId>ucs-messaging</artifactId>
-	<name>UgCS Server Java SDK</name>
+	<name>UCS Messaging Library</name>
 	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
