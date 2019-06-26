@@ -4,7 +4,7 @@
 	<groupId>com.ugcs</groupId>
 	<artifactId>server</artifactId>
 	<name>UgCS Server</name>
-	<version>3.2-SNAPSHOT</version>
+	<version>3.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>ucs-messaging</module>

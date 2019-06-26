@@ -240,20 +240,6 @@ enum ConflictResolutionMode {
 	CRM_MERGE = 2;
 }
 
-enum VehicleLogEntryType {
-	VLET_GENERIC = 0;
-	VLET_COMMAND = 1;
-	VLET_UPLOAD = 2;
-	VLET_VIDEO_RECORDING = 3;
-}
-
-enum ProcessStage {
-	PS_START = 0;
-	PS_PROGRESS = 1;
-	PS_SUCCESS = 2;
-	PS_FAILURE = 3;
-}
-
 enum WaypointTurnType {
 	WTT_STOP_AND_TURN = 0;
 	WTT_STRAIGHT = 1;
@@ -287,16 +273,16 @@ enum NfzType {
 	NT_AERODROME = 1;
 }
 
-enum VideoEventType {
-	VET_RECORDING_STARTED = 0;
-	VET_RECORDING_STOPPED = 1;
-	VET_RECORDING_INTERRUPTED = 2;
-	VET_STREAM_REMOVED = 3;
+enum EnvironmentEventType {
+	EET_NFZ_UPDATED = 0;
+	EET_ELEVATION_UPDATED = 1;
+	EET_FEATURE_UPDATED = 2;
 }
 
 enum FeatureType {
 	FT_STATIC_OBJECT = 0;
 	FT_PLACEMARK = 1;
+	FT_POLYLINE_PLACEMARK = 2;
 }
 
 enum UtmOperationStatus {
@@ -434,7 +420,6 @@ message DomainObjectWrapper {
 	optional TraverseAlgorithm traverseAlgorithm = 47;
 	optional User user = 48;
 	optional Vehicle vehicle = 49;
-	optional VehicleCommandDefinition vehicleCommandDefinition = 50;
 	optional VehicleLogEntry vehicleLogEntry = 51;
 	optional VehicleParameter vehicleParameter = 52;
 	optional VehicleProfile vehicleProfile = 53;
@@ -447,8 +432,6 @@ message DomainObjectWrapper {
 	optional LocalizedMessage localizedMessage = 61;
 	optional LocalizedMessageVariant localizedMessageVariant = 62;
 	optional TelemetryInterval telemetryInterval = 63;
-	optional CommandLogArguments commandLogArguments = 65;
-	optional UploadLogArguments uploadLogArguments = 66;
 	optional ElevationSource elevationSource = 67;
 	optional GeoServer geoServer = 68;
 	optional CameraSeriesByDistance cameraSeriesByDistance = 69;
@@ -457,7 +440,6 @@ message DomainObjectWrapper {
 	optional CameraSeriesByTimeDefinition cameraSeriesByTimeDefinition = 72;
 	optional PlatformAction platformAction = 73;
 	optional FeatureSource featureSource = 74;
-	optional VideoRecordingLogArguments videoRecordingLogArguments = 75;
 	optional UtmOperation utmOperation = 76;
 	optional CommandArgumentDefinition commandArgumentDefinition = 77;
 	optional Failsafe failsafe = 78;
@@ -567,7 +549,6 @@ message Vehicle {
 	optional string tailNumber = 6;
 	optional VehicleType type = 7;
 	optional double altitudeOrigin = 13;
-	repeated VehicleCommandDefinition commandDefinitions = 14;
 	optional Platform platform = 15;
 	optional VehicleProfile profile = 16;
 	optional string tag = 17;
@@ -1270,12 +1251,14 @@ message CommandDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string code = 3;
+	optional string name = 4;
+	repeated CommandArgumentDefinition arguments = 5;
+	optional string tag = 6;
 	optional Subsystem subsystem = 7;
 	optional int32 subsystemId = 8;
-	repeated CommandArgumentDefinition arguments = 5;
-	optional string name = 4;
 	optional Vehicle vehicle = 9;
-	optional string tag = 6;
+	optional bool enabled = 10;
+	optional bool available = 11;
 }
 
 message CommandArgumentDefinition {
@@ -1288,15 +1271,6 @@ message CommandArgumentDefinition {
 	optional Value minValue = 16;
 	optional Value maxValue = 17;
 	optional string tag = 12;
-}
-
-message VehicleCommandDefinition {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional Vehicle vehicle = 3;
-	optional CommandDefinition commandDefinition = 4;
-	optional bool enabled = 5;
-	optional string tag = 6;
 }
 
 message Command {
@@ -1336,38 +1310,8 @@ message VehicleLogEntry {
 	optional Vehicle vehicle = 4;
 	optional string message = 5;
 	optional SeverityLevel level = 6;
-	optional ProcessStage stage = 7;
-	optional VehicleLogEntryType type = 8;
-	optional CommandLogArguments commandArguments = 9;
-	optional UploadLogArguments uploadArguments = 10;
-	optional VideoRecordingLogArguments videoRecordingArguments = 11;
 	optional string tag = 12;
 }
-
-message CommandLogArguments {
-	optional int32 id = 1;
-	optional User user = 2;
-	optional string commandCode = 3;
-	optional string tag = 4;
-}
-
-message UploadLogArguments {
-	optional int32 id = 1;
-	optional User user = 2;
-	optional Route route = 3;
-	optional string tag = 4;
-}
-
-message VideoRecordingLogArguments {
-	optional int32 id = 1;
-	optional User user = 2;
-	optional string streamId = 3;
-	optional VideoEventType videoEventType = 4;
-	optional string videoServerHost = 5;
-	optional int32 videoServerPort = 6;
-	optional string tag = 7;
-}
-
 
 //-- Telemetry ----------------------------------------------------------------
 
@@ -1511,6 +1455,19 @@ message ObjectModificationSubscription {
 	optional int32 objectId = 2;
 }
 
+message EnvironmentEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional double minLatitude = 1;
+	optional double minLongitude = 2;
+	optional double maxLatitude = 3;
+	optional double maxLongitude = 4;
+	optional EnvironmentEventType environmentEventType = 5;
+}
+
+message EnvironmentSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+}
+
 message LockEvent {
 	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional string objectType = 1;
@@ -1556,6 +1513,17 @@ message AdsbIndicatorSubscription {
 	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 }
 
+message CommandEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional Vehicle vehicle = 1;
+	repeated CommandDefinition commands = 2;
+}
+
+message CommandSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional Vehicle vehicle = 1;
+}
+
 message ProgressDto {
 	option (ugcs_class_name) = "Progress";
 	optional string title = 1;
@@ -1597,6 +1565,8 @@ message EventWrapper {
 	optional AdsbIndicatorEvent adsbIndicatorEvent = 5;
 	optional ServerProgressEvent serverProgressEvent = 7;
 	optional VehicleTrackEvent vehicleTrackEvent = 8;
+	optional EnvironmentEvent environmentEvent = 9;
+	optional CommandEvent commandEvent = 10;
 }
 
 message EventSubscriptionWrapper {
@@ -1608,4 +1578,6 @@ message EventSubscriptionWrapper {
 	optional AdsbIndicatorSubscription adsbIndicatorSubscription = 5;
 	optional ServerProgressSubscription serverProgressSubscription = 7;
 	optional VehicleTrackSubscription vehicleTrackSubscription = 8;
+	optional EnvironmentSubscription environmentSubscription = 9;
+	optional CommandSubscription commandSubscription = 10;
 }

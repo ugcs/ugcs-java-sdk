@@ -10,16 +10,18 @@ import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.protobuf.Message;
+import com.ugcs.common.io.Bytes;
+import com.ugcs.common.io.CircularBuffer;
+import com.ugcs.common.io.NullOutputStream;
+import com.ugcs.messaging.api.MessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.google.protobuf.Message;
-import com.ugcs.common.io.CircularBuffer;
-import com.ugcs.messaging.api.MessageDecoder;
 
 public class MessageWrapperDecoder implements MessageDecoder {
 
 	private static final Logger log = LoggerFactory.getLogger(MessageWrapperDecoder.class);
+	private static final int MAX_MESSAGE_LENGTH = 100 * 1024 * 1024; // 100 MB
 
 	private final ProtoMessageDecoder protoDecoder;
 	private final ProtoMessageMapping protoMapping;
@@ -70,15 +72,23 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		// 16 bytes is the smallest possible message length
 		if (in.available() < 16)
 			return false;
+		boolean isGarbage = false;
 		// reading message length
 		try {
 			in.mark(16);
 			in.skip(12);
 			int messageLength = readInt(in);
+			if (messageLength < 0 || messageLength > MAX_MESSAGE_LENGTH) {
+				isGarbage = true;
+				return false;
+			}
 			if (in.available() < messageLength)
 				return false;
 		} finally {
 			in.reset();
+			if (isGarbage) {
+				Bytes.copy(in, new NullOutputStream());
+			}
 		}
 		// ok
 		return true;
@@ -118,7 +128,7 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		fillBuffer(buffer);
 		InputStream in = decoderBuffer.getInputStream();
 
-		List<Object> result = new ArrayList<Object>();
+		List<Object> result = new ArrayList<>();
 		while (isDecodable(in)) {
 			Object decodedMessage = null;
 			try {

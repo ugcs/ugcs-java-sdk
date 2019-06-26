@@ -112,7 +112,7 @@ public final class Strings {
 		if (Strings.isNullOrEmpty(source))
 			return new String[0];
 		if (Strings.isNullOrEmpty(regex))
-			return new String[] {source};
+			return new String[]{source};
 
 		String[] split = source.split(regex);
 		if (split == null || split.length == 0)
@@ -187,5 +187,21 @@ public final class Strings {
 		if (Strings.isNullOrEmpty(string)) {
 			throw new IllegalArgumentException(message);
 		}
+	}
+
+	//Convert SCREAMING_SNAKE_CASE string dto camelCase
+	public static String screamingSnakeCaseToCamelCase(String screamingSnakeCase) {
+		StringBuilder camelCaseString = new StringBuilder();
+		boolean undescoreFlag = false;
+		for (int i = 0; i < screamingSnakeCase.length(); i++) {
+			char character = screamingSnakeCase.charAt(i);
+			if (character == '_')
+				undescoreFlag = true;
+			else {
+				camelCaseString.append(undescoreFlag ? character : Character.toLowerCase(character));
+				undescoreFlag = false;
+			}
+		}
+		return camelCaseString.toString();
 	}
 }

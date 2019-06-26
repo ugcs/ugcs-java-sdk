@@ -323,13 +323,13 @@ message CalculateSplineResponse {
 	repeated Wgs84LocationDto locations = 1;
 }
 
-message ExportRouteToXmlRequest {
+message ExportRouteRequest {
 	required int32 clientId = 1;
 	required Route route = 2;
 }
 
-message ExportRouteToXmlResponse {
-	required bytes routeXml = 1;
+message ExportRouteResponse {
+	required bytes routeData = 1;
 }
 
 message ImportRouteRequest {
@@ -344,21 +344,23 @@ message ImportRouteResponse {
 	required Route route = 1;
 }
 
-message ExportMissionToXmlRequest {
+message ExportMissionRequest {
 	required int32 clientId = 1;
 	required Mission mission = 2;
 }
 
-message ExportMissionToXmlResponse {
-	required bytes missionXml = 1;
+message ExportMissionResponse {
+	required bytes missionData = 1;
 }
 
-message ImportMissionFromXmlRequest {
+message ImportMissionRequest {
 	required int32 clientId = 1;
-	required bytes missionXml = 2;
+	required bytes missionData = 2;
+	optional string filename = 3;
+
 }
 
-message ImportMissionFromXmlResponse {
+message ImportMissionResponse {
 	required Mission mission = 1;
 }
 
@@ -387,6 +389,35 @@ message ImportTelemetryRequest {
 }
 
 message ImportTelemetryResponse {
+	// list of vehicles affected by the telemetry import
+	repeated Vehicle vehicles = 1;
+}
+
+message ExportTelemetryStreamRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	// defines a lower bound limit for a telemetry time
+	// time >= from
+	optional int64 from = 3;
+	// defines an upper bound limit for a telemetry time
+	// time < from
+	optional int64 to = 4;
+	// format of the serialized telemetry data
+	required TelemetryFormat format = 5 [default = TF_TLM];
+}
+
+message ExportTelemetryStreamResponse {
+	// there is a single stream opened within the operation
+	// that contains telemetry data in a requested format
+}
+
+message ImportTelemetryStreamRequest {
+	required int32 clientId = 1;
+	// id of the telemetry data stream in a tlm binary format
+	required string streamId = 2;
+}
+
+message ImportTelemetryStreamResponse {
 	// list of vehicles affected by the telemetry import
 	repeated Vehicle vehicles = 1;
 }
@@ -647,6 +678,7 @@ message GetVehicleLogByTimeRangeRequest {
 	repeated Vehicle vehicles = 2;
 	required int64 fromTime = 3;
 	required int64 toTime = 4;
+	// deprecated
 	optional SeverityLevel level = 5 [default = SL_INFORMATIONAL];
 }
 
@@ -654,7 +686,7 @@ message GetVehicleLogByTimeRangeResponse {
 	repeated VehicleLogEntry vehicleLogEntries = 1;
 }
 
-
+// deprecated
 message GetVehicleVideoLogRequest {
 	required int32 clientId = 1;
 	repeated Vehicle vehicles = 2;
@@ -662,6 +694,7 @@ message GetVehicleVideoLogRequest {
 	required int64 toTime = 4;
 }
 
+// deprecated
 message GetVehicleVideoLogResponse {
 	repeated VehicleLogEntry vehicleLogEntries = 1;
 }
@@ -1008,20 +1041,6 @@ message CancelOperationRequest {
 }
 
 message CancelOperationResponse {
-}
-
-message StreamTestRequest {
-	required int32 clientId = 1;
-}
-
-message StreamTestResponse {
-}
-
-message ProgressTestRequest {
-	required int32 clientId = 1;
-}
-
-message ProgressTestResponse {
 }
 
 // Events

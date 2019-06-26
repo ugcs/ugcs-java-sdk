@@ -1,5 +1,7 @@
 package com.ugcs.common.util;
 
+import java.util.Collection;
+
 public final class Preconditions {
 	
 	private Preconditions() {
@@ -19,6 +21,11 @@ public final class Preconditions {
 
 	public static void checkNotEmpty(String str) {
 		checkNotEmpty(str, null);
+	}
+
+	public static void checkNotEmpty(Collection collection) {
+		checkNotNull(collection);
+		checkArgument(!collection.isEmpty());
 	}
 
 	public static void checkNotEmpty(String str, String message) {

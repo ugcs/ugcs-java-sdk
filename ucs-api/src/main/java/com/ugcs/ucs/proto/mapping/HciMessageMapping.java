@@ -53,8 +53,8 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(51, GetAdsbAircraftListResponse.class);
 		putMapping(52, SearchPlacesRequest.class);
 		putMapping(53, SearchPlacesResponse.class);
-		putMapping(54, ExportRouteToXmlRequest.class);
-		putMapping(55, ExportRouteToXmlResponse.class);
+		putMapping(54, ExportRouteRequest.class);
+		putMapping(55, ExportRouteResponse.class);
 		putMapping(56, ImportRouteRequest.class);
 		putMapping(57, ImportRouteResponse.class);
 		putMapping(58, SubscribeEventRequest.class);
@@ -71,10 +71,10 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(69, GetLicenseResponse.class);
 		putMapping(70, ActivateLicenseRequest.class);
 		putMapping(71, ActivateLicenseResponse.class);
-		putMapping(72, ExportMissionToXmlRequest.class);
-		putMapping(73, ExportMissionToXmlResponse.class);
-		putMapping(74, ImportMissionFromXmlRequest.class);
-		putMapping(75, ImportMissionFromXmlResponse.class);
+		putMapping(72, ExportMissionRequest.class);
+		putMapping(73, ExportMissionResponse.class);
+		putMapping(74, ImportMissionRequest.class);
+		putMapping(75, ImportMissionResponse.class);
 		putMapping(76, AcquireLockRequest.class);
 		putMapping(77, AcquireLockResponse.class);
 		putMapping(78, ReleaseLockRequest.class);
@@ -153,10 +153,9 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(155, SplitVehicleTrackResponse.class);
 		putMapping(156, GetVehicleVideoLogRequest.class);
 		putMapping(157, GetVehicleVideoLogResponse.class);
-
-		putMapping(200, StreamTestRequest.class);
-		putMapping(201, StreamTestResponse.class);
-		putMapping(202, ProgressTestRequest.class);
-		putMapping(203, ProgressTestResponse.class);
+		putMapping(158, ExportTelemetryStreamRequest.class);
+		putMapping(159, ExportTelemetryStreamResponse.class);
+		putMapping(160, ImportTelemetryStreamRequest.class);
+		putMapping(161, ImportTelemetryStreamResponse.class);
 	}
 }
