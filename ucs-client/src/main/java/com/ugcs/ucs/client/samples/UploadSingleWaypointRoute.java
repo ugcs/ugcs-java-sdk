@@ -13,7 +13,6 @@ import com.ugcs.ucs.proto.DomainProto.FailsafeReason;
 import com.ugcs.ucs.proto.DomainProto.Figure;
 import com.ugcs.ucs.proto.DomainProto.FigurePoint;
 import com.ugcs.ucs.proto.DomainProto.FigureType;
-import com.ugcs.ucs.proto.DomainProto.HomeLocationSource;
 import com.ugcs.ucs.proto.DomainProto.ParameterValue;
 import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
 import com.ugcs.ucs.proto.DomainProto.Route;
@@ -155,7 +154,6 @@ public final class UploadSingleWaypointRoute {
 
 		SegmentDefinition.Builder routeSegment = SegmentDefinition
 				.newBuilder()
-				.setOrder(0)
 				.setAlgorithmClassName("com.ugcs.ucs.service.routing.impl.WaypointAlgorithm")
 				.setFigure(figure)
 				.addParameterValues(ParameterValue.newBuilder()
@@ -173,14 +171,12 @@ public final class UploadSingleWaypointRoute {
 
 		Route.Builder route = Route.newBuilder()
 				.setName("WP-Direct " + System.currentTimeMillis())
-				.setHomeLocationSource(HomeLocationSource.HLS_FIRST_WAYPOINT)
 				.setCheckAerodromeNfz(true)
 				.setCheckCustomNfz(false)
 				.setInitialSpeed(speed)
 				.setMaxSpeed(10.0)
 				.setMaxAltitude(10000.0)
 				.setSafeAltitude(50.0)
-				.setAltitudeType(AltitudeType.AT_AGL)
 				.setTrajectoryType(TrajectoryType.TT_STRAIGHT)
 				.addFailsafes(Failsafe.newBuilder()
 						.setReason(FailsafeReason.FR_GPS_LOST)

@@ -18,7 +18,7 @@ Available via the [JitPack build](https://jitpack.io/#UgCS/ugcs-java-sdk):
 <dependency>
     <groupId>com.github.UgCS</groupId>
     <artifactId>ugcs-java-sdk</artifactId>
-    <version>3.3</version>
+    <version>3.5</version>
 </dependency>
 ```
 

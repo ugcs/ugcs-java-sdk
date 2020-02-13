@@ -78,6 +78,7 @@ message LicensePermissionsDto {
 	repeated string forbiddenAlgorithmCodes = 16;
 	required int32 maxImagesToProcess = 17;
 	required bool remoteVsmConnection = 18;
+	required bool ugcsVideoPlayer = 19;
 }
 
 message PlatformAndBooleanPairDto {
@@ -98,6 +99,7 @@ message PlatformAndDoublePairDto {
 message VehicleCommandResultDto {
 	required Vehicle vehicle = 1;
 	required CommandStatus commandStatus = 2;
+	optional string errorMessage = 3;
 }
 
 message ImportRouteParameterDto {
@@ -134,6 +136,11 @@ message AltitudeTypesMappingDto {
 
 message FacadeScanPatternsMappingDto {
 	repeated FacadeScanPatternDto facadeScanPatterns = 1;
+}
+
+message AltitudeFramesMappingDto {
+	repeated PlatformAltitudeFramesDto platformAltitudeFrames = 1;
+	repeated AlgorithmAltitudeFramesDto algorithmAltitudeFrames = 2;
 }
 
 // Keys and values
@@ -178,6 +185,21 @@ message AltitudeTypeDto {
 	required string description = 2;
 }
 
+message AltitudeFrameDto {
+	required string altitudeFrame = 1;
+	required string description = 2;
+}
+
+message PlatformAltitudeFramesDto {
+	required Platform platform = 1;
+	repeated AltitudeFrameDto altitudeFrames = 2;
+}
+
+message AlgorithmAltitudeFramesDto {
+	required TraverseAlgorithm algorithm = 1;
+	repeated AltitudeFrameDto altitudeFrames = 2;
+}
+
 message FacadeScanPatternDto {
 	required string facadeScanPattern = 1;
 	required string description = 2;
@@ -213,6 +235,7 @@ message VehicleCommandsDto {
 message Error {
 	optional string errorMessage = 1;
 	optional int32 errorCode = 2;
+	optional bool isSuppressible = 3;
 }
 
 message AuthorizeHciRequest {
@@ -269,6 +292,7 @@ message ProcessRouteResponse {
 	required ProcessedRoute processedRoute = 1;
 }
 
+// deprecated
 message ConvertRouteAltitudesRequest {
 	required int32 clientId = 1;
 	required Route route = 2;
@@ -602,7 +626,7 @@ message DeleteVehicleTrackRequest {
 message DeleteVehicleTrackResponse {
 }
 
-// merge the given track with a previus one
+// merge the given track with a previous one
 // of the same vehicle
 message MergeVehicleTrackRequest {
 	required int32 clientId = 1;
@@ -614,7 +638,7 @@ message MergeVehicleTrackResponse {
 	required VehicleTrack vehicleTrack = 2;
 }
 
-// splite given trak to a two by specified date
+// split given track to a two by specified date
 message SplitVehicleTrackRequest {
 	required int32 clientId = 1;
 	required VehicleTrack vehicleTrack = 2;
@@ -715,8 +739,12 @@ message UploadRouteRequest {
 	required int32 clientId = 1;
 	required Vehicle vehicle = 2;
 	required ProcessedRoute processedRoute = 3;
-	optional Action startAction = 4;
+	optional int32 startIndex = 4;
 	optional bool addFirstWaypoint = 5 [default = true];
+	// if startLocation != null -> startAction != null
+	// startLocation strictly before startAction
+	optional Wgs84LocationDto startLocation = 6;
+	repeated int32 suppressErrorCodes = 7;
 }
 
 message UploadRouteResponse {
@@ -871,6 +899,7 @@ message GetMappingRequest {
 	optional bool getCameras = 6;
 	optional bool getAltitudeTypes = 7;
 	optional bool getFacadeScanPatterns = 9;
+	optional bool getAltitudeFrames = 10;
 }
 
 message GetMappingResponse {
@@ -882,6 +911,7 @@ message GetMappingResponse {
 	optional CamerasMappingDto camerasMapping = 6;
 	optional AltitudeTypesMappingDto altitudeTypesMapping = 7;
 	optional FacadeScanPatternsMappingDto facadeScanPaterrnsMapping = 9;
+	optional AltitudeFramesMappingDto altitudeFramesMapping = 10;
 }
 
 // Locks
@@ -1003,6 +1033,7 @@ message SplitRouteByDistanceResponse {
 message JoinRouteRequest {
 	 required int32 clientId = 1;
 	 repeated Route parts = 2;
+	 //deprecated
 	 required bool mergeEndpoints = 3 [default = true];
 }
 
