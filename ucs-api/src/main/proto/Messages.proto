@@ -78,6 +78,7 @@ message LicensePermissionsDto {
 	repeated string forbiddenAlgorithmCodes = 16;
 	required int32 maxImagesToProcess = 17;
 	required bool remoteVsmConnection = 18;
+	required bool ugcsVideoPlayer = 19;
 }
 
 message PlatformAndBooleanPairDto {
@@ -98,6 +99,7 @@ message PlatformAndDoublePairDto {
 message VehicleCommandResultDto {
 	required Vehicle vehicle = 1;
 	required CommandStatus commandStatus = 2;
+	optional string errorMessage = 3;
 }
 
 message ImportRouteParameterDto {
@@ -602,7 +604,7 @@ message DeleteVehicleTrackRequest {
 message DeleteVehicleTrackResponse {
 }
 
-// merge the given track with a previus one
+// merge the given track with a previous one
 // of the same vehicle
 message MergeVehicleTrackRequest {
 	required int32 clientId = 1;
@@ -614,7 +616,7 @@ message MergeVehicleTrackResponse {
 	required VehicleTrack vehicleTrack = 2;
 }
 
-// splite given trak to a two by specified date
+// split given track to a two by specified date
 message SplitVehicleTrackRequest {
 	required int32 clientId = 1;
 	required VehicleTrack vehicleTrack = 2;
@@ -715,8 +717,11 @@ message UploadRouteRequest {
 	required int32 clientId = 1;
 	required Vehicle vehicle = 2;
 	required ProcessedRoute processedRoute = 3;
-	optional Action startAction = 4;
+	optional int32 startIndex = 4;
 	optional bool addFirstWaypoint = 5 [default = true];
+	// if startLocation != null -> startAction != null
+	// startLocation strictly before startAction
+	optional Wgs84LocationDto startLocation = 6;
 }
 
 message UploadRouteResponse {

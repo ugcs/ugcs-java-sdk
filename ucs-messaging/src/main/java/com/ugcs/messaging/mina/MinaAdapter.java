@@ -19,7 +19,7 @@ class MinaAdapter extends IoHandlerAdapter {
 
 	private static final Logger log = LoggerFactory.getLogger(MinaAdapter.class);
 	private final List<MessageSessionListener> sessionListeners = new CopyOnWriteArrayList<>();
-	
+
 	/* listeners */
 
 	public void addSessionListener(MessageSessionListener sessionListener) {
@@ -33,7 +33,7 @@ class MinaAdapter extends IoHandlerAdapter {
 
 		sessionListeners.remove(sessionListener);
 	}
-	
+
 	/* message session */
 
 	private MinaMessageSession createMessageSession(IoSession session) {
@@ -89,7 +89,7 @@ class MinaAdapter extends IoHandlerAdapter {
 				listener.sessionClosed(sessionEvent);
 		}
 	}
-	
+
 	/* Mina handlers */
 
 	@Override

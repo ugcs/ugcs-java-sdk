@@ -184,11 +184,6 @@ enum PowerState {
 	PS_TOGGLE = 2;
 }
 
-enum HomeLocationSource {
-	HLS_EXPLICIT = 0;
-	HLS_FIRST_WAYPOINT = 1;
-}
-
 enum PoiMode {
 	PM_NONE = 0;
 	PM_LOCATION = 1;
@@ -250,7 +245,6 @@ enum WaypointTurnType {
 enum ActionCode {
 	AC_WAYPOINT = 0;
 	AC_SPEED_CHANGE = 1;
-	AC_HOME_LOCATION = 2;
 	AC_WAIT = 3;
 	AC_POI_CHANGE = 4;
 	AC_HEADING_CHANGE = 5;
@@ -393,7 +387,6 @@ message DomainObjectWrapper {
 	optional FigurePoint figurePoint = 12;
 	optional HeadingChange headingChange = 13;
 	optional HeadingDefinition headingDefinition = 14;
-	optional HomeLocation homeLocation = 15;
 	optional Landing landing = 16;
 	optional License license = 18;
 	optional Mission mission = 19;
@@ -451,6 +444,7 @@ message DomainObjectWrapper {
 	optional TransitionFixed transitionFixed = 84;
     optional TransitionVtol transitionVtol = 85;
 	optional RouteUpload routeUpload = 86;
+	optional RoutePass routePass = 87;
 }
 
 //*****************************************************************************
@@ -637,7 +631,6 @@ message PayloadParameter {
 message TraverseAlgorithm {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional string name = 4;
 	optional string implementationClass = 5;
 	optional bool selectFigure = 6;
@@ -652,7 +645,6 @@ message TraverseAlgorithm {
 message ParameterDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional string name = 4;
 	optional string description = 5;
 	optional ParameterType type = 6;
@@ -681,7 +673,6 @@ message PolygonPoint {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string tag = 3;
-	optional int32 order = 4;
 	optional Prism prism = 5;
 	optional double latitude = 6;
 	optional double longitude = 7;
@@ -699,7 +690,6 @@ message Figure {
 message FigureParameter {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional double value = 4;
 	optional Figure figure = 5;
 	optional string tag = 6;
@@ -708,7 +698,6 @@ message FigureParameter {
 message FigurePoint {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional double latitude = 4;
 	optional double longitude = 5;
 	optional double wgs84Altitude = 6;
@@ -748,7 +737,6 @@ message Route {
 	optional string name = 4;
 	optional int64 creationTime = 5 [(ugcs_field_posix_time) = true];
 	optional int64 scheduledTime = 6 [(ugcs_field_posix_time) = true];
-	optional double startDelay = 26;
 	optional Mission mission = 7;
 	repeated SegmentDefinition segments = 8;
 	optional AltitudeType altitudeType = 9;
@@ -757,17 +745,14 @@ message Route {
 	optional double maxAltitude = 12;
 	optional double initialSpeed = 13;
 	optional double maxSpeed = 14;
-	optional HomeLocationSource homeLocationSource = 15;
-	optional double homeLatitude = 16;
-	optional double homeLongitude = 17;
-	optional double homeWgs84Altitude = 18;
-	optional double homeAglAltitude = 19;
 	repeated Failsafe failsafes = 20;
 	optional VehicleProfile vehicleProfile = 21;
 	optional string tag = 22;
 	optional bool checkAerodromeNfz = 23;
 	optional bool checkCustomNfz = 24;
 	optional string modificationUuid = 25 [(ugcs_field_uuid) = true];
+	optional double startDelay = 26;
+	optional double takeoffHeight = 27;
 }
 
 message RouteUpload {
@@ -779,6 +764,28 @@ message RouteUpload {
 	optional User user = 6;
 	optional int64 uploadTime = 7 [(ugcs_field_posix_time) = true];
 	optional string tag = 8;
+}
+
+// tracks a route execution by the vehicle
+// RoutePass is created on a route upload and removed after
+// it is fully processed
+message RoutePass {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional Route route = 3;
+	optional Vehicle vehicle = 4;
+	optional int64 uploadTime = 5 [(ugcs_field_posix_time) = true];
+	// waypoint index in the original route that was reached last during
+	// the current pass (zero-based)
+	optional int32 waypointIndex = 6;
+	// WGS84 coordinates of the vehicle within the route trajectory
+	optional double latitude = 7;
+	optional double longitude = 8;
+	optional double altitude = 9;
+	optional string routeModificationUuid = 10 [(ugcs_field_uuid) = true];
+	// total number of waypoints in the original route
+	optional int32 waypointCount = 11;
+	optional string tag = 12;
 }
 
 message Failsafe {
@@ -794,7 +801,6 @@ message SegmentDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string uuid = 3 [(ugcs_field_uuid) = true];
-	optional int32 order = 4;
 	optional Route route = 5;
 	// Algorithm and parameters, and specified actions:
 	optional string algorithmClassName = 6; // == TraverseAlgorithm.implementationClass
@@ -837,12 +843,13 @@ message ProcessedSegment {
 	optional int32 wrongPointNumber = 7;
 	optional MessageSet messageSet = 8;
 	// Sets of actions (commands) for vehicle:
-	repeated Action segmentActions = 9;		// for segment itself;
-	repeated Action connectionActions = 10;	// for nextcoming connection to the next segment;
-	repeated Action optimizedActions = 11;	//
+	repeated Action segmentActions = 9; // for segment itself;
+	repeated Action connectionActions = 10; // for nextcoming connection to the next segment;
+	repeated Action optimizedActions = 11; //
 	optional string tag = 12;
 	optional string modificationUuid = 13 [(ugcs_field_uuid) = true]; // SegmentDefinition.modificationUuid
 	optional string algorithmCode = 14;
+	optional double autoDirectionAngle = 15;
 }
 
 message MessageSet {
@@ -855,7 +862,6 @@ message MessageSet {
 message LocalizedMessage {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional MessageSet messageSet = 4;
 	optional MessageSeverity severity = 5;
 	optional string defaultText = 6;
@@ -882,14 +888,12 @@ message LocalizedMessageVariant {
 message Action {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional ObjectOrigin origin = 4;
 	optional ProcessedRoute processedSegment = 5;
 	optional ProcessedRoute processedConnection = 6;
 	optional ProcessedRoute optimizedRoute = 7;
 	optional Waypoint waypoint = 8;
 	optional SpeedChange speedChange = 9;
-	optional HomeLocation homeLocation = 10;
 	optional Wait wait = 11;
 	optional PoiChange poiChange = 12;
 	optional HeadingChange headingChange = 13;
@@ -976,16 +980,6 @@ message HeadingChange {
 	optional bool relativeToNextWaypoint = 4;
 	optional bool relativeToNorth = 5;
 	optional string tag = 6;
-}
-
-message HomeLocation {
-	optional int32 id = 1;
-	optional int32 version = 2;
-	optional double latitude = 3;
-	optional double longitude = 4;
-	optional double wgs84Altitude = 5;
-	optional double elevation = 6;
-	optional string tag = 7;
 }
 
 message PoiChange {
@@ -1090,7 +1084,6 @@ message ActionDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string uuid = 3 [(ugcs_field_uuid) = true];
-	optional int32 order = 4;
 	optional SegmentDefinition segmentDefinition = 5;
 	optional WaitDefinition waitDefinition = 6;
 	optional PoiDefinition poiDefinition = 7;
@@ -1353,7 +1346,6 @@ message ElevationSource {
 message FeatureSource {
 	optional int32 id = 1;
 	optional int32 version = 2;
-	optional int32 order = 3;
 	optional GeoServer geoServer = 4;
 	optional string sourceName = 5;
 	optional FeatureType featureType = 6;
@@ -1556,6 +1548,22 @@ message VehicleTrackSubscription {
 	optional Vehicle vehicle = 1;
 }
 
+message TelemetryBatchEvent {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	repeated VehicleTelemetry vehicleTelemetry = 1;
+}
+
+message VehicleTelemetry {
+	optional Vehicle vehicle = 1;
+	repeated Telemetry telemetry = 2;
+}
+
+message TelemetryBatchSubscription {
+	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
+	optional int32 pollingPeriodMilliseconds = 1;
+	repeated Vehicle vehicles = 2;
+}
+
 message EventWrapper {
 	option (ugcs_class_package) = "com.ugcs.ucs.domain.event";
 	optional ObjectModificationEvent objectModificationEvent = 1;
@@ -1567,6 +1575,7 @@ message EventWrapper {
 	optional VehicleTrackEvent vehicleTrackEvent = 8;
 	optional EnvironmentEvent environmentEvent = 9;
 	optional CommandEvent commandEvent = 10;
+	optional TelemetryBatchEvent telemetryBatchEvent = 11;
 }
 
 message EventSubscriptionWrapper {
@@ -1580,4 +1589,5 @@ message EventSubscriptionWrapper {
 	optional VehicleTrackSubscription vehicleTrackSubscription = 8;
 	optional EnvironmentSubscription environmentSubscription = 9;
 	optional CommandSubscription commandSubscription = 10;
+	optional TelemetryBatchSubscription telemetryBatchSubscription = 11;
 }
