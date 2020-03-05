@@ -34,6 +34,12 @@ enum AltitudeType {
 	AT_AGL = 1;
 }
 
+enum AltitudeFrame {
+	AF_WGS84 = 0;
+	AF_AGL = 1;
+	AF_RANGEFINDER = 2;
+}
+
 enum ActionExecution {
 	AE_ONLY_AT_START = 0;
 	AE_ACTIONS_EVERY_POINT = 1;
@@ -739,7 +745,6 @@ message Route {
 	optional int64 scheduledTime = 6 [(ugcs_field_posix_time) = true];
 	optional Mission mission = 7;
 	repeated SegmentDefinition segments = 8;
-	optional AltitudeType altitudeType = 9;
 	optional TrajectoryType trajectoryType = 10;
 	optional double safeAltitude = 11;
 	optional double maxAltitude = 12;
@@ -923,6 +928,7 @@ message Waypoint {
 	optional double heading = 7;
 	optional double acceptanceRadius = 8;
 	optional WaypointTurnType turnType = 9;
+	optional AltitudeFrame altitudeFrame = 11;
 	optional string tag = 10;
 }
 
@@ -1409,6 +1415,7 @@ message TrackPoint {
 	optional double latitude = 2;
 	optional double longitude = 3;
 	optional double altitude = 4;
+	optional double elevation = 5;
 }
 
 message Track {
@@ -1590,4 +1597,12 @@ message EventSubscriptionWrapper {
 	optional EnvironmentSubscription environmentSubscription = 9;
 	optional CommandSubscription commandSubscription = 10;
 	optional TelemetryBatchSubscription telemetryBatchSubscription = 11;
+}
+
+message InvalidTakeOffAltitudeDetail {
+	optional double recommendedAltitude = 1;
+}
+
+message ErrorDetailWrapper {
+	optional InvalidTakeOffAltitudeDetail invalidTakeOffAltitudeDetail = 1;
 }

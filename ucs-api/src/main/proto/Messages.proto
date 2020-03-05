@@ -138,6 +138,11 @@ message FacadeScanPatternsMappingDto {
 	repeated FacadeScanPatternDto facadeScanPatterns = 1;
 }
 
+message AltitudeFramesMappingDto {
+	repeated PlatformAltitudeFramesDto platformAltitudeFrames = 1;
+	repeated AlgorithmAltitudeFramesDto algorithmAltitudeFrames = 2;
+}
+
 // Keys and values
 
 message PlatformAndVehicleTypePairDto {
@@ -180,6 +185,21 @@ message AltitudeTypeDto {
 	required string description = 2;
 }
 
+message AltitudeFrameDto {
+	required string altitudeFrame = 1;
+	required string description = 2;
+}
+
+message PlatformAltitudeFramesDto {
+	required Platform platform = 1;
+	repeated AltitudeFrameDto altitudeFrames = 2;
+}
+
+message AlgorithmAltitudeFramesDto {
+	required TraverseAlgorithm algorithm = 1;
+	repeated AltitudeFrameDto altitudeFrames = 2;
+}
+
 message FacadeScanPatternDto {
 	required string facadeScanPattern = 1;
 	required string description = 2;
@@ -215,6 +235,8 @@ message VehicleCommandsDto {
 message Error {
 	optional string errorMessage = 1;
 	optional int32 errorCode = 2;
+	optional bool isSuppressible = 3;
+	optional ErrorDetailWrapper errorDetail = 4;
 }
 
 message AuthorizeHciRequest {
@@ -271,6 +293,7 @@ message ProcessRouteResponse {
 	required ProcessedRoute processedRoute = 1;
 }
 
+// deprecated
 message ConvertRouteAltitudesRequest {
 	required int32 clientId = 1;
 	required Route route = 2;
@@ -722,6 +745,7 @@ message UploadRouteRequest {
 	// if startLocation != null -> startAction != null
 	// startLocation strictly before startAction
 	optional Wgs84LocationDto startLocation = 6;
+	repeated int32 suppressErrorCodes = 7;
 }
 
 message UploadRouteResponse {
@@ -876,6 +900,7 @@ message GetMappingRequest {
 	optional bool getCameras = 6;
 	optional bool getAltitudeTypes = 7;
 	optional bool getFacadeScanPatterns = 9;
+	optional bool getAltitudeFrames = 10;
 }
 
 message GetMappingResponse {
@@ -887,6 +912,7 @@ message GetMappingResponse {
 	optional CamerasMappingDto camerasMapping = 6;
 	optional AltitudeTypesMappingDto altitudeTypesMapping = 7;
 	optional FacadeScanPatternsMappingDto facadeScanPaterrnsMapping = 9;
+	optional AltitudeFramesMappingDto altitudeFramesMapping = 10;
 }
 
 // Locks
@@ -1008,6 +1034,7 @@ message SplitRouteByDistanceResponse {
 message JoinRouteRequest {
 	 required int32 clientId = 1;
 	 repeated Route parts = 2;
+	 //deprecated
 	 required bool mergeEndpoints = 3 [default = true];
 }
 

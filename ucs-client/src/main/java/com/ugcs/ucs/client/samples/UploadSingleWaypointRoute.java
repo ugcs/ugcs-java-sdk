@@ -177,7 +177,6 @@ public final class UploadSingleWaypointRoute {
 				.setMaxSpeed(10.0)
 				.setMaxAltitude(10000.0)
 				.setSafeAltitude(50.0)
-				.setAltitudeType(AltitudeType.AT_AGL)
 				.setTrajectoryType(TrajectoryType.TT_STRAIGHT)
 				.addFailsafes(Failsafe.newBuilder()
 						.setReason(FailsafeReason.FR_GPS_LOST)
