@@ -11,23 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.protobuf.Message;
+import com.ugcs.common.io.Bytes;
+import com.ugcs.common.io.CircularBuffer;
+import com.ugcs.common.io.NullOutputStream;
+import com.ugcs.messaging.api.MessageDecoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.ugcs.common.io.CircularBuffer;
-import com.ugcs.messaging.api.CorruptedDataException;
-import com.ugcs.messaging.api.MessageDecoder;
 
 public class MessageWrapperDecoder implements MessageDecoder {
 
 	private static final Logger log = LoggerFactory.getLogger(MessageWrapperDecoder.class);
-
-	private static final int MAX_MESSAGE_LENGTH = 64 * 1024 * 1024; // 64 MB
+	private static final int MAX_MESSAGE_LENGTH = 100 * 1024 * 1024; // 100 MB
 
 	private final ProtoMessageDecoder protoDecoder;
-
 	private final ProtoMessageMapping protoMapping;
-
 	private final CircularBuffer decoderBuffer = new CircularBuffer();
 
 	public MessageWrapperDecoder(ProtoMessageDecoder protoDecoder, ProtoMessageMapping protoMapping) {
@@ -75,18 +72,23 @@ public class MessageWrapperDecoder implements MessageDecoder {
 		// 16 bytes is the smallest possible message length
 		if (in.available() < 16)
 			return false;
+		boolean isGarbage = false;
 		// reading message length
 		try {
 			in.mark(16);
 			in.skip(12);
 			int messageLength = readInt(in);
 			if (messageLength < 0 || messageLength > MAX_MESSAGE_LENGTH) {
-				throw new CorruptedDataException("Garbage or corrupted data now receiving in connection");
+				isGarbage = true;
+				return false;
 			}
 			if (in.available() < messageLength)
 				return false;
 		} finally {
 			in.reset();
+			if (isGarbage) {
+				Bytes.copy(in, new NullOutputStream());
+			}
 		}
 		// ok
 		return true;
@@ -112,9 +114,9 @@ public class MessageWrapperDecoder implements MessageDecoder {
 
 		// checks: signature & version
 		if (protocolSignature != Protocol.SIGNATURE)
-			throw new CorruptedDataException("Protocol signature error");
+			throw new Exception("Protocol signature error");
 		if (protocolVersion != Protocol.VERSION)
-			throw new CorruptedDataException("Unsupported protocol version: " + protocolVersion);
+			throw new Exception("Unsupported protocol version: " + protocolVersion);
 
 		// well-formed message received
 		Message protoMessage = protoDecoder.decode(messageData, protoMapping.getMessageClass(messageType));
@@ -122,7 +124,7 @@ public class MessageWrapperDecoder implements MessageDecoder {
 	}
 
 	@Override
-	public List<Object> decode(ByteBuffer buffer) throws IOException {
+	public List<Object> decode(ByteBuffer buffer) throws Exception {
 		fillBuffer(buffer);
 		InputStream in = decoderBuffer.getInputStream();
 
@@ -132,10 +134,8 @@ public class MessageWrapperDecoder implements MessageDecoder {
 			try {
 				decodedMessage = decodeFirst(in);
 			} catch (Exception e) {
-				if (log.isDebugEnabled())
-					log.error("Decoder error", e);
-				else
-					log.warn("Decoder error: {}", e.getMessage());
+				log.error("Decoder error", e);
+				// skip
 			}
 			if (decodedMessage != null) {
 				if (log.isDebugEnabled())

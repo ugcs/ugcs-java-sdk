@@ -1,6 +1,5 @@
 package com.ugcs.messaging.api;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.List;
 
@@ -9,7 +8,7 @@ import java.util.List;
  */
 public interface MessageDecoder {
 
-	List<Object> decode(ByteBuffer buffer) throws IOException;
+	List<Object> decode(ByteBuffer buffer) throws Exception;
 
 	void close() throws Exception;
 }
