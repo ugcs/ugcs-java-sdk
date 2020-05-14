@@ -157,5 +157,7 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(159, ExportTelemetryStreamResponse.class);
 		putMapping(160, ImportTelemetryStreamRequest.class);
 		putMapping(161, ImportTelemetryStreamResponse.class);
+		putMapping(162, GetElevationTilesRequest.class);
+		putMapping(163, GetElevationTilesResponse.class);
 	}
 }

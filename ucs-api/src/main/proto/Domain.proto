@@ -126,7 +126,8 @@ enum VehicleParameterType {
 	VPT_MIN_RANGEFINDER_DISTANCE = 41;
 	VPT_MAX_DESCENT_RATE = 42;
 	VPT_LOW_BATTERY_POWER_LEVEL = 43;
-    VPT_NORMAL_BATTERY_POWER_LEVEL = 44;
+	VPT_NORMAL_BATTERY_POWER_LEVEL = 44;
+	VPT_MAX_RANGEFINDER_DISTANCE = 45;
 }
 
 enum PayloadType {
@@ -758,6 +759,7 @@ message Route {
 	optional string modificationUuid = 25 [(ugcs_field_uuid) = true];
 	optional double startDelay = 26;
 	optional double takeoffHeight = 27;
+	optional int64 lastModificationTime = 28 [(ugcs_field_posix_time) = true];
 }
 
 message RouteUpload {
@@ -1379,6 +1381,29 @@ message UtmOperation {
 	optional int64 effectiveBeginningTime = 7 [(ugcs_field_posix_time) = true];
 	optional int64 effectiveEndTime = 8 [(ugcs_field_posix_time) = true];
 	optional string tag = 9;
+}
+
+message ElevationData {
+	optional ElevationSourceMetadata metadata = 1;
+	optional string geoServerUri = 2;
+	repeated Tile tiles = 3;
+}
+
+message ElevationSourceMetadata {
+	option (ugcs_class_package) = "com.ugcs.geoserver.dto";
+	optional string access = 1;
+	optional double originLatitude = 2;
+	optional double originLongitude = 3;
+	optional int32 wgsTileMinEasting = 4;
+	optional int32 wgsTileMaxEasting = 5;
+	optional int32 wgsTileResolution = 6;
+	optional int64 version = 7;
+}
+
+message Tile {
+	optional bytes data = 1;
+	optional int32 easting = 2;
+	optional int32 northing = 3;
 }
 
 //-- Activation Server ----------------------------------------------------------------

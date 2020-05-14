@@ -79,6 +79,7 @@ message LicensePermissionsDto {
 	required int32 maxImagesToProcess = 17;
 	required bool remoteVsmConnection = 18;
 	required bool ugcsVideoPlayer = 19;
+	required bool kmlExport = 20;
 }
 
 message PlatformAndBooleanPairDto {
@@ -361,8 +362,9 @@ message ImportRouteRequest {
 	required int32 clientId = 1;
 	required bytes routeData = 2;
 	required string filename = 3;
-	optional TraverseAlgorithm algorithm = 4;
+	optional TraverseAlgorithm polygonAlgorithm = 4;
 	repeated ImportRouteParameterDto parameters = 5;
+	optional TraverseAlgorithm lineAlgorithm = 6;
 }
 
 message ImportRouteResponse {
@@ -515,6 +517,18 @@ message GetRasterGridResponse {
 	required int32 width = 2;
 	required int32 height = 3;
 	required bool noData = 4;
+}
+
+message GetElevationTilesRequest {
+	required int32 clientId = 1;
+	required double minLatitude = 3;
+	required double minLongitude = 4;
+	required double maxLatitude = 5;
+	required double maxLongitude = 6;
+}
+
+message GetElevationTilesResponse {
+	repeated ElevationData data = 1;
 }
 
 message GetRasterValuesRequest {
