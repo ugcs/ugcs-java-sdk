@@ -9,6 +9,8 @@ extend google.protobuf.FileOptions {
 	optional string ugcs_domain_package = 50001;
 	optional string ugcs_assembler_class_name = 50002;
 	optional string ugcs_assembler_class_package = 50003;
+	optional int32 ugcs_protocol_major_version = 50004;
+	optional int32 ugcs_protocol_minor_version = 50005;
 }
 
 extend google.protobuf.MessageOptions {

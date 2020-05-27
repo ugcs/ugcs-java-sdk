@@ -16,6 +16,7 @@ import com.ugcs.ucs.proto.DomainProto.Route;
 import com.ugcs.ucs.proto.DomainProto.RouteProcessingStatus;
 import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
+import com.ugcs.ucs.proto.MessagesProto;
 import com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
@@ -33,6 +34,7 @@ import com.ugcs.ucs.proto.MessagesProto.SubscribeEventResponse;
 import com.ugcs.ucs.proto.MessagesProto.UnsubscribeEventRequest;
 import com.ugcs.ucs.proto.MessagesProto.UploadRouteRequest;
 import com.ugcs.ucs.proto.MessagesProto.VehicleCommandResultDto;
+import com.ugcs.ucs.proto.codec.ProtoProtocolVersion;
 
 public class ClientSession {
 
@@ -57,7 +59,12 @@ public class ClientSession {
 				.setClientId(clientId);
 		if (locale != null)
 			builder.setLocale(locale.toLanguageTag());
-		AuthorizeHciRequest request = builder.build();
+		AuthorizeHciRequest request = builder
+				.setClientVersion(MessagesProto.ProtocolVersion.newBuilder()
+						.setMajor(ProtoProtocolVersion.getMajor())
+						.setMinor(ProtoProtocolVersion.getMinor())
+						.build())
+				.build();
 		AuthorizeHciResponse response = client.execute(request);
 		clientId = response.getClientId();
 	}

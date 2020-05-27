@@ -2,7 +2,10 @@ syntax = "proto2";
 
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
+option (ugcs_protocol_major_version) = 1;
+option (ugcs_protocol_minor_version) = 0;
 
+import "Options.proto";
 import "Domain.proto";
 
 // Types (DTO)
@@ -243,10 +246,17 @@ message Error {
 message AuthorizeHciRequest {
 	required int32 clientId = 1 [default = -1];
 	optional string locale = 2;
+	optional ProtocolVersion clientVersion = 3;
 }
 
 message AuthorizeHciResponse {
 	required int32 clientId = 1;
+	optional ProtocolVersion serverVersion = 2;
+}
+
+message ProtocolVersion {
+	optional int32 major = 1;
+	optional int32 minor = 2;
 }
 
 message SetHciLocaleRequest {
