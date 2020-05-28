@@ -1628,6 +1628,16 @@ message InvalidTakeOffAltitudeDetail {
 	optional double recommendedAltitude = 1;
 }
 
+message UnsupportedProtocolVersionDetail {
+	optional ProtocolVersion serverVersion = 1;
+}
+
 message ErrorDetailWrapper {
 	optional InvalidTakeOffAltitudeDetail invalidTakeOffAltitudeDetail = 1;
+	optional UnsupportedProtocolVersionDetail unsupportedProtocolVersionDetail = 2;
+}
+
+message ProtocolVersion {
+	optional int32 major = 1;
+	optional int32 minor = 2;
 }

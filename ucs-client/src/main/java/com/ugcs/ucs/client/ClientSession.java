@@ -12,11 +12,11 @@ import com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper;
 import com.ugcs.ucs.proto.DomainProto.LocalizedMessage;
 import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
 import com.ugcs.ucs.proto.DomainProto.ProcessedSegment;
+import com.ugcs.ucs.proto.DomainProto.ProtocolVersion;
 import com.ugcs.ucs.proto.DomainProto.Route;
 import com.ugcs.ucs.proto.DomainProto.RouteProcessingStatus;
 import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
-import com.ugcs.ucs.proto.MessagesProto;
 import com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
@@ -60,7 +60,7 @@ public class ClientSession {
 		if (locale != null)
 			builder.setLocale(locale.toLanguageTag());
 		AuthorizeHciRequest request = builder
-				.setClientVersion(MessagesProto.ProtocolVersion.newBuilder()
+				.setClientVersion(ProtocolVersion.newBuilder()
 						.setMajor(ProtoProtocolVersion.getMajor())
 						.setMinor(ProtoProtocolVersion.getMinor())
 						.build())

@@ -254,11 +254,6 @@ message AuthorizeHciResponse {
 	optional ProtocolVersion serverVersion = 2;
 }
 
-message ProtocolVersion {
-	optional int32 major = 1;
-	optional int32 minor = 2;
-}
-
 message SetHciLocaleRequest {
 	required int32 clientId = 1;
 	required string locale = 2;
