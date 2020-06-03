@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 0;
+option (ugcs_protocol_minor_version) = 1;
 
 import "Options.proto";
 import "Domain.proto";
@@ -523,7 +523,7 @@ message GetRasterGridResponse {
 	required int32 height = 3;
 	required bool noData = 4;
 }
-
+//Request for elevation tiles in specified rectangle
 message GetElevationTilesRequest {
 	required int32 clientId = 1;
 	required double minLatitude = 3;
