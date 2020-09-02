@@ -1,10 +1,14 @@
 package com.ugcs.ucs.client;
 
+import static com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest;
+import static com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 import com.google.protobuf.Message;
+import com.ugcs.ucs.proto.DomainProto;
 import com.ugcs.ucs.proto.DomainProto.Command;
 import com.ugcs.ucs.proto.DomainProto.CommandStatus;
 import com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper;
@@ -12,7 +16,6 @@ import com.ugcs.ucs.proto.DomainProto.EventSubscriptionWrapper;
 import com.ugcs.ucs.proto.DomainProto.LocalizedMessage;
 import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
 import com.ugcs.ucs.proto.DomainProto.ProcessedSegment;
-import com.ugcs.ucs.proto.DomainProto.ProtocolVersion;
 import com.ugcs.ucs.proto.DomainProto.Route;
 import com.ugcs.ucs.proto.DomainProto.RouteProcessingStatus;
 import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
@@ -60,7 +63,7 @@ public class ClientSession {
 		if (locale != null)
 			builder.setLocale(locale.toLanguageTag());
 		AuthorizeHciRequest request = builder
-				.setClientVersion(ProtocolVersion.newBuilder()
+				.setClientVersion(DomainProto.ProtocolVersion.newBuilder()
 						.setMajor(ProtoProtocolVersion.getMajor())
 						.setMinor(ProtoProtocolVersion.getMinor())
 						.build())
@@ -100,6 +103,16 @@ public class ClientSession {
 				.build();
 		GetObjectListResponse response = client.execute(request);
 		return response.getObjectsList();
+	}
+
+	public DomainObjectWrapper createOrUpdateObject(DomainObjectWrapper domainObject, Class<? extends Message> objectType) throws Exception {
+		CreateOrUpdateObjectRequest request = CreateOrUpdateObjectRequest.newBuilder()
+				.setClientId(clientId)
+				.setObjectType(objectType.getSimpleName())
+				.setObject(domainObject)
+				.build();
+		CreateOrUpdateObjectResponse response = client.execute(request);
+		return response.getObject();
 	}
 
 	public void acquireLock(Class<? extends Message> objectType, int objectId) throws Exception {

@@ -2,11 +2,14 @@ package com.ugcs.ucs.client.samples;
 
 import java.io.InputStream;
 import java.net.InetSocketAddress;
+import java.util.List;
 import java.util.Properties;
 
 import com.ugcs.ucs.client.Client;
 import com.ugcs.ucs.client.ClientSession;
+import com.ugcs.ucs.proto.DomainProto;
 import com.ugcs.ucs.proto.DomainProto.AltitudeType;
+import com.ugcs.ucs.proto.DomainProto.DomainObjectWrapper;
 import com.ugcs.ucs.proto.DomainProto.Failsafe;
 import com.ugcs.ucs.proto.DomainProto.FailsafeAction;
 import com.ugcs.ucs.proto.DomainProto.FailsafeReason;
@@ -42,7 +45,7 @@ public final class UploadSingleWaypointRoute {
 					usage = true;
 					break;
 				}
-				waypoint = new double[] {
+				waypoint = new double[]{
 						Math.toRadians(Double.parseDouble(tokens[0].trim())),
 						Math.toRadians(Double.parseDouble(tokens[1].trim())),
 						Double.parseDouble(tokens[2].trim())};
@@ -63,20 +66,20 @@ public final class UploadSingleWaypointRoute {
 			usage = true;
 
 		if (usage) {
-			System.err.println("UploadSingleWaypointRoute -w waypoint [-s speed] vehicleName");
-			System.err.println("");
+			System.err.println("CreateSingleWaypointRoute -w waypoint [-s speed] vehicleName");
+			System.err.println();
 			System.err.println("\tWaypoint is specified as \"lat,lon,alt\" string, with respective values");
 			System.err.println("\tin degrees (latitude and longitude) and AGL meters (altitude). Positive");
 			System.err.println("\tdirections for latitude and longitude are North and East.");
-			System.err.println("");
+			System.err.println();
 			System.err.println("Example:");
-			System.err.println("");
+			System.err.println();
 			System.err.println("\tUploadSingleWaypointRoute -w \"56.9761591,24.0730345,100.0\" "
 					+ "-s 5.0 \"EMU-101\"");
 			System.exit(1);
 		} else {
 			try {
-				uploadSingleWaypointRoute(vehicleName, waypoint, speed);
+				createSingleWaypointRoute(vehicleName, waypoint, speed);
 			} catch (Exception e) {
 				e.printStackTrace(System.err);
 				System.exit(1);
@@ -84,7 +87,7 @@ public final class UploadSingleWaypointRoute {
 		}
 	}
 
-	public static void uploadSingleWaypointRoute(String vehicleName, double[] waypoint, double speed) throws Exception {
+	public static void createSingleWaypointRoute(String vehicleName, double[] waypoint, double speed) throws Exception {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 		Properties properties = new Properties();
 		try (InputStream in = classLoader.getResourceAsStream("client.properties")) {
@@ -119,9 +122,14 @@ public final class UploadSingleWaypointRoute {
 			if (vehicle == null)
 				throw new IllegalStateException("Vehicle not found: " + vehicleName);
 
+			DomainProto.Mission mission = createMissionIfNotExists(session);
 			// Build a route, containing a single waypoint, that should be
 			// approached with the specified speed.
-			Route route = buildRoute(vehicle, waypoint, speed);
+			Route route = buildRoute(mission, vehicle, waypoint, speed);
+
+			//Safe route
+			route = saveRoute(session, route);
+			System.out.println(route.getName() + " saved");
 
 			// Constructed route is just a definition (a plan) of the target
 			// mission. Direct path between a vehicle and a target point
@@ -132,15 +140,48 @@ public final class UploadSingleWaypointRoute {
 
 			// Before the actual upload we lock the vehicle.
 			session.gainVehicleControl(vehicle);
+			System.out.println(vehicleName + " control gained");
+
 			try {
 				session.uploadRoute(vehicle, processedRoute);
+				System.out.println("route uploaded");
 			} finally {
 				session.releaseVehicleControl(vehicle);
+				System.out.println(vehicleName + " control released");
 			}
 		}
 	}
 
-	private static Route buildRoute(Vehicle vehicle, double[] waypoint, double speed) throws Exception {
+	private static DomainProto.Mission createMissionIfNotExists(ClientSession session) throws Exception {
+		List<DomainObjectWrapper> mission = session.getObjectList(DomainProto.Mission.class);
+		String sampleMissionName = "Sample mission";
+		for (DomainObjectWrapper objectWrapper : mission) {
+			if (objectWrapper.getMission().getName().equals(sampleMissionName)) {
+				System.out.println(sampleMissionName + " found");
+				return objectWrapper.getMission();
+			}
+		}
+		DomainProto.User user = session.getObjectList(DomainProto.User.class).get(0).getUser();
+		DomainProto.Mission sampleMission = DomainProto.Mission.newBuilder()
+				.setName(sampleMissionName)
+				.setOwner(user)
+				.build();
+		DomainObjectWrapper missionWrapper = DomainObjectWrapper.newBuilder()
+				.setMission(sampleMission)
+				.build();
+		sampleMission = session.createOrUpdateObject(missionWrapper, DomainProto.Mission.class).getMission();
+		System.out.println(sampleMissionName + " created");
+		return sampleMission;
+	}
+
+	private static Route saveRoute(ClientSession session, Route route) throws Exception {
+		DomainObjectWrapper routeWrapper = DomainObjectWrapper.newBuilder()
+				.setRoute(route)
+				.build();
+		return session.createOrUpdateObject(routeWrapper, route.getClass()).getRoute();
+	}
+
+	private static Route buildRoute(DomainProto.Mission mission, Vehicle vehicle, double[] waypoint, double speed) {
 		if (waypoint == null || waypoint.length < 3)
 			throw new IllegalArgumentException("Waypoint array cannot be null and should contain 3 components");
 
@@ -167,10 +208,14 @@ public final class UploadSingleWaypointRoute {
 						.setValue("true"))
 				.addParameterValues(ParameterValue.newBuilder()
 						.setName("avoidTerrain")
-						.setValue("true"));
+						.setValue("true"))
+				.addParameterValues(ParameterValue.newBuilder()
+						.setName("altitudeType")
+						.setValue("AGL"));
 
 		Route.Builder route = Route.newBuilder()
-				.setName("WP-Direct " + System.currentTimeMillis())
+				.setMission(mission)
+				.setName("WP-Direct sample route")
 				.setCheckAerodromeNfz(true)
 				.setCheckCustomNfz(false)
 				.setInitialSpeed(speed)
