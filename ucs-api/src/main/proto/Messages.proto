@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 1;
+option (ugcs_protocol_minor_version) = 2;
 
 import "Options.proto";
 import "Domain.proto";
@@ -83,6 +83,8 @@ message LicensePermissionsDto {
 	required bool remoteVsmConnection = 18;
 	required bool ugcsVideoPlayer = 19;
 	required bool kmlExport = 20;
+	optional int32 vehicleConnectionsLimit = 21;
+	optional bool dssClient = 22 [default = false];
 }
 
 message PlatformAndBooleanPairDto {
@@ -145,6 +147,11 @@ message FacadeScanPatternsMappingDto {
 message AltitudeFramesMappingDto {
 	repeated PlatformAltitudeFramesDto platformAltitudeFrames = 1;
 	repeated AlgorithmAltitudeFramesDto algorithmAltitudeFrames = 2;
+}
+
+message PlatformParametersDto {
+	required PlatformAndVehicleTypePairDto platformAndVehicleType = 1;
+	required PlatformParameters parameters = 2;
 }
 
 // Keys and values
@@ -672,14 +679,24 @@ message SplitVehicleTrackResponse {
 	required VehicleTrack second = 2;
 }
 
+//Deprecated. Use ExportRouteToKmlRequest
 message GetKmlRouteRepresentationRequest {
 	required int32 clientId = 1;
 	required string routeName = 2;
 	required VehicleProfile routeVehicleProfile = 3;
 	repeated Wgs84LocationDto waypoints = 4;
 }
-
+//Deprecated
 message GetKmlRouteRepresentationResponse {
+	required bytes kmlData = 1;
+}
+
+message ExportRouteToKmlRequest {
+	required int32 clientId = 1;
+	optional ProcessedRoute route = 2;
+}
+
+message ExportRouteToKmlResponse {
 	required bytes kmlData = 1;
 }
 
@@ -920,6 +937,7 @@ message GetMappingRequest {
 	optional bool getAltitudeTypes = 7;
 	optional bool getFacadeScanPatterns = 9;
 	optional bool getAltitudeFrames = 10;
+	optional bool getPlatformParameters = 11;
 }
 
 message GetMappingResponse {
@@ -932,6 +950,7 @@ message GetMappingResponse {
 	optional AltitudeTypesMappingDto altitudeTypesMapping = 7;
 	optional FacadeScanPatternsMappingDto facadeScanPaterrnsMapping = 9;
 	optional AltitudeFramesMappingDto altitudeFramesMapping = 10;
+	repeated PlatformParametersDto platformParameters = 11;
 }
 
 // Locks

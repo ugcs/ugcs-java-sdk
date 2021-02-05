@@ -129,6 +129,7 @@ enum VehicleParameterType {
 	VPT_NORMAL_BATTERY_POWER_LEVEL = 44;
 	VPT_MAX_RANGEFINDER_DISTANCE = 45;
 	VPT_MIN_DISTANCE_BETWEEN_WAYPOINT = 46;
+	VPT_FENCE_ALTITUDE = 47;
 }
 
 enum PayloadType {
@@ -325,6 +326,7 @@ enum Subsystem {
 	S_ADSB_RECEIVER = 9;
 	S_ADSB_VEHICLE = 10;
 	S_WEATHER_STATION = 11;
+	S_VSM = 12;
 }
 
 enum Semantic {
@@ -641,6 +643,14 @@ message PayloadParameter {
 	optional PayloadProfile payloadProfile = 4;
 	optional PayloadParameterType type = 5;
 	optional string tag = 6;
+}
+
+message PlatformParameters {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional double minReturnToHomeAltitude = 4;
+	optional double maxReturnToHomeAltitude = 5;
 }
 
 // Definitions of algorithms in the system
@@ -1015,6 +1025,7 @@ message SpeedChange {
 	optional double groundSpeed = 3;
 	optional double rateOfClimb = 4;
 	optional string tag = 5;
+	optional double speed = 6;
 }
 
 message Takeoff {
