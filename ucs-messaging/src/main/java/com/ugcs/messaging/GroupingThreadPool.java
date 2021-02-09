@@ -507,7 +507,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 						ql.lock();
 						try {
 							try {
-								timedOut = !taskWaiting.await(10L, TimeUnit.SECONDS);
+								timedOut = !taskWaiting.await(12L, TimeUnit.SECONDS);
 							} catch (InterruptedException ignored) {
 								// ignored
 							}
