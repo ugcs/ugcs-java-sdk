@@ -481,40 +481,47 @@ public class GroupingThreadPool extends AbstractExecutorService {
 			log.info("W-{} START", Thread.currentThread().getName());
 			TaskQueue queue = null;
 			try {
+				main:
 				while (!Thread.interrupted()) {
-					queue = selectWorkingQueue(queue);
-
 					Task task = null;
-					if (queue != null) {
-						task = queue.tasks.poll();
-						if (task == null) {
-							// lock to ensure absence of the new tasks
-							// in the queue
-							ql.lock();
-							try {
+					ql.lock();
+					try {
+						// peek or wait for a task
+						long timeout = TimeUnit.SECONDS.toNanos(10);
+						while (true) {
+							queue = selectWorkingQueue(queue);
+							if (queue != null) {
 								task = queue.tasks.poll();
-								if (task == null)
+								if (task == null) {
 									queue = releaseWorkingQueue(queue);
-							} finally {
-								ql.unlock();
+									// queue is set to null on release;
+									// there is no need to re-select a working queue
+									// after release and before awaiting as:
+									// queue from a waiting pool cannot be empty and thus
+									// it is empty as a result of the previous worker iteration
+									// (was not change a result of selectWorkingQueue call);
+									// waiting pool is empty as selectWorkingQueue would return
+									// non-empty queue against this empty queue;
+									// waiting pool has not changed since last selectWorkingQueue
+									// call;
+								}
+							}
+							if (task != null)
+								break; // task selected
+							if (timeout <= 0L)
+								break; // waiting limit exceeded
+							try {
+								timeout = taskWaiting.awaitNanos(timeout);
+							} catch (InterruptedException e) {
+								// should be handled as if a thread interrupted status was set to true
+								break main;
 							}
 						}
+					} finally {
+						ql.unlock();
 					}
 					if (task == null) {
-						// queue == null
-						// wait for a new task in a waiting pool
-						boolean timedOut = false;
-						ql.lock();
-						try {
-							try {
-								timedOut = !taskWaiting.await(10L, TimeUnit.SECONDS);
-							} catch (InterruptedException ignored) {
-								// ignored
-							}
-						} finally {
-							ql.unlock();
-						}
-						if (timedOut && dismissWorker(this))
+						if (dismissWorker(this))
 							break;
 					} else {
 						task.runnable.run();
