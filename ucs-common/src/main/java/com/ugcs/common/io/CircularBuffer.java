@@ -126,24 +126,32 @@ public class CircularBuffer {
 			return read(b, 0, b.length);
 		}
 	
-		@Override
+
 		public int read(byte[] b, int off, int len) {
 			if (b == null)
 				throw new NullPointerException();
 			if (off < 0 || len < 0 || off + len > b.length)
 				throw new IndexOutOfBoundsException();
-			
+
 			if (isEmpty())
 				return -1;
-			int n = 0;
-			for (int i = off; i < off + len; ++i) {
-				int value = read();
-				if (value == -1)
-					break;
-				b[i] = (byte)value;
-				++n;
+			int readCount = 0;
+			if (head > tail) {
+				int batchSize = Math.min(buffer.length - head, len);
+				System.arraycopy(buffer, head, b, off, batchSize);
+				readCount += batchSize;
+				head = head + batchSize;
+				if (head == buffer.length)
+					head = 0;
 			}
-			return n;
+			if (head < tail && readCount < len) {
+				int batchSize = len - readCount;
+				System.arraycopy(buffer, head, b, off+readCount, batchSize);
+				readCount += batchSize;
+				head = head + batchSize;
+
+			}
+			return readCount;
 		}
 		
 		@Override
@@ -203,22 +211,27 @@ public class CircularBuffer {
 			write(b, 0, b.length);
 		}
 	
-		@Override
+
 		public void write(byte[] b, int off, int len) {
 			if (b == null)
 				throw new NullPointerException();
 			if (off < 0 || len < 0 || off + len > b.length)
 				throw new IndexOutOfBoundsException();
-		
+
 			if (len == 0)
 				return;
-			
+
 			reserve(length() + len);
-			for (int i = off; i < off + len; ++i) {
-				put(tail, b[i]);
-				++tail;
+			if (tail + len <= buffer.length) {
+				System.arraycopy(b, off, buffer, tail, len);
+				tail = tail+len;
 				if (tail == buffer.length)
-					tail = 0; // wrap around
+					tail = 0;
+			} else {
+				int firstBatchSize = buffer.length - tail;
+				System.arraycopy(b, off, buffer, tail, firstBatchSize);
+				System.arraycopy(b, off+firstBatchSize, buffer, 0, len-firstBatchSize);
+				tail = len-firstBatchSize;
 			}
 		}
 	}

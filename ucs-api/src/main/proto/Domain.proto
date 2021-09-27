@@ -135,6 +135,7 @@ enum VehicleParameterType {
 enum PayloadType {
 	PT_CAMERA = 0;
 	PT_DATA_LINK = 1;
+	PT_LIDAR = 2;
 }
 
 enum PayloadParameterType {
@@ -147,6 +148,9 @@ enum PayloadParameterType {
 	PPT_SENSOR_HORIZONTAL_PIXELS = 6;
 	PPT_SENSOR_VERTICAL_PIXELS = 7;
 	PPT_MIN_TRIGGERING_INTERVAL = 8;
+	PPT_SCANNING_FOV = 9;
+	PPT_SCANNING_RANGE = 10;
+	PPT_SCANNING_SPEED = 11;
 }
 
 enum SeverityLevel {
@@ -951,6 +955,7 @@ message Waypoint {
 	optional WaypointTurnType turnType = 9;
 	optional AltitudeFrame altitudeFrame = 11;
 	optional string tag = 10;
+	optional double cornerRadius = 12;
 }
 
 message CameraControl {

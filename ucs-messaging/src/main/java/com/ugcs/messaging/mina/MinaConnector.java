@@ -56,7 +56,7 @@ public class MinaConnector implements Connector {
 		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
 				newExecutor(maxTaskThreads, taskMapper));
 		log.info("Initialized connector {max I/O threads: {}, max task threads: {}}",
-				Integer.toString(maxIoThreads),
+				maxIoThreads,
 				maxTaskThreads > 0
 						? Integer.toString(maxTaskThreads)
 						: "unbounded");
@@ -103,7 +103,7 @@ public class MinaConnector implements Connector {
 			// tasks are ordered within groups
 			maxThreads = Math.max(1, maxThreads);
 			int coreThreads = Math.max(1, maxThreads / 2);
-			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper);
+			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper, "MinaConnectorPool");
 		}
 	}
 
@@ -135,43 +135,40 @@ public class MinaConnector implements Connector {
 
 		ConnectFuture connectFuture = connector.connect(address);
 		if (listener != null) {
-			connectFuture.addListener(new IoFutureListener<ConnectFuture>() {
-				@Override
-				public void operationComplete(ConnectFuture future) {
-					Objects.requireNonNull(future);
+			connectFuture.addListener((IoFutureListener<ConnectFuture>)future -> {
+				Objects.requireNonNull(future);
 
-					if (!future.isConnected() || future.getException() != null) {
-						MessageSessionErrorEvent event = new MessageSessionErrorEvent(
-								MinaConnector.this,
-								null,
-								future.getException());
-						listener.connectError(event);
-						return;
-					}
-					MessageSession messageSession = null;
-					try {
-						IoSession minaSession = future.getSession();
-						messageSession = minaAdapter.getMessageSession(minaSession);
-					} catch (Throwable e) {
-						MessageSessionErrorEvent event = new MessageSessionErrorEvent(
-								MinaConnector.this,
-								null,
-								e);
-						listener.connectError(event);
-						return;
-					}
-					MessageSessionEvent event = new MessageSessionEvent(
+				if (!future.isConnected() || future.getException() != null) {
+					MessageSessionErrorEvent event = new MessageSessionErrorEvent(
 							MinaConnector.this,
-							messageSession);
-					listener.connected(event);
+							null,
+							future.getException());
+					listener.connectError(event);
+					return;
 				}
+				MessageSession messageSession = null;
+				try {
+					IoSession minaSession = future.getSession();
+					messageSession = minaAdapter.getMessageSession(minaSession);
+				} catch (Throwable e) {
+					MessageSessionErrorEvent event = new MessageSessionErrorEvent(
+							MinaConnector.this,
+							null,
+							e);
+					listener.connectError(event);
+					return;
+				}
+				MessageSessionEvent event = new MessageSessionEvent(
+						MinaConnector.this,
+						messageSession);
+				listener.connected(event);
 			});
 		}
 	}
 
 	public void close() {
 		for (IoSession session : connector.getManagedSessions().values())
-			session.close(false);
+			session.closeOnFlush();
 		// disposing selector resources
 		connector.dispose();
 		// stopping executor service

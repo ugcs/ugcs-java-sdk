@@ -19,6 +19,35 @@ public class ListenableFutureAdapter<T, R> extends AbstractListenableFuture<R> {
 	}
 
 	@Override
+	public void addCompletionListener(final CompletionListener<R> listener) {
+		Objects.requireNonNull(listener);
+
+		CompletionListener<T> innerListener = new CompletionListener<T>() {
+			@Override
+			public void completed(CompletionEvent<T> event) {
+				Object source = ListenableFutureAdapter.this;
+				if (event.getError() != null) {
+					// error translated from the lower level
+					listener.completed(new CompletionEvent<R>(source, null, event.getError()));
+				} else {
+					R result = null;
+					try {
+						result = mapper.map(event.getResult());
+					} catch (Exception e) {
+						// error extracted from the response value
+						listener.completed(new CompletionEvent<R>(source, null, e));
+					}
+					if (result != null) {
+						// ok
+						listener.completed(new CompletionEvent<R>(source, result, null));
+					}
+				}
+			}
+		};
+		future.addCompletionListener(innerListener);
+	}
+
+	@Override
 	public boolean cancel(boolean mayInterruptIfRunning) {
 		return future.cancel(mayInterruptIfRunning);
 	}
@@ -53,34 +82,8 @@ public class ListenableFutureAdapter<T, R> extends AbstractListenableFuture<R> {
 		}
 	}
 
-	/* events */
-
 	@Override
-	public void addCompletionListener(final CompletionListener<R> listener) {
-		Objects.requireNonNull(listener);
-
-		CompletionListener<T> innerListener = new CompletionListener<T>() {
-			@Override
-			public void completed(CompletionEvent<T> event) {
-				Object source = ListenableFutureAdapter.this;
-				if (event.getError() != null) {
-					// error translated from the lower level
-					listener.completed(new CompletionEvent<R>(source, null, event.getError()));
-				} else {
-					R result = null;
-					try {
-						result = mapper.map(event.getResult());
-					} catch (Exception e) {
-						// error extracted from the response value
-						listener.completed(new CompletionEvent<R>(source, null, e));
-					}
-					if (result != null) {
-						// ok
-						listener.completed(new CompletionEvent<R>(source, result, null));
-					}
-				}
-			}
-		};
-		future.addCompletionListener(innerListener);
+	public void awaitCompletionListeners(long timeout, TimeUnit unit) throws TimeoutException, InterruptedException {
+		future.awaitCompletionListeners(timeout, unit);
 	}
 }

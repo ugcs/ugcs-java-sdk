@@ -101,7 +101,7 @@ public class MinaAcceptor implements Acceptor {
 			// tasks are ordered within groups
 			maxThreads = Math.max(1, maxThreads);
 			int coreThreads = Math.max(1, maxThreads / 2);
-			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper);
+			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper, "MinaAcceptorPool");
 		}
 	}
 
@@ -125,7 +125,7 @@ public class MinaAcceptor implements Acceptor {
 
 	public void close() {
 		for (IoSession session : acceptor.getManagedSessions().values())
-			session.close(false);
+			session.closeOnFlush();
 		// disposing selector resources
 		acceptor.dispose();
 		// stopping executor service

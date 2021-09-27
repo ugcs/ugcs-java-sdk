@@ -75,6 +75,14 @@ public class GroupingThreadPool extends AbstractExecutorService {
 		this(coreWorkers, maxWorkers, taskMapper, Executors.defaultThreadFactory());
 	}
 
+	public GroupingThreadPool(int coreWorkers, int maxWorkers, TaskMapper taskMapper, String poolName) {
+		this(coreWorkers, maxWorkers, taskMapper, runnable -> {
+			Thread thread = new Thread(runnable);
+			thread.setName(poolName + "-" + thread.getName());
+			return thread;
+		});
+	}
+
 	public GroupingThreadPool(int coreWorkers, int maxWorkers, TaskMapper taskMapper, ThreadFactory threadFactory) {
 		if (coreWorkers < 0
 				|| maxWorkers < 1
@@ -199,7 +207,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 		if (!ignoreShutdown && shutdown)
 			return false;
 
-		Worker worker = null;
+		Worker worker;
 		wl.lock();
 		try {
 			if (workers.size() >= maxWorkers)
@@ -218,7 +226,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 			if (!started)
 				removeWorker(worker);
 		}
-		return started;
+		return true;
 	}
 
 	private boolean respawnCoreWorker() {
@@ -338,9 +346,9 @@ public class GroupingThreadPool extends AbstractExecutorService {
 
 	@Override
 	public String toString() {
-		int numQueues = 0;
+		int numQueues;
 		int numTasks = 0;
-		int numWaitingQueues = 0;
+		int numWaitingQueues;
 		long maxWaitingNanos = 0L;
 		ql.lock();
 		try {
@@ -358,7 +366,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 		} finally {
 			ql.unlock();
 		}
-		int numWorkers = 0;
+		int numWorkers;
 		wl.lock();
 		try {
 			numWorkers = workers.size();
