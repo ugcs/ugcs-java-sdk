@@ -135,6 +135,7 @@ enum VehicleParameterType {
 enum PayloadType {
 	PT_CAMERA = 0;
 	PT_DATA_LINK = 1;
+	PT_LIDAR = 2;
 }
 
 enum PayloadParameterType {
@@ -147,6 +148,9 @@ enum PayloadParameterType {
 	PPT_SENSOR_HORIZONTAL_PIXELS = 6;
 	PPT_SENSOR_VERTICAL_PIXELS = 7;
 	PPT_MIN_TRIGGERING_INTERVAL = 8;
+	PPT_SCANNING_FOV = 9;
+	PPT_SCANNING_RANGE = 10;
+	PPT_SCANNING_SPEED = 11;
 }
 
 enum SeverityLevel {
@@ -178,6 +182,11 @@ enum FailsafeAction {
 	FA_WAIT = 2;
 	FA_CONTINUE = 3;
 	FA_NA = 4;
+}
+
+enum RecordingState {
+    RS_OFF = 0;
+    RS_ON = 1;
 }
 
 enum TriggerState {
@@ -269,6 +278,7 @@ enum ActionCode {
 	AC_REPEAT_SERVO = 15;
 	AC_TRANSITION_FIXED = 16;
 	AC_TRANSITION_VTOL = 17;
+	AC_LIDAR_RECORDING_CONTROL = 18;
 }
 
 enum NfzType {
@@ -327,6 +337,8 @@ enum Subsystem {
 	S_ADSB_VEHICLE = 10;
 	S_WEATHER_STATION = 11;
 	S_VSM = 12;
+	S_LIDAR = 13;
+	S_RANGEFINDER = 14;
 }
 
 enum Semantic {
@@ -367,11 +379,17 @@ enum Semantic {
 	S_FLIGHT_MODE = 35;
 	S_LIST = 36;
 	S_AUTOPILOT_STATUS = 37;
+	S_TIMESTAMP = 38;
+	S_ANY = 39;
 	S_TEMPERATURE = 40;
 	S_HUMIDITY = 41;
 	S_PRECIPITATION = 42;
-	S_TIMESTAMP = 38;
-	S_ANY = 39;
+	S_DISTANCE = 43;
+}
+
+enum KmlExportAltitudeMode {
+	E_AMSL = 1;
+	E_RELATIVE_TO_FIRST_WP = 2;
 }
 
 //*****************************************************************************
@@ -452,10 +470,12 @@ message DomainObjectWrapper {
 	optional SetServo setServo = 82;
 	optional RepeatServo repeatServo = 83;
 	optional TransitionFixed transitionFixed = 84;
-    optional TransitionVtol transitionVtol = 85;
+	optional TransitionVtol transitionVtol = 85;
 	optional RouteUpload routeUpload = 86;
 	optional RoutePass routePass = 87;
 	optional Setting setting = 88;
+	optional LidarRecordingControlDefinition lidarRecordingControlDefinition = 89;
+	optional LidarRecordingControl lidarRecordingControl = 90;
 }
 
 //*****************************************************************************
@@ -504,7 +524,6 @@ message MissionPreference {
 	optional string value = 6;
 	optional string tag = 7;
 }
-
 
 message Setting {
 	optional int32 id = 1;
@@ -765,7 +784,7 @@ message Route {
 	optional int64 scheduledTime = 6 [(ugcs_field_posix_time) = true];
 	optional Mission mission = 7;
 	repeated SegmentDefinition segments = 8;
-	optional TrajectoryType trajectoryType = 10;
+	optional TrajectoryType trajectoryType = 10 [deprecated=true];
 	optional double safeAltitude = 11;
 	optional double maxAltitude = 12;
 	optional double initialSpeed = 13;
@@ -935,6 +954,7 @@ message Action {
     optional RepeatServo repeatServo = 24;
     optional TransitionVtol transitionVtol = 26;
     optional TransitionFixed transitionFixed = 27;
+	optional LidarRecordingControl lidarRecordingControl = 28;
 	optional string tag = 21;
 	optional double estimatedTime = 25;
 }
@@ -951,6 +971,7 @@ message Waypoint {
 	optional WaypointTurnType turnType = 9;
 	optional AltitudeFrame altitudeFrame = 11;
 	optional string tag = 10;
+	optional double cornerRadius = 12;
 }
 
 message CameraControl {
@@ -1007,6 +1028,14 @@ message HeadingChange {
 	optional bool relativeToNextWaypoint = 4;
 	optional bool relativeToNorth = 5;
 	optional string tag = 6;
+}
+
+// Start/Stop lidar data recording.
+message LidarRecordingControl {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional RecordingState targetState = 3;
+	optional string tag = 4;
 }
 
 message PoiChange {
@@ -1123,8 +1152,9 @@ message ActionDefinition {
 	optional PanoramaDefinition panoramaDefinition = 13;
 	optional SetServoDefinition setServoDefinition = 14;
 	optional RepeatServoDefinition repeatServoDefinition = 15;
-    optional TransitionVtolDefinition transitionVtolDefinition =  17;
+	optional TransitionVtolDefinition transitionVtolDefinition =  17;
 	optional TransitionFixedDefinition transitionFixedDefinition = 18;
+	optional LidarRecordingControlDefinition lidarRecordingControlDefinition = 19;
 	optional string tag = 16;
 }
 
@@ -1163,6 +1193,13 @@ message CameraSeriesByDistanceDefinition {
 	optional double startDelay = 6;
 	optional bool autoCalc = 7;
 	optional string tag = 8;
+}
+
+message LidarRecordingControlDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional RecordingState targetState = 3;
+	optional string tag = 4;
 }
 
 message HeadingDefinition {
@@ -1472,6 +1509,12 @@ message VehicleTrack {
 	optional int32 id = 3;
 	optional Vehicle vehicle = 1 [(ugcs_field_id) = true];
 	optional Track track = 2;
+}
+
+message TelemetrySnapshot {
+	optional Vehicle vehicle = 1 [(ugcs_field_id) = true];
+	optional int64 snapshotTime = 2 [(ugcs_field_posix_time) = true];
+	repeated Telemetry telemetry = 3;
 }
 
 //*****************************************************************************
