@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 4;
+option (ugcs_protocol_minor_version) = 7;
 
 import "Options.proto";
 import "Domain.proto";
@@ -535,6 +535,7 @@ message GetRasterGridResponse {
 	required int32 height = 3;
 	required bool noData = 4;
 }
+
 //Request for elevation tiles in specified rectangle
 message GetElevationTilesRequest {
 	required int32 clientId = 1;
@@ -690,6 +691,7 @@ message GetKmlRouteRepresentationRequest {
 	required string routeName = 2;
 	required VehicleProfile routeVehicleProfile = 3;
 	repeated Wgs84LocationDto waypoints = 4;
+	required KmlExportAltitudeMode altitudeMode = 5;
 }
 //Deprecated
 message GetKmlRouteRepresentationResponse {
@@ -699,6 +701,7 @@ message GetKmlRouteRepresentationResponse {
 message ExportRouteToKmlRequest {
 	required int32 clientId = 1;
 	optional ProcessedRoute route = 2;
+	required KmlExportAltitudeMode altitudeMode = 3;
 }
 
 message ExportRouteToKmlResponse {
@@ -1076,6 +1079,17 @@ message SplitRouteByDistanceResponse {
 	repeated Route parts = 1;
 }
 
+message SplitRouteByCorridorPointRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+	required int32 segmentIndex = 3;
+	required int32 pointIndex = 4;
+}
+
+message SplitRouteByCorridorPointResponse {
+	repeated Route parts = 1;
+}
+
 message JoinRouteRequest {
 	 required int32 clientId = 1;
 	 repeated Route parts = 2;
@@ -1142,4 +1156,15 @@ message UnsubscribeEventRequest {
 }
 
 message UnsubscribeEventResponse {
+}
+
+message GetTelemetrySnapshotRequest {
+	required int32 clientId = 1;
+	// list of vehicles to get snapshots for
+	repeated Vehicle vehicles = 2;
+}
+
+message GetTelemetrySnapshotResponse {
+	// list of vehicle telemetry snapshots
+	repeated TelemetrySnapshot snapshots = 1;
 }

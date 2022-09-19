@@ -6,15 +6,8 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.ugcs.messaging.GroupingThreadPool;
-import com.ugcs.messaging.TaskMapper;
-import com.ugcs.messaging.api.CodecFactory;
-import com.ugcs.messaging.api.ConnectListener;
-import com.ugcs.messaging.api.Connector;
-import com.ugcs.messaging.api.MessageSession;
-import com.ugcs.messaging.api.MessageSessionErrorEvent;
-import com.ugcs.messaging.api.MessageSessionEvent;
-import com.ugcs.messaging.api.MessageSessionListener;
+import javax.net.ssl.SSLContext;
+
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.future.IoFutureListener;
@@ -25,12 +18,23 @@ import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.filter.logging.LoggingFilter;
+import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.SocketConnector;
 import org.apache.mina.transport.socket.nio.NioProcessor;
 import org.apache.mina.transport.socket.nio.NioSession;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ugcs.messaging.GroupingThreadPool;
+import com.ugcs.messaging.TaskMapper;
+import com.ugcs.messaging.api.CodecFactory;
+import com.ugcs.messaging.api.ConnectListener;
+import com.ugcs.messaging.api.Connector;
+import com.ugcs.messaging.api.MessageSession;
+import com.ugcs.messaging.api.MessageSessionErrorEvent;
+import com.ugcs.messaging.api.MessageSessionEvent;
+import com.ugcs.messaging.api.MessageSessionListener;
 
 public class MinaConnector implements Connector {
 
@@ -44,17 +48,18 @@ public class MinaConnector implements Connector {
 	private final MinaAdapter minaAdapter;
 	private final ExecutorService executor;
 
-	public MinaConnector(CodecFactory codecFactory) {
-		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS);
+	public MinaConnector(CodecFactory codecFactory, SSLContext sslContext) {
+		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS, sslContext);
 	}
 
-	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads) {
-		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes());
+	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, SSLContext sslContext) {
+		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes(), sslContext);
 	}
 
-	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper) {
+	public MinaConnector(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper,
+			SSLContext sslContext) {
 		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
-				newExecutor(maxTaskThreads, taskMapper));
+				newExecutor(maxTaskThreads, taskMapper), sslContext);
 		log.info("Initialized connector {max I/O threads: {}, max task threads: {}}",
 				maxIoThreads,
 				maxTaskThreads > 0
@@ -62,13 +67,21 @@ public class MinaConnector implements Connector {
 						: "unbounded");
 	}
 
-	public MinaConnector(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor) {
+	public MinaConnector(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor,
+			SSLContext sslContext) {
 		Objects.requireNonNull(codecFactory);
 		Objects.requireNonNull(processor);
 		Objects.requireNonNull(executor);
 
 		connector = new NioSocketConnector(processor);
 		DefaultIoFilterChainBuilder filters = connector.getFilterChain();
+
+		// ssl
+		if (sslContext != null) {
+			SslFilter sslFilter = new SslFilter(sslContext);
+			sslFilter.setUseClientMode(true);
+			filters.addLast("sslFilter", sslFilter);
+		}
 
 		// encoding
 		filters.addLast("codec", new ProtocolCodecFilter(new MinaCodecFactory(codecFactory)));

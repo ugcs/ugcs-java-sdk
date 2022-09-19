@@ -45,7 +45,8 @@ public class Client implements Closeable {
 		this.connector = new MinaConnector(
 				new MessageWrapperCodecFactory(new HciMessageMapping()),
 				1,
-				1);
+				1,
+				null);
 	}
 
 	public void addNotificationListener(ServerNotificationListener listener) {
