@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 7;
+option (ugcs_protocol_minor_version) = 8;
 
 import "Options.proto";
 import "Domain.proto";
@@ -1167,4 +1167,13 @@ message GetTelemetrySnapshotRequest {
 message GetTelemetrySnapshotResponse {
 	// list of vehicle telemetry snapshots
 	repeated TelemetrySnapshot snapshots = 1;
+}
+
+message ExportRouteToWpmlRequest {
+	required int32 clientId = 1;
+	required ProcessedRoute route = 2;
+}
+
+message ExportRouteToWpmlResponse {
+	required bytes routeData = 1;
 }

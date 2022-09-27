@@ -165,5 +165,7 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(169, GetTelemetrySnapshotResponse.class);
 		putMapping(170, SplitRouteByCorridorPointRequest.class);
 		putMapping(171, SplitRouteByCorridorPointResponse.class);
+		putMapping(172, ExportRouteToWpmlRequest.class);
+		putMapping(173, ExportRouteToWpmlResponse.class);
 	}
 }
