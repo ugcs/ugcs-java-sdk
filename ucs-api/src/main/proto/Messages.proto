@@ -234,6 +234,7 @@ message AlgorithmActionExecutionDto {
 message CameraDto {
 	required int32 cameraId = 1;
 	required string cameraName = 2;
+	optional string cameraShortName = 3;
 }
 
 message ProfileCameraDto {

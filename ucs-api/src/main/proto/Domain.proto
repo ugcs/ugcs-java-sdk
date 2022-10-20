@@ -653,6 +653,7 @@ message PayloadProfile {
 	optional bool sealed = 9;
 	optional bool unremovable = 10;
 	optional string tag = 11;
+	optional string shortName = 12;
 }
 
 message PayloadParameter {
