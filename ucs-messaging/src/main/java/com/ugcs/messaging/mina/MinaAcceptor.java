@@ -6,11 +6,8 @@ import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import com.ugcs.messaging.GroupingThreadPool;
-import com.ugcs.messaging.TaskMapper;
-import com.ugcs.messaging.api.Acceptor;
-import com.ugcs.messaging.api.CodecFactory;
-import com.ugcs.messaging.api.MessageSessionListener;
+import javax.net.ssl.SSLContext;
+
 import org.apache.mina.core.filterchain.DefaultIoFilterChainBuilder;
 import org.apache.mina.core.service.IoProcessor;
 import org.apache.mina.core.service.SimpleIoProcessorPool;
@@ -19,12 +16,19 @@ import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.executor.ExecutorFilter;
 import org.apache.mina.filter.logging.LoggingFilter;
+import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.SocketAcceptor;
 import org.apache.mina.transport.socket.nio.NioProcessor;
 import org.apache.mina.transport.socket.nio.NioSession;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.ugcs.messaging.GroupingThreadPool;
+import com.ugcs.messaging.TaskMapper;
+import com.ugcs.messaging.api.Acceptor;
+import com.ugcs.messaging.api.CodecFactory;
+import com.ugcs.messaging.api.MessageSessionListener;
 
 public class MinaAcceptor implements Acceptor {
 
@@ -38,17 +42,18 @@ public class MinaAcceptor implements Acceptor {
 	private final MinaAdapter minaAdapter;
 	private final ExecutorService executor;
 
-	public MinaAcceptor(CodecFactory codecFactory) {
-		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS);
+	public MinaAcceptor(CodecFactory codecFactory, SSLContext sslContext) {
+		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS, sslContext);
 	}
 
-	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads) {
-		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes());
+	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, SSLContext sslContext) {
+		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes(), sslContext);
 	}
 
-	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper) {
+	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper,
+			SSLContext sslContext) {
 		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
-				newExecutor(maxTaskThreads, taskMapper));
+				newExecutor(maxTaskThreads, taskMapper), sslContext);
 		log.info("Initialized acceptor {max I/O threads: {}, max task threads: {}}",
 				maxIoThreads,
 				maxTaskThreads > 0
@@ -56,13 +61,20 @@ public class MinaAcceptor implements Acceptor {
 						: "unbounded");
 	}
 
-	public MinaAcceptor(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor) {
+	public MinaAcceptor(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor,
+			SSLContext sslContext) {
 		Objects.requireNonNull(codecFactory);
 		Objects.requireNonNull(processor);
 		Objects.requireNonNull(executor);
 
 		acceptor = new NioSocketAcceptor(processor);
 		DefaultIoFilterChainBuilder filters = acceptor.getFilterChain();
+
+		// ssl
+		if (sslContext != null) {
+			SslFilter sslFilter = new SslFilter(sslContext);
+			filters.addLast("sslFilter", sslFilter);
+		}
 
 		// encoding
 		filters.addLast("codec", new ProtocolCodecFilter(new MinaCodecFactory(codecFactory)));
@@ -101,7 +113,7 @@ public class MinaAcceptor implements Acceptor {
 			// tasks are ordered within groups
 			maxThreads = Math.max(1, maxThreads);
 			int coreThreads = Math.max(1, maxThreads / 2);
-			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper);
+			return new GroupingThreadPool(coreThreads, maxThreads, taskMapper, "MinaAcceptorPool");
 		}
 	}
 
@@ -125,7 +137,7 @@ public class MinaAcceptor implements Acceptor {
 
 	public void close() {
 		for (IoSession session : acceptor.getManagedSessions().values())
-			session.close(false);
+			session.closeOnFlush();
 		// disposing selector resources
 		acceptor.dispose();
 		// stopping executor service
