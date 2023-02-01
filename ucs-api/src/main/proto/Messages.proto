@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 8;
+option (ugcs_protocol_minor_version) = 10;
 
 import "Options.proto";
 import "Domain.proto";
@@ -539,6 +539,7 @@ message GetRasterGridResponse {
 
 //Request for elevation tiles in specified rectangle
 message GetElevationTilesRequest {
+	option deprecated = true;
 	required int32 clientId = 1;
 	required double minLatitude = 3;
 	required double minLongitude = 4;
@@ -547,6 +548,20 @@ message GetElevationTilesRequest {
 }
 
 message GetElevationTilesResponse {
+	option deprecated = true;
+	repeated ElevationData data = 1;
+}
+
+//Request for elevation tiles in specified rectangle
+message GetElevationTilesV2Request {
+	required int32 clientId = 1;
+	required double minLatitude = 3;
+	required double minLongitude = 4;
+	required double maxLatitude = 5;
+	required double maxLongitude = 6;
+}
+
+message GetElevationTilesV2Response {
 	repeated ElevationData data = 1;
 }
 
@@ -1173,6 +1188,7 @@ message GetTelemetrySnapshotResponse {
 message ExportRouteToWpmlRequest {
 	required int32 clientId = 1;
 	required ProcessedRoute route = 2;
+	required WpmlExportAltitudeMode altitudeMode = 3;
 }
 
 message ExportRouteToWpmlResponse {

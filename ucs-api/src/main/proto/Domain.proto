@@ -392,6 +392,11 @@ enum KmlExportAltitudeMode {
 	E_RELATIVE_TO_FIRST_WP = 2;
 }
 
+enum WpmlExportAltitudeMode {
+	W_AMSL = 1;
+	W_RELATIVE_TO_FIRST_WP = 2;
+}
+
 //*****************************************************************************
 // Generic CRUD services
 //*****************************************************************************
@@ -550,7 +555,6 @@ message Platform {
 	optional string name = 4;
 	optional string alias = 5;
 	repeated PlatformAction actions = 6;
-	repeated VehicleProfile vehicleProfiles = 8;
 	repeated PlatformPayloadProfile payloadProfiles = 9;
 	optional string tag = 10;
 	optional string autopilotType = 11; //computed property, any change has no effect
@@ -1448,14 +1452,14 @@ message ElevationData {
 }
 
 message ElevationSourceMetadata {
-	option (ugcs_class_package) = "com.ugcs.geoserver.dto";
 	optional string access = 1;
-	optional double originLatitude = 2;
-	optional double originLongitude = 3;
-	optional int32 wgsTileMinEasting = 4;
-	optional int32 wgsTileMaxEasting = 5;
-	optional int32 wgsTileResolution = 6;
+	optional double originLatitude = 2 [deprecated = true];
+	optional double originLongitude = 3 [deprecated = true];
+	optional int32 wgsTileMinEasting = 4 [deprecated = true];
+	optional int32 wgsTileMaxEasting = 5 [deprecated = true];
+	optional int32 wgsTileResolution = 6 [deprecated = true];
 	optional int64 version = 7;
+	optional int32 pyramidBaseLevel = 8;
 }
 
 message Tile {

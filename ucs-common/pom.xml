@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.ugcs</groupId>
 		<artifactId>ugcs-java-sdk</artifactId>
-		<version>4.12</version>
+		<version>4.14.1283</version>
 	</parent>
 	<artifactId>ucs-common</artifactId>
 	<name>UCS Common Data Types and Utilities</name>
