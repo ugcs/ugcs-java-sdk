@@ -4,7 +4,7 @@
 	<groupId>com.ugcs</groupId>
 	<artifactId>ugcs-java-sdk</artifactId>
 	<name>UgCS Server Java SDK</name>
-	<version>4.14.1284</version>
+	<version>4.14.1284-PROTO-3.11.4</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>ucs-messaging</module>
