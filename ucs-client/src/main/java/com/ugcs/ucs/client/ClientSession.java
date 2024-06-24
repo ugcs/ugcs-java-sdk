@@ -3,6 +3,7 @@ package com.ugcs.ucs.client;
 import static com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectRequest;
 import static com.ugcs.ucs.proto.MessagesProto.CreateOrUpdateObjectResponse;
 
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -20,6 +21,7 @@ import com.ugcs.ucs.proto.DomainProto.Route;
 import com.ugcs.ucs.proto.DomainProto.RouteProcessingStatus;
 import com.ugcs.ucs.proto.DomainProto.TelemetrySubscription;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
+import com.ugcs.ucs.proto.MessagesProto;
 import com.ugcs.ucs.proto.MessagesProto.AcquireLockRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciRequest;
 import com.ugcs.ucs.proto.MessagesProto.AuthorizeHciResponse;
@@ -247,5 +249,18 @@ public class ClientSession {
 				.setSubscriptionId(subscriptionId)
 				.build();
 		client.execute(request);
+	}
+
+	public void exportRouteToWpml(ProcessedRoute route, DomainProto.WpmlExportAltitudeMode altitudeMode, LazyResource<OutputStream> lazyOutput) throws Exception {
+		MessagesProto.ExportRouteToWpmlRequest request = MessagesProto.ExportRouteToWpmlRequest
+				.newBuilder()
+				.setClientId(clientId)
+				.setRoute(route)
+				.setAltitudeMode(altitudeMode)
+				.build();
+		MessagesProto.ExportRouteToWpmlResponse response = client.execute(request);
+		try (var out = lazyOutput.allocate()) {
+			response.getRouteData().writeTo(out);
+		}
 	}
 }

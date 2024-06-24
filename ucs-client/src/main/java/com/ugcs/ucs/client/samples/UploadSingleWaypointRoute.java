@@ -20,7 +20,6 @@ import com.ugcs.ucs.proto.DomainProto.ParameterValue;
 import com.ugcs.ucs.proto.DomainProto.ProcessedRoute;
 import com.ugcs.ucs.proto.DomainProto.Route;
 import com.ugcs.ucs.proto.DomainProto.SegmentDefinition;
-import com.ugcs.ucs.proto.DomainProto.TrajectoryType;
 import com.ugcs.ucs.proto.DomainProto.Vehicle;
 
 public final class UploadSingleWaypointRoute {
@@ -210,6 +209,8 @@ public final class UploadSingleWaypointRoute {
 						.setName("avoidTerrain")
 						.setValue("true"))
 				.addParameterValues(ParameterValue.newBuilder()
+						.setName("cornerRadius"))
+				.addParameterValues(ParameterValue.newBuilder()
 						.setName("altitudeType")
 						.setValue("AGL"));
 
@@ -222,7 +223,6 @@ public final class UploadSingleWaypointRoute {
 				.setMaxSpeed(10.0)
 				.setMaxAltitude(10000.0)
 				.setSafeAltitude(50.0)
-				.setTrajectoryType(TrajectoryType.TT_STRAIGHT)
 				.addFailsafes(Failsafe.newBuilder()
 						.setReason(FailsafeReason.FR_GPS_LOST)
 						.setAction(FailsafeAction.FA_WAIT))

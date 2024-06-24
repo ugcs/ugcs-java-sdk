@@ -24,7 +24,7 @@ Available via the [JitPack build](https://jitpack.io/#UgCS/ugcs-java-sdk):
 
 ## Running Samples
 
-Build a package.
+Build a package
 
 ```
 $ mvn clean package
@@ -118,3 +118,21 @@ Example:
 
         UploadSingleWaypointRoute -w "56.9761591,24.0730345,100.0" -s 5.0 "EMU-101"
 ```
+
+## [Route export to WPML example](https://github.com/ugcs/ugcs-java-sdk/blob/master/ucs-client/src/main/java/com/ugcs/ucs/client/samples/ExportRouteToWpml.java)
+
+Generates a simple route, and export it to a .kmz file in [DJI WPML format](https://developer.dji.com/doc/cloud-api-tutorial/en/api-reference/dji-wpml/overview.html).
+The result file could be then imported into DJI Pilot 2.
+
+```
+$ java -cp .;* com.ugcs.ucs.client.samples.ExportRouteToWpml <args>
+```
+
+```
+ExportRouteToWpml <destination_file_path>
+
+Example:
+
+        ExportRouteToWpml "c:\temp\exported-route.kmz"
+```
+ 

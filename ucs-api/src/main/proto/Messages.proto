@@ -3,7 +3,7 @@ syntax = "proto2";
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
 option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 10;
+option (ugcs_protocol_minor_version) = 17;
 
 import "Options.proto";
 import "Domain.proto";
@@ -38,8 +38,14 @@ message PlaceDto {
 	optional double rank = 3;
 }
 
+message VersionInfoDto {
+	required Version version = 1;
+	required int64 releaseDate = 2 [(ugcs_field_posix_time) = true];
+	optional string releaseInfo = 3;
+}
+
 message VersionsInfoDto {
-	repeated Version versions = 1;
+	repeated VersionInfoDto versions = 1;
 	optional string releaseInfo = 2;
 }
 
@@ -72,8 +78,6 @@ message LicensePermissionsDto {
 	repeated PlatformAndDoublePairDto maxAglAltitude = 7;
 	repeated PlatformAndDoublePairDto maxDistanceToHome = 8;
 	repeated PlatformAndIntegerPairDto  maxBuildings = 9;
-	repeated PlatformAndBooleanPairDto customNfz = 10;
-	repeated PlatformAndBooleanPairDto airportNfzDisabling = 11;
 	repeated PlatformAndBooleanPairDto adsbReceiver = 12;
 	repeated PlatformAndBooleanPairDto videoRecording = 13;
 	repeated PlatformAndBooleanPairDto cameraFootprint = 14;
@@ -86,6 +90,8 @@ message LicensePermissionsDto {
 	optional int32 vehicleConnectionsLimit = 21;
 	optional bool dssClient = 22 [default = false];
 	repeated string forbiddenCommandCodes = 23;
+  required bool smartAgl = 24;
+	required int32 djiPilotConnectionsLimit = 25;
 }
 
 message PlatformAndBooleanPairDto {
@@ -159,6 +165,7 @@ message PayloadParametersMappingDto {
 	required PayloadType payloadType = 1;
 	repeated PayloadParameterType parameterTypes = 2;
 }
+
 // Keys and values
 
 message PlatformAndVehicleTypePairDto {
@@ -357,6 +364,20 @@ message GetElevationProfileResponse {
 	repeated double obstacleHeight = 3;
 }
 
+message GetElevationProfileV2Request {
+	required int32 clientId = 1;
+	required double samplingStep = 3;
+	repeated Wgs84LocationDto locations = 4;
+	optional int32 number = 5;
+}
+
+message GetElevationProfileV2Response {
+	repeated Wgs84LocationDto locations = 1;
+	repeated double elevations = 2;
+	repeated double obstacleHeight = 3;
+	repeated double accumulatedDistances = 4;
+}
+
 message CalculateSplineRequest {
 	required int32 clientId = 1;
 	repeated Waypoint waypounts = 2;
@@ -367,16 +388,129 @@ message CalculateSplineResponse {
 	repeated Wgs84LocationDto locations = 1;
 }
 
+message ImportMissionOrRouteFromUgcsRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+}
+
+message ImportMissionOrRouteFromUgcsResponse {
+	optional Mission mission = 1;
+	optional Route route = 2;
+}
+
+message ImportMissionFromUgcsRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+}
+
+message ImportMissionFromUgcsResponse {
+	required Mission mission = 1;
+}
+
+message ImportRouteFromUgcsRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+}
+
+message ImportRouteFromUgcsResponse {
+	required Route route = 1;
+}
+
+message ImportProfilesFromUgcsRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+}
+
+message ImportProfilesFromUgcsResponse {
+	repeated ImportedVehicleProfile vehicleProfiles = 1;
+	repeated ImportedPayloadProfile payloadProfiles = 2;
+	repeated ImportedVehicleProfile skippedVehicleProfiles = 3;
+	repeated ImportedPayloadProfile skippedPayloadProfiles = 4;
+}
+
+message ImportRouteFromCsvRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+}
+
+message ImportRouteFromCsvResponse {
+	required Route route = 1;
+}
+
+message ImportRouteFromKmlRequest {
+	required int32 clientId = 1;
+	required bytes data = 2;
+	required TraverseAlgorithm lineAlgorithm = 3;
+	required TraverseAlgorithm polygonAlgorithm = 4;
+}
+
+message ImportRouteFromKmlResponse {
+	required Route route = 1;
+}
+
+message ExportMissionToUgcsRequest {
+	required int32 clientId = 1;
+	required Mission mission = 2;
+}
+
+message ExportMissionToUgcsResponse {
+	required bytes data = 1;
+}
+
+message ExportRouteToUgcsRequest {
+	required int32 clientId = 1;
+	required Route route = 2;
+}
+
+message ExportRouteToUgcsResponse {
+	required bytes data = 1;
+}
+
+message ExportProfilesToUgcsRequest {
+	required int32 clientId = 1;
+	repeated VehicleProfile vehicleProfiles = 2;
+	repeated PayloadProfile payloadProfiles = 3;
+}
+
+message ExportProfilesToUgcsResponse {
+	required bytes data = 1;
+}
+
+message ExportRouteToKmlRequest {
+	required int32 clientId = 1;
+	optional ProcessedRoute route = 2;
+	required KmlExportAltitudeMode altitudeMode = 3;
+}
+
+message ExportRouteToKmlResponse {
+	required bytes kmlData = 1;
+}
+
+message ExportRouteToWpmlRequest {
+	required int32 clientId = 1;
+	required ProcessedRoute route = 2;
+	required WpmlExportAltitudeMode altitudeMode = 3;
+}
+
+message ExportRouteToWpmlResponse {
+	required bytes routeData = 1;
+}
+
+// Deprecated. Use specific ExportRouteTo[FORMAT] message
 message ExportRouteRequest {
+	option deprecated = true;
 	required int32 clientId = 1;
 	required Route route = 2;
 }
 
 message ExportRouteResponse {
+	option deprecated = true;
 	required bytes routeData = 1;
 }
 
+// Deprecated. Use specific ImportRouteFrom[FORMAT] message
 message ImportRouteRequest {
+	option deprecated = true;
 	required int32 clientId = 1;
 	required bytes routeData = 2;
 	required string filename = 3;
@@ -386,19 +520,25 @@ message ImportRouteRequest {
 }
 
 message ImportRouteResponse {
+	option deprecated = true;
 	required Route route = 1;
 }
 
+// Deprecated. Use specific ExportMissionTo[FORMAT] message
 message ExportMissionRequest {
+	option deprecated = true;
 	required int32 clientId = 1;
 	required Mission mission = 2;
 }
 
 message ExportMissionResponse {
+	option deprecated = true;
 	required bytes missionData = 1;
 }
 
+// Deprecated. Use specific ImportMissionFrom[FORMAT] message
 message ImportMissionRequest {
+	option deprecated = true;
 	required int32 clientId = 1;
 	required bytes missionData = 2;
 	optional string filename = 3;
@@ -406,6 +546,7 @@ message ImportMissionRequest {
 }
 
 message ImportMissionResponse {
+	option deprecated = true;
 	required Mission mission = 1;
 }
 
@@ -465,29 +606,6 @@ message ImportTelemetryStreamRequest {
 message ImportTelemetryStreamResponse {
 	// list of vehicles affected by the telemetry import
 	repeated Vehicle vehicles = 1;
-}
-
-message GetTrialSubscriptionsPlanRequest {
-	required int32 clientId = 1;
-}
-
-message GetTrialSubscriptionsPlanResponse {
-	repeated SubscriptionPlan subscriptionPlans = 1;
-}
-
-message GetTrialRequest {
-	required int32 clientId = 1;
-	optional string firstName = 2;
-	optional string lastName = 3;
-	required string email = 4;
-	optional string country = 5;
-	required string subscriptionPlan = 6;
-	optional string companyName = 7;
-
-}
-
-message GetTrialResponse {
-	required string status = 1;
 }
 
 // Measuring
@@ -714,16 +832,6 @@ message GetKmlRouteRepresentationResponse {
 	required bytes kmlData = 1;
 }
 
-message ExportRouteToKmlRequest {
-	required int32 clientId = 1;
-	optional ProcessedRoute route = 2;
-	required KmlExportAltitudeMode altitudeMode = 3;
-}
-
-message ExportRouteToKmlResponse {
-	required bytes kmlData = 1;
-}
-
 message GetAdsbAircraftListRequest {
 	required int32 clientId = 1;
 	required Wgs84LocationDto location = 2;
@@ -860,11 +968,36 @@ message DeactivateLicenseResponse {
 
 message CheckForUpdatesRequest {
 	required int32 clientId = 1;
+	/* The result will contain only versions newer than this one. */
+	optional Version since = 2;
 }
 
 message CheckForUpdatesResponse {
 	optional VersionsInfoDto newVersions = 1;
-} 
+}
+
+message GetChangelogRequest {
+	required int32 clientId = 1;
+  required Version version = 2;
+}
+
+message GetChangelogResponse {
+  optional string changelog = 3;
+}
+
+message IsTelemetryFieldRegisteredRequest {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required string fieldCode = 3;
+	required Subsystem subsystem = 4;
+	// If -1, method returns true if any of instances has the field registered.
+	// proto2 doesn't support nullable int32
+	required int32 subsystemId = 5;
+}
+
+message IsTelemetryFieldRegisteredResponse {
+	required bool registered = 1;
+}
 
 // Statistics
 message SendStatisticsRequest {
@@ -1185,12 +1318,18 @@ message GetTelemetrySnapshotResponse {
 	repeated TelemetrySnapshot snapshots = 1;
 }
 
-message ExportRouteToWpmlRequest {
+
+message SendFeedbackRequest {
 	required int32 clientId = 1;
-	required ProcessedRoute route = 2;
-	required WpmlExportAltitudeMode altitudeMode = 3;
+	// Optional.
+	optional string ReporterFullName = 2;
+	// Optional.
+	optional string ReporterEmail = 3;
+	// Required not empty string, 255 symbols maximum.
+	optional string Summary = 4;
+	// Optional.
+	optional string Details = 5;
 }
 
-message ExportRouteToWpmlResponse {
-	required bytes routeData = 1;
+message SendFeedbackResponse {
 }

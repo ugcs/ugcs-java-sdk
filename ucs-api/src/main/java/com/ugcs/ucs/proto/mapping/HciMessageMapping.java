@@ -137,10 +137,6 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(139, JoinRouteResponse.class);
 		putMapping(140, ReconstructRouteRequest.class);
 		putMapping(141, ReconstructRouteResponse.class);
-		putMapping(142, GetTrialSubscriptionsPlanRequest.class);
-		putMapping(143, GetTrialSubscriptionsPlanResponse.class);
-		putMapping(144, GetTrialRequest.class);
-		putMapping(145, GetTrialResponse.class);
 		putMapping(146, SwapElevationOrderRequest.class);
 		putMapping(147, SwapElevationOrderResponse.class);
 		putMapping(148, DeleteVehicleTrackRequest.class);
@@ -169,6 +165,31 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(173, ExportRouteToWpmlResponse.class);
 		putMapping(174, SplitRouteByCorridorPointRequest.class);
 		putMapping(175, SplitRouteByCorridorPointResponse.class);
-
+		putMapping(176, GetElevationProfileV2Request.class);
+		putMapping(177, GetElevationProfileV2Response.class);
+		putMapping(178, GetChangelogRequest.class);
+		putMapping(179, GetChangelogResponse.class);
+		putMapping(180, IsTelemetryFieldRegisteredRequest.class);
+		putMapping(181, IsTelemetryFieldRegisteredResponse.class);
+		putMapping(182, ImportMissionOrRouteFromUgcsRequest.class);
+		putMapping(183, ImportMissionOrRouteFromUgcsResponse.class);
+		putMapping(184, ImportMissionFromUgcsRequest.class);
+		putMapping(185, ImportMissionFromUgcsResponse.class);
+		putMapping(186, ImportRouteFromUgcsRequest.class);
+		putMapping(187, ImportRouteFromUgcsResponse.class);
+		putMapping(188, ImportProfilesFromUgcsRequest.class);
+		putMapping(189, ImportProfilesFromUgcsResponse.class);
+		putMapping(190, ImportRouteFromCsvRequest.class);
+		putMapping(191, ImportRouteFromCsvResponse.class);
+		putMapping(192, ImportRouteFromKmlRequest.class);
+		putMapping(193, ImportRouteFromKmlResponse.class);
+		putMapping(194, ExportMissionToUgcsRequest.class);
+		putMapping(195, ExportMissionToUgcsResponse.class);
+		putMapping(196, ExportRouteToUgcsRequest.class);
+		putMapping(197, ExportRouteToUgcsResponse.class);
+		putMapping(198, ExportProfilesToUgcsRequest.class);
+		putMapping(199, ExportProfilesToUgcsResponse.class);
+		putMapping(200, SendFeedbackRequest.class);
+		putMapping(201, SendFeedbackResponse.class);
 	}
 }

@@ -38,6 +38,7 @@ enum AltitudeFrame {
 	AF_WGS84 = 0;
 	AF_AGL = 1;
 	AF_RANGEFINDER = 2;
+	AF_SMART_AGL = 3;
 }
 
 enum ActionExecution {
@@ -130,6 +131,9 @@ enum VehicleParameterType {
 	VPT_MAX_RANGEFINDER_DISTANCE = 45;
 	VPT_MIN_DISTANCE_BETWEEN_WAYPOINT = 46;
 	VPT_FENCE_ALTITUDE = 47;
+	VPT_INITIAL_SPEED = 48;
+	VPT_WAYPOINT_CORNER_RADIUS = 49;
+	VPT_WAYPOINT_MAX_WAIT_TIME = 50;
 }
 
 enum PayloadType {
@@ -339,6 +343,7 @@ enum Subsystem {
 	S_VSM = 12;
 	S_LIDAR = 13;
 	S_RANGEFINDER = 14;
+	S_REMOTE_ID = 15;
 }
 
 enum Semantic {
@@ -379,12 +384,16 @@ enum Semantic {
 	S_FLIGHT_MODE = 35;
 	S_LIST = 36;
 	S_AUTOPILOT_STATUS = 37;
+	// Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT represented by this Timestamp object.
 	S_TIMESTAMP = 38;
 	S_ANY = 39;
 	S_TEMPERATURE = 40;
 	S_HUMIDITY = 41;
 	S_PRECIPITATION = 42;
 	S_DISTANCE = 43;
+	S_REMOTE_ID_PREARM_STATUS = 44;
+	S_REMOTE_ID_OPERATOR_ID_TYPE = 45;
+	S_REMOTE_ID_IDENTIFIER_TYPE = 46;
 }
 
 enum KmlExportAltitudeMode {
@@ -395,6 +404,34 @@ enum KmlExportAltitudeMode {
 enum WpmlExportAltitudeMode {
 	W_AMSL = 1;
 	W_RELATIVE_TO_FIRST_WP = 2;
+}
+
+enum WaypointTag {
+	W_UNKNOWN = 0;
+	W_CALIBRATION_START = 1;
+	W_CALIBRATION_END = 2;
+}
+
+enum RemoteIdIdentifierType {
+	RIIT_NONE = 0;
+	RIIT_SERIAL_NUMBER = 1;
+	RIIT_CAA_REGISTRATION_ID = 2;
+	RIIT_UTM_ASSIGNED_UUID = 3;
+	RIIT_SPECIFIC_SESSION_ID = 4;
+}
+
+enum RemoteIdOperatorType {
+	RIOT_CAA = 0;
+}
+
+enum RemoteIdPrearmStatus {
+	RIPS_GOOD_TO_ARM = 0;
+	RIPS_PRE_ARM_FAIL = 1;
+}
+
+enum ParameterCategory {
+	PG_ADVANCED = 0;
+	PG_BASIC = 1;
 }
 
 //*****************************************************************************
@@ -481,6 +518,7 @@ message DomainObjectWrapper {
 	optional Setting setting = 88;
 	optional LidarRecordingControlDefinition lidarRecordingControlDefinition = 89;
 	optional LidarRecordingControl lidarRecordingControl = 90;
+	optional ExperimentalFeature experimentalFeature = 91;
 }
 
 //*****************************************************************************
@@ -492,7 +530,8 @@ message Version {
 	optional int32 id = 1;
 	optional int32 major = 2;
 	optional int32 minor = 3;
-	optional int32 build = 5;
+	optional int32 patch = 5;
+	optional string build = 6;
 	optional Component component = 4;
 }
 
@@ -593,6 +632,9 @@ message Vehicle {
 	optional string serialNumber = 25;
 	optional string port = 26;
 	optional VehicleSource source = 27;
+	optional string remoteIdSerialNumber = 28;
+	optional RemoteIdIdentifierType remoteIdIdentifierType = 29;
+	optional bool remoteIdEnabled = 30;
 }
 
 message AdsbAircraft {
@@ -675,6 +717,7 @@ message PlatformParameters {
 	optional string tag = 3;
 	optional double minReturnToHomeAltitude = 4;
 	optional double maxReturnToHomeAltitude = 5;
+	repeated VehicleParameterType supportedParameters  = 6;
 }
 
 // Definitions of algorithms in the system
@@ -704,6 +747,7 @@ message ParameterDefinition {
 	optional TraverseAlgorithm algorithm = 10;
 	optional MetricUnit unit = 11;
 	optional string tag = 12;
+	optional ParameterCategory category = 13;
 }
 
 
@@ -794,6 +838,7 @@ message Route {
 	optional double maxAltitude = 12;
 	optional double initialSpeed = 13;
 	optional double maxSpeed = 14;
+	optional double cornerRadius = 15;
 	repeated Failsafe failsafes = 20;
 	optional VehicleProfile vehicleProfile = 21;
 	optional string tag = 22;
@@ -977,6 +1022,7 @@ message Waypoint {
 	optional AltitudeFrame altitudeFrame = 11;
 	optional string tag = 10;
 	optional double cornerRadius = 12;
+	repeated WaypointTag tags = 13;
 }
 
 message CameraControl {
@@ -1102,6 +1148,7 @@ message RouteAttributes {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional double safeAltitude = 3;
+	optional double takeoffAltitude=9;
 	optional FailsafeAction rcLostAction = 4;
 	optional FailsafeAction gpsLostAction = 5;
 	optional FailsafeAction lowBatteryAction = 6;
@@ -1322,6 +1369,7 @@ message CommandDefinition {
 	optional Vehicle vehicle = 9;
 	optional bool enabled = 10;
 	optional bool available = 11;
+	optional bool hidden = 12;
 }
 
 message CommandArgumentDefinition {
@@ -1334,6 +1382,7 @@ message CommandArgumentDefinition {
 	optional Value minValue = 16;
 	optional Value maxValue = 17;
 	optional string tag = 12;
+	optional bool mandatory = 18;
 }
 
 message Command {
@@ -1466,14 +1515,6 @@ message Tile {
 	optional bytes data = 1; //gzipped geoserver tile data
 	optional int32 easting = 2;
 	optional int32 northing = 3;
-}
-
-//-- Activation Server ----------------------------------------------------------------
-message SubscriptionPlan {
-	optional string name = 1;
-	optional string code = 2;
-	optional int32 period = 3;
-	optional string periodUnit = 4;
 }
 
 //*****************************************************************************
@@ -1708,4 +1749,24 @@ message ErrorDetailWrapper {
 message ProtocolVersion {
 	optional int32 major = 1;
 	optional int32 minor = 2;
+}
+
+message ImportedVehicleProfile {
+	optional VehicleProfile source = 1;
+	optional VehicleProfile destination = 2;
+}
+
+message ImportedPayloadProfile {
+	optional PayloadProfile source = 1;
+	optional PayloadProfile destination = 2;
+}
+
+message ExperimentalFeature {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional string code = 4;
+	optional string description = 5;
+	optional bool enabled = 6;
+	optional bool isAppRestartRequired = 7;
 }
