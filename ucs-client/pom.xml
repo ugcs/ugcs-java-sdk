@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.ugcs</groupId>
 		<artifactId>ugcs-java-sdk</artifactId>
-		<version>5.1</version>
+		<version>5.1.1</version>
 	</parent>
 	<artifactId>ucs-client</artifactId>
 	<name>UCS Client</name>
