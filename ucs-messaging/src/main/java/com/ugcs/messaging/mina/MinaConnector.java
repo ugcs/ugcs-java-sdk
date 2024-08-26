@@ -79,7 +79,6 @@ public class MinaConnector implements Connector {
 		// ssl
 		if (sslContext != null) {
 			SslFilter sslFilter = new SslFilter(sslContext);
-			sslFilter.setUseClientMode(true);
 			filters.addLast("sslFilter", sslFilter);
 		}
 

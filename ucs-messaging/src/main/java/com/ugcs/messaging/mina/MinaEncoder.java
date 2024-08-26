@@ -32,7 +32,6 @@ public class MinaEncoder implements ProtocolEncoder {
 		if (encodedMessage != null && encodedMessage.length > 0) {
 			IoBuffer buffer = IoBuffer.wrap(encodedMessage);
 			out.write(buffer);
-			out.flush();
 		}
 	}
 
