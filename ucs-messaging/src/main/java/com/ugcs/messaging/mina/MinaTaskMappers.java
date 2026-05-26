@@ -1,7 +1,10 @@
 package com.ugcs.messaging.mina;
 
+import java.util.Comparator;
 import java.util.Objects;
 
+import com.ugcs.messaging.TaskDetails;
+import com.ugcs.messaging.api.MessageDetails;
 import org.apache.mina.core.session.IoEvent;
 import org.apache.mina.core.session.IoEventType;
 import org.apache.mina.core.session.IoSession;
@@ -11,6 +14,7 @@ import com.ugcs.messaging.api.MessageMapper;
 import com.ugcs.messaging.TaskMapper;
 
 public final class MinaTaskMappers {
+
 
 	private MinaTaskMappers() {
 	}
@@ -42,7 +46,7 @@ public final class MinaTaskMappers {
 		}
 
 		@Override
-		public Object map(Runnable runnable) {
+		public TaskDetails map(Runnable runnable) {
 			Objects.requireNonNull(runnable);
 
 			if (!(runnable instanceof IoEvent))
@@ -59,8 +63,8 @@ public final class MinaTaskMappers {
 			// channelType
 			TaskChannelType type = TaskChannelType.of(event.getType());
 
-			// isolation
-			Object isolation = null;
+			// messageDetails
+			MessageDetails messageDetails = null;
 			if (messageMapper != null) {
 				Object parameter = event.getParameter();
 				if (parameter != null) {
@@ -72,11 +76,16 @@ public final class MinaTaskMappers {
 						message = event.getParameter();
 					}
 					if (message != null)
-						isolation = messageMapper.map(message);
+						messageDetails = messageMapper.map(message);
 				}
 			}
 
-			return new TaskChannel(sessionId, type, isolation);
+			return new TaskDetails(
+					new TaskChannel(sessionId, type, messageDetails),
+					messageDetails != null
+							? messageDetails.priority
+							: MessageDetails.DEFAULT_PRIORITY
+			);
 		}
 	}
 
@@ -144,18 +153,18 @@ public final class MinaTaskMappers {
 	private static class TypeMapper implements MessageMapper {
 
 		@Override
-		public Object map(Object message) {
+		public MessageDetails map(Object message) {
 			if (message == null)
 				return null;
-			return message.getClass();
+			return new MessageDetails(message.getClass());
 		}
 	}
 
 	private static class SelfMapper implements MessageMapper {
 
 		@Override
-		public Object map(Object message) {
-			return message;
+		public MessageDetails map(Object message) {
+			return new MessageDetails(message);
 		}
 	}
 }

@@ -15,6 +15,9 @@ import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.executor.ExecutorFilter;
+import org.apache.mina.filter.keepalive.KeepAliveFilter;
+import org.apache.mina.filter.keepalive.KeepAliveMessageFactory;
+import org.apache.mina.filter.keepalive.KeepAliveRequestTimeoutHandler;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.filter.ssl.SslFilter;
 import org.apache.mina.transport.socket.SocketAcceptor;
@@ -47,13 +50,13 @@ public class MinaAcceptor implements Acceptor {
 	}
 
 	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, SSLContext sslContext) {
-		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes(), sslContext);
+		this(codecFactory, maxIoThreads, maxTaskThreads, MinaTaskMappers.orderedByMessageTypes(), sslContext, null);
 	}
 
 	public MinaAcceptor(CodecFactory codecFactory, int maxIoThreads, int maxTaskThreads, TaskMapper taskMapper,
-			SSLContext sslContext) {
+			SSLContext sslContext, KeepAliveMessageFactory keepAliveMessageFactory) {
 		this(codecFactory, new SimpleIoProcessorPool<>(NioProcessor.class, maxIoThreads),
-				newExecutor(maxTaskThreads, taskMapper), sslContext);
+				newExecutor(maxTaskThreads, taskMapper), sslContext, keepAliveMessageFactory);
 		log.info("Initialized acceptor {max I/O threads: {}, max task threads: {}}",
 				maxIoThreads,
 				maxTaskThreads > 0
@@ -62,7 +65,7 @@ public class MinaAcceptor implements Acceptor {
 	}
 
 	public MinaAcceptor(CodecFactory codecFactory, IoProcessor<NioSession> processor, ExecutorService executor,
-			SSLContext sslContext) {
+			SSLContext sslContext, KeepAliveMessageFactory keepAliveMessageFactory) {
 		Objects.requireNonNull(codecFactory);
 		Objects.requireNonNull(processor);
 		Objects.requireNonNull(executor);
@@ -85,6 +88,15 @@ public class MinaAcceptor implements Acceptor {
 
 		// logging
 		filters.addLast("logger", new LoggingFilter());
+
+		// keepalive
+		if(keepAliveMessageFactory != null) {
+			KeepAliveFilter keepAliveFilter = new KeepAliveFilter(keepAliveMessageFactory,
+					KeepAliveRequestTimeoutHandler.CLOSE);
+			keepAliveFilter.setRequestTimeout(3);
+			keepAliveFilter.setRequestInterval(2);
+			filters.addLast("keepAlive", keepAliveFilter);
+		}
 
 		// session handler
 		minaAdapter = new MinaAdapter();

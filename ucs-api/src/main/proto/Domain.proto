@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package com.ugcs.ucs.proto;
+
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "DomainProto";
 option (ugcs_domain_package) = "com.ugcs.ucs.domain";
@@ -11,6 +13,10 @@ import "Options.proto";
 //*****************************************************************************
 // Enums
 //*****************************************************************************
+
+enum NoticeKind {
+    NK_WARNING = 0;
+}
 
 enum RouteProcessingStatus {
 	RPS_MODIFIED = 0;		// The new / modified route segment.
@@ -193,6 +199,11 @@ enum RecordingState {
     RS_ON = 1;
 }
 
+enum LidarCalibrationDirection {
+	LCD_FORWARD = 0;
+	LCD_BACKWARD = 1;
+}
+
 enum TriggerState {
 	TS_SINGLE_SHOT = 0;
 	TS_START_RECORDING = 1;
@@ -232,17 +243,25 @@ enum Component {
 	C_LICENSE = 1;
 }
 
-enum MetricUnit {
-	MU_NONE = 0;
-	MU_SECOND = 1;
-	MU_METRE = 2;
-	MU_KILOMETRE = 3;
-	MU_METREPERSECOND = 4;
-	MU_SQUAREMETRE = 5;
-	MU_KILOGRAMME = 6;
-	MU_CENTIMETRE = 7;
-	MU_HECTARE = 8;
-	MU_SQUAREKILOMETRE = 9;
+enum PhysicalSemantic {
+	PS_NONE = 0;
+	PS_DISTANCE = 1;
+	PS_ALTITUDE = 2;
+	PS_SPEED = 3;
+	PS_VERTICAL_SPEED = 4;
+	PS_AREA = 5;
+	PS_GSD = 6;
+	PS_ANGLE = 7;
+	PS_LATITUDE = 8;
+	PS_LONGITUDE = 9;
+	PS_DURATION = 10;
+	PS_PWM = 11;
+	PS_VOLTAGE = 12;
+	PS_CURRENT = 13;
+	PS_SLOPE = 14;
+	PS_WEIGHT = 15;
+	PS_LENGTH = 16;
+	PS_GAIN = 17;
 }
 
 enum MessageSeverity {
@@ -283,6 +302,9 @@ enum ActionCode {
 	AC_TRANSITION_FIXED = 16;
 	AC_TRANSITION_VTOL = 17;
 	AC_LIDAR_RECORDING_CONTROL = 18;
+	AC_LIDAR_CALIBRATION = 19;
+	AC_HOP_ACTION = 20;
+	AC_DROP = 21;
 }
 
 enum NfzType {
@@ -344,6 +366,10 @@ enum Subsystem {
 	S_LIDAR = 13;
 	S_RANGEFINDER = 14;
 	S_REMOTE_ID = 15;
+	S_HORIZONTAL_OBSTACLE_DETECTOR = 16;
+	S_VERTICAL_OBSTACLE_DETECTOR = 17;
+	S_OBSTACLE_AVOIDANCE = 18;
+	S_ALTIMETER = 19;
 }
 
 enum Semantic {
@@ -394,6 +420,8 @@ enum Semantic {
 	S_REMOTE_ID_PREARM_STATUS = 44;
 	S_REMOTE_ID_OPERATOR_ID_TYPE = 45;
 	S_REMOTE_ID_IDENTIFIER_TYPE = 46;
+	S_BINARY = 47;
+	S_HORIZONTAL_OBSTACLE_DETECTOR_DISTANCES = 48;
 }
 
 enum KmlExportAltitudeMode {
@@ -410,6 +438,9 @@ enum WaypointTag {
 	W_UNKNOWN = 0;
 	W_CALIBRATION_START = 1;
 	W_CALIBRATION_END = 2;
+	W_HOP = 3;
+	W_HOP_START = 4;
+	W_KNOT = 5;
 }
 
 enum RemoteIdIdentifierType {
@@ -432,6 +463,17 @@ enum RemoteIdPrearmStatus {
 enum ParameterCategory {
 	PG_ADVANCED = 0;
 	PG_BASIC = 1;
+}
+
+enum ElevationSourceCategory {
+	ESS_DISABLED = 0;
+	ESS_GROUND = 1;
+	ESS_SURFACE = 2;
+}
+
+enum LicenseConstraintErrorSubtype {
+	LCS_UGCS_SEALED = 0;
+	LCS_PERMISSION_EXCEEDED = 1;
 }
 
 //*****************************************************************************
@@ -519,6 +561,9 @@ message DomainObjectWrapper {
 	optional LidarRecordingControlDefinition lidarRecordingControlDefinition = 89;
 	optional LidarRecordingControl lidarRecordingControl = 90;
 	optional ExperimentalFeature experimentalFeature = 91;
+	optional LidarCalibrationDefinition lidarCalibrationDefinition = 92;
+	optional LidarCalibration lidarCalibration = 93;
+	optional Notice notice = 94;
 }
 
 //*****************************************************************************
@@ -542,8 +587,8 @@ message License {
 	optional string activationCode = 4;
 	optional int64 activationTime = 5 [(ugcs_field_posix_time) = true];
 	optional string tag = 6;
-	optional int64 subscriptionExpirationTime = 7 [(ugcs_field_posix_time) = true];
-	optional int64 supportExpirationTime = 8 [(ugcs_field_posix_time) = true];
+	optional int64 subscriptionExpirationTime = 7 [(ugcs_field_posix_time) = true, (readonly) = true];
+	optional int64 supportExpirationTime = 8 [(ugcs_field_posix_time) = true, (readonly) = true];
 }
 
 
@@ -597,6 +642,7 @@ message Platform {
 	repeated PlatformPayloadProfile payloadProfiles = 9;
 	optional string tag = 10;
 	optional string autopilotType = 11; //computed property, any change has no effect
+	repeated string aliases = 12;
 }
 
 message PlatformAction {
@@ -677,6 +723,7 @@ message VehicleProfile {
 	optional bool primary = 12;
 	optional string modelKey = 13;
 	optional string imageKey = 14;
+	optional string code = 15;
 }
 
 message VehicleParameter {
@@ -700,6 +747,7 @@ message PayloadProfile {
 	optional bool unremovable = 10;
 	optional string tag = 11;
 	optional string shortName = 12;
+	optional string code = 13;
 }
 
 message PayloadParameter {
@@ -745,9 +793,10 @@ message ParameterDefinition {
 	optional string defaultValue = 8;
 	optional string validationRegex = 9;
 	optional TraverseAlgorithm algorithm = 10;
-	optional MetricUnit unit = 11;
+	optional PhysicalSemantic physicalSemantic = 11;
 	optional string tag = 12;
 	optional ParameterCategory category = 13;
+	optional bool automatic = 14;
 }
 
 
@@ -814,6 +863,7 @@ message Mission {
 	optional User owner = 7;
 	repeated MissionVehicle vehicles = 8;
 	optional string tag = 9;
+	optional string uuid = 10 [(ugcs_field_uuid) = true];
 }
 
 message MissionVehicle {
@@ -925,6 +975,8 @@ message ProcessedRoute {
 	optional string tag = 6;
 	optional string uuid = 7 [(ugcs_field_uuid) = true]; // Route.uuid
 	optional string modificationUuid = 8 [(ugcs_field_uuid) = true]; // Route.modificationUuid
+	optional double estimatedDistance = 9; // Cannot be empty for fully processed routes
+	optional double diameter = 10; // Cannot be empty for fully processed routes
 }
 
 message ProcessedSegment {
@@ -1005,6 +1057,9 @@ message Action {
     optional TransitionVtol transitionVtol = 26;
     optional TransitionFixed transitionFixed = 27;
 	optional LidarRecordingControl lidarRecordingControl = 28;
+	optional LidarCalibration lidarCalibration = 29;
+	optional HopAction hopAction = 30;
+	optional Drop drop = 31;
 	optional string tag = 21;
 	optional double estimatedTime = 25;
 }
@@ -1087,6 +1142,15 @@ message LidarRecordingControl {
 	optional int32 version = 2;
 	optional RecordingState targetState = 3;
 	optional string tag = 4;
+}
+
+message LidarCalibration {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional LidarCalibrationDirection direction = 3;
+	optional double distance = 4;
+	optional int32 times = 5;
+	optional string tag = 6;
 }
 
 message PoiChange {
@@ -1186,6 +1250,23 @@ message TransitionVtol {
 	optional string tag = 3;
 }
 
+message HopAction {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional double interval = 5;
+	optional double descentAltitude = 6;
+	optional double waitTime = 7;
+	optional bool dropAction = 8;
+	optional double descentSpeed = 9;
+}
+
+message Drop {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
+
 
 //-- Definitions of Actions - Container and specific definitions --------------
 
@@ -1207,6 +1288,9 @@ message ActionDefinition {
 	optional TransitionVtolDefinition transitionVtolDefinition =  17;
 	optional TransitionFixedDefinition transitionFixedDefinition = 18;
 	optional LidarRecordingControlDefinition lidarRecordingControlDefinition = 19;
+	optional LidarCalibrationDefinition lidarCalibrationDefinition = 20;
+	optional HopActionDefinition hopActionDefinition = 21;
+	optional DropDefinition DropDefinition = 22;
 	optional string tag = 16;
 }
 
@@ -1252,6 +1336,15 @@ message LidarRecordingControlDefinition {
 	optional int32 version = 2;
 	optional RecordingState targetState = 3;
 	optional string tag = 4;
+}
+
+message LidarCalibrationDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional LidarCalibrationDirection direction = 3;
+	optional double distance = 4;
+	optional int32 times = 5;
+	optional string tag = 6;
 }
 
 message HeadingDefinition {
@@ -1321,6 +1414,23 @@ message TransitionFixedDefinition {
 }
 
 message TransitionVtolDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+}
+
+message HopActionDefinition {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+	optional double interval = 5;
+	optional double descentAltitude = 6;
+	optional double waitTime = 7;
+	optional bool dropAction = 8;
+	optional double descentSpeed = 9;
+}
+
+message DropDefinition {
 	optional int32 id = 1;
 	optional int32 version = 2;
 	optional string tag = 3;
@@ -1410,7 +1520,19 @@ message Value {
 	optional double doubleValue = 7;
 	optional string stringValue = 8;
 	repeated Value listValue = 10;
+	optional bytes bytesValue = 11;
 	optional string tag = 9;
+}
+
+message Property {
+    required string name = 1;
+    required Value value = 2;
+    required Semantic semantic = 3;
+}
+
+message File {
+    optional string name = 1;
+    optional bytes data = 2;
 }
 
 //-- Logs ---------------------------------------------------------------------
@@ -1423,6 +1545,15 @@ message VehicleLogEntry {
 	optional string message = 5;
 	optional SeverityLevel level = 6;
 	optional string tag = 12;
+}
+
+message Notice {
+	optional int32 id = 1;
+	optional int32 version = 2;
+	optional string tag = 3;
+    optional int64 time = 4 [(ugcs_field_posix_time) = true];
+    optional string message = 5	;
+    optional NoticeKind kind = 6;
 }
 
 //-- Telemetry ----------------------------------------------------------------
@@ -1459,7 +1590,8 @@ message ElevationSource {
 	optional GeoServer geoServer = 4;
 	optional string sourceName = 5;
 	optional string tag = 6;
-	optional bool enabled = 7;
+	optional bool enabled = 7 [deprecated = true];
+	optional ElevationSourceCategory category = 8;
 }
 
 message FeatureSource {
@@ -1741,9 +1873,15 @@ message UnsupportedProtocolVersionDetail {
 	optional ProtocolVersion serverVersion = 1;
 }
 
+message LicenseConstraintErrorDetail {
+	optional LicenseConstraintErrorSubtype licenseConstraintErrorSubtype = 1;
+	optional string permission = 2;
+}
+
 message ErrorDetailWrapper {
 	optional InvalidTakeOffAltitudeDetail invalidTakeOffAltitudeDetail = 1;
 	optional UnsupportedProtocolVersionDetail unsupportedProtocolVersionDetail = 2;
+	optional LicenseConstraintErrorDetail licenseConstraintErrorDetail = 3;
 }
 
 message ProtocolVersion {

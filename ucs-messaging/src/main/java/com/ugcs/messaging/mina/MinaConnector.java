@@ -47,6 +47,7 @@ public class MinaConnector implements Connector {
 	private final SocketConnector connector;
 	private final MinaAdapter minaAdapter;
 	private final ExecutorService executor;
+	private final IoProcessor<NioSession> processor;
 
 	public MinaConnector(CodecFactory codecFactory, SSLContext sslContext) {
 		this(codecFactory, DEFAULT_MAX_IO_THREADS, DEFAULT_MAX_TASK_THREADS, sslContext);
@@ -73,6 +74,7 @@ public class MinaConnector implements Connector {
 		Objects.requireNonNull(processor);
 		Objects.requireNonNull(executor);
 
+		this.processor = processor;
 		connector = new NioSocketConnector(processor);
 		DefaultIoFilterChainBuilder filters = connector.getFilterChain();
 
@@ -182,7 +184,9 @@ public class MinaConnector implements Connector {
 		for (IoSession session : connector.getManagedSessions().values())
 			session.closeOnFlush();
 		// disposing selector resources
-		connector.dispose();
+		connector.dispose(true);
+		// disposing processor pool selectors
+		processor.dispose();
 		// stopping executor service
 		executor.shutdown();
 	}

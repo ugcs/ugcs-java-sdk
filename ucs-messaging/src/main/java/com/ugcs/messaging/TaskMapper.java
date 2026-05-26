@@ -2,5 +2,5 @@ package com.ugcs.messaging;
 
 public interface TaskMapper {
 
-	Object map(Runnable runnable);
+	TaskDetails map(Runnable runnable);
 }

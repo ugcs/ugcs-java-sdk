@@ -259,7 +259,7 @@ public class ClientSession {
 				.setAltitudeMode(altitudeMode)
 				.build();
 		MessagesProto.ExportRouteToWpmlResponse response = client.execute(request);
-		try (var out = lazyOutput.allocate()) {
+		try (OutputStream out = lazyOutput.allocate()) {
 			response.getRouteData().writeTo(out);
 		}
 	}

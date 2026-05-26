@@ -102,10 +102,33 @@ public class Client implements Closeable {
 				.get(timeoutMillis, TimeUnit.MILLISECONDS))
 				.getMessage();
 		if (response instanceof MessagesProto.Error) {
-			Error errorResponse = (MessagesProto.Error)response;
-			throw new Exception(errorResponse.getErrorMessage());
+			throw buildException((MessagesProto.Error)response);
 		}
 		return (T)response;
+	}
+
+	private static UcsException buildException(MessagesProto.Error e) {
+		Integer errorCode = null;
+		if (e.hasErrorCode())
+			errorCode = e.getErrorCode();
+
+		if (errorCode != null && errorCode == UcsException.ErrorCodes.LICENSE_CONSTRAINT){
+			if (e.hasErrorDetail() && e.getErrorDetail().hasLicenseConstraintErrorDetail()) {
+				var details = e.getErrorDetail().getLicenseConstraintErrorDetail();
+				if (details.hasLicenseConstraintErrorSubtype()) {
+					switch (details.getLicenseConstraintErrorSubtype()) {
+                        case LCS_UGCS_SEALED:
+                            return new UgcsSealedException(e.getErrorMessage());
+                        case LCS_PERMISSION_EXCEEDED:
+							return new LicenseLimitationExceededException(e.getErrorMessage());
+                    }
+				}
+			} else {
+				return new UcsException(e.getErrorMessage(), errorCode);
+			}
+		}
+
+		return new UcsException(e.getErrorMessage(), errorCode);
 	}
 
 	public <T> T execute(Message message) throws Exception {

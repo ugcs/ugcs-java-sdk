@@ -17,6 +17,7 @@ extend google.protobuf.MessageOptions {
 	optional bool ugcs_class_ignore = 50001;
 	optional string ugcs_class_name = 50002;
 	optional string ugcs_class_package = 50003;
+	optional bool ugcs_class_reject = 50004;
 }
 
 extend google.protobuf.FieldOptions {
@@ -25,6 +26,7 @@ extend google.protobuf.FieldOptions {
 	optional bool ugcs_field_id = 50003;
 	optional bool ugcs_field_posix_time = 50004;
 	optional bool ugcs_field_uuid = 50005;
+	optional bool readonly = 50006;
 }
 
 extend google.protobuf.EnumOptions {

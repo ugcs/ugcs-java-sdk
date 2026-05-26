@@ -4,7 +4,7 @@
 	<groupId>com.ugcs</groupId>
 	<artifactId>ugcs-java-sdk</artifactId>
 	<name>UgCS Server Java SDK</name>
-	<version>5.1.1</version>
+	<version>5.17.1</version>
 	<packaging>pom</packaging>
 	<modules>
 		<module>ucs-messaging</module>
@@ -17,8 +17,8 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<slf4j.version>1.7.26</slf4j.version>
-		<logback.version>1.2.3</logback.version>
+		<slf4j.version>2.0.7</slf4j.version>
+		<logback.version>1.4.14</logback.version>
 		<jackson.version>2.8.7</jackson.version>
 	</properties>
 	<dependencyManagement>

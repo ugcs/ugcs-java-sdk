@@ -191,5 +191,28 @@ public class HciMessageMapping extends ProtoMessageMapping {
 		putMapping(199, ExportProfilesToUgcsResponse.class);
 		putMapping(200, SendFeedbackRequest.class);
 		putMapping(201, SendFeedbackResponse.class);
+		putMapping(202, GetRouteListRequest.class);
+		putMapping(203, GetRouteListResponse.class);
+		putMapping(204, ConfigureAnalyticsRequest.class);
+		putMapping(205, EmptyResponse.class);
+		putMapping(206, ReadAnalyticsConfigurationRequest.class);
+		putMapping(207, ReadAnalyticsConfigurationResponse.class);
+		putMapping(208, SendAnalyticsEventRequest.class);
+		putMapping(209, GetFreeUsageCodeRequest.class);
+		putMapping(210, StartFreeUsageRequest.class);
+		putMapping(211, CheckPermissionRequest.class);
+		putMapping(212, ResolveGsdByAltitudeAglRequest.class);
+		putMapping(213, ResolveGsdByAltitudeAmslRequest.class);
+		putMapping(214, ResolveAltitudeAglByGsdRequest.class);
+		putMapping(215, ResolveAltitudeAmslByGsdRequest.class);
+
+		putMapping(216, SingleValueResponse.class);
+		putMapping(217, GetDeviceIdRequest.class);
+		putMapping(218, GetDeviceIdResponse.class);
+        putMapping(227, GetLicenseImprovementWindowContentRequest.class);
+        putMapping(228, GetLicenseImprovementWindowContentResponse.class);
+		putMapping(231, UploadRouteRequest2.class);
+
+		putMapping(500, PingRequest.class);
 	}
 }

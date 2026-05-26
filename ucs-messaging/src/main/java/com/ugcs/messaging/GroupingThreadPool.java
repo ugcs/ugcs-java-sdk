@@ -12,8 +12,8 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.AbstractExecutorService;
-import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executors;
+import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
@@ -47,8 +47,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 
 	// queues that are not currently assigned to any worker
 	// invariant: cannot contain an empty queue
-	// TODO remove initial capacity when switched to Java 8
-	private final Queue<TaskQueue> waiting = new PriorityQueue<>(11, queueComparator);
+	private final Queue<TaskQueue> waiting = new PriorityQueue<>(queueComparator);
 
 	// set of the workers (processing threads)
 	private final Set<Worker> workers = new HashSet<>();
@@ -104,10 +103,10 @@ public class GroupingThreadPool extends AbstractExecutorService {
 		if (shutdown)
 			rejectTask(runnable);
 
-		Object isolation = taskMapper.map(runnable);
-		if (isolation == null)
-			isolation = runnable;
-		queueTask(runnable, isolation);
+		TaskDetails taskDetails = taskMapper.map(runnable);
+		if (taskDetails == null)
+			taskDetails = new TaskDetails(runnable, TaskDetails.DEFAULT_PRIORITY);
+		queueTask(Prioritizable.of(runnable, taskDetails.priority), taskDetails);
 	}
 
 	private void queueTask(Runnable runnable, Object isolation) {
@@ -553,10 +552,32 @@ public class GroupingThreadPool extends AbstractExecutorService {
 
 	/* Tasks */
 
-	private static class Task {
+	public interface Prioritizable extends Runnable {
+		int getPriority();
+
+		static Prioritizable of(Runnable runnable, int priority) {
+			return new Prioritizable() {
+				@Override
+				public int getPriority() {
+					return priority;
+				}
+
+				@Override
+				public void run() {
+					runnable.run();
+				}
+			};
+		}
+	}
+
+	private static class Task implements Comparable<Task> {
+
+		public static final int HIGH_PRIORITY = Integer.MAX_VALUE;
+		public static final int DEFAULT_PRIORITY = 0;
 
 		private final Runnable runnable;
 		private final long createdAt;
+		private final int priority;
 
 		public Task(Runnable runnable) {
 			this(runnable, System.nanoTime());
@@ -567,6 +588,20 @@ public class GroupingThreadPool extends AbstractExecutorService {
 
 			this.runnable = runnable;
 			this.createdAt = createdAt;
+			this.priority = extractPriority(runnable);
+		}
+
+		private int extractPriority(Runnable runnable) {
+			if (runnable instanceof Prioritizable) {
+				return ((Prioritizable) runnable).getPriority();
+			}
+			return DEFAULT_PRIORITY; // default priority
+		}
+
+		@Override
+		public int compareTo(Task o) {
+			int cmp = Integer.compare(o.priority, this.priority);
+			return cmp != 0 ? cmp : Long.compare(this.createdAt, o.createdAt);
 		}
 	}
 
@@ -574,9 +609,13 @@ public class GroupingThreadPool extends AbstractExecutorService {
 
 		@Override
 		public int compare(Task x, Task y) {
-			return Long.compare(
-					x != null ? x.createdAt : Long.MAX_VALUE,
-					y != null ? y.createdAt : Long.MAX_VALUE);
+			if (x == null && y == null)
+				return 0;
+			if (x == null)
+				return 1;
+			if (y == null)
+				return -1;
+			return x.compareTo(y);
 		}
 	}
 
@@ -586,7 +625,7 @@ public class GroupingThreadPool extends AbstractExecutorService {
 		private final Object isolation;
 
 		public TaskQueue(Object isolation) {
-			this.tasks = new ConcurrentLinkedQueue<>();
+			this.tasks = new PriorityBlockingQueue<>();
 			this.isolation = isolation;
 		}
 	}

@@ -1,5 +1,7 @@
 syntax = "proto2";
 
+package com.ugcs.ucs.proto;
+
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "EmulatorProto";
 

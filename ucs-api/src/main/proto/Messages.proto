@@ -1,14 +1,23 @@
 syntax = "proto2";
+package com.ugcs.ucs.proto;
 
 option java_package = "com.ugcs.ucs.proto";
 option java_outer_classname = "MessagesProto";
-option (ugcs_protocol_major_version) = 1;
-option (ugcs_protocol_minor_version) = 17;
+option (ugcs_protocol_major_version) = 2;
+option (ugcs_protocol_minor_version) = 0;
 
 import "Options.proto";
 import "Domain.proto";
 
 // Types (DTO)
+
+enum KmlExportSchema {
+	// Kml extended by UgCS schema. Contains route actions (like speed),
+	// and additional attributes.
+	KES_KML_EXTENDED_BY_UGCS = 0;
+	// Just standard kml, only contains the path of the processed route.
+	KES_KML = 1;
+}
 
 enum TelemetryFormat {
 	TF_TLM = 0;
@@ -50,11 +59,15 @@ message VersionsInfoDto {
 }
 
 message StatisticsRecordDto {
+	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	required string parameter = 1;
 	required string value = 2;
 }
 
 message StatisticsDto {
+	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	required int64 time = 1;
 	required string clientUID = 2;
 	required string clientMAC = 3;
@@ -62,6 +75,22 @@ message StatisticsDto {
 	required string clientOsVersion = 5;
 	required string unityVersion = 6; 	
 	repeated StatisticsRecordDto details = 7; 
+}
+
+message AnalyticsEventAttributeValue {
+	optional string string = 1;
+	optional int64 number = 2;
+	optional bool boolean = 3;
+}
+
+message AnalyticsEventAttribute {
+	required string code = 1;
+	required AnalyticsEventAttributeValue value = 2;
+}
+
+message AnalyticsEvent {
+	required string eventCode = 1;
+	repeated AnalyticsEventAttribute attributes = 2;
 }
 
 message CommandSetDto {
@@ -90,8 +119,11 @@ message LicensePermissionsDto {
 	optional int32 vehicleConnectionsLimit = 21;
 	optional bool dssClient = 22 [default = false];
 	repeated string forbiddenCommandCodes = 23;
-  required bool smartAgl = 24;
+	required bool smartAgl = 24;
 	required int32 djiPilotConnectionsLimit = 25;
+	optional bool trajectorySmoothing = 26;
+	optional int32 maxMissions = 27;
+	required bool skyhub = 28;
 }
 
 message PlatformAndBooleanPairDto {
@@ -113,6 +145,8 @@ message VehicleCommandResultDto {
 	required Vehicle vehicle = 1;
 	required CommandStatus commandStatus = 2;
 	optional string errorMessage = 3;
+    repeated File files = 4;
+    repeated Property properties = 5;
 }
 
 message ImportRouteParameterDto {
@@ -164,6 +198,10 @@ message PlatformParametersDto {
 message PayloadParametersMappingDto {
 	required PayloadType payloadType = 1;
 	repeated PayloadParameterType parameterTypes = 2;
+}
+
+message CircleVerticalDirectionsMappingDto {
+    repeated CircleVerticalDirectionDto circleVerticalDirections = 1;
 }
 
 // Keys and values
@@ -238,6 +276,11 @@ message AlgorithmActionExecutionDto {
 	repeated ActionExecutionDto actionExecution = 2;
 }
 
+message CircleVerticalDirectionDto {
+	required string circleVerticalDirection = 1;
+	required string description = 2;
+}
+
 message CameraDto {
 	required int32 cameraId = 1;
 	required string cameraName = 2;
@@ -254,6 +297,13 @@ message VehicleCommandsDto {
 	repeated Command commands = 2;
 }
 
+message RouteListFilterDto {
+	option (ugcs_class_name) = "RouteListFilter";
+	optional int32 missionId = 1;
+	repeated string vehiclePlatformCode = 2;
+}
+
+
 // Messages
 
 message Error {
@@ -267,11 +317,34 @@ message AuthorizeHciRequest {
 	required int32 clientId = 1 [default = -1];
 	optional string locale = 2;
 	optional ProtocolVersion clientVersion = 3;
+	optional bool keepAlive = 4;
 }
 
 message AuthorizeHciResponse {
 	required int32 clientId = 1;
 	optional ProtocolVersion serverVersion = 2;
+	optional bool keepAlive = 3;
+}
+
+message GetFreeUsageCodeRequest {
+	required int32 clientId = 1 [default = -1];
+	required string email = 2;
+	required string firstName = 3;
+	required string lastName = 4;
+	required string country = 5;
+	required string role = 6;
+	optional string company = 7;
+	repeated string drones = 8;
+	optional string useCase = 9;
+	optional bool bvlos = 10;
+	optional string teamSize = 11;
+	optional string payload = 12;
+}
+
+message StartFreeUsageRequest {
+	required int32 clientId = 1 [default = -1];
+	required string email = 2;
+	required string code = 3;
 }
 
 message SetHciLocaleRequest {
@@ -313,10 +386,12 @@ message CheckLocationResponse {
 message ProcessRouteRequest {
 	required int32 clientId = 1;
 	required Route route = 2;
+	optional string token = 3;
 }
 
 message ProcessRouteResponse {
 	required ProcessedRoute processedRoute = 1;
+	required string hash = 2;
 }
 
 // deprecated
@@ -374,6 +449,7 @@ message GetElevationProfileV2Request {
 message GetElevationProfileV2Response {
 	repeated Wgs84LocationDto locations = 1;
 	repeated double elevations = 2;
+	repeated double surfaceHeight = 5;
 	repeated double obstacleHeight = 3;
 	repeated double accumulatedDistances = 4;
 }
@@ -480,6 +556,7 @@ message ExportRouteToKmlRequest {
 	required int32 clientId = 1;
 	optional ProcessedRoute route = 2;
 	required KmlExportAltitudeMode altitudeMode = 3;
+	optional KmlExportSchema schema = 4;
 }
 
 message ExportRouteToKmlResponse {
@@ -658,6 +735,7 @@ message GetRasterGridResponse {
 //Request for elevation tiles in specified rectangle
 message GetElevationTilesRequest {
 	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	required int32 clientId = 1;
 	required double minLatitude = 3;
 	required double minLongitude = 4;
@@ -667,6 +745,7 @@ message GetElevationTilesRequest {
 
 message GetElevationTilesResponse {
 	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	repeated ElevationData data = 1;
 }
 
@@ -821,6 +900,8 @@ message SplitVehicleTrackResponse {
 
 //Deprecated. Use ExportRouteToKmlRequest
 message GetKmlRouteRepresentationRequest {
+	option deprecated = true;
+
 	required int32 clientId = 1;
 	required string routeName = 2;
 	required VehicleProfile routeVehicleProfile = 3;
@@ -952,6 +1033,8 @@ message GetLicenseResponse {
 message ActivateLicenseRequest {
 	required int32 clientId = 1;
 	required string activationCode = 2;
+	// Overrides the locale defined in HciSession (if any).
+	optional string locale = 3;
 }
 
 message ActivateLicenseResponse {
@@ -964,6 +1047,14 @@ message DeactivateLicenseRequest {
 }
 
 message DeactivateLicenseResponse {
+}
+
+message GetLicenseImprovementWindowContentRequest {
+    required int32 clientId = 1;
+}
+
+message GetLicenseImprovementWindowContentResponse  {
+    optional string content = 1;
 }
 
 message CheckForUpdatesRequest {
@@ -985,14 +1076,21 @@ message GetChangelogResponse {
   optional string changelog = 3;
 }
 
+
+/**
+Returns true if the provided telemetry field is registered for the vehicle.
+ */
 message IsTelemetryFieldRegisteredRequest {
 	required int32 clientId = 1;
 	required Vehicle vehicle = 2;
 	required string fieldCode = 3;
+	// The type of the subsystem that owns the field.
 	required Subsystem subsystem = 4;
-	// If -1, method returns true if any of instances has the field registered.
-	// proto2 doesn't support nullable int32
-	required int32 subsystemId = 5;
+	// The instance id of the subsystem that owns the field.
+	// If not specified, the response returns true if at least
+	// one of the vehicle subsystem with the provided type
+	// has the field.
+	optional int32 subsystemId = 5;
 }
 
 message IsTelemetryFieldRegisteredResponse {
@@ -1001,12 +1099,22 @@ message IsTelemetryFieldRegisteredResponse {
 
 // Statistics
 message SendStatisticsRequest {
+	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	required int32 clientId = 1;
 	required StatisticsDto statistics = 2;
 }
 
 message SendStatisticsResponse {
+	option deprecated = true;
+	option (ugcs_class_reject) = true;
 	required bool accepted = 1;
+}
+
+message SendAnalyticsEventRequest {
+	// Is not used. Kept for backward compatibility.
+	optional int32 clientId = 1;
+	required AnalyticsEvent event = 2;
 }
 
 // Generic CRUD services
@@ -1096,6 +1204,7 @@ message GetMappingRequest {
 	optional bool getAltitudeFrames = 10;
 	optional bool getPlatformParameters = 11;
 	optional bool getPayloadParameters = 12;
+	optional bool getCircleVerticalDirections = 13;
 }
 
 message GetMappingResponse {
@@ -1110,6 +1219,7 @@ message GetMappingResponse {
 	optional AltitudeFramesMappingDto altitudeFramesMapping = 10;
 	repeated PlatformParametersDto platformParameters = 11;
 	repeated PayloadParametersMappingDto payloadParameters = 12;
+	optional CircleVerticalDirectionsMappingDto circleVerticalDirectionsMapping = 13;
 }
 
 // Locks
@@ -1283,6 +1393,15 @@ message CancelOperationRequest {
 message CancelOperationResponse {
 }
 
+message GetRouteListRequest {
+	required int32 clientId = 1;
+	optional RouteListFilterDto filter = 2;
+}
+
+message GetRouteListResponse {
+	repeated Route routes = 1;
+}
+
 // Events
 
 message Notification {
@@ -1332,4 +1451,114 @@ message SendFeedbackRequest {
 }
 
 message SendFeedbackResponse {
+}
+
+message AnalyticsConfigurationDto {
+	optional bool allowToCollectAndSendData = 1;
+}
+
+message ConfigureAnalyticsRequest {
+	required int32 clientId = 1;
+	optional AnalyticsConfigurationDto configuration = 2;
+}
+
+message ReadAnalyticsConfigurationRequest {
+	required int32 clientId = 1;
+}
+
+message ReadAnalyticsConfigurationResponse {
+	optional AnalyticsConfigurationDto configuration = 2;
+}
+
+message ResolveGsdByAltitudeAglRequest {
+	required int32 clientId = 1;
+	required PayloadProfile payloadProfile = 2;
+	required double altitudeAgl = 3;
+	required bool camTopFacingForward = 4;
+}
+
+message ResolveGsdByAltitudeAmslRequest {
+	required int32 clientId = 1;
+	required PayloadProfile payloadProfile = 2;
+	repeated FigurePoint figurePoints = 3;
+	required double altitudeAmsl = 4;
+	required bool camTopFacingForward = 5;
+}
+
+message ResolveAltitudeAglByGsdRequest {
+	required int32 clientId = 1;
+	required PayloadProfile payloadProfile = 2;
+	required double gsd = 3;
+	required bool camTopFacingForward = 4;
+}
+
+message ResolveAltitudeAmslByGsdRequest {
+	required int32 clientId = 1;
+	required PayloadProfile payloadProfile = 2;
+	repeated FigurePoint figurePoints = 3;
+	required double gsd = 4;
+	required bool camTopFacingForward = 5;
+}
+
+message SingleValueResponse {
+	optional double doubleValue = 1;
+}
+
+message EmptyResponse {
+}
+
+message PingRequest {
+}
+
+enum ServerAction {
+	P_ROUTE_EXPORT_TO_KML = 0;
+	P_ROUTE_EXPORT_TO_WPML = 1;
+	P_ROUTE_EXPORT_TO_JSON = 2;
+	P_ROUTE_UPLOAD = 3;
+	P_MISSION_CREATE = 4;
+}
+
+message CheckPermissionRequest {
+	required int32 clientId = 1;
+	// Required
+	optional ServerAction action = 2;
+	optional string targetPlatformCode = 3;
+}
+
+message GetDeviceIdRequest {
+	required int32 clientId = 1;
+}
+
+message GetDeviceIdResponse {
+	required string deviceId = 1;
+}
+
+message ResumePoint {
+	// Required, Must be > 0.
+	// An index of the route waypoint the drone should start fly to.
+	optional int32 targetWaypointIndex = 1;
+	// Optional.
+	// A location on the route path, the route should start from.
+	// If null, the route starts from the waypoint defined by targetWaypointIndex.
+	// If passed location is 100 meters (or more) far from the rote,
+	// uploading fails.
+	optional Wgs84LocationDto location = 2;
+}
+
+message RouteResumeOptions {
+	// Required.
+	optional ResumePoint resumePoint = 1;
+	// Required.
+	optional bool goThroughFirstWaypoint = 2 [default = true];
+}
+
+message UploadRouteRequest2 {
+	required int32 clientId = 1;
+	required Vehicle vehicle = 2;
+	required ProcessedRoute processedRoute = 3 ;
+	// If null, the route will start from the 1st waypoint.
+	// Otherwise the route will be continue according
+	// to the provided options.
+	optional RouteResumeOptions resumeOptions = 4;
+	repeated int32 suppressErrorCodes = 5;
 }

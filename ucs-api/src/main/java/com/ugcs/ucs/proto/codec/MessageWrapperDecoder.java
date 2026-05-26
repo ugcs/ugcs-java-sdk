@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.protobuf.Message;
+import com.ugcs.messaging.CircularBuffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.ugcs.common.io.CircularBuffer;
 import com.ugcs.messaging.api.CorruptedDataException;
 import com.ugcs.messaging.api.MessageDecoder;
 
